@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "dreamland:block/rooted_porous_stone"
+  }
+}

@@ -22,6 +22,7 @@ public class BlockStates extends BlockStateProvider{
 		simpleBlock(DreamlandBlocks.ROOTED_POROUS_STONE.get());
 		simpleBlock(DreamlandBlocks.DUSK_ICE.get());
 		simpleBlock(DreamlandBlocks.TOXIC_ROCK.get());
+		simpleBlock(DreamlandBlocks.HIVE_BLOCK.get());
 		
 		
 

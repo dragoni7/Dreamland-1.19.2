@@ -1,0 +1,8 @@
+{
+	"parent": "block/cube_bottom_top",
+	"textures": {
+	  "top": "dreamland:block/clay_soil_grass_top_colored",
+	  "bottom": "dreamland:block/clay_soil",
+	  "side": "dreamland:block/clay_soil_grass_side"
+	}
+  }

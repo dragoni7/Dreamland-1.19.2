@@ -13,30 +13,30 @@ license="All Rights Reserved"
 
 [[mods]]
 
-modId="dreamworld" 
+modId="dreamland" 
 version="${file.jarVersion}"
-displayName="DreamWorld"
-logoFile="dreamworld.png"
+displayName="Dreamland"
+logoFile="dreamland.png"
 credits="Thanks to the Forge Discord"
 authors="dragoni7" 
 description='''
 temp
 '''
-[[dependencies.dreamworld]]
+[[dependencies.dreamland]]
     modId = "minecraft"
     mandatory = true
     versionRange = "[1.18.1,1.19)"
     ordering = "NONE"
     side = "BOTH"
 
-[[dependencies.dreamworld]]
+[[dependencies.dreamland]]
     modId = "forge"
     mandatory = true
     versionRange = "[39.0.19,)"
     ordering = "NONE"
     side = "BOTH"
 
-[[dependencies.dreamworld]]
+[[dependencies.dreamland]]
     modId = "terrablender"
     mandatory = true
     versionRange = "[1.1.0,)"

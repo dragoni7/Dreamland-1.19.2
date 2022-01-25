@@ -60,6 +60,13 @@ public class DreamlandBlocks {
 					.sound(SoundType.CALCITE)
 					));
 	
+	public static final RegistryObject<Block> HIVE_BLOCK = BLOCKS.register("hive_block", 
+			() -> new BaseBlock(BlockBehaviour.Properties
+					.of(Material.STONE)
+					.strength(2.0F,6.0F)
+					.sound(SoundType.NETHERRACK)
+					));
+	
 	public static final RegistryObject<Block> CAVE_SLIME = BLOCKS.register("cave_slime", 
 			() -> new CaveSlime(BlockBehaviour.Properties
 					.of(Material.PLANT)

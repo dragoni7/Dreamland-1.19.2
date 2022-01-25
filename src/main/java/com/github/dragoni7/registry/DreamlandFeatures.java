@@ -26,6 +26,6 @@ public class DreamlandFeatures {
 			
 	public static void init() {
 		 
-				 Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new ResourceLocation(Dreamland.MODID, "cave_slime"), CAVE_SLIME);
+		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new ResourceLocation(Dreamland.MODID, "cave_slime"), CAVE_SLIME);
 	 }
 }

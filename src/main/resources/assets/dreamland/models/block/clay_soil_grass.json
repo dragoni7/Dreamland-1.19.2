@@ -1,0 +1,10 @@
+{
+	"parent": "block/grass_block",
+	"textures": {
+	  "particle": "dreamland:block/clay_soil",
+	  "top": "dreamland:block/clay_soil_grass_top",
+	  "bottom": "dreamland:block/clay_soil",
+	  "side": "dreamland:block/clay_soil_grass_side",
+	  "overlay": "dreamland:block/clay_grass_overlay"
+	}
+  }

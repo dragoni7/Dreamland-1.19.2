@@ -5,8 +5,10 @@ import com.github.dragoni7.registry.DreamlandItems;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.RegistryObject;
 
 public class ItemModels extends ItemModelProvider{
 
@@ -17,15 +19,21 @@ public class ItemModels extends ItemModelProvider{
 
 	@Override
 	protected void registerModels() {
-
-		withExistingParent(DreamlandItems.CLAY_SOIL.get().getRegistryName().getPath(), new ResourceLocation(Dreamland.MODID, "block/clay_soil"));
-		withExistingParent(DreamlandItems.DARK_QUARTZITE.get().getRegistryName().getPath(), new ResourceLocation(Dreamland.MODID, "block/dark_quartzite"));
-		withExistingParent(DreamlandItems.SOLID_TAR.get().getRegistryName().getPath(), new ResourceLocation(Dreamland.MODID, "block/solid_tar"));
-		withExistingParent(DreamlandItems.POROUS_STONE.get().getRegistryName().getPath(), new ResourceLocation(Dreamland.MODID, "block/porous_stone"));
-		withExistingParent(DreamlandItems.ROOTED_POROUS_STONE.get().getRegistryName().getPath(), new ResourceLocation(Dreamland.MODID, "block/rooted_porous_stone"));
-		withExistingParent(DreamlandItems.DUSK_ICE.get().getRegistryName().getPath(), new ResourceLocation(Dreamland.MODID, "block/dusk_ice"));
-		withExistingParent(DreamlandItems.TOXIC_ROCK.get().getRegistryName().getPath(), new ResourceLocation(Dreamland.MODID, "block/toxic_rock"));
 		
+		createBlockItemModel(DreamlandItems.HIVE_BLOCK,"block/hive_block1");
+		createBlockItemModel(DreamlandItems.CLAY_SOIL,"block/clay_soil");
+		createBlockItemModel(DreamlandItems.DARK_QUARTZITE,"block/dark_quartzite");
+		createBlockItemModel(DreamlandItems.SOLID_TAR,"block/solid_tar");
+		createBlockItemModel(DreamlandItems.POROUS_STONE,"block/porous_stone");
+		createBlockItemModel(DreamlandItems.ROOTED_POROUS_STONE,"block/rooted_porous_stone");
+		createBlockItemModel(DreamlandItems.DUSK_ICE,"block/dusk_ice");
+		createBlockItemModel(DreamlandItems.TOXIC_ROCK,"block/toxic_rock");
+		
+	}
+	
+	private void createBlockItemModel(RegistryObject<Item> item, String Path) {
+		
+		withExistingParent(item.get().getRegistryName().getPath(), new ResourceLocation(Dreamland.MODID, Path));
 	}
 
 }
