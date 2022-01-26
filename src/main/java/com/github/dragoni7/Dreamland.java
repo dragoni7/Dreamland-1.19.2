@@ -17,7 +17,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 import terrablender.api.BiomeProviders;
-import terrablender.core.TerraBlender;
 import net.minecraftforge.api.distmarker.Dist;
 
 @Mod(Dreamland.MODID)

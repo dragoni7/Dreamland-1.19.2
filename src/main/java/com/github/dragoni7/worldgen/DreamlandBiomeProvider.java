@@ -1,6 +1,5 @@
 package com.github.dragoni7.worldgen;
 
-import com.electronwill.nightconfig.core.io.CharsWrapper.Builder;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
