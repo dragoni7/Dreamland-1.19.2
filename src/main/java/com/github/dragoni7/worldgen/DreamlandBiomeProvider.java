@@ -9,7 +9,7 @@ import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import terrablender.api.BiomeProvider;
-
+import terrablender.api.ParameterUtils;
 import terrablender.worldgen.TBClimate;
 
 import java.util.List;
@@ -32,7 +32,17 @@ public class DreamlandBiomeProvider extends BiomeProvider
             // Simple example:
             // Replace the Vanilla desert with our hot_red biome
             //builder.replaceBiome(Biomes.DESERT, BiomeKeys.HOT_RED);
-            this.addBiomeSimilar(mapper, Biomes.DESERT, BiomeKeys.HOT_RED);
+            this.addBiomeSimilar(mapper, Biomes.PLAINS, BiomeKeys.HOT_RED);
+            
+			/*
+			 * addBiome(mapper, ParameterUtils.Temperature.HOT,
+			 * ParameterUtils.Humidity.ARID, ParameterUtils.Continentalness.FULL_RANGE,
+			 * ParameterUtils.Erosion.EROSION_1,
+			 * ParameterUtils.Weirdness.LOW_SLICE_VARIANT_ASCENDING,
+			 * ParameterUtils.Depth.SURFACE, 0.2F, BiomeKeys.HOT_RED);
+			 */
+            	
+            	
             
          // More complex example:
             // Replace specific parameter points for the frozen peaks with our cold_blue biome
@@ -41,7 +51,7 @@ public class DreamlandBiomeProvider extends BiomeProvider
                 .humidity(Humidity.ARID, Humidity.DRY, Humidity.NEUTRAL, Humidity.WET, Humidity.HUMID)
                 .continentalness(Continentalness.span(Continentalness.COAST, Continentalness.FAR_INLAND), Continentalness.span(Continentalness.MID_INLAND, Continentalness.FAR_INLAND))
                 .erosion(Erosion.EROSION_0, Erosion.EROSION_1)
-                .depth(Depth.SURFACE, Depth.FLOOR)
+                .depth(Depth.SURFACE, Depth.SURFACE)
                 .weirdness(Weirdness.HIGH_SLICE_VARIANT_ASCENDING, Weirdness.PEAK_VARIANT, Weirdness.HIGH_SLICE_VARIANT_DESCENDING)
                 .buildVanilla();
 

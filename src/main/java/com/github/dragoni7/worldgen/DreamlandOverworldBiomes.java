@@ -57,6 +57,9 @@ public class DreamlandOverworldBiomes {
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
         BiomeDefaultFeatures.addDesertExtraVegetation(biomeBuilder);
         BiomeDefaultFeatures.addDesertExtraDecoration(biomeBuilder);
+        BiomeDefaultFeatures.addDripstone(biomeBuilder);
+        BiomeDefaultFeatures.addJungleMelons(biomeBuilder);
+        BiomeDefaultFeatures.addRareBerryBushes(biomeBuilder);
         return biome(Biome.Precipitation.NONE, Biome.BiomeCategory.DESERT, 2.0F, 0.0F, spawnBuilder, biomeBuilder, NORMAL_MUSIC);
     }
     
@@ -73,6 +76,7 @@ public class DreamlandOverworldBiomes {
         BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
         BiomeDefaultFeatures.addExtraEmeralds(biomeBuilder);
         BiomeDefaultFeatures.addInfestedStone(biomeBuilder);
+        BiomeDefaultFeatures.addLushCavesVegetationFeatures(biomeBuilder);
         return biome(Biome.Precipitation.SNOW, Biome.BiomeCategory.MOUNTAIN, -0.7F, 0.9F, spawnBuilder, biomeBuilder, NORMAL_MUSIC);
     }
 }

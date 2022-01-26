@@ -11,8 +11,8 @@ public class DreamlandSurfaceRules
     private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
     private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
     private static final SurfaceRules.RuleSource RED_TERRACOTTA = makeStateRule(DreamlandBlocks.HIVE_BLOCK.get());
-    private static final SurfaceRules.RuleSource BLUE_TERRACOTTA = makeStateRule(Blocks.BLUE_TERRACOTTA);
-
+    private static final SurfaceRules.RuleSource BLUE_TERRACOTTA = makeStateRule(DreamlandBlocks.DARK_QUARTZITE.get());
+    
     protected static SurfaceRules.RuleSource makeRules()
     {
         SurfaceRules.ConditionSource isAtOrAboveWaterLevel = SurfaceRules.waterBlockCheck(-1, 0);

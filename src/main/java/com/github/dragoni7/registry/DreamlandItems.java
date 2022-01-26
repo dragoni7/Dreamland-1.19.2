@@ -3,6 +3,7 @@ package com.github.dragoni7.registry;
 import com.github.dragoni7.Dreamland;
 import com.github.dragoni7.common.items.BaseBlockItem;
 
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
@@ -33,7 +34,7 @@ public class DreamlandItems {
 	
 	public static final RegistryObject<Item> CAVE_SLIME = registerBlockItem("cave_slime", DreamlandBlocks.CAVE_SLIME);
 	
-	public static final RegistryObject<Item> CAVE_SLIME_PLANT = registerBlockItem("cave_slime_plant", DreamlandBlocks.CAVE_SLIME_PLANT);
+	//public static final RegistryObject<Item> CAVE_SLIME_PLANT = ITEMS.register("cave_slime_plant", () -> new BaseBlockItem(DreamlandBlocks.CAVE_SLIME_PLANT.get(), new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 	
 	public static final RegistryObject<Item> TOXIC_ROCK = registerBlockItem("toxic_rock", DreamlandBlocks.TOXIC_ROCK);
 	
