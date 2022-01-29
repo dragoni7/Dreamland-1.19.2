@@ -28,7 +28,11 @@ public class ItemModels extends ItemModelProvider{
 		createBlockItemModel(DreamlandItems.ROOTED_POROUS_STONE,"block/rooted_porous_stone");
 		createBlockItemModel(DreamlandItems.DUSK_ICE,"block/dusk_ice");
 		createBlockItemModel(DreamlandItems.TOXIC_ROCK,"block/toxic_rock");
+		createBlockItemModel(DreamlandItems.MITE_JELLY, "block/mite_jelly");
+		createBlockItemModel(DreamlandItems.HIVE_SLUDGE, "block/hive_sludge");
 		
+		singleTexture(DreamlandItems.HIVE_JELLY_ITEM.get().getRegistryName().getPath(), new ResourceLocation("item/handheld"),
+				"layer0", new ResourceLocation(Dreamland.MODID, "item/jelly"));
 	}
 	
 	private void createBlockItemModel(RegistryObject<Item> item, String Path) {

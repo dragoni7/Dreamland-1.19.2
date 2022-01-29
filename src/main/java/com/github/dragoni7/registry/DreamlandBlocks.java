@@ -83,6 +83,24 @@ public class DreamlandBlocks {
 					.noCollission()
 					));
 	
+	public static final RegistryObject<Block> MITE_JELLY = BLOCKS.register("mite_jelly",
+			() -> new BaseBlock(BlockBehaviour.Properties
+					.of(Material.SPONGE)
+					.strength(2.0F,6.0F)
+					.sound(SoundType.SLIME_BLOCK)
+					.noOcclusion()
+					.hasPostProcess(DreamlandBlocks::always)
+					.emissiveRendering(DreamlandBlocks::always)
+					.lightLevel((p_152684_) -> {return 1;})
+					));
+	
+	public static final RegistryObject<Block> HIVE_SLUDGE = BLOCKS.register("hive_sludge",
+			() -> new BaseBlock(BlockBehaviour.Properties
+					.of(Material.SPONGE)
+					.strength(2.0F, 6.0F)
+					.sound(SoundType.SLIME_BLOCK)
+					));
+	
 	private static boolean always(BlockState state, BlockGetter getter, BlockPos pos) {
 	      return true;
 	   }

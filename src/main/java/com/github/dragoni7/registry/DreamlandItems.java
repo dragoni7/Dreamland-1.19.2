@@ -1,10 +1,10 @@
 package com.github.dragoni7.registry;
 
 import com.github.dragoni7.Dreamland;
-import com.github.dragoni7.common.items.BaseBlockItem;
+import com.github.dragoni7.common.items.*;
 
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Item.Properties;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -40,6 +40,14 @@ public class DreamlandItems {
 	
 	public static final RegistryObject<Item> HIVE_BLOCK = registerBlockItem("hive_block", DreamlandBlocks.HIVE_BLOCK);
 	
+	public static final RegistryObject<Item> MITE_JELLY = registerBlockItem("mite_jelly", DreamlandBlocks.MITE_JELLY);
+	
+	public static final RegistryObject<Item> HIVE_SLUDGE = registerBlockItem("hive_sludge", DreamlandBlocks.HIVE_SLUDGE);
+	
+	//Items
+	
+	public static final RegistryObject<Item> HIVE_JELLY_ITEM = registerBasicItem("jelly");
+	
 	
 	
 	
@@ -47,6 +55,11 @@ public class DreamlandItems {
 		
 		return ITEMS.register(name,() -> new BaseBlockItem(block.get(), new Item.Properties().tab(Dreamland.DreamlandTab)));
 		
+	}
+	
+	private static RegistryObject<Item> registerBasicItem(String name) {
+		
+		return ITEMS.register(name, () -> new BaseItem(new Item.Properties().tab(Dreamland.DreamlandTab)));
 	}
 	
 

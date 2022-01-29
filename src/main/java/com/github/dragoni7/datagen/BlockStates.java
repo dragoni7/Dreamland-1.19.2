@@ -23,6 +23,7 @@ public class BlockStates extends BlockStateProvider{
 		simpleBlock(DreamlandBlocks.DUSK_ICE.get());
 		simpleBlock(DreamlandBlocks.TOXIC_ROCK.get());
 		simpleBlock(DreamlandBlocks.HIVE_BLOCK.get());
+		simpleBlock(DreamlandBlocks.HIVE_SLUDGE.get());
 		
 		
 

@@ -57,7 +57,7 @@ public class Dreamland
     	
     		@Override
     		public ItemStack makeIcon() {
-    			return new ItemStack(DreamlandBlocks.BUMBLE_BLOCK.get());
+    			return new ItemStack(DreamlandBlocks.MITE_JELLY.get());
     		
     		}
     	});
