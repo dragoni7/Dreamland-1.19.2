@@ -9,7 +9,8 @@ import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import terrablender.api.BiomeProvider;
-import terrablender.api.ParameterUtils;
+import terrablender.api.ParameterUtils.Depth;
+import terrablender.api.ParameterUtils.ParameterPointListBuilder;
 import terrablender.worldgen.TBClimate;
 
 import java.util.List;
@@ -28,35 +29,28 @@ public class DreamlandBiomeProvider extends BiomeProvider
     @Override
     public void addOverworldBiomes(Registry<Biome> registry, Consumer<Pair<TBClimate.ParameterPoint, ResourceKey<Biome>>> mapper)
     {
+    	
+    	
         this.addModifiedVanillaOverworldBiomes(mapper, builder -> {
-            // Simple example:
-            // Replace the Vanilla desert with our hot_red biome
-            //builder.replaceBiome(Biomes.DESERT, BiomeKeys.HOT_RED);
-            this.addBiomeSimilar(mapper, Biomes.PLAINS, BiomeKeys.HOT_RED);
-            
+        	
 			/*
-			 * addBiome(mapper, ParameterUtils.Temperature.HOT,
-			 * ParameterUtils.Humidity.ARID, ParameterUtils.Continentalness.FULL_RANGE,
-			 * ParameterUtils.Erosion.EROSION_1,
-			 * ParameterUtils.Weirdness.LOW_SLICE_VARIANT_ASCENDING,
-			 * ParameterUtils.Depth.SURFACE, 0.2F, BiomeKeys.HOT_RED);
+			 * List<Climate.ParameterPoint> frozenPeaksPoints = new
+			 * ParameterPointListBuilder() .temperature(Temperature.ICY, Temperature.COOL,
+			 * Temperature.NEUTRAL) .humidity(Humidity.ARID, Humidity.DRY, Humidity.NEUTRAL,
+			 * Humidity.WET, Humidity.HUMID)
+			 * .continentalness(Continentalness.span(Continentalness.COAST,
+			 * Continentalness.FAR_INLAND), Continentalness.span(Continentalness.MID_INLAND,
+			 * Continentalness.FAR_INLAND)) .erosion(Erosion.EROSION_0, Erosion.EROSION_1)
+			 * .depth(Depth.SURFACE) .weirdness(Weirdness.HIGH_SLICE_VARIANT_ASCENDING,
+			 * Weirdness.HIGH_SLICE_VARIANT_DESCENDING) .buildVanilla();
+			 * 
+			 * frozenPeaksPoints.forEach(point -> builder.replaceBiome(point,
+			 * BiomeKeys.COLD_BLUE));
 			 */
-            	
-            	
+
+            builder.replaceBiome(Biomes.PLAINS, BiomeKeys.HIVE);
+            builder.replaceBiome(Biomes.DRIPSTONE_CAVES, BiomeKeys.COLD_BLUE);
             
-         // More complex example:
-            // Replace specific parameter points for the frozen peaks with our cold_blue biome
-            List<Climate.ParameterPoint> frozenPeaksPoints = new ParameterPointListBuilder()
-                .temperature(Temperature.ICY, Temperature.COOL, Temperature.NEUTRAL)
-                .humidity(Humidity.ARID, Humidity.DRY, Humidity.NEUTRAL, Humidity.WET, Humidity.HUMID)
-                .continentalness(Continentalness.span(Continentalness.COAST, Continentalness.FAR_INLAND), Continentalness.span(Continentalness.MID_INLAND, Continentalness.FAR_INLAND))
-                .erosion(Erosion.EROSION_0, Erosion.EROSION_1)
-                .depth(Depth.SURFACE, Depth.SURFACE)
-                .weirdness(Weirdness.HIGH_SLICE_VARIANT_ASCENDING, Weirdness.PEAK_VARIANT, Weirdness.HIGH_SLICE_VARIANT_DESCENDING)
-                .buildVanilla();
-
-            frozenPeaksPoints.forEach(point -> builder.replaceBiome(point, BiomeKeys.COLD_BLUE));
-
         });
     }
 

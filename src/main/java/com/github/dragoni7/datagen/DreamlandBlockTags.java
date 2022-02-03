@@ -2,6 +2,7 @@ package com.github.dragoni7.datagen;
 
 import com.github.dragoni7.Dreamland;
 import com.github.dragoni7.registry.DreamlandBlocks;
+import com.github.dragoni7.util.CustomTags;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
@@ -32,7 +33,16 @@ public class DreamlandBlockTags extends BlockTagsProvider{
 		.add(DreamlandBlocks.CLAY_SOIL.get());
 		
 		tag(BlockTags.MINEABLE_WITH_PICKAXE)
-		.add(DreamlandBlocks.DARK_QUARTZITE.get());
+		.add(DreamlandBlocks.DARK_QUARTZITE.get())
+		.add(DreamlandBlocks.HIVE_BLOCK.get())
+		.add(DreamlandBlocks.POROUS_STONE.get())
+		.add(DreamlandBlocks.ROOTED_POROUS_STONE.get())
+		.add(DreamlandBlocks.HIVE_IRON.get());
+		
+		tag(CustomTags.Blocks.HIVE_ORES_REPLACEABLE)
+		.add(DreamlandBlocks.HIVE_BLOCK.get());
+		
+		
 		
 	}
 	

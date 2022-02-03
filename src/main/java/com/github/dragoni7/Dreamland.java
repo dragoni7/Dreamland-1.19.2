@@ -46,19 +46,15 @@ public class Dreamland
     private void setup(FMLCommonSetupEvent event) {
     	event.enqueueWork( ()-> {
     		BiomeProviders.register(new DreamlandBiomeProvider(new ResourceLocation(MODID, "biome_provider"), 4));
-    		DreamlandFeatures.init();
-    		
-    		
+    		DreamlandFeatures.init();	
     	});
     }
     
     
     public static final CreativeModeTab DreamlandTab = (new CreativeModeTab("dreamland")  {
-    	
     		@Override
     		public ItemStack makeIcon() {
     			return new ItemStack(DreamlandBlocks.MITE_JELLY.get());
-    		
     		}
     	});
 

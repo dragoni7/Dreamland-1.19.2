@@ -16,7 +16,7 @@ public class DreamlandBiomes {
 	public static void registerBiomes(RegistryEvent.Register<Biome> event) {
 		
 		IForgeRegistry<Biome> registry = event.getRegistry();
-		registry.register(DreamlandOverworldBiomes.hotRed().setRegistryName(BiomeKeys.HOT_RED.location()));
+		registry.register(DreamlandOverworldBiomes.hive().setRegistryName(BiomeKeys.HIVE.location()));
 		registry.register(DreamlandOverworldBiomes.coldBlue().setRegistryName(BiomeKeys.COLD_BLUE.location()));
 	}
 

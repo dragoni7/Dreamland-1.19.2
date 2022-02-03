@@ -4,7 +4,6 @@ import com.github.dragoni7.Dreamland;
 import com.github.dragoni7.common.items.*;
 
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Item.Properties;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -43,6 +42,13 @@ public class DreamlandItems {
 	public static final RegistryObject<Item> MITE_JELLY = registerBlockItem("mite_jelly", DreamlandBlocks.MITE_JELLY);
 	
 	public static final RegistryObject<Item> HIVE_SLUDGE = registerBlockItem("hive_sludge", DreamlandBlocks.HIVE_SLUDGE);
+	
+	public static final RegistryObject<Item> HIVE_IRON = registerBlockItem("hive_iron", DreamlandBlocks.HIVE_IRON);
+	public static final RegistryObject<Item> HIVE_GOLD = registerBlockItem("hive_gold", DreamlandBlocks.HIVE_GOLD);
+	public static final RegistryObject<Item> HIVE_COPPER = registerBlockItem("hive_copper", DreamlandBlocks.HIVE_COPPER);
+	public static final RegistryObject<Item> HIVE_REDSTONE = registerBlockItem("hive_redstone", DreamlandBlocks.HIVE_REDSTONE);
+	public static final RegistryObject<Item> HIVE_LAPIS = registerBlockItem("hive_lapis", DreamlandBlocks.HIVE_LAPIS);
+	public static final RegistryObject<Item> HIVE_DIAMOND = registerBlockItem("hive_diamond", DreamlandBlocks.HIVE_DIAMOND);
 	
 	//Items
 	

@@ -41,7 +41,7 @@ public class DreamlandOverworldBiomes {
         BiomeDefaultFeatures.addSurfaceFreezing(builder);
     }
 
-    public static Biome hotRed()
+    public static Biome hive()
     {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
         BiomeDefaultFeatures.desertSpawns(spawnBuilder);
@@ -55,12 +55,9 @@ public class DreamlandOverworldBiomes {
         BiomeDefaultFeatures.addDefaultGrass(biomeBuilder);
         BiomeDefaultFeatures.addDesertVegetation(biomeBuilder);
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
-        BiomeDefaultFeatures.addDesertExtraVegetation(biomeBuilder);
-        BiomeDefaultFeatures.addDesertExtraDecoration(biomeBuilder);
-        BiomeDefaultFeatures.addDripstone(biomeBuilder);
-        BiomeDefaultFeatures.addJungleMelons(biomeBuilder);
-        BiomeDefaultFeatures.addRareBerryBushes(biomeBuilder);
-        return biome(Biome.Precipitation.NONE, Biome.BiomeCategory.DESERT, 2.0F, 0.0F, spawnBuilder, biomeBuilder, NORMAL_MUSIC);
+        DreamlandBiomeFeatures.addHiveOres(biomeBuilder);
+        DreamlandBiomeFeatures.addCaveSlime(biomeBuilder);
+        return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.PLAINS, 2.0F, 0.0F, spawnBuilder, biomeBuilder, NORMAL_MUSIC);
     }
     
     public static Biome coldBlue()

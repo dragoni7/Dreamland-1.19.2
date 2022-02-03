@@ -1,5 +1,7 @@
 package com.github.dragoni7.datagen;
 
+import java.util.List;
+
 import com.github.dragoni7.Dreamland;
 import com.github.dragoni7.registry.DreamlandItems;
 
@@ -30,6 +32,12 @@ public class ItemModels extends ItemModelProvider{
 		createBlockItemModel(DreamlandItems.TOXIC_ROCK,"block/toxic_rock");
 		createBlockItemModel(DreamlandItems.MITE_JELLY, "block/mite_jelly");
 		createBlockItemModel(DreamlandItems.HIVE_SLUDGE, "block/hive_sludge");
+		createBlockItemModel(DreamlandItems.HIVE_IRON, "block/hive_iron");
+		createBlockItemModel(DreamlandItems.HIVE_COPPER, "block/hive_copper");
+		createBlockItemModel(DreamlandItems.HIVE_GOLD, "block/hive_gold");
+		createBlockItemModel(DreamlandItems.HIVE_REDSTONE, "block/hive_redstone");
+		createBlockItemModel(DreamlandItems.HIVE_LAPIS, "block/hive_lapis");
+		createBlockItemModel(DreamlandItems.HIVE_DIAMOND, "block/hive_diamond");
 		
 		singleTexture(DreamlandItems.HIVE_JELLY_ITEM.get().getRegistryName().getPath(), new ResourceLocation("item/handheld"),
 				"layer0", new ResourceLocation(Dreamland.MODID, "item/jelly"));

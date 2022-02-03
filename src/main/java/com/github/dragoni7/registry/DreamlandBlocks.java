@@ -101,6 +101,23 @@ public class DreamlandBlocks {
 					.sound(SoundType.SLIME_BLOCK)
 					));
 	
+	public static final RegistryObject<Block> HIVE_IRON = createHiveOre("hive_iron");
+	public static final RegistryObject<Block> HIVE_GOLD = createHiveOre("hive_gold");
+	public static final RegistryObject<Block> HIVE_REDSTONE = createHiveOre("hive_redstone");
+	public static final RegistryObject<Block> HIVE_DIAMOND = createHiveOre("hive_diamond");
+	public static final RegistryObject<Block> HIVE_COPPER = createHiveOre("hive_copper");
+	public static final RegistryObject<Block> HIVE_LAPIS = createHiveOre("hive_lapis");
+	
+	private static RegistryObject<Block> createHiveOre(String name) {
+		return BLOCKS.register(name, 
+				() -> new BaseBlock(BlockBehaviour.Properties
+						.of(Material.STONE)
+						.strength(3.0F,3.0F)
+						.sound(SoundType.NETHERRACK)
+						.requiresCorrectToolForDrops()
+						));
+	}
+	
 	private static boolean always(BlockState state, BlockGetter getter, BlockPos pos) {
 	      return true;
 	   }
