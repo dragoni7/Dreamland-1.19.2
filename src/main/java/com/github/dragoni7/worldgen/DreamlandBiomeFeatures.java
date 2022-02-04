@@ -19,7 +19,8 @@ public class DreamlandBiomeFeatures {
 		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, FeaturePlacements.HIVE_DIAMOND_LARGE);
 	}
 	
-	public static void addCaveSlime(BiomeGenerationSettings.Builder builder) {
+	public static void hiveBiomeFeatures(BiomeGenerationSettings.Builder builder) {
 		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, FeaturePlacements.PLACED_CAVE_SLIME);
+		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, FeaturePlacements.PLACED_HIVE_SLUDGE);
 	}
 }

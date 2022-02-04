@@ -56,6 +56,18 @@ public class DreamlandFeatures {
 							BlockPredicate.ONLY_IN_AIR_PREDICATE, 
 							true)));
 	
+	public static final ConfiguredFeature<BlockColumnConfiguration, ?> HIVE_SLUDGE = FeatureUtils.register("hive_sludge", 
+			Feature.BLOCK_COLUMN.configured(
+					new BlockColumnConfiguration(
+							List.of(BlockColumnConfiguration.layer(
+											ConstantInt.of(2), 
+											BlockStateProvider.simple(
+													DreamlandBlocks.HIVE_SLUDGE.get()))),
+							Direction.UP,
+							BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE, 
+							true)));
+	
+	
 	public static final ConfiguredFeature<?, ?> HIVE_IRON = FeatureUtils.register("hive_iron", Feature.ORE.configured(new OreConfiguration(HIVE_IRON_TARGET_LIST, 9)));
 	public static final ConfiguredFeature<?, ?> HIVE_GOLD = FeatureUtils.register("hive_gold", Feature.ORE.configured(new OreConfiguration(HIVE_GOLD_TARGET_LIST, 4, 0.5F)));
 	public static final ConfiguredFeature<?, ?> HIVE_REDSTONE = FeatureUtils.register("hive_redstone", Feature.ORE.configured(new OreConfiguration(HIVE_REDSTONE_TARGET_LIST, 8)));
@@ -65,16 +77,20 @@ public class DreamlandFeatures {
 	public static final ConfiguredFeature<?, ?> HIVE_DIAMOND = FeatureUtils.register("hive_diamond", Feature.ORE.configured(new OreConfiguration(HIVE_DIAMOND_TARGET_LIST, 4, 0.5F)));
 	public static final ConfiguredFeature<?, ?> HIVE_DIAMOND_LARGE = FeatureUtils.register("hive_diamond_large", Feature.ORE.configured(new OreConfiguration(HIVE_DIAMOND_TARGET_LIST, 12, 0.7F)));
 	
+	private static void registerConfiguredFeature(String path, ConfiguredFeature<?,?> feature) {
+		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new ResourceLocation(Dreamland.MODID, path), feature);
+	}
 	public static void init() {
-		 
-		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new ResourceLocation(Dreamland.MODID, "cave_slime"), CAVE_SLIME);
-		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new ResourceLocation(Dreamland.MODID, "hive_iron"), HIVE_IRON);
-		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new ResourceLocation(Dreamland.MODID, "hive_copper"), HIVE_COPPER);
-		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new ResourceLocation(Dreamland.MODID, "hive_copper_large"), HIVE_COPPER_LARGE);
-		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new ResourceLocation(Dreamland.MODID, "hive_redstone"), HIVE_REDSTONE);
-		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new ResourceLocation(Dreamland.MODID, "hive_gold"), HIVE_GOLD);
-		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new ResourceLocation(Dreamland.MODID, "hive_lapis"), HIVE_LAPIS);
-		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new ResourceLocation(Dreamland.MODID, "hive_diamond"), HIVE_DIAMOND);
-		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new ResourceLocation(Dreamland.MODID, "hive_diamond_large"), HIVE_DIAMOND_LARGE);
+		registerConfiguredFeature("cave_slime", CAVE_SLIME);
+		registerConfiguredFeature("hive_sludge", HIVE_SLUDGE);
+		
+		registerConfiguredFeature("hive_iron", HIVE_IRON);
+		registerConfiguredFeature("hive_copper", HIVE_COPPER);
+		registerConfiguredFeature("hive_copper_large", HIVE_COPPER_LARGE);
+		registerConfiguredFeature("hive_redstone", HIVE_REDSTONE);
+		registerConfiguredFeature("hive_gold", HIVE_GOLD);
+		registerConfiguredFeature("hive_lapis", HIVE_LAPIS);
+		registerConfiguredFeature("hive_diamond", HIVE_DIAMOND);
+		registerConfiguredFeature("hive_diamond_large", HIVE_DIAMOND_LARGE);
 	 }
 }

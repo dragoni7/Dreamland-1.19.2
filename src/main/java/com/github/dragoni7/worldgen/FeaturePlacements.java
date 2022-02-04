@@ -23,6 +23,8 @@ import net.minecraft.world.level.levelgen.placement.RarityFilter;
 public class FeaturePlacements {
 	
 	public static final PlacedFeature PLACED_CAVE_SLIME = PlacementUtils.register("placed_cave_slime", DreamlandFeatures.CAVE_SLIME.placed(CountPlacement.of(UniformInt.of(0, 188)), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.top()), EnvironmentScanPlacement.scanningFor(Direction.UP, BlockPredicate.hasSturdyFace(Direction.DOWN), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(-1)), BiomeFilter.biome()));
+	public static final PlacedFeature PLACED_HIVE_SLUDGE = PlacementUtils.register("placed_hive_sludge", DreamlandFeatures.HIVE_SLUDGE.placed(CountPlacement.of(UniformInt.of(48, 96)), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.top()), BiomeFilter.biome()));
+	
 	public static final PlacedFeature HIVE_IRON_UPPER = PlacementUtils.register("hive_iron_upper", DreamlandFeatures.HIVE_IRON.placed(commonOrePlacement(90, HeightRangePlacement.triangle(VerticalAnchor.absolute(80), VerticalAnchor.absolute(384)))));
 	public static final PlacedFeature HIVE_IRON_MIDDLE = PlacementUtils.register("hive_iron_middle", DreamlandFeatures.HIVE_IRON.placed(commonOrePlacement(10, HeightRangePlacement.triangle(VerticalAnchor.absolute(-24), VerticalAnchor.absolute(56)))));
 	public static final PlacedFeature HIVE_ORE_GOLD = PlacementUtils.register("hive_gold", DreamlandFeatures.HIVE_GOLD.placed(commonOrePlacement(4, HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(32)))));

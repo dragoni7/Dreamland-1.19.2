@@ -57,7 +57,7 @@ public class DreamlandOverworldBiomes {
         BiomeDefaultFeatures.addDesertVegetation(biomeBuilder);
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
         DreamlandBiomeFeatures.addHiveOres(biomeBuilder);
-        DreamlandBiomeFeatures.addCaveSlime(biomeBuilder);
+        DreamlandBiomeFeatures.hiveBiomeFeatures(biomeBuilder);
         return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.PLAINS, 2.0F, 0.0F, spawnBuilder, biomeBuilder, NORMAL_MUSIC);
     }
     

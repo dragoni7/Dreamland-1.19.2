@@ -34,23 +34,19 @@ public class DreamlandBiomeProvider extends BiomeProvider
     	
         this.addModifiedVanillaOverworldBiomes(mapper, builder -> {
         	
-			/*
-			 * List<Climate.ParameterPoint> frozenPeaksPoints = new
-			 * ParameterPointListBuilder() .temperature(Temperature.ICY, Temperature.COOL,
-			 * Temperature.NEUTRAL) .humidity(Humidity.ARID, Humidity.DRY, Humidity.NEUTRAL,
-			 * Humidity.WET, Humidity.HUMID)
-			 * .continentalness(Continentalness.span(Continentalness.COAST,
-			 * Continentalness.FAR_INLAND), Continentalness.span(Continentalness.MID_INLAND,
-			 * Continentalness.FAR_INLAND)) .erosion(Erosion.EROSION_0, Erosion.EROSION_1)
-			 * .depth(Depth.SURFACE) .weirdness(Weirdness.HIGH_SLICE_VARIANT_ASCENDING,
-			 * Weirdness.HIGH_SLICE_VARIANT_DESCENDING) .buildVanilla();
-			 * 
-			 * frozenPeaksPoints.forEach(point -> builder.replaceBiome(point,
-			 * BiomeKeys.COLD_BLUE));
-			 */
-        	
-            //builder.replaceBiome(Biomes.PLAINS, BiomeKeys.HIVE);
-            builder.replaceBiome(Biomes.DRIPSTONE_CAVES, BiomeKeys.COLD_BLUE);            
+			
+			  List<Climate.ParameterPoint> frozenPeaksPoints = new
+			  ParameterPointListBuilder() .temperature(Temperature.ICY, Temperature.COOL,
+			  Temperature.NEUTRAL) .humidity(Humidity.ARID, Humidity.DRY, Humidity.NEUTRAL,
+			  Humidity.WET, Humidity.HUMID)
+			  .continentalness(Continentalness.span(Continentalness.COAST,
+			  Continentalness.FAR_INLAND), Continentalness.span(Continentalness.MID_INLAND,
+			  Continentalness.FAR_INLAND)) .erosion(Erosion.EROSION_0, Erosion.EROSION_1)
+			  .depth(Depth.UNDERGROUND) .weirdness(Weirdness.HIGH_SLICE_VARIANT_ASCENDING,
+			  Weirdness.HIGH_SLICE_VARIANT_DESCENDING) .buildVanilla();
+			  
+			  frozenPeaksPoints.forEach(point -> builder.replaceBiome(point,
+			  BiomeKeys.COLD_BLUE));
         });
     }
 
