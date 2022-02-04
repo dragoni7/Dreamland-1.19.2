@@ -30,6 +30,7 @@ public class DreamlandBiomeProvider extends BiomeProvider
     public void addOverworldBiomes(Registry<Biome> registry, Consumer<Pair<TBClimate.ParameterPoint, ResourceKey<Biome>>> mapper)
     {
     	
+    	this.addBiomeSimilar(mapper, Biomes.DRIPSTONE_CAVES, BiomeKeys.HIVE);
     	
         this.addModifiedVanillaOverworldBiomes(mapper, builder -> {
         	
@@ -47,10 +48,9 @@ public class DreamlandBiomeProvider extends BiomeProvider
 			 * frozenPeaksPoints.forEach(point -> builder.replaceBiome(point,
 			 * BiomeKeys.COLD_BLUE));
 			 */
-
-            builder.replaceBiome(Biomes.PLAINS, BiomeKeys.HIVE);
-            builder.replaceBiome(Biomes.DRIPSTONE_CAVES, BiomeKeys.COLD_BLUE);
-            
+        	
+            //builder.replaceBiome(Biomes.PLAINS, BiomeKeys.HIVE);
+            builder.replaceBiome(Biomes.DRIPSTONE_CAVES, BiomeKeys.COLD_BLUE);            
         });
     }
 
