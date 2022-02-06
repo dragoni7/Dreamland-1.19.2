@@ -38,6 +38,7 @@ public class ItemModels extends ItemModelProvider{
 		createBlockItemModel(DreamlandItems.HIVE_REDSTONE, "block/hive_redstone");
 		createBlockItemModel(DreamlandItems.HIVE_LAPIS, "block/hive_lapis");
 		createBlockItemModel(DreamlandItems.HIVE_DIAMOND, "block/hive_diamond");
+		createBlockItemModel(DreamlandItems.WHITE_MOLD, "block/white_mold");
 		
 		singleTexture(DreamlandItems.HIVE_JELLY_ITEM.get().getRegistryName().getPath(), new ResourceLocation("item/handheld"),
 				"layer0", new ResourceLocation(Dreamland.MODID, "item/jelly"));

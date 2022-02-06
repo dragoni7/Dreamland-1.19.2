@@ -35,6 +35,7 @@ public class ClientModEventSubscriber {
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.DUSK_ICE.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.CAVE_SLIME.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.CAVE_SLIME_PLANT.get(), RenderType.translucent());	
+			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.WHITE_MOLD.get(), RenderType.cutout());
 		});
 		
 	}

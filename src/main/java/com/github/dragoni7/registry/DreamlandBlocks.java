@@ -7,8 +7,10 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CarpetBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -100,6 +102,13 @@ public class DreamlandBlocks {
 					.strength(2.0F, 6.0F)
 					.sound(SoundType.SLIME_BLOCK)
 					.lightLevel(EmissiveBlock.emission(5))
+					));
+	
+	public static final RegistryObject<Block> WHITE_MOLD = BLOCKS.register("white_mold",
+			() -> new CarpetBlock(BlockBehaviour.Properties
+					.of(Material.PLANT, MaterialColor.COLOR_LIGHT_GRAY)
+					.strength(0.1F)
+					.sound(SoundType.MOSS_CARPET)
 					));
 	
 	public static final RegistryObject<Block> HIVE_IRON = createHiveOre("hive_iron");

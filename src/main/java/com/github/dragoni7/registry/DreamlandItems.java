@@ -33,8 +33,6 @@ public class DreamlandItems {
 	
 	public static final RegistryObject<Item> CAVE_SLIME = registerBlockItem("cave_slime", DreamlandBlocks.CAVE_SLIME);
 	
-	//public static final RegistryObject<Item> CAVE_SLIME_PLANT = ITEMS.register("cave_slime_plant", () -> new BaseBlockItem(DreamlandBlocks.CAVE_SLIME_PLANT.get(), new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
-	
 	public static final RegistryObject<Item> TOXIC_ROCK = registerBlockItem("toxic_rock", DreamlandBlocks.TOXIC_ROCK);
 	
 	public static final RegistryObject<Item> HIVE_BLOCK = registerBlockItem("hive_block", DreamlandBlocks.HIVE_BLOCK);
@@ -42,6 +40,8 @@ public class DreamlandItems {
 	public static final RegistryObject<Item> MITE_JELLY = registerBlockItem("mite_jelly", DreamlandBlocks.HIVE_JELLY);
 	
 	public static final RegistryObject<Item> HIVE_SLUDGE = registerBlockItem("hive_sludge", DreamlandBlocks.HIVE_SLUDGE);
+	
+	public static final RegistryObject<Item> WHITE_MOLD = registerBlockItem("white_mold", DreamlandBlocks.WHITE_MOLD);
 	
 	public static final RegistryObject<Item> HIVE_IRON = registerBlockItem("hive_iron", DreamlandBlocks.HIVE_IRON);
 	public static final RegistryObject<Item> HIVE_GOLD = registerBlockItem("hive_gold", DreamlandBlocks.HIVE_GOLD);
