@@ -73,6 +73,7 @@ public class DreamlandBlocks {
 					.strength(2.0F,6.0F)
 					.sound(SoundType.HONEY_BLOCK)
 					.noCollission()
+					.lightLevel(CaveSlimePlant.emission(5))
 					));
 	
 	public static final RegistryObject<Block> CAVE_SLIME_PLANT = BLOCKS.register("cave_slime_plant", 
@@ -81,24 +82,24 @@ public class DreamlandBlocks {
 					.strength(2.0F,6.0F)
 					.sound(SoundType.HONEY_BLOCK)
 					.noCollission()
+					.lightLevel(CaveSlimePlant.emission(5))
 					));
 	
-	public static final RegistryObject<Block> MITE_JELLY = BLOCKS.register("mite_jelly",
-			() -> new BaseBlock(BlockBehaviour.Properties
+	public static final RegistryObject<Block> HIVE_JELLY = BLOCKS.register("hive_jelly",
+			() -> new EmissiveBlock(BlockBehaviour.Properties
 					.of(Material.SPONGE)
 					.strength(2.0F,6.0F)
 					.sound(SoundType.SLIME_BLOCK)
 					.noOcclusion()
-					.hasPostProcess(DreamlandBlocks::always)
-					.emissiveRendering(DreamlandBlocks::always)
-					.lightLevel((p_152684_) -> {return 1;})
+					.lightLevel(EmissiveBlock.emission(7))
 					));
 	
 	public static final RegistryObject<Block> HIVE_SLUDGE = BLOCKS.register("hive_sludge",
-			() -> new BaseBlock(BlockBehaviour.Properties
+			() -> new EmissiveBlock(BlockBehaviour.Properties
 					.of(Material.SPONGE)
 					.strength(2.0F, 6.0F)
 					.sound(SoundType.SLIME_BLOCK)
+					.lightLevel(EmissiveBlock.emission(5))
 					));
 	
 	public static final RegistryObject<Block> HIVE_IRON = createHiveOre("hive_iron");
@@ -109,7 +110,7 @@ public class DreamlandBlocks {
 	public static final RegistryObject<Block> HIVE_LAPIS = createHiveOre("hive_lapis");
 	
 	private static RegistryObject<Block> createHiveOre(String name) {
-		return BLOCKS.register(name, 
+		return BLOCKS.register(name,
 				() -> new BaseBlock(BlockBehaviour.Properties
 						.of(Material.STONE)
 						.strength(3.0F,3.0F)

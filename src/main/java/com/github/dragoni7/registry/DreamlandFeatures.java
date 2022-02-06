@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.github.dragoni7.Dreamland;
 import com.github.dragoni7.util.CustomTags;
+import com.google.common.collect.ImmutableList;
 
 import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
@@ -20,8 +21,13 @@ import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.BlockColumnConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.BlockPileConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.PointedDripstoneConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.SimpleRandomFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.placement.EnvironmentScanPlacement;
+import net.minecraft.world.level.levelgen.placement.RandomOffsetPlacement;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 
@@ -57,17 +63,8 @@ public class DreamlandFeatures {
 							true)));
 	
 	public static final ConfiguredFeature<BlockColumnConfiguration, ?> HIVE_SLUDGE = FeatureUtils.register("hive_sludge", 
-			Feature.BLOCK_COLUMN.configured(
-					new BlockColumnConfiguration(
-							List.of(BlockColumnConfiguration.layer(
-											ConstantInt.of(2), 
-											BlockStateProvider.simple(
-													DreamlandBlocks.HIVE_SLUDGE.get()))),
-							Direction.UP,
-							BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE, 
-							true)));
-	
-	
+			Feature.BLOCK_COLUMN.configured(BlockColumnConfiguration.simple(UniformInt.of(2, 4), BlockStateProvider.simple(DreamlandBlocks.HIVE_SLUDGE.get()))));
+
 	public static final ConfiguredFeature<?, ?> HIVE_IRON = FeatureUtils.register("hive_iron", Feature.ORE.configured(new OreConfiguration(HIVE_IRON_TARGET_LIST, 9)));
 	public static final ConfiguredFeature<?, ?> HIVE_GOLD = FeatureUtils.register("hive_gold", Feature.ORE.configured(new OreConfiguration(HIVE_GOLD_TARGET_LIST, 4, 0.5F)));
 	public static final ConfiguredFeature<?, ?> HIVE_REDSTONE = FeatureUtils.register("hive_redstone", Feature.ORE.configured(new OreConfiguration(HIVE_REDSTONE_TARGET_LIST, 8)));

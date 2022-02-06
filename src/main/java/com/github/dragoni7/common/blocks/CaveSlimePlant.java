@@ -1,5 +1,7 @@
 package com.github.dragoni7.common.blocks;
 
+import java.util.function.ToIntFunction;
+
 import com.github.dragoni7.registry.DreamlandBlocks;
 
 import net.minecraft.core.Direction;
@@ -7,6 +9,7 @@ import net.minecraft.world.level.block.CaveVines;
 import net.minecraft.world.level.block.GrowingPlantBodyBlock;
 import net.minecraft.world.level.block.GrowingPlantHeadBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 
 public class CaveSlimePlant extends GrowingPlantBodyBlock implements CaveVines{
 
@@ -18,5 +21,11 @@ public class CaveSlimePlant extends GrowingPlantBodyBlock implements CaveVines{
 	protected GrowingPlantHeadBlock getHeadBlock() {
 		return (GrowingPlantHeadBlock)DreamlandBlocks.CAVE_SLIME.get();
 	}
+	
+	public static ToIntFunction<BlockState> emission(int p_181223_) {
+	      return (p_181221_) -> {
+	         return p_181223_;
+	      };
+	   }
 
 }

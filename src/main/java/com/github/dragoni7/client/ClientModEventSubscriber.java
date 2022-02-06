@@ -30,7 +30,7 @@ public class ClientModEventSubscriber {
 		event.enqueueWork(()-> {
 			
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.BUMBLE_BLOCK.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.MITE_JELLY.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.HIVE_JELLY.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.CLAY_SOIL_GRASS.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.DUSK_ICE.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.CAVE_SLIME.get(), RenderType.translucent());

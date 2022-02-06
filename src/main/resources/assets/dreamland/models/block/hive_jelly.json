@@ -1,9 +1,9 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "dreamland:block/mite_jelly_overlay",
-		"3": "dreamland:block/mite_jelly",
-		"particle": "dreamland:block/mite_jelly"
+		"1": "dreamland:block/hive_jelly_overlay",
+		"3": "dreamland:block/hive_jelly",
+		"particle": "dreamland:block/hive_jelly"
 	},
 	"elements": [
 		{
@@ -67,7 +67,7 @@
 	},
 	"groups": [
 		{
-			"name": "mite_jelly",
+			"name": "hive_jelly",
 			"origin": [0, 5, 0],
 			"color": 0,
 			"children": [0, 1]

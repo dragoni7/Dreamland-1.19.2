@@ -1,6 +1,7 @@
 package com.github.dragoni7.common.blocks;
 
 import java.util.Random;
+import java.util.function.ToIntFunction;
 
 import com.github.dragoni7.registry.DreamlandBlocks;
 
@@ -31,5 +32,11 @@ public class CaveSlime extends GrowingPlantHeadBlock implements CaveVines{
 	protected Block getBodyBlock() {
 		return DreamlandBlocks.CAVE_SLIME_PLANT.get();
 	}
+	
+	public static ToIntFunction<BlockState> emission(int p_181223_) {
+	      return (p_181221_) -> {
+	         return p_181223_;
+	      };
+	   }
 
 }
