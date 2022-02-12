@@ -1,7 +1,5 @@
 package com.github.dragoni7.datagen;
 
-import java.util.List;
-
 import com.github.dragoni7.Dreamland;
 import com.github.dragoni7.registry.DreamlandItems;
 

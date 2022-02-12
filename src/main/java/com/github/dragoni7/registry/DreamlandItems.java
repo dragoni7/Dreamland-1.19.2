@@ -15,7 +15,7 @@ public class DreamlandItems {
 	
 	
 	//Block Items
-	public static final RegistryObject<Item> BUMBLE_BLOCK = registerBlockItem("bumble_block", DreamlandBlocks.BUMBLE_BLOCK);
+	//public static final RegistryObject<Item> BUMBLE_BLOCK = registerBlockItem("bumble_block", DreamlandBlocks.BUMBLE_BLOCK);
 	
 	public static final RegistryObject<Item> DARK_QUARTZITE = registerBlockItem("dark_quartzite", DreamlandBlocks.DARK_QUARTZITE);
 	

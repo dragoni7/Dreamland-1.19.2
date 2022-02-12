@@ -132,6 +132,8 @@ repositories {
     // flatDir {
     //     dir 'libs'
     // }
+    
+    maven { url "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/" }
 }
 
 dependencies {
@@ -141,6 +143,7 @@ dependencies {
    minecraft "net.minecraftforge:forge:${project.minecraft}-${project.forge}"
 
    implementation fg.deobf('com.github.glitchfiend:TerraBlender-forge:1.18.1-1.1.0.73')
+   implementation fg.deobf('software.bernie.geckolib:geckolib-1.18-forge:3.0.11')
 
     // Real mod deobf dependency examples - these get remapped to your current mappings
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency

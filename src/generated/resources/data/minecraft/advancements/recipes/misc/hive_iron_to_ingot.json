@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:hive_iron_to_ingot"
+    ]
+  },
+  "criteria": {
+    "has_ore": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dreamland:hive_iron"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:hive_iron_to_ingot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_ore",
+      "has_the_recipe"
+    ]
+  ]
+}

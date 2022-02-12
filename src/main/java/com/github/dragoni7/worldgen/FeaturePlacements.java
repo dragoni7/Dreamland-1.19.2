@@ -2,6 +2,7 @@ package com.github.dragoni7.worldgen;
 
 import java.util.List;
 
+import com.github.dragoni7.registry.DreamlandBlocks;
 import com.github.dragoni7.registry.DreamlandFeatures;
 
 import net.minecraft.core.Direction;
@@ -9,6 +10,8 @@ import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.util.valueproviders.ClampedNormalInt;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.placement.BiomeFilter;
@@ -26,7 +29,7 @@ public class FeaturePlacements {
 	public static final PlacedFeature PLACED_CAVE_SLIME = PlacementUtils.register("placed_cave_slime", DreamlandFeatures.CAVE_SLIME.placed(CountPlacement.of(UniformInt.of(0, 188)), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.top()), EnvironmentScanPlacement.scanningFor(Direction.UP, BlockPredicate.hasSturdyFace(Direction.DOWN), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(-1)), BiomeFilter.biome()));
 	public static final PlacedFeature PLACED_HIVE_SLUDGE = PlacementUtils.register("placed_hive_sludge", DreamlandFeatures.HIVE_SLUDGE.placed(CountPlacement.of(UniformInt.of(0, 188)), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.top()), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome()));
 	public static final PlacedFeature PLACED_HIVE_JELLY = PlacementUtils.register("placed_hive_jelly", DreamlandFeatures.HIVE_JELLY.placed(CountPlacement.of(UniformInt.of(0, 47)), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.top()), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome()));
-	public static final PlacedFeature PlACED_WHITE_MOLD = PlacementUtils.register("placed_white_mold", DreamlandFeatures.WHITE_MOLD.placed(CountPlacement.of(125), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.top()), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome()));
+	public static final PlacedFeature PlACED_WHITE_MOLD = PlacementUtils.register("placed_white_mold", DreamlandFeatures.MOLD_PATCH.placed(CountPlacement.of(94), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.top()), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome()));
 	
 	public static final PlacedFeature HIVE_IRON_UPPER = PlacementUtils.register("hive_iron_upper", DreamlandFeatures.HIVE_IRON.placed(commonOrePlacement(90, HeightRangePlacement.triangle(VerticalAnchor.absolute(80), VerticalAnchor.absolute(384)))));
 	public static final PlacedFeature HIVE_IRON_MIDDLE = PlacementUtils.register("hive_iron_middle", DreamlandFeatures.HIVE_IRON.placed(commonOrePlacement(10, HeightRangePlacement.triangle(VerticalAnchor.absolute(-24), VerticalAnchor.absolute(56)))));

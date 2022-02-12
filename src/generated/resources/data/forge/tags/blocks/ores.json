@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "dreamland:hive_copper",
+    "dreamland:hive_iron",
+    "dreamland:hive_gold",
+    "dreamland:hive_redstone",
+    "dreamland:hive_lapis",
+    "dreamland:hive_diamond"
+  ]
+}

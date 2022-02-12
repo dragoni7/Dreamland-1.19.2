@@ -7,6 +7,8 @@ import com.github.dragoni7.registry.DreamlandFeatures;
 import com.github.dragoni7.registry.DreamlandItems;
 import com.github.dragoni7.worldgen.DreamlandBiomeProvider;
 
+import terrablender.api.BiomeProviders;
+
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -16,7 +18,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
-import terrablender.api.BiomeProviders;
+import software.bernie.geckolib3.GeckoLib;
 import net.minecraftforge.api.distmarker.Dist;
 
 @Mod(Dreamland.MODID)
@@ -29,6 +31,8 @@ public class Dreamland
 
         IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
         IEventBus forgeBus = MinecraftForge.EVENT_BUS;
+        
+        GeckoLib.initialize();
         
         forgeBus.register(this);
         DreamlandBlocks.BLOCKS.register(modBus);

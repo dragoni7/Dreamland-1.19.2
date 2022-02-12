@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "dreamland:hive_lapis"
+  },
+  "result": "minecraft:lapis_lazuli",
+  "experience": 1.0,
+  "cookingtime": 100
+}
