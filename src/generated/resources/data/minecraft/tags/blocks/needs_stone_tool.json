@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "dreamland:hive_block",
+    "dreamland:hive_jelly",
+    "dreamland:hive_copper",
+    "dreamland:hive_iron",
+    "dreamland:hive_lapis"
+  ]
+}

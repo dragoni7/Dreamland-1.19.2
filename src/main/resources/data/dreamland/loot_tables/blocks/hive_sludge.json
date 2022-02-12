@@ -2,13 +2,13 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "name": "hive_block",
+      "name": "hive_sludge",
       "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "dreamland:hive_block"
+          "name": "dreamland:hive_sludge"
         }
       ]
     }

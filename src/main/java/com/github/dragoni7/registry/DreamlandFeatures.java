@@ -78,7 +78,7 @@ public class DreamlandFeatures {
 	
 	public static final ConfiguredFeature<VegetationPatchConfiguration, ?> MOLD_PATCH = FeatureUtils.register("mold_patch", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(DreamlandCustomTags.HIVE_ORES_REPLACEABLE.getName(), BlockStateProvider.simple(DreamlandBlocks.HIVE_BLOCK.get()), () -> {
 	      return WHITE_MOLD.placed();
-	   }, CaveSurface.FLOOR, ConstantInt.of(1), 0.0F, 5, 0.8F, UniformInt.of(3, 5), 0.3F)));
+	   }, CaveSurface.FLOOR, ConstantInt.of(1), 0.0F, 5, 0.8F, UniformInt.of(1, 5), 0.3F)));
 	
 	public static final ConfiguredFeature<?, ?> HIVE_IRON = FeatureUtils.register("hive_iron", Feature.ORE.configured(new OreConfiguration(HIVE_IRON_TARGET_LIST, 9)));
 	public static final ConfiguredFeature<?, ?> HIVE_GOLD = FeatureUtils.register("hive_gold", Feature.ORE.configured(new OreConfiguration(HIVE_GOLD_TARGET_LIST, 4, 0.5F)));

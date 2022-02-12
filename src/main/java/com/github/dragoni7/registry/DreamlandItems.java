@@ -15,7 +15,7 @@ public class DreamlandItems {
 	
 	
 	//Block Items
-	//public static final RegistryObject<Item> BUMBLE_BLOCK = registerBlockItem("bumble_block", DreamlandBlocks.BUMBLE_BLOCK);
+	public static final RegistryObject<Item> BUMBLE_BLOCK = registerBlockItem("bumble_block", DreamlandBlocks.BUMBLE_BLOCK);
 	
 	public static final RegistryObject<Item> DARK_QUARTZITE = registerBlockItem("dark_quartzite", DreamlandBlocks.DARK_QUARTZITE);
 	
@@ -37,7 +37,7 @@ public class DreamlandItems {
 	
 	public static final RegistryObject<Item> HIVE_BLOCK = registerBlockItem("hive_block", DreamlandBlocks.HIVE_BLOCK);
 	
-	public static final RegistryObject<Item> MITE_JELLY = registerBlockItem("mite_jelly", DreamlandBlocks.HIVE_JELLY);
+	public static final RegistryObject<Item> HIVE_JELLY = registerBlockItem("hive_jelly", DreamlandBlocks.HIVE_JELLY);
 	
 	public static final RegistryObject<Item> HIVE_SLUDGE = registerBlockItem("hive_sludge", DreamlandBlocks.HIVE_SLUDGE);
 	

@@ -31,13 +31,18 @@ public class DreamlandBlockTags extends BlockTagsProvider{
 		.add(DreamlandBlocks.DUSK_ICE.get());
 		
 		tag(BlockTags.MINEABLE_WITH_SHOVEL)
-		.add(DreamlandBlocks.CLAY_SOIL.get());
+		.add(DreamlandBlocks.CLAY_SOIL.get())
+		.add(DreamlandBlocks.HIVE_JELLY.get());
 		
 		tag(BlockTags.MINEABLE_WITH_PICKAXE)
 		.add(DreamlandBlocks.DARK_QUARTZITE.get())
 		.add(DreamlandBlocks.HIVE_BLOCK.get())
 		.add(DreamlandBlocks.POROUS_STONE.get())
 		.add(DreamlandBlocks.ROOTED_POROUS_STONE.get());
+		
+		tag(BlockTags.NEEDS_STONE_TOOL)
+		.add(DreamlandBlocks.HIVE_BLOCK.get())
+		.add(DreamlandBlocks.HIVE_JELLY.get());
 	
 		tag(DreamlandCustomTags.HIVE_ORES_REPLACEABLE)
 		.add(DreamlandBlocks.HIVE_BLOCK.get());
@@ -58,6 +63,7 @@ public class DreamlandBlockTags extends BlockTagsProvider{
 		tag(Tags.Blocks.ORES_COPPER).add(block);
 		
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
+		tag(BlockTags.NEEDS_STONE_TOOL).add(block);
 	}
 	
 	private void addIronOreTags(Block block) {
@@ -66,6 +72,7 @@ public class DreamlandBlockTags extends BlockTagsProvider{
 		tag(Tags.Blocks.ORES_IRON).add(block);
 		
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
+		tag(BlockTags.NEEDS_STONE_TOOL).add(block);
 	}
 	
 	private void addGoldOreTags(Block block) {
@@ -74,6 +81,7 @@ public class DreamlandBlockTags extends BlockTagsProvider{
 		tag(Tags.Blocks.ORES_GOLD).add(block);
 		
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
+		tag(BlockTags.NEEDS_IRON_TOOL).add(block);
 	}
 	
 	private void addRedstoneOreTags(Block block) {
@@ -82,6 +90,7 @@ public class DreamlandBlockTags extends BlockTagsProvider{
 		tag(Tags.Blocks.ORES_REDSTONE).add(block);
 		
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
+		tag(BlockTags.NEEDS_IRON_TOOL).add(block);
 	}
 	
 	private void addLapisOreTags(Block block) {
@@ -90,6 +99,7 @@ public class DreamlandBlockTags extends BlockTagsProvider{
 		tag(Tags.Blocks.ORES_LAPIS).add(block);
 		
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
+		tag(BlockTags.NEEDS_STONE_TOOL).add(block);
 	}
 	
 	private void addDiamondOreTags(Block block) {
@@ -98,6 +108,7 @@ public class DreamlandBlockTags extends BlockTagsProvider{
 		tag(Tags.Blocks.ORES_DIAMOND).add(block);
 		
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
+		tag(BlockTags.NEEDS_IRON_TOOL).add(block);
 	}
 	
 	@Override

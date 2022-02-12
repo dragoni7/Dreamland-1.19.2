@@ -2,7 +2,8 @@ package com.github.dragoni7.worldgen;
 
 import javax.annotation.Nullable;
 
-
+import net.minecraft.core.particles.ParticleType;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.sounds.Music;
 import net.minecraft.util.Mth;
@@ -26,10 +27,15 @@ public class DreamlandOverworldBiomes {
     {
         return biome(precipitation, category, temperature, downfall, 4159204, 329011, spawnBuilder, biomeBuilder, music);
     }
-
+    
     private static Biome biome(Biome.Precipitation precipitation, Biome.BiomeCategory category, float temperature, float downfall, int waterColor, int waterFogColor, MobSpawnSettings.Builder spawnBuilder, BiomeGenerationSettings.Builder biomeBuilder, @Nullable Music music)
     {
-        return (new Biome.BiomeBuilder()).precipitation(precipitation).biomeCategory(category).temperature(temperature).downfall(downfall).specialEffects((new BiomeSpecialEffects.Builder()).waterColor(waterColor).waterFogColor(waterFogColor).fogColor(12638463).skyColor(calculateSkyColor(temperature)).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).backgroundMusic(music).build()).mobSpawnSettings(spawnBuilder.build()).generationSettings(biomeBuilder.build()).build();
+        return (new Biome.BiomeBuilder()).precipitation(precipitation).biomeCategory(category).temperature(temperature).downfall(downfall).specialEffects(new BiomeSpecialEffects.Builder().waterColor(waterColor).waterFogColor(waterFogColor).fogColor(12638463).skyColor(calculateSkyColor(temperature)).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).backgroundMusic(music).build()).mobSpawnSettings(spawnBuilder.build()).generationSettings(biomeBuilder.build()).build();
+    }
+
+    private static Biome biomeWithEffects(Biome.Precipitation precipitation, Biome.BiomeCategory category, float temperature, float downfall, BiomeSpecialEffects specialEffects, MobSpawnSettings.Builder spawnBuilder, BiomeGenerationSettings.Builder biomeBuilder, @Nullable Music music)
+    {
+        return (new Biome.BiomeBuilder()).precipitation(precipitation).biomeCategory(category).temperature(temperature).downfall(downfall).specialEffects(specialEffects).mobSpawnSettings(spawnBuilder.build()).generationSettings(biomeBuilder.build()).build();
     }
 
     private static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder)
@@ -43,9 +49,7 @@ public class DreamlandOverworldBiomes {
     }
 
     public static Biome hive()
-    {
-        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
-        BiomeDefaultFeatures.desertSpawns(spawnBuilder);
+    {	MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
         BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
         BiomeDefaultFeatures.addFossilDecoration(biomeBuilder);
@@ -56,9 +60,20 @@ public class DreamlandOverworldBiomes {
         BiomeDefaultFeatures.addDefaultGrass(biomeBuilder);
         BiomeDefaultFeatures.addDesertVegetation(biomeBuilder);
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+        BiomeDefaultFeatures.addInfestedStone(biomeBuilder);
         DreamlandBiomeFeatures.addHiveOres(biomeBuilder);
         DreamlandBiomeFeatures.hiveBiomeFeatures(biomeBuilder);
-        return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.PLAINS, 2.0F, 0.0F, spawnBuilder, biomeBuilder, NORMAL_MUSIC);
+        
+        return biomeWithEffects(Biome.Precipitation.NONE, Biome.BiomeCategory.UNDERGROUND, 2.0F, 0.0F, new BiomeSpecialEffects.Builder()
+        																										.waterColor(4159204)
+        																										.waterFogColor(329011)
+        																										.fogColor(12638463)
+        																										.skyColor(calculateSkyColor(2.0F))
+        																										.ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+        																										.backgroundMusic(NORMAL_MUSIC)
+        																										.ambientParticle(new AmbientParticleSettings(ParticleTypes.MYCELIUM, 0.05F))
+        																										.build(),
+        																										spawnBuilder, biomeBuilder, NORMAL_MUSIC);
     }
     
     public static Biome coldBlue()
