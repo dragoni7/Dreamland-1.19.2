@@ -90,7 +90,7 @@ public class DreamlandBlocks {
 	public static final RegistryObject<Block> HIVE_JELLY = BLOCKS.register("hive_jelly",
 			() -> new EmissiveBlock(BlockBehaviour.Properties
 					.of(Material.SPONGE)
-					.strength(2.0F,6.0F)
+					.strength(2.0F,2.0F)
 					.sound(SoundType.SLIME_BLOCK)
 					.noOcclusion()
 					.lightLevel(EmissiveBlock.emission(7))
@@ -105,7 +105,7 @@ public class DreamlandBlocks {
 					));
 	
 	public static final RegistryObject<Block> WHITE_MOLD = BLOCKS.register("white_mold",
-			() -> new CarpetBlock(BlockBehaviour.Properties
+			() -> new WhiteMold(BlockBehaviour.Properties
 					.of(Material.PLANT, MaterialColor.COLOR_LIGHT_GRAY)
 					.strength(0.1F)
 					.sound(SoundType.MOSS_CARPET)

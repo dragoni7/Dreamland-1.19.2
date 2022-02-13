@@ -24,6 +24,7 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.BlockColumnConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.BlockPileConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.BlockStateConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.PointedDripstoneConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
@@ -70,7 +71,10 @@ public class DreamlandFeatures {
 							true)));
 	
 	public static final ConfiguredFeature<BlockColumnConfiguration, ?> HIVE_SLUDGE = FeatureUtils.register("hive_sludge", 
-			Feature.BLOCK_COLUMN.configured(BlockColumnConfiguration.simple(UniformInt.of(2, 4), BlockStateProvider.simple(DreamlandBlocks.HIVE_SLUDGE.get()))));
+			Feature.BLOCK_COLUMN.configured(BlockColumnConfiguration.simple(UniformInt.of(1, 3), BlockStateProvider.simple(DreamlandBlocks.HIVE_SLUDGE.get()))));
+	
+	public static final ConfiguredFeature<BlockColumnConfiguration, ?> HIVE_PILLAR = FeatureUtils.register("hive_pillar", 
+			Feature.BLOCK_COLUMN.configured(BlockColumnConfiguration.simple(UniformInt.of(4, 10), BlockStateProvider.simple(DreamlandBlocks.HIVE_BLOCK.get()))));
 	
 	public static final ConfiguredFeature<SimpleBlockConfiguration,?> HIVE_JELLY = FeatureUtils.register("hive_jelly", Feature.SIMPLE_BLOCK.configured(new SimpleBlockConfiguration(BlockStateProvider.simple(DreamlandBlocks.HIVE_JELLY.get()))));
 
@@ -78,7 +82,15 @@ public class DreamlandFeatures {
 	
 	public static final ConfiguredFeature<VegetationPatchConfiguration, ?> MOLD_PATCH = FeatureUtils.register("mold_patch", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(DreamlandCustomTags.HIVE_ORES_REPLACEABLE.getName(), BlockStateProvider.simple(DreamlandBlocks.HIVE_BLOCK.get()), () -> {
 	      return WHITE_MOLD.placed();
-	   }, CaveSurface.FLOOR, ConstantInt.of(1), 0.0F, 5, 0.8F, UniformInt.of(1, 5), 0.3F)));
+	   }, CaveSurface.FLOOR, ConstantInt.of(1), 0.0F, 5, 0.5F, UniformInt.of(1, 3), 0.3F)));
+	
+	public static final ConfiguredFeature<VegetationPatchConfiguration, ?> HIVE_SLUDGE_PATCH = FeatureUtils.register("sludge_patch", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(DreamlandCustomTags.HIVE_ORES_REPLACEABLE.getName(), BlockStateProvider.simple(DreamlandBlocks.HIVE_BLOCK.get()), () -> {
+		return HIVE_SLUDGE.placed();
+	}, CaveSurface.FLOOR, ConstantInt.of(1), 0.0F, 5, 1.0F, ConstantInt.of(1), 0.3F)));
+	
+	public static final ConfiguredFeature<VegetationPatchConfiguration, ?> HIVE_PILLAR_PATCH = FeatureUtils.register("hive_pillar_patch", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(DreamlandCustomTags.HIVE_ORES_REPLACEABLE.getName(), BlockStateProvider.simple(DreamlandBlocks.HIVE_BLOCK.get()), () -> {
+		return HIVE_PILLAR.placed();
+	}, CaveSurface.FLOOR, ConstantInt.of(1), 0.0F, 6, 1.0F, ConstantInt.of(1), 0.3F)));
 	
 	public static final ConfiguredFeature<?, ?> HIVE_IRON = FeatureUtils.register("hive_iron", Feature.ORE.configured(new OreConfiguration(HIVE_IRON_TARGET_LIST, 9)));
 	public static final ConfiguredFeature<?, ?> HIVE_GOLD = FeatureUtils.register("hive_gold", Feature.ORE.configured(new OreConfiguration(HIVE_GOLD_TARGET_LIST, 4, 0.5F)));
@@ -95,9 +107,12 @@ public class DreamlandFeatures {
 	public static void init() {
 		registerConfiguredFeature("cave_slime", CAVE_SLIME);
 		registerConfiguredFeature("hive_sludge", HIVE_SLUDGE);
+		registerConfiguredFeature("hive_sludge_patch", HIVE_SLUDGE_PATCH);
 		registerConfiguredFeature("hive_jelly", HIVE_JELLY);
 		registerConfiguredFeature("white_mold", WHITE_MOLD);
 		registerConfiguredFeature("mold_patch", MOLD_PATCH);
+		registerConfiguredFeature("hive_pillar", HIVE_PILLAR);
+		registerConfiguredFeature("hive_pillar_patch", HIVE_PILLAR_PATCH);
 		
 		registerConfiguredFeature("hive_iron", HIVE_IRON);
 		registerConfiguredFeature("hive_copper", HIVE_COPPER);

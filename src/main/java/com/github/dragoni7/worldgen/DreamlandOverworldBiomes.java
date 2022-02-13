@@ -71,7 +71,6 @@ public class DreamlandOverworldBiomes {
         																										.skyColor(calculateSkyColor(2.0F))
         																										.ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
         																										.backgroundMusic(NORMAL_MUSIC)
-        																										.ambientParticle(new AmbientParticleSettings(ParticleTypes.MYCELIUM, 0.05F))
         																										.build(),
         																										spawnBuilder, biomeBuilder, NORMAL_MUSIC);
     }
