@@ -61,6 +61,7 @@ public class Dreamland
 
     }
     
+ // Credits to potionstudios, BYG.
     @SuppressWarnings({ "unchecked", "rawtypes" })
 	private <T extends IForgeRegistryEntry<T>> void DLregister(Class c, IEventBus eventBus, Supplier<Collection<RegistryObject<T>>> registryObjectsSupplier) {
     	eventBus.addGenericListener(c, (RegistryEvent.Register<T> event) -> {

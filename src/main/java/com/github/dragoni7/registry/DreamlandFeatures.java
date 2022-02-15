@@ -16,6 +16,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
+//Credits to potionstudios, BYG.
 public class DreamlandFeatures {
 	
 	public static List<RegistryObject<Feature<?>>> FEATURES = new ArrayList<>();
