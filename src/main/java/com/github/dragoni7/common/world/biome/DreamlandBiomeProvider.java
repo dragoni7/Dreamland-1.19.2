@@ -1,5 +1,6 @@
-package com.github.dragoni7.worldgen;
+package com.github.dragoni7.common.world.biome;
 
+import com.github.dragoni7.registry.DreamlandBiomes;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
@@ -30,24 +31,25 @@ public class DreamlandBiomeProvider extends BiomeProvider
     public void addOverworldBiomes(Registry<Biome> registry, Consumer<Pair<TBClimate.ParameterPoint, ResourceKey<Biome>>> mapper)
     {
     	
-    	this.addBiomeSimilar(mapper, Biomes.DRIPSTONE_CAVES, BiomeKeys.HIVE);
+    	this.addBiomeSimilar(mapper, Biomes.DRIPSTONE_CAVES, DreamlandBiomes.HIVE);
     	
-        this.addModifiedVanillaOverworldBiomes(mapper, builder -> {
-        	
-			
-			  List<Climate.ParameterPoint> frozenPeaksPoints = new
-			  ParameterPointListBuilder() .temperature(Temperature.ICY, Temperature.COOL,
-			  Temperature.NEUTRAL) .humidity(Humidity.ARID, Humidity.DRY, Humidity.NEUTRAL,
-			  Humidity.WET, Humidity.HUMID)
-			  .continentalness(Continentalness.span(Continentalness.COAST,
-			  Continentalness.FAR_INLAND), Continentalness.span(Continentalness.MID_INLAND,
-			  Continentalness.FAR_INLAND)) .erosion(Erosion.EROSION_0, Erosion.EROSION_1)
-			  .depth(Depth.UNDERGROUND) .weirdness(Weirdness.HIGH_SLICE_VARIANT_ASCENDING,
-			  Weirdness.HIGH_SLICE_VARIANT_DESCENDING) .buildVanilla();
-			  
-			  frozenPeaksPoints.forEach(point -> builder.replaceBiome(point,
-			  BiomeKeys.COLD_BLUE));
-        });
+		
+		  this.addModifiedVanillaOverworldBiomes(mapper, builder -> {
+		  
+		  
+		  List<Climate.ParameterPoint> frozenPeaksPoints = new
+		  ParameterPointListBuilder() .temperature(Temperature.ICY, Temperature.COOL,
+		  Temperature.NEUTRAL) .humidity(Humidity.ARID, Humidity.DRY, Humidity.NEUTRAL,
+		  Humidity.WET, Humidity.HUMID)
+		  .continentalness(Continentalness.span(Continentalness.COAST,
+		  Continentalness.FAR_INLAND), Continentalness.span(Continentalness.MID_INLAND,
+		  Continentalness.FAR_INLAND)) .erosion(Erosion.EROSION_0, Erosion.EROSION_1)
+		  .depth(Depth.UNDERGROUND) .weirdness(Weirdness.HIGH_SLICE_VARIANT_ASCENDING,
+		  Weirdness.HIGH_SLICE_VARIANT_DESCENDING) .buildVanilla();
+		  
+		  frozenPeaksPoints.forEach(point -> builder.replaceBiome(point,
+		  DreamlandBiomes.COLD_BLUE)); });
+		 
     }
 
     @Override

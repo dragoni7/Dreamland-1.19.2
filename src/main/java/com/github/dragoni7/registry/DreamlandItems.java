@@ -12,8 +12,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class DreamlandItems {
 	
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Dreamland.MODID);
-	
-	
+		
 	//Block Items
 	public static final RegistryObject<Item> BUMBLE_BLOCK = registerBlockItem("bumble_block", DreamlandBlocks.BUMBLE_BLOCK);
 	

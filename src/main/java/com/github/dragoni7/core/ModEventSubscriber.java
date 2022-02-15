@@ -12,7 +12,6 @@ public class ModEventSubscriber {
 			modBus.addListener(ModEventSubscriber::addAttributes);
 		}
 		public static void addAttributes(final EntityAttributeCreationEvent event) {
-			
 		}
 		public static void registerEntities(final RegistryEvent.Register<EntityType<?>> event) {
 		

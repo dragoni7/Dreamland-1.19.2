@@ -1,9 +1,7 @@
-package com.github.dragoni7.worldgen;
+package com.github.dragoni7.common.world.biome;
 
 import javax.annotation.Nullable;
 
-import net.minecraft.core.particles.ParticleType;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.sounds.Music;
 import net.minecraft.util.Mth;

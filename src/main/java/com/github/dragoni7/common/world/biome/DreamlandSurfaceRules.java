@@ -1,5 +1,6 @@
-package com.github.dragoni7.worldgen;
+package com.github.dragoni7.common.world.biome;
 
+import com.github.dragoni7.registry.DreamlandBiomes;
 import com.github.dragoni7.registry.DreamlandBlocks;
 
 import net.minecraft.world.level.block.Block;
@@ -27,8 +28,8 @@ public class DreamlandSurfaceRules
     {
         return SurfaceRules.sequence(
         		
-            SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeKeys.HIVE), HIVE_SURFACE),
-            SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeKeys.COLD_BLUE), BLUE_TERRACOTTA),
+            SurfaceRules.ifTrue(SurfaceRules.isBiome(DreamlandBiomes.HIVE), HIVE_SURFACE),
+            SurfaceRules.ifTrue(SurfaceRules.isBiome(DreamlandBiomes.COLD_BLUE), BLUE_TERRACOTTA),
 
             // Default to a grass and dirt surface
             SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, DEFAULT)

@@ -1,18 +1,14 @@
 package com.github.dragoni7.datagen;
 
 import com.github.dragoni7.Dreamland;
-import com.github.dragoni7.registry.DreamlandBlocks;
 import com.github.dragoni7.registry.DreamlandCustomTags;
 import com.github.dragoni7.registry.DreamlandItems;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 

@@ -1,4 +1,6 @@
-package com.github.dragoni7.worldgen;
+package com.github.dragoni7.common.world.biome;
+
+import com.github.dragoni7.common.world.feature.FeaturePlacements;
 
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
@@ -23,7 +25,7 @@ public class DreamlandBiomeFeatures {
 		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, FeaturePlacements.PLACED_CAVE_SLIME);
 		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, FeaturePlacements.PLACED_HIVE_SLUDGE);
 		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, FeaturePlacements.PLACED_HIVE_JELLY);
-		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, FeaturePlacements.PlACED_WHITE_MOLD);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, FeaturePlacements.PLACED_WHITE_MOLD);
 		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, FeaturePlacements.PLACED_HIVE_PILLAR);
 	}
 }
