@@ -1,6 +1,5 @@
 package com.github.dragoni7.util;
 
-import com.github.dragoni7.Dreamland;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -15,7 +14,7 @@ public class CustomTagUtil {
 		
 		public static Tags.IOptionalNamedTag<Block> createTag(String name) {
 			
-			return BlockTags.createOptional(new ResourceLocation(Dreamland.MODID, name));
+			return BlockTags.createOptional(DreamlandLoc.newLoc(name));
 		}
 		
 		public static Tags.IOptionalNamedTag<Block> createForgeTag(String name) {
@@ -28,7 +27,7 @@ public class CustomTagUtil {
 		
 		public static Tags.IOptionalNamedTag<Item> createTag(String name) {
 			
-			return ItemTags.createOptional(new ResourceLocation(Dreamland.MODID, name));
+			return ItemTags.createOptional(DreamlandLoc.newLoc(name));
 		}
 		
 		public static Tags.IOptionalNamedTag<Item> createForgeTag(String name) {

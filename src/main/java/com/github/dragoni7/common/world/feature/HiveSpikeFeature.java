@@ -53,7 +53,7 @@ public class HiveSpikeFeature extends Feature<NoneFeatureConfiguration>{
 	                  if ((i1 == 0 && j1 == 0 || !(f1 * f1 + f2 * f2 > f * f)) && (i1 != -l && i1 != l && j1 != -l && j1 != l || !(random.nextFloat() > 0.75F))) {
 	                     BlockState blockstate = worldgenlevel.getBlockState(blockpos.offset(i1, k, j1));
 	                     if (blockstate.isAir() || isDirt(blockstate) || blockstate.is(DreamlandBlocks.HIVE_BLOCK.get()) || blockstate.is(Blocks.STONE)) {
-	                        this.setBlock(worldgenlevel, blockpos.offset(i1, k, j1), DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState());
+	                        this.setBlock(worldgenlevel, blockpos.offset(i1, k, j1), DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.get().defaultBlockState());
 	                     }
 
 	                     if (k != 0 && l > 1) {
@@ -82,7 +82,8 @@ public class HiveSpikeFeature extends Feature<NoneFeatureConfiguration>{
 	                  j2 = random.nextInt(5);
 	               }
 
-	               while(blockpos1.getY() > 50) {
+	               //50
+	               while(blockpos1.getY() > 0) {
 	                  BlockState blockstate1 = worldgenlevel.getBlockState(blockpos1);
 	                  if (!blockstate1.isAir() && !isDirt(blockstate1) && !blockstate1.is(DreamlandBlocks.HIVE_BLOCK.get())) {
 	                     break;

@@ -2,6 +2,7 @@ package com.github.dragoni7.datagen;
 
 import com.github.dragoni7.Dreamland;
 import com.github.dragoni7.registry.DreamlandItems;
+import com.github.dragoni7.util.DreamlandLoc;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
@@ -37,6 +38,7 @@ public class ItemModels extends ItemModelProvider{
 		createBlockItemModel(DreamlandItems.HIVE_LAPIS, "block/hive_lapis");
 		createBlockItemModel(DreamlandItems.HIVE_DIAMOND, "block/hive_diamond");
 		createBlockItemModel(DreamlandItems.WHITE_MOLD, "block/white_mold");
+		createBlockItemModel(DreamlandItems.HIVE_BLOCK_WITH_JELLY, "block/hive_block_with_jelly");
 		
 		singleTexture(DreamlandItems.HIVE_JELLY_ITEM.get().getRegistryName().getPath(), new ResourceLocation("item/handheld"),
 				"layer0", new ResourceLocation(Dreamland.MODID, "item/jelly"));
@@ -44,7 +46,7 @@ public class ItemModels extends ItemModelProvider{
 	
 	private void createBlockItemModel(RegistryObject<Item> item, String Path) {
 		
-		withExistingParent(item.get().getRegistryName().getPath(), new ResourceLocation(Dreamland.MODID, Path));
+		withExistingParent(item.get().getRegistryName().getPath(), DreamlandLoc.newLoc(Path));
 	}
 
 }

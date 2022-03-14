@@ -70,19 +70,21 @@ public class DreamlandBlocks {
 	
 	public static final RegistryObject<Block> CAVE_SLIME = BLOCKS.register("cave_slime", 
 			() -> new CaveSlime(BlockBehaviour.Properties
-					.of(Material.PLANT)
+					.of(Material.CLAY)
 					.strength(2.0F,6.0F)
 					.sound(SoundType.HONEY_BLOCK)
 					.noCollission()
+					.noOcclusion()
 					.lightLevel(CaveSlimePlant.emission(5))
 					));
 	
 	public static final RegistryObject<Block> CAVE_SLIME_PLANT = BLOCKS.register("cave_slime_plant", 
 			() -> new CaveSlimePlant(BlockBehaviour.Properties
-					.of(Material.PLANT)
+					.of(Material.CLAY)
 					.strength(2.0F,6.0F)
 					.sound(SoundType.HONEY_BLOCK)
 					.noCollission()
+					.noOcclusion()
 					.lightLevel(CaveSlimePlant.emission(5))
 					));
 	
@@ -103,11 +105,22 @@ public class DreamlandBlocks {
 					.lightLevel(EmissiveBlock.emission(5))
 					));
 	
+	public static final RegistryObject<Block> HIVE_BLOCK_WITH_JELLY = BLOCKS.register("hive_block_with_jelly",
+			() -> new EmissiveBlock(BlockBehaviour.Properties
+					.of(Material.SPONGE)
+					.strength(2.0F,2.0F)
+					.sound(SoundType.SLIME_BLOCK)
+					.noOcclusion()
+					.lightLevel(EmissiveBlock.emission(7))
+					));
+	
 	public static final RegistryObject<Block> WHITE_MOLD = BLOCKS.register("white_mold",
 			() -> new WhiteMold(BlockBehaviour.Properties
 					.of(Material.PLANT, MaterialColor.COLOR_LIGHT_GRAY)
 					.strength(0.1F)
 					.sound(SoundType.MOSS_CARPET)
+					.noCollission()
+					.noOcclusion()
 					));
 	
 	public static final RegistryObject<Block> HIVE_IRON = createHiveOre("hive_iron");

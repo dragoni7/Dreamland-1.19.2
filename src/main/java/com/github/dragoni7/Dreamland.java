@@ -13,6 +13,7 @@ import com.github.dragoni7.registry.ConfiguredDreamlandFeatures;
 import com.github.dragoni7.registry.DreamlandBiomes;
 import com.github.dragoni7.registry.DreamlandItems;
 import com.github.dragoni7.registry.DreamlandParticles;
+import com.github.dragoni7.util.DreamlandLoc;
 import com.github.dragoni7.util.RegistryObject;
 
 import terrablender.api.BiomeProviders;
@@ -67,7 +68,7 @@ public class Dreamland
     	eventBus.addGenericListener(c, (RegistryEvent.Register<T> event) -> {
     		Collection<RegistryObject<T>> registryObjects = registryObjectsSupplier.get();
     		for(RegistryObject<T> registryObject : registryObjects) {
-    			registryObject.object().setRegistryName(new ResourceLocation(Dreamland.MODID, registryObject.name()));
+    			registryObject.object().setRegistryName(DreamlandLoc.newLoc(registryObject.name()));
     			event.getRegistry().register(registryObject.object());
     		}
     	});
@@ -75,7 +76,7 @@ public class Dreamland
     
     private void setup(FMLCommonSetupEvent event) {
     	event.enqueueWork( ()-> {
-    		BiomeProviders.register(new DreamlandBiomeProvider(new ResourceLocation(MODID, "biome_provider"), 4));
+    		BiomeProviders.register(new DreamlandBiomeProvider(DreamlandLoc.newLoc("biome_provider"), 4));
     		ConfiguredDreamlandFeatures.init();
     		FeaturePlacements.init();
     	});

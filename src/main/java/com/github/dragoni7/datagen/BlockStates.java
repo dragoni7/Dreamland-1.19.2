@@ -32,7 +32,9 @@ public class BlockStates extends BlockStateProvider{
 										   DreamlandBlocks.HIVE_GOLD.get(),
 										   DreamlandBlocks.HIVE_REDSTONE.get(),
 										   DreamlandBlocks.HIVE_LAPIS.get(),
-										   DreamlandBlocks.HIVE_DIAMOND.get());
+										   DreamlandBlocks.HIVE_DIAMOND.get(),
+										   DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.get()
+										   );
 
 		for(Block element : simpleBlocks) {
 			simpleBlock(element);

@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.github.dragoni7.Dreamland;
 import com.github.dragoni7.registry.ConfiguredDreamlandFeatures;
+import com.github.dragoni7.util.DreamlandLoc;
 
 import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
@@ -59,7 +60,7 @@ public class FeaturePlacements {
 		   }
 	   
 	   private static void registerPlacedFeatures(String path, PlacedFeature feature) {
-		   Registry.register(BuiltinRegistries.PLACED_FEATURE, new ResourceLocation(Dreamland.MODID,path), feature);
+		   Registry.register(BuiltinRegistries.PLACED_FEATURE, DreamlandLoc.newLoc(path), feature);
 	   }
 	   
 	   public static void init() {

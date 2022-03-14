@@ -40,6 +40,8 @@ public class DreamlandItems {
 	
 	public static final RegistryObject<Item> HIVE_SLUDGE = registerBlockItem("hive_sludge", DreamlandBlocks.HIVE_SLUDGE);
 	
+	public static final RegistryObject<Item> HIVE_BLOCK_WITH_JELLY = registerBlockItem("hive_block_with_jelly", DreamlandBlocks.HIVE_BLOCK_WITH_JELLY);
+	
 	public static final RegistryObject<Item> WHITE_MOLD = registerBlockItem("white_mold", DreamlandBlocks.WHITE_MOLD);
 	
 	public static final RegistryObject<Item> HIVE_IRON = registerBlockItem("hive_iron", DreamlandBlocks.HIVE_IRON);

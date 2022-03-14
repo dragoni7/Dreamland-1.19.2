@@ -37,7 +37,7 @@ minecraft {
     //
     // Use non-default mappings at your own risk. They may not always work.
     // Simply re-run your setup task after changing the mappings to update your workspace.
-    mappings channel: 'official', version: '1.18.1'
+    mappings channel: 'official', version: '1.18.2'
 
     // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg') // Currently, this location cannot be changed from the default.
 
@@ -133,7 +133,12 @@ repositories {
     //     dir 'libs'
     // }
     
-    maven { url "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/" }
+    maven { // Geckolib
+        url "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/" }
+
+    maven { // JEI
+        url "https://dvs1.progwml6.com/files/maven"
+    }
 }
 
 dependencies {
@@ -142,20 +147,17 @@ dependencies {
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
    minecraft "net.minecraftforge:forge:${project.minecraft}-${project.forge}"
 
-   implementation fg.deobf('com.github.glitchfiend:TerraBlender-forge:1.18.1-1.1.0.73')
-   implementation fg.deobf('software.bernie.geckolib:geckolib-1.18-forge:3.0.11')
+   implementation fg.deobf('com.github.glitchfiend:TerraBlender-forge:1.18.2-1.1.0.93')
+   implementation fg.deobf('software.bernie.geckolib:geckolib-1.18-forge:3.0.12')
 
     // Real mod deobf dependency examples - these get remapped to your current mappings
-    // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
-    // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}") // Adds the full JEI mod as a runtime dependency
+    compileOnly fg.deobf("mezz.jei:jei-${jei_version}:api") // Adds JEI API as a compile dependency
+    implementation fg.deobf("mezz.jei:jei-${jei_version}")
+    // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei}") // Adds the full JEI mod as a runtime dependency
     // implementation fg.deobf("com.tterrag.registrate:Registrate:MC${mc_version}-${registrate_version}") // Adds registrate as a dependency
 
     // Examples using mod jars from ./libs
     // implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
-
-    // For more info...
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
 }
 
 // Example for how to get properties into the manifest for reading at runtime.

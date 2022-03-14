@@ -22,10 +22,10 @@ public class DreamlandBiomeFeatures {
 	}
 	
 	public static void hiveBiomeFeatures(BiomeGenerationSettings.Builder builder) {
-		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, FeaturePlacements.PLACED_CAVE_SLIME);
-		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, FeaturePlacements.PLACED_HIVE_SLUDGE);
-		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, FeaturePlacements.PLACED_HIVE_JELLY);
-		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, FeaturePlacements.PLACED_WHITE_MOLD);
+		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, FeaturePlacements.PLACED_CAVE_SLIME);
+		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, FeaturePlacements.PLACED_HIVE_SLUDGE);
+		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, FeaturePlacements.PLACED_HIVE_JELLY);
+		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, FeaturePlacements.PLACED_WHITE_MOLD);
 		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, FeaturePlacements.PLACED_HIVE_PILLAR);
 	}
 }

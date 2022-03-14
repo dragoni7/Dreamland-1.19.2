@@ -3,6 +3,7 @@ package com.github.dragoni7.registry;
 import java.util.List;
 
 import com.github.dragoni7.Dreamland;
+import com.github.dragoni7.util.DreamlandLoc;
 
 import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
@@ -101,7 +102,7 @@ public class ConfiguredDreamlandFeatures {
 	public static final ConfiguredFeature<?, ?> HIVE_DIAMOND_LARGE = FeatureUtils.register("hive_diamond_large", Feature.ORE.configured(new OreConfiguration(HIVE_DIAMOND_TARGET_LIST, 12, 0.7F)));
 	
 	private static void registerConfiguredFeature(String path, ConfiguredFeature<?,?> feature) {
-		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new ResourceLocation(Dreamland.MODID, path), feature);
+		Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, DreamlandLoc.newLoc(path), feature);
 	}
 	public static void init() {
 		registerConfiguredFeature("cave_slime", CAVE_SLIME);

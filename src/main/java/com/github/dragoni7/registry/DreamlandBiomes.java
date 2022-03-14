@@ -8,6 +8,7 @@ import java.util.function.Consumer;
 import com.github.dragoni7.Dreamland;
 import com.github.dragoni7.common.world.biome.BiomeKeys;
 import com.github.dragoni7.common.world.biome.DreamlandOverworldBiomes;
+import com.github.dragoni7.util.DreamlandLoc;
 import com.github.dragoni7.util.RegistryObject;
 
 import net.minecraft.core.Registry;
@@ -33,7 +34,7 @@ public class DreamlandBiomes {
 		  
 		  BIOMES.add(new RegistryObject<>(biome, name));
 	  
-		  return ResourceKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(Dreamland.MODID, name)); 
+		  return ResourceKey.create(Registry.BIOME_REGISTRY, DreamlandLoc.newLoc(name)); 
 	  
 	  }
 	  
