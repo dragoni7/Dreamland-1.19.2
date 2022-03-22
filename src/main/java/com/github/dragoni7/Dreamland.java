@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.function.Supplier;
 
 import com.github.dragoni7.client.ClientModEventSubscriber;
-import com.github.dragoni7.common.world.biome.DreamlandBiomeProvider;
+import com.github.dragoni7.common.world.biome.DreamlandRegion;
 import com.github.dragoni7.common.world.feature.FeaturePlacements;
 import com.github.dragoni7.core.ModEventSubscriber;
 import com.github.dragoni7.registry.DreamlandBlocks;
@@ -16,7 +16,8 @@ import com.github.dragoni7.registry.DreamlandParticles;
 import com.github.dragoni7.util.DreamlandLoc;
 import com.github.dragoni7.util.RegistryObject;
 
-import terrablender.api.BiomeProviders;
+import terrablender.api.RegionType;
+import terrablender.api.Regions;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
@@ -76,9 +77,9 @@ public class Dreamland
     
     private void setup(FMLCommonSetupEvent event) {
     	event.enqueueWork( ()-> {
-    		BiomeProviders.register(new DreamlandBiomeProvider(DreamlandLoc.newLoc("biome_provider"), 4));
     		ConfiguredDreamlandFeatures.init();
     		FeaturePlacements.init();
+    		Regions.register(new DreamlandRegion(DreamlandLoc.newLoc("dreamland_region"), RegionType.OVERWORLD, 4));
     	});
     }
     
