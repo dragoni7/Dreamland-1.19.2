@@ -1,7 +1,7 @@
 package com.github.dragoni7.datagen;
 
 import com.github.dragoni7.Dreamland;
-import com.github.dragoni7.registry.DreamlandItems;
+import com.github.dragoni7.common.items.DreamlandItems;
 import com.github.dragoni7.util.DreamlandLoc;
 
 import net.minecraft.data.DataGenerator;
@@ -46,7 +46,7 @@ public class ItemModels extends ItemModelProvider{
 	
 	private void createBlockItemModel(RegistryObject<Item> item, String Path) {
 		
-		withExistingParent(item.get().getRegistryName().getPath(), DreamlandLoc.newLoc(Path));
+		withExistingParent(item.get().getRegistryName().getPath(), DreamlandLoc.createLoc(Path));
 	}
 
 }

@@ -7,11 +7,11 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.tags.TagKey;
 
-public class TagFactory {
+public class TagCreator {
 	
 	public static TagKey<Block> createBlockTag(String name) {
 		
-		return TagKey.create(Registry.BLOCK_REGISTRY, DreamlandLoc.newLoc(name));
+		return TagKey.create(Registry.BLOCK_REGISTRY, DreamlandLoc.createLoc(name));
 	}
 	
 	public static TagKey<Block> createForgeBlockTag(String name) {
@@ -22,7 +22,7 @@ public class TagFactory {
 	
 	public static TagKey<Item> createItemTag(String name) {
 		
-		return TagKey.create(Registry.ITEM_REGISTRY, DreamlandLoc.newLoc(name));
+		return TagKey.create(Registry.ITEM_REGISTRY, DreamlandLoc.createLoc(name));
 	}
 	
 	public static TagKey<Item> createForgeItemTag(String name) {

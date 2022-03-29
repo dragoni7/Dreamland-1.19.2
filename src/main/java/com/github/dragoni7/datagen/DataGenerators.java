@@ -20,7 +20,7 @@ public class DataGenerators {
 		if(event.includeServer()) {
 			generator.addProvider(new DreamlandRecipes(generator));
 			generator.addProvider(new LootTables(generator));
-	        generator.addProvider(new DreamlandBlockTags(generator, fileHelper));
+	        generator.addProvider(new AddBlockTags(generator, fileHelper));
 		}
 		if(event.includeClient()) {
 			generator.addProvider(new BlockStates(generator, Dreamland.MODID, fileHelper));

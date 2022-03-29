@@ -6,7 +6,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class DreamlandLoc{
 
-	public static ResourceLocation newLoc(String name) {
+	public static ResourceLocation createLoc(String name) {
 		return new ResourceLocation(Dreamland.MODID, name);
 	}
 }

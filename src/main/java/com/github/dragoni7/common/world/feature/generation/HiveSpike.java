@@ -1,10 +1,9 @@
-package com.github.dragoni7.common.world.feature;
+package com.github.dragoni7.common.world.feature.generation;
 
 
 import java.util.Random;
 
-import com.github.dragoni7.registry.DreamlandBlocks;
-
+import com.github.dragoni7.common.blocks.DreamlandBlocks;
 import com.mojang.serialization.Codec;
 
 import net.minecraft.core.BlockPos;
@@ -16,9 +15,9 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 
-public class HiveSpikeFeature extends Feature<NoneFeatureConfiguration>{
+public class HiveSpike extends Feature<NoneFeatureConfiguration>{
 
-	public HiveSpikeFeature(Codec<NoneFeatureConfiguration> p_65786_) {
+	public HiveSpike(Codec<NoneFeatureConfiguration> p_65786_) {
 		super(p_65786_);
 	}
 

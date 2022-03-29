@@ -147,7 +147,7 @@ dependencies {
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
    minecraft "net.minecraftforge:forge:${project.minecraft}-${project.forge}"
 
-   implementation fg.deobf('com.github.glitchfiend:TerraBlender-forge:1.18.2-1.1.0.93')
+   implementation fg.deobf('com.github.glitchfiend:TerraBlender-forge:1.18.2-1.1.0.96')
    implementation fg.deobf('software.bernie.geckolib:geckolib-1.18-forge:3.0.12')
 
     // Real mod deobf dependency examples - these get remapped to your current mappings

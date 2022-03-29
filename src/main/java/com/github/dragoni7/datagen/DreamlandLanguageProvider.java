@@ -1,7 +1,7 @@
 package com.github.dragoni7.datagen;
 
 import com.github.dragoni7.Dreamland;
-import com.github.dragoni7.registry.DreamlandBlocks;
+import com.github.dragoni7.common.blocks.DreamlandBlocks;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;

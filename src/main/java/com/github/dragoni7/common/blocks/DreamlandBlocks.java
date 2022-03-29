@@ -1,7 +1,7 @@
-package com.github.dragoni7.registry;
+package com.github.dragoni7.common.blocks;
+
 
 import com.github.dragoni7.Dreamland;
-import com.github.dragoni7.common.blocks.*;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
@@ -18,11 +18,10 @@ import net.minecraft.world.level.block.state.BlockState;
 
 
 public class DreamlandBlocks {
-
 	
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Dreamland.MODID);
 	
-	public static final RegistryObject<Block> BUMBLE_BLOCK = BLOCKS.register("bumble_block", () -> new BaseBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)));
+	public static final RegistryObject<Block> BUMBLE_BLOCK = BLOCKS.register("bumble_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)));
 	
 	public static final RegistryObject<Block> DARK_QUARTZITE = BLOCKS.register("dark_quartzite", () -> new DarkQuartzite(BlockBehaviour.Properties.copy(Blocks.STONE)));
 	
@@ -30,9 +29,9 @@ public class DreamlandBlocks {
 	
 	public static final RegistryObject<Block> CLAY_SOIL_GRASS = BLOCKS.register("clay_soil_grass", () -> new ClaySoilGrass(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
 	
-	public static final RegistryObject<Block> POROUS_STONE = BLOCKS.register("porous_stone", () -> new BaseBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
+	public static final RegistryObject<Block> POROUS_STONE = BLOCKS.register("porous_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
 	
-	public static final RegistryObject<Block> ROOTED_POROUS_STONE = BLOCKS.register("rooted_porous_stone", () -> new BaseBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
+	public static final RegistryObject<Block> ROOTED_POROUS_STONE = BLOCKS.register("rooted_porous_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
 	
 	public static final RegistryObject<Block> DUSK_ICE = BLOCKS.register("dusk_ice", 
 			() -> new DuskIce(BlockBehaviour.Properties
@@ -48,21 +47,21 @@ public class DreamlandBlocks {
 					));
 	
 	public static final RegistryObject<Block> SOLID_TAR = BLOCKS.register("solid_tar", 
-			() -> new BaseBlock(BlockBehaviour.Properties
+			() -> new Block(BlockBehaviour.Properties
 					.of(Material.CLAY)
 					.strength(2.0F,6.0F)
 					.sound(SoundType.CALCITE)
 					));
 	
 	public static final RegistryObject<Block> TOXIC_ROCK = BLOCKS.register("toxic_rock", 
-			() -> new BaseBlock(BlockBehaviour.Properties
+			() -> new Block(BlockBehaviour.Properties
 					.of(Material.STONE)
 					.strength(2.0F,6.0F)
 					.sound(SoundType.CALCITE)
 					));
 	
 	public static final RegistryObject<Block> HIVE_BLOCK = BLOCKS.register("hive_block", 
-			() -> new BaseBlock(BlockBehaviour.Properties
+			() -> new Block(BlockBehaviour.Properties
 					.of(Material.STONE)
 					.strength(2.0F,6.0F)
 					.sound(SoundType.NETHERRACK)
@@ -132,7 +131,7 @@ public class DreamlandBlocks {
 	
 	private static RegistryObject<Block> createHiveOre(String name) {
 		return BLOCKS.register(name,
-				() -> new BaseBlock(BlockBehaviour.Properties
+				() -> new Block(BlockBehaviour.Properties
 						.of(Material.STONE)
 						.strength(3.0F,3.0F)
 						.sound(SoundType.NETHERRACK)

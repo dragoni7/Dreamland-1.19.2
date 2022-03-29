@@ -1,8 +1,8 @@
 package com.github.dragoni7.datagen;
 
 import com.github.dragoni7.Dreamland;
-import com.github.dragoni7.registry.DreamlandBlocks;
-import com.github.dragoni7.registry.DreamlandCustomTags;
+import com.github.dragoni7.common.blocks.DreamlandBlockTags;
+import com.github.dragoni7.common.blocks.DreamlandBlocks;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
@@ -11,9 +11,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-public class DreamlandBlockTags extends BlockTagsProvider{
+public class AddBlockTags extends BlockTagsProvider{
 
-	public DreamlandBlockTags(DataGenerator generator, ExistingFileHelper helper) {
+	public AddBlockTags(DataGenerator generator, ExistingFileHelper helper) {
 		super(generator, Dreamland.MODID, helper);
 		
 	}
@@ -44,7 +44,7 @@ public class DreamlandBlockTags extends BlockTagsProvider{
 		.add(DreamlandBlocks.HIVE_BLOCK.get())
 		.add(DreamlandBlocks.HIVE_JELLY.get());
 	
-		tag(DreamlandCustomTags.HIVE_ORES_REPLACEABLE)
+		tag(DreamlandBlockTags.HIVE_ORES_REPLACEABLE)
 		.add(DreamlandBlocks.HIVE_BLOCK.get());
 		
 		addCopperOreTags(DreamlandBlocks.HIVE_COPPER.get());

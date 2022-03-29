@@ -1,4 +1,4 @@
-package com.github.dragoni7.registry;
+package com.github.dragoni7.common.particles;
 
 import com.github.dragoni7.Dreamland;
 

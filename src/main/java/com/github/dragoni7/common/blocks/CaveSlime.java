@@ -3,8 +3,6 @@ package com.github.dragoni7.common.blocks;
 import java.util.Random;
 import java.util.function.ToIntFunction;
 
-import com.github.dragoni7.registry.DreamlandBlocks;
-
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CaveVines;

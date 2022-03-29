@@ -1,37 +1,23 @@
 package com.github.dragoni7;
 
-import java.util.Collection;
-import java.util.function.Supplier;
-
-import com.github.dragoni7.client.ClientModEventSubscriber;
-import com.github.dragoni7.common.world.biome.DreamlandRegion;
-import com.github.dragoni7.common.world.feature.FeaturePlacements;
-import com.github.dragoni7.core.ModEventSubscriber;
-import com.github.dragoni7.registry.DreamlandBlocks;
-import com.github.dragoni7.registry.DreamlandFeatures;
-import com.github.dragoni7.registry.ConfiguredDreamlandFeatures;
-import com.github.dragoni7.registry.DreamlandBiomes;
-import com.github.dragoni7.registry.DreamlandItems;
-import com.github.dragoni7.registry.DreamlandParticles;
+import com.github.dragoni7.client.DreamlandClientEventHandler;
+import com.github.dragoni7.common.blocks.DreamlandBlocks;
+import com.github.dragoni7.common.items.DreamlandItems;
+import com.github.dragoni7.common.world.DreamlandRegion;
+import com.github.dragoni7.common.world.DreamlandSurfaceRules;
 import com.github.dragoni7.util.DreamlandLoc;
-import com.github.dragoni7.util.RegistryObject;
 
 import terrablender.api.RegionType;
 import terrablender.api.Regions;
-
-import net.minecraft.resources.ResourceLocation;
+import terrablender.api.SurfaceRuleManager;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
-import net.minecraftforge.registries.IForgeRegistryEntry;
 import software.bernie.geckolib3.GeckoLib;
 import net.minecraftforge.api.distmarker.Dist;
 
@@ -49,37 +35,22 @@ public class Dreamland
         GeckoLib.initialize();
         
         forgeBus.register(this);
-        DreamlandParticles.PARTICLE_TYPES.register(modBus);
+        
         DreamlandBlocks.BLOCKS.register(modBus);
         DreamlandItems.ITEMS.register(modBus);
-        DLregister(Feature.class, modBus, ()-> DreamlandFeatures.init());
-        DLregister(Biome.class, modBus, () -> DreamlandBiomes.init());
-        ModEventSubscriber.subscribeModEvents(modBus, forgeBus);
-        modBus.addListener(this::setup);
+        DreamlandEventHandler.subscribeModEvents(modBus);
+        modBus.addListener(this::commonSetup);
         
         if(FMLEnvironment.dist == Dist.CLIENT) {
-    		ClientModEventSubscriber.subscribeClientEvents(modBus, forgeBus);
+    		DreamlandClientEventHandler.subscribeClientEvents(modBus, forgeBus);
     	}
-
+        
     }
     
- // Credits to potionstudios, BYG.
-    @SuppressWarnings({ "unchecked", "rawtypes" })
-	private <T extends IForgeRegistryEntry<T>> void DLregister(Class c, IEventBus eventBus, Supplier<Collection<RegistryObject<T>>> registryObjectsSupplier) {
-    	eventBus.addGenericListener(c, (RegistryEvent.Register<T> event) -> {
-    		Collection<RegistryObject<T>> registryObjects = registryObjectsSupplier.get();
-    		for(RegistryObject<T> registryObject : registryObjects) {
-    			registryObject.object().setRegistryName(DreamlandLoc.newLoc(registryObject.name()));
-    			event.getRegistry().register(registryObject.object());
-    		}
-    	});
-    }
-    
-    private void setup(FMLCommonSetupEvent event) {
+    private void commonSetup(FMLCommonSetupEvent event) {
     	event.enqueueWork( ()-> {
-    		ConfiguredDreamlandFeatures.init();
-    		FeaturePlacements.init();
-    		Regions.register(new DreamlandRegion(DreamlandLoc.newLoc("dreamland_region"), RegionType.OVERWORLD, 4));
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, Dreamland.MODID, DreamlandSurfaceRules.OVERWORLD_SURFACE_RULES);
+    		Regions.register(new DreamlandRegion(DreamlandLoc.createLoc("dreamland_region"), RegionType.OVERWORLD, 4));
     	});
     }
     

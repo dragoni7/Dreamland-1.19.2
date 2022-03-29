@@ -1,12 +1,11 @@
 package com.github.dragoni7.client;
 
-import com.github.dragoni7.client.particle.WhiteMoldParticle;
-import com.github.dragoni7.registry.DreamlandBlocks;
-import com.github.dragoni7.registry.DreamlandParticles;
+import com.github.dragoni7.common.blocks.DreamlandBlocks;
+import com.github.dragoni7.common.particles.DreamlandParticles;
+import com.github.dragoni7.common.particles.WhiteMoldParticle;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColors;
-import net.minecraft.client.particle.ParticleProvider;
 import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
@@ -14,18 +13,17 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.util.ParticleUtils;
 import net.minecraft.client.renderer.BiomeColors;
 
-public class ClientModEventSubscriber {
+public class DreamlandClientEventHandler {
 
 	
 	public static void subscribeClientEvents(IEventBus modBus, IEventBus forgeBus) {
 		
-		modBus.addListener(ClientModEventSubscriber::registerEntityRenders);
-		modBus.addListener(ClientModEventSubscriber::registerBlockColors);
-		modBus.addListener(ClientModEventSubscriber::setupClient);
-		modBus.addListener(ClientModEventSubscriber::registerParticleFactory);
+		modBus.addListener(DreamlandClientEventHandler::registerEntityRenders);
+		modBus.addListener(DreamlandClientEventHandler::registerBlockColors);
+		modBus.addListener(DreamlandClientEventHandler::setupClient);
+		//modBus.addListener(ClientModEventSubscriber::registerParticleFactory);
 	}
 	
 	public static void registerEntityRenders(final EntityRenderersEvent.RegisterRenderers event) {	

@@ -2,8 +2,6 @@ package com.github.dragoni7.common.blocks;
 
 import java.util.Random;
 
-import com.github.dragoni7.registry.DreamlandParticles;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.level.Level;

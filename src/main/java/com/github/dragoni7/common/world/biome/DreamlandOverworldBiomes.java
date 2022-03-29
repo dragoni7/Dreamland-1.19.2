@@ -50,7 +50,7 @@ public class DreamlandOverworldBiomes {
     {	MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
         BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
-        BiomeDefaultFeatures.addFossilDecoration(biomeBuilder);
+        
         globalOverworldGeneration(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
@@ -61,6 +61,8 @@ public class DreamlandOverworldBiomes {
         BiomeDefaultFeatures.addInfestedStone(biomeBuilder);
         DreamlandBiomeFeatures.addHiveOres(biomeBuilder);
         DreamlandBiomeFeatures.hiveBiomeFeatures(biomeBuilder);
+        
+        // spawnBuilder.addSpawn(null, null);
         
         return biomeWithEffects(Biome.Precipitation.NONE, Biome.BiomeCategory.UNDERGROUND, 2.0F, 0.0F, new BiomeSpecialEffects.Builder()
         																										.waterColor(4159204)

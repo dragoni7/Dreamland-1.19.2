@@ -2,7 +2,7 @@ package com.github.dragoni7.datagen;
 
 import java.util.List;
 
-import com.github.dragoni7.registry.DreamlandBlocks;
+import com.github.dragoni7.common.blocks.DreamlandBlocks;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.level.block.Block;

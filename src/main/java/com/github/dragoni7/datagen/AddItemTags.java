@@ -1,8 +1,8 @@
 package com.github.dragoni7.datagen;
 
 import com.github.dragoni7.Dreamland;
-import com.github.dragoni7.registry.DreamlandCustomTags;
-import com.github.dragoni7.registry.DreamlandItems;
+import com.github.dragoni7.common.items.DreamlandItemTags;
+import com.github.dragoni7.common.items.DreamlandItems;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
@@ -12,16 +12,16 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-public class DreamlandItemTags extends ItemTagsProvider{
+public class AddItemTags extends ItemTagsProvider{
 	
-	public DreamlandItemTags(DataGenerator generator,BlockTagsProvider blockTags, ExistingFileHelper helper) {
+	public AddItemTags(DataGenerator generator,BlockTagsProvider blockTags, ExistingFileHelper helper) {
 		super(generator, blockTags, Dreamland.MODID, helper);
 	}
 
 	@Override
 	protected void addTags() {
 
-		tag(DreamlandCustomTags.HIVE_ORES_ITEM)
+		tag(DreamlandItemTags.HIVE_ORES_ITEM)
 			.add(DreamlandItems.HIVE_COPPER.get())
 			.add(DreamlandItems.HIVE_DIAMOND.get())
 			.add(DreamlandItems.HIVE_GOLD.get())

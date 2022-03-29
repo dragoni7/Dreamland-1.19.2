@@ -1,4 +1,4 @@
-package com.github.dragoni7.client.particle;
+package com.github.dragoni7.common.particles;
 
 import java.util.Locale;
 

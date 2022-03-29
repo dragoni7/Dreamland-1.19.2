@@ -1,7 +1,7 @@
-package com.github.dragoni7.registry;
+package com.github.dragoni7.common.items;
 
 import com.github.dragoni7.Dreamland;
-import com.github.dragoni7.common.items.*;
+import com.github.dragoni7.common.blocks.DreamlandBlocks;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -14,7 +14,7 @@ public class DreamlandItems {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Dreamland.MODID);
 		
 	//Block Items
-	public static final RegistryObject<Item> BUMBLE_BLOCK = registerBlockItem("bumble_block", DreamlandBlocks.BUMBLE_BLOCK);
+	//public static final RegistryObject<Item> BUMBLE_BLOCK = registerBlockItem("bumble_block", DreamlandBlocks.BUMBLE_BLOCK);
 	
 	public static final RegistryObject<Item> DARK_QUARTZITE = registerBlockItem("dark_quartzite", DreamlandBlocks.DARK_QUARTZITE);
 	
