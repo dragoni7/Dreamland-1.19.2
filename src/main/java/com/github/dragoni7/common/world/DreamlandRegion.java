@@ -22,11 +22,9 @@ public class DreamlandRegion extends Region
     
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
-    	//this.addBiomeSimilar(mapper, Biomes.DRIPSTONE_CAVES, BiomeKeys.HIVE);
-    	//this.addBiomeSimilar(mapper, Biomes.PLAINS, BiomeKeys.COLD_BLUE);
     	this.addModifiedVanillaOverworldBiomes(mapper, builder -> { 
     		builder.replaceBiome(Biomes.DRIPSTONE_CAVES, BiomeKeys.HIVE);
-    		builder.replaceBiome(Biomes.PLAINS, BiomeKeys.COLD_BLUE);
+    		//builder.replaceBiome(Biomes.PLAINS, BiomeKeys.COLD_BLUE);
     	});
     }
 }

@@ -3,6 +3,9 @@ package com.github.dragoni7.common.items;
 import com.github.dragoni7.Dreamland;
 import com.github.dragoni7.common.blocks.DreamlandBlocks;
 
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.food.Foods;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
@@ -14,7 +17,7 @@ public class DreamlandItems {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Dreamland.MODID);
 		
 	//Block Items
-	//public static final RegistryObject<Item> BUMBLE_BLOCK = registerBlockItem("bumble_block", DreamlandBlocks.BUMBLE_BLOCK);
+	public static final RegistryObject<Item> BUMBLE_BLOCK = registerBlockItem("bumble_block", DreamlandBlocks.BUMBLE_BLOCK);
 	
 	public static final RegistryObject<Item> DARK_QUARTZITE = registerBlockItem("dark_quartzite", DreamlandBlocks.DARK_QUARTZITE);
 	
@@ -38,11 +41,11 @@ public class DreamlandItems {
 	
 	public static final RegistryObject<Item> HIVE_JELLY = registerBlockItem("hive_jelly", DreamlandBlocks.HIVE_JELLY);
 	
-	public static final RegistryObject<Item> HIVE_SLUDGE = registerBlockItem("hive_sludge", DreamlandBlocks.HIVE_SLUDGE);
+	public static final RegistryObject<Item> HIVE_MEMBRANE = registerBlockItem("hive_membrane", DreamlandBlocks.HIVE_MEMBRANE);
 	
 	public static final RegistryObject<Item> HIVE_BLOCK_WITH_JELLY = registerBlockItem("hive_block_with_jelly", DreamlandBlocks.HIVE_BLOCK_WITH_JELLY);
 	
-	public static final RegistryObject<Item> WHITE_MOLD = registerBlockItem("white_mold", DreamlandBlocks.WHITE_MOLD);
+	public static final RegistryObject<Item> HIVE_GROWTH = registerBlockItem("hive_growth", DreamlandBlocks.HIVE_GROWTH);
 	
 	public static final RegistryObject<Item> HIVE_IRON = registerBlockItem("hive_iron", DreamlandBlocks.HIVE_IRON);
 	public static final RegistryObject<Item> HIVE_GOLD = registerBlockItem("hive_gold", DreamlandBlocks.HIVE_GOLD);
@@ -53,21 +56,34 @@ public class DreamlandItems {
 	
 	//Items
 	
-	public static final RegistryObject<Item> HIVE_JELLY_ITEM = registerBasicItem("jelly");
+	public static final RegistryObject<Item> HIVE_JELLY_ITEM = registerHiveJelly("jelly", Foods.SWEET_BERRIES);
 	
 	
 	
 	
 	private static RegistryObject<Item> registerBlockItem(String name, RegistryObject<Block> block) {
 		
-		return ITEMS.register(name,() -> new BaseBlockItem(block.get(), new Item.Properties().tab(Dreamland.DreamlandTab)));
+		return ITEMS.register(name,() -> new BlockItem(block.get(), new Item.Properties().tab(Dreamland.DreamlandTab)));
 		
 	}
 	
 	private static RegistryObject<Item> registerBasicItem(String name) {
 		
-		return ITEMS.register(name, () -> new BaseItem(new Item.Properties().tab(Dreamland.DreamlandTab)));
+		return ITEMS.register(name, () -> new Item(new Item.Properties().tab(Dreamland.DreamlandTab)));
 	}
+	
+	private static RegistryObject<Item> registerEdibleItem(String name, FoodProperties foodProperty) {
+		
+		return ITEMS.register(name, () -> new Item(new Item.Properties().tab(Dreamland.DreamlandTab).food(foodProperty)));
+	}
+	
+	private static RegistryObject<Item> registerHiveJelly(String name, FoodProperties foodProperty) {
+		
+		return ITEMS.register(name, () -> new HiveJelly(new Item.Properties().tab(Dreamland.DreamlandTab).food(foodProperty).stacksTo(16)));
+	}
+	
+	
+	
 	
 
 }

@@ -18,7 +18,7 @@ public class LootTables extends BaseLootTableProvider {
 	protected void addTables() {
 		basicBlockTable(DreamlandBlocks.HIVE_BLOCK.get(), "hive_block");
 		basicBlockTable(DreamlandBlocks.BUMBLE_BLOCK.get(), "bumble_block");
-		basicBlockTable(DreamlandBlocks.HIVE_SLUDGE.get(), "hive_sludge");
+		basicBlockTable(DreamlandBlocks.HIVE_MEMBRANE.get(), "hive_membrane");
 		
 		oreTable(DreamlandBlocks.HIVE_COPPER.get(), Items.RAW_COPPER, "hive_copper");
 		oreTable(DreamlandBlocks.HIVE_DIAMOND.get(), Items.DIAMOND, "hive_diamond");
@@ -28,6 +28,7 @@ public class LootTables extends BaseLootTableProvider {
 		gemTable(DreamlandBlocks.HIVE_REDSTONE.get(), Items.REDSTONE, "hive_redstone");
 		
 		silkTouchTable(DreamlandBlocks.HIVE_JELLY.get(), DreamlandItems.HIVE_JELLY_ITEM.get(), "hive_jelly", 2, 3);
+		silkTouchTable(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.get(), DreamlandItems.HIVE_JELLY_ITEM.get(), "hive_block_with_jelly", 1, 1);
 	}
 
 	private void basicBlockTable(Block block, String name) {

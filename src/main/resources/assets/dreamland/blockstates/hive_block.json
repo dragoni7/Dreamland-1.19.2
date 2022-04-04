@@ -1,11 +1,14 @@
 {
   "variants": {
-    "":  [
+    "conditional=false":  [
       {"model": "dreamland:block/hive_block"},
       {"model": "dreamland:block/hive_block1"},
       {"model": "dreamland:block/hive_block2"},
       {"model": "dreamland:block/hive_block3"},
       {"model": "dreamland:block/hive_block4"}
-    ] 
+    ],
+    
+    "conditional=true": { "model": "dreamland:block/hive_block_with_growth" }
+    
   }
 }

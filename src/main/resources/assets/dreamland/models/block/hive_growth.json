@@ -1,0 +1,48 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "dreamland:block/hive_growth_carpet",
+		"1": "dreamland:block/hive_growth_cross",
+		"particle": "dreamland:block/hive_growth_carpet"
+	},
+	"elements": [
+		{
+			"name": "carpet",
+			"from": [0, 0.1, 0],
+			"to": [16, 0.1, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0.5, 8]},
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#0"}
+			}
+		},
+		{
+			"name": "cross",
+			"from": [7.58579, 0.1, -1],
+			"to": [7.58579, 6.1, 15],
+			"rotation": {"angle": -45, "axis": "y", "origin": [6.58579, 0, 8]},
+			"faces": {
+				"east": {"uv": [0, 10, 16, 16], "texture": "#1"},
+				"west": {"uv": [0, 10, 16, 16], "texture": "#1"}
+			}
+		},
+		{
+			"name": "cross",
+			"from": [0, 0.1, 8],
+			"to": [16, 6.1, 8],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 2, 8]},
+			"faces": {
+				"north": {"uv": [0, 10, 16, 16], "texture": "#1"},
+				"south": {"uv": [0, 10, 16, 16], "texture": "#1"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "hive_growth",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [0, 1, 2]
+		}
+	]
+}

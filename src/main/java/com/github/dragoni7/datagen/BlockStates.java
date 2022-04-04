@@ -26,7 +26,7 @@ public class BlockStates extends BlockStateProvider{
 										   DreamlandBlocks.ROOTED_POROUS_STONE.get(),
 										   DreamlandBlocks.DUSK_ICE.get(),
 										   DreamlandBlocks.TOXIC_ROCK.get(),
-										   DreamlandBlocks.HIVE_SLUDGE.get(),
+										   DreamlandBlocks.HIVE_MEMBRANE.get(),
 										   DreamlandBlocks.HIVE_IRON.get(),
 										   DreamlandBlocks.HIVE_COPPER.get(),
 										   DreamlandBlocks.HIVE_GOLD.get(),

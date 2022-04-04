@@ -1,8 +1,10 @@
 package com.github.dragoni7.client;
 
 import com.github.dragoni7.common.blocks.DreamlandBlocks;
+import com.github.dragoni7.common.entities.DreamlandEntities;
 import com.github.dragoni7.common.particles.DreamlandParticles;
 import com.github.dragoni7.common.particles.WhiteMoldParticle;
+import com.github.dragoni7.client.render.*;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColors;
@@ -26,7 +28,8 @@ public class DreamlandClientEventHandler {
 		//modBus.addListener(ClientModEventSubscriber::registerParticleFactory);
 	}
 	
-	public static void registerEntityRenders(final EntityRenderersEvent.RegisterRenderers event) {	
+	public static void registerEntityRenders(final EntityRenderersEvent.RegisterRenderers event) {
+		event.registerEntityRenderer(DreamlandEntities.LARVA.get(), LarvaRender::new);
 	}
 	
 	public static void setupClient(FMLClientSetupEvent event) {
@@ -35,10 +38,10 @@ public class DreamlandClientEventHandler {
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.HIVE_JELLY.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.CLAY_SOIL_GRASS.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.DUSK_ICE.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.HIVE_MEMBRANE.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.CAVE_SLIME.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.CAVE_SLIME_PLANT.get(), RenderType.translucent());	
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.WHITE_MOLD.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.WHITE_MOLD.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.HIVE_GROWTH.get(), RenderType.cutout());
 		});
 	}
 	

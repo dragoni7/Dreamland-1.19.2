@@ -10,7 +10,6 @@ import net.minecraft.tags.TagKey;
 public class TagCreator {
 	
 	public static TagKey<Block> createBlockTag(String name) {
-		
 		return TagKey.create(Registry.BLOCK_REGISTRY, DreamlandLoc.createLoc(name));
 	}
 	

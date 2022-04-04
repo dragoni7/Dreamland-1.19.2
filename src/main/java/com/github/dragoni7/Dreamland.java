@@ -1,7 +1,11 @@
 package com.github.dragoni7;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.github.dragoni7.client.DreamlandClientEventHandler;
 import com.github.dragoni7.common.blocks.DreamlandBlocks;
+import com.github.dragoni7.common.entities.DreamlandEntities;
 import com.github.dragoni7.common.items.DreamlandItems;
 import com.github.dragoni7.common.world.DreamlandRegion;
 import com.github.dragoni7.common.world.DreamlandSurfaceRules;
@@ -26,6 +30,8 @@ public class Dreamland
 {
 	
 	public static final String MODID = "dreamland";
+	
+	public static final Logger LOGGER = LogManager.getLogger();
 
     public Dreamland() {
 
@@ -36,6 +42,7 @@ public class Dreamland
         
         forgeBus.register(this);
         
+        DreamlandEntities.ENTITY_TYPES.register(modBus);
         DreamlandBlocks.BLOCKS.register(modBus);
         DreamlandItems.ITEMS.register(modBus);
         DreamlandEventHandler.subscribeModEvents(modBus);

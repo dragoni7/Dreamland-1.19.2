@@ -12,9 +12,9 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-public class AddItemTags extends ItemTagsProvider{
+public class AddItemTags extends ItemTagsProvider {
 	
-	public AddItemTags(DataGenerator generator,BlockTagsProvider blockTags, ExistingFileHelper helper) {
+	public AddItemTags(DataGenerator generator, BlockTagsProvider blockTags, ExistingFileHelper helper) {
 		super(generator, blockTags, Dreamland.MODID, helper);
 	}
 
@@ -80,6 +80,6 @@ public class AddItemTags extends ItemTagsProvider{
 	
 	@Override
 	public String getName() {
-		return "Dreamland Tags";
+		return "Dreamland Item Tags";
 	}
 }

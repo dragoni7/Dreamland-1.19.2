@@ -17,6 +17,7 @@ public class AddBlockTags extends BlockTagsProvider{
 		super(generator, Dreamland.MODID, helper);
 		
 	}
+	
 	@Override
 	protected void addTags() {
 		
@@ -32,17 +33,21 @@ public class AddBlockTags extends BlockTagsProvider{
 		
 		tag(BlockTags.MINEABLE_WITH_SHOVEL)
 		.add(DreamlandBlocks.CLAY_SOIL.get())
-		.add(DreamlandBlocks.HIVE_JELLY.get());
+		.add(DreamlandBlocks.HIVE_JELLY.get())
+		.add(DreamlandBlocks.HIVE_MEMBRANE.get());
 		
 		tag(BlockTags.MINEABLE_WITH_PICKAXE)
 		.add(DreamlandBlocks.DARK_QUARTZITE.get())
 		.add(DreamlandBlocks.HIVE_BLOCK.get())
+		.add(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.get())
 		.add(DreamlandBlocks.POROUS_STONE.get())
 		.add(DreamlandBlocks.ROOTED_POROUS_STONE.get());
 		
 		tag(BlockTags.NEEDS_STONE_TOOL)
 		.add(DreamlandBlocks.HIVE_BLOCK.get())
-		.add(DreamlandBlocks.HIVE_JELLY.get());
+		.add(DreamlandBlocks.HIVE_JELLY.get())
+		.add(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.get())
+		.add(DreamlandBlocks.HIVE_MEMBRANE.get());
 	
 		tag(DreamlandBlockTags.HIVE_ORES_REPLACEABLE)
 		.add(DreamlandBlocks.HIVE_BLOCK.get());
@@ -113,7 +118,7 @@ public class AddBlockTags extends BlockTagsProvider{
 	
 	@Override
 	public String getName() {
-		return "Dreamland Tags";
+		return "Dreamland Block Tags";
 	}
 }
 

@@ -7,6 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.HalfTransparentBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
@@ -61,65 +62,65 @@ public class DreamlandBlocks {
 					));
 	
 	public static final RegistryObject<Block> HIVE_BLOCK = BLOCKS.register("hive_block", 
-			() -> new Block(BlockBehaviour.Properties
-					.of(Material.STONE)
-					.strength(2.0F,6.0F)
+			() -> new HiveBlock(BlockBehaviour.Properties
+					.of(Material.STONE, MaterialColor.COLOR_PURPLE)
+					.requiresCorrectToolForDrops()
+					.strength(1.5F,6.0F)
 					.sound(SoundType.NETHERRACK)
+					.randomTicks()
 					));
 	
 	public static final RegistryObject<Block> CAVE_SLIME = BLOCKS.register("cave_slime", 
 			() -> new CaveSlime(BlockBehaviour.Properties
-					.of(Material.CLAY)
-					.strength(2.0F,6.0F)
+					.of(Material.PLANT, MaterialColor.COLOR_CYAN)
 					.sound(SoundType.HONEY_BLOCK)
 					.noCollission()
-					.noOcclusion()
+					.instabreak()
+					.randomTicks()
 					.lightLevel(CaveSlimePlant.emission(5))
 					));
 	
 	public static final RegistryObject<Block> CAVE_SLIME_PLANT = BLOCKS.register("cave_slime_plant", 
 			() -> new CaveSlimePlant(BlockBehaviour.Properties
-					.of(Material.CLAY)
-					.strength(2.0F,6.0F)
+					.of(Material.PLANT, MaterialColor.COLOR_CYAN)
 					.sound(SoundType.HONEY_BLOCK)
 					.noCollission()
-					.noOcclusion()
+					.instabreak()
 					.lightLevel(CaveSlimePlant.emission(5))
 					));
 	
 	public static final RegistryObject<Block> HIVE_JELLY = BLOCKS.register("hive_jelly",
 			() -> new EmissiveBlock(BlockBehaviour.Properties
-					.of(Material.SPONGE)
-					.strength(2.0F,2.0F)
+					.of(Material.SPONGE, MaterialColor.COLOR_CYAN)
+					.strength(2.0F,6.0F)
 					.sound(SoundType.SLIME_BLOCK)
 					.noOcclusion()
 					.lightLevel(EmissiveBlock.emission(7))
 					));
 	
-	public static final RegistryObject<Block> HIVE_SLUDGE = BLOCKS.register("hive_sludge",
-			() -> new EmissiveBlock(BlockBehaviour.Properties
-					.of(Material.SPONGE)
-					.strength(2.0F, 6.0F)
+	public static final RegistryObject<Block> HIVE_MEMBRANE = BLOCKS.register("hive_membrane",
+			() -> new HalfTransparentBlock(BlockBehaviour.Properties
+					.of(Material.SPONGE, MaterialColor.COLOR_CYAN)
+					.strength(1.5F, 6.0F)
+					.requiresCorrectToolForDrops()
 					.sound(SoundType.SLIME_BLOCK)
-					.lightLevel(EmissiveBlock.emission(5))
+					.noOcclusion()
+					.hasPostProcess(DreamlandBlocks::always)
+					.emissiveRendering(DreamlandBlocks::always)
+					.lightLevel((p_152684_) -> {return 1;})
 					));
 	
 	public static final RegistryObject<Block> HIVE_BLOCK_WITH_JELLY = BLOCKS.register("hive_block_with_jelly",
 			() -> new EmissiveBlock(BlockBehaviour.Properties
 					.of(Material.SPONGE)
-					.strength(2.0F,2.0F)
+					.strength(1.5F, 6.0F)
+					.requiresCorrectToolForDrops()
 					.sound(SoundType.SLIME_BLOCK)
-					.noOcclusion()
-					.lightLevel(EmissiveBlock.emission(7))
+					.lightLevel(EmissiveBlock.emission(6))
 					));
 	
-	public static final RegistryObject<Block> WHITE_MOLD = BLOCKS.register("white_mold",
-			() -> new WhiteMold(BlockBehaviour.Properties
-					.of(Material.PLANT, MaterialColor.COLOR_LIGHT_GRAY)
-					.strength(0.1F)
-					.sound(SoundType.MOSS_CARPET)
-					.noCollission()
-					.noOcclusion()
+	public static final RegistryObject<Block> HIVE_GROWTH = BLOCKS.register("hive_growth",
+			() -> new HiveGrowth(BlockBehaviour.Properties.of(Material.MOSS, MaterialColor.COLOR_RED).noOcclusion().sound(SoundType.MOSS_CARPET).instabreak()
 					));
 	
 	public static final RegistryObject<Block> HIVE_IRON = createHiveOre("hive_iron");
