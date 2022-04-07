@@ -95,7 +95,7 @@ public class DreamlandBlocks {
 					.strength(2.0F,6.0F)
 					.sound(SoundType.SLIME_BLOCK)
 					.noOcclusion()
-					.lightLevel(EmissiveBlock.emission(7))
+					.lightLevel(EmissiveBlock.emission(5))
 					));
 	
 	public static final RegistryObject<Block> HIVE_MEMBRANE = BLOCKS.register("hive_membrane",
@@ -121,6 +121,15 @@ public class DreamlandBlocks {
 	
 	public static final RegistryObject<Block> HIVE_GROWTH = BLOCKS.register("hive_growth",
 			() -> new HiveGrowth(BlockBehaviour.Properties.of(Material.MOSS, MaterialColor.COLOR_RED).noOcclusion().sound(SoundType.MOSS_CARPET).instabreak()
+					));
+	
+	public static final RegistryObject<Block> JELLY_SPLOTCH = BLOCKS.register("jelly_splotch",
+			() -> new JellySplotch(BlockBehaviour.Properties
+					.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_CYAN)
+					.strength(0.2F)
+					.noCollission()
+					.sound(SoundType.HONEY_BLOCK)
+					.lightLevel(JellySplotch.emission(7))
 					));
 	
 	public static final RegistryObject<Block> HIVE_IRON = createHiveOre("hive_iron");

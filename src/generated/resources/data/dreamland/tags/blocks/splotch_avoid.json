@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "dreamland:jelly_splotch",
+    "minecraft:air",
+    "minecraft:grass",
+    "minecraft:tall_grass",
+    "minecraft:tall_seagrass",
+    "minecraft:seagrass",
+    "minecraft:vine",
+    "minecraft:water",
+    "#minecraft:replaceable_plants",
+    "#minecraft:flowers",
+    "#minecraft:small_flowers",
+    "#minecraft:tall_flowers"
+  ]
+}

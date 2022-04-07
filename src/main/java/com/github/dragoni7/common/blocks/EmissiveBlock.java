@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class EmissiveBlock extends Block {
 	
-	   public EmissiveBlock(Properties p_49795_) {
+	public EmissiveBlock(Properties p_49795_) {
 		super(p_49795_);
 	}
 

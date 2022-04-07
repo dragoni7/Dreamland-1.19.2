@@ -13,7 +13,7 @@ b7ece61beb0d2fbc616cb1a947830132cffb2ca1 assets/dreamland/blockstates/hive_diamo
 85d14e0f841ae447ecc0fa78ef02d4bbbf8d58d7 assets/dreamland/blockstates/rooted_porous_stone.json
 1965e64a1f77f001e5bca27c45e4fa96d4db1a38 assets/dreamland/blockstates/solid_tar.json
 1bcd044facc01cc1b50ea38f8ba621fd2bb48518 assets/dreamland/blockstates/toxic_rock.json
-9a35640ae429f92a618650cc79838b86d06e32e0 assets/dreamland/lang/en_us.json
+1592fbedbb29d7c00c43a0730bd2ea9d705bc03f assets/dreamland/lang/en_us.json
 0f8b8e00166a3b5d80c3c654ef60828a3aa6fb44 assets/dreamland/models/block/clay_soil.json
 c386ed6587f2d2d76f797cb55a09438ca529d8dd assets/dreamland/models/block/dark_quartzite.json
 fc042e18aa42ae43ca3f5c94a652a0f88a4bae82 assets/dreamland/models/block/dusk_ice.json
@@ -61,6 +61,7 @@ ba4b9ea9abf82e8ef990e0e5d62a6e0e90c5d2c7 data/dreamland/loot_tables/blocks/hive_
 0d484ebfa61615754ae51729449b374396a5f858 data/dreamland/loot_tables/blocks/hive_membrane.json
 6947ed90f8af7e0251cf61d931a9dbc321b096ec data/dreamland/loot_tables/blocks/hive_redstone.json
 41d34d801bd5079600f07d1d5b2f3e68c92a1b73 data/dreamland/tags/blocks/hive_ores_replaceable.json
+7a7e5d893636862dd4429da82ea43f129c0437cb data/dreamland/tags/blocks/splotch_avoid.json
 2287d37df742b6074c8747e49277c3be55a5f4f7 data/forge/tags/blocks/ores.json
 a55547df3d969e237f731d1b66a3d62162645911 data/forge/tags/blocks/ores/copper.json
 15d5e4ba52059d98ff40ffda66e481ebeb35c4b3 data/forge/tags/blocks/ores/diamond.json

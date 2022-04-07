@@ -32,6 +32,7 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandBlocks.CAVE_SLIME.get(), "Hive Slime");
 		add(DreamlandBlocks.CAVE_SLIME_PLANT.get(), "Hive Slime Plant");
 		add(DreamlandBlocks.HIVE_GROWTH.get(), "Hive Growth");
+		add(DreamlandBlocks.JELLY_SPLOTCH.get(), "Jelly Splotch");
 		
 		add(DreamlandItems.HIVE_JELLY_ITEM.get(), "Jelly");
 		

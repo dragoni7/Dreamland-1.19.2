@@ -16,6 +16,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 
 public class DreamlandClientEventHandler {
 
@@ -30,6 +31,7 @@ public class DreamlandClientEventHandler {
 	
 	public static void registerEntityRenders(final EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(DreamlandEntities.LARVA.get(), LarvaRender::new);
+		event.registerEntityRenderer(DreamlandEntities.THROWN_HIVE_JELLY.get(), ThrownItemRenderer::new);
 	}
 	
 	public static void setupClient(FMLClientSetupEvent event) {
@@ -42,6 +44,8 @@ public class DreamlandClientEventHandler {
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.CAVE_SLIME.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.CAVE_SLIME_PLANT.get(), RenderType.translucent());	
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.HIVE_GROWTH.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.JELLY_SPLOTCH.get(), RenderType.cutout());
+			
 		});
 	}
 	

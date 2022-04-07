@@ -20,6 +20,10 @@ public class CaveSlimePlant extends GrowingPlantBodyBlock implements CaveVines{
 		return (GrowingPlantHeadBlock)DreamlandBlocks.CAVE_SLIME.get();
 	}
 	
+	public boolean skipRendering(BlockState p_53972_, BlockState p_53973_, Direction p_53974_) {
+	      return p_53973_.is(this) ? true : super.skipRendering(p_53972_, p_53973_, p_53974_);
+	   }
+	
 	public static ToIntFunction<BlockState> emission(int p_181223_) {
 	      return (p_181221_) -> {
 	         return p_181223_;

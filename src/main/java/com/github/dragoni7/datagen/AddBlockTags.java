@@ -8,6 +8,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
@@ -51,6 +52,21 @@ public class AddBlockTags extends BlockTagsProvider{
 	
 		tag(DreamlandBlockTags.HIVE_ORES_REPLACEABLE)
 		.add(DreamlandBlocks.HIVE_BLOCK.get());
+		
+		tag(DreamlandBlockTags.SPLOTCH_AVOID)
+		.add(DreamlandBlocks.JELLY_SPLOTCH.get())
+		.add(Blocks.AIR)
+		.add(Blocks.GRASS)
+		.add(Blocks.TALL_GRASS)
+		.add(Blocks.TALL_SEAGRASS)
+		.add(Blocks.SEAGRASS)
+		.add(Blocks.VINE)
+		.add(Blocks.WATER)
+		.addTag(BlockTags.REPLACEABLE_PLANTS)
+		.addTag(BlockTags.FLOWERS)
+		.addTag(BlockTags.SMALL_FLOWERS)
+		.addTag(BlockTags.TALL_FLOWERS);
+		
 		
 		addCopperOreTags(DreamlandBlocks.HIVE_COPPER.get());
 		addIronOreTags(DreamlandBlocks.HIVE_IRON.get());
