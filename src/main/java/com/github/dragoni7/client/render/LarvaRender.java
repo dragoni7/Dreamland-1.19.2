@@ -15,6 +15,7 @@ public class LarvaRender extends GeoEntityRenderer<LarvaEntity>{
 
 	public LarvaRender(Context renderManager) {
 		super(renderManager, new LarvaModel());
+		this.addLayer(new LarvaEyesFeatureRenderer(this, new LarvaEyesEntityRenderer(renderManager, new LarvaModel())));
 	}
 	
 	@Override
