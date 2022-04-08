@@ -30,7 +30,7 @@ public class HiveComb extends Feature<BlockStateConfiguration> {
 			altFilling = blockstateconfig.state;
 		}
 		
-		for(int j = 0; j > -10; j--) {
+		for(int j = 0; j > -6; j--) {
 			this.setBlock(worldgenlevel, blockpos.offset(0,j,0), altFilling);
 			this.setBlock(worldgenlevel, blockpos.offset(0,j,1), altFilling);
 			this.setBlock(worldgenlevel, blockpos.offset(1,j,1), altFilling);
@@ -38,7 +38,7 @@ public class HiveComb extends Feature<BlockStateConfiguration> {
 			
 		}
 		
-		for(int j = 1; j > -11; j--) {
+		for(int j = 1; j > -7; j--) {
 			this.setBlock(worldgenlevel, blockpos.offset(0,j,-1), DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState());
 			this.setBlock(worldgenlevel, blockpos.offset(1,j,-1), DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState());
 			
