@@ -1,42 +1,24 @@
 package com.github.dragoni7.common.blocks;
 
 import java.util.List;
-import java.util.Random;
 
 import javax.annotation.Nullable;
 
 import com.github.dragoni7.common.entities.LarvaEntity;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.AABB;
 
-public class HiveBlock extends LarvaAngerableBlock {
-	
-	public static final BooleanProperty HAS_GROWTH = BlockStateProperties.CONDITIONAL;
+public class LarvaAngerableBlock extends Block {
 
-	public HiveBlock(Properties p_49795_) {
-		super(p_49795_);
-		this.registerDefaultState(this.stateDefinition.any().setValue(HAS_GROWTH, Boolean.valueOf(false)));
-	}
-	
-	public void randomTick(BlockState blockstate, ServerLevel level, BlockPos blockpos, Random random) {
-		if(!level.isAreaLoaded(blockpos, 1)) return;
-		else if(level.getBlockState(blockpos.above()).is(DreamlandBlocks.HIVE_GROWTH.get())) {
-				level.setBlockAndUpdate(blockpos, blockstate.setValue(HAS_GROWTH, Boolean.valueOf(true)));
-			}
-		else {
-			level.setBlockAndUpdate(blockpos, blockstate.setValue(HAS_GROWTH, Boolean.valueOf(false)));
-		}	
+	public LarvaAngerableBlock(Properties properties) {
+		super(properties);
 	}
 	
 	public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity p_49588_, ItemStack p_49589_) {
@@ -58,11 +40,6 @@ public class HiveBlock extends LarvaAngerableBlock {
 	         }
 	      }
 
-	   }
-	
-	@Override
-	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-	      builder.add(HAS_GROWTH);
 	   }
 
 }

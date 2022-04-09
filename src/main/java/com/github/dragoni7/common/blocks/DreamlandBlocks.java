@@ -90,16 +90,16 @@ public class DreamlandBlocks {
 					));
 	
 	public static final RegistryObject<Block> HIVE_JELLY = BLOCKS.register("hive_jelly",
-			() -> new EmissiveBlock(BlockBehaviour.Properties
+			() -> new EmissiveHiveBlock(BlockBehaviour.Properties
 					.of(Material.SPONGE, MaterialColor.COLOR_CYAN)
 					.strength(2.0F,6.0F)
 					.sound(SoundType.SLIME_BLOCK)
 					.noOcclusion()
-					.lightLevel(EmissiveBlock.emission(5))
+					.lightLevel(EmissiveHiveBlock.emission(5))
 					));
 	
 	public static final RegistryObject<Block> HIVE_MEMBRANE = BLOCKS.register("hive_membrane",
-			() -> new HalfTransparentBlock(BlockBehaviour.Properties
+			() -> new HiveMembrane(BlockBehaviour.Properties
 					.of(Material.SPONGE, MaterialColor.COLOR_CYAN)
 					.strength(1.5F, 6.0F)
 					.requiresCorrectToolForDrops()
@@ -111,16 +111,16 @@ public class DreamlandBlocks {
 					));
 	
 	public static final RegistryObject<Block> HIVE_BLOCK_WITH_JELLY = BLOCKS.register("hive_block_with_jelly",
-			() -> new EmissiveBlock(BlockBehaviour.Properties
+			() -> new EmissiveHiveBlock(BlockBehaviour.Properties
 					.of(Material.SPONGE)
 					.strength(1.5F, 6.0F)
 					.requiresCorrectToolForDrops()
 					.sound(SoundType.SLIME_BLOCK)
-					.lightLevel(EmissiveBlock.emission(6))
+					.lightLevel(EmissiveHiveBlock.emission(6))
 					));
 	
 	public static final RegistryObject<Block> HIVE_GROWTH = BLOCKS.register("hive_growth",
-			() -> new HiveGrowth(BlockBehaviour.Properties.of(Material.MOSS, MaterialColor.COLOR_RED).noOcclusion().sound(SoundType.MOSS_CARPET).instabreak()
+			() -> new HiveGrowth(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_RED).noOcclusion().sound(SoundType.MOSS_CARPET).instabreak()
 					));
 	
 	public static final RegistryObject<Block> JELLY_SPLOTCH = BLOCKS.register("jelly_splotch",
@@ -141,7 +141,7 @@ public class DreamlandBlocks {
 	
 	private static RegistryObject<Block> createHiveOre(String name) {
 		return BLOCKS.register(name,
-				() -> new Block(BlockBehaviour.Properties
+				() -> new LarvaAngerableBlock(BlockBehaviour.Properties
 						.of(Material.STONE)
 						.strength(3.0F,3.0F)
 						.sound(SoundType.NETHERRACK)
