@@ -89,8 +89,8 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 	public static AttributeSupplier.Builder customAttributes() {
 		return Mob.createMobAttributes()
 				.add(Attributes.MAX_HEALTH, 8.0D)
-				.add(Attributes.MOVEMENT_SPEED, 0.35D)
-				.add(Attributes.ATTACK_DAMAGE, 2.0D)
+				.add(Attributes.MOVEMENT_SPEED, 0.3D)
+				.add(Attributes.ATTACK_DAMAGE, 1.5D)
 				.add(Attributes.FOLLOW_RANGE, 48.0D);
 	}
 	
