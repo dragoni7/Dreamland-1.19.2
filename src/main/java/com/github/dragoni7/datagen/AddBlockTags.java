@@ -34,7 +34,7 @@ public class AddBlockTags extends BlockTagsProvider{
 		
 		tag(BlockTags.MINEABLE_WITH_SHOVEL)
 		.add(DreamlandBlocks.CLAY_SOIL.get())
-		.add(DreamlandBlocks.HIVE_JELLY.get())
+		.add(DreamlandBlocks.HIVE_JELLY_CLUSTER.get())
 		.add(DreamlandBlocks.HIVE_MEMBRANE.get());
 		
 		tag(BlockTags.MINEABLE_WITH_PICKAXE)
@@ -46,7 +46,7 @@ public class AddBlockTags extends BlockTagsProvider{
 		
 		tag(BlockTags.NEEDS_STONE_TOOL)
 		.add(DreamlandBlocks.HIVE_BLOCK.get())
-		.add(DreamlandBlocks.HIVE_JELLY.get())
+		.add(DreamlandBlocks.HIVE_JELLY_CLUSTER.get())
 		.add(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.get())
 		.add(DreamlandBlocks.HIVE_MEMBRANE.get());
 	

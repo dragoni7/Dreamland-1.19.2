@@ -13,8 +13,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.TimeUtil;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -37,7 +35,7 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.ResetUniversalAngerTargetGoal;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.navigation.WallClimberNavigation;
-import net.minecraft.world.entity.animal.Bee;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -50,7 +48,7 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class LarvaEntity extends PathfinderMob implements IAnimatable, NeutralMob {
+public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 	
 	private AnimationFactory factory = new AnimationFactory(this);
 	private UUID persistentAngerTarget;
@@ -107,6 +105,7 @@ public class LarvaEntity extends PathfinderMob implements IAnimatable, NeutralMo
 		
 		
 		this.targetSelector.addGoal(1, (new LarvaEntity.LarvaHurtByOtherGoal(this)).setAlertOthers(new Class[0]));
+		this.targetSelector.addGoal(1, (new LarvaEntity.LarvaBecomeAngryTargetGoal(this)));
 		this.targetSelector.addGoal(3, new ResetUniversalAngerTargetGoal<>(this, true));
 	}
 	

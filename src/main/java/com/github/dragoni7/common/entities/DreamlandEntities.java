@@ -19,7 +19,7 @@ public class DreamlandEntities {
 	public static final List<Item> SPAWN_EGGS = Lists.newArrayList();
 	
 	public static final RegistryObject<EntityType<LarvaEntity>> LARVA = ENTITY_TYPES.register("larva", 
-			() -> EntityType.Builder.<LarvaEntity>of(LarvaEntity::new, MobCategory.CREATURE)
+			() -> EntityType.Builder.<LarvaEntity>of(LarvaEntity::new, MobCategory.MONSTER)
 			.sized(0.7F, 0.4F)
 			.clientTrackingRange(10)
 			.build(DreamlandLoc.createLoc("larva").toString()));

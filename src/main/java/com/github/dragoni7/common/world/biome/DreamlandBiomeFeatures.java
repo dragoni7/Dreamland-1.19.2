@@ -26,7 +26,8 @@ public class DreamlandBiomeFeatures {
 		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, DreamlandPlacedFeature.PLACED_HIVE_COMB);
 		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, DreamlandPlacedFeature.PLACED_HIVE_STRAND);
 		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandPlacedFeature.PLACED_CAVE_SLIME);
-		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandPlacedFeature.PLACED_HIVE_JELLY);
+		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandPlacedFeature.PLACED_HIVE_JELLY_CLUSTER);
+		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandPlacedFeature.PLACED_INFESTED_HIVE_JELLY_CLUSTER);
 		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandPlacedFeature.PLACED_HIVE_GROWTH);
 		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, OrePlacements.ORE_ANDESITE_UPPER);
 		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, OrePlacements.ORE_DIORITE_UPPER);

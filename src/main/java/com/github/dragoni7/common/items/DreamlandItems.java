@@ -39,7 +39,9 @@ public class DreamlandItems {
 	
 	public static final RegistryObject<Item> HIVE_BLOCK = registerBlockItem("hive_block", DreamlandBlocks.HIVE_BLOCK);
 	
-	public static final RegistryObject<Item> HIVE_JELLY = registerBlockItem("hive_jelly", DreamlandBlocks.HIVE_JELLY);
+	public static final RegistryObject<Item> HIVE_JELLY_CLUSTER = registerBlockItem("hive_jelly_cluster", DreamlandBlocks.HIVE_JELLY_CLUSTER);
+	
+	public static final RegistryObject<Item> INFESTED_HIVE_JELLY_CLUSTER = registerBlockItem("infested_hive_jelly_cluster", DreamlandBlocks.INFESTED_HIVE_JELLY_CLUSTER);
 	
 	public static final RegistryObject<Item> HIVE_MEMBRANE = registerBlockItem("hive_membrane", DreamlandBlocks.HIVE_MEMBRANE);
 	
@@ -57,7 +59,7 @@ public class DreamlandItems {
 	public static final RegistryObject<Item> HIVE_DIAMOND = registerBlockItem("hive_diamond", DreamlandBlocks.HIVE_DIAMOND);
 	
 	//Items
-	public static final RegistryObject<Item> HIVE_JELLY_ITEM = registerHiveJelly("jelly", new FoodProperties.Builder().nutrition(1).saturationMod(0.2F).build());
+	public static final RegistryObject<Item> HIVE_JELLY_ITEM = registerHiveJelly("hive_jelly", new FoodProperties.Builder().nutrition(1).saturationMod(0.2F).build());
 	
 	private static RegistryObject<Item> registerBlockItem(String name, RegistryObject<Block> block) {
 		

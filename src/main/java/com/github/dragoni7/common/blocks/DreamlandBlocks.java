@@ -89,13 +89,25 @@ public class DreamlandBlocks {
 					.lightLevel(CaveSlimePlant.emission(5))
 					));
 	
-	public static final RegistryObject<Block> HIVE_JELLY = BLOCKS.register("hive_jelly",
-			() -> new EmissiveHiveBlock(BlockBehaviour.Properties
-					.of(Material.SPONGE, MaterialColor.COLOR_CYAN)
-					.strength(2.0F,6.0F)
+	public static final RegistryObject<Block> HIVE_JELLY_CLUSTER = BLOCKS.register("hive_jelly_cluster",
+			() -> new HiveCluster(BlockBehaviour.Properties
+					.of(Material.CLAY, MaterialColor.COLOR_CYAN)
+					.strength(1.5F, 6.0F)
+					.requiresCorrectToolForDrops()
 					.sound(SoundType.SLIME_BLOCK)
 					.noOcclusion()
-					.lightLevel(EmissiveHiveBlock.emission(5))
+					.lightLevel(HiveCluster.emission(5))
+					));
+	
+	public static final RegistryObject<Block> INFESTED_HIVE_JELLY_CLUSTER = BLOCKS.register("infested_hive_jelly_cluster",
+			() -> new InfestedHiveCluster(BlockBehaviour.Properties
+					.of(Material.CLAY, MaterialColor.COLOR_CYAN)
+					.strength(1.5F, 6.0F)
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.SLIME_BLOCK)
+					.noOcclusion()
+					.randomTicks()
+					.lightLevel(InfestedHiveCluster.emission(5))
 					));
 	
 	public static final RegistryObject<Block> HIVE_MEMBRANE = BLOCKS.register("hive_membrane",

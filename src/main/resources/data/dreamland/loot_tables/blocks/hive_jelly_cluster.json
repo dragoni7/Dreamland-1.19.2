@@ -2,7 +2,7 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "name": "hive_jelly",
+      "name": "hive_jelly_cluster",
       "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
@@ -26,7 +26,7 @@
                   }
                 }
               ],
-              "name": "dreamland:hive_jelly"
+              "name": "dreamland:hive_jelly_cluster"
             },
             {
               "type": "minecraft:item",
@@ -52,7 +52,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "dreamland:jelly"
+              "name": "dreamland:hive_jelly"
             }
           ]
         }

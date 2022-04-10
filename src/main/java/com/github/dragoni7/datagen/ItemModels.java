@@ -29,7 +29,7 @@ public class ItemModels extends ItemModelProvider{
 		createBlockItemModel(DreamlandItems.ROOTED_POROUS_STONE,"block/rooted_porous_stone");
 		createBlockItemModel(DreamlandItems.DUSK_ICE,"block/dusk_ice");
 		createBlockItemModel(DreamlandItems.TOXIC_ROCK,"block/toxic_rock");
-		createBlockItemModel(DreamlandItems.HIVE_JELLY, "block/hive_jelly");
+		createBlockItemModel(DreamlandItems.HIVE_JELLY_CLUSTER, "block/hive_jelly");
 		createBlockItemModel(DreamlandItems.HIVE_MEMBRANE, "block/hive_membrane");
 		createBlockItemModel(DreamlandItems.HIVE_IRON, "block/hive_iron");
 		createBlockItemModel(DreamlandItems.HIVE_COPPER, "block/hive_copper");

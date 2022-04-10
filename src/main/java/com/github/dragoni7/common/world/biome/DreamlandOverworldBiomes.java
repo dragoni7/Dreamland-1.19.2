@@ -2,6 +2,8 @@ package com.github.dragoni7.common.world.biome;
 
 import javax.annotation.Nullable;
 
+import com.github.dragoni7.common.entities.DreamlandEntities;
+
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.sounds.Music;
 import net.minecraft.util.Mth;
@@ -62,11 +64,11 @@ public class DreamlandOverworldBiomes {
         DreamlandBiomeFeatures.addHiveOres(biomeBuilder);
         DreamlandBiomeFeatures.hiveBiomeFeatures(biomeBuilder);
         
-        // spawnBuilder.addSpawn(null, null);
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(DreamlandEntities.LARVA.get(), 1, 4, 4));
         
         return biomeWithEffects(Biome.Precipitation.NONE, Biome.BiomeCategory.UNDERGROUND, 2.0F, 0.0F, new BiomeSpecialEffects.Builder()
-        																										.waterColor(4159204)
-        																										.waterFogColor(329011)
+        																										.waterColor(12511438)
+        																										.waterFogColor(9680288)
         																										.fogColor(12638463)
         																										.skyColor(calculateSkyColor(2.0F))
         																										.ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)

@@ -25,7 +25,7 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandBlocks.HIVE_LAPIS.get(), "Hive Lapis Ore");
 		add(DreamlandBlocks.HIVE_REDSTONE.get(), "Hive Redstone Ore");
 		add(DreamlandBlocks.HIVE_MEMBRANE.get(), "Hive Membrane");
-		add(DreamlandBlocks.HIVE_JELLY.get(), "Hive Jelly");
+		add(DreamlandBlocks.HIVE_JELLY_CLUSTER.get(), "Hive Jelly");
 		add(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.get(), "Hive Block With Jelly");
 		
 		add(DreamlandBlocks.BUMBLE_BLOCK.get(), "Bumble Block");

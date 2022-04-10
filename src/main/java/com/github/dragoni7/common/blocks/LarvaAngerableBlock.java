@@ -26,7 +26,7 @@ public class LarvaAngerableBlock extends Block {
 	      this.angerNearbyLarva(level, pos);
 	   }
 	
-	private void angerNearbyLarva(Level level, BlockPos pos) {
+	protected void angerNearbyLarva(Level level, BlockPos pos) {
 	      List<LarvaEntity> list = level.getEntitiesOfClass(LarvaEntity.class, (new AABB(pos)).inflate(8.0D, 6.0D, 8.0D));
 	      if (!list.isEmpty()) {
 	         List<Player> list1 = level.getEntitiesOfClass(Player.class, (new AABB(pos)).inflate(8.0D, 6.0D, 8.0D));

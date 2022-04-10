@@ -27,7 +27,7 @@ public class LootTables extends BaseLootTableProvider {
 		gemTable(DreamlandBlocks.HIVE_LAPIS.get(), Items.LAPIS_LAZULI, "hive_lapis");
 		gemTable(DreamlandBlocks.HIVE_REDSTONE.get(), Items.REDSTONE, "hive_redstone");
 		
-		silkTouchTable(DreamlandBlocks.HIVE_JELLY.get(), DreamlandItems.HIVE_JELLY_ITEM.get(), "hive_jelly", 2, 3);
+		silkTouchTable(DreamlandBlocks.HIVE_JELLY_CLUSTER.get(), DreamlandItems.HIVE_JELLY_ITEM.get(), "hive_jelly", 2, 3);
 		silkTouchTable(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.get(), DreamlandItems.HIVE_JELLY_ITEM.get(), "hive_block_with_jelly", 1, 1);
 	}
 
