@@ -4,16 +4,20 @@
   "block.dreamland.cave_slime_plant": "Hive Slime Plant",
   "block.dreamland.hive_block": "Hive Block",
   "block.dreamland.hive_block_with_jelly": "Hive Block With Jelly",
+  "block.dreamland.hive_cocoon": "Hive Cocoon",
   "block.dreamland.hive_copper": "Hive Copper Ore",
   "block.dreamland.hive_diamond": "Hive Diamond Ore",
   "block.dreamland.hive_gold": "Hive Gold Ore",
   "block.dreamland.hive_growth": "Hive Growth",
   "block.dreamland.hive_iron": "Hive Iron Ore",
-  "block.dreamland.hive_jelly": "Hive Jelly",
+  "block.dreamland.hive_jelly_cluster": "Hive Jelly Cluster",
   "block.dreamland.hive_lapis": "Hive Lapis Ore",
   "block.dreamland.hive_membrane": "Hive Membrane",
   "block.dreamland.hive_redstone": "Hive Redstone Ore",
+  "block.dreamland.infested_hive_jelly_cluster": "Hive Jelly Cluster",
   "block.dreamland.jelly_splotch": "Jelly Splotch",
-  "item.dreamland.jelly": "Jelly",
-  "itemGroup.com.github.dragoni7.Dreamland$1@705448e7": "Dreamland"
+  "entity.dreamland.larva": "Larva",
+  "entity.dreamland.thrown_hive_jelly": "Thrown Hive Jelly",
+  "item.dreamland.hive_jelly": "Hive Jelly",
+  "itemGroup.com.github.dragoni7.Dreamland$1@6c82ecbe": "Dreamland"
 }

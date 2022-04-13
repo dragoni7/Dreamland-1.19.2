@@ -2,7 +2,8 @@
   "replace": false,
   "values": [
     "dreamland:hive_block",
-    "dreamland:hive_jelly",
+    "dreamland:hive_jelly_cluster",
+    "dreamland:infested_hive_jelly_cluster",
     "dreamland:hive_block_with_jelly",
     "dreamland:hive_membrane",
     "dreamland:hive_copper",

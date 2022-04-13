@@ -2,7 +2,7 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "name": "hive_block_with_jelly",
+      "name": "hive_jelly_cluster",
       "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
@@ -26,7 +26,7 @@
                   }
                 }
               ],
-              "name": "dreamland:hive_block_with_jelly"
+              "name": "dreamland:hive_jelly_cluster"
             },
             {
               "type": "minecraft:item",
@@ -35,8 +35,8 @@
                   "function": "minecraft:set_count",
                   "count": {
                     "type": "minecraft:uniform",
-                    "min": 1.0,
-                    "max": 1.0
+                    "min": 2.0,
+                    "max": 3.0
                   },
                   "add": false
                 },
