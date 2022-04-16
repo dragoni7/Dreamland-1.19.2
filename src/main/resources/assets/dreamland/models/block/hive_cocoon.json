@@ -2,7 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "dreamland:block/hive_cocoon"
+		"0": "dreamland:block/hive_cocoon",
+		"particle": "dreamland:block/hive_cocoon"
 	},
 	"elements": [
 		{

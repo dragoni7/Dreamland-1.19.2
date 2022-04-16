@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.github.dragoni7.dreamland.common.world.DreamlandRegion;
 import com.github.dragoni7.dreamland.common.world.DreamlandSurfaceRules;
+import com.github.dragoni7.dreamland.network.DreamlandNetworking;
 import com.github.dragoni7.dreamland.setup.DreamlandBlocks;
 import com.github.dragoni7.dreamland.setup.DreamlandClientEventHandler;
 import com.github.dragoni7.dreamland.setup.DreamlandEntities;
@@ -59,6 +60,7 @@ public class Dreamland
     }
     
     private void commonSetup(FMLCommonSetupEvent event) {
+    	DreamlandNetworking.registerMessages();
     	event.enqueueWork( ()-> {
             SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, Dreamland.MODID, DreamlandSurfaceRules.OVERWORLD_SURFACE_RULES);
     		Regions.register(new DreamlandRegion(DreamlandLoc.createLoc("dreamland_region"), RegionType.OVERWORLD, 4));
