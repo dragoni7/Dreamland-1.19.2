@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 
 import com.github.dragoni7.dreamland.Dreamland;
+import com.github.dragoni7.dreamland.common.world.biome.BiomeKeys;
 import com.github.dragoni7.dreamland.common.world.feature.DreamlandConfiguredFeatures;
 import com.github.dragoni7.dreamland.common.world.feature.DreamlandFeaturePlacements;
 import com.google.gson.Gson;
@@ -21,6 +22,7 @@ import net.minecraft.resources.RegistryOps;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -60,6 +62,11 @@ public class DataGenerators {
 						key));
 	        }
 	        
+	        for (ResourceKey<Biome> key : BiomeKeys.getAllKeys()) {
+	        	generator.addProvider(makeBuiltinRegistryProvider(Dreamland.MODID, outputFolder, gson, ops, registries, Registry.BIOME_REGISTRY, Biome.DIRECT_CODEC,
+						key));
+	        }
+	        
 		}
 		
 		if(event.includeClient()) {
@@ -72,7 +79,7 @@ public class DataGenerators {
 		
         
 	}
-	
+
 	@SafeVarargs
 	private static <T> DataProvider makeBuiltinRegistryProvider(String modid, Path outputFolder, Gson gson, RegistryOps<JsonElement> ops, RegistryAccess registries, ResourceKey<Registry<T>> registryKey, Codec<T> codec, ResourceKey<T>... keys)
 	{
