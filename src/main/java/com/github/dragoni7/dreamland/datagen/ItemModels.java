@@ -24,7 +24,6 @@ public class ItemModels extends ItemModelProvider{
 		createBlockItemModel(DreamlandItems.HIVE_BLOCK,"block/hive_block1");
 		createBlockItemModel(DreamlandItems.CLAY_SOIL,"block/clay_soil");
 		createBlockItemModel(DreamlandItems.DARK_QUARTZITE,"block/dark_quartzite");
-		createBlockItemModel(DreamlandItems.SOLID_TAR,"block/solid_tar");
 		createBlockItemModel(DreamlandItems.POROUS_STONE,"block/porous_stone");
 		createBlockItemModel(DreamlandItems.ROOTED_POROUS_STONE,"block/rooted_porous_stone");
 		createBlockItemModel(DreamlandItems.DUSK_ICE,"block/dusk_ice");
@@ -41,6 +40,9 @@ public class ItemModels extends ItemModelProvider{
 		createBlockItemModel(DreamlandItems.HIVE_BLOCK_WITH_JELLY, "block/hive_block_with_jelly");
 		createBlockItemModel(DreamlandItems.CAVE_SLIME, "block/cave_slime");
 		createBlockItemModel(DreamlandItems.HIVE_COCOON, "block/hive_cocoon");
+		createBlockItemModel(DreamlandItems.DRIED_TAR, "block/dried_tar");
+		createBlockItemModel(DreamlandItems.TAR_SOIL, "block/tar_soil");
+		createBlockItemModel(DreamlandItems.DROUGHT_STONE, "block/drought_soil");
 		
 		singleTexture(DreamlandItems.HIVE_JELLY_ITEM.get().getRegistryName().getPath(), new ResourceLocation("item/handheld"),
 				"layer0", new ResourceLocation(Dreamland.MODID, "item/hive_jelly"));

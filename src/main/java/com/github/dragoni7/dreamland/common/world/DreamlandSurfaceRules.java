@@ -3,35 +3,31 @@ package com.github.dragoni7.dreamland.common.world;
 import com.github.dragoni7.dreamland.common.world.biome.BiomeKeys;
 import com.github.dragoni7.dreamland.setup.DreamlandBlocks;
 
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 
 public class DreamlandSurfaceRules
 {
 	//Conditions
-	//private static final SurfaceRules.RuleSource BEDROCK = SurfaceRules.state(Blocks.BEDROCK.defaultBlockState());
-	private static final SurfaceRules.ConditionSource ABOVE_0 = SurfaceRules.yBlockCheck(VerticalAnchor.absolute(0), 0);
-	private static final SurfaceRules.ConditionSource UNDER_0 = SurfaceRules.verticalGradient("dreamland:under0", VerticalAnchor.absolute(0), VerticalAnchor.absolute(8));
+	private static final SurfaceRules.ConditionSource ABOVE_0 = SurfaceRules.yBlockCheck(VerticalAnchor.absolute(0), 5);
 	private static final SurfaceRules.ConditionSource AT_OR_ABOVE_WATER = SurfaceRules.waterBlockCheck(-1, 0);
-	
-    private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
-    private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
-    private static final SurfaceRules.RuleSource DEEPSLATE = SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.verticalGradient("dreamland:under0", VerticalAnchor.absolute(0), VerticalAnchor.absolute(8)), SurfaceRules.state(Blocks.DEEPSLATE.defaultBlockState())));
-    private static final SurfaceRules.RuleSource BLUE_TERRACOTTA = makeStateRule(DreamlandBlocks.DARK_QUARTZITE.get());
-    private static final SurfaceRules.RuleSource BEDROCK = SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.verticalGradient("dreamland:bedrock_layer", VerticalAnchor.aboveBottom(0), VerticalAnchor.aboveBottom(5)), SurfaceRules.state(Blocks.BEDROCK.defaultBlockState())));
     
-    private static final SurfaceRules.RuleSource DEFAULT = SurfaceRules.sequence(SurfaceRules.ifTrue(AT_OR_ABOVE_WATER, GRASS_BLOCK), DIRT);
+    private static final SurfaceRules.RuleSource GARDEN_SURFACE = SurfaceRules.sequence(SurfaceRules.ifTrue(AT_OR_ABOVE_WATER, SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.state(Blocks.GRASS_BLOCK.defaultBlockState()))), SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.state(Blocks.DIRT.defaultBlockState())));
+    private static final SurfaceRules.RuleSource GARDEN = SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeKeys.GARDEN), GARDEN_SURFACE);
     
-    public static final SurfaceRules.RuleSource HIVE = SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeKeys.HIVE), SurfaceRules.sequence(SurfaceRules.ifTrue(ABOVE_0, SurfaceRules.state(DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState())), SurfaceRules.sequence(BEDROCK,DEEPSLATE)));
+    private static final SurfaceRules.RuleSource HIVE_SURFACE = SurfaceRules.sequence(SurfaceRules.ifTrue(ABOVE_0, SurfaceRules.state(DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState())));
+    private static final SurfaceRules.RuleSource HIVE = SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeKeys.HIVE), HIVE_SURFACE);
     
-    public static final SurfaceRules.RuleSource COLDBLUE = SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeKeys.COLD_BLUE), BLUE_TERRACOTTA);
+    private static final SurfaceRules.RuleSource TAR_SURFACE = SurfaceRules.sequence(SurfaceRules.ifTrue(AT_OR_ABOVE_WATER, SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.state(DreamlandBlocks.TAR_SOIL.get().defaultBlockState()))), SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.state(DreamlandBlocks.TAR_SOIL.get().defaultBlockState())));
+    private static final SurfaceRules.RuleSource TARLANDS = SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeKeys.TARLANDS), SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.steep(), SurfaceRules.state(DreamlandBlocks.DROUGHT_SOIL.get().defaultBlockState())), TAR_SURFACE));
     
-    public static final SurfaceRules.RuleSource OVERWORLD_SURFACE_RULES = SurfaceRules.sequence(HIVE, COLDBLUE, DEFAULT);
+    private static final SurfaceRules.RuleSource OVERWORLD = SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.sequence(GARDEN, TARLANDS));
     
-    private static SurfaceRules.RuleSource makeStateRule(Block block)
-    {
-        return SurfaceRules.state(block.defaultBlockState());
-    }
+    private static final SurfaceRules.RuleSource OVERWORLD_UNDERGROUND = SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.abovePreliminarySurface()), HIVE);
+    
+    public static final SurfaceRules.RuleSource OVERWORLD_SURFACE_RULES = SurfaceRules.sequence(OVERWORLD, OVERWORLD_UNDERGROUND);
 }

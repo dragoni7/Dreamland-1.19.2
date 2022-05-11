@@ -7,6 +7,7 @@ import com.github.dragoni7.dreamland.common.blocks.CaveSlimePlant;
 import com.github.dragoni7.dreamland.common.blocks.ClaySoil;
 import com.github.dragoni7.dreamland.common.blocks.ClaySoilGrass;
 import com.github.dragoni7.dreamland.common.blocks.DarkQuartzite;
+import com.github.dragoni7.dreamland.common.blocks.DreamlandSapling;
 import com.github.dragoni7.dreamland.common.blocks.DuskIce;
 import com.github.dragoni7.dreamland.common.blocks.EmissiveHiveBlock;
 import com.github.dragoni7.dreamland.common.blocks.HiveBlock;
@@ -22,9 +23,11 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
+import net.minecraftforge.common.util.ForgeSoundType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -59,13 +62,6 @@ public class DreamlandBlocks {
 					.hasPostProcess(DreamlandBlocks::always)
 					.emissiveRendering(DreamlandBlocks::always)
 					.lightLevel((p_152684_) -> {return 1;})
-					));
-	
-	public static final RegistryObject<Block> SOLID_TAR = BLOCKS.register("solid_tar", 
-			() -> new Block(BlockBehaviour.Properties
-					.of(Material.CLAY)
-					.strength(2.0F,6.0F)
-					.sound(SoundType.CALCITE)
 					));
 	
 	public static final RegistryObject<Block> TOXIC_ROCK = BLOCKS.register("toxic_rock", 
@@ -171,6 +167,19 @@ public class DreamlandBlocks {
 	public static final RegistryObject<Block> HIVE_DIAMOND = createHiveOre("hive_diamond");
 	public static final RegistryObject<Block> HIVE_COPPER = createHiveOre("hive_copper");
 	public static final RegistryObject<Block> HIVE_LAPIS = createHiveOre("hive_lapis");
+	
+	public static final RegistryObject<Block> DRIED_TAR = BLOCKS.register("dried_tar",
+			() -> new Block(BlockBehaviour.Properties
+					.copy(Blocks.SANDSTONE)));
+	
+	public static final RegistryObject<Block> TAR_SOIL = BLOCKS.register("tar_soil",
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.SOUL_SOIL).sound(SoundType.ROOTED_DIRT)));
+	
+	public static final RegistryObject<Block> DROUGHT_SOIL = BLOCKS.register("drought_soil",
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.SANDSTONE).sound(SoundType.GRAVEL)));
+	
+	public static final RegistryObject<Block> JOSHUA_SAPLING = BLOCKS.register("joshua_sapling",
+			() -> new DreamlandSapling(DreamlandFeatures.JOSHUA_TREE_FEATURE, BlockBehaviour.Properties.copy(Blocks.ACACIA_SAPLING)));
 	
 	private static RegistryObject<Block> createHiveOre(String name) {
 		return BLOCKS.register(name,

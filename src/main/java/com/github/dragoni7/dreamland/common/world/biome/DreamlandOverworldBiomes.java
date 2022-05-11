@@ -46,6 +46,8 @@ public class DreamlandOverworldBiomes {
         BiomeDefaultFeatures.addDefaultUndergroundVariety(builder);
         BiomeDefaultFeatures.addDefaultSprings(builder);
         BiomeDefaultFeatures.addSurfaceFreezing(builder);
+        BiomeDefaultFeatures.addDefaultOres(builder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(builder);
     }
 
     public static Biome hive()
@@ -54,13 +56,6 @@ public class DreamlandOverworldBiomes {
         BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
         
         globalOverworldGeneration(biomeBuilder);
-        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
-        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
-        BiomeDefaultFeatures.addDefaultFlowers(biomeBuilder);
-        BiomeDefaultFeatures.addDefaultGrass(biomeBuilder);
-        BiomeDefaultFeatures.addDesertVegetation(biomeBuilder);
-        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
-        BiomeDefaultFeatures.addInfestedStone(biomeBuilder);
         DreamlandBiomeFeatures.addHiveOres(biomeBuilder);
         DreamlandBiomeFeatures.hiveBiomeFeatures(biomeBuilder);
         
@@ -77,20 +72,39 @@ public class DreamlandOverworldBiomes {
         																										spawnBuilder, biomeBuilder, NORMAL_MUSIC);
     }
     
-    public static Biome coldBlue()
-    {
-        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
-        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.GOAT, 5, 1, 3));
-        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
-
-        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
-        globalOverworldGeneration(biomeBuilder);
-        BiomeDefaultFeatures.addFrozenSprings(biomeBuilder);
-        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
-        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
-        BiomeDefaultFeatures.addExtraEmeralds(biomeBuilder);
-        BiomeDefaultFeatures.addInfestedStone(biomeBuilder);
-        BiomeDefaultFeatures.addLushCavesVegetationFeatures(biomeBuilder);
-        return biome(Biome.Precipitation.SNOW, Biome.BiomeCategory.MOUNTAIN, -0.7F, 0.9F, spawnBuilder, biomeBuilder, NORMAL_MUSIC);
+    public static Biome garden()  {
+    	MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+    	BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
+    	globalOverworldGeneration(biomeBuilder);
+    	DreamlandBiomeFeatures.gardenBiomeFeatures(biomeBuilder);
+    	
+    	return biomeWithEffects(Biome.Precipitation.RAIN, Biome.BiomeCategory.PLAINS, 0.9F, 1.0F, new BiomeSpecialEffects.Builder()
+    																										.grassColorOverride(4896062)
+    																										.waterColor(14417910)
+    																										.waterFogColor(12245457)
+    																										.fogColor(10998201)
+    																										.skyColor(calculateSkyColor(2.0F))
+    																										.backgroundMusic(NORMAL_MUSIC)
+    																										.build(),
+    																										spawnBuilder, biomeBuilder, NORMAL_MUSIC);
+    	
+    }
+    
+    public static Biome tarlands() {
+    	MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+    	BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
+    	globalOverworldGeneration(biomeBuilder);
+    	DreamlandBiomeFeatures.tarlandsBiomeFeatures(biomeBuilder);
+    	
+    	return biomeWithEffects(Biome.Precipitation.NONE, Biome.BiomeCategory.DESERT, 2.0F, 0.0F, new BiomeSpecialEffects.Builder()
+				.grassColorOverride(11334212)
+				.waterColor(4751787)
+				.waterFogColor(4751787)
+				.fogColor(12638463)
+				.skyColor(calculateSkyColor(2.0F))
+				.ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+				.backgroundMusic(NORMAL_MUSIC)
+				.build(),
+				spawnBuilder, biomeBuilder, NORMAL_MUSIC);
     }
 }

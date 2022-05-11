@@ -19,11 +19,11 @@ public class HiveComb extends Feature<BlockStateConfiguration> {
 	}
 
 	@Override
-	public boolean place(FeaturePlaceContext<BlockStateConfiguration> p_159749_) {
-		WorldGenLevel worldgenlevel = p_159749_.level();
-		BlockPos blockpos = p_159749_.origin();
-		Random random = p_159749_.random();
-		BlockStateConfiguration blockstateconfig = p_159749_.config();
+	public boolean place(FeaturePlaceContext<BlockStateConfiguration> context) {
+		WorldGenLevel worldgenlevel = context.level();
+		BlockPos blockpos = context.origin();
+		Random random = context.random();
+		BlockStateConfiguration blockstateconfig = context.config();
 		BlockState altFilling = DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState();
 		
 		if(random.nextBoolean()) {

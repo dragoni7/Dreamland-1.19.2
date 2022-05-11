@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "dreamland:block/solid_tar"
+    "all": "dreamland:block/bumble_block"
   }
 }

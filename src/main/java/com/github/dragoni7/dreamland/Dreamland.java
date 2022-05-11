@@ -10,6 +10,7 @@ import com.github.dragoni7.dreamland.setup.DreamlandBlocks;
 import com.github.dragoni7.dreamland.setup.DreamlandClientEventHandler;
 import com.github.dragoni7.dreamland.setup.DreamlandEntities;
 import com.github.dragoni7.dreamland.setup.DreamlandEventHandler;
+import com.github.dragoni7.dreamland.setup.DreamlandFluids;
 import com.github.dragoni7.dreamland.setup.DreamlandItems;
 import com.github.dragoni7.dreamland.util.DreamlandLoc;
 
@@ -35,7 +36,7 @@ public class Dreamland
 	public static final String MODID = "dreamland";
 	
 	public static final Logger LOGGER = LogManager.getLogger();
-
+	
     public Dreamland() {
 
         IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -48,6 +49,7 @@ public class Dreamland
         DreamlandEntities.ENTITY_TYPES.register(modBus);
         DreamlandBlocks.BLOCKS.register(modBus);
         DreamlandItems.ITEMS.register(modBus);
+        DreamlandFluids.FLUIDS.register(modBus);
         DreamlandEntities.TILES.register(modBus);
         DreamlandEntities.CONTAINERS.register(modBus);
         DreamlandEventHandler.subscribeModEvents(modBus);
@@ -60,8 +62,8 @@ public class Dreamland
     }
     
     private void commonSetup(FMLCommonSetupEvent event) {
-    	DreamlandNetworking.registerMessages();
     	event.enqueueWork( ()-> {
+    		DreamlandNetworking.registerMessages();
             SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, Dreamland.MODID, DreamlandSurfaceRules.OVERWORLD_SURFACE_RULES);
     		Regions.register(new DreamlandRegion(DreamlandLoc.createLoc("dreamland_region"), RegionType.OVERWORLD, 4));
     	});

@@ -19,6 +19,7 @@ public class DreamlandNetworking {
 	public static SimpleChannel INSTANCE;
 	private static int ID = 0;
 	public static int nextID() { return ID++;}
+	
 	public static void registerMessages() {
 		INSTANCE = NetworkRegistry.newSimpleChannel(DreamlandLoc.createLoc("network"), () -> "1.0", s -> true, s -> true);
 		

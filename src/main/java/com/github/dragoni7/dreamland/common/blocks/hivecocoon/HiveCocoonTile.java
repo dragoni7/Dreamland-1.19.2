@@ -40,7 +40,6 @@ public class HiveCocoonTile extends RandomizableContainerBlockEntity implements 
 	private NonNullList<ItemStack> itemStacks = NonNullList.withSize(9, ItemStack.EMPTY);
 	private LazyOptional<IItemHandler> handler = LazyOptional.of(() -> itemHandler);
 	
-	@SuppressWarnings("unchecked")
 	private <E extends BlockEntity & IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		if (open == 1) {
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.hive_cocoon.open", false).addAnimation("animation.hold_open", true));

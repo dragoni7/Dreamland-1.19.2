@@ -5,7 +5,9 @@ import com.github.dragoni7.dreamland.common.items.HiveJelly;
 
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Item.Properties;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -23,8 +25,6 @@ public class DreamlandItems {
 	public static final RegistryObject<Item> CLAY_SOIL = registerBlockItem("clay_soil", DreamlandBlocks.CLAY_SOIL);
 	
 	public static final RegistryObject<Item> CLAY_SOIL_GRASS = registerBlockItem("clay_soil_grass", DreamlandBlocks.CLAY_SOIL_GRASS);
-
-	public static final RegistryObject<Item> SOLID_TAR = registerBlockItem("solid_tar", DreamlandBlocks.SOLID_TAR);
 
 	public static final RegistryObject<Item> POROUS_STONE = registerBlockItem("porous_stone", DreamlandBlocks.POROUS_STONE);
 	
@@ -57,8 +57,17 @@ public class DreamlandItems {
 	public static final RegistryObject<Item> HIVE_LAPIS = registerBlockItem("hive_lapis", DreamlandBlocks.HIVE_LAPIS);
 	public static final RegistryObject<Item> HIVE_DIAMOND = registerBlockItem("hive_diamond", DreamlandBlocks.HIVE_DIAMOND);
 	
+	public static final RegistryObject<Item> DRIED_TAR = registerBlockItem("dried_tar", DreamlandBlocks.DRIED_TAR);
+	public static final RegistryObject<Item> TAR_SOIL = registerBlockItem("tar_soil", DreamlandBlocks.TAR_SOIL);
+	public static final RegistryObject<Item> DROUGHT_STONE = registerBlockItem("drought_soil", DreamlandBlocks.DROUGHT_SOIL);
+	
 	//Items
 	public static final RegistryObject<Item> HIVE_JELLY_ITEM = registerHiveJelly("hive_jelly", new FoodProperties.Builder().nutrition(1).saturationMod(0.2F).build());
+	
+	public static final RegistryObject<Item> TAR_BUCKET = ITEMS.register("tar_bucket", 
+			() -> new BucketItem(DreamlandFluids.TAR_FLUID, new Item.Properties().tab(Dreamland.DreamlandTab).stacksTo(1)));
+	
+	public static final RegistryObject<Item> JOSHUA_SAPLING = registerBlockItem("joshua_sapling", DreamlandBlocks.JOSHUA_SAPLING);
 	
 	private static RegistryObject<Item> registerBlockItem(String name, RegistryObject<Block> block) {
 		
