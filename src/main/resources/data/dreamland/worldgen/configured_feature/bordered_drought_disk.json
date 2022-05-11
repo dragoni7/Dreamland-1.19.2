@@ -1,0 +1,17 @@
+{
+  "config": {
+    "insideBlock": {
+      "state": {
+        "Name": "dreamland:drought_soil"
+      },
+      "type": "minecraft:simple_state_provider"
+    },
+    "barrier": {
+      "state": {
+        "Name": "dreamland:dried_tar"
+      },
+      "type": "minecraft:simple_state_provider"
+    }
+  },
+  "type": "dreamland:bordered_disk_feature"
+}

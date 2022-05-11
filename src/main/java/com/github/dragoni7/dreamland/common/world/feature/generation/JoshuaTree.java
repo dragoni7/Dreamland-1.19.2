@@ -2,7 +2,6 @@ package com.github.dragoni7.dreamland.common.world.feature.generation;
 
 import java.util.Random;
 
-import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.common.blocks.DreamlandSapling;
 import com.github.dragoni7.dreamland.setup.DreamlandBlocks;
 import com.mojang.serialization.Codec;

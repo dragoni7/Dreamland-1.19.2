@@ -1,6 +1,5 @@
 package com.github.dragoni7.dreamland.common.blocks.hivecocoon;
 
-import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.network.DreamlandNetworking;
 import com.github.dragoni7.dreamland.network.PacketHiveCocoonAnimate;
 import com.github.dragoni7.dreamland.setup.DreamlandBlocks;

@@ -1,5 +1,4 @@
 package com.github.dragoni7.dreamland;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

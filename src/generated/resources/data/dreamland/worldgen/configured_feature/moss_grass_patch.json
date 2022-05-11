@@ -1,0 +1,18 @@
+{
+  "config": {
+    "targets": [
+      {
+        "target": {
+          "tag": "dreamland:garden_surface_replaceable",
+          "predicate_type": "minecraft:tag_match"
+        },
+        "state": {
+          "Name": "minecraft:moss_block"
+        }
+      }
+    ],
+    "size": 30,
+    "discard_chance_on_air_exposure": 0.0
+  },
+  "type": "minecraft:ore"
+}

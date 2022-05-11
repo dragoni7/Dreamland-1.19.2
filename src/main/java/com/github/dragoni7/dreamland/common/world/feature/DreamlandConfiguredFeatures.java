@@ -1,8 +1,8 @@
 package com.github.dragoni7.dreamland.common.world.feature;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.common.blocks.DreamlandBlockTags;
 import com.github.dragoni7.dreamland.common.world.feature.generation.BorderedDisk;
 import com.github.dragoni7.dreamland.setup.DreamlandBlocks;
@@ -12,8 +12,10 @@ import com.github.dragoni7.dreamland.util.DreamlandLoc;
 
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
+import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.IntProvider;
@@ -32,21 +34,13 @@ import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfigur
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.ReplaceBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.VegetationPatchConfiguration;
-import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.stateproviders.DualNoiseProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
-import net.minecraft.world.level.levelgen.synth.NormalNoise;
-import net.minecraftforge.fml.common.Mod;
 
 public class DreamlandConfiguredFeatures {
 	
@@ -61,6 +55,61 @@ public class DreamlandConfiguredFeatures {
 	public static final List<OreConfiguration.TargetBlockState> HIVE_LAPIS_TARGET_LIST = List.of(OreConfiguration.target(HIVE_ORES_REPLACEABLE, DreamlandBlocks.HIVE_LAPIS.get().defaultBlockState()));
 	public static final List<OreConfiguration.TargetBlockState> HIVE_DIAMOND_TARGET_LIST = List.of(OreConfiguration.target(HIVE_ORES_REPLACEABLE, DreamlandBlocks.HIVE_DIAMOND.get().defaultBlockState()));
 	
+	private static final ArrayList<ResourceKey<ConfiguredFeature<?,?>>> KEYS = new ArrayList<ResourceKey<ConfiguredFeature<?,?>>>();
+	
+	// KEYS
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_CAVE_SLIME_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("cave_slime"));
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_COMB_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_comb"));
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_STRAND_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_strand"));
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_JELLY_CLUSTER_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_jelly_cluster"));
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_INFESTED_HIVE_JELLY_CLUSTER_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("infested_hive_jelly_cluster"));
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_GROWTH_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_growth"));
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_GROWTH_PATCH_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_growth_patch"));
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_FILLED_HIVE_BLOCK_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("filled_hive_block"));
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_IRON_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_iron"));
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_GOLD_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_gold"));
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_REDSTONE_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_redstone"));
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_LAPIS_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_lapis"));
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_COPPER_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_copper"));
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_COPPER_LARGE_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_copper_large"));
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_DIAMOND_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_diamond"));
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_DIAMOND_LARGE_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_diamond_large"));
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_RED_FLOWERS_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("red_flowers"));
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_MOSS_GRASS_PATCH_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("moss_grass_patch"));
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_BORDERED_DROUGHT_DISK_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("bordered_drought_disk"));
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_DROUGHT_DISK_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("drought_disk"));
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_DELTA_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("tar_delta"));
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_DROUGHT_VEGETATION_KEY =  ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("drought_vegetation"));
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_JOSHUA_TREE_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("joshua_tree"));
+	
+	public static ArrayList<ResourceKey<ConfiguredFeature<?, ?>>> getKeys() {
+		KEYS.add(CONFIGURED_CAVE_SLIME_KEY);
+		KEYS.add(CONFIGURED_HIVE_COMB_KEY);
+		KEYS.add(CONFIGURED_HIVE_STRAND_KEY);
+		KEYS.add(CONFIGURED_HIVE_JELLY_CLUSTER_KEY);
+		KEYS.add(CONFIGURED_INFESTED_HIVE_JELLY_CLUSTER_KEY);
+		KEYS.add(CONFIGURED_HIVE_GROWTH_KEY);
+		KEYS.add(CONFIGURED_GROWTH_PATCH_KEY);
+		KEYS.add(CONFIGURED_FILLED_HIVE_BLOCK_KEY);
+		KEYS.add(CONFIGURED_HIVE_IRON_KEY);
+		KEYS.add(CONFIGURED_HIVE_GOLD_KEY);
+		KEYS.add(CONFIGURED_HIVE_REDSTONE_KEY);
+		KEYS.add(CONFIGURED_HIVE_LAPIS_KEY);
+		KEYS.add(CONFIGURED_HIVE_COPPER_KEY);
+		KEYS.add(CONFIGURED_HIVE_COPPER_LARGE_KEY);
+		KEYS.add(CONFIGURED_HIVE_DIAMOND_KEY);
+		KEYS.add(CONFIGURED_HIVE_DIAMOND_LARGE_KEY);
+		KEYS.add(CONFIGURED_RED_FLOWERS_KEY);
+		KEYS.add(CONFIGURED_MOSS_GRASS_PATCH_KEY);
+		KEYS.add(CONFIGURED_BORDERED_DROUGHT_DISK_KEY);
+		KEYS.add(CONFIGURED_DROUGHT_DISK_KEY);
+		KEYS.add(CONFIGURED_TAR_DELTA_KEY);
+		KEYS.add(CONFIGURED_DROUGHT_VEGETATION_KEY);
+		KEYS.add(CONFIGURED_JOSHUA_TREE_KEY);
+		return KEYS;
+	}
+	
+	// CONFIGURED FEATURES
 	public static final Holder<ConfiguredFeature<BlockColumnConfiguration, ?>> CAVE_SLIME = registerConfiguredFeature("cave_slime", 
 			Feature.BLOCK_COLUMN,
 					new BlockColumnConfiguration(
@@ -91,7 +140,7 @@ public class DreamlandConfiguredFeatures {
 	
 	public static final Holder<ConfiguredFeature<SimpleBlockConfiguration, ?>> HIVE_GROWTH = registerConfiguredFeature("hive_growth", Feature.SIMPLE_BLOCK, (new SimpleBlockConfiguration(BlockStateProvider.simple(DreamlandBlocks.HIVE_GROWTH.get()))));
 	
-	public static final Holder<ConfiguredFeature<VegetationPatchConfiguration, ?>> GROWTH_PATCH = registerConfiguredFeature("growth_patch", Feature.VEGETATION_PATCH, (new VegetationPatchConfiguration(DreamlandBlockTags.HIVE_ORES_REPLACEABLE, BlockStateProvider.simple(DreamlandBlocks.HIVE_BLOCK.get()), PlacementUtils.inlinePlaced(HIVE_GROWTH), CaveSurface.FLOOR, ConstantInt.of(1), 0.0F, 5, 0.5F, UniformInt.of(1, 3), 0.3F)));
+	public static final Holder<ConfiguredFeature<VegetationPatchConfiguration, ?>> GROWTH_PATCH = registerConfiguredFeature("hive_growth_patch", Feature.VEGETATION_PATCH, (new VegetationPatchConfiguration(DreamlandBlockTags.HIVE_ORES_REPLACEABLE, BlockStateProvider.simple(DreamlandBlocks.HIVE_BLOCK.get()), PlacementUtils.inlinePlaced(HIVE_GROWTH), CaveSurface.FLOOR, ConstantInt.of(1), 0.0F, 5, 0.5F, UniformInt.of(1, 3), 0.3F)));
 	
 	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> FILLED_HIVE_BLOCK = registerConfiguredFeature("filled_hive_block", Feature.ORE, new OreConfiguration(FILLED_HIVE_TARGET_LIST, 10));
 	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> HIVE_IRON = registerConfiguredFeature("hive_iron", Feature.ORE, new OreConfiguration(HIVE_IRON_TARGET_LIST, 9));
@@ -107,7 +156,7 @@ public class DreamlandConfiguredFeatures {
 	
 	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> MOSS_GRASS_PATCH = registerConfiguredFeature("moss_grass_patch", Feature.ORE, new OreConfiguration(MOSS_GRASS_TARGET_LIST, 30));
 	
-	public static final Holder<ConfiguredFeature<BorderedDisk.Configuration, ?>> DROUGHT_BORDERED_DISK = registerConfiguredFeature("drought_bordered_disk", DreamlandFeatures.BORDERED_DISK, new BorderedDisk.Configuration(BlockStateProvider.simple(DreamlandBlocks.DROUGHT_SOIL.get().defaultBlockState()), BlockStateProvider.simple(DreamlandBlocks.DRIED_TAR.get().defaultBlockState())));
+	public static final Holder<ConfiguredFeature<BorderedDisk.Configuration, ?>> DROUGHT_BORDERED_DISK = registerConfiguredFeature("bordered_drought_disk", DreamlandFeatures.BORDERED_DISK, new BorderedDisk.Configuration(BlockStateProvider.simple(DreamlandBlocks.DROUGHT_SOIL.get().defaultBlockState()), BlockStateProvider.simple(DreamlandBlocks.DRIED_TAR.get().defaultBlockState())));
 	public static final Holder<ConfiguredFeature<DiskConfiguration, ?>> DROUGHT_DISK = registerConfiguredFeature("drought_disk", Feature.DISK, new DiskConfiguration(DreamlandBlocks.DROUGHT_SOIL.get().defaultBlockState(), UniformInt.of(2, 5), 2, List.of(DreamlandBlocks.TAR_SOIL.get().defaultBlockState(), DreamlandBlocks.DRIED_TAR.get().defaultBlockState())));
 	public static final Holder<ConfiguredFeature<DeltaFeatureConfiguration, ?>> TAR_DELTA = registerConfiguredFeature("tar_delta", Feature.DELTA_FEATURE, new DeltaFeatureConfiguration(DreamlandFluids.TAR_BLOCK.get().defaultBlockState(), DreamlandBlocks.DRIED_TAR.get().defaultBlockState(), UniformInt.of(3, 7), UniformInt.of(1, 4)));
 	public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> DROUGHT_VEGETATION = registerConfiguredFeature("drought_vegetation", Feature.RANDOM_PATCH, new RandomPatchConfiguration(96, 8, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.OXEYE_DAISY.defaultBlockState(), 10).add(Blocks.DEAD_BUSH.defaultBlockState(), 40).add(Blocks.GRASS.defaultBlockState(), 50))))));
