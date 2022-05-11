@@ -1,4 +1,4 @@
-package com.github.dragoni7.dreamland.setup;
+package com.github.dragoni7.dreamland.core;
 
 import com.github.dragoni7.dreamland.client.render.*;
 import com.github.dragoni7.dreamland.common.blocks.hivecocoon.*;

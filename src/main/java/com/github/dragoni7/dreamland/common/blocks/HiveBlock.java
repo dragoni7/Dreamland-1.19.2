@@ -2,7 +2,7 @@ package com.github.dragoni7.dreamland.common.blocks;
 
 import java.util.Random;
 
-import com.github.dragoni7.dreamland.setup.DreamlandBlocks;
+import com.github.dragoni7.dreamland.core.DreamlandBlocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;

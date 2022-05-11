@@ -6,7 +6,7 @@ import java.util.function.ToIntFunction;
 import javax.annotation.Nullable;
 
 import com.github.dragoni7.dreamland.common.entities.mobs.LarvaEntity;
-import com.github.dragoni7.dreamland.setup.DreamlandBlocks;
+import com.github.dragoni7.dreamland.core.DreamlandBlocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

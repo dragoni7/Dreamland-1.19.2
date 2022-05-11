@@ -1,7 +1,7 @@
 package com.github.dragoni7.dreamland.datagen;
 
 import com.github.dragoni7.dreamland.Dreamland;
-import com.github.dragoni7.dreamland.setup.DreamlandItems;
+import com.github.dragoni7.dreamland.core.DreamlandItems;
 import com.github.dragoni7.dreamland.util.DreamlandLoc;
 
 import net.minecraft.data.DataGenerator;

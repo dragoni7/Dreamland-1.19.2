@@ -1,7 +1,7 @@
 package com.github.dragoni7.dreamland.common.world;
 
 import com.github.dragoni7.dreamland.common.world.biome.BiomeKeys;
-import com.github.dragoni7.dreamland.setup.DreamlandBlocks;
+import com.github.dragoni7.dreamland.core.DreamlandBlocks;
 
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.SurfaceRules;

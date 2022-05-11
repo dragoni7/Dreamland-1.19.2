@@ -5,9 +5,9 @@ import java.util.List;
 
 import com.github.dragoni7.dreamland.common.blocks.DreamlandBlockTags;
 import com.github.dragoni7.dreamland.common.world.feature.generation.BorderedDisk;
-import com.github.dragoni7.dreamland.setup.DreamlandBlocks;
-import com.github.dragoni7.dreamland.setup.DreamlandFeatures;
-import com.github.dragoni7.dreamland.setup.DreamlandFluids;
+import com.github.dragoni7.dreamland.core.DreamlandBlocks;
+import com.github.dragoni7.dreamland.core.DreamlandFeatures;
+import com.github.dragoni7.dreamland.core.DreamlandFluids;
 import com.github.dragoni7.dreamland.util.DreamlandLoc;
 
 import net.minecraft.core.Direction;

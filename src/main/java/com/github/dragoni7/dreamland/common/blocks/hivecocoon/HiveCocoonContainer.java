@@ -1,9 +1,9 @@
 package com.github.dragoni7.dreamland.common.blocks.hivecocoon;
 
+import com.github.dragoni7.dreamland.core.DreamlandBlocks;
+import com.github.dragoni7.dreamland.core.DreamlandEntities;
 import com.github.dragoni7.dreamland.network.DreamlandNetworking;
 import com.github.dragoni7.dreamland.network.PacketHiveCocoonAnimate;
-import com.github.dragoni7.dreamland.setup.DreamlandBlocks;
-import com.github.dragoni7.dreamland.setup.DreamlandEntities;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Inventory;

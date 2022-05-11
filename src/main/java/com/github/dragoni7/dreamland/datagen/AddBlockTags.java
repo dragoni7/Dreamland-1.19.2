@@ -2,7 +2,7 @@ package com.github.dragoni7.dreamland.datagen;
 
 import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.common.blocks.DreamlandBlockTags;
-import com.github.dragoni7.dreamland.setup.DreamlandBlocks;
+import com.github.dragoni7.dreamland.core.DreamlandBlocks;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;

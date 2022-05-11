@@ -2,9 +2,9 @@ package com.github.dragoni7.dreamland.common.entities.projectiles;
 
 import net.minecraft.core.Direction;
 
-import com.github.dragoni7.dreamland.setup.DreamlandBlocks;
-import com.github.dragoni7.dreamland.setup.DreamlandEntities;
-import com.github.dragoni7.dreamland.setup.DreamlandItems;
+import com.github.dragoni7.dreamland.core.DreamlandBlocks;
+import com.github.dragoni7.dreamland.core.DreamlandEntities;
+import com.github.dragoni7.dreamland.core.DreamlandItems;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ItemParticleOption;
