@@ -159,6 +159,11 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 	      return 0.5F;
 	   }
 	
+	@Override
+	public boolean isInvulnerableTo(DamageSource source) {
+		return source == DamageSource.IN_WALL || source == DamageSource.FALLING_BLOCK || super.isInvulnerableTo(source);
+	}
+	
 	public boolean causeFallDamage(float p_148750_, float p_148751_, DamageSource p_148752_) {
 	      return false;
 	   }
