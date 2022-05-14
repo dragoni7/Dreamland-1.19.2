@@ -26,6 +26,7 @@ public class DreamlandNetworking {
 		INSTANCE.registerMessage(nextID(), PacketHiveCocoonAnimate.class, PacketHiveCocoonAnimate::encode, PacketHiveCocoonAnimate::decode, PacketHiveCocoonAnimate.Handler::handle);
 	}
 	
+	@SuppressWarnings("resource")
 	public static void sendToNearby(Level world, BlockPos pos, Object toSend) {
         if (world instanceof ServerLevel) {
             ServerLevel ws = (ServerLevel) world;

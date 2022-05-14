@@ -80,6 +80,8 @@ public class DataGenerators {
         
 	}
 
+	// Author: Commoble
+	// Source: https://gist.github.com/Commoble/458506bbae386dac9432c77b3f8fe7f1
 	@SafeVarargs
 	private static <T> DataProvider makeBuiltinRegistryProvider(String modid, Path outputFolder, Gson gson, RegistryOps<JsonElement> ops, RegistryAccess registries, ResourceKey<Registry<T>> registryKey, Codec<T> codec, ResourceKey<T>... keys)
 	{
