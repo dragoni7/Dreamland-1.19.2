@@ -13,6 +13,8 @@ import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.BlockStateConfiguration;
 
 public class HiveComb extends Feature<BlockStateConfiguration> {
+	
+	private static final int SIZE = 4;
 
 	public HiveComb(Codec<BlockStateConfiguration> p_65786_) {
 		super(p_65786_);
@@ -24,36 +26,42 @@ public class HiveComb extends Feature<BlockStateConfiguration> {
 		BlockPos blockpos = context.origin();
 		Random random = context.random();
 		BlockStateConfiguration blockstateconfig = context.config();
+		FeatureBuilder combBuilder = new FeatureBuilder();
+		BlockState combBlock = DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState();
 		BlockState altFilling = DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState();
 		
-		if(random.nextBoolean()) {
+		if (random.nextBoolean()) {
 			altFilling = blockstateconfig.state;
 		}
 		
-		for(int j = 0; j > -6; j--) {
-			this.setBlock(worldgenlevel, blockpos.offset(0,j,0), altFilling);
-			this.setBlock(worldgenlevel, blockpos.offset(0,j,1), altFilling);
-			this.setBlock(worldgenlevel, blockpos.offset(1,j,1), altFilling);
-			this.setBlock(worldgenlevel, blockpos.offset(1,j,0), altFilling);
+		for(int i = 0; i > -SIZE+1; i--) {
+			
+			combBuilder.addInput(worldgenlevel, altFilling, blockpos.offset(0, i, 0), true);
+			combBuilder.addInput(worldgenlevel, altFilling, blockpos.offset(0, i, 1), true);
+			combBuilder.addInput(worldgenlevel, altFilling, blockpos.offset(1, i, 1), true);
+			combBuilder.addInput(worldgenlevel, altFilling, blockpos.offset(1, i, 0), true);
 			
 		}
 		
-		for(int j = 1; j > -7; j--) {
-			this.setBlock(worldgenlevel, blockpos.offset(0,j,-1), DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState());
-			this.setBlock(worldgenlevel, blockpos.offset(1,j,-1), DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState());
+		for(int j = 1; j > -SIZE; j--) {
 			
-			this.setBlock(worldgenlevel, blockpos.offset(0,j,2), DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState());
-			this.setBlock(worldgenlevel, blockpos.offset(1,j,2), DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState());
+			combBuilder.addInput(worldgenlevel, combBlock, blockpos.offset(0, j, -1), true);
+			combBuilder.addInput(worldgenlevel, combBlock, blockpos.offset(1, j, -1), true);
 			
-			this.setBlock(worldgenlevel, blockpos.offset(-1,j,0), DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState());
-			this.setBlock(worldgenlevel, blockpos.offset(-1,j,0), DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState());
+			combBuilder.addInput(worldgenlevel, combBlock, blockpos.offset(0, j, 2), true);
+			combBuilder.addInput(worldgenlevel, combBlock, blockpos.offset(1, j, 2), true);
 			
-			this.setBlock(worldgenlevel, blockpos.offset(2,j,0), DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState());
-			this.setBlock(worldgenlevel, blockpos.offset(2,j,0), DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState());
+			combBuilder.addInput(worldgenlevel, combBlock, blockpos.offset(-1, j,0), true);
+			combBuilder.addInput(worldgenlevel, combBlock, blockpos.offset(-1, j,0), true);
 			
-			this.setBlock(worldgenlevel, blockpos.offset(2,j,1), DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState());
-			this.setBlock(worldgenlevel, blockpos.offset(-1,j,1), DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState());
+			combBuilder.addInput(worldgenlevel, combBlock, blockpos.offset(2, j, 0), true);
+			combBuilder.addInput(worldgenlevel, combBlock, blockpos.offset(2, j, 0), true);
+			
+			combBuilder.addInput(worldgenlevel, combBlock, blockpos.offset(2, j, 1), true);
+			combBuilder.addInput(worldgenlevel, combBlock, blockpos.offset(-1, j, 1), true);
 		}
+		
+		combBuilder.build(worldgenlevel);
 		return true;
 	}
 

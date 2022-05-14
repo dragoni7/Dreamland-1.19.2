@@ -10,10 +10,12 @@ public class FeatureBuilderInput {
 	
 	public final BlockState state;
 	public final BlockPos pos;
+	private final boolean replaceBlocks;
 	
-	public FeatureBuilderInput(BlockState stateIn, BlockPos posIn) {
+	public FeatureBuilderInput(BlockState stateIn, BlockPos posIn, boolean replaceBlocksIn) {
 		this.state = stateIn;
 		this.pos = posIn;
+		this.replaceBlocks = replaceBlocksIn;
 	}
 	
 	public boolean canPlace(WorldGenLevel level) {
@@ -25,7 +27,11 @@ public class FeatureBuilderInput {
 			return false;
 		}
 		
+		if (replaceBlocks) {
+			return true;
+		}
+		
 		BlockState state = level.getBlockState(pos);
-		return level.isEmptyBlock(pos) || state.getMaterial().isReplaceable() || state.getBlock() instanceof DreamlandSapling;
+		return level.isEmptyBlock(pos) || state.getMaterial().isLiquid() || state.getMaterial().isReplaceable() || state.getBlock() instanceof DreamlandSapling;
 	}
 }

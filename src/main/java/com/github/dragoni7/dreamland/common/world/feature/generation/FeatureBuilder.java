@@ -9,10 +9,14 @@ import net.minecraft.world.level.block.state.BlockState;
 public class FeatureBuilder {
 	
 	private ArrayList<FeatureBuilderInput> inputs = new ArrayList<>();
-
+	
 	public boolean addInput(WorldGenLevel level, BlockState state, BlockPos pos) {
+		return addInput(level, state, pos, false);
+	}
+
+	public boolean addInput(WorldGenLevel level, BlockState state, BlockPos pos, boolean replaceBlocks) {
 		
-		FeatureBuilderInput input = new FeatureBuilderInput(state, pos);
+		FeatureBuilderInput input = new FeatureBuilderInput(state, pos, replaceBlocks);
 		
 		if (input.canPlace(level)) {
 			inputs.add(input);

@@ -2,8 +2,6 @@ package com.github.dragoni7.dreamland.common.world.feature;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.github.dragoni7.dreamland.core.DreamlandBlocks;
 import com.github.dragoni7.dreamland.util.DreamlandLoc;
 
 import net.minecraft.core.Direction;
@@ -12,7 +10,6 @@ import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
