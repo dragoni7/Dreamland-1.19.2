@@ -87,8 +87,8 @@ public class BorderedDisk extends Feature<BorderedDisk.Configuration> {
 	                        boolean flag1 = i3 >= 4;
 	                        worldgenlevel.setBlock(blockpos1, flag1 ? AIR : blockstate1, 2);
 	                        if (flag1) {
-	                           worldgenlevel.scheduleTick(blockpos1, AIR.getBlock(), 0);
-	                           this.markAboveForPostProcessing(worldgenlevel, blockpos1);
+	                           //worldgenlevel.scheduleTick(blockpos1, AIR.getBlock(), 0);
+	                           //this.markAboveForPostProcessing(worldgenlevel, blockpos1);
 	                        }
 	                     }
 	                  }
@@ -107,7 +107,7 @@ public class BorderedDisk extends Feature<BorderedDisk.Configuration> {
 	                        if (blockstate.getMaterial().isSolid() && !blockstate.is(BlockTags.LAVA_POOL_STONE_CANNOT_REPLACE)) {
 	                           BlockPos blockpos3 = blockpos.offset(j2, l3, j3);
 	                           worldgenlevel.setBlock(blockpos3, blockstate2, 2);
-	                           this.markAboveForPostProcessing(worldgenlevel, blockpos3);
+	                           //this.markAboveForPostProcessing(worldgenlevel, blockpos3);
 	                        }
 	                     }
 	                  }
