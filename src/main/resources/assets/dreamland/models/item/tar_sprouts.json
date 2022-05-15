@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "dreamland:block/hive_growth_cross"
+    "layer0": "dreamland:block/tar_sprouts"
   }
 }

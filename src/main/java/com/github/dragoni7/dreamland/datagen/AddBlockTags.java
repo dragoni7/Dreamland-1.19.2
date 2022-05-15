@@ -34,7 +34,8 @@ public class AddBlockTags extends BlockTagsProvider{
 		.add(DreamlandBlocks.DUSK_ICE.get());
 		
 		tag(BlockTags.REPLACEABLE_PLANTS)
-		.add(DreamlandBlocks.HIVE_GROWTH.get());
+		.add(DreamlandBlocks.HIVE_GROWTH.get())
+		.add(DreamlandBlocks.TAR_SPROUTS.get());
 		
 		tag(BlockTags.SAPLINGS)
 		.add(DreamlandBlocks.JOSHUA_SAPLING.get());

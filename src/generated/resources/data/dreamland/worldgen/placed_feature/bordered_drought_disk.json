@@ -6,7 +6,7 @@
         "type": "minecraft:uniform",
         "value": {
           "min_inclusive": 0,
-          "max_inclusive": 24
+          "max_inclusive": 48
         }
       },
       "type": "minecraft:count"
@@ -15,7 +15,7 @@
       "type": "minecraft:in_square"
     },
     {
-      "heightmap": "MOTION_BLOCKING",
+      "heightmap": "OCEAN_FLOOR_WG",
       "type": "minecraft:heightmap"
     },
     {

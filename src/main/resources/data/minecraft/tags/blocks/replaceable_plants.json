@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "dreamland:hive_growth"
+    "dreamland:hive_growth",
+    "dreamland:tar_sprouts"
   ]
 }

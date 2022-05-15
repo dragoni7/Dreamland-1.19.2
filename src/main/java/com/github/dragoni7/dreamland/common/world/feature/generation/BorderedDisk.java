@@ -2,6 +2,7 @@ package com.github.dragoni7.dreamland.common.world.feature.generation;
 
 import java.util.Random;
 
+import com.github.dragoni7.dreamland.core.DreamlandBlocks;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
@@ -17,7 +18,7 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 import net.minecraft.world.level.material.Material;
 
 public class BorderedDisk extends Feature<BorderedDisk.Configuration> {
-	   private static final BlockState AIR = Blocks.AIR.defaultBlockState();
+	   private static final BlockState AIR = Blocks.CAVE_AIR.defaultBlockState();
 
 	   public BorderedDisk(Codec<BorderedDisk.Configuration> p_66259_) {
 	      super(p_66259_);
@@ -58,7 +59,8 @@ public class BorderedDisk extends Feature<BorderedDisk.Configuration> {
 	            }
 	         }
 
-	         BlockState blockstate1 = bordereddisk$configuration.insideBlock().getState(random, blockpos);
+	         BlockState insideBlock = bordereddisk$configuration.insideBlock().getState(random, blockpos);
+	         BlockState borderBlock = bordereddisk$configuration.barrier().getState(random, blockpos);
 
 	         for(int k1 = 0; k1 < 16; ++k1) {
 	            for(int k = 0; k < 16; ++k) {
@@ -70,7 +72,7 @@ public class BorderedDisk extends Feature<BorderedDisk.Configuration> {
 	                        return false;
 	                     }
 
-	                     if (l2 < 4 && !material.isSolid() && worldgenlevel.getBlockState(blockpos.offset(k1, l2, k)) != blockstate1) {
+	                     if (l2 < 4 && !material.isSolid() && worldgenlevel.getBlockState(blockpos.offset(k1, l2, k)) != insideBlock && worldgenlevel.getBlockState(blockpos.offset(k1, l2, k)) != borderBlock) {
 	                        return false;
 	                     }
 	                  }
@@ -85,29 +87,26 @@ public class BorderedDisk extends Feature<BorderedDisk.Configuration> {
 	                     BlockPos blockpos1 = blockpos.offset(l1, i3, i2);
 	                     if (this.canReplaceBlock(worldgenlevel.getBlockState(blockpos1))) {
 	                        boolean flag1 = i3 >= 4;
-	                        worldgenlevel.setBlock(blockpos1, flag1 ? AIR : blockstate1, 2);
-	                        if (flag1) {
-	                           //worldgenlevel.scheduleTick(blockpos1, AIR.getBlock(), 0);
-	                           //this.markAboveForPostProcessing(worldgenlevel, blockpos1);
+	                        if (!flag1) {
+	                        	worldgenlevel.setBlock(blockpos1, insideBlock, 2);
 	                        }
 	                     }
 	                  }
 	               }
 	            }
 	         }
-
-	         BlockState blockstate2 = bordereddisk$configuration.barrier().getState(random, blockpos);
-	         if (!blockstate2.isAir()) {
+	         
+	         if (!borderBlock.isAir()) {
 	            for(int j2 = 0; j2 < 16; ++j2) {
 	               for(int j3 = 0; j3 < 16; ++j3) {
-	                  for(int l3 = 0; l3 < 8; ++l3) {
+	                  for(int l3 = 0; l3 < 4; ++l3) {
 	                     boolean flag2 = !aboolean[(j2 * 16 + j3) * 8 + l3] && (j2 < 15 && aboolean[((j2 + 1) * 16 + j3) * 8 + l3] || j2 > 0 && aboolean[((j2 - 1) * 16 + j3) * 8 + l3] || j3 < 15 && aboolean[(j2 * 16 + j3 + 1) * 8 + l3] || j3 > 0 && aboolean[(j2 * 16 + (j3 - 1)) * 8 + l3] || l3 < 7 && aboolean[(j2 * 16 + j3) * 8 + l3 + 1] || l3 > 0 && aboolean[(j2 * 16 + j3) * 8 + (l3 - 1)]);
 	                     if (flag2 && (l3 < 4 || random.nextInt(2) != 0)) {
 	                        BlockState blockstate = worldgenlevel.getBlockState(blockpos.offset(j2, l3, j3));
 	                        if (blockstate.getMaterial().isSolid() && !blockstate.is(BlockTags.LAVA_POOL_STONE_CANNOT_REPLACE)) {
 	                           BlockPos blockpos3 = blockpos.offset(j2, l3, j3);
-	                           worldgenlevel.setBlock(blockpos3, blockstate2, 2);
-	                           //this.markAboveForPostProcessing(worldgenlevel, blockpos3);
+	                           worldgenlevel.setBlock(blockpos3, borderBlock, 2);
+	                           this.markAboveForPostProcessing(worldgenlevel, blockpos3);
 	                        }
 	                     }
 	                  }
@@ -119,8 +118,8 @@ public class BorderedDisk extends Feature<BorderedDisk.Configuration> {
 	      }
 	   }
 
-	   private boolean canReplaceBlock(BlockState p_190952_) {
-	      return !p_190952_.is(BlockTags.FEATURES_CANNOT_REPLACE);
+	   private boolean canReplaceBlock(BlockState state) {
+	      return !state.is(BlockTags.FEATURES_CANNOT_REPLACE) || !state.is(DreamlandBlocks.DRIED_TAR.get()) || !state.is(DreamlandBlocks.DROUGHT_SOIL.get());
 	   }
 
 	   public static record Configuration(BlockStateProvider insideBlock, BlockStateProvider barrier) implements FeatureConfiguration {

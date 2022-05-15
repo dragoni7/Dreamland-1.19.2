@@ -17,6 +17,7 @@ import com.github.dragoni7.dreamland.common.blocks.HiveMembrane;
 import com.github.dragoni7.dreamland.common.blocks.InfestedHiveCluster;
 import com.github.dragoni7.dreamland.common.blocks.JellySplotch;
 import com.github.dragoni7.dreamland.common.blocks.LarvaAngerableBlock;
+import com.github.dragoni7.dreamland.common.blocks.TarSprouts;
 import com.github.dragoni7.dreamland.common.blocks.hivecocoon.HiveCocoon;
 
 import net.minecraft.core.BlockPos;
@@ -24,6 +25,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.TallGrassBlock;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
@@ -177,6 +179,9 @@ public class DreamlandBlocks {
 	
 	public static final RegistryObject<Block> JOSHUA_SAPLING = BLOCKS.register("joshua_sapling",
 			() -> new DreamlandSapling(DreamlandFeatures.JOSHUA_TREE_FEATURE, BlockBehaviour.Properties.copy(Blocks.ACACIA_SAPLING)));
+	
+	public static final RegistryObject<Block> TAR_SPROUTS = BLOCKS.register("tar_sprouts",
+			() -> new TarSprouts(BlockBehaviour.Properties.copy(Blocks.GRASS)));
 	
 	private static RegistryObject<Block> createHiveOre(String name) {
 		return BLOCKS.register(name,

@@ -2,6 +2,8 @@ package com.github.dragoni7.dreamland.common.world.feature;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.github.dragoni7.dreamland.core.DreamlandBlocks;
 import com.github.dragoni7.dreamland.util.DreamlandLoc;
 
 import net.minecraft.core.Direction;
@@ -12,6 +14,7 @@ import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -57,6 +60,7 @@ private static final ArrayList<ResourceKey<PlacedFeature>> KEYS = new ArrayList<
 	public static final ResourceKey<PlacedFeature> PLACED_JOSHUA_TREE_KEY = ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY, DreamlandLoc.createLoc("joshua_tree"));
 	public static final ResourceKey<PlacedFeature> PLACED_BORDERED_DROUGHT_DISK_KEY = ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY, DreamlandLoc.createLoc("bordered_drought_disk"));
 	public static final ResourceKey<PlacedFeature> PLACED_DROUGHT_VEGETATION_KEY = ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY, DreamlandLoc.createLoc("drought_vegetation"));
+	public static final ResourceKey<PlacedFeature> PLACED_TAR_SPROUTS_KEY = ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY, DreamlandLoc.createLoc("tar_sprouts"));
 	
 	public static ArrayList<ResourceKey<PlacedFeature>> getKeys() {
 		KEYS.add(PLACED_HIVE_COMB_CEILING_KEY);
@@ -85,6 +89,7 @@ private static final ArrayList<ResourceKey<PlacedFeature>> KEYS = new ArrayList<
 		KEYS.add(PLACED_JOSHUA_TREE_KEY);
 		KEYS.add(PLACED_BORDERED_DROUGHT_DISK_KEY);
 		KEYS.add(PLACED_DROUGHT_VEGETATION_KEY);
+		KEYS.add(PLACED_TAR_SPROUTS_KEY);
 		
 		return KEYS;
 	}
@@ -116,10 +121,11 @@ private static final ArrayList<ResourceKey<PlacedFeature>> KEYS = new ArrayList<
 	public static final Holder<PlacedFeature> PLACED_MOSS_GRASS = registerPlacedFeature("moss_grass", DreamlandConfiguredFeatures.MOSS_GRASS_PATCH, CountPlacement.of(UniformInt.of(90, 256)), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(45), VerticalAnchor.top()), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(0)), BiomeFilter.biome());
 	
 	public static final Holder<PlacedFeature> PLACED_DROUGHT_DISK = registerPlacedFeature("drought_disk", DreamlandConfiguredFeatures.DROUGHT_DISK, InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome());
-	public static final Holder<PlacedFeature> DROUGHT_BORDERED_DISK_SURFACE = registerPlacedFeature("bordered_drought_disk", DreamlandConfiguredFeatures.DROUGHT_BORDERED_DISK, CountPlacement.of(UniformInt.of(0, 24)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+	public static final Holder<PlacedFeature> DROUGHT_BORDERED_DISK_SURFACE = registerPlacedFeature("bordered_drought_disk", DreamlandConfiguredFeatures.DROUGHT_BORDERED_DISK, CountPlacement.of(UniformInt.of(0, 48)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome());
 	public static final Holder<PlacedFeature> PLACED_TAR_DELTA = registerPlacedFeature("tar_delta", DreamlandConfiguredFeatures.TAR_DELTA, CountPlacement.of(UniformInt.of(0, 96)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
-	public static final Holder<PlacedFeature> PLACED_DROUGHT_VEGETATION = registerPlacedFeature("drought_vegetation", DreamlandConfiguredFeatures.DROUGHT_VEGETATION, CountPlacement.of(UniformInt.of(24, 96)), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(55), VerticalAnchor.top()), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
-	public static final Holder<PlacedFeature> PLACED_JOSHUA_TREE = registerPlacedFeature("joshua_tree", DreamlandConfiguredFeatures.JOSHUA_TREE, InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, CountPlacement.of(UniformInt.of(96, 256)), BiomeFilter.biome());
+	public static final Holder<PlacedFeature> PLACED_DROUGHT_VEGETATION = registerPlacedFeature("drought_vegetation", DreamlandConfiguredFeatures.DROUGHT_VEGETATION, CountPlacement.of(UniformInt.of(54, 256)), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(55), VerticalAnchor.top()), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
+	public static final Holder<PlacedFeature> PLACED_JOSHUA_TREE = registerPlacedFeature("joshua_tree", DreamlandConfiguredFeatures.JOSHUA_TREE, CountPlacement.of(UniformInt.of(0, 16)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+	public static final Holder<PlacedFeature> PLACED_TAR_SPROUTS = registerPlacedFeature("tar_sprouts", DreamlandConfiguredFeatures.TAR_SPROUTS, CountPlacement.of(UniformInt.of(24, 96)), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(55), VerticalAnchor.top()), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.matchesBlocks(List.of(DreamlandBlocks.TAR_SOIL.get())), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
 	
 	private static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {
 		      return List.of(p_195347_, InSquarePlacement.spread(), p_195348_, BiomeFilter.biome());

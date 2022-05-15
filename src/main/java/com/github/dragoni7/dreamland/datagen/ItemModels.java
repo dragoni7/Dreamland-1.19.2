@@ -36,21 +36,26 @@ public class ItemModels extends ItemModelProvider{
 		createBlockItemModel(DreamlandItems.HIVE_REDSTONE, "block/hive_redstone");
 		createBlockItemModel(DreamlandItems.HIVE_LAPIS, "block/hive_lapis");
 		createBlockItemModel(DreamlandItems.HIVE_DIAMOND, "block/hive_diamond");
-		createBlockItemModel(DreamlandItems.HIVE_GROWTH, "block/hive_growth");
 		createBlockItemModel(DreamlandItems.HIVE_BLOCK_WITH_JELLY, "block/hive_block_with_jelly");
 		createBlockItemModel(DreamlandItems.CAVE_SLIME, "block/cave_slime");
 		createBlockItemModel(DreamlandItems.HIVE_COCOON, "block/hive_cocoon");
 		createBlockItemModel(DreamlandItems.DRIED_TAR, "block/dried_tar");
 		createBlockItemModel(DreamlandItems.TAR_SOIL, "block/tar_soil");
-		createBlockItemModel(DreamlandItems.DROUGHT_STONE, "block/drought_soil");
+		createBlockItemModel(DreamlandItems.DROUGHT_SOIL, "block/drought_soil");
 		
-		singleTexture(DreamlandItems.HIVE_JELLY_ITEM.get().getRegistryName().getPath(), new ResourceLocation("item/handheld"),
-				"layer0", new ResourceLocation(Dreamland.MODID, "item/hive_jelly"));
+		createSingleTextureModel(DreamlandItems.HIVE_JELLY_ITEM, "item/hive_jelly");
+		createSingleTextureModel(DreamlandItems.HIVE_GROWTH, "block/hive_growth_cross");
+		createSingleTextureModel(DreamlandItems.TAR_SPROUTS, "block/tar_sprouts");
 	}
 	
-	private void createBlockItemModel(RegistryObject<Item> item, String Path) {
+	private void createSingleTextureModel(RegistryObject<Item> item, String path) {
+		singleTexture(item.get().getRegistryName().getPath(), new ResourceLocation("item/handheld"),
+				"layer0", DreamlandLoc.createLoc(path));
+	}
+	
+	private void createBlockItemModel(RegistryObject<Item> item, String path) {
 		
-		withExistingParent(item.get().getRegistryName().getPath(), DreamlandLoc.createLoc(Path));
+		withExistingParent(item.get().getRegistryName().getPath(), DreamlandLoc.createLoc(path));
 	}
 
 }
