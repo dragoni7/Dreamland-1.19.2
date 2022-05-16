@@ -1,7 +1,7 @@
 package com.github.dragoni7.dreamland.datagen;
 
 import com.github.dragoni7.dreamland.Dreamland;
-import com.github.dragoni7.dreamland.core.DreamlandFluids;
+import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.FluidTagsProvider;

@@ -1,7 +1,6 @@
 package com.github.dragoni7.dreamland.datagen;
 
-import com.github.dragoni7.dreamland.Dreamland;
-import com.github.dragoni7.dreamland.core.DreamlandItems;
+import com.github.dragoni7.dreamland.core.registry.DreamlandItems;
 import com.github.dragoni7.dreamland.util.DreamlandLoc;
 
 import net.minecraft.data.DataGenerator;
@@ -24,10 +23,7 @@ public class ItemModels extends ItemModelProvider{
 		createBlockItemModel(DreamlandItems.HIVE_BLOCK,"block/hive_block1");
 		createBlockItemModel(DreamlandItems.CLAY_SOIL,"block/clay_soil");
 		createBlockItemModel(DreamlandItems.DARK_QUARTZITE,"block/dark_quartzite");
-		createBlockItemModel(DreamlandItems.POROUS_STONE,"block/porous_stone");
-		createBlockItemModel(DreamlandItems.ROOTED_POROUS_STONE,"block/rooted_porous_stone");
 		createBlockItemModel(DreamlandItems.DUSK_ICE,"block/dusk_ice");
-		createBlockItemModel(DreamlandItems.TOXIC_ROCK,"block/toxic_rock");
 		createBlockItemModel(DreamlandItems.HIVE_JELLY_CLUSTER, "block/hive_jelly_cluster");
 		createBlockItemModel(DreamlandItems.HIVE_MEMBRANE, "block/hive_membrane");
 		createBlockItemModel(DreamlandItems.HIVE_IRON, "block/hive_iron");

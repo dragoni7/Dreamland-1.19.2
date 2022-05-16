@@ -1,4 +1,4 @@
-package com.github.dragoni7.dreamland.core;
+package com.github.dragoni7.dreamland.core.registry;
 
 
 import com.github.dragoni7.dreamland.Dreamland;
@@ -25,7 +25,6 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.TallGrassBlock;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
@@ -46,10 +45,6 @@ public class DreamlandBlocks {
 	
 	public static final RegistryObject<Block> CLAY_SOIL_GRASS = BLOCKS.register("clay_soil_grass", () -> new ClaySoilGrass(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
 	
-	public static final RegistryObject<Block> POROUS_STONE = BLOCKS.register("porous_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-	
-	public static final RegistryObject<Block> ROOTED_POROUS_STONE = BLOCKS.register("rooted_porous_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-	
 	public static final RegistryObject<Block> DUSK_ICE = BLOCKS.register("dusk_ice", 
 			() -> new DuskIce(BlockBehaviour.Properties
 					.of(Material.ICE)
@@ -61,13 +56,6 @@ public class DreamlandBlocks {
 					.hasPostProcess(DreamlandBlocks::always)
 					.emissiveRendering(DreamlandBlocks::always)
 					.lightLevel((p_152684_) -> {return 1;})
-					));
-	
-	public static final RegistryObject<Block> TOXIC_ROCK = BLOCKS.register("toxic_rock", 
-			() -> new Block(BlockBehaviour.Properties
-					.of(Material.STONE)
-					.strength(2.0F,6.0F)
-					.sound(SoundType.CALCITE)
 					));
 	
 	public static final RegistryObject<Block> HIVE_BLOCK = BLOCKS.register("hive_block", 

@@ -2,7 +2,7 @@ package com.github.dragoni7.dreamland.common.world.feature.generation;
 
 import java.util.Random;
 
-import com.github.dragoni7.dreamland.core.DreamlandBlocks;
+import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
@@ -18,7 +18,6 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 import net.minecraft.world.level.material.Material;
 
 public class BorderedDisk extends Feature<BorderedDisk.Configuration> {
-	   private static final BlockState AIR = Blocks.CAVE_AIR.defaultBlockState();
 
 	   public BorderedDisk(Codec<BorderedDisk.Configuration> p_66259_) {
 	      super(p_66259_);

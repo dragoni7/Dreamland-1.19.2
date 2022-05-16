@@ -2,7 +2,7 @@ package com.github.dragoni7.dreamland.common.world.biome;
 
 import javax.annotation.Nullable;
 
-import com.github.dragoni7.dreamland.core.DreamlandEntities;
+import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.sounds.Music;

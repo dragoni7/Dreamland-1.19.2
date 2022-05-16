@@ -1,4 +1,4 @@
-package com.github.dragoni7.dreamland.core;
+package com.github.dragoni7.dreamland.core.registry;
 
 import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.common.world.biome.BiomeKeys;

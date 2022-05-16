@@ -1,4 +1,4 @@
-package com.github.dragoni7.dreamland.common.world.feature.generation;
+package com.github.dragoni7.dreamland.common.world.feature.util;
 
 import com.github.dragoni7.dreamland.common.blocks.DreamlandSapling;
 

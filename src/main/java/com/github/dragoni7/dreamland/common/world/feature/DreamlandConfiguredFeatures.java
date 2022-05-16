@@ -5,9 +5,9 @@ import java.util.List;
 
 import com.github.dragoni7.dreamland.common.blocks.DreamlandBlockTags;
 import com.github.dragoni7.dreamland.common.world.feature.generation.BorderedDisk;
-import com.github.dragoni7.dreamland.core.DreamlandBlocks;
-import com.github.dragoni7.dreamland.core.DreamlandFeatures;
-import com.github.dragoni7.dreamland.core.DreamlandFluids;
+import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
+import com.github.dragoni7.dreamland.core.registry.DreamlandFeatures;
+import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
 import com.github.dragoni7.dreamland.util.DreamlandLoc;
 
 import net.minecraft.core.Direction;
@@ -58,58 +58,33 @@ public class DreamlandConfiguredFeatures {
 	private static final ArrayList<ResourceKey<ConfiguredFeature<?,?>>> KEYS = new ArrayList<ResourceKey<ConfiguredFeature<?,?>>>();
 	
 	// KEYS
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_CAVE_SLIME_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("cave_slime"));
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_COMB_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_comb"));
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_STRAND_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_strand"));
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_JELLY_CLUSTER_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_jelly_cluster"));
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_INFESTED_HIVE_JELLY_CLUSTER_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("infested_hive_jelly_cluster"));
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_GROWTH_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_growth"));
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_GROWTH_PATCH_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_growth_patch"));
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_FILLED_HIVE_BLOCK_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("filled_hive_block"));
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_IRON_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_iron"));
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_GOLD_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_gold"));
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_REDSTONE_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_redstone"));
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_LAPIS_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_lapis"));
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_COPPER_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_copper"));
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_COPPER_LARGE_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_copper_large"));
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_DIAMOND_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_diamond"));
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_DIAMOND_LARGE_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("hive_diamond_large"));
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_RED_FLOWERS_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("red_flowers"));
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_MOSS_GRASS_PATCH_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("moss_grass_patch"));
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_BORDERED_DROUGHT_DISK_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("bordered_drought_disk"));
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_DROUGHT_DISK_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("drought_disk"));
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_DELTA_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("tar_delta"));
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_DROUGHT_VEGETATION_KEY =  ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("drought_vegetation"));
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_JOSHUA_TREE_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("joshua_tree"));
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_SPROUTS = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("tar_sprouts"));
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_SKELETON = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("tar_skeleton"));
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_CAVE_SLIME_KEY = createConfiguredFeatureKey("cave_slime");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_COMB_KEY = createConfiguredFeatureKey("hive_comb");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_STRAND_KEY = createConfiguredFeatureKey("hive_strand");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_JELLY_CLUSTER_KEY = createConfiguredFeatureKey("hive_jelly_cluster");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_INFESTED_HIVE_JELLY_CLUSTER_KEY = createConfiguredFeatureKey("infested_hive_jelly_cluster");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_GROWTH_KEY = createConfiguredFeatureKey("hive_growth");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_GROWTH_PATCH_KEY = createConfiguredFeatureKey("hive_growth_patch");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_FILLED_HIVE_BLOCK_KEY = createConfiguredFeatureKey("filled_hive_block");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_IRON_KEY = createConfiguredFeatureKey("hive_iron");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_GOLD_KEY = createConfiguredFeatureKey("hive_gold");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_REDSTONE_KEY = createConfiguredFeatureKey("hive_redstone");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_LAPIS_KEY = createConfiguredFeatureKey("hive_lapis");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_COPPER_KEY = createConfiguredFeatureKey("hive_copper");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_COPPER_LARGE_KEY = createConfiguredFeatureKey("hive_copper_large");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_DIAMOND_KEY = createConfiguredFeatureKey("hive_diamond");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_DIAMOND_LARGE_KEY = createConfiguredFeatureKey("hive_diamond_large");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_RED_FLOWERS_KEY = createConfiguredFeatureKey("red_flowers");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_MOSS_GRASS_PATCH_KEY = createConfiguredFeatureKey("moss_grass_patch");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_BORDERED_DROUGHT_DISK_KEY = createConfiguredFeatureKey("bordered_drought_disk");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_DROUGHT_DISK_KEY = createConfiguredFeatureKey("drought_disk");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_DELTA_KEY = createConfiguredFeatureKey("tar_delta");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_DROUGHT_VEGETATION_KEY =  createConfiguredFeatureKey("drought_vegetation");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_JOSHUA_TREE_KEY = createConfiguredFeatureKey("joshua_tree");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_SPROUTS = createConfiguredFeatureKey("tar_sprouts");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_SKELETON = createConfiguredFeatureKey("tar_skeleton");
 	
 	public static ArrayList<ResourceKey<ConfiguredFeature<?, ?>>> getKeys() {
-		KEYS.add(CONFIGURED_CAVE_SLIME_KEY);
-		KEYS.add(CONFIGURED_HIVE_COMB_KEY);
-		KEYS.add(CONFIGURED_HIVE_STRAND_KEY);
-		KEYS.add(CONFIGURED_HIVE_JELLY_CLUSTER_KEY);
-		KEYS.add(CONFIGURED_INFESTED_HIVE_JELLY_CLUSTER_KEY);
-		KEYS.add(CONFIGURED_HIVE_GROWTH_KEY);
-		KEYS.add(CONFIGURED_GROWTH_PATCH_KEY);
-		KEYS.add(CONFIGURED_FILLED_HIVE_BLOCK_KEY);
-		KEYS.add(CONFIGURED_HIVE_IRON_KEY);
-		KEYS.add(CONFIGURED_HIVE_GOLD_KEY);
-		KEYS.add(CONFIGURED_HIVE_REDSTONE_KEY);
-		KEYS.add(CONFIGURED_HIVE_LAPIS_KEY);
-		KEYS.add(CONFIGURED_HIVE_COPPER_KEY);
-		KEYS.add(CONFIGURED_HIVE_COPPER_LARGE_KEY);
-		KEYS.add(CONFIGURED_HIVE_DIAMOND_KEY);
-		KEYS.add(CONFIGURED_HIVE_DIAMOND_LARGE_KEY);
-		KEYS.add(CONFIGURED_RED_FLOWERS_KEY);
-		KEYS.add(CONFIGURED_MOSS_GRASS_PATCH_KEY);
-		KEYS.add(CONFIGURED_BORDERED_DROUGHT_DISK_KEY);
-		KEYS.add(CONFIGURED_DROUGHT_DISK_KEY);
-		KEYS.add(CONFIGURED_TAR_DELTA_KEY);
-		KEYS.add(CONFIGURED_DROUGHT_VEGETATION_KEY);
-		KEYS.add(CONFIGURED_JOSHUA_TREE_KEY);
-		KEYS.add(CONFIGURED_TAR_SPROUTS);
-		KEYS.add(CONFIGURED_TAR_SKELETON);
 		return KEYS;
 	}
 	
@@ -171,4 +146,10 @@ public class DreamlandConfiguredFeatures {
 	private static <FC extends FeatureConfiguration, F extends Feature<FC>> Holder<ConfiguredFeature<FC, ?>> registerConfiguredFeature(String name, F feature, FC config) {
 		return BuiltinRegistries.registerExact(BuiltinRegistries.CONFIGURED_FEATURE, DreamlandLoc.createLoc(name).toString(), new ConfiguredFeature<>(feature,config));
 	}
+	
+	private static ResourceKey<ConfiguredFeature<?,?>> createConfiguredFeatureKey(String name) {
+		ResourceKey<ConfiguredFeature<?,?>> key = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc(name));
+		KEYS.add(key);
+		return key;
+	   }
 }

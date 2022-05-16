@@ -4,7 +4,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.github.dragoni7.dreamland.Dreamland;
-import com.github.dragoni7.dreamland.core.DreamlandEntities;
+import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

@@ -2,6 +2,9 @@ package com.github.dragoni7.dreamland.core;
 
 import com.github.dragoni7.dreamland.client.render.*;
 import com.github.dragoni7.dreamland.common.blocks.hivecocoon.*;
+import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
+import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
+import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
 
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.gui.screens.MenuScreens;

@@ -4,12 +4,12 @@ import org.apache.logging.log4j.Logger;
 
 import com.github.dragoni7.dreamland.common.world.DreamlandRegion;
 import com.github.dragoni7.dreamland.common.world.DreamlandSurfaceRules;
-import com.github.dragoni7.dreamland.core.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.DreamlandClientEventHandler;
-import com.github.dragoni7.dreamland.core.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.DreamlandEventHandler;
-import com.github.dragoni7.dreamland.core.DreamlandFluids;
-import com.github.dragoni7.dreamland.core.DreamlandItems;
+import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
+import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
+import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
+import com.github.dragoni7.dreamland.core.registry.DreamlandItems;
 import com.github.dragoni7.dreamland.network.DreamlandNetworking;
 import com.github.dragoni7.dreamland.util.DreamlandLoc;
 

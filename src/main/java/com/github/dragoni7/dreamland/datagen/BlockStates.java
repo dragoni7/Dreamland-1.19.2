@@ -2,7 +2,7 @@ package com.github.dragoni7.dreamland.datagen;
 
 import java.util.ArrayList;
 
-import com.github.dragoni7.dreamland.core.DreamlandBlocks;
+import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.level.block.Block;
@@ -22,10 +22,7 @@ public class BlockStates extends BlockStateProvider{
 		ArrayList<Block> simpleBlocks = new ArrayList<Block>();
 		simpleBlocks.add(DreamlandBlocks.CLAY_SOIL.get());
 		simpleBlocks.add(DreamlandBlocks.DARK_QUARTZITE.get());
-		simpleBlocks.add(DreamlandBlocks.POROUS_STONE.get());
-		simpleBlocks.add(DreamlandBlocks.ROOTED_POROUS_STONE.get());
 		simpleBlocks.add(DreamlandBlocks.DUSK_ICE.get());
-		simpleBlocks.add(DreamlandBlocks.TOXIC_ROCK.get());
 		simpleBlocks.add(DreamlandBlocks.HIVE_MEMBRANE.get());
 		simpleBlocks.add(DreamlandBlocks.HIVE_IRON.get());
 		simpleBlocks.add(DreamlandBlocks.HIVE_COPPER.get());

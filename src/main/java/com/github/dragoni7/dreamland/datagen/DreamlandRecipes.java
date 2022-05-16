@@ -2,7 +2,7 @@ package com.github.dragoni7.dreamland.datagen;
 
 import java.util.function.Consumer;
 
-import com.github.dragoni7.dreamland.core.DreamlandItems;
+import com.github.dragoni7.dreamland.core.registry.DreamlandItems;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;

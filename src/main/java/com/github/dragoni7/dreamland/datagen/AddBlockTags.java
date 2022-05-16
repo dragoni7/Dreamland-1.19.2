@@ -2,7 +2,7 @@ package com.github.dragoni7.dreamland.datagen;
 
 import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.common.blocks.DreamlandBlockTags;
-import com.github.dragoni7.dreamland.core.DreamlandBlocks;
+import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
@@ -49,9 +49,7 @@ public class AddBlockTags extends BlockTagsProvider{
 		tag(BlockTags.MINEABLE_WITH_PICKAXE)
 		.add(DreamlandBlocks.DARK_QUARTZITE.get())
 		.add(DreamlandBlocks.HIVE_BLOCK.get())
-		.add(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.get())
-		.add(DreamlandBlocks.POROUS_STONE.get())
-		.add(DreamlandBlocks.ROOTED_POROUS_STONE.get());
+		.add(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.get());
 		
 		tag(BlockTags.NEEDS_STONE_TOOL)
 		.add(DreamlandBlocks.HIVE_BLOCK.get())

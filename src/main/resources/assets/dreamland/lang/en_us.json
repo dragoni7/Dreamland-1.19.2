@@ -17,9 +17,13 @@
   "block.dreamland.hive_redstone": "Hive Redstone Ore",
   "block.dreamland.infested_hive_jelly_cluster": "Hive Jelly Cluster",
   "block.dreamland.jelly_splotch": "Jelly Splotch",
+  "block.dreamland.joshua_sapling": "Joshua Sapling",
+  "block.dreamland.tar": "Tar",
   "block.dreamland.tar_soil": "Tar Soil",
+  "block.dreamland.tar_sprouts": "Tar Sprouts",
   "entity.dreamland.larva": "Larva",
   "entity.dreamland.thrown_hive_jelly": "Thrown Hive Jelly",
   "item.dreamland.hive_jelly": "Hive Jelly",
-  "itemGroup.com.github.dragoni7.dreamland.Dreamland$1@64ec804f": "Dreamland"
+  "item.dreamland.tar_bucket": "Bucket of Tar",
+  "itemGroup.com.github.dragoni7.dreamland.Dreamland$1@6d9f0836": "Dreamland"
 }

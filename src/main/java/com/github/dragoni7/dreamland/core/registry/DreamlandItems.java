@@ -1,4 +1,4 @@
-package com.github.dragoni7.dreamland.core;
+package com.github.dragoni7.dreamland.core.registry;
 
 import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.common.items.HiveJelly;
@@ -24,16 +24,10 @@ public class DreamlandItems {
 	public static final RegistryObject<Item> CLAY_SOIL = registerBlockItem("clay_soil", DreamlandBlocks.CLAY_SOIL);
 	
 	public static final RegistryObject<Item> CLAY_SOIL_GRASS = registerBlockItem("clay_soil_grass", DreamlandBlocks.CLAY_SOIL_GRASS);
-
-	public static final RegistryObject<Item> POROUS_STONE = registerBlockItem("porous_stone", DreamlandBlocks.POROUS_STONE);
-	
-	public static final RegistryObject<Item> ROOTED_POROUS_STONE = registerBlockItem("rooted_porous_stone", DreamlandBlocks.ROOTED_POROUS_STONE);
 	
 	public static final RegistryObject<Item> DUSK_ICE = registerBlockItem("dusk_ice", DreamlandBlocks.DUSK_ICE);
 	
 	public static final RegistryObject<Item> CAVE_SLIME = registerBlockItem("cave_slime", DreamlandBlocks.CAVE_SLIME);
-	
-	public static final RegistryObject<Item> TOXIC_ROCK = registerBlockItem("toxic_rock", DreamlandBlocks.TOXIC_ROCK);
 	
 	public static final RegistryObject<Item> HIVE_BLOCK = registerBlockItem("hive_block", DreamlandBlocks.HIVE_BLOCK);
 	

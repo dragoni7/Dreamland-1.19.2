@@ -1,6 +1,6 @@
 package com.github.dragoni7.dreamland.common.blocks;
 
-import com.github.dragoni7.dreamland.core.DreamlandBlocks;
+import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;

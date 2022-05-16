@@ -2,6 +2,7 @@ package com.github.dragoni7.dreamland.core;
 
 
 import com.github.dragoni7.dreamland.common.entities.mobs.LarvaEntity;
+import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
