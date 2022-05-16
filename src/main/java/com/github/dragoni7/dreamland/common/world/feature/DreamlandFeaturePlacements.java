@@ -57,10 +57,11 @@ private static final ArrayList<ResourceKey<PlacedFeature>> KEYS = new ArrayList<
 	public static final ResourceKey<PlacedFeature> PLACED_MOSS_GRASS_KEY = ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY, DreamlandLoc.createLoc("moss_grass"));
 	public static final ResourceKey<PlacedFeature> PLACED_DROUGHT_DISK_KEY = ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY, DreamlandLoc.createLoc("drought_disk"));
 	public static final ResourceKey<PlacedFeature> PLACED_TAR_DELTA_KEY = ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY, DreamlandLoc.createLoc("tar_delta"));
-	public static final ResourceKey<PlacedFeature> PLACED_JOSHUA_TREE_KEY = ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY, DreamlandLoc.createLoc("joshua_tree"));
+	public static final ResourceKey<PlacedFeature> PLACED_JOSHUA_TREE_KEY = createPlacedFeatureKey("joshua_tree");
 	public static final ResourceKey<PlacedFeature> PLACED_BORDERED_DROUGHT_DISK_KEY = ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY, DreamlandLoc.createLoc("bordered_drought_disk"));
 	public static final ResourceKey<PlacedFeature> PLACED_DROUGHT_VEGETATION_KEY = ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY, DreamlandLoc.createLoc("drought_vegetation"));
 	public static final ResourceKey<PlacedFeature> PLACED_TAR_SPROUTS_KEY = ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY, DreamlandLoc.createLoc("tar_sprouts"));
+	public static final ResourceKey<PlacedFeature> PLACED_TAR_SKELETON_KEY = ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY, DreamlandLoc.createLoc("tar_skeleton"));
 	
 	public static ArrayList<ResourceKey<PlacedFeature>> getKeys() {
 		KEYS.add(PLACED_HIVE_COMB_CEILING_KEY);
@@ -86,10 +87,11 @@ private static final ArrayList<ResourceKey<PlacedFeature>> KEYS = new ArrayList<
 		KEYS.add(PLACED_MOSS_GRASS_KEY);
 		KEYS.add(PLACED_DROUGHT_DISK_KEY);
 		KEYS.add(PLACED_TAR_DELTA_KEY);
-		KEYS.add(PLACED_JOSHUA_TREE_KEY);
+		//KEYS.add(PLACED_JOSHUA_TREE_KEY);
 		KEYS.add(PLACED_BORDERED_DROUGHT_DISK_KEY);
 		KEYS.add(PLACED_DROUGHT_VEGETATION_KEY);
 		KEYS.add(PLACED_TAR_SPROUTS_KEY);
+		KEYS.add(PLACED_TAR_SKELETON_KEY);
 		
 		return KEYS;
 	}
@@ -126,6 +128,7 @@ private static final ArrayList<ResourceKey<PlacedFeature>> KEYS = new ArrayList<
 	public static final Holder<PlacedFeature> PLACED_DROUGHT_VEGETATION = registerPlacedFeature("drought_vegetation", DreamlandConfiguredFeatures.DROUGHT_VEGETATION, CountPlacement.of(UniformInt.of(54, 256)), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(55), VerticalAnchor.top()), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
 	public static final Holder<PlacedFeature> PLACED_JOSHUA_TREE = registerPlacedFeature("joshua_tree", DreamlandConfiguredFeatures.JOSHUA_TREE, CountPlacement.of(UniformInt.of(0, 16)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 	public static final Holder<PlacedFeature> PLACED_TAR_SPROUTS = registerPlacedFeature("tar_sprouts", DreamlandConfiguredFeatures.TAR_SPROUTS, CountPlacement.of(UniformInt.of(24, 96)), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(55), VerticalAnchor.top()), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.matchesBlocks(List.of(DreamlandBlocks.TAR_SOIL.get())), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
+	public static final Holder<PlacedFeature> PLACED_TAR_SKELETON = registerPlacedFeature("tar_skeleton", DreamlandConfiguredFeatures.TAR_SKELETON, RarityFilter.onAverageOnceEvery(18), PlacementUtils.HEIGHTMAP, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.matchesBlocks(List.of(DreamlandBlocks.TAR_SOIL.get())), 12), BiomeFilter.biome());
 	
 	private static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {
 		      return List.of(p_195347_, InSquarePlacement.spread(), p_195348_, BiomeFilter.biome());
@@ -145,5 +148,11 @@ private static final ArrayList<ResourceKey<PlacedFeature>> KEYS = new ArrayList<
 	   
 	   private static <FC extends FeatureConfiguration> Holder<PlacedFeature> registerPlacedFeature(String name, Holder<ConfiguredFeature<FC,?>> feature, PlacementModifier... placementModifiers) {
 		   return registerPlacedFeature(name,feature,List.of(placementModifiers));
+	   }
+	   
+	   private static ResourceKey<PlacedFeature> createPlacedFeatureKey(String name) {
+		   ResourceKey<PlacedFeature> key = ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY, DreamlandLoc.createLoc(name));
+		   KEYS.add(key);
+		   return key;
 	   }
 }

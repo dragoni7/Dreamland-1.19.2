@@ -82,6 +82,7 @@ public class DreamlandConfiguredFeatures {
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_DROUGHT_VEGETATION_KEY =  ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("drought_vegetation"));
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_JOSHUA_TREE_KEY = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("joshua_tree"));
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_SPROUTS = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("tar_sprouts"));
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_SKELETON = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc("tar_skeleton"));
 	
 	public static ArrayList<ResourceKey<ConfiguredFeature<?, ?>>> getKeys() {
 		KEYS.add(CONFIGURED_CAVE_SLIME_KEY);
@@ -108,6 +109,7 @@ public class DreamlandConfiguredFeatures {
 		KEYS.add(CONFIGURED_DROUGHT_VEGETATION_KEY);
 		KEYS.add(CONFIGURED_JOSHUA_TREE_KEY);
 		KEYS.add(CONFIGURED_TAR_SPROUTS);
+		KEYS.add(CONFIGURED_TAR_SKELETON);
 		return KEYS;
 	}
 	
@@ -164,6 +166,7 @@ public class DreamlandConfiguredFeatures {
 	public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> DROUGHT_VEGETATION = registerConfiguredFeature("drought_vegetation", Feature.RANDOM_PATCH, new RandomPatchConfiguration(48, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.OXEYE_DAISY.defaultBlockState(), 10).add(Blocks.DEAD_BUSH.defaultBlockState(), 40).add(Blocks.GRASS.defaultBlockState(), 50))))));
 	public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> JOSHUA_TREE = registerConfiguredFeature("joshua_tree", DreamlandFeatures.JOSHUA_TREE_FEATURE, new NoneFeatureConfiguration());
 	public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> TAR_SPROUTS = registerConfiguredFeature("tar_sprouts", Feature.RANDOM_PATCH, new RandomPatchConfiguration(48, 4, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(DreamlandBlocks.TAR_SPROUTS.get())))));
+	public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> TAR_SKELETON = registerConfiguredFeature("tar_skeleton", DreamlandFeatures.TAR_SKELETON, new NoneFeatureConfiguration());
 	
 	private static <FC extends FeatureConfiguration, F extends Feature<FC>> Holder<ConfiguredFeature<FC, ?>> registerConfiguredFeature(String name, F feature, FC config) {
 		return BuiltinRegistries.registerExact(BuiltinRegistries.CONFIGURED_FEATURE, DreamlandLoc.createLoc(name).toString(), new ConfiguredFeature<>(feature,config));
