@@ -46,9 +46,10 @@ public class DreamlandBiomeFeatures {
 		builder.addFeature(GenerationStep.Decoration.LAKES, DreamlandFeaturePlacements.PLACED_TAR_DELTA);
 		builder.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, DreamlandFeaturePlacements.PLACED_DROUGHT_DISK);
 		builder.addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, DreamlandFeaturePlacements.PLACED_TAR_SKELETON);
+		builder.addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, DreamlandFeaturePlacements.PLACED_TAR_BONE);
 		builder.addFeature(GenerationStep.Decoration.LAKES, DreamlandFeaturePlacements.DROUGHT_BORDERED_DISK_SURFACE);
 		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.PLACED_DROUGHT_VEGETATION);
 		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.PLACED_TAR_SPROUTS);
-		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.PLACED_JOSHUA_TREE);
+		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.PLACED_TAR_BARK_TREE);
 	}
 }

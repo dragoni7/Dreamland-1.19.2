@@ -1,8 +1,8 @@
 {
-  "feature": "dreamland:tar_skeleton",
+  "feature": "dreamland:tar_bone",
   "placement": [
     {
-      "chance": 27,
+      "chance": 9,
       "type": "minecraft:rarity_filter"
     },
     {

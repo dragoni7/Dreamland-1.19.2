@@ -38,6 +38,9 @@ public class ItemModels extends ItemModelProvider{
 		createBlockItemModel(DreamlandItems.DRIED_TAR, "block/dried_tar");
 		createBlockItemModel(DreamlandItems.TAR_SOIL, "block/tar_soil");
 		createBlockItemModel(DreamlandItems.DROUGHT_SOIL, "block/drought_soil");
+		createBlockItemModel(DreamlandItems.TAR_BARK_LOG, "block/tar_bark_log");
+		createBlockItemModel(DreamlandItems.TAR_BARK_LEAVES, "block/tar_bark_leaves");
+		createBlockItemModel(DreamlandItems.STRIPPED_TAR_BARK_LOG, "block/stripped_tar_bark_log");
 		
 		createSingleTextureModel(DreamlandItems.HIVE_JELLY_ITEM, "item/hive_jelly");
 		createSingleTextureModel(DreamlandItems.HIVE_GROWTH, "block/hive_growth_cross");

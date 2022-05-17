@@ -80,9 +80,10 @@ public class DreamlandConfiguredFeatures {
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_DROUGHT_DISK_KEY = createConfiguredFeatureKey("drought_disk");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_DELTA_KEY = createConfiguredFeatureKey("tar_delta");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_DROUGHT_VEGETATION_KEY =  createConfiguredFeatureKey("drought_vegetation");
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_JOSHUA_TREE_KEY = createConfiguredFeatureKey("joshua_tree");
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_SPROUTS = createConfiguredFeatureKey("tar_sprouts");
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_SKELETON = createConfiguredFeatureKey("tar_skeleton");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_BARK_TREE_KEY = createConfiguredFeatureKey("tar_bark_tree");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_SPROUTS_KEY = createConfiguredFeatureKey("tar_sprouts");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_SKELETON_KEY = createConfiguredFeatureKey("tar_skeleton");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_BONE_KEY = createConfiguredFeatureKey("tar_bone");
 	
 	public static ArrayList<ResourceKey<ConfiguredFeature<?, ?>>> getKeys() {
 		return KEYS;
@@ -139,9 +140,10 @@ public class DreamlandConfiguredFeatures {
 	public static final Holder<ConfiguredFeature<DiskConfiguration, ?>> DROUGHT_DISK = registerConfiguredFeature("drought_disk", Feature.DISK, new DiskConfiguration(DreamlandBlocks.DROUGHT_SOIL.get().defaultBlockState(), UniformInt.of(2, 5), 2, List.of(DreamlandBlocks.TAR_SOIL.get().defaultBlockState(), DreamlandBlocks.DRIED_TAR.get().defaultBlockState())));
 	public static final Holder<ConfiguredFeature<DeltaFeatureConfiguration, ?>> TAR_DELTA = registerConfiguredFeature("tar_delta", Feature.DELTA_FEATURE, new DeltaFeatureConfiguration(DreamlandFluids.TAR_BLOCK.get().defaultBlockState(), DreamlandBlocks.DRIED_TAR.get().defaultBlockState(), UniformInt.of(3, 7), UniformInt.of(1, 4)));
 	public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> DROUGHT_VEGETATION = registerConfiguredFeature("drought_vegetation", Feature.RANDOM_PATCH, new RandomPatchConfiguration(48, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.OXEYE_DAISY.defaultBlockState(), 10).add(Blocks.DEAD_BUSH.defaultBlockState(), 40).add(Blocks.GRASS.defaultBlockState(), 50))))));
-	public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> JOSHUA_TREE = registerConfiguredFeature("joshua_tree", DreamlandFeatures.JOSHUA_TREE_FEATURE, new NoneFeatureConfiguration());
+	public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> TAR_BARK_TREE = registerConfiguredFeature("tar_bark_tree", DreamlandFeatures.TAR_BARK_TREE_FEATURE, new NoneFeatureConfiguration());
 	public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> TAR_SPROUTS = registerConfiguredFeature("tar_sprouts", Feature.RANDOM_PATCH, new RandomPatchConfiguration(48, 4, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(DreamlandBlocks.TAR_SPROUTS.get())))));
 	public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> TAR_SKELETON = registerConfiguredFeature("tar_skeleton", DreamlandFeatures.TAR_SKELETON, new NoneFeatureConfiguration());
+	public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> TAR_BONE = registerConfiguredFeature("tar_bone", DreamlandFeatures.TAR_BONE, new NoneFeatureConfiguration());
 	
 	private static <FC extends FeatureConfiguration, F extends Feature<FC>> Holder<ConfiguredFeature<FC, ?>> registerConfiguredFeature(String name, F feature, FC config) {
 		return BuiltinRegistries.registerExact(BuiltinRegistries.CONFIGURED_FEATURE, DreamlandLoc.createLoc(name).toString(), new ConfiguredFeature<>(feature,config));

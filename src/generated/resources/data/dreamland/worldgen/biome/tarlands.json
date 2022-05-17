@@ -22,7 +22,8 @@
       "minecraft:monster_room_deep"
     ],
     [
-      "dreamland:tar_skeleton"
+      "dreamland:tar_skeleton",
+      "dreamland:tar_bone"
     ],
     [],
     [
@@ -64,7 +65,7 @@
       "minecraft:glow_lichen",
       "dreamland:drought_vegetation",
       "dreamland:tar_sprouts",
-      "dreamland:joshua_tree"
+      "dreamland:tar_bark_tree"
     ],
     [
       "minecraft:freeze_top_layer",

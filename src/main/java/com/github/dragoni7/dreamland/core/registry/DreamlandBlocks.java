@@ -24,6 +24,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
@@ -166,10 +168,19 @@ public class DreamlandBlocks {
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.SANDSTONE).sound(SoundType.GRAVEL)));
 	
 	public static final RegistryObject<Block> JOSHUA_SAPLING = BLOCKS.register("joshua_sapling",
-			() -> new DreamlandSapling(DreamlandFeatures.JOSHUA_TREE_FEATURE, BlockBehaviour.Properties.copy(Blocks.ACACIA_SAPLING)));
+			() -> new DreamlandSapling(DreamlandFeatures.TAR_BARK_TREE_FEATURE, BlockBehaviour.Properties.copy(Blocks.ACACIA_SAPLING)));
 	
 	public static final RegistryObject<Block> TAR_SPROUTS = BLOCKS.register("tar_sprouts",
 			() -> new TarSprouts(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+	
+	public static final RegistryObject<Block> TAR_BARK_LOG = BLOCKS.register("tar_bark_log",
+			() -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_LOG)));
+	
+	public static final RegistryObject<Block> TAR_BARK_LEAVES = BLOCKS.register("tar_bark_leaves",
+			() -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_LEAVES)));
+	
+	public static final RegistryObject<Block> STRIPPED_TAR_BARK_LOG = BLOCKS.register("stripped_tar_bark_log",
+			() -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_ACACIA_LOG)));
 	
 	private static RegistryObject<Block> createHiveOre(String name) {
 		return BLOCKS.register(name,

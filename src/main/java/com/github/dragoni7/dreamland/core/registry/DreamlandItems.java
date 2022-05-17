@@ -55,6 +55,9 @@ public class DreamlandItems {
 	public static final RegistryObject<Item> DROUGHT_SOIL = registerBlockItem("drought_soil", DreamlandBlocks.DROUGHT_SOIL);
 	public static final RegistryObject<Item> JOSHUA_SAPLING = registerBlockItem("joshua_sapling", DreamlandBlocks.JOSHUA_SAPLING);
 	public static final RegistryObject<Item> TAR_SPROUTS = registerBlockItem("tar_sprouts", DreamlandBlocks.TAR_SPROUTS);
+	public static final RegistryObject<Item> TAR_BARK_LOG = registerBlockItem("tar_bark_log", DreamlandBlocks.TAR_BARK_LOG);
+	public static final RegistryObject<Item> TAR_BARK_LEAVES = registerBlockItem("tar_bark_leaves", DreamlandBlocks.TAR_BARK_LEAVES);
+	public static final RegistryObject<Item> STRIPPED_TAR_BARK_LOG = registerBlockItem("stripped_tar_bark_log", DreamlandBlocks.STRIPPED_TAR_BARK_LOG);
 	
 	//Items
 	public static final RegistryObject<Item> HIVE_JELLY_ITEM = registerHiveJelly("hive_jelly", new FoodProperties.Builder().nutrition(1).saturationMod(0.2F).build());

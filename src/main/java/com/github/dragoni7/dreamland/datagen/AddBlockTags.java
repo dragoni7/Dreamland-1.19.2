@@ -30,6 +30,15 @@ public class AddBlockTags extends BlockTagsProvider{
 		tag(Tags.Blocks.STONE)
 		.add(DreamlandBlocks.DARK_QUARTZITE.get());
 		
+		tag(BlockTags.NON_FLAMMABLE_WOOD)
+		.add(DreamlandBlocks.TAR_BARK_LOG.get());
+		
+		tag(BlockTags.LOGS)
+		.add(DreamlandBlocks.TAR_BARK_LOG.get());
+		
+		tag(BlockTags.LEAVES)
+		.add(DreamlandBlocks.TAR_BARK_LEAVES.get());
+		
 		tag(BlockTags.ICE)
 		.add(DreamlandBlocks.DUSK_ICE.get());
 		
@@ -39,6 +48,10 @@ public class AddBlockTags extends BlockTagsProvider{
 		
 		tag(BlockTags.SAPLINGS)
 		.add(DreamlandBlocks.JOSHUA_SAPLING.get());
+		
+		tag(BlockTags.MINEABLE_WITH_AXE)
+		.add(DreamlandBlocks.TAR_BARK_LOG.get())
+		.add(DreamlandBlocks.STRIPPED_TAR_BARK_LOG.get());
 		
 		tag(BlockTags.MINEABLE_WITH_SHOVEL)
 		.add(DreamlandBlocks.CLAY_SOIL.get())

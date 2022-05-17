@@ -17,14 +17,12 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 
-public class JoshuaTree extends Feature<NoneFeatureConfiguration> {
+public class TarBarkTree extends Feature<NoneFeatureConfiguration> {
 	
 	private static final int maxTrunkHeight = 6;
 	private static final int minTrunkHeight = 2;
-	private static final BlockState log = Blocks.ACACIA_LOG.defaultBlockState();
-	private static final BlockState leaves = Blocks.AZALEA_LEAVES.defaultBlockState().setValue(LeavesBlock.DISTANCE, 1);
 
-	public JoshuaTree(Codec<NoneFeatureConfiguration> codec) {
+	public TarBarkTree(Codec<NoneFeatureConfiguration> codec) {
 		super(codec);
 	}
 
@@ -59,6 +57,7 @@ public class JoshuaTree extends Feature<NoneFeatureConfiguration> {
 	}
 	
 	private static boolean createTrunk(WorldGenLevel worldgenlevel, Boolean xzChange, int baseHeight, FeatureBuilder builder, BlockPos blockpos) {
+		final BlockState log = DreamlandBlocks.TAR_BARK_LOG.get().defaultBlockState();
 		
 		for (int i = 0; i <= maxTrunkHeight; i++) {
 		
@@ -86,6 +85,7 @@ public class JoshuaTree extends Feature<NoneFeatureConfiguration> {
 	}
 	
 	private static boolean createBranches(WorldGenLevel level, Boolean xzChange, Random random, int baseHeight, BlockPos pos, FeatureBuilder builder) {
+		final BlockState log = DreamlandBlocks.TAR_BARK_LOG.get().defaultBlockState();
 		int northBranchHeight = baseHeight+random.nextInt(1, 3);
 		int westBranchHeight = baseHeight+random.nextInt(2, 3);
 		int eastBranchHeight = baseHeight+random.nextInt(1, 2);
@@ -122,6 +122,7 @@ public class JoshuaTree extends Feature<NoneFeatureConfiguration> {
 	}
 	
 	private static boolean createLeaves(WorldGenLevel level, BlockPos pos, FeatureBuilder builder) {
+		final BlockState leaves = DreamlandBlocks.TAR_BARK_LEAVES.get().defaultBlockState().setValue(LeavesBlock.DISTANCE, 1);
 		boolean canBuild = true;
 		canBuild = builder.addInput(level, leaves, pos);
 		canBuild = builder.addInput(level, leaves, pos.east(1).north(1));

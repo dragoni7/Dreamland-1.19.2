@@ -56,11 +56,12 @@ private static final ArrayList<ResourceKey<PlacedFeature>> KEYS = new ArrayList<
 	public static final ResourceKey<PlacedFeature> PLACED_MOSS_GRASS_KEY = createPlacedFeatureKey("moss_grass");
 	public static final ResourceKey<PlacedFeature> PLACED_DROUGHT_DISK_KEY = createPlacedFeatureKey("drought_disk");
 	public static final ResourceKey<PlacedFeature> PLACED_TAR_DELTA_KEY = createPlacedFeatureKey("tar_delta");
-	public static final ResourceKey<PlacedFeature> PLACED_JOSHUA_TREE_KEY = createPlacedFeatureKey("joshua_tree");
+	public static final ResourceKey<PlacedFeature> PLACED_TAR_BARK_TREE_KEY = createPlacedFeatureKey("tar_bark_tree");
 	public static final ResourceKey<PlacedFeature> PLACED_BORDERED_DROUGHT_DISK_KEY = createPlacedFeatureKey("bordered_drought_disk");
 	public static final ResourceKey<PlacedFeature> PLACED_DROUGHT_VEGETATION_KEY = createPlacedFeatureKey("drought_vegetation");
 	public static final ResourceKey<PlacedFeature> PLACED_TAR_SPROUTS_KEY = createPlacedFeatureKey("tar_sprouts");
 	public static final ResourceKey<PlacedFeature> PLACED_TAR_SKELETON_KEY =  createPlacedFeatureKey("tar_skeleton");
+	public static final ResourceKey<PlacedFeature> PLACED_TAR_BONE_KEY = createPlacedFeatureKey("tar_bone");
 	
 	public static ArrayList<ResourceKey<PlacedFeature>> getKeys() {
 		return KEYS;
@@ -96,9 +97,10 @@ private static final ArrayList<ResourceKey<PlacedFeature>> KEYS = new ArrayList<
 	public static final Holder<PlacedFeature> DROUGHT_BORDERED_DISK_SURFACE = registerPlacedFeature("bordered_drought_disk", DreamlandConfiguredFeatures.DROUGHT_BORDERED_DISK, CountPlacement.of(UniformInt.of(0, 48)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome());
 	public static final Holder<PlacedFeature> PLACED_TAR_DELTA = registerPlacedFeature("tar_delta", DreamlandConfiguredFeatures.TAR_DELTA, CountPlacement.of(UniformInt.of(0, 96)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
 	public static final Holder<PlacedFeature> PLACED_DROUGHT_VEGETATION = registerPlacedFeature("drought_vegetation", DreamlandConfiguredFeatures.DROUGHT_VEGETATION, CountPlacement.of(UniformInt.of(54, 256)), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(55), VerticalAnchor.top()), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
-	public static final Holder<PlacedFeature> PLACED_JOSHUA_TREE = registerPlacedFeature("joshua_tree", DreamlandConfiguredFeatures.JOSHUA_TREE, CountPlacement.of(UniformInt.of(0, 16)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+	public static final Holder<PlacedFeature> PLACED_TAR_BARK_TREE = registerPlacedFeature("tar_bark_tree", DreamlandConfiguredFeatures.TAR_BARK_TREE, CountPlacement.of(UniformInt.of(0, 16)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 	public static final Holder<PlacedFeature> PLACED_TAR_SPROUTS = registerPlacedFeature("tar_sprouts", DreamlandConfiguredFeatures.TAR_SPROUTS, CountPlacement.of(UniformInt.of(24, 96)), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(55), VerticalAnchor.top()), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.matchesBlocks(List.of(DreamlandBlocks.TAR_SOIL.get())), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
-	public static final Holder<PlacedFeature> PLACED_TAR_SKELETON = registerPlacedFeature("tar_skeleton", DreamlandConfiguredFeatures.TAR_SKELETON, RarityFilter.onAverageOnceEvery(18), PlacementUtils.HEIGHTMAP, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.matchesBlocks(List.of(DreamlandBlocks.TAR_SOIL.get())), 12), BiomeFilter.biome());
+	public static final Holder<PlacedFeature> PLACED_TAR_SKELETON = registerPlacedFeature("tar_skeleton", DreamlandConfiguredFeatures.TAR_SKELETON, RarityFilter.onAverageOnceEvery(27), PlacementUtils.HEIGHTMAP, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.matchesBlocks(List.of(DreamlandBlocks.TAR_SOIL.get())), 12), BiomeFilter.biome());
+	public static final Holder<PlacedFeature> PLACED_TAR_BONE = registerPlacedFeature("tar_bone", DreamlandConfiguredFeatures.TAR_BONE, RarityFilter.onAverageOnceEvery(9), PlacementUtils.HEIGHTMAP, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.matchesBlocks(List.of(DreamlandBlocks.TAR_SOIL.get())), 12), BiomeFilter.biome());
 	
 	private static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {
 		      return List.of(p_195347_, InSquarePlacement.spread(), p_195348_, BiomeFilter.biome());

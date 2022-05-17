@@ -4,7 +4,8 @@ import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.common.world.feature.generation.BorderedDisk;
 import com.github.dragoni7.dreamland.common.world.feature.generation.HiveComb;
 import com.github.dragoni7.dreamland.common.world.feature.generation.HiveStrand;
-import com.github.dragoni7.dreamland.common.world.feature.generation.JoshuaTree;
+import com.github.dragoni7.dreamland.common.world.feature.generation.TarBarkTree;
+import com.github.dragoni7.dreamland.common.world.feature.generation.TarBone;
 import com.github.dragoni7.dreamland.common.world.feature.generation.TarSkeleton;
 
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -20,8 +21,9 @@ public class DreamlandFeatures {
 	public static final Feature<NoneFeatureConfiguration> HIVE_STRAND = new HiveStrand(NoneFeatureConfiguration.CODEC.stable());
 	public static final Feature<BlockStateConfiguration> HIVE_COMB = new HiveComb(BlockStateConfiguration.CODEC.stable());
 	public static final Feature<BorderedDisk.Configuration> BORDERED_DISK = new BorderedDisk(BorderedDisk.Configuration.CODEC.stable());
-	public static final Feature<NoneFeatureConfiguration> JOSHUA_TREE_FEATURE = new JoshuaTree(NoneFeatureConfiguration.CODEC.stable());
+	public static final Feature<NoneFeatureConfiguration> TAR_BARK_TREE_FEATURE = new TarBarkTree(NoneFeatureConfiguration.CODEC.stable());
 	public static final Feature<NoneFeatureConfiguration> TAR_SKELETON = new TarSkeleton(NoneFeatureConfiguration.CODEC.stable());
+	public static final Feature<NoneFeatureConfiguration> TAR_BONE = new TarBone(NoneFeatureConfiguration.CODEC.stable());
 
 	@SubscribeEvent
 	public static void registerFeatures(RegistryEvent.Register<Feature<?>> event) {
@@ -29,7 +31,8 @@ public class DreamlandFeatures {
 		registry.register(DreamlandFeatures.HIVE_STRAND.setRegistryName("hive_strand_feature"));
 		registry.register(DreamlandFeatures.HIVE_COMB.setRegistryName("hive_comb_feature"));
 		registry.register(DreamlandFeatures.BORDERED_DISK.setRegistryName("bordered_disk_feature"));
-		registry.register(DreamlandFeatures.JOSHUA_TREE_FEATURE.setRegistryName("joshua_tree_feature"));
+		registry.register(DreamlandFeatures.TAR_BARK_TREE_FEATURE.setRegistryName("tar_bark_tree_feature"));
 		registry.register(DreamlandFeatures.TAR_SKELETON.setRegistryName("tar_skeleton"));
+		registry.register(DreamlandFeatures.TAR_BONE.setRegistryName("tar_bone"));
 	}
 }

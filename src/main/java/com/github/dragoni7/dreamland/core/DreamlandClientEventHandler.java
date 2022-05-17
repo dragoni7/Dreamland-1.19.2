@@ -49,6 +49,7 @@ public class DreamlandClientEventHandler {
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.HIVE_GROWTH.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.JELLY_SPLOTCH.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.TAR_SPROUTS.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.TAR_BARK_LEAVES.get(), RenderType.cutout());
 			
 			ItemBlockRenderTypes.setRenderLayer(DreamlandFluids.TAR_BLOCK.get(), RenderType.solid());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandFluids.TAR_FLUID.get(), RenderType.solid());
