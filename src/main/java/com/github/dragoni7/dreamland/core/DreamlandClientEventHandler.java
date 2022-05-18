@@ -3,19 +3,25 @@ package com.github.dragoni7.dreamland.core;
 import com.github.dragoni7.dreamland.client.render.*;
 import com.github.dragoni7.dreamland.common.blocks.hivecocoon.*;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
+import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
+import com.mojang.math.Vector3d;
 
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.phys.Vec3;
 
 public class DreamlandClientEventHandler {
 
@@ -27,13 +33,13 @@ public class DreamlandClientEventHandler {
 		modBus.addListener(DreamlandClientEventHandler::setupClient);
 	}
 	
-	public static void registerEntityRenders(final EntityRenderersEvent.RegisterRenderers event) {
+	private static void registerEntityRenders(final EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(DreamlandEntities.LARVA.get(), LarvaRender::new);
 		event.registerEntityRenderer(DreamlandEntities.THROWN_HIVE_JELLY.get(), ThrownItemRenderer::new);
 		event.registerBlockEntityRenderer(DreamlandEntities.HIVE_COCOON_TILE.get(), HiveCocoonTileRenderer::new);
 	}
 	
-	public static void setupClient(final FMLClientSetupEvent event) {
+	private static void setupClient(final FMLClientSetupEvent event) {
 		
 		MenuScreens.register(DreamlandEntities.HIVE_COCOON_CONTAINER.get(), HiveCocoonScreen::new);
 		
@@ -58,7 +64,7 @@ public class DreamlandClientEventHandler {
 		});
 	}
 	
-	public static void registerBlockColors(final ColorHandlerEvent.Block event) {
+	private static void registerBlockColors(final ColorHandlerEvent.Block event) {
 		final BlockColors blockColors = event.getBlockColors();
 		blockColors.register((state, world, pos, tintIndex) -> BiomeColors.getAverageGrassColor(world, pos), DreamlandBlocks.CLAY_SOIL_GRASS.get());
 	}

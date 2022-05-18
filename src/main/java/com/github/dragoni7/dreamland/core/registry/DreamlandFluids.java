@@ -1,6 +1,7 @@
 package com.github.dragoni7.dreamland.core.registry;
 
 import com.github.dragoni7.dreamland.Dreamland;
+import com.github.dragoni7.dreamland.common.blocks.TarLiquidBlock;
 import com.github.dragoni7.dreamland.util.DreamlandLoc;
 
 import net.minecraft.resources.ResourceLocation;
@@ -36,6 +37,6 @@ public class DreamlandFluids {
 			.block(() -> DreamlandFluids.TAR_BLOCK.get()).bucket(() -> DreamlandItems.TAR_BUCKET.get());
 	
 	public static final RegistryObject<LiquidBlock> TAR_BLOCK = DreamlandBlocks.BLOCKS.register("tar",
-			() -> new LiquidBlock(() -> DreamlandFluids.TAR_FLUID.get(), BlockBehaviour.Properties.of(Material.LAVA)
+			() -> new TarLiquidBlock(() -> DreamlandFluids.TAR_FLUID.get(),BlockBehaviour.Properties.of(Material.LAVA)
 					.noCollission().strength(100f).noDrops()));
 }
