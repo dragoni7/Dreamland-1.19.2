@@ -3,6 +3,7 @@
   "values": [
     "dreamland:clay_soil",
     "dreamland:clay_soil_grass",
-    "dreamland:drought_soil"
+    "dreamland:drought_soil",
+    "dreamland:mineral_dirt"
   ]
 }

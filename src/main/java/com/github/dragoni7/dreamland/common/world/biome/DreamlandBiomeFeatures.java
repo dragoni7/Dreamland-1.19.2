@@ -42,7 +42,7 @@ public class DreamlandBiomeFeatures {
 	    builder.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, DreamlandFeaturePlacements.PLACED_MOSS_GRASS);
 	}
 	
-	public static void tarlandsBiomeFeatures(BiomeGenerationSettings.Builder builder) {
+	public static void tardeltasBiomeFeatures(BiomeGenerationSettings.Builder builder) {
 		builder.addFeature(GenerationStep.Decoration.LAKES, DreamlandFeaturePlacements.PLACED_TAR_DELTA);
 		builder.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, DreamlandFeaturePlacements.PLACED_DROUGHT_DISK);
 		builder.addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, DreamlandFeaturePlacements.PLACED_TAR_SKELETON);

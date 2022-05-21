@@ -24,9 +24,8 @@ public class DreamlandRegion extends Region
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
     	this.addModifiedVanillaOverworldBiomes(mapper, builder -> { 
     		builder.replaceBiome(Biomes.DRIPSTONE_CAVES, BiomeKeys.HIVE);
-    		builder.replaceBiome(Biomes.FLOWER_FOREST, BiomeKeys.GARDEN);
-    		builder.replaceBiome(Biomes.FOREST, BiomeKeys.GARDEN);
-    		builder.replaceBiome(Biomes.DESERT, BiomeKeys.TARLANDS);
+    		builder.replaceBiome(Biomes.DESERT, BiomeKeys.TAR_DELTAS);
+    		builder.replaceBiome(Biomes.BIRCH_FOREST, BiomeKeys.JEWELED_FOREST);
     	});
     }
 }

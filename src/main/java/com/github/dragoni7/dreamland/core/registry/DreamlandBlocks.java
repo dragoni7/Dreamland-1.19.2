@@ -10,6 +10,7 @@ import com.github.dragoni7.dreamland.common.blocks.DarkQuartzite;
 import com.github.dragoni7.dreamland.common.blocks.DreamlandSapling;
 import com.github.dragoni7.dreamland.common.blocks.DuskIce;
 import com.github.dragoni7.dreamland.common.blocks.EmissiveHiveBlock;
+import com.github.dragoni7.dreamland.common.blocks.FloweringUndergrowthBlock;
 import com.github.dragoni7.dreamland.common.blocks.HiveBlock;
 import com.github.dragoni7.dreamland.common.blocks.HiveCluster;
 import com.github.dragoni7.dreamland.common.blocks.HiveGrowth;
@@ -45,7 +46,7 @@ public class DreamlandBlocks {
 	
 	public static final RegistryObject<Block> CLAY_SOIL = BLOCKS.register("clay_soil", () -> new ClaySoil(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.ROOTED_DIRT)));
 	
-	public static final RegistryObject<Block> CLAY_SOIL_GRASS = BLOCKS.register("clay_soil_grass", () -> new ClaySoilGrass(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
+	public static final RegistryObject<Block> CLAY_SOIL_GRASS = BLOCKS.register("clay_soil_grass", () -> new ClaySoilGrass((BlockBehaviour.Properties.of(Material.GRASS).randomTicks().strength(0.6F).sound(SoundType.GRASS))));
 	
 	public static final RegistryObject<Block> DUSK_ICE = BLOCKS.register("dusk_ice", 
 			() -> new DuskIce(BlockBehaviour.Properties
@@ -158,14 +159,12 @@ public class DreamlandBlocks {
 	public static final RegistryObject<Block> HIVE_LAPIS = createHiveOre("hive_lapis");
 	
 	public static final RegistryObject<Block> DRIED_TAR = BLOCKS.register("dried_tar",
-			() -> new Block(BlockBehaviour.Properties
-					.copy(Blocks.SANDSTONE)));
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.SANDSTONE)));
 	
 	public static final RegistryObject<Block> TAR_SOIL = BLOCKS.register("tar_soil",
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.SOUL_SOIL).sound(SoundType.ROOTED_DIRT)));
 	
-	public static final RegistryObject<Block> DROUGHT_SOIL = BLOCKS.register("drought_soil",
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.SANDSTONE).sound(SoundType.GRAVEL)));
+	public static final RegistryObject<Block> DROUGHT_SOIL = createDirtBlock("drought_soil");
 	
 	public static final RegistryObject<Block> JOSHUA_SAPLING = BLOCKS.register("joshua_sapling",
 			() -> new DreamlandSapling(DreamlandFeatures.TAR_BARK_TREE_FEATURE, BlockBehaviour.Properties.copy(Blocks.ACACIA_SAPLING)));
@@ -173,14 +172,34 @@ public class DreamlandBlocks {
 	public static final RegistryObject<Block> TAR_SPROUTS = BLOCKS.register("tar_sprouts",
 			() -> new TarSprouts(BlockBehaviour.Properties.copy(Blocks.GRASS)));
 	
-	public static final RegistryObject<Block> TAR_BARK_LOG = BLOCKS.register("tar_bark_log",
-			() -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> TAR_BARK_LOG = createLogBlock("tar_bark_log");
 	
-	public static final RegistryObject<Block> TAR_BARK_LEAVES = BLOCKS.register("tar_bark_leaves",
-			() -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_LEAVES)));
+	public static final RegistryObject<Block> TAR_BARK_LEAVES = createLeavesBlock("tar_bark_leaves", MaterialColor.COLOR_LIGHT_GREEN);
 	
-	public static final RegistryObject<Block> STRIPPED_TAR_BARK_LOG = BLOCKS.register("stripped_tar_bark_log",
-			() -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_ACACIA_LOG)));
+	public static final RegistryObject<Block> STRIPPED_TAR_BARK_LOG = createStrippedLogBlock("stripped_tar_bark_log");
+	
+	public static final RegistryObject<Block> PLUM_BIRCH_LEAVES = createLeavesBlock("plum_birch_leaves", MaterialColor.COLOR_BLUE);
+	
+	public static final RegistryObject<Block> MINERAL_DIRT = createDirtBlock("mineral_dirt");
+	
+	public static final RegistryObject<Block> FLOWERING_UNDERGROWTH = BLOCKS.register("flowering_undergrowth",
+			() -> new FloweringUndergrowthBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK).color(MaterialColor.COLOR_PINK)));
+	
+	private static RegistryObject<Block> createLogBlock(String name) {
+		return BLOCKS.register(name, () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(2.0F)));
+	}
+	
+	private static RegistryObject<Block> createStrippedLogBlock(String name) {
+		return BLOCKS.register(name, () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).strength(2.0F)));
+	}
+	
+	private static RegistryObject<Block> createLeavesBlock(String name, MaterialColor color) {
+		return BLOCKS.register(name, () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES, color).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isViewBlocking((state, world, pos) -> false).isSuffocating((state, world, pos) -> false)));
+	}
+	
+	private static RegistryObject<Block> createDirtBlock(String name) {
+		return BLOCKS.register(name, () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT)));
+	}
 	
 	private static RegistryObject<Block> createHiveOre(String name) {
 		return BLOCKS.register(name,

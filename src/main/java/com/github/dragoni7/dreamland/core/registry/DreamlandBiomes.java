@@ -18,7 +18,8 @@ public class DreamlandBiomes {
 		IForgeRegistry<Biome> registry = event.getRegistry();
 		registry.register(DreamlandOverworldBiomes.hive().setRegistryName(BiomeKeys.HIVE.location()));
 		registry.register(DreamlandOverworldBiomes.garden().setRegistryName(BiomeKeys.GARDEN.location()));
-		registry.register(DreamlandOverworldBiomes.tarlands().setRegistryName(BiomeKeys.TARLANDS.location()));
+		registry.register(DreamlandOverworldBiomes.tardeltas().setRegistryName(BiomeKeys.TAR_DELTAS.location()));
+		registry.register(DreamlandOverworldBiomes.jeweledforest().setRegistryName(BiomeKeys.JEWELED_FOREST.location()));
 	}
 
 }

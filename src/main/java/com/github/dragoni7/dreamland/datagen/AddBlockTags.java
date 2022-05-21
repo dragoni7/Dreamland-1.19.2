@@ -3,6 +3,7 @@ package com.github.dragoni7.dreamland.datagen;
 import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.common.blocks.DreamlandBlockTags;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
+import com.github.dragoni7.dreamland.core.registry.DreamlandWoodSets;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
@@ -25,19 +26,22 @@ public class AddBlockTags extends BlockTagsProvider{
 		tag(BlockTags.DIRT)
 		.add(DreamlandBlocks.CLAY_SOIL.get())
 		.add(DreamlandBlocks.CLAY_SOIL_GRASS.get())
-		.add(DreamlandBlocks.DROUGHT_SOIL.get());
+		.add(DreamlandBlocks.DROUGHT_SOIL.get())
+		.add(DreamlandBlocks.MINERAL_DIRT.get());
 		
 		tag(Tags.Blocks.STONE)
 		.add(DreamlandBlocks.DARK_QUARTZITE.get());
 		
-		tag(BlockTags.NON_FLAMMABLE_WOOD)
-		.add(DreamlandBlocks.TAR_BARK_LOG.get());
-		
 		tag(BlockTags.LOGS)
-		.add(DreamlandBlocks.TAR_BARK_LOG.get());
+		.add(DreamlandBlocks.TAR_BARK_LOG.get())
+		.add(DreamlandWoodSets.PLUM_BIRCH.getLog());
+		
+		tag(BlockTags.PLANKS)
+		.add(DreamlandWoodSets.PLUM_BIRCH.getPlank());
 		
 		tag(BlockTags.LEAVES)
-		.add(DreamlandBlocks.TAR_BARK_LEAVES.get());
+		.add(DreamlandBlocks.TAR_BARK_LEAVES.get())
+		.add(DreamlandBlocks.PLUM_BIRCH_LEAVES.get());
 		
 		tag(BlockTags.ICE)
 		.add(DreamlandBlocks.DUSK_ICE.get());
@@ -51,13 +55,18 @@ public class AddBlockTags extends BlockTagsProvider{
 		
 		tag(BlockTags.MINEABLE_WITH_AXE)
 		.add(DreamlandBlocks.TAR_BARK_LOG.get())
-		.add(DreamlandBlocks.STRIPPED_TAR_BARK_LOG.get());
+		.add(DreamlandBlocks.STRIPPED_TAR_BARK_LOG.get())
+		.add(DreamlandWoodSets.PLUM_BIRCH.getLog())
+		.add(DreamlandWoodSets.PLUM_BIRCH.getPlank())
+		.add(DreamlandWoodSets.PLUM_BIRCH.getStrippedLog());
 		
 		tag(BlockTags.MINEABLE_WITH_SHOVEL)
 		.add(DreamlandBlocks.CLAY_SOIL.get())
 		.add(DreamlandBlocks.HIVE_JELLY_CLUSTER.get())
 		.add(DreamlandBlocks.INFESTED_HIVE_JELLY_CLUSTER.get())
-		.add(DreamlandBlocks.HIVE_MEMBRANE.get());
+		.add(DreamlandBlocks.HIVE_MEMBRANE.get())
+		.add(DreamlandBlocks.MINERAL_DIRT.get())
+		.add(DreamlandBlocks.FLOWERING_UNDERGROWTH.get());
 		
 		tag(BlockTags.MINEABLE_WITH_PICKAXE)
 		.add(DreamlandBlocks.DARK_QUARTZITE.get())
@@ -78,7 +87,6 @@ public class AddBlockTags extends BlockTagsProvider{
 		.add(Blocks.GRASS_BLOCK)
 		.add(Blocks.STONE)
 		.add(Blocks.MOSS_BLOCK);
-		
 		
 		addCopperOreTags(DreamlandBlocks.HIVE_COPPER.get());
 		addIronOreTags(DreamlandBlocks.HIVE_IRON.get());

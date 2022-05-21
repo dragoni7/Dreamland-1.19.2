@@ -11,6 +11,7 @@ import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
 import com.github.dragoni7.dreamland.core.registry.DreamlandItems;
+import com.github.dragoni7.dreamland.core.registry.DreamlandWoodSets;
 import com.github.dragoni7.dreamland.network.DreamlandNetworking;
 import com.github.dragoni7.dreamland.util.DreamlandLoc;
 
@@ -47,8 +48,9 @@ public class Dreamland
         
         DreamlandEntities.ENTITY_TYPES.register(modBus);
         DreamlandBlocks.BLOCKS.register(modBus);
-        DreamlandItems.ITEMS.register(modBus);
+        DreamlandWoodSets.init();
         DreamlandFluids.FLUIDS.register(modBus);
+        DreamlandItems.ITEMS.register(modBus);
         DreamlandEntities.TILES.register(modBus);
         DreamlandEntities.CONTAINERS.register(modBus);
         DreamlandEffects.MOB_EFFECTS.register(modBus);

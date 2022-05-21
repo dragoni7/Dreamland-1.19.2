@@ -5,6 +5,7 @@ import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
 import com.github.dragoni7.dreamland.core.registry.DreamlandItems;
+import com.github.dragoni7.dreamland.core.registry.DreamlandWoodSets;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -44,6 +45,13 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandFluids.TAR_BLOCK.get(), "Tar");
 		add(DreamlandBlocks.JOSHUA_SAPLING.get(), "Joshua Sapling");
 		add(DreamlandBlocks.TAR_SPROUTS.get(), "Tar Sprouts");
+		
+		add(DreamlandBlocks.MINERAL_DIRT.get(), "Mineral Dirt");
+		add(DreamlandBlocks.FLOWERING_UNDERGROWTH.get(), "Flowering Undergrowth");
+		add(DreamlandWoodSets.PLUM_BIRCH.getLog(), "Plum Birch Log");
+		add(DreamlandWoodSets.PLUM_BIRCH.getStrippedLog(), "Stripped Plum Birch Log");
+		add(DreamlandBlocks.PLUM_BIRCH_LEAVES.get(), "Plum Birch Leaves");
+		add(DreamlandWoodSets.PLUM_BIRCH.getPlank(), "Plum Birch Planks");
 		
 		// Items
 		add(DreamlandItems.HIVE_JELLY_ITEM.get(), "Hive Jelly");

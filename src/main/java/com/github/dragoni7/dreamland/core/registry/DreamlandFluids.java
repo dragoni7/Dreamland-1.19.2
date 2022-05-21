@@ -37,6 +37,7 @@ public class DreamlandFluids {
 			.block(() -> DreamlandFluids.TAR_BLOCK.get()).bucket(() -> DreamlandItems.TAR_BUCKET.get());
 	
 	public static final RegistryObject<LiquidBlock> TAR_BLOCK = DreamlandBlocks.BLOCKS.register("tar",
-			() -> new TarLiquidBlock(() -> DreamlandFluids.TAR_FLUID.get(),BlockBehaviour.Properties.of(Material.LAVA)
+			() -> new TarLiquidBlock(() -> DreamlandFluids.TAR_FLUID.get(), BlockBehaviour.Properties.of(Material.LAVA)
 					.noCollission().strength(100f).noDrops()));
+	
 }
