@@ -4,8 +4,8 @@ import org.apache.logging.log4j.Logger;
 
 import com.github.dragoni7.dreamland.common.world.DreamlandRegion;
 import com.github.dragoni7.dreamland.common.world.DreamlandSurfaceRules;
-import com.github.dragoni7.dreamland.core.DreamlandClientEventHandler;
-import com.github.dragoni7.dreamland.core.DreamlandEventHandler;
+import com.github.dragoni7.dreamland.core.event.DreamlandClientEventHandler;
+import com.github.dragoni7.dreamland.core.event.DreamlandEventHandler;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
@@ -20,6 +20,7 @@ import terrablender.api.Regions;
 import terrablender.api.SurfaceRuleManager;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -48,13 +49,13 @@ public class Dreamland
         
         DreamlandEntities.ENTITY_TYPES.register(modBus);
         DreamlandBlocks.BLOCKS.register(modBus);
-        DreamlandWoodSets.init();
         DreamlandFluids.FLUIDS.register(modBus);
         DreamlandItems.ITEMS.register(modBus);
+        DreamlandWoodSets.init();
         DreamlandEntities.TILES.register(modBus);
         DreamlandEntities.CONTAINERS.register(modBus);
         DreamlandEffects.MOB_EFFECTS.register(modBus);
-        DreamlandEventHandler.subscribeModEvents(modBus, forgeBus);
+        DreamlandEventHandler.init(modBus, forgeBus);
         modBus.addListener(this::commonSetup);
         
         if(FMLEnvironment.dist == Dist.CLIENT) {
@@ -65,6 +66,7 @@ public class Dreamland
     
     private void commonSetup(FMLCommonSetupEvent event) {
     	event.enqueueWork( ()-> {
+    		WoodType.register(null);
     		DreamlandNetworking.registerMessages();
             SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, Dreamland.MODID, DreamlandSurfaceRules.OVERWORLD_SURFACE_RULES);
     		Regions.register(new DreamlandRegion(DreamlandLoc.createLoc("dreamland_region"), RegionType.OVERWORLD, 4));

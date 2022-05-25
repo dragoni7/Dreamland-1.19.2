@@ -1,7 +1,8 @@
-package com.github.dragoni7.dreamland.core;
+package com.github.dragoni7.dreamland.core.event;
 
 
 import com.github.dragoni7.dreamland.common.entities.mobs.LarvaEntity;
+import com.github.dragoni7.dreamland.common.entities.mobs.OozeEntity;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
@@ -16,14 +17,15 @@ import net.minecraftforge.eventbus.api.IEventBus;
 
 public class DreamlandEventHandler {
 
-	public static void subscribeModEvents(IEventBus modBus, IEventBus forgeBus) {
+	public static void init(IEventBus modBus, IEventBus forgeBus) {
 		
 		modBus.addListener(DreamlandEventHandler::addAttributes);
 		forgeBus.addListener(DreamlandEventHandler::onPlayerTick);
 	}
 		
-	public static void addAttributes(final EntityAttributeCreationEvent event) {
+	public static void addAttributes(EntityAttributeCreationEvent event) {
 		event.put(DreamlandEntities.LARVA.get(), LarvaEntity.customAttributes().build());
+		event.put(DreamlandEntities.OOZE.get(), OozeEntity.customAttributes().build());
 	}
 	
 	public static void onPlayerTick(LivingEvent.LivingUpdateEvent event) {

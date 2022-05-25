@@ -55,15 +55,15 @@ public class DreamlandItems {
 	public static final RegistryObject<Item> DRIED_TAR = registerBlockItem("dried_tar", () -> DreamlandBlocks.DRIED_TAR.get());
 	public static final RegistryObject<Item> TAR_SOIL = registerBlockItem("tar_soil", () -> DreamlandBlocks.TAR_SOIL.get());
 	public static final RegistryObject<Item> DROUGHT_SOIL = registerBlockItem("drought_soil", () -> DreamlandBlocks.DROUGHT_SOIL.get());
-	public static final RegistryObject<Item> JOSHUA_SAPLING = registerBlockItem("joshua_sapling", () -> DreamlandBlocks.JOSHUA_SAPLING.get());
+	public static final RegistryObject<Item> JOSHUA_SAPLING = registerBlockItem("joshua_sapling", () -> DreamlandBlocks.TAR_BARK_SAPLING.get());
 	public static final RegistryObject<Item> TAR_SPROUTS = registerBlockItem("tar_sprouts", () -> DreamlandBlocks.TAR_SPROUTS.get());
-	public static final RegistryObject<Item> TAR_BARK_LOG = registerBlockItem("tar_bark_log",() -> DreamlandBlocks.TAR_BARK_LOG.get());
 	public static final RegistryObject<Item> TAR_BARK_LEAVES = registerBlockItem("tar_bark_leaves", () -> DreamlandBlocks.TAR_BARK_LEAVES.get());
-	public static final RegistryObject<Item> STRIPPED_TAR_BARK_LOG = registerBlockItem("stripped_tar_bark_log", () -> DreamlandBlocks.STRIPPED_TAR_BARK_LOG.get());
 	
 	public static final RegistryObject<Item> PLUM_BIRCH_LEAVES = registerBlockItem("plum_birch_leaves", () -> DreamlandBlocks.PLUM_BIRCH_LEAVES.get());
 	public static final RegistryObject<Item> MINERAL_DIRT = registerBlockItem("mineral_dirt", () -> DreamlandBlocks.MINERAL_DIRT.get());
-	public static final RegistryObject<Item> FLOWERING_UNDERGROWTH = registerBlockItem("flowering_undergrowth", () -> DreamlandBlocks.FLOWERING_UNDERGROWTH.get());
+	public static final RegistryObject<Item> FLOWERING_UNDERGROWTH = registerBlockItem("flowering_undergrowth", () -> DreamlandBlocks.FLOWERING_UNDERGROWTH.get()); 
+	public static final RegistryObject<Item> OPALINE_MARIGOLD = registerBlockItem("opaline_marigold", () -> DreamlandBlocks.OPALINE_MARIGOLD.get());
+	public static final RegistryObject<Item> PINK_CRAB_GRASS = registerBlockItem("pink_crab_grass", () -> DreamlandBlocks.PINK_CRAB_GRASS.get());
 	
 	//Items
 	public static final RegistryObject<Item> HIVE_JELLY_ITEM = registerHiveJelly("hive_jelly", new FoodProperties.Builder().nutrition(1).saturationMod(0.2F).build());
@@ -71,9 +71,9 @@ public class DreamlandItems {
 	public static final RegistryObject<Item> TAR_BUCKET = ITEMS.register("tar_bucket", 
 			() -> new BucketItem(DreamlandFluids.TAR_FLUID, new Item.Properties().tab(Dreamland.DreamlandTab).stacksTo(1)));
 	
-	private static RegistryObject<Item> registerBlockItem(String name, Supplier<Block> block) {
+	private static RegistryObject<Item> registerBlockItem(String name, Supplier<? extends Block> block) {
 		
-		return ITEMS.register(name,() -> new BlockItem(block.get(), new Item.Properties().tab(Dreamland.DreamlandTab)));
+		return ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(Dreamland.DreamlandTab)));
 		
 	}
 	

@@ -4,6 +4,7 @@ import java.util.Random;
 
 import com.github.dragoni7.dreamland.common.world.feature.util.FeatureBuilder;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
+import com.github.dragoni7.dreamland.core.registry.DreamlandWoodSets;
 import com.mojang.serialization.Codec;
 
 import net.minecraft.core.BlockPos;
@@ -35,7 +36,7 @@ public class TarBarkTree extends Feature<NoneFeatureConfiguration> {
 		int trunkBaseHeight = minTrunkHeight + random.nextInt(2);
 		boolean xzChange = random.nextBoolean();
 		
-		if (worldgenlevel.isEmptyBlock(blockpos.below()) || !DreamlandBlocks.JOSHUA_SAPLING.get().defaultBlockState().canSurvive(worldgenlevel, blockpos)) {
+		if (worldgenlevel.isEmptyBlock(blockpos.below()) || !DreamlandBlocks.TAR_BARK_SAPLING.get().defaultBlockState().canSurvive(worldgenlevel, blockpos)) {
 			return false;
 		}
 		
@@ -56,7 +57,7 @@ public class TarBarkTree extends Feature<NoneFeatureConfiguration> {
 	}
 	
 	private static boolean createTrunk(WorldGenLevel worldgenlevel, Boolean xzChange, int baseHeight, FeatureBuilder builder, BlockPos blockpos) {
-		final BlockState log = DreamlandBlocks.TAR_BARK_LOG.get().defaultBlockState();
+		final BlockState log = DreamlandWoodSets.TAR_BARK.getLog().defaultBlockState();
 		
 		for (int i = 0; i <= maxTrunkHeight; i++) {
 		
@@ -84,7 +85,7 @@ public class TarBarkTree extends Feature<NoneFeatureConfiguration> {
 	}
 	
 	private static boolean createBranches(WorldGenLevel level, Boolean xzChange, Random random, int baseHeight, BlockPos pos, FeatureBuilder builder) {
-		final BlockState log = DreamlandBlocks.TAR_BARK_LOG.get().defaultBlockState();
+		final BlockState log = DreamlandWoodSets.TAR_BARK.getLog().defaultBlockState();
 		int northBranchHeight = baseHeight+random.nextInt(1, 3);
 		int westBranchHeight = baseHeight+random.nextInt(2, 3);
 		int eastBranchHeight = baseHeight+random.nextInt(1, 2);

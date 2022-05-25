@@ -2,7 +2,8 @@
   "replace": false,
   "values": [
     "dreamland:tar_bark_log",
-    "dreamland:stripped_tar_bark_log",
+    "dreamland:tar_bark_stripped_log",
+    "dreamland:tar_bark_planks",
     "dreamland:plum_birch_log",
     "dreamland:plum_birch_planks",
     "dreamland:plum_birch_stripped_log"

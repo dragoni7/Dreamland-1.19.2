@@ -1,6 +1,6 @@
 package com.github.dragoni7.dreamland.datagen;
 
-import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
+import com.github.dragoni7.dreamland.core.WoodSet;
 import com.github.dragoni7.dreamland.core.registry.DreamlandItems;
 import com.github.dragoni7.dreamland.core.registry.DreamlandWoodSets;
 import com.github.dragoni7.dreamland.util.DreamlandLoc;
@@ -10,7 +10,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.RegistryObject;
 
 public class ItemModels extends ItemModelProvider{
 
@@ -40,25 +39,41 @@ public class ItemModels extends ItemModelProvider{
 		createBlockItemModel(DreamlandItems.DRIED_TAR.get(), "block/dried_tar");
 		createBlockItemModel(DreamlandItems.TAR_SOIL.get(), "block/tar_soil");
 		createBlockItemModel(DreamlandItems.DROUGHT_SOIL.get(), "block/drought_soil");
-		createBlockItemModel(DreamlandItems.TAR_BARK_LOG.get(), "block/tar_bark_log");
 		createBlockItemModel(DreamlandItems.TAR_BARK_LEAVES.get(), "block/tar_bark_leaves");
-		createBlockItemModel(DreamlandItems.STRIPPED_TAR_BARK_LOG.get(), "block/stripped_tar_bark_log");
 		
-		createBlockItemModel(DreamlandWoodSets.PLUM_BIRCH.getLogItem(), "block/plum_birch_log");
-		createBlockItemModel(DreamlandWoodSets.PLUM_BIRCH.getStrippedLogItem(), "block/stripped_plum_birch_log");
-		createBlockItemModel(DreamlandWoodSets.PLUM_BIRCH.getPlankItem(), "block/plum_birch_planks");
 		createBlockItemModel(DreamlandItems.PLUM_BIRCH_LEAVES.get(), "block/plum_birch_leaves");
 		createBlockItemModel(DreamlandItems.MINERAL_DIRT.get(), "block/mineral_dirt");
 		createBlockItemModel(DreamlandItems.FLOWERING_UNDERGROWTH.get(), "block/flowering_undergrowth");
 		
-		createSingleTextureModel(DreamlandItems.HIVE_JELLY_ITEM, "item/hive_jelly");
-		createSingleTextureModel(DreamlandItems.CAVE_SLIME, "block/cave_slime");
-		createSingleTextureModel(DreamlandItems.HIVE_GROWTH, "block/hive_growth_cross");
-		createSingleTextureModel(DreamlandItems.TAR_SPROUTS, "block/tar_sprouts");
+		createSingleTextureModel(DreamlandItems.HIVE_JELLY_ITEM.get(), "item/hive_jelly");
+		createSingleTextureModel(DreamlandItems.CAVE_SLIME.get(), "block/cave_slime");
+		createSingleTextureModel(DreamlandItems.HIVE_GROWTH.get(), "block/hive_growth_cross");
+		createSingleTextureModel(DreamlandItems.TAR_SPROUTS.get(), "block/tar_sprouts");
+		createSingleTextureModel(DreamlandItems.OPALINE_MARIGOLD.get(), "block/opaline_marigold");
+		createSingleTextureModel(DreamlandItems.PINK_CRAB_GRASS.get(), "block/pink_crab_grass");
+		
+		registerWoodSet(DreamlandWoodSets.PLUM_BIRCH);
+		registerWoodSet(DreamlandWoodSets.TAR_BARK);
 	}
 	
-	private void createSingleTextureModel(RegistryObject<Item> item, String path) {
-		singleTexture(item.get().getRegistryName().getPath(), new ResourceLocation("item/handheld"),
+	private void registerWoodSet(WoodSet set) {
+		String path = "block/" + set.getSetName();
+		createBlockItemModel(set.getLogItem(), path + "_log");
+		createBlockItemModel(set.getStrippedLogItem(), path + "_stripped_log");
+		createBlockItemModel(set.getWoodItem(), path + "_wood");
+		createBlockItemModel(set.getPlankItem(), path + "_planks");
+		createBlockItemModel(set.getStairItem(), path + "_stairs");
+		createBlockItemModel(set.getSlabItem(), path + "_slab");
+		createBlockItemModel(set.getFenceItem(), path + "_fence_side");
+		createBlockItemModel(set.getFenceGateItem(), path + "_fence_gate");
+		createSingleTextureModel(set.getDoorItem(), "item/" + set.getSetName() + "_door");
+		createBlockItemModel(set.getTrapDoorItem(), path + "_trapdoor_bottom");
+		createBlockItemModel(set.getButtonItem(), path + "_button");
+		createBlockItemModel(set.getPressurePlateItem(), path + "_pressure_plate");
+	}
+	
+	private void createSingleTextureModel(Item item, String path) {
+		singleTexture(item.getRegistryName().getPath(), new ResourceLocation("item/handheld"),
 				"layer0", DreamlandLoc.createLoc(path));
 	}
 	

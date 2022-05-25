@@ -46,6 +46,7 @@ public class BlockStates extends BlockStateProvider{
 		}
 		
 		registerWoodSet(DreamlandWoodSets.PLUM_BIRCH);
+		registerWoodSet(DreamlandWoodSets.TAR_BARK);
 	}
 	
 	private void registerWoodSet(WoodSet set) {

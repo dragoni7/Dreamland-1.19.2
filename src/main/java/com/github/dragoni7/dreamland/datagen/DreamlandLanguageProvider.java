@@ -43,7 +43,7 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandBlocks.DRIED_TAR.get(), "Dried Tar");
 		add(DreamlandBlocks.TAR_SOIL.get(), "Tar Soil");
 		add(DreamlandFluids.TAR_BLOCK.get(), "Tar");
-		add(DreamlandBlocks.JOSHUA_SAPLING.get(), "Joshua Sapling");
+		add(DreamlandBlocks.TAR_BARK_SAPLING.get(), "Joshua Sapling");
 		add(DreamlandBlocks.TAR_SPROUTS.get(), "Tar Sprouts");
 		
 		add(DreamlandBlocks.MINERAL_DIRT.get(), "Mineral Dirt");

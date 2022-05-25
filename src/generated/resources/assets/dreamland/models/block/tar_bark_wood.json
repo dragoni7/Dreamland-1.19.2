@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "dreamland:block/tar_bark_log",
+    "end": "dreamland:block/tar_bark_log"
+  }
+}

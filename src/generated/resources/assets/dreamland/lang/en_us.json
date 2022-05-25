@@ -18,18 +18,18 @@
   "block.dreamland.hive_redstone": "Hive Redstone Ore",
   "block.dreamland.infested_hive_jelly_cluster": "Hive Jelly Cluster",
   "block.dreamland.jelly_splotch": "Jelly Splotch",
-  "block.dreamland.joshua_sapling": "Joshua Sapling",
   "block.dreamland.mineral_dirt": "Mineral Dirt",
   "block.dreamland.plum_birch_leaves": "Plum Birch Leaves",
   "block.dreamland.plum_birch_log": "Plum Birch Log",
   "block.dreamland.plum_birch_planks": "Plum Birch Planks",
   "block.dreamland.plum_birch_stripped_log": "Stripped Plum Birch Log",
   "block.dreamland.tar": "Tar",
+  "block.dreamland.tar_bark_sapling": "Joshua Sapling",
   "block.dreamland.tar_soil": "Tar Soil",
   "block.dreamland.tar_sprouts": "Tar Sprouts",
   "entity.dreamland.larva": "Larva",
   "entity.dreamland.thrown_hive_jelly": "Thrown Hive Jelly",
   "item.dreamland.hive_jelly": "Hive Jelly",
   "item.dreamland.tar_bucket": "Bucket of Tar",
-  "itemGroup.com.github.dragoni7.dreamland.Dreamland$1@58d103a4": "Dreamland"
+  "itemGroup.com.github.dragoni7.dreamland.Dreamland$1@36bcae97": "Dreamland"
 }

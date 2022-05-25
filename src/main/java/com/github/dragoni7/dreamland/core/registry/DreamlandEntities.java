@@ -5,6 +5,7 @@ import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.common.blocks.hivecocoon.HiveCocoonContainer;
 import com.github.dragoni7.dreamland.common.blocks.hivecocoon.HiveCocoonTile;
 import com.github.dragoni7.dreamland.common.entities.mobs.LarvaEntity;
+import com.github.dragoni7.dreamland.common.entities.mobs.OozeEntity;
 import com.github.dragoni7.dreamland.common.entities.projectiles.ThrownHiveJelly;
 import com.github.dragoni7.dreamland.util.DreamlandLoc;
 
@@ -30,6 +31,12 @@ public class DreamlandEntities {
 			.sized(0.7F, 0.4F)
 			.clientTrackingRange(10)
 			.build(DreamlandLoc.createLoc("larva").toString()));
+	
+	public static final RegistryObject<EntityType<OozeEntity>> OOZE = ENTITY_TYPES.register("ooze",
+			() -> EntityType.Builder.<OozeEntity>of(OozeEntity::new, MobCategory.MONSTER)
+			.sized(1.0F, 3.50F)
+			.clientTrackingRange(10)
+			.build(DreamlandLoc.createLoc("ooze").toString()));
 	
 	public static final RegistryObject<EntityType<ThrownHiveJelly>> THROWN_HIVE_JELLY = ENTITY_TYPES.register("thrown_hive_jelly", 
 			() -> EntityType.Builder.<ThrownHiveJelly>of(ThrownHiveJelly::new, MobCategory.MISC)

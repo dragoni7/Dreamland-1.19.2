@@ -25,16 +25,4 @@ public class LarvaModel extends AnimatedGeoModel<LarvaEntity>{
 	public ResourceLocation getTextureLocation(LarvaEntity object) {
 		return DreamlandLoc.createLoc("textures/entity/larva.png");
 	}
-	
-	@SuppressWarnings({"rawtypes", "unchecked"})
-	@Override
-	public void setLivingAnimations(LarvaEntity entity, Integer uniqueID, AnimationEvent customPredicate) {
-		super.setLivingAnimations(entity, uniqueID, customPredicate);
-		IBone head = this.getAnimationProcessor().getBone("head");
-		
-		EntityModelData extraData = (EntityModelData) customPredicate.getExtraDataOfType(EntityModelData.class).get(0);
-		head.setRotationX(extraData.headPitch * (float) Math.PI / 360F);
-		head.setRotationX(extraData.netHeadYaw * (float) Math.PI / 360F);
-	}
-	
 }

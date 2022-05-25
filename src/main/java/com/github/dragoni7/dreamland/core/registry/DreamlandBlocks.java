@@ -1,6 +1,5 @@
 package com.github.dragoni7.dreamland.core.registry;
 
-
 import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.common.blocks.CaveSlime;
 import com.github.dragoni7.dreamland.common.blocks.CaveSlimePlant;
@@ -22,12 +21,15 @@ import com.github.dragoni7.dreamland.common.blocks.TarSprouts;
 import com.github.dragoni7.dreamland.common.blocks.hivecocoon.HiveCocoon;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.TallGrassBlock;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
@@ -166,17 +168,13 @@ public class DreamlandBlocks {
 	
 	public static final RegistryObject<Block> DROUGHT_SOIL = createDirtBlock("drought_soil");
 	
-	public static final RegistryObject<Block> JOSHUA_SAPLING = BLOCKS.register("joshua_sapling",
+	public static final RegistryObject<Block> TAR_BARK_SAPLING = BLOCKS.register("tar_bark_sapling",
 			() -> new DreamlandSapling(DreamlandFeatures.TAR_BARK_TREE_FEATURE, BlockBehaviour.Properties.copy(Blocks.ACACIA_SAPLING)));
 	
 	public static final RegistryObject<Block> TAR_SPROUTS = BLOCKS.register("tar_sprouts",
 			() -> new TarSprouts(BlockBehaviour.Properties.copy(Blocks.GRASS)));
 	
-	public static final RegistryObject<Block> TAR_BARK_LOG = createLogBlock("tar_bark_log");
-	
 	public static final RegistryObject<Block> TAR_BARK_LEAVES = createLeavesBlock("tar_bark_leaves", MaterialColor.COLOR_LIGHT_GREEN);
-	
-	public static final RegistryObject<Block> STRIPPED_TAR_BARK_LOG = createStrippedLogBlock("stripped_tar_bark_log");
 	
 	public static final RegistryObject<Block> PLUM_BIRCH_LEAVES = createLeavesBlock("plum_birch_leaves", MaterialColor.COLOR_BLUE);
 	
@@ -184,6 +182,12 @@ public class DreamlandBlocks {
 	
 	public static final RegistryObject<Block> FLOWERING_UNDERGROWTH = BLOCKS.register("flowering_undergrowth",
 			() -> new FloweringUndergrowthBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK).color(MaterialColor.COLOR_PINK)));
+	
+	public static final RegistryObject<Block> OPALINE_MARIGOLD = BLOCKS.register("opaline_marigold",
+			() -> new FlowerBlock(MobEffects.LUCK, 5, BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.GRASS)));
+	
+	public static final RegistryObject<Block> PINK_CRAB_GRASS = BLOCKS.register("pink_crab_grass",
+			() -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
 	
 	private static RegistryObject<Block> createLogBlock(String name) {
 		return BLOCKS.register(name, () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(2.0F)));
@@ -205,7 +209,7 @@ public class DreamlandBlocks {
 		return BLOCKS.register(name,
 				() -> new LarvaAngerableBlock(BlockBehaviour.Properties
 						.of(Material.STONE)
-						.strength(3.0F,3.0F)
+						.strength(3.0F, 3.0F)
 						.sound(SoundType.NETHERRACK)
 						.requiresCorrectToolForDrops()
 						));

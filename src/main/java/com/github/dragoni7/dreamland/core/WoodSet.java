@@ -126,7 +126,7 @@ public class WoodSet {
 	
 	private static RegistryObject<Item> registerBlockItem(String name, RegistryObject<Block> block) {
 		
-		return DreamlandItems.ITEMS.register(name,() -> new BlockItem(block.get(), new Item.Properties().tab(Dreamland.DreamlandTab)));
+		return DreamlandItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(Dreamland.DreamlandTab)));
 		
 	}
 

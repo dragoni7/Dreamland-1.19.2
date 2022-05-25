@@ -1,10 +1,11 @@
-package com.github.dragoni7.dreamland.core;
+package com.github.dragoni7.dreamland.core.event;
 
 import com.github.dragoni7.dreamland.client.render.*;
 import com.github.dragoni7.dreamland.common.blocks.hivecocoon.*;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
+import com.github.dragoni7.dreamland.core.registry.DreamlandWoodSets;
 
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -30,6 +31,7 @@ public class DreamlandClientEventHandler {
 	private static void registerEntityRenders(final EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(DreamlandEntities.LARVA.get(), LarvaRender::new);
 		event.registerEntityRenderer(DreamlandEntities.THROWN_HIVE_JELLY.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(DreamlandEntities.OOZE.get(), OozeRender::new);
 		event.registerBlockEntityRenderer(DreamlandEntities.HIVE_COCOON_TILE.get(), HiveCocoonTileRenderer::new);
 	}
 	
@@ -52,6 +54,9 @@ public class DreamlandClientEventHandler {
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.TAR_BARK_LEAVES.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.PLUM_BIRCH_LEAVES.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.FLOWERING_UNDERGROWTH.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.PLUM_BIRCH.getDoor(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.OPALINE_MARIGOLD.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.PINK_CRAB_GRASS.get(), RenderType.cutout());
 			
 			ItemBlockRenderTypes.setRenderLayer(DreamlandFluids.TAR_BLOCK.get(), RenderType.solid());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandFluids.TAR_FLUID.get(), RenderType.solid());

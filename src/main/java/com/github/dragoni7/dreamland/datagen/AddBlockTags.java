@@ -33,7 +33,7 @@ public class AddBlockTags extends BlockTagsProvider{
 		.add(DreamlandBlocks.DARK_QUARTZITE.get());
 		
 		tag(BlockTags.LOGS)
-		.add(DreamlandBlocks.TAR_BARK_LOG.get())
+		.add(DreamlandWoodSets.TAR_BARK.getLog())
 		.add(DreamlandWoodSets.PLUM_BIRCH.getLog());
 		
 		tag(BlockTags.PLANKS)
@@ -51,11 +51,12 @@ public class AddBlockTags extends BlockTagsProvider{
 		.add(DreamlandBlocks.TAR_SPROUTS.get());
 		
 		tag(BlockTags.SAPLINGS)
-		.add(DreamlandBlocks.JOSHUA_SAPLING.get());
+		.add(DreamlandBlocks.TAR_BARK_SAPLING.get());
 		
 		tag(BlockTags.MINEABLE_WITH_AXE)
-		.add(DreamlandBlocks.TAR_BARK_LOG.get())
-		.add(DreamlandBlocks.STRIPPED_TAR_BARK_LOG.get())
+		.add(DreamlandWoodSets.TAR_BARK.getLog())
+		.add(DreamlandWoodSets.TAR_BARK.getStrippedLog())
+		.add(DreamlandWoodSets.TAR_BARK.getPlank())
 		.add(DreamlandWoodSets.PLUM_BIRCH.getLog())
 		.add(DreamlandWoodSets.PLUM_BIRCH.getPlank())
 		.add(DreamlandWoodSets.PLUM_BIRCH.getStrippedLog());

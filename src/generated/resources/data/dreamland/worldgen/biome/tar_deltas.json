@@ -73,7 +73,14 @@
     ]
   ],
   "spawners": {
-    "monster": [],
+    "monster": [
+      {
+        "type": "dreamland:ooze",
+        "weight": 1,
+        "minCount": 1,
+        "maxCount": 1
+      }
+    ],
     "creature": [],
     "ambient": [],
     "axolotls": [],
