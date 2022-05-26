@@ -4,6 +4,7 @@ import java.util.Random;
 
 import com.github.dragoni7.dreamland.common.world.feature.util.FeatureBuilder;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
+import com.github.dragoni7.dreamland.util.RollBoolean;
 import com.mojang.serialization.Codec;
 
 import net.minecraft.core.BlockPos;
@@ -31,7 +32,7 @@ public class HiveComb extends Feature<BlockStateConfiguration> {
 		BlockState combBlock = DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState();
 		BlockState altFilling = DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState();
 		
-		if (random.nextBoolean()) {
+		if (RollBoolean.roll(1, random)) {
 			altFilling = blockstateconfig.state;
 		}
 		

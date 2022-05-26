@@ -5,6 +5,7 @@ import java.util.Random;
 import com.github.dragoni7.dreamland.common.world.feature.util.FeatureBuilder;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandWoodSets;
+import com.github.dragoni7.dreamland.util.RollBoolean;
 import com.mojang.serialization.Codec;
 
 import net.minecraft.core.BlockPos;
@@ -30,11 +31,11 @@ public class TarBarkTree extends Feature<NoneFeatureConfiguration> {
 	public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
 		WorldGenLevel worldgenlevel = context.level();
 		BlockPos blockpos = context.origin();
-		Random random = context.random();
+		Random rand = context.random();
 		FeatureBuilder joshuaTreeBuilder = new FeatureBuilder();
 		
-		int trunkBaseHeight = minTrunkHeight + random.nextInt(2);
-		boolean xzChange = random.nextBoolean();
+		int trunkBaseHeight = minTrunkHeight + rand.nextInt(2);
+		boolean xzChange = rand.nextBoolean();
 		
 		if (worldgenlevel.isEmptyBlock(blockpos.below()) || !DreamlandBlocks.TAR_BARK_SAPLING.get().defaultBlockState().canSurvive(worldgenlevel, blockpos)) {
 			return false;
@@ -44,11 +45,11 @@ public class TarBarkTree extends Feature<NoneFeatureConfiguration> {
 			return false;
 		}
 		
-		if (!createBranches(worldgenlevel, xzChange, random, trunkBaseHeight, blockpos, joshuaTreeBuilder)) {
+		if (!createBranches(worldgenlevel, xzChange, rand, trunkBaseHeight, blockpos, joshuaTreeBuilder)) {
 			return false;
 		}
 		
-		if(!createLeaves(worldgenlevel, blockpos.above(maxTrunkHeight+2), joshuaTreeBuilder)) {
+		if(!createLeaves(worldgenlevel, blockpos.above(maxTrunkHeight+2), joshuaTreeBuilder, rand)) {
 			return false;
 		}
 		
@@ -84,11 +85,11 @@ public class TarBarkTree extends Feature<NoneFeatureConfiguration> {
 		return true;
 	}
 	
-	private static boolean createBranches(WorldGenLevel level, Boolean xzChange, Random random, int baseHeight, BlockPos pos, FeatureBuilder builder) {
+	private static boolean createBranches(WorldGenLevel level, Boolean xzChange, Random rand, int baseHeight, BlockPos pos, FeatureBuilder builder) {
 		final BlockState log = DreamlandWoodSets.TAR_BARK.getLog().defaultBlockState();
-		int northBranchHeight = baseHeight+random.nextInt(1, 3);
-		int westBranchHeight = baseHeight+random.nextInt(2, 3);
-		int eastBranchHeight = baseHeight+random.nextInt(1, 2);
+		int northBranchHeight = baseHeight+rand.nextInt(1, 3);
+		int westBranchHeight = baseHeight+rand.nextInt(2, 3);
+		int eastBranchHeight = baseHeight+rand.nextInt(1, 2);
 		boolean canBuild = true;
 		int zChange = 0;
 		int xChange = 1;
@@ -104,9 +105,9 @@ public class TarBarkTree extends Feature<NoneFeatureConfiguration> {
 		}
 		
 		canBuild = builder.addInput(level, log.setValue(RotatedPillarBlock.AXIS, Direction.UP.getAxis()), pos.offset(0, baseHeight+1, 3+zChange));
-		canBuild = createLeaves(level, pos.offset(0, baseHeight+2, 3+zChange), builder);
+		canBuild = createLeaves(level, pos.offset(0, baseHeight+2, 3+zChange), builder, rand);
 		canBuild = builder.addInput(level, log.setValue(RotatedPillarBlock.AXIS, Direction.UP.getAxis()), pos.offset(3+xChange, northBranchHeight+1, 0));
-		canBuild = createLeaves(level, pos.offset(3+xChange, northBranchHeight+2, 0), builder);
+		canBuild = createLeaves(level, pos.offset(3+xChange, northBranchHeight+2, 0), builder, rand);
 		
 		for (int i = 1; i <= 2; i++) {
 			canBuild = builder.addInput(level,log.setValue(RotatedPillarBlock.AXIS, Direction.SOUTH.getAxis()), pos.offset(xChange, eastBranchHeight, -i));
@@ -114,21 +115,27 @@ public class TarBarkTree extends Feature<NoneFeatureConfiguration> {
 		}
 		
 		canBuild = builder.addInput(level, log.setValue(RotatedPillarBlock.AXIS, Direction.UP.getAxis()), pos.offset(xChange, eastBranchHeight+1, -3));
-		canBuild = createLeaves(level, pos.offset(xChange, eastBranchHeight+2, -3), builder);
+		canBuild = createLeaves(level, pos.offset(xChange, eastBranchHeight+2, -3), builder, rand);
 		canBuild = builder.addInput(level, log.setValue(RotatedPillarBlock.AXIS, Direction.UP.getAxis()), pos.offset(-3, westBranchHeight+1, zChange));
-		canBuild = createLeaves(level, pos.offset(-3, westBranchHeight+2, zChange), builder);
+		canBuild = createLeaves(level, pos.offset(-3, westBranchHeight+2, zChange), builder, rand);
 		
 		return canBuild;
 	}
 	
-	private static boolean createLeaves(WorldGenLevel level, BlockPos pos, FeatureBuilder builder) {
+	private static boolean createLeaves(WorldGenLevel level, BlockPos pos, FeatureBuilder builder, Random rand) {
 		final BlockState leaves = DreamlandBlocks.TAR_BARK_LEAVES.get().defaultBlockState().setValue(LeavesBlock.DISTANCE, 1);
 		boolean canBuild = true;
+		int extraLength = 1 + rand.nextInt(2);
+		
 		canBuild = builder.addInput(level, leaves, pos);
-		canBuild = builder.addInput(level, leaves, pos.east(1).north(1));
-		canBuild = builder.addInput(level, leaves, pos.west(1).north(1));
-		canBuild = builder.addInput(level, leaves, pos.east(1).south(1));
-		canBuild = builder.addInput(level, leaves, pos.west(1).south(1));
+		
+		for (int i = 0; i <= extraLength; i++) {
+			canBuild = builder.addInput(level, leaves, pos.east(1).north(1).below(i));
+			canBuild = builder.addInput(level, leaves, pos.west(1).north(1).below(i));
+			canBuild = builder.addInput(level, leaves, pos.east(1).south(1).below(i));
+			canBuild = builder.addInput(level, leaves, pos.west(1).south(1).below(i));
+		}
+		
 		return canBuild;
 	}
 	

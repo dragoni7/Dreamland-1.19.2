@@ -3,6 +3,7 @@ package com.github.dragoni7.dreamland.common.world.feature.generation;
 import java.util.Random;
 
 import com.github.dragoni7.dreamland.common.world.feature.util.FeatureBuilder;
+import com.github.dragoni7.dreamland.util.RollBoolean;
 import com.mojang.serialization.Codec;
 
 import net.minecraft.core.BlockPos;
@@ -29,7 +30,7 @@ public class TarSkeleton extends Feature<NoneFeatureConfiguration> {
 		Random random = context.random();
 		FeatureBuilder tarSkeletonBuilder = new FeatureBuilder();
 		
-		if (random.nextBoolean()) {
+		if (RollBoolean.roll(1, random)) {
 			if (!createSpineNorth(worldgenlevel, tarSkeletonBuilder, blockpos, random)) {
 				return false;
 			}
@@ -48,7 +49,7 @@ public class TarSkeleton extends Feature<NoneFeatureConfiguration> {
 		boolean status = true;
 		BlockPos pos = blockpos;
 		
-		if (random.nextBoolean()) {
+		if (RollBoolean.roll(1, random)) {
 			pos = blockpos.below();
 		}
 		
@@ -72,7 +73,7 @@ public class TarSkeleton extends Feature<NoneFeatureConfiguration> {
 		boolean status = true;
 		BlockPos pos = blockpos;
 		
-		if (random.nextBoolean()) {
+		if (RollBoolean.roll(1, random)) {
 			pos = blockpos.below();
 		}
 		

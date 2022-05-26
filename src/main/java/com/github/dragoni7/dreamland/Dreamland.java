@@ -59,14 +59,13 @@ public class Dreamland
         modBus.addListener(this::commonSetup);
         
         if(FMLEnvironment.dist == Dist.CLIENT) {
-    		DreamlandClientEventHandler.init(modBus, forgeBus);
+    		DreamlandClientEventHandler.init(modBus);
     	}
         
     }
     
     private void commonSetup(FMLCommonSetupEvent event) {
     	event.enqueueWork( ()-> {
-    		WoodType.register(null);
     		DreamlandNetworking.registerMessages();
             SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, Dreamland.MODID, DreamlandSurfaceRules.OVERWORLD_SURFACE_RULES);
     		Regions.register(new DreamlandRegion(DreamlandLoc.createLoc("dreamland_region"), RegionType.OVERWORLD, 4));

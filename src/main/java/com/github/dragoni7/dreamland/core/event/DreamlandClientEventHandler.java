@@ -21,18 +21,11 @@ import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 public class DreamlandClientEventHandler {
 
 	
-	public static void init(IEventBus modBus, IEventBus forgeBus) {
+	public static void init(IEventBus modBus) {
 		
 		modBus.addListener(DreamlandClientEventHandler::registerEntityRenders);
 		modBus.addListener(DreamlandClientEventHandler::registerBlockColors);
 		modBus.addListener(DreamlandClientEventHandler::setupClient);
-	}
-	
-	private static void registerEntityRenders(final EntityRenderersEvent.RegisterRenderers event) {
-		event.registerEntityRenderer(DreamlandEntities.LARVA.get(), LarvaRender::new);
-		event.registerEntityRenderer(DreamlandEntities.THROWN_HIVE_JELLY.get(), ThrownItemRenderer::new);
-		event.registerEntityRenderer(DreamlandEntities.OOZE.get(), OozeRender::new);
-		event.registerBlockEntityRenderer(DreamlandEntities.HIVE_COCOON_TILE.get(), HiveCocoonTileRenderer::new);
 	}
 	
 	private static void setupClient(final FMLClientSetupEvent event) {
@@ -63,6 +56,13 @@ public class DreamlandClientEventHandler {
 			ItemBlockRenderTypes.setRenderLayer(DreamlandFluids.TAR_FLOWING.get(), RenderType.solid());
 			
 		});
+	}
+	
+	private static void registerEntityRenders(final EntityRenderersEvent.RegisterRenderers event) {
+		event.registerEntityRenderer(DreamlandEntities.LARVA.get(), LarvaRender::new);
+		event.registerEntityRenderer(DreamlandEntities.THROWN_HIVE_JELLY.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(DreamlandEntities.OOZE.get(), OozeRender::new);
+		event.registerBlockEntityRenderer(DreamlandEntities.HIVE_COCOON_TILE.get(), HiveCocoonTileRenderer::new);
 	}
 	
 	private static void registerBlockColors(final ColorHandlerEvent.Block event) {

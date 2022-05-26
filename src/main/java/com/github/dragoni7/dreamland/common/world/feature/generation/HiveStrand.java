@@ -4,6 +4,7 @@ import java.util.Random;
 
 import com.github.dragoni7.dreamland.common.world.feature.util.FeatureBuilder;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
+import com.github.dragoni7.dreamland.util.RollBoolean;
 import com.mojang.serialization.Codec;
 
 import net.minecraft.core.BlockPos;
@@ -28,7 +29,7 @@ public class HiveStrand extends Feature<NoneFeatureConfiguration> {
 		BlockPos blockpos = context.origin();
 		Random random = context.random();
 		FeatureBuilder strandBuilder = new FeatureBuilder();
-		boolean fill = (random.nextInt(11) < 1);
+		boolean fill = RollBoolean.roll(11, random);
 		
 		switch(random.nextInt(6)) {
 		case 0: return growXZPos(worldgenlevel, strandBuilder, blockpos, fill, random);

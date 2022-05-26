@@ -32,7 +32,7 @@ public class DreamlandFluids {
 	
 	public static final ForgeFlowingFluid.Properties TAR_PROPERTIES = new ForgeFlowingFluid.Properties(
 			() -> TAR_FLUID.get(), () -> TAR_FLOWING.get(), FluidAttributes.builder(TAR_STILL_RL, TAR_FLOWING_RL)
-			.density(30).luminosity(0).viscosity(10).sound(SoundEvents.LAVA_POP).overlay(TAR_OVERLAY_RL))
+			.sound(SoundEvents.LAVA_POP).overlay(TAR_OVERLAY_RL))
 			.slopeFindDistance(2).levelDecreasePerBlock(2)
 			.block(() -> DreamlandFluids.TAR_BLOCK.get()).bucket(() -> DreamlandItems.TAR_BUCKET.get());
 	
