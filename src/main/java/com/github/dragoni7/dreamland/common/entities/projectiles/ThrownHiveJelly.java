@@ -36,10 +36,6 @@ public class ThrownHiveJelly extends ThrowableItemProjectile {
 		super(DreamlandEntities.THROWN_HIVE_JELLY.get(), player, level);
 	}
 	
-	public ThrownHiveJelly(Level p_37476_, double p_37477_, double p_37478_, double p_37479_) {
-	    super(DreamlandEntities.THROWN_HIVE_JELLY.get(), p_37477_, p_37478_, p_37479_, p_37476_);
-	}
-	
 	@OnlyIn(Dist.CLIENT)
 	public void handleEntityEvent(byte p_37484_) {
 	      if (p_37484_ == 3) {

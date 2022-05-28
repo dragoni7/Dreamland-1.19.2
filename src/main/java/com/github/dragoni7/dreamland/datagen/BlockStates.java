@@ -37,9 +37,7 @@ public class BlockStates extends BlockStateProvider{
 		simpleBlocks.add(DreamlandBlocks.DRIED_TAR.get());
 		simpleBlocks.add(DreamlandBlocks.TAR_SOIL.get());
 		simpleBlocks.add(DreamlandBlocks.DROUGHT_SOIL.get());
-		simpleBlocks.add(DreamlandBlocks.TAR_BARK_LEAVES.get());
 		simpleBlocks.add(DreamlandBlocks.MINERAL_DIRT.get());
-		simpleBlocks.add(DreamlandBlocks.PLUM_BIRCH_LEAVES.get());
 
 		for(Block element : simpleBlocks) {
 			simpleBlock(element);

@@ -7,21 +7,28 @@ import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
 import com.github.dragoni7.dreamland.util.RollBoolean;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.monster.Ghast;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -37,6 +44,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 public class OozeEntity extends Monster implements IAnimatable {
 	
 	private AnimationFactory factory = new AnimationFactory(this);
+	private static final EntityDataAccessor<Boolean> DATA_IS_CHARGING = SynchedEntityData.defineId(Ghast.class, EntityDataSerializers.BOOLEAN);
 	
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		
@@ -56,6 +64,14 @@ public class OozeEntity extends Monster implements IAnimatable {
 				.add(Attributes.FOLLOW_RANGE, 48.0D)
 				.add(Attributes.KNOCKBACK_RESISTANCE, 10.0D);
 	}
+	
+	public boolean isCharging() {
+	      return this.entityData.get(DATA_IS_CHARGING);
+	   }
+
+	   public void setCharging(boolean p_32759_) {
+	      this.entityData.set(DATA_IS_CHARGING, p_32759_);
+	   }
 
 	@Override
 	public void registerControllers(AnimationData data) {
@@ -114,5 +130,50 @@ public class OozeEntity extends Monster implements IAnimatable {
 	protected SoundEvent getDeathSound() {
 		return SoundEvents.SLIME_DEATH;
 	}
+	
+	static class OozeShootTarGoal extends Goal {
+		
+		private final OozeEntity ooze;
+		public int chargeTime;
+		
+		public OozeShootTarGoal(OozeEntity ooze) {
+			this.ooze = ooze;
+		}
+		
+		public void start() {
+	         this.chargeTime = 0;
+	      }
 
+	      public void stop() {
+	         this.ooze.setCharging(false);
+	      }
+
+	      public boolean requiresUpdateEveryTick() {
+	         return true;
+	      }
+
+		@Override
+		public boolean canUse() {
+			return this.ooze.getTarget() != null;
+		}
+		
+		public void tick() {
+			LivingEntity livingentity = this.ooze.getTarget();
+			
+			if (livingentity != null) {
+				if (livingentity.distanceToSqr(this.ooze) < 2048.0D && this.ooze.hasLineOfSight(livingentity)) {
+					Level level = this.ooze.level;
+					++this.chargeTime;
+					if (this.chargeTime == 5) {
+						level.levelEvent((Player)null, 1015, this.ooze.blockPosition(), 0);
+					}
+				} else if (this.chargeTime > 0) {
+					--this.chargeTime;
+				}
+				
+				this.ooze.setCharging(this.chargeTime > 5);
+			}
+		}
+		
+	}
 }

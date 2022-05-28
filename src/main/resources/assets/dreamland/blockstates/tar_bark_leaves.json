@@ -1,7 +1,11 @@
 {
   "variants": {
-    "": {
-      "model": "dreamland:block/tar_bark_leaves"
-    }
+    "": [ 
+      { "model": "dreamland:block/tar_bark_leaves1" },
+      { "model": "dreamland:block/tar_bark_leaves2" },
+      { "model": "dreamland:block/tar_bark_leaves3" },
+      { "model": "dreamland:block/tar_bark_leaves4" },
+      { "model": "dreamland:block/tar_bark_leaves5" }
+    ]
   }
 }

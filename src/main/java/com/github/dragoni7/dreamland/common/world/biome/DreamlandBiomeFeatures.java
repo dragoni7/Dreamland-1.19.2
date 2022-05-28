@@ -51,5 +51,6 @@ public class DreamlandBiomeFeatures {
 		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.PLACED_DROUGHT_VEGETATION);
 		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.PLACED_TAR_SPROUTS);
 		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.PLACED_TAR_BARK_TREE);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.PLACED_TAR_SOIL_ORE);
 	}
 }

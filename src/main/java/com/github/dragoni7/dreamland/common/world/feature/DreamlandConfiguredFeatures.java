@@ -14,6 +14,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;
+import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.random.SimpleWeightedRandomList;
@@ -84,6 +85,7 @@ public class DreamlandConfiguredFeatures {
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_SPROUTS_KEY = createConfiguredFeatureKey("tar_sprouts");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_SKELETON_KEY = createConfiguredFeatureKey("tar_skeleton");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_BONE_KEY = createConfiguredFeatureKey("tar_bone");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_SOIL_ORE_KEY = createConfiguredFeatureKey("tar_soil_ore"); 
 	
 	public static ArrayList<ResourceKey<ConfiguredFeature<?, ?>>> getKeys() {
 		return KEYS;
@@ -144,6 +146,7 @@ public class DreamlandConfiguredFeatures {
 	public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> TAR_SPROUTS = registerConfiguredFeature("tar_sprouts", Feature.RANDOM_PATCH, new RandomPatchConfiguration(48, 4, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(DreamlandBlocks.TAR_SPROUTS.get())))));
 	public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> TAR_SKELETON = registerConfiguredFeature("tar_skeleton", DreamlandFeatures.TAR_SKELETON, new NoneFeatureConfiguration());
 	public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> TAR_BONE = registerConfiguredFeature("tar_bone", DreamlandFeatures.TAR_BONE, new NoneFeatureConfiguration());
+	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> TAR_SOIL_ORE = registerConfiguredFeature("tar_soil_ore", Feature.ORE, new OreConfiguration(OreFeatures.NATURAL_STONE, DreamlandBlocks.TAR_SOIL.get().defaultBlockState(), 64));
 	
 	private static <FC extends FeatureConfiguration, F extends Feature<FC>> Holder<ConfiguredFeature<FC, ?>> registerConfiguredFeature(String name, F feature, FC config) {
 		return BuiltinRegistries.registerExact(BuiltinRegistries.CONFIGURED_FEATURE, DreamlandLoc.createLoc(name).toString(), new ConfiguredFeature<>(feature,config));

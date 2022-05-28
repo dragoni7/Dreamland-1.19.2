@@ -1,7 +1,11 @@
 {
   "variants": {
-    "": {
-      "model": "dreamland:block/plum_birch_leaves"
-    }
+    "": [ 
+      { "model": "dreamland:block/plum_birch_leaves1" },
+      { "model": "dreamland:block/plum_birch_leaves2" },
+      { "model": "dreamland:block/plum_birch_leaves3" },
+      { "model": "dreamland:block/plum_birch_leaves4" },
+      { "model": "dreamland:block/plum_birch_leaves5" }
+    ]
   }
 }

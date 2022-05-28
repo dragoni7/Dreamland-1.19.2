@@ -1,0 +1,8 @@
+{
+  "parent": "dreamland:block/fancy_leaves5",
+  "textures": {
+    "all": "dreamland:block/tar_bark_leaves",
+    "cross": "dreamland:block/tar_bark_leaves_cross",
+    "particle": "dreamland:block/tar_bark_leaves"
+  }
+}

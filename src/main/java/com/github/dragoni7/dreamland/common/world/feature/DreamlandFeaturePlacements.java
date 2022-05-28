@@ -10,6 +10,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;
+import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.valueproviders.ConstantInt;
@@ -62,6 +63,7 @@ private static final ArrayList<ResourceKey<PlacedFeature>> KEYS = new ArrayList<
 	public static final ResourceKey<PlacedFeature> PLACED_TAR_SPROUTS_KEY = createPlacedFeatureKey("tar_sprouts");
 	public static final ResourceKey<PlacedFeature> PLACED_TAR_SKELETON_KEY =  createPlacedFeatureKey("tar_skeleton");
 	public static final ResourceKey<PlacedFeature> PLACED_TAR_BONE_KEY = createPlacedFeatureKey("tar_bone");
+	public static final ResourceKey<PlacedFeature> PLACED_TAR_SOIL_ORE_KEY = createPlacedFeatureKey("tar_soil_ore");
 	
 	public static ArrayList<ResourceKey<PlacedFeature>> getKeys() {
 		return KEYS;
@@ -101,17 +103,18 @@ private static final ArrayList<ResourceKey<PlacedFeature>> KEYS = new ArrayList<
 	public static final Holder<PlacedFeature> PLACED_TAR_SPROUTS = registerPlacedFeature("tar_sprouts", DreamlandConfiguredFeatures.TAR_SPROUTS, CountPlacement.of(UniformInt.of(24, 96)), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(55), VerticalAnchor.top()), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.matchesBlocks(List.of(DreamlandBlocks.TAR_SOIL.get())), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
 	public static final Holder<PlacedFeature> PLACED_TAR_SKELETON = registerPlacedFeature("tar_skeleton", DreamlandConfiguredFeatures.TAR_SKELETON, RarityFilter.onAverageOnceEvery(27), PlacementUtils.HEIGHTMAP, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.matchesBlocks(List.of(DreamlandBlocks.TAR_SOIL.get())), 12), BiomeFilter.biome());
 	public static final Holder<PlacedFeature> PLACED_TAR_BONE = registerPlacedFeature("tar_bone", DreamlandConfiguredFeatures.TAR_BONE, RarityFilter.onAverageOnceEvery(9), PlacementUtils.HEIGHTMAP, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.matchesBlocks(List.of(DreamlandBlocks.TAR_SOIL.get())), 12), BiomeFilter.biome());
+	public static final Holder<PlacedFeature> PLACED_TAR_SOIL_ORE = registerPlacedFeature("tar_soil_ore", DreamlandConfiguredFeatures.TAR_SOIL_ORE, commonOrePlacement(16, HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(160))));
 	
-	private static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {
-		      return List.of(p_195347_, InSquarePlacement.spread(), p_195348_, BiomeFilter.biome());
+	private static List<PlacementModifier> orePlacement(PlacementModifier palcementModifiers, PlacementModifier p_195348_) {
+		      return List.of(palcementModifiers, InSquarePlacement.spread(), p_195348_, BiomeFilter.biome());
 		   }
 	   
-	   private static List<PlacementModifier> commonOrePlacement(int p_195344_, PlacementModifier p_195345_) {
-		      return orePlacement(CountPlacement.of(p_195344_), p_195345_);
+	   private static List<PlacementModifier> commonOrePlacement(int count, PlacementModifier palcementModifiers) {
+		      return orePlacement(CountPlacement.of(count), palcementModifiers);
 		   }
 	   
-	   private static List<PlacementModifier> rareOrePlacement(int p_195350_, PlacementModifier p_195351_) {
-		      return orePlacement(RarityFilter.onAverageOnceEvery(p_195350_), p_195351_);
+	   private static List<PlacementModifier> rareOrePlacement(int count, PlacementModifier palcementModifiers) {
+		      return orePlacement(RarityFilter.onAverageOnceEvery(count), palcementModifiers);
 		   }
 	   
 	   private static <FC extends FeatureConfiguration> Holder<PlacedFeature> registerPlacedFeature(String name, Holder<ConfiguredFeature<FC,?>> feature, List<PlacementModifier> placementModifiers) {
