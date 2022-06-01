@@ -37,6 +37,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 
 public class DreamlandBlocks {
 	
@@ -168,8 +170,7 @@ public class DreamlandBlocks {
 	
 	public static final RegistryObject<Block> DROUGHT_SOIL = createDirtBlock("drought_soil");
 	
-	public static final RegistryObject<Block> TAR_BARK_SAPLING = BLOCKS.register("tar_bark_sapling",
-			() -> new DreamlandSapling(DreamlandFeatures.TAR_BARK_TREE_FEATURE, BlockBehaviour.Properties.copy(Blocks.ACACIA_SAPLING)));
+	public static final RegistryObject<Block> TAR_BARK_SAPLING = createSaplingBlock("tar_bark_sapling", DreamlandFeatures.TAR_BARK_TREE_FEATURE);
 	
 	public static final RegistryObject<Block> TAR_SPROUTS = BLOCKS.register("tar_sprouts",
 			() -> new TarSprouts(BlockBehaviour.Properties.copy(Blocks.GRASS)));
@@ -189,12 +190,10 @@ public class DreamlandBlocks {
 	public static final RegistryObject<Block> PINK_CRAB_GRASS = BLOCKS.register("pink_crab_grass",
 			() -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
 	
-	private static RegistryObject<Block> createLogBlock(String name) {
-		return BLOCKS.register(name, () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(2.0F)));
-	}
+	public static final RegistryObject<Block> PLUM_BIRCH_SAPLING = createSaplingBlock("plum_birch_sapling", DreamlandFeatures.PLUM_BIRCH_TREE_FEATURE);
 	
-	private static RegistryObject<Block> createStrippedLogBlock(String name) {
-		return BLOCKS.register(name, () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).strength(2.0F)));
+	private static RegistryObject<Block> createSaplingBlock(String name, Feature<NoneFeatureConfiguration> tree) {
+		return BLOCKS.register(name, () -> new DreamlandSapling(tree, BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 	}
 	
 	private static RegistryObject<Block> createLeavesBlock(String name, MaterialColor color) {

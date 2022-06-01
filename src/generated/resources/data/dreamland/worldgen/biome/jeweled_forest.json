@@ -57,7 +57,8 @@
       "minecraft:spring_lava"
     ],
     [
-      "minecraft:glow_lichen"
+      "minecraft:glow_lichen",
+      "dreamland:plum_birch_tree"
     ],
     [
       "minecraft:freeze_top_layer"

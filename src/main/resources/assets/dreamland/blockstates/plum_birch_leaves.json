@@ -1,6 +1,48 @@
 {
   "variants": {
-    "": [ 
+    "distance=1": [ 
+      { "model": "dreamland:block/plum_birch_leaves1" },
+      { "model": "dreamland:block/plum_birch_leaves2" },
+      { "model": "dreamland:block/plum_birch_leaves3" },
+      { "model": "dreamland:block/plum_birch_leaves4" },
+      { "model": "dreamland:block/plum_birch_leaves5" }
+    ],
+    "distance=2": [ 
+      { "model": "dreamland:block/plum_birch_leaves1" },
+      { "model": "dreamland:block/plum_birch_leaves2" },
+      { "model": "dreamland:block/plum_birch_leaves3" },
+      { "model": "dreamland:block/plum_birch_leaves4" },
+      { "model": "dreamland:block/plum_birch_leaves5" }
+    ],
+    "distance=3": [ 
+      { "model": "dreamland:block/plum_birch_leaves1" },
+      { "model": "dreamland:block/plum_birch_leaves2" },
+      { "model": "dreamland:block/plum_birch_leaves3" },
+      { "model": "dreamland:block/plum_birch_leaves4" },
+      { "model": "dreamland:block/plum_birch_leaves5" }
+    ],
+    "distance=4": [ 
+      { "model": "dreamland:block/plum_birch_leaves1" },
+      { "model": "dreamland:block/plum_birch_leaves2" },
+      { "model": "dreamland:block/plum_birch_leaves3" },
+      { "model": "dreamland:block/plum_birch_leaves4" },
+      { "model": "dreamland:block/plum_birch_leaves5" }
+    ],
+    "distance=5": [ 
+      { "model": "dreamland:block/plum_birch_leaves1" },
+      { "model": "dreamland:block/plum_birch_leaves2" },
+      { "model": "dreamland:block/plum_birch_leaves3" },
+      { "model": "dreamland:block/plum_birch_leaves4" },
+      { "model": "dreamland:block/plum_birch_leaves5" }
+    ],
+    "distance=6": [ 
+      { "model": "dreamland:block/plum_birch_leaves1" },
+      { "model": "dreamland:block/plum_birch_leaves2" },
+      { "model": "dreamland:block/plum_birch_leaves3" },
+      { "model": "dreamland:block/plum_birch_leaves4" },
+      { "model": "dreamland:block/plum_birch_leaves5" }
+    ],
+    "distance=7": [ 
       { "model": "dreamland:block/plum_birch_leaves1" },
       { "model": "dreamland:block/plum_birch_leaves2" },
       { "model": "dreamland:block/plum_birch_leaves3" },

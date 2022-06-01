@@ -2,6 +2,7 @@ package com.github.dragoni7.dreamland.common.entities.mobs;
 
 import java.util.Random;
 
+import com.github.dragoni7.dreamland.common.entities.projectiles.TarBall;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
 import com.github.dragoni7.dreamland.util.RollBoolean;
@@ -33,6 +34,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.phys.Vec3;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -82,6 +84,7 @@ public class OozeEntity extends Monster implements IAnimatable {
 	protected void registerGoals() {
 		this.goalSelector.addGoal(0, new LookAtPlayerGoal(this, Player.class, 8.0F));
 		this.goalSelector.addGoal(1, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(2, new OozeShootTarGoal(this));
 	}
 	
 	protected float getStandingEyeHeight(Pose pose, EntityDimensions entityDimensions) {
@@ -166,6 +169,14 @@ public class OozeEntity extends Monster implements IAnimatable {
 					++this.chargeTime;
 					if (this.chargeTime == 5) {
 						level.levelEvent((Player)null, 1015, this.ooze.blockPosition(), 0);
+					}
+					
+					if (this.chargeTime == 10) {
+						double d1 = 4.0D;
+						Vec3 vec3 = this.ooze.getViewVector(1.0F);
+						
+						TarBall tarball = new TarBall(this.ooze, level);
+						level.addFreshEntity(tarball);
 					}
 				} else if (this.chargeTime > 0) {
 					--this.chargeTime;

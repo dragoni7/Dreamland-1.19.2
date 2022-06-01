@@ -27,7 +27,8 @@ public class AddBlockTags extends BlockTagsProvider{
 		.add(DreamlandBlocks.CLAY_SOIL.get())
 		.add(DreamlandBlocks.CLAY_SOIL_GRASS.get())
 		.add(DreamlandBlocks.DROUGHT_SOIL.get())
-		.add(DreamlandBlocks.MINERAL_DIRT.get());
+		.add(DreamlandBlocks.MINERAL_DIRT.get())
+		.add(DreamlandBlocks.FLOWERING_UNDERGROWTH.get());
 		
 		tag(Tags.Blocks.STONE)
 		.add(DreamlandBlocks.DARK_QUARTZITE.get());
@@ -51,7 +52,8 @@ public class AddBlockTags extends BlockTagsProvider{
 		.add(DreamlandBlocks.TAR_SPROUTS.get());
 		
 		tag(BlockTags.SAPLINGS)
-		.add(DreamlandBlocks.TAR_BARK_SAPLING.get());
+		.add(DreamlandBlocks.TAR_BARK_SAPLING.get())
+		.add(DreamlandBlocks.PLUM_BIRCH_SAPLING.get());
 		
 		tag(BlockTags.MINEABLE_WITH_AXE)
 		.add(DreamlandWoodSets.TAR_BARK.getLog())

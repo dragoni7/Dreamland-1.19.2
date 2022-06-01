@@ -5,7 +5,6 @@ import java.util.Random;
 import com.github.dragoni7.dreamland.common.world.feature.util.FeatureBuilder;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandWoodSets;
-import com.github.dragoni7.dreamland.util.RollBoolean;
 import com.mojang.serialization.Codec;
 
 import net.minecraft.core.BlockPos;
@@ -20,8 +19,8 @@ import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConf
 
 public class TarBarkTree extends Feature<NoneFeatureConfiguration> {
 	
-	private static final int maxTrunkHeight = 6;
-	private static final int minTrunkHeight = 2;
+	private static final int MAX_TRUNK_HEIGHT = 6;
+	private static final int MIN_TRUNK_HEIGHT = 2;
 
 	public TarBarkTree(Codec<NoneFeatureConfiguration> codec) {
 		super(codec);
@@ -34,7 +33,7 @@ public class TarBarkTree extends Feature<NoneFeatureConfiguration> {
 		Random rand = context.random();
 		FeatureBuilder joshuaTreeBuilder = new FeatureBuilder();
 		
-		int trunkBaseHeight = minTrunkHeight + rand.nextInt(2);
+		int trunkBaseHeight = MIN_TRUNK_HEIGHT + rand.nextInt(2);
 		boolean xzChange = rand.nextBoolean();
 		
 		if (worldgenlevel.isEmptyBlock(blockpos.below()) || !DreamlandBlocks.TAR_BARK_SAPLING.get().defaultBlockState().canSurvive(worldgenlevel, blockpos)) {
@@ -49,7 +48,7 @@ public class TarBarkTree extends Feature<NoneFeatureConfiguration> {
 			return false;
 		}
 		
-		if(!createLeaves(worldgenlevel, blockpos.above(maxTrunkHeight+2), joshuaTreeBuilder, rand)) {
+		if(!createLeaves(worldgenlevel, blockpos.above(MAX_TRUNK_HEIGHT+2), joshuaTreeBuilder, rand)) {
 			return false;
 		}
 		
@@ -60,7 +59,7 @@ public class TarBarkTree extends Feature<NoneFeatureConfiguration> {
 	private static boolean createTrunk(WorldGenLevel worldgenlevel, Boolean xzChange, int baseHeight, FeatureBuilder builder, BlockPos blockpos) {
 		final BlockState log = DreamlandWoodSets.TAR_BARK.getLog().defaultBlockState();
 		
-		for (int i = 0; i <= maxTrunkHeight; i++) {
+		for (int i = 0; i <= MAX_TRUNK_HEIGHT; i++) {
 		
 		BlockPos trunkPos = blockpos.above(i);
 		BlockPos trunkOffset = trunkPos.east(1);
@@ -79,7 +78,7 @@ public class TarBarkTree extends Feature<NoneFeatureConfiguration> {
 			}
 		}
 	}
-		if (!builder.addInput(worldgenlevel, log, blockpos.above(maxTrunkHeight+1))) {
+		if (!builder.addInput(worldgenlevel, log, blockpos.above(MAX_TRUNK_HEIGHT+1))) {
 			return false;
 		}
 		return true;

@@ -39,9 +39,9 @@ public class ItemModels extends ItemModelProvider{
 		createBlockItemModel(DreamlandItems.DRIED_TAR.get(), "block/dried_tar");
 		createBlockItemModel(DreamlandItems.TAR_SOIL.get(), "block/tar_soil");
 		createBlockItemModel(DreamlandItems.DROUGHT_SOIL.get(), "block/drought_soil");
-		createBlockItemModel(DreamlandItems.TAR_BARK_LEAVES.get(), "block/tar_bark_leaves");
+		createBlockItemModel(DreamlandItems.TAR_BARK_LEAVES.get(), "block/tar_bark_leaves1");
 		
-		createBlockItemModel(DreamlandItems.PLUM_BIRCH_LEAVES.get(), "block/plum_birch_leaves");
+		createBlockItemModel(DreamlandItems.PLUM_BIRCH_LEAVES.get(), "block/plum_birch_leaves1");
 		createBlockItemModel(DreamlandItems.MINERAL_DIRT.get(), "block/mineral_dirt");
 		createBlockItemModel(DreamlandItems.FLOWERING_UNDERGROWTH.get(), "block/flowering_undergrowth");
 		

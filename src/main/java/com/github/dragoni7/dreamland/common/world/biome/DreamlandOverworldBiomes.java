@@ -99,8 +99,8 @@ public class DreamlandOverworldBiomes {
     	
     	return biomeWithEffects(Biome.Precipitation.NONE, Biome.BiomeCategory.DESERT, 2.0F, 0.0F, new BiomeSpecialEffects.Builder()
 				.grassColorOverride(11334212)
-				.waterColor(4751787)
-				.waterFogColor(4751787)
+				.waterColor(3604469)
+				.waterFogColor(3604469)
 				.fogColor(12638463)
 				.skyColor(calculateSkyColor(2.0F))
 				.ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
@@ -113,6 +113,7 @@ public class DreamlandOverworldBiomes {
     	MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
     	BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
     	globalOverworldGeneration(biomeBuilder);
+    	DreamlandBiomeFeatures.jeweledForestBiomeFeatures(biomeBuilder);
     	
     	return biomeWithEffects(Biome.Precipitation.RAIN, Biome.BiomeCategory.FOREST, 0.9F, 1.0F, new BiomeSpecialEffects.Builder()
     			.grassColorOverride(14370147)
