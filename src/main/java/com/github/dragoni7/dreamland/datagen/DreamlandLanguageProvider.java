@@ -1,6 +1,7 @@
 package com.github.dragoni7.dreamland.datagen;
 
 import com.github.dragoni7.dreamland.Dreamland;
+import com.github.dragoni7.dreamland.core.WoodSet;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
@@ -45,13 +46,15 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandFluids.TAR_BLOCK.get(), "Tar");
 		add(DreamlandBlocks.TAR_BARK_SAPLING.get(), "Joshua Sapling");
 		add(DreamlandBlocks.TAR_SPROUTS.get(), "Tar Sprouts");
+		add(DreamlandBlocks.TAR_BARK_LEAVES.get(), "Tar Bark Leaves");
+		translateWoodSet(DreamlandWoodSets.TAR_BARK, "Tar Bark");
 		
 		add(DreamlandBlocks.MINERAL_DIRT.get(), "Mineral Dirt");
 		add(DreamlandBlocks.FLOWERING_UNDERGROWTH.get(), "Flowering Undergrowth");
-		add(DreamlandWoodSets.PLUM_BIRCH.getLog(), "Plum Birch Log");
-		add(DreamlandWoodSets.PLUM_BIRCH.getStrippedLog(), "Stripped Plum Birch Log");
 		add(DreamlandBlocks.PLUM_BIRCH_LEAVES.get(), "Plum Birch Leaves");
-		add(DreamlandWoodSets.PLUM_BIRCH.getPlank(), "Plum Birch Planks");
+		add(DreamlandBlocks.PINK_CRAB_GRASS.get(), "Pink Crab Grass");
+		add(DreamlandBlocks.OPALINE_MARIGOLD.get(), "Opaline Marigold");
+		translateWoodSet(DreamlandWoodSets.PLUM_BIRCH, "Plum Birch");
 		
 		// Items
 		add(DreamlandItems.HIVE_JELLY_ITEM.get(), "Hive Jelly");
@@ -60,7 +63,24 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		// Entities
 		add(DreamlandEntities.LARVA.get(), "Larva");
 		add(DreamlandEntities.THROWN_HIVE_JELLY.get(), "Thrown Hive Jelly");
+		add(DreamlandEntities.OOZE.get(), "Ooze");
 		
+	}
+	
+	private void translateWoodSet(WoodSet set, String name) {
+		add(set.getButtonItem(), name + " Button");
+		add(set.getDoor(), name + " Door");
+		add(set.getFenceGate(), name + " Fence Gate");
+		add(set.getFence(), name + " Fence");
+		add(set.getLadder(), name + " Ladder");
+		add(set.getLog(), name + " Log");
+		add(set.getPlank(), name + " Planks");
+		add(set.getPressurePlate(), name + "Pressure Plate");
+		add(set.getSlab(), name + " Slab");
+		add(set.getStair(), name + " Stairs");
+		add(set.getStrippedLog(), "Stripped" + name + " Log");
+		add(set.getTrapDoor(), name + " Trap Door");
+		add(set.getWood(), name + " Wood");
 	}
 
 }

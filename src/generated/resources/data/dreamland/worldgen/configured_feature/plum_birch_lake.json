@@ -2,13 +2,16 @@
   "config": {
     "insideBlock": {
       "state": {
-        "Name": "dreamland:drought_soil"
+        "Properties": {
+          "level": "0"
+        },
+        "Name": "minecraft:water"
       },
       "type": "minecraft:simple_state_provider"
     },
     "barrier": {
       "state": {
-        "Name": "dreamland:dried_tar"
+        "Name": "dreamland:mineral_dirt"
       },
       "type": "minecraft:simple_state_provider"
     }

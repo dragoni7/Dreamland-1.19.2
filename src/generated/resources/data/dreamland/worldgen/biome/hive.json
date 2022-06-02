@@ -106,7 +106,7 @@
   "spawn_costs": {},
   "forge:registry_name": "dreamland:hive",
   "precipitation": "none",
-  "temperature": 2.0,
+  "temperature": 0.8,
   "downfall": 0.0,
   "category": "underground",
   "effects": {
@@ -116,7 +116,7 @@
       "block_search_extent": 8,
       "offset": 2.0
     },
-    "sky_color": 7254527,
+    "sky_color": 7907327,
     "fog_color": 12638463,
     "water_color": 12511438,
     "water_fog_color": 9680288

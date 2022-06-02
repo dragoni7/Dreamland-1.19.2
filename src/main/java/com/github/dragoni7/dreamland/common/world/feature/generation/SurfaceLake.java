@@ -16,17 +16,17 @@ import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfigur
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.material.Material;
 
-public class BorderedDisk extends Feature<BorderedDisk.Configuration> {
+public class SurfaceLake extends Feature<SurfaceLake.Configuration> {
 
-	   public BorderedDisk(Codec<BorderedDisk.Configuration> p_66259_) {
-	      super(p_66259_);
+	   public SurfaceLake(Codec<SurfaceLake.Configuration> codec) {
+	      super(codec);
 	   }
 
-	   public boolean place(FeaturePlaceContext<BorderedDisk.Configuration> p_159958_) {
-	      BlockPos blockpos = p_159958_.origin();
-	      WorldGenLevel worldgenlevel = p_159958_.level();
-	      Random random = p_159958_.random();
-	      BorderedDisk.Configuration bordereddisk$configuration = p_159958_.config();
+	   public boolean place(FeaturePlaceContext<SurfaceLake.Configuration> context) {
+	      BlockPos blockpos = context.origin();
+	      WorldGenLevel worldgenlevel = context.level();
+	      Random random = context.random();
+	      SurfaceLake.Configuration surfacelake$configuration = context.config();
 	      if (blockpos.getY() <= worldgenlevel.getMinBuildHeight() + 4) {
 	         return false;
 	      } else {
@@ -57,8 +57,8 @@ public class BorderedDisk extends Feature<BorderedDisk.Configuration> {
 	            }
 	         }
 
-	         BlockState insideBlock = bordereddisk$configuration.insideBlock().getState(random, blockpos);
-	         BlockState borderBlock = bordereddisk$configuration.barrier().getState(random, blockpos);
+	         BlockState insideBlock = surfacelake$configuration.insideBlock().getState(random, blockpos);
+	         BlockState borderBlock = surfacelake$configuration.barrier().getState(random, blockpos);
 
 	         for(int k1 = 0; k1 < 16; ++k1) {
 	            for(int k = 0; k < 16; ++k) {
@@ -121,8 +121,8 @@ public class BorderedDisk extends Feature<BorderedDisk.Configuration> {
 	   }
 
 	   public static record Configuration(BlockStateProvider insideBlock, BlockStateProvider barrier) implements FeatureConfiguration {
-	      public static final Codec<BorderedDisk.Configuration> CODEC = RecordCodecBuilder.create((p_190962_) -> {
-	         return p_190962_.group(BlockStateProvider.CODEC.fieldOf("insideBlock").forGetter(BorderedDisk.Configuration::insideBlock), BlockStateProvider.CODEC.fieldOf("barrier").forGetter(BorderedDisk.Configuration::barrier)).apply(p_190962_, BorderedDisk.Configuration::new);
+	      public static final Codec<SurfaceLake.Configuration> CODEC = RecordCodecBuilder.create((codec) -> {
+	         return codec.group(BlockStateProvider.CODEC.fieldOf("insideBlock").forGetter(SurfaceLake.Configuration::insideBlock), BlockStateProvider.CODEC.fieldOf("barrier").forGetter(SurfaceLake.Configuration::barrier)).apply(codec, SurfaceLake.Configuration::new);
 	      });
 	   }
 	}

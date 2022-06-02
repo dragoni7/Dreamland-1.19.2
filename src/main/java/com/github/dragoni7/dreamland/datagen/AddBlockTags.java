@@ -49,11 +49,17 @@ public class AddBlockTags extends BlockTagsProvider{
 		
 		tag(BlockTags.REPLACEABLE_PLANTS)
 		.add(DreamlandBlocks.HIVE_GROWTH.get())
-		.add(DreamlandBlocks.TAR_SPROUTS.get());
+		.add(DreamlandBlocks.TAR_SPROUTS.get())
+		.add(DreamlandBlocks.PINK_CRAB_GRASS.get());
 		
 		tag(BlockTags.SAPLINGS)
 		.add(DreamlandBlocks.TAR_BARK_SAPLING.get())
 		.add(DreamlandBlocks.PLUM_BIRCH_SAPLING.get());
+		
+		tag(BlockTags.FLOWERS)
+		.add(DreamlandBlocks.OPALINE_MARIGOLD.get());
+		tag(BlockTags.SMALL_FLOWERS)
+		.add(DreamlandBlocks.OPALINE_MARIGOLD.get());
 		
 		tag(BlockTags.MINEABLE_WITH_AXE)
 		.add(DreamlandWoodSets.TAR_BARK.getLog())
@@ -85,11 +91,6 @@ public class AddBlockTags extends BlockTagsProvider{
 	
 		tag(DreamlandBlockTags.HIVE_ORES_REPLACEABLE)
 		.add(DreamlandBlocks.HIVE_BLOCK.get());
-		
-		tag(DreamlandBlockTags.GARDEN_SURFACE_REPLACEABLE)
-		.add(Blocks.GRASS_BLOCK)
-		.add(Blocks.STONE)
-		.add(Blocks.MOSS_BLOCK);
 		
 		addCopperOreTags(DreamlandBlocks.HIVE_COPPER.get());
 		addIronOreTags(DreamlandBlocks.HIVE_IRON.get());

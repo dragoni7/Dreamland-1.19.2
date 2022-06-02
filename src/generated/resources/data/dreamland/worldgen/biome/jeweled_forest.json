@@ -10,7 +10,8 @@
     [],
     [
       "minecraft:lake_lava_underground",
-      "minecraft:lake_lava_surface"
+      "minecraft:lake_lava_surface",
+      "dreamland:plum_birch_lake"
     ],
     [
       "minecraft:amethyst_geode"
@@ -58,7 +59,8 @@
     ],
     [
       "minecraft:glow_lichen",
-      "dreamland:plum_birch_tree"
+      "dreamland:plum_birch_tree",
+      "dreamland:jeweled_forest_vegetation"
     ],
     [
       "minecraft:freeze_top_layer"
@@ -87,9 +89,9 @@
       "block_search_extent": 8,
       "offset": 2.0
     },
-    "sky_color": 7842047,
+    "sky_color": 12875400,
     "grass_color": 14370147,
-    "fog_color": 12638463,
+    "fog_color": 12875400,
     "water_color": 4751787,
     "water_fog_color": 4751787
   }

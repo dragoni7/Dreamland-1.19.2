@@ -10,10 +10,15 @@ import com.mojang.serialization.Codec;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Registry;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.BeehiveBlock;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
@@ -23,6 +28,7 @@ public class PlumBirchTree extends Feature<NoneFeatureConfiguration> {
 	
 	private static final int MAX_TRUNK_HEIGHT = 16;
 	private static final int MIN_TRUNK_HEIGHT = 9;
+	private BlockPos beeHivePos;
 
 	public PlumBirchTree(Codec<NoneFeatureConfiguration> codec) {
 		super(codec);
@@ -31,21 +37,50 @@ public class PlumBirchTree extends Feature<NoneFeatureConfiguration> {
 	@Override
 	public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
 		WorldGenLevel worldgenlevel = context.level();
-		BlockPos blockpos = context.origin();
 		Random rand = context.random();
-		FeatureBuilder plumBirchTreeBuilder = new FeatureBuilder();
 		int height = rand.nextInt(MIN_TRUNK_HEIGHT, MAX_TRUNK_HEIGHT);
+		BlockPos blockpos = context.origin();
+		BlockPos branchPos = blockpos.above(height - rand.nextInt(5, 6));
+		FeatureBuilder plumBirchTreeBuilder = new FeatureBuilder();
+		final BlockState log = DreamlandWoodSets.PLUM_BIRCH.getLog().defaultBlockState();
+		Boolean branchResult = false;
+		
 		
 		if (worldgenlevel.isEmptyBlock(blockpos.below()) || !DreamlandBlocks.PLUM_BIRCH_SAPLING.get().defaultBlockState().canSurvive(worldgenlevel, blockpos)) {
 			return false;
 		}
 		
-		if ( !createTrunk(worldgenlevel, plumBirchTreeBuilder, blockpos, height)) {
+		if ( !createTrunk(worldgenlevel, plumBirchTreeBuilder, blockpos, log, height)) {
 			return false;
 		}
 		
-		if ( !createBranches(worldgenlevel, rand, blockpos, plumBirchTreeBuilder, height)) {
-			return false;
+		if (RollBoolean.roll(4, rand)) {
+			switch (rand.nextInt(4)) {
+			case 0: {
+				branchPos = branchPos.north();
+				branchResult = plumBirchTreeBuilder.addInput(worldgenlevel, log.setValue(RotatedPillarBlock.AXIS, Direction.NORTH.getAxis()), branchPos);
+				break;
+			}
+			case 1: {
+				branchPos = branchPos.south();
+				branchResult = plumBirchTreeBuilder.addInput(worldgenlevel, log.setValue(RotatedPillarBlock.AXIS, Direction.SOUTH.getAxis()), branchPos);
+				break;
+			}
+			case 2: {
+				branchPos = branchPos.east();
+				branchResult = plumBirchTreeBuilder.addInput(worldgenlevel, log.setValue(RotatedPillarBlock.AXIS, Direction.EAST.getAxis()), branchPos);
+				break;
+			}
+			case 3: {
+				branchPos = branchPos.west();
+				branchResult = plumBirchTreeBuilder.addInput(worldgenlevel, log.setValue(RotatedPillarBlock.AXIS, Direction.WEST.getAxis()), branchPos);
+				break;
+			}
+			}
+			
+			if ( !branchResult) {
+				return false;
+			}
 		}
 		
 		if ( !createLeaves(worldgenlevel, blockpos, plumBirchTreeBuilder, rand, height)) {
@@ -53,11 +88,25 @@ public class PlumBirchTree extends Feature<NoneFeatureConfiguration> {
 		}
 		
 		plumBirchTreeBuilder.build(worldgenlevel);
+		
+		if (RollBoolean.roll(16, rand) && branchResult) {
+			worldgenlevel.setBlock(branchPos.below(), Blocks.BEE_NEST.defaultBlockState().setValue(BeehiveBlock.FACING, Direction.SOUTH), 3);
+			worldgenlevel.getBlockEntity(branchPos.below(), BlockEntityType.BEEHIVE).ifPresent((beeHive) -> {
+                  int j = 2 + rand.nextInt(2);
+
+                  for(int k = 0; k < j; ++k) {
+                     CompoundTag compoundtag = new CompoundTag();
+                     compoundtag.putString("id", Registry.ENTITY_TYPE.getKey(EntityType.BEE).toString());
+                     beeHive.storeBee(compoundtag, rand.nextInt(599), false);
+                  }
+
+               });
+		}
+		
 		return true;
 	}
 	
-	private static boolean createTrunk(WorldGenLevel worldgenlevel, FeatureBuilder builder, BlockPos blockpos, int height) {
-		final BlockState log = DreamlandWoodSets.PLUM_BIRCH.getLog().defaultBlockState();
+	private static boolean createTrunk(WorldGenLevel worldgenlevel, FeatureBuilder builder, BlockPos blockpos, BlockState log, int height) {
 		
 		for (int i = 0; i <= height; i++) {
 			BlockPos trunkPos = blockpos.above(i);
@@ -67,43 +116,6 @@ public class PlumBirchTree extends Feature<NoneFeatureConfiguration> {
 			}
 		}
 		return true;
-	}
-	
-	private static boolean createBranches(WorldGenLevel level, Random rand, BlockPos blockpos, FeatureBuilder builder, int height) {
-		final BlockState log = DreamlandWoodSets.PLUM_BIRCH.getLog().defaultBlockState();
-		BlockPos branchPos = blockpos.above(height - rand.nextInt(4, 6));
-		boolean canBuild = true;
-		
-		if (RollBoolean.roll(4, rand)) {
-			switch (rand.nextInt(3)) {
-			case 0: {
-				branchPos = branchPos.north();
-				canBuild = builder.addInput(level, log.setValue(RotatedPillarBlock.AXIS, Direction.NORTH.getAxis()), branchPos);
-				break;
-			}
-			case 1: {
-				branchPos = branchPos.south();
-				canBuild = builder.addInput(level, log.setValue(RotatedPillarBlock.AXIS, Direction.SOUTH.getAxis()), branchPos);
-				break;
-			}
-			case 2: {
-				branchPos = branchPos.east();
-				canBuild = builder.addInput(level, log.setValue(RotatedPillarBlock.AXIS, Direction.EAST.getAxis()), branchPos);
-				break;
-			}
-			case 3: {
-				branchPos = branchPos.west();
-				canBuild = builder.addInput(level, log.setValue(RotatedPillarBlock.AXIS, Direction.WEST.getAxis()), branchPos);
-				break;
-			}
-			}
-			
-			if (RollBoolean.roll(4, rand)) {
-				canBuild = builder.addInput(level, Blocks.BEE_NEST.defaultBlockState(), branchPos.below());
-			}
-		}
-		
-		return canBuild;
 	}
 	
 	private static boolean createLeaves(WorldGenLevel level, BlockPos pos, FeatureBuilder builder, Random rand, int height) {
@@ -180,7 +192,8 @@ public class PlumBirchTree extends Feature<NoneFeatureConfiguration> {
 				}
 			}
 		}
-		return true;
+		
+		return canBuild;
 	}
 
 }

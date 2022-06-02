@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.github.dragoni7.dreamland.common.blocks.DreamlandBlockTags;
-import com.github.dragoni7.dreamland.common.world.feature.generation.BorderedDisk;
+import com.github.dragoni7.dreamland.common.world.feature.generation.SurfaceLake;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFeatures;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
@@ -27,6 +27,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.LakeFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.BlockColumnConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.BlockStateConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.DeltaFeatureConfiguration;
@@ -87,6 +88,8 @@ public class DreamlandConfiguredFeatures {
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_BONE_KEY = createConfiguredFeatureKey("tar_bone");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_SOIL_ORE_KEY = createConfiguredFeatureKey("tar_soil_ore"); 
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_PLUM_BIRCH_TREE_KEY = createConfiguredFeatureKey("plum_birch_tree");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_PLUM_BIRCH_LAKE = createConfiguredFeatureKey("plum_birch_lake");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_JEWELED_FOREST_VEGETATION_KEY = createConfiguredFeatureKey("jeweled_forest_vegetation");
 	
 	public static ArrayList<ResourceKey<ConfiguredFeature<?, ?>>> getKeys() {
 		return KEYS;
@@ -139,7 +142,7 @@ public class DreamlandConfiguredFeatures {
 	
 	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> MOSS_GRASS_PATCH = registerConfiguredFeature("moss_grass_patch", Feature.ORE, new OreConfiguration(MOSS_GRASS_TARGET_LIST, 30));
 	
-	public static final Holder<ConfiguredFeature<BorderedDisk.Configuration, ?>> DROUGHT_BORDERED_DISK = registerConfiguredFeature("bordered_drought_disk", DreamlandFeatures.BORDERED_DISK, new BorderedDisk.Configuration(BlockStateProvider.simple(DreamlandBlocks.DROUGHT_SOIL.get().defaultBlockState()), BlockStateProvider.simple(DreamlandBlocks.DRIED_TAR.get().defaultBlockState())));
+	public static final Holder<ConfiguredFeature<SurfaceLake.Configuration, ?>> DROUGHT_BORDERED_DISK = registerConfiguredFeature("bordered_drought_disk", DreamlandFeatures.SURFACE_LAKE, new SurfaceLake.Configuration(BlockStateProvider.simple(DreamlandBlocks.DROUGHT_SOIL.get().defaultBlockState()), BlockStateProvider.simple(DreamlandBlocks.DRIED_TAR.get().defaultBlockState())));
 	public static final Holder<ConfiguredFeature<DiskConfiguration, ?>> DROUGHT_DISK = registerConfiguredFeature("drought_disk", Feature.DISK, new DiskConfiguration(DreamlandBlocks.DROUGHT_SOIL.get().defaultBlockState(), UniformInt.of(2, 5), 2, List.of(DreamlandBlocks.TAR_SOIL.get().defaultBlockState(), DreamlandBlocks.DRIED_TAR.get().defaultBlockState())));
 	public static final Holder<ConfiguredFeature<DeltaFeatureConfiguration, ?>> TAR_DELTA = registerConfiguredFeature("tar_delta", Feature.DELTA_FEATURE, new DeltaFeatureConfiguration(DreamlandFluids.TAR_BLOCK.get().defaultBlockState(), DreamlandBlocks.DRIED_TAR.get().defaultBlockState(), UniformInt.of(3, 7), UniformInt.of(1, 4)));
 	public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> DROUGHT_VEGETATION = registerConfiguredFeature("drought_vegetation", Feature.RANDOM_PATCH, new RandomPatchConfiguration(48, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.OXEYE_DAISY.defaultBlockState(), 10).add(Blocks.DEAD_BUSH.defaultBlockState(), 40).add(Blocks.GRASS.defaultBlockState(), 50))))));
@@ -151,6 +154,10 @@ public class DreamlandConfiguredFeatures {
 	
 	
 	public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> PLUM_BIRCH_TREE = registerConfiguredFeature("plum_birch_tree", DreamlandFeatures.PLUM_BIRCH_TREE_FEATURE, new NoneFeatureConfiguration());
+	@SuppressWarnings("deprecation")
+	public static final Holder<ConfiguredFeature<SurfaceLake.Configuration, ?>> PLUM_BIRCH_LAKE = registerConfiguredFeature("plum_birch_lake", DreamlandFeatures.SURFACE_LAKE, new SurfaceLake.Configuration(BlockStateProvider.simple(Blocks.WATER.defaultBlockState()), BlockStateProvider.simple(DreamlandBlocks.MINERAL_DIRT.get().defaultBlockState())));
+	public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> JEWELED_FOREST_VEGETATION = registerConfiguredFeature("jeweled_forest_vegetation", Feature.RANDOM_PATCH, new RandomPatchConfiguration(48, 16, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(DreamlandBlocks.PINK_CRAB_GRASS.get().defaultBlockState(), 50).add(DreamlandBlocks.OPALINE_MARIGOLD.get().defaultBlockState(), 20).add(Blocks.ALLIUM.defaultBlockState(), 15).add(Blocks.GRASS.defaultBlockState(), 10).add(Blocks.LARGE_FERN.defaultBlockState(), 5))))));
+	
 	private static <FC extends FeatureConfiguration, F extends Feature<FC>> Holder<ConfiguredFeature<FC, ?>> registerConfiguredFeature(String name, F feature, FC config) {
 		return BuiltinRegistries.registerExact(BuiltinRegistries.CONFIGURED_FEATURE, DreamlandLoc.createLoc(name).toString(), new ConfiguredFeature<>(feature,config));
 	}

@@ -36,12 +36,6 @@ public class DreamlandBiomeFeatures {
 		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, OrePlacements.ORE_DIRT);
 	}
 	
-	public static void gardenBiomeFeatures(BiomeGenerationSettings.Builder builder) {
-	    builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FOREST_FLOWERS);
-	    builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.PLACED_RED_FLOWERS);
-	    builder.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, DreamlandFeaturePlacements.PLACED_MOSS_GRASS);
-	}
-	
 	public static void tardeltasBiomeFeatures(BiomeGenerationSettings.Builder builder) {
 		builder.addFeature(GenerationStep.Decoration.LAKES, DreamlandFeaturePlacements.PLACED_TAR_DELTA);
 		builder.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, DreamlandFeaturePlacements.PLACED_DROUGHT_DISK);
@@ -56,5 +50,7 @@ public class DreamlandBiomeFeatures {
 	
 	public static void jeweledForestBiomeFeatures(BiomeGenerationSettings.Builder builder) {
 		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.PLACED_PLUM_BIRCH_TREE);
+		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.PLACED_JEWELED_FOREST_VEGETATION);
+		builder.addFeature(GenerationStep.Decoration.LAKES, DreamlandFeaturePlacements.PLACED_PLUM_BIRCH_LAKE);
 	}
 }
