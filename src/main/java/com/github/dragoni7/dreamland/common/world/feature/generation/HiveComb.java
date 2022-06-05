@@ -18,8 +18,8 @@ public class HiveComb extends Feature<BlockStateConfiguration> {
 	
 	private static final int SIZE = 4;
 
-	public HiveComb(Codec<BlockStateConfiguration> p_65786_) {
-		super(p_65786_);
+	public HiveComb(Codec<BlockStateConfiguration> codec) {
+		super(codec);
 	}
 
 	@Override

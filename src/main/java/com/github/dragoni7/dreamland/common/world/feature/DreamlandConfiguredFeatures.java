@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.github.dragoni7.dreamland.common.blocks.DreamlandBlockTags;
+import com.github.dragoni7.dreamland.common.world.feature.configs.EllipsoidConfig;
 import com.github.dragoni7.dreamland.common.world.feature.generation.SurfaceLake;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFeatures;
@@ -39,6 +40,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConf
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.VegetationPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
@@ -90,6 +92,7 @@ public class DreamlandConfiguredFeatures {
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_PLUM_BIRCH_TREE_KEY = createConfiguredFeatureKey("plum_birch_tree");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_PLUM_BIRCH_LAKE = createConfiguredFeatureKey("plum_birch_lake");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_JEWELED_FOREST_VEGETATION_KEY = createConfiguredFeatureKey("jeweled_forest_vegetation");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_CALCITE_ROCK_KEY = createConfiguredFeatureKey("calcite_rock");
 	
 	public static ArrayList<ResourceKey<ConfiguredFeature<?, ?>>> getKeys() {
 		return KEYS;
@@ -157,6 +160,8 @@ public class DreamlandConfiguredFeatures {
 	@SuppressWarnings("deprecation")
 	public static final Holder<ConfiguredFeature<SurfaceLake.Configuration, ?>> PLUM_BIRCH_LAKE = registerConfiguredFeature("plum_birch_lake", DreamlandFeatures.SURFACE_LAKE, new SurfaceLake.Configuration(BlockStateProvider.simple(Blocks.WATER.defaultBlockState()), BlockStateProvider.simple(DreamlandBlocks.MINERAL_DIRT.get().defaultBlockState())));
 	public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> JEWELED_FOREST_VEGETATION = registerConfiguredFeature("jeweled_forest_vegetation", Feature.RANDOM_PATCH, new RandomPatchConfiguration(48, 16, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(DreamlandBlocks.PINK_CRAB_GRASS.get().defaultBlockState(), 50).add(DreamlandBlocks.OPALINE_MARIGOLD.get().defaultBlockState(), 20).add(Blocks.ALLIUM.defaultBlockState(), 15).add(Blocks.GRASS.defaultBlockState(), 10).add(Blocks.LARGE_FERN.defaultBlockState(), 5))))));
+	
+	public static final Holder<ConfiguredFeature<EllipsoidConfig, ?>> CALCITE_ROCK = registerConfiguredFeature("calcite_rock", DreamlandFeatures.ELLIPSOID, new EllipsoidConfig(BlockStateProvider.simple(Blocks.CALCITE), BlockStateProvider.simple(Blocks.CALCITE), UniformInt.of(4, 6), UniformInt.of(6, 8), UniformInt.of(3, 6)));
 	
 	private static <FC extends FeatureConfiguration, F extends Feature<FC>> Holder<ConfiguredFeature<FC, ?>> registerConfiguredFeature(String name, F feature, FC config) {
 		return BuiltinRegistries.registerExact(BuiltinRegistries.CONFIGURED_FEATURE, DreamlandLoc.createLoc(name).toString(), new ConfiguredFeature<>(feature,config));

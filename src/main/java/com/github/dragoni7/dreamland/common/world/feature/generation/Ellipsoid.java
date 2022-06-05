@@ -1,0 +1,64 @@
+package com.github.dragoni7.dreamland.common.world.feature.generation;
+
+import java.util.Random;
+
+import com.github.dragoni7.dreamland.common.world.feature.configs.EllipsoidConfig;
+import com.github.dragoni7.dreamland.common.world.feature.util.FeatureBuilder;
+import com.github.dragoni7.dreamland.common.world.feature.util.OpenSimplex2S;
+import com.mojang.serialization.Codec;
+
+import net.minecraft.core.BlockPos;
+import net.minecraft.util.Mth;
+import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
+
+public class Ellipsoid extends Feature<EllipsoidConfig> {
+
+	private static final int ONE = 1;
+	
+	public Ellipsoid(Codec<EllipsoidConfig> codec) {
+		super(codec);
+	}
+
+	@Override
+	public boolean place(FeaturePlaceContext<EllipsoidConfig> context) {
+		WorldGenLevel worldgenlevel = context.level();
+		Random rand = context.random();
+		EllipsoidConfig config = context.config();
+		boolean status = false;
+		FeatureBuilder ellipsoidBuilder = new FeatureBuilder();
+		BlockPos origin = context.origin();
+		int xRadius = config.xRadius().sample(rand);
+		int yRadius = config.yRadius().sample(rand);
+		int zRadius = config.zRadius().sample(rand);
+		
+		for (int x = -xRadius; x < xRadius; x++) {
+			for (int y = -yRadius; y < yRadius; y++) {
+				for (int z = -zRadius; z < zRadius; z++) {
+					
+					BlockPos pos = origin.offset(x, y, z);
+					double distance = Mth.square((double)x/xRadius) + Mth.square((double)y/yRadius) + Mth.square((double)z/zRadius);
+					float noise = OpenSimplex2S.noise3_ImproveXY(worldgenlevel.getSeed(), x, y, z);
+					BlockState state;
+					
+					if (distance < ONE && noise < 0) {
+						state = config.noiseBlock().getState(rand, origin);
+					} 
+					else if (distance < ONE + rand.nextDouble(0.1, 0.3)) {
+						state = config.block().getState(rand, origin);
+					}
+					else {
+						continue;
+					}
+					
+					status = ellipsoidBuilder.addInput(worldgenlevel, state, pos, true);
+				}
+			}
+		}
+		
+		ellipsoidBuilder.build(worldgenlevel);
+		return status;
+	}
+}

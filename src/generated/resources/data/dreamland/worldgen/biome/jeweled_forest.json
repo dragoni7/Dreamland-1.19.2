@@ -7,7 +7,9 @@
     ]
   },
   "features": [
-    [],
+    [
+      "dreamland:calcite_rock"
+    ],
     [
       "minecraft:lake_lava_underground",
       "minecraft:lake_lava_surface",

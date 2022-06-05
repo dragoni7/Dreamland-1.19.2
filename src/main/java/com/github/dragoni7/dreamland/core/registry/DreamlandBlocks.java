@@ -62,7 +62,6 @@ public class DreamlandBlocks {
 					.friction(0.98F)
 					.hasPostProcess(DreamlandBlocks::always)
 					.emissiveRendering(DreamlandBlocks::always)
-					.lightLevel((p_152684_) -> {return 1;})
 					));
 	
 	public static final RegistryObject<Block> HIVE_BLOCK = BLOCKS.register("hive_block", 

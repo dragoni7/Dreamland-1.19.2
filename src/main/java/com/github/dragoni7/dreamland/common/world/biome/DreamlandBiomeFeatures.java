@@ -52,5 +52,6 @@ public class DreamlandBiomeFeatures {
 		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.PLACED_PLUM_BIRCH_TREE);
 		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.PLACED_JEWELED_FOREST_VEGETATION);
 		builder.addFeature(GenerationStep.Decoration.LAKES, DreamlandFeaturePlacements.PLACED_PLUM_BIRCH_LAKE);
+		builder.addFeature(GenerationStep.Decoration.RAW_GENERATION, DreamlandFeaturePlacements.PLACED_CALCITE_ROCK);
 	}
 }

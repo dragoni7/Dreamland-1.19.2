@@ -121,8 +121,8 @@ public class SurfaceLake extends Feature<SurfaceLake.Configuration> {
 	   }
 
 	   public static record Configuration(BlockStateProvider insideBlock, BlockStateProvider barrier) implements FeatureConfiguration {
-	      public static final Codec<SurfaceLake.Configuration> CODEC = RecordCodecBuilder.create((codec) -> {
-	         return codec.group(BlockStateProvider.CODEC.fieldOf("insideBlock").forGetter(SurfaceLake.Configuration::insideBlock), BlockStateProvider.CODEC.fieldOf("barrier").forGetter(SurfaceLake.Configuration::barrier)).apply(codec, SurfaceLake.Configuration::new);
+	      public static final Codec<SurfaceLake.Configuration> CODEC = RecordCodecBuilder.create((recorder) -> {
+	         return recorder.group(BlockStateProvider.CODEC.fieldOf("insideBlock").forGetter(SurfaceLake.Configuration::insideBlock), BlockStateProvider.CODEC.fieldOf("barrier").forGetter(SurfaceLake.Configuration::barrier)).apply(recorder, SurfaceLake.Configuration::new);
 	      });
 	   }
 	}
