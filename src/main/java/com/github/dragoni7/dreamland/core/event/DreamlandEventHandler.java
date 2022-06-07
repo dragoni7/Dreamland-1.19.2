@@ -31,6 +31,7 @@ public class DreamlandEventHandler {
 		
 	public static void addAttributes(EntityAttributeCreationEvent event) {
 		
+		SpawnPlacements.register(DreamlandEntities.LARVA.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, LarvaEntity::checkLarvaSpawnRules);
 		SpawnPlacements.register(DreamlandEntities.OOZE.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, OozeEntity::checkOozeSpawnRules);
 		event.put(DreamlandEntities.LARVA.get(), LarvaEntity.customAttributes().build());
 		event.put(DreamlandEntities.OOZE.get(), OozeEntity.customAttributes().build());

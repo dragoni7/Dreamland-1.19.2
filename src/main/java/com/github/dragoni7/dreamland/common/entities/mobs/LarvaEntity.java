@@ -1,6 +1,10 @@
 package com.github.dragoni7.dreamland.common.entities.mobs;
 
+import java.util.Random;
 import java.util.UUID;
+
+import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
+import com.github.dragoni7.dreamland.util.RollBoolean;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -12,11 +16,13 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.TimeUtil;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.NeutralMob;
 import net.minecraft.world.entity.Pose;
@@ -37,6 +43,8 @@ import net.minecraft.world.entity.ai.navigation.WallClimberNavigation;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -133,6 +141,25 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 	         this.updatePersistentAnger((ServerLevel)this.level, false);
 	      }
 	}
+	
+	public static boolean checkLarvaSpawnRules(EntityType<? extends Monster> entityType, ServerLevelAccessor serverLevel, MobSpawnType spawnType, BlockPos pos, Random rand) {
+		if (serverLevel.getDifficulty() != Difficulty.PEACEFUL) {
+			return true;
+		}
+		
+		return false;
+		
+	   }
+	
+	public boolean checkSpawnRules(LevelAccessor level, MobSpawnType spawnReason) {
+		Random rand = getRandom();
+		
+        if (spawnReason == MobSpawnType.SPAWNER) {
+        	return true;
+        }
+        
+        return RollBoolean.roll(3, rand);
+    }
 	
 	protected void playStepSound() {
 		this.playSound(SoundEvents.SPIDER_STEP, 0.15F, 1.0F);

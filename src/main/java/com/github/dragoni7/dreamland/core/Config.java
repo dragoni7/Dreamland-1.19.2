@@ -22,7 +22,7 @@ public class Config {
 		ForgeConfigSpec.Builder CLIENT_BUILDER = new ForgeConfigSpec.Builder();
 		
 		SERVER_BUILDER.comment("General Settings").push(CATEGORY_GENERAL);
-		REGION_WEIGHT = SERVER_BUILDER.comment("dreamland region weight (smaller values means more common) ").defineInRange("weight", 2, 0, Integer.MAX_VALUE);
+		REGION_WEIGHT = SERVER_BUILDER.comment("dreamland region weight (smaller values means more common). Default = 2").defineInRange("weight", 2, 0, Integer.MAX_VALUE);
 		SERVER_BUILDER.comment("Spawn Settings").push(CATEGORY_SPAWNING);
 		
 		SERVER_BUILDER.pop();
