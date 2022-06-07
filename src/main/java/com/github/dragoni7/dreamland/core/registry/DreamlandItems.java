@@ -43,8 +43,6 @@ public class DreamlandItems {
 	
 	public static final RegistryObject<Item> HIVE_GROWTH = registerBlockItem("hive_growth", () -> DreamlandBlocks.HIVE_GROWTH.get());
 	
-	public static final RegistryObject<Item> HIVE_COCOON = registerBlockItem("hive_cocoon", () -> DreamlandBlocks.HIVE_COCOON.get());
-	
 	public static final RegistryObject<Item> HIVE_IRON = registerBlockItem("hive_iron", () -> DreamlandBlocks.HIVE_IRON.get());
 	public static final RegistryObject<Item> HIVE_GOLD = registerBlockItem("hive_gold", () -> DreamlandBlocks.HIVE_GOLD.get());
 	public static final RegistryObject<Item> HIVE_COPPER = registerBlockItem("hive_copper", () -> DreamlandBlocks.HIVE_COPPER.get());

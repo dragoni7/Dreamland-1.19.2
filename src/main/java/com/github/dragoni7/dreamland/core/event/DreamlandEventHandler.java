@@ -6,6 +6,8 @@ import com.github.dragoni7.dreamland.common.entities.mobs.OozeEntity;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
+import com.github.dragoni7.dreamland.network.Networking;
+import com.github.dragoni7.dreamland.network.PacketApplyTarred;
 
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffect;
@@ -38,16 +40,15 @@ public class DreamlandEventHandler {
 		LivingEntity entity = event.getEntityLiving();
 		MobEffect tarred = DreamlandEffects.TARRED.get();
 		
-		if (entity.level.getFluidState(entity.blockPosition()).is(DreamlandFluids.TAR_FLUID.get())) {
+		if (entity.level.getFluidState(entity.blockPosition()).is(DreamlandFluids.TAR_FLUID.get()) || entity.level.getFluidState(entity.blockPosition()).is(DreamlandFluids.TAR_FLOWING.get())) {
 			Vec3 motion = entity.getDeltaMovement();
 			
 			if (motion.x != 0 || motion.z != 0) {
 				
-				if (entity.hasEffect(tarred)) {
-					entity.removeEffect(tarred);
+				if (!entity.hasEffect(tarred)) {
+					entity.addEffect(new MobEffectInstance(tarred, 600));
+					Networking.sendToServer(new PacketApplyTarred(entity.getId()));
 				}
-				
-				entity.addEffect(new MobEffectInstance(tarred, 600));
 			}
 		}
 	}

@@ -28,7 +28,6 @@ public class PlumBirchTree extends Feature<NoneFeatureConfiguration> {
 	
 	private static final int MAX_TRUNK_HEIGHT = 16;
 	private static final int MIN_TRUNK_HEIGHT = 9;
-	private BlockPos beeHivePos;
 
 	public PlumBirchTree(Codec<NoneFeatureConfiguration> codec) {
 		super(codec);

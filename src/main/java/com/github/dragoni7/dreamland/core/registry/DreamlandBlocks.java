@@ -18,7 +18,6 @@ import com.github.dragoni7.dreamland.common.blocks.InfestedHiveCluster;
 import com.github.dragoni7.dreamland.common.blocks.JellySplotch;
 import com.github.dragoni7.dreamland.common.blocks.LarvaAngerableBlock;
 import com.github.dragoni7.dreamland.common.blocks.TarSprouts;
-import com.github.dragoni7.dreamland.common.blocks.hivecocoon.HiveCocoon;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffects;
@@ -27,7 +26,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.LeavesBlock;
-import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.TallGrassBlock;
 import net.minecraft.world.level.material.Material;
@@ -146,13 +144,6 @@ public class DreamlandBlocks {
 					.sound(SoundType.HONEY_BLOCK)
 					.lightLevel(JellySplotch.emission(7))
 					));
-	
-	public static final RegistryObject<Block> HIVE_COCOON = BLOCKS.register("hive_cocoon", 
-			() -> new HiveCocoon(BlockBehaviour.Properties
-					.of(Material.SPONGE, MaterialColor.COLOR_CYAN)
-					.strength(0.2F)
-					.noOcclusion()
-					.sound(SoundType.HONEY_BLOCK)));
 	
 	public static final RegistryObject<Block> HIVE_IRON = createHiveOre("hive_iron");
 	public static final RegistryObject<Block> HIVE_GOLD = createHiveOre("hive_gold");

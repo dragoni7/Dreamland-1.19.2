@@ -1,7 +1,6 @@
 package com.github.dragoni7.dreamland.core.event;
 
 import com.github.dragoni7.dreamland.client.render.*;
-import com.github.dragoni7.dreamland.common.blocks.hivecocoon.*;
 import com.github.dragoni7.dreamland.common.entities.projectiles.TarBall;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
@@ -31,7 +30,6 @@ public class DreamlandClientEventHandler {
 	
 	private static void setupClient(final FMLClientSetupEvent event) {
 		
-		MenuScreens.register(DreamlandEntities.HIVE_COCOON_CONTAINER.get(), HiveCocoonScreen::new);
 		
 		event.enqueueWork(()-> {
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.BUMBLE_BLOCK.get(), RenderType.cutout());
@@ -64,7 +62,6 @@ public class DreamlandClientEventHandler {
 		event.registerEntityRenderer(DreamlandEntities.THROWN_HIVE_JELLY.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(DreamlandEntities.OOZE.get(), OozeRender::new);
 		event.registerEntityRenderer(DreamlandEntities.TAR_BALL.get(), TarBallRender::new);
-		event.registerBlockEntityRenderer(DreamlandEntities.HIVE_COCOON_TILE.get(), HiveCocoonTileRenderer::new);
 	}
 	
 	private static void registerBlockColors(final ColorHandlerEvent.Block event) {

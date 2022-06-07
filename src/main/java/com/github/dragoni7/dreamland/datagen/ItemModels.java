@@ -34,7 +34,6 @@ public class ItemModels extends ItemModelProvider{
 		createBlockItemModel(DreamlandItems.HIVE_LAPIS.get(), "block/hive_lapis");
 		createBlockItemModel(DreamlandItems.HIVE_DIAMOND.get(), "block/hive_diamond");
 		createBlockItemModel(DreamlandItems.HIVE_BLOCK_WITH_JELLY.get(), "block/hive_block_with_jelly");
-		createBlockItemModel(DreamlandItems.HIVE_COCOON.get(), "block/hive_cocoon");
 		
 		createBlockItemModel(DreamlandItems.DRIED_TAR.get(), "block/dried_tar");
 		createBlockItemModel(DreamlandItems.TAR_SOIL.get(), "block/tar_soil");

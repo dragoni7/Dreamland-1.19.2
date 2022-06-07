@@ -1,0 +1,38 @@
+{
+  "config": {
+    "xRadius": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": 8,
+        "max_inclusive": 16
+      }
+    },
+    "yRadius": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": 16,
+        "max_inclusive": 24
+      }
+    },
+    "zRadius": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": 8,
+        "max_inclusive": 16
+      }
+    },
+    "block": {
+      "state": {
+        "Name": "minecraft:cave_air"
+      },
+      "type": "minecraft:simple_state_provider"
+    },
+    "noiseBlock": {
+      "state": {
+        "Name": "minecraft:cave_air"
+      },
+      "type": "minecraft:simple_state_provider"
+    }
+  },
+  "type": "dreamland:ellipsoid"
+}

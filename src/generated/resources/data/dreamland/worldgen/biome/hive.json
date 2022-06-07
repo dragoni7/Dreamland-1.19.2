@@ -7,7 +7,9 @@
     ]
   },
   "features": [
-    [],
+    [
+      "dreamland:hive_cave"
+    ],
     [
       "minecraft:lake_lava_underground",
       "minecraft:lake_lava_surface"
@@ -61,11 +63,11 @@
       "dreamland:hive_gold_lower",
       "dreamland:hive_lapis",
       "dreamland:hive_diamond",
-      "dreamland:hive_diamond_large"
+      "dreamland:hive_diamond_large",
+      "dreamland:hive_strand"
     ],
     [
-      "dreamland:hive_comb",
-      "dreamland:hive_strand"
+      "dreamland:hive_comb"
     ],
     [
       "minecraft:spring_water",

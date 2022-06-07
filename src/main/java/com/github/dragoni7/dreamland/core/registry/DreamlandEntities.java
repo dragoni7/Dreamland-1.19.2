@@ -2,8 +2,6 @@ package com.github.dragoni7.dreamland.core.registry;
 
 
 import com.github.dragoni7.dreamland.Dreamland;
-import com.github.dragoni7.dreamland.common.blocks.hivecocoon.HiveCocoonContainer;
-import com.github.dragoni7.dreamland.common.blocks.hivecocoon.HiveCocoonTile;
 import com.github.dragoni7.dreamland.common.entities.mobs.LarvaEntity;
 import com.github.dragoni7.dreamland.common.entities.mobs.OozeEntity;
 import com.github.dragoni7.dreamland.common.entities.projectiles.TarBall;
@@ -54,15 +52,6 @@ public class DreamlandEntities {
 			.build(DreamlandLoc.createLoc("thrown_hive_jelly").toString()));
 	
 	// TILES
-	public static final RegistryObject<BlockEntityType<HiveCocoonTile>> HIVE_COCOON_TILE = TILES
-			.register("hive_cocoon", () -> BlockEntityType.Builder
-					.of(HiveCocoonTile::new, DreamlandBlocks.HIVE_COCOON.get()).build(null));
 	
 	// CONTAINERS
-	public static final RegistryObject<MenuType<HiveCocoonContainer>> HIVE_COCOON_CONTAINER = CONTAINERS.register("hive_cocoon", 
-			() -> IForgeMenuType.create((windowId, inv, data) -> {
-				BlockPos pos = data.readBlockPos();
-				Level world = inv.player.getCommandSenderWorld();
-				return new HiveCocoonContainer(windowId, world, pos, inv, inv.player);
-			}));
 }
