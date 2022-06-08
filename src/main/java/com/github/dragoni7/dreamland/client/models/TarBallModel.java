@@ -9,17 +9,17 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 public class TarBallModel extends AnimatedGeoModel<TarBall> {
 
 	@Override
-	public ResourceLocation getAnimationFileLocation(TarBall animatable) {
+	public ResourceLocation getAnimationResource(TarBall animatable) {
 		return DreamlandLoc.createLoc("animations/tar_ball.anim.json");
 	}
 
 	@Override
-	public ResourceLocation getModelLocation(TarBall object) {
+	public ResourceLocation getModelResource(TarBall object) {
 		return DreamlandLoc.createLoc("geo/tar_ball.geo.json");
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(TarBall object) {
+	public ResourceLocation getTextureResource(TarBall object) {
 		return DreamlandLoc.createLoc("textures/entity/tar_ball.png");
 	}
 

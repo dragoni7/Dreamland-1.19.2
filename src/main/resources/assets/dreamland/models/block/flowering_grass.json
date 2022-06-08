@@ -1,0 +1,10 @@
+{
+	"parent": "block/grass_block",
+	"textures": {
+	  "particle": "dreamland:block/flowering_grass_top",
+	  "top": "dreamland:block/flowering_grass_top",
+	  "bottom": "dreamland:block/mineral_dirt",
+	  "side": "dreamland:block/flowering_grass",
+	  "overlay": "dreamland:block/flowering_grass"
+	}
+  }

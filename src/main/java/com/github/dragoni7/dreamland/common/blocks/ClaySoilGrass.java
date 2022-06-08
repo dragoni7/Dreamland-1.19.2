@@ -9,6 +9,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -23,7 +25,7 @@ public class ClaySoilGrass extends DreamlandSpreadingGrassBlock {
 	}
 	
 	@Override
-	public void performBonemeal(ServerLevel serverLevel, Random rand, BlockPos pos, BlockState state) {
+	public void performBonemeal(ServerLevel serverLevel, RandomSource rand, BlockPos pos, BlockState state) {
 	      BlockPos blockpos = pos.above();
 	      BlockState blockstate = Blocks.GRASS.defaultBlockState();
 

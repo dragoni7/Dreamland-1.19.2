@@ -11,6 +11,7 @@ import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -29,7 +30,7 @@ public class CaveSlime extends GrowingPlantHeadBlock implements CaveVines {
 	}
 
 	@Override
-	protected int getBlocksToGrowWhenBonemealed(Random p_53959_) {
+	protected int getBlocksToGrowWhenBonemealed(RandomSource p_53959_) {
 		return 1;
 	}
 
@@ -42,10 +43,6 @@ public class CaveSlime extends GrowingPlantHeadBlock implements CaveVines {
 	protected Block getBodyBlock() {
 		return DreamlandBlocks.CAVE_SLIME_PLANT.get();
 	}
-	
-	/*public boolean skipRendering(BlockState p_53972_, BlockState p_53973_, Direction p_53974_) {
-	      return p_53973_.is(this) ? true : super.skipRendering(p_53972_, p_53973_, p_53974_);
-	   }*/
 	
 	public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity p_49588_, ItemStack p_49589_) {
 	      super.playerDestroy(level, player, pos, state, p_49588_, p_49589_);

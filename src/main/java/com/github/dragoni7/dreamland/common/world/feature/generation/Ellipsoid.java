@@ -1,7 +1,5 @@
 package com.github.dragoni7.dreamland.common.world.feature.generation;
 
-import java.util.Random;
-
 import com.github.dragoni7.dreamland.common.world.feature.configs.EllipsoidConfig;
 import com.github.dragoni7.dreamland.common.world.feature.util.FeatureBuilder;
 import com.github.dragoni7.dreamland.common.world.feature.util.OpenSimplex2S;
@@ -9,6 +7,7 @@ import com.mojang.serialization.Codec;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -25,7 +24,7 @@ public class Ellipsoid extends Feature<EllipsoidConfig> {
 	@Override
 	public boolean place(FeaturePlaceContext<EllipsoidConfig> context) {
 		WorldGenLevel worldgenlevel = context.level();
-		Random rand = context.random();
+		RandomSource rand = context.random();
 		EllipsoidConfig config = context.config();
 		boolean status = false;
 		FeatureBuilder ellipsoidBuilder = new FeatureBuilder();
@@ -46,7 +45,7 @@ public class Ellipsoid extends Feature<EllipsoidConfig> {
 					if (distance < ONE && noise < 0) {
 						state = config.noiseBlock().getState(rand, origin);
 					} 
-					else if (distance < ONE + rand.nextDouble(0.1, 0.3)) {
+					else if (distance < ONE + Mth.nextDouble(rand, 0.1, 0.3)) {
 						state = config.block().getState(rand, origin);
 					}
 					else {

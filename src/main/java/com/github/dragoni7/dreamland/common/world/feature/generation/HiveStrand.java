@@ -8,6 +8,7 @@ import com.github.dragoni7.dreamland.util.RollBoolean;
 import com.mojang.serialization.Codec;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -27,7 +28,7 @@ public class HiveStrand extends Feature<NoneFeatureConfiguration> {
 		
 		WorldGenLevel worldgenlevel = context.level();
 		BlockPos blockpos = context.origin();
-		Random random = context.random();
+		RandomSource random = context.random();
 		FeatureBuilder strandBuilder = new FeatureBuilder();
 		boolean fill = RollBoolean.roll(11, random);
 		
@@ -76,7 +77,7 @@ public class HiveStrand extends Feature<NoneFeatureConfiguration> {
 		return status;
 	}
 	
-	private boolean growXZPos(WorldGenLevel worldgenlevel, FeatureBuilder builder, BlockPos blockpos, boolean fill, Random random) {
+	private boolean growXZPos(WorldGenLevel worldgenlevel, FeatureBuilder builder, BlockPos blockpos, boolean fill, RandomSource random) {
 		for(int i = 0, j = 0, k = 0; j < MAXSIZE; i++, j+=random.nextInt(1,3), k++) {
 			if(!buildStrand(worldgenlevel, builder, blockpos, fill, i, j, k)) {
 				builder.build(worldgenlevel);
@@ -86,7 +87,7 @@ public class HiveStrand extends Feature<NoneFeatureConfiguration> {
 		return false;
 	}
 	
-	private boolean growXZNeg(WorldGenLevel worldgenlevel, FeatureBuilder builder, BlockPos blockpos, boolean fill, Random random) {
+	private boolean growXZNeg(WorldGenLevel worldgenlevel, FeatureBuilder builder, BlockPos blockpos, boolean fill, RandomSource random) {
 		for(int i = 0, j = 0, k = 0; j <= MAXSIZE; i--, j+=random.nextInt(1, 3), k--) {
 			if(!buildStrand(worldgenlevel, builder, blockpos, fill, i, j, k)) {
 				builder.build(worldgenlevel);
@@ -96,7 +97,7 @@ public class HiveStrand extends Feature<NoneFeatureConfiguration> {
 		return false;
 	}
 	
-	private boolean growXPos(WorldGenLevel worldgenlevel, FeatureBuilder builder, BlockPos blockpos, boolean fill, Random random) {
+	private boolean growXPos(WorldGenLevel worldgenlevel, FeatureBuilder builder, BlockPos blockpos, boolean fill, RandomSource random) {
 		for(int i = 0, j = 0, k = 0; j <= MAXSIZE; i++, j+=random.nextInt(1, 3)) {
 			if(!buildStrand(worldgenlevel, builder, blockpos, fill, i, j, k)) {
 				builder.build(worldgenlevel);
@@ -106,7 +107,7 @@ public class HiveStrand extends Feature<NoneFeatureConfiguration> {
 		return false;
 	}
 	
-	private boolean growXNeg(WorldGenLevel worldgenlevel, FeatureBuilder builder, BlockPos blockpos, boolean fill, Random random) {
+	private boolean growXNeg(WorldGenLevel worldgenlevel, FeatureBuilder builder, BlockPos blockpos, boolean fill, RandomSource random) {
 		for(int i = 0, j = 0, k = 0; j <= MAXSIZE; i--, j+=random.nextInt(1, 3)) {
 			if(!buildStrand(worldgenlevel, builder, blockpos, fill, i, j, k)) {
 				builder.build(worldgenlevel);
@@ -116,7 +117,7 @@ public class HiveStrand extends Feature<NoneFeatureConfiguration> {
 		return false;
 	}
 	
-	private boolean growZPos(WorldGenLevel worldgenlevel, FeatureBuilder builder, BlockPos blockpos, boolean fill, Random random) {
+	private boolean growZPos(WorldGenLevel worldgenlevel, FeatureBuilder builder, BlockPos blockpos, boolean fill, RandomSource random) {
 		for(int i = 0, j = 0, k = 0; j <= MAXSIZE; j+=random.nextInt(1, 3), k++) {
 			if(!buildStrand(worldgenlevel, builder, blockpos, fill, i, j, k)) {
 				builder.build(worldgenlevel);
@@ -126,7 +127,7 @@ public class HiveStrand extends Feature<NoneFeatureConfiguration> {
 		return false;
 	}
 	
-	private boolean growZNeg(WorldGenLevel worldgenlevel, FeatureBuilder builder, BlockPos blockpos, boolean fill, Random random) {
+	private boolean growZNeg(WorldGenLevel worldgenlevel, FeatureBuilder builder, BlockPos blockpos, boolean fill, RandomSource random) {
 		for(int i = 0, j = 0, k = 0; j <= MAXSIZE; j+=random.nextInt(1, 3), k--) {
 			if(!buildStrand(worldgenlevel, builder, blockpos, fill, i, j, k)) {
 				builder.build(worldgenlevel);

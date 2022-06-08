@@ -2,31 +2,47 @@
   "feature": "dreamland:jeweled_forest_vegetation",
   "placement": [
     {
+      "type": "minecraft:count",
       "count": {
         "type": "minecraft:uniform",
         "value": {
-          "min_inclusive": 16,
-          "max_inclusive": 96
+          "max_inclusive": 96,
+          "min_inclusive": 16
         }
-      },
-      "type": "minecraft:count"
+      }
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "max_inclusive": {
+          "below_top": 0
+        },
+        "min_inclusive": {
+          "absolute": 50
+        }
+      }
     },
     {
       "type": "minecraft:in_square"
     },
     {
-      "direction_of_search": "down",
-      "target_condition": {
-        "tag": "minecraft:dirt",
-        "type": "minecraft:matching_block_tag"
+      "type": "minecraft:environment_scan",
+      "allowed_search_condition": {
+        "type": "minecraft:matching_blocks",
+        "blocks": "minecraft:air"
       },
+      "direction_of_search": "down",
       "max_steps": 12,
-      "type": "minecraft:environment_scan"
+      "target_condition": {
+        "type": "minecraft:matching_blocks",
+        "blocks": "dreamland:flowering_grass"
+      }
     },
     {
+      "type": "minecraft:random_offset",
       "xz_spread": 0,
-      "y_spread": 1,
-      "type": "minecraft:random_offset"
+      "y_spread": 1
     },
     {
       "type": "minecraft:biome"

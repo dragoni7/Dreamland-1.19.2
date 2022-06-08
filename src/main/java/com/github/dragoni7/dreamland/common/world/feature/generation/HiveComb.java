@@ -8,6 +8,7 @@ import com.github.dragoni7.dreamland.util.RollBoolean;
 import com.mojang.serialization.Codec;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -26,7 +27,7 @@ public class HiveComb extends Feature<BlockStateConfiguration> {
 	public boolean place(FeaturePlaceContext<BlockStateConfiguration> context) {
 		WorldGenLevel worldgenlevel = context.level();
 		BlockPos blockpos = context.origin();
-		Random random = context.random();
+		RandomSource random = context.random();
 		BlockStateConfiguration blockstateconfig = context.config();
 		FeatureBuilder combBuilder = new FeatureBuilder();
 		BlockState combBlock = DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState();

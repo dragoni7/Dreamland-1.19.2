@@ -1,11 +1,10 @@
 {
-  "replace": false,
   "values": [
     "dreamland:clay_soil",
     "dreamland:hive_jelly_cluster",
     "dreamland:infested_hive_jelly_cluster",
     "dreamland:hive_membrane",
     "dreamland:mineral_dirt",
-    "dreamland:flowering_undergrowth"
+    "dreamland:flowering_grass"
   ]
 }

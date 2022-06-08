@@ -9,6 +9,15 @@ import com.github.dragoni7.dreamland.core.registry.DreamlandWoodSets;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.ButtonBlock;
+import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.PressurePlateBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
@@ -56,20 +65,20 @@ public class BlockStates extends BlockStateProvider{
 		ResourceLocation plankTxt = modLoc("block/" + setName + "_planks");
 		ResourceLocation trapDoorTxt = modLoc("block/" + setName + "_trapdoor");
 		ResourceLocation doorTop = modLoc("block/" + setName + "_door_top");
-		ResourceLocation doorBottom = modLoc("block/" + setName + "_door_bottom");
+		//ResourceLocation doorBottom = modLoc("block/" + setName + "_door_bottom");
 		ResourceLocation ladderTxt = modLoc("block/" + setName + "_ladder");
 		
-		axisBlock(set.getLog(), logSide, logTop);
-		axisBlock(set.getStrippedLog(), strippedLogSide, strippedLogTop);
-		axisBlock(set.getWood(), logSide, logSide);
-		simpleBlock(set.getPlank());
-		slabBlock(set.getSlab(), plankTxt, plankTxt, plankTxt, plankTxt);
-		stairsBlock(set.getStair(), plankTxt, plankTxt, plankTxt);
-		fenceBlock(set.getFence(), plankTxt);
-		fenceGateBlock(set.getFenceGate(), plankTxt);
-		doorBlock(set.getDoor(), doorBottom, doorTop);
-		trapdoorBlock(set.getTrapDoor(), trapDoorTxt, true);
-		buttonBlock(set.getButton(), plankTxt);
-		pressurePlateBlock(set.getPressurePlate(), plankTxt);
+		axisBlock((RotatedPillarBlock) set.getLog().get(), logSide, logTop);
+		axisBlock((RotatedPillarBlock) set.getStrippedLog().get(), strippedLogSide, strippedLogTop);
+		axisBlock((RotatedPillarBlock) set.getWood().get(), logSide, logSide);
+		simpleBlock(set.getPlank().get());
+		slabBlock((SlabBlock) set.getSlab().get(), plankTxt, plankTxt, plankTxt, plankTxt);
+		stairsBlock((StairBlock) set.getStair().get(), plankTxt, plankTxt, plankTxt);
+		fenceBlock((FenceBlock) set.getFence().get(), plankTxt);
+		fenceGateBlock((FenceGateBlock) set.getFenceGate().get(), plankTxt);
+		//doorBlock((DoorBlock) set.getDoor().get(), doorBottom, doorTop);
+		trapdoorBlock((TrapDoorBlock) set.getTrapDoor().get(), trapDoorTxt, true);
+		buttonBlock((ButtonBlock) set.getButton().get(), plankTxt);
+		pressurePlateBlock((PressurePlateBlock) set.getPressurePlate().get(), plankTxt);
 	}
 }

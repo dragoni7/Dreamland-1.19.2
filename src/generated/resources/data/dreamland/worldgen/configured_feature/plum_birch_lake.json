@@ -1,20 +1,20 @@
 {
+  "type": "dreamland:surface_lake_feature",
   "config": {
-    "insideBlock": {
-      "state": {
-        "Properties": {
-          "level": "0"
-        },
-        "Name": "minecraft:water"
-      },
-      "type": "minecraft:simple_state_provider"
-    },
     "barrier": {
+      "type": "minecraft:simple_state_provider",
       "state": {
         "Name": "dreamland:mineral_dirt"
-      },
-      "type": "minecraft:simple_state_provider"
+      }
+    },
+    "insideBlock": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:water",
+        "Properties": {
+          "level": "0"
+        }
+      }
     }
-  },
-  "type": "dreamland:surface_lake_feature"
+  }
 }

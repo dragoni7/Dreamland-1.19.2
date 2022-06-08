@@ -9,6 +9,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.MultifaceBlock;
+import net.minecraft.world.level.block.MultifaceSpreader;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -57,5 +58,10 @@ public class JellySplotch extends MultifaceBlock implements SimpleWaterloggedBlo
 	   public boolean propagatesSkylightDown(BlockState p_181225_, BlockGetter p_181226_, BlockPos p_181227_) {
 	      return p_181225_.getFluidState().isEmpty();
 	   }
+
+	@Override
+	public MultifaceSpreader getSpreader() {
+		return null;
+	}
 
 }

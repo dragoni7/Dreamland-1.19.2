@@ -15,9 +15,9 @@ import com.mojang.serialization.JsonOps;
 
 import net.minecraft.core.Registry;
 import net.minecraft.core.RegistryAccess;
+import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
-import net.minecraft.data.HashCache;
 import net.minecraft.resources.RegistryOps;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -46,33 +46,33 @@ public class DataGenerators {
 			.create();
 		
 		if (event.includeServer()) {
-			generator.addProvider(new DreamlandRecipes(generator));
-			generator.addProvider(new LootTables(generator));
-	        generator.addProvider(new AddBlockTags(generator, fileHelper));
-	        generator.addProvider(new AddFluidTags(generator, fileHelper));
+			generator.addProvider(true, new DreamlandRecipes(generator));
+			generator.addProvider(true, new LootTables(generator));
+	        generator.addProvider(true, new AddBlockTags(generator, fileHelper));
+	        generator.addProvider(true, new AddFluidTags(generator, fileHelper));
 	        //generator.addProvider(new AddItemTags(generator, null, fileHelper));
 	        
 	        for (ResourceKey<ConfiguredFeature<?,?>> key : DreamlandConfiguredFeatures.getKeys()) {
-	        	generator.addProvider(makeBuiltinRegistryProvider(Dreamland.MODID, outputFolder, gson, ops, registries, Registry.CONFIGURED_FEATURE_REGISTRY, ConfiguredFeature.DIRECT_CODEC, 
+	        	generator.addProvider(true, makeBuiltinRegistryProvider(Dreamland.MODID, outputFolder, gson, ops, registries, Registry.CONFIGURED_FEATURE_REGISTRY, ConfiguredFeature.DIRECT_CODEC, 
 						key));
 	        }
 	        
 	        for (ResourceKey<PlacedFeature> key : DreamlandFeaturePlacements.getKeys()) {
-	        	generator.addProvider(makeBuiltinRegistryProvider(Dreamland.MODID, outputFolder, gson, ops, registries, Registry.PLACED_FEATURE_REGISTRY, PlacedFeature.DIRECT_CODEC,
+	        	generator.addProvider(true, makeBuiltinRegistryProvider(Dreamland.MODID, outputFolder, gson, ops, registries, Registry.PLACED_FEATURE_REGISTRY, PlacedFeature.DIRECT_CODEC,
 						key));
 	        }
 	        
 	        for (ResourceKey<Biome> key : BiomeKeys.getAllKeys()) {
-	        	generator.addProvider(makeBuiltinRegistryProvider(Dreamland.MODID, outputFolder, gson, ops, registries, Registry.BIOME_REGISTRY, Biome.DIRECT_CODEC,
+	        	generator.addProvider(true, makeBuiltinRegistryProvider(Dreamland.MODID, outputFolder, gson, ops, registries, Registry.BIOME_REGISTRY, Biome.DIRECT_CODEC,
 						key));
 	        }
 	        
 		}
 		
 		if(event.includeClient()) {
-			generator.addProvider(new BlockStates(generator, Dreamland.MODID, fileHelper));
-			generator.addProvider(new ItemModels(generator, Dreamland.MODID, fileHelper));
-			generator.addProvider(new DreamlandLanguageProvider(generator,"en_us"));
+			generator.addProvider(true, new BlockStates(generator, Dreamland.MODID, fileHelper));
+			generator.addProvider(true, new ItemModels(generator, Dreamland.MODID, fileHelper));
+			generator.addProvider(true, new DreamlandLanguageProvider(generator,"en_us"));
 			
 		}
 		
@@ -88,7 +88,7 @@ public class DataGenerators {
 		return new DataProvider()
 		{
 			@Override
-			public void run(HashCache cache) throws IOException
+			public void run(CachedOutput cache) throws IOException
 			{
 				Registry<T> registry = registries.registryOrThrow(registryKey);
 				for (ResourceKey<T> key : keys)
@@ -102,7 +102,7 @@ public class DataGenerators {
 						.ifPresent(json -> {
 							try
 							{
-								DataProvider.save(gson, cache, json, path);
+								DataProvider.saveStable(cache, json, path);
 							}
 							catch (IOException e)
 							{

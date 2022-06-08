@@ -9,6 +9,7 @@ import com.github.dragoni7.dreamland.common.entities.mobs.LarvaEntity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -24,7 +25,7 @@ public class HiveGrowth extends CarpetBlock {
 		super(p_152915_);
 	}
 	
-	public void animateTick(BlockState state, Level level, BlockPos pos, Random p_54903_) {
+	public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource p_54903_) {
 	      super.animateTick(state, level, pos, p_54903_);
 	      if (p_54903_.nextInt(10) == 0) {
 	         level.addParticle(ParticleTypes.MYCELIUM, (double)pos.getX() + p_54903_.nextDouble(), (double)pos.getY() + 1.1D, (double)pos.getZ() + p_54903_.nextDouble(), 0.0D, 0.0D, 0.0D);

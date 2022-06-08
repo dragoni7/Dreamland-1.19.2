@@ -3,7 +3,7 @@
   "block.dreamland.cave_slime": "Hive Slime",
   "block.dreamland.cave_slime_plant": "Hive Slime Plant",
   "block.dreamland.dried_tar": "Dried Tar",
-  "block.dreamland.flowering_undergrowth": "Flowering Undergrowth",
+  "block.dreamland.flowering_grass": "Flowering Undergrowth",
   "block.dreamland.hive_block": "Hive Block",
   "block.dreamland.hive_block_with_jelly": "Hive Block With Jelly",
   "block.dreamland.hive_copper": "Hive Copper Ore",
@@ -57,5 +57,5 @@
   "entity.dreamland.thrown_hive_jelly": "Thrown Hive Jelly",
   "item.dreamland.hive_jelly": "Hive Jelly",
   "item.dreamland.tar_bucket": "Bucket of Tar",
-  "itemGroup.com.github.dragoni7.dreamland.Dreamland$1@201bc8f0": "Dreamland"
+  "itemGroup.com.github.dragoni7.dreamland.Dreamland$1@7382ec67": "Dreamland"
 }

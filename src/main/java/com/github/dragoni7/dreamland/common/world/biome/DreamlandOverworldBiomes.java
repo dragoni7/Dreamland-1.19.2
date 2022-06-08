@@ -22,19 +22,9 @@ public class DreamlandOverworldBiomes {
         return Mth.hsvToRgb(0.62222224F - $$1 * 0.05F, 0.5F + $$1 * 0.1F, 1.0F);
     }
 
-    private static Biome biome(Biome.Precipitation precipitation, Biome.BiomeCategory category, float temperature, float downfall, MobSpawnSettings.Builder spawnBuilder, BiomeGenerationSettings.Builder biomeBuilder, @Nullable Music music)
+    private static Biome biome(Biome.Precipitation precipitation, float temperature, float downfall, BiomeSpecialEffects specialEffects, MobSpawnSettings.Builder spawnBuilder, BiomeGenerationSettings.Builder biomeBuilder)
     {
-        return biome(precipitation, category, temperature, downfall, 4159204, 329011, spawnBuilder, biomeBuilder, music);
-    }
-    
-    private static Biome biome(Biome.Precipitation precipitation, Biome.BiomeCategory category, float temperature, float downfall, int waterColor, int waterFogColor, MobSpawnSettings.Builder spawnBuilder, BiomeGenerationSettings.Builder biomeBuilder, @Nullable Music music)
-    {
-        return (new Biome.BiomeBuilder()).precipitation(precipitation).biomeCategory(category).temperature(temperature).downfall(downfall).specialEffects(new BiomeSpecialEffects.Builder().waterColor(waterColor).waterFogColor(waterFogColor).fogColor(12638463).skyColor(calculateSkyColor(temperature)).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).backgroundMusic(music).build()).mobSpawnSettings(spawnBuilder.build()).generationSettings(biomeBuilder.build()).build();
-    }
-
-    private static Biome biomeWithEffects(Biome.Precipitation precipitation, Biome.BiomeCategory category, float temperature, float downfall, BiomeSpecialEffects specialEffects, MobSpawnSettings.Builder spawnBuilder, BiomeGenerationSettings.Builder biomeBuilder)
-    {
-        return (new Biome.BiomeBuilder()).precipitation(precipitation).biomeCategory(category).temperature(temperature).downfall(downfall).specialEffects(specialEffects).mobSpawnSettings(spawnBuilder.build()).generationSettings(biomeBuilder.build()).build();
+        return (new Biome.BiomeBuilder()).precipitation(precipitation).temperature(temperature).downfall(downfall).specialEffects(specialEffects).mobSpawnSettings(spawnBuilder.build()).generationSettings(biomeBuilder.build()).build();
     }
 
     private static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder)
@@ -59,17 +49,17 @@ public class DreamlandOverworldBiomes {
         DreamlandBiomeFeatures.addHiveOres(biomeBuilder);
         DreamlandBiomeFeatures.hiveBiomeFeatures(biomeBuilder);
         
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(DreamlandEntities.LARVA.get(), 4, 1, 2));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(DreamlandEntities.LARVA.get(), 6, 1, 2));
         
-        return biomeWithEffects(Biome.Precipitation.NONE, Biome.BiomeCategory.UNDERGROUND, 0.8F, 0.0F, new BiomeSpecialEffects.Builder()
-        																										.waterColor(12511438)
-        																										.waterFogColor(9680288)
-        																										.fogColor(12638463)
-        																										.skyColor(calculateSkyColor(0.8F))
-        																										.ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
-        																										.backgroundMusic(NORMAL_MUSIC)
-        																										.build(),
-        																										spawnBuilder, biomeBuilder);
+        return biome(Biome.Precipitation.NONE, 0.8F, 0.0F, new BiomeSpecialEffects.Builder()
+        		.waterColor(12511438)
+        		.waterFogColor(9680288)
+        		.fogColor(12638463)
+        		.skyColor(calculateSkyColor(0.8F))
+        		.ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+        		.backgroundMusic(NORMAL_MUSIC)
+        		.build(),
+        		 spawnBuilder, biomeBuilder);
     }
     
     public static Biome tardeltas() {
@@ -80,7 +70,7 @@ public class DreamlandOverworldBiomes {
     	
     	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(DreamlandEntities.OOZE.get(), 5, 1, 1));
     	
-    	return biomeWithEffects(Biome.Precipitation.NONE, Biome.BiomeCategory.DESERT, 2.0F, 0.0F, new BiomeSpecialEffects.Builder()
+    	return biome(Biome.Precipitation.NONE, 2.0F, 0.0F, new BiomeSpecialEffects.Builder()
 				.grassColorOverride(11334212)
 				.foliageColorOverride(11334212)
 				.waterColor(3604469)
@@ -99,7 +89,7 @@ public class DreamlandOverworldBiomes {
     	globalOverworldGeneration(biomeBuilder);
     	DreamlandBiomeFeatures.jeweledForestBiomeFeatures(biomeBuilder);
     	
-    	return biomeWithEffects(Biome.Precipitation.RAIN, Biome.BiomeCategory.FOREST, 0.9F, 1.0F, new BiomeSpecialEffects.Builder()
+    	return biome(Biome.Precipitation.RAIN, 0.9F, 1.0F, new BiomeSpecialEffects.Builder()
     			.grassColorOverride(14370147)
     			.waterColor(4751787)
     			.waterFogColor(4751787)

@@ -6,6 +6,7 @@ import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BonemealableBlock;
@@ -34,12 +35,12 @@ public class ClaySoil extends Block implements BonemealableBlock{
 	   }
 
 		@Override
-	   public boolean isBonemealSuccess(Level p_55007_, Random p_55008_, BlockPos p_55009_, BlockState p_55010_) {
+	   public boolean isBonemealSuccess(Level p_55007_, RandomSource p_55008_, BlockPos p_55009_, BlockState p_55010_) {
 	      return true;
 	   }
 
 		@Override
-	   public void performBonemeal(ServerLevel p_54997_, Random p_54998_, BlockPos p_54999_, BlockState p_55000_) {
+	   public void performBonemeal(ServerLevel p_54997_, RandomSource p_54998_, BlockPos p_54999_, BlockState p_55000_) {
 	      boolean flag1 = false;
 
 	      for(BlockPos blockpos : BlockPos.betweenClosed(p_54999_.offset(-1, -1, -1), p_54999_.offset(1, 1, 1))) {

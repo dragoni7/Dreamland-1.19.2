@@ -1,8 +1,8 @@
 {
+  "type": "dreamland:hive_comb_feature",
   "config": {
     "state": {
       "Name": "dreamland:hive_membrane"
     }
-  },
-  "type": "dreamland:hive_comb_feature"
+  }
 }

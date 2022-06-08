@@ -26,7 +26,7 @@ public class LarvaEyesFeatureRenderer extends GeoLayerRenderer<LarvaEntity> {
 	public void render(PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn,
 			LarvaEntity larvaEntity, float limbSwing, float limbSwingAmount, float partialTicks,
 			float ageInTicks, float netHeadYaw, float headPitch) {
-		larvaEyesEntityRenderer.render(getEntityModel().getModel(getEntityModel().getModelLocation(larvaEntity)),
+		larvaEyesEntityRenderer.render(getEntityModel().getModel(getEntityModel().getModelResource(larvaEntity)),
 				larvaEntity, partialTicks, RenderType.eyes(larvaLayer), matrixStackIn, bufferIn, bufferIn.getBuffer(RenderType.eyes(larvaLayer)), 15728640, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
 	}
 

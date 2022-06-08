@@ -28,17 +28,17 @@ public class AddBlockTags extends BlockTagsProvider{
 		.add(DreamlandBlocks.CLAY_SOIL_GRASS.get())
 		.add(DreamlandBlocks.DROUGHT_SOIL.get())
 		.add(DreamlandBlocks.MINERAL_DIRT.get())
-		.add(DreamlandBlocks.FLOWERING_UNDERGROWTH.get());
+		.add(DreamlandBlocks.FLOWERING_GRASS.get());
 		
 		tag(Tags.Blocks.STONE)
 		.add(DreamlandBlocks.DARK_QUARTZITE.get());
 		
 		tag(BlockTags.LOGS)
-		.add(DreamlandWoodSets.TAR_BARK.getLog())
-		.add(DreamlandWoodSets.PLUM_BIRCH.getLog());
+		.add(DreamlandWoodSets.TAR_BARK.getLog().get())
+		.add(DreamlandWoodSets.PLUM_BIRCH.getLog().get());
 		
 		tag(BlockTags.PLANKS)
-		.add(DreamlandWoodSets.PLUM_BIRCH.getPlank());
+		.add(DreamlandWoodSets.PLUM_BIRCH.getPlank().get());
 		
 		tag(BlockTags.LEAVES)
 		.add(DreamlandBlocks.TAR_BARK_LEAVES.get())
@@ -50,24 +50,27 @@ public class AddBlockTags extends BlockTagsProvider{
 		tag(BlockTags.REPLACEABLE_PLANTS)
 		.add(DreamlandBlocks.HIVE_GROWTH.get())
 		.add(DreamlandBlocks.TAR_SPROUTS.get())
-		.add(DreamlandBlocks.PINK_CRAB_GRASS.get());
+		.add(DreamlandBlocks.PINK_CRAB_GRASS.get())
+		.add(DreamlandBlocks.FLOWERING_UNDERGROWTH.get());
 		
 		tag(BlockTags.SAPLINGS)
 		.add(DreamlandBlocks.TAR_BARK_SAPLING.get())
 		.add(DreamlandBlocks.PLUM_BIRCH_SAPLING.get());
 		
 		tag(BlockTags.FLOWERS)
-		.add(DreamlandBlocks.OPALINE_MARIGOLD.get());
+		.add(DreamlandBlocks.OPALINE_MARIGOLD.get())
+		.add(DreamlandBlocks.FLOWERING_UNDERGROWTH.get());
 		tag(BlockTags.SMALL_FLOWERS)
-		.add(DreamlandBlocks.OPALINE_MARIGOLD.get());
+		.add(DreamlandBlocks.OPALINE_MARIGOLD.get())
+		.add(DreamlandBlocks.FLOWERING_UNDERGROWTH.get());
 		
 		tag(BlockTags.MINEABLE_WITH_AXE)
-		.add(DreamlandWoodSets.TAR_BARK.getLog())
-		.add(DreamlandWoodSets.TAR_BARK.getStrippedLog())
-		.add(DreamlandWoodSets.TAR_BARK.getPlank())
-		.add(DreamlandWoodSets.PLUM_BIRCH.getLog())
-		.add(DreamlandWoodSets.PLUM_BIRCH.getPlank())
-		.add(DreamlandWoodSets.PLUM_BIRCH.getStrippedLog());
+		.add(DreamlandWoodSets.TAR_BARK.getLog().get())
+		.add(DreamlandWoodSets.TAR_BARK.getStrippedLog().get())
+		.add(DreamlandWoodSets.TAR_BARK.getPlank().get())
+		.add(DreamlandWoodSets.PLUM_BIRCH.getLog().get())
+		.add(DreamlandWoodSets.PLUM_BIRCH.getPlank().get())
+		.add(DreamlandWoodSets.PLUM_BIRCH.getStrippedLog().get());
 		
 		tag(BlockTags.MINEABLE_WITH_SHOVEL)
 		.add(DreamlandBlocks.CLAY_SOIL.get())
@@ -75,7 +78,7 @@ public class AddBlockTags extends BlockTagsProvider{
 		.add(DreamlandBlocks.INFESTED_HIVE_JELLY_CLUSTER.get())
 		.add(DreamlandBlocks.HIVE_MEMBRANE.get())
 		.add(DreamlandBlocks.MINERAL_DIRT.get())
-		.add(DreamlandBlocks.FLOWERING_UNDERGROWTH.get());
+		.add(DreamlandBlocks.FLOWERING_GRASS.get());
 		
 		tag(BlockTags.MINEABLE_WITH_PICKAXE)
 		.add(DreamlandBlocks.DARK_QUARTZITE.get())

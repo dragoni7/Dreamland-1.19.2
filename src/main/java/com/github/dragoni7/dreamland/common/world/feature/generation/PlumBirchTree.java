@@ -1,7 +1,5 @@
 package com.github.dragoni7.dreamland.common.world.feature.generation;
 
-import java.util.Random;
-
 import com.github.dragoni7.dreamland.common.world.feature.util.FeatureBuilder;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandWoodSets;
@@ -12,6 +10,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.BeehiveBlock;
@@ -36,12 +35,12 @@ public class PlumBirchTree extends Feature<NoneFeatureConfiguration> {
 	@Override
 	public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
 		WorldGenLevel worldgenlevel = context.level();
-		Random rand = context.random();
+		RandomSource rand = context.random();
 		int height = rand.nextInt(MIN_TRUNK_HEIGHT, MAX_TRUNK_HEIGHT);
 		BlockPos blockpos = context.origin();
 		BlockPos branchPos = blockpos.above(height - rand.nextInt(5, 6));
 		FeatureBuilder plumBirchTreeBuilder = new FeatureBuilder();
-		final BlockState log = DreamlandWoodSets.PLUM_BIRCH.getLog().defaultBlockState();
+		final BlockState log = DreamlandWoodSets.PLUM_BIRCH.getLog().get().defaultBlockState();
 		Boolean branchResult = false;
 		
 		
@@ -117,7 +116,7 @@ public class PlumBirchTree extends Feature<NoneFeatureConfiguration> {
 		return true;
 	}
 	
-	private static boolean createLeaves(WorldGenLevel level, BlockPos pos, FeatureBuilder builder, Random rand, int height) {
+	private static boolean createLeaves(WorldGenLevel level, BlockPos pos, FeatureBuilder builder, RandomSource rand, int height) {
 		final BlockState leaves = DreamlandBlocks.PLUM_BIRCH_LEAVES.get().defaultBlockState().setValue(LeavesBlock.DISTANCE, 1);
 		BlockPos leavesPos = pos.above(height);
 		boolean canBuild = true;

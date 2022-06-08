@@ -1,13 +1,12 @@
 package com.github.dragoni7.dreamland.common.world.feature.generation;
 
-import java.util.Random;
-
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -25,7 +24,7 @@ public class SurfaceLake extends Feature<SurfaceLake.Configuration> {
 	   public boolean place(FeaturePlaceContext<SurfaceLake.Configuration> context) {
 	      BlockPos blockpos = context.origin();
 	      WorldGenLevel worldgenlevel = context.level();
-	      Random random = context.random();
+	      RandomSource random = context.random();
 	      SurfaceLake.Configuration surfacelake$configuration = context.config();
 	      if (blockpos.getY() <= worldgenlevel.getMinBuildHeight() + 4) {
 	         return false;

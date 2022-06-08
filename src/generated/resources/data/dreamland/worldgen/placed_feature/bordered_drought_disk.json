@@ -2,21 +2,21 @@
   "feature": "dreamland:bordered_drought_disk",
   "placement": [
     {
+      "type": "minecraft:count",
       "count": {
         "type": "minecraft:uniform",
         "value": {
-          "min_inclusive": 0,
-          "max_inclusive": 48
+          "max_inclusive": 48,
+          "min_inclusive": 0
         }
-      },
-      "type": "minecraft:count"
+      }
     },
     {
       "type": "minecraft:in_square"
     },
     {
-      "heightmap": "OCEAN_FLOOR_WG",
-      "type": "minecraft:heightmap"
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR_WG"
     },
     {
       "type": "minecraft:biome"

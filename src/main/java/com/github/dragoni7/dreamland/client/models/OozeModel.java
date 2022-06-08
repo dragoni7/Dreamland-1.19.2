@@ -12,17 +12,17 @@ import software.bernie.geckolib3.model.provider.data.EntityModelData;
 public class OozeModel extends AnimatedGeoModel<OozeEntity> {
 
 	@Override
-	public ResourceLocation getAnimationFileLocation(OozeEntity animatable) {
+	public ResourceLocation getAnimationResource(OozeEntity animatable) {
 		return DreamlandLoc.createLoc("animations/ooze.anim.json");
 	}
 
 	@Override
-	public ResourceLocation getModelLocation(OozeEntity object) {
+	public ResourceLocation getModelResource(OozeEntity object) {
 		return DreamlandLoc.createLoc("geo/ooze.geo.json");
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(OozeEntity object) {
+	public ResourceLocation getTextureResource(OozeEntity object) {
 		return DreamlandLoc.createLoc("textures/entity/ooze.png");
 	}
 

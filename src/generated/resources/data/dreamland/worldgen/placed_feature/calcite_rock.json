@@ -2,26 +2,41 @@
   "feature": "dreamland:calcite_rock",
   "placement": [
     {
-      "chance": 10,
-      "type": "minecraft:rarity_filter"
+      "type": "minecraft:rarity_filter",
+      "chance": 10
     },
     {
       "type": "minecraft:in_square"
     },
     {
-      "heightmap": "MOTION_BLOCKING",
-      "type": "minecraft:heightmap"
+      "type": "minecraft:heightmap",
+      "heightmap": "MOTION_BLOCKING"
     },
     {
+      "type": "minecraft:random_offset",
       "xz_spread": 0,
       "y_spread": {
         "type": "minecraft:uniform",
         "value": {
-          "min_inclusive": -8,
-          "max_inclusive": -4
+          "max_inclusive": -8,
+          "min_inclusive": -14
         }
+      }
+    },
+    {
+      "type": "minecraft:environment_scan",
+      "allowed_search_condition": {
+        "type": "minecraft:matching_blocks",
+        "blocks": [
+          "minecraft:air",
+          "minecraft:water"
+        ]
       },
-      "type": "minecraft:random_offset"
+      "direction_of_search": "down",
+      "max_steps": 12,
+      "target_condition": {
+        "type": "minecraft:solid"
+      }
     },
     {
       "type": "minecraft:biome"

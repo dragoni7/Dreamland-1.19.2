@@ -20,7 +20,7 @@ public class InfestedHiveCluster extends HiveCluster {
 	
 	@SuppressWarnings("deprecation")
 	public void spawnAfterBreak(BlockState state, ServerLevel serverLevel, BlockPos pos, ItemStack itemStack) {
-		super.spawnAfterBreak(state, serverLevel, pos, itemStack);
+		super.spawnAfterBreak(state, serverLevel, pos, itemStack, true);
 			if (serverLevel.getGameRules().getBoolean(GameRules.RULE_DOBLOCKDROPS) && EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SILK_TOUCH, itemStack) == 0 && !serverLevel.isClientSide) {
 		         LarvaEntity larva = DreamlandEntities.LARVA.get().create(serverLevel);
 		         larva.moveTo((double)pos.getX() + 0.5D, (double)pos.getY(), (double)pos.getZ() + 0.5D, 0.0F, 0.0F);

@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_bottom",
-  "textures": {
-    "bottom": "dreamland:block/tar_bark_door_bottom",
-    "top": "dreamland:block/tar_bark_door_top"
-  }
-}

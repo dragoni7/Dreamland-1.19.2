@@ -10,6 +10,7 @@ import com.github.dragoni7.dreamland.common.blocks.DreamlandSapling;
 import com.github.dragoni7.dreamland.common.blocks.DuskIce;
 import com.github.dragoni7.dreamland.common.blocks.EmissiveHiveBlock;
 import com.github.dragoni7.dreamland.common.blocks.FloweringUndergrowthBlock;
+import com.github.dragoni7.dreamland.common.blocks.GroundPlant;
 import com.github.dragoni7.dreamland.common.blocks.HiveBlock;
 import com.github.dragoni7.dreamland.common.blocks.HiveCluster;
 import com.github.dragoni7.dreamland.common.blocks.HiveGrowth;
@@ -18,6 +19,7 @@ import com.github.dragoni7.dreamland.common.blocks.InfestedHiveCluster;
 import com.github.dragoni7.dreamland.common.blocks.JellySplotch;
 import com.github.dragoni7.dreamland.common.blocks.LarvaAngerableBlock;
 import com.github.dragoni7.dreamland.common.blocks.TarSprouts;
+import com.github.dragoni7.dreamland.common.blocks.UndergrowthBlock;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffects;
@@ -171,14 +173,17 @@ public class DreamlandBlocks {
 	
 	public static final RegistryObject<Block> MINERAL_DIRT = createDirtBlock("mineral_dirt");
 	
-	public static final RegistryObject<Block> FLOWERING_UNDERGROWTH = BLOCKS.register("flowering_undergrowth",
+	public static final RegistryObject<Block> FLOWERING_GRASS = BLOCKS.register("flowering_grass",
 			() -> new FloweringUndergrowthBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK).color(MaterialColor.COLOR_PINK)));
 	
 	public static final RegistryObject<Block> OPALINE_MARIGOLD = BLOCKS.register("opaline_marigold",
 			() -> new FlowerBlock(MobEffects.LUCK, 5, BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.GRASS)));
 	
 	public static final RegistryObject<Block> PINK_CRAB_GRASS = BLOCKS.register("pink_crab_grass",
-			() -> new TallGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+			() -> new GroundPlant(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+	
+	public static final RegistryObject<Block> FLOWERING_UNDERGROWTH = BLOCKS.register("flowering_undergrowth",
+			() -> new UndergrowthBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
 	
 	public static final RegistryObject<Block> PLUM_BIRCH_SAPLING = createSaplingBlock("plum_birch_sapling", DreamlandFeatures.PLUM_BIRCH_TREE_FEATURE);
 	

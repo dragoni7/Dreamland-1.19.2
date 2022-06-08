@@ -59,9 +59,10 @@ public class DreamlandItems {
 	
 	public static final RegistryObject<Item> PLUM_BIRCH_LEAVES = registerBlockItem("plum_birch_leaves", () -> DreamlandBlocks.PLUM_BIRCH_LEAVES.get());
 	public static final RegistryObject<Item> MINERAL_DIRT = registerBlockItem("mineral_dirt", () -> DreamlandBlocks.MINERAL_DIRT.get());
-	public static final RegistryObject<Item> FLOWERING_UNDERGROWTH = registerBlockItem("flowering_undergrowth", () -> DreamlandBlocks.FLOWERING_UNDERGROWTH.get()); 
+	public static final RegistryObject<Item> FLOWERING_GRASS = registerBlockItem("flowering_grass", () -> DreamlandBlocks.FLOWERING_GRASS.get()); 
 	public static final RegistryObject<Item> OPALINE_MARIGOLD = registerBlockItem("opaline_marigold", () -> DreamlandBlocks.OPALINE_MARIGOLD.get());
 	public static final RegistryObject<Item> PINK_CRAB_GRASS = registerBlockItem("pink_crab_grass", () -> DreamlandBlocks.PINK_CRAB_GRASS.get());
+	public static final RegistryObject<Item> FLOWERING_UNDERGROWTH = registerBlockItem("flowering_undergrowth", () -> DreamlandBlocks.FLOWERING_UNDERGROWTH.get());
 	
 	//Items
 	public static final RegistryObject<Item> HIVE_JELLY_ITEM = registerHiveJelly("hive_jelly", new FoodProperties.Builder().nutrition(1).saturationMod(0.2F).build());

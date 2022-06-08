@@ -25,28 +25,28 @@ temp
 [[dependencies.dreamland]]
     modId = "minecraft"
     mandatory = true
-    versionRange = "[1.18.1,1.19)"
+    versionRange = "[1.19,)"
     ordering = "NONE"
     side = "BOTH"
 
 [[dependencies.forge]]
     modId = "forge"
     mandatory = true
-    versionRange = "[40.1.0,)"
+    versionRange = "[41.0.4,)"
     ordering = "NONE"
     side = "BOTH"
 
-[[dependencies.dreamland]]
+[[dependencies.terrablender]]
     modId = "terrablender"
     mandatory = true
-    versionRange = "[1.1.0,)"
+    versionRange = "[2.0.0.109,)"
     ordering = "AFTER"
     side = "BOTH"
 
 [[dependencies.geckolib]]
     modId = "geckolib3"
     mandatory = true
-    versionRange = "[3.0.12,)"
+    versionRange = "[3.1.0,)"
     ordering = "BEFORE"
     side = "BOTH"
 

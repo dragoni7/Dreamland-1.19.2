@@ -134,107 +134,107 @@ public class WoodSet {
 		return setName;
 	}
 
-	public RotatedPillarBlock getLog() {
-		return (RotatedPillarBlock)LOG.get();
+	public RegistryObject<Block> getLog() {
+		return LOG;
 	}
 
-	public RotatedPillarBlock getStrippedLog() {
-		return (RotatedPillarBlock)STRIPPED_LOG.get();
+	public RegistryObject<Block> getStrippedLog() {
+		return STRIPPED_LOG;
 	}
 	
-	public Block getPlank() {
-		return PLANK.get();
+	public RegistryObject<Block> getPlank() {
+		return PLANK;
 	}
 
-	public SlabBlock getSlab() {
-		return (SlabBlock)SLAB.get();
+	public RegistryObject<Block> getSlab() {
+		return SLAB;
 	}
 
-	public StairBlock getStair() {
-		return (StairBlock)STAIR.get();
+	public RegistryObject<Block> getStair() {
+		return STAIR;
 	}
 
-	public FenceBlock getFence() {
-		return (FenceBlock)FENCE.get();
+	public RegistryObject<Block> getFence() {
+		return FENCE;
 	}
 
-	public FenceGateBlock getFenceGate() {
-		return (FenceGateBlock)FENCE_GATE.get();
+	public RegistryObject<Block> getFenceGate() {
+		return FENCE_GATE;
 	}
 
-	public DoorBlock getDoor() {
-		return (DoorBlock)DOOR.get();
+	public RegistryObject<Block> getDoor() {
+		return DOOR;
 	}
 
-	public TrapDoorBlock getTrapDoor() {
-		return (TrapDoorBlock)TRAPDOOR.get();
+	public RegistryObject<Block> getTrapDoor() {
+		return TRAPDOOR;
 	}
 
-	public ButtonBlock getButton() {
-		return (ButtonBlock)BUTTON.get();
+	public RegistryObject<Block> getButton() {
+		return BUTTON;
 	}
 
-	public PressurePlateBlock getPressurePlate() {
-		return (PressurePlateBlock)PRESSURE_PLATE.get();
+	public RegistryObject<Block> getPressurePlate() {
+		return PRESSURE_PLATE;
 	}
 
-	public Block getLadder() {
-		return LADDER.get();
+	public RegistryObject<Block> getLadder() {
+		return LADDER;
 	}
 
-	public RotatedPillarBlock getWood() {
-		return (RotatedPillarBlock)WOOD.get();
+	public RegistryObject<Block> getWood() {
+		return WOOD;
 	}
 
-	public Item getLogItem() {
-		return LOG_ITEM.get();
+	public RegistryObject<Item> getLogItem() {
+		return LOG_ITEM;
 	}
 
-	public Item getStrippedLogItem() {
-		return STRIPPED_LOG_ITEM.get();
+	public RegistryObject<Item> getStrippedLogItem() {
+		return STRIPPED_LOG_ITEM;
 	}
 
-	public Item getWoodItem() {
-		return WOOD_ITEM.get();
+	public RegistryObject<Item> getWoodItem() {
+		return WOOD_ITEM;
 	}
 
-	public Item getPlankItem() {
-		return PLANK_ITEM.get();
+	public RegistryObject<Item> getPlankItem() {
+		return PLANK_ITEM;
 	}
 
-	public Item getSlabItem() {
-		return SLAB_ITEM.get();
+	public RegistryObject<Item> getSlabItem() {
+		return SLAB_ITEM;
 	}
 
-	public Item getStairItem() {
-		return STAIR_ITEM.get();
+	public RegistryObject<Item> getStairItem() {
+		return STAIR_ITEM;
 	}
 
-	public Item getFenceItem() {
-		return FENCE_ITEM.get();
+	public RegistryObject<Item> getFenceItem() {
+		return FENCE_ITEM;
 	}
 
-	public Item getFenceGateItem() {
-		return FENCE_GATE_ITEM.get();
+	public RegistryObject<Item> getFenceGateItem() {
+		return FENCE_GATE_ITEM;
 	}
 
-	public Item getDoorItem() {
-		return DOOR_ITEM.get();
+	public RegistryObject<Item> getDoorItem() {
+		return DOOR_ITEM;
 	}
 
-	public Item getTrapDoorItem() {
-		return TRAPDOOR_ITEM.get();
+	public RegistryObject<Item> getTrapDoorItem() {
+		return TRAPDOOR_ITEM;
 	}
 
-	public Item getButtonItem() {
-		return BUTTON_ITEM.get();
+	public RegistryObject<Item> getButtonItem() {
+		return BUTTON_ITEM;
 	}
 
-	public Item getPressurePlateItem() {
-		return PRESSURE_PLATE_ITEM.get();
+	public RegistryObject<Item> getPressurePlateItem() {
+		return PRESSURE_PLATE_ITEM;
 	}
 
-	public Item getLadderItem() {
-		return LADDER_ITEM.get();
+	public RegistryObject<Item> getLadderItem() {
+		return LADDER_ITEM;
 	}	
 }

@@ -7,6 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.FluidTags;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
@@ -30,12 +31,12 @@ public abstract class DreamlandSpreadingGrassBlock extends Block implements Bone
 	}
 
 	@Override
-	public boolean isBonemealSuccess(Level level, Random rand, BlockPos blockpos, BlockState state) {
+	public boolean isBonemealSuccess(Level level, RandomSource rand, BlockPos blockpos, BlockState state) {
 		return true;
 	}
 
 	@Override
-	public void performBonemeal(ServerLevel serverLevel, Random rand, BlockPos pos, BlockState state) {
+	public void performBonemeal(ServerLevel serverLevel, RandomSource rand, BlockPos pos, BlockState state) {
 		  
 	}
 	

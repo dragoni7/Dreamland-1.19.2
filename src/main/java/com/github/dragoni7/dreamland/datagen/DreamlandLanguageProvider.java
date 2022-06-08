@@ -49,7 +49,7 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		translateWoodSet(DreamlandWoodSets.TAR_BARK, "Tar Bark");
 		
 		add(DreamlandBlocks.MINERAL_DIRT.get(), "Mineral Dirt");
-		add(DreamlandBlocks.FLOWERING_UNDERGROWTH.get(), "Flowering Undergrowth");
+		add(DreamlandBlocks.FLOWERING_GRASS.get(), "Flowering Undergrowth");
 		add(DreamlandBlocks.PLUM_BIRCH_LEAVES.get(), "Plum Birch Leaves");
 		add(DreamlandBlocks.PINK_CRAB_GRASS.get(), "Pink Crab Grass");
 		add(DreamlandBlocks.OPALINE_MARIGOLD.get(), "Opaline Marigold");
@@ -67,19 +67,19 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 	}
 	
 	private void translateWoodSet(WoodSet set, String name) {
-		add(set.getButtonItem(), name + " Button");
-		add(set.getDoor(), name + " Door");
-		add(set.getFenceGate(), name + " Fence Gate");
-		add(set.getFence(), name + " Fence");
-		add(set.getLadder(), name + " Ladder");
-		add(set.getLog(), name + " Log");
-		add(set.getPlank(), name + " Planks");
-		add(set.getPressurePlate(), name + "Pressure Plate");
-		add(set.getSlab(), name + " Slab");
-		add(set.getStair(), name + " Stairs");
-		add(set.getStrippedLog(), "Stripped" + name + " Log");
-		add(set.getTrapDoor(), name + " Trap Door");
-		add(set.getWood(), name + " Wood");
+		add(set.getButtonItem().get(), name + " Button");
+		add(set.getDoor().get(), name + " Door");
+		add(set.getFenceGate().get(), name + " Fence Gate");
+		add(set.getFence().get(), name + " Fence");
+		add(set.getLadder().get(), name + " Ladder");
+		add(set.getLog().get(), name + " Log");
+		add(set.getPlank().get(), name + " Planks");
+		add(set.getPressurePlate().get(), name + "Pressure Plate");
+		add(set.getSlab().get(), name + " Slab");
+		add(set.getStair().get(), name + " Stairs");
+		add(set.getStrippedLog().get(), "Stripped" + name + " Log");
+		add(set.getTrapDoor().get(), name + " Trap Door");
+		add(set.getWood().get(), name + " Wood");
 	}
 
 }

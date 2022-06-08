@@ -6,10 +6,22 @@
       "minecraft:canyon"
     ]
   },
+  "downfall": 1.0,
+  "effects": {
+    "fog_color": 12875400,
+    "grass_color": 14370147,
+    "mood_sound": {
+      "block_search_extent": 8,
+      "offset": 2.0,
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000
+    },
+    "sky_color": 12875400,
+    "water_color": 4751787,
+    "water_fog_color": 4751787
+  },
   "features": [
-    [
-      "dreamland:calcite_rock"
-    ],
+    [],
     [
       "minecraft:lake_lava_underground",
       "minecraft:lake_lava_surface",
@@ -62,39 +74,25 @@
     [
       "minecraft:glow_lichen",
       "dreamland:plum_birch_tree",
-      "dreamland:jeweled_forest_vegetation"
+      "dreamland:jeweled_forest_vegetation",
+      "dreamland:flowering_undergrowth"
     ],
     [
-      "minecraft:freeze_top_layer"
+      "minecraft:freeze_top_layer",
+      "dreamland:calcite_rock"
     ]
   ],
+  "precipitation": "rain",
+  "spawn_costs": {},
   "spawners": {
-    "monster": [],
-    "creature": [],
     "ambient": [],
     "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [],
     "underground_water_creature": [],
-    "water_creature": [],
     "water_ambient": [],
-    "misc": []
+    "water_creature": []
   },
-  "spawn_costs": {},
-  "forge:registry_name": "dreamland:jeweled_forest",
-  "precipitation": "rain",
-  "temperature": 0.9,
-  "downfall": 1.0,
-  "category": "forest",
-  "effects": {
-    "mood_sound": {
-      "sound": "minecraft:ambient.cave",
-      "tick_delay": 6000,
-      "block_search_extent": 8,
-      "offset": 2.0
-    },
-    "sky_color": 12875400,
-    "grass_color": 14370147,
-    "fog_color": 12875400,
-    "water_color": 4751787,
-    "water_fog_color": 4751787
-  }
+  "temperature": 0.9
 }

@@ -39,7 +39,6 @@ public class DreamlandBiomeFeatures {
 	
 	public static void tardeltasBiomeFeatures(BiomeGenerationSettings.Builder builder) {
 		builder.addFeature(GenerationStep.Decoration.LAKES, DreamlandFeaturePlacements.PLACED_TAR_DELTA);
-		builder.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, DreamlandFeaturePlacements.PLACED_DROUGHT_DISK);
 		builder.addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, DreamlandFeaturePlacements.PLACED_TAR_SKELETON);
 		builder.addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, DreamlandFeaturePlacements.PLACED_TAR_BONE);
 		builder.addFeature(GenerationStep.Decoration.LAKES, DreamlandFeaturePlacements.DROUGHT_BORDERED_DISK_SURFACE);
@@ -52,7 +51,8 @@ public class DreamlandBiomeFeatures {
 	public static void jeweledForestBiomeFeatures(BiomeGenerationSettings.Builder builder) {
 		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.PLACED_PLUM_BIRCH_TREE);
 		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.PLACED_JEWELED_FOREST_VEGETATION);
+		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.PLACED_FLOWERING_UNDERGROWTH);
 		builder.addFeature(GenerationStep.Decoration.LAKES, DreamlandFeaturePlacements.PLACED_PLUM_BIRCH_LAKE);
-		builder.addFeature(GenerationStep.Decoration.RAW_GENERATION, DreamlandFeaturePlacements.PLACED_CALCITE_ROCK);
+		builder.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, DreamlandFeaturePlacements.PLACED_CALCITE_ROCK);
 	}
 }

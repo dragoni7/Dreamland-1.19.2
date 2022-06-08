@@ -6,6 +6,19 @@
       "minecraft:canyon"
     ]
   },
+  "downfall": 0.0,
+  "effects": {
+    "fog_color": 12638463,
+    "mood_sound": {
+      "block_search_extent": 8,
+      "offset": 2.0,
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000
+    },
+    "sky_color": 7907327,
+    "water_color": 12511438,
+    "water_fog_color": 9680288
+  },
   "features": [
     [
       "dreamland:hive_cave"
@@ -88,39 +101,24 @@
       "minecraft:freeze_top_layer"
     ]
   ],
+  "precipitation": "none",
+  "spawn_costs": {},
   "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
     "monster": [
       {
         "type": "dreamland:larva",
-        "weight": 4,
+        "maxCount": 2,
         "minCount": 1,
-        "maxCount": 2
+        "weight": 6
       }
     ],
-    "creature": [],
-    "ambient": [],
-    "axolotls": [],
     "underground_water_creature": [],
-    "water_creature": [],
     "water_ambient": [],
-    "misc": []
+    "water_creature": []
   },
-  "spawn_costs": {},
-  "forge:registry_name": "dreamland:hive",
-  "precipitation": "none",
-  "temperature": 0.8,
-  "downfall": 0.0,
-  "category": "underground",
-  "effects": {
-    "mood_sound": {
-      "sound": "minecraft:ambient.cave",
-      "tick_delay": 6000,
-      "block_search_extent": 8,
-      "offset": 2.0
-    },
-    "sky_color": 7907327,
-    "fog_color": 12638463,
-    "water_color": 12511438,
-    "water_fog_color": 9680288
-  }
+  "temperature": 0.8
 }

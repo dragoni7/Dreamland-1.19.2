@@ -15,8 +15,8 @@ public class TarSprouts extends BushBlock implements net.minecraftforge.common.I
 
 	protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 13.0D, 14.0D);
 	
-	public TarSprouts(Properties p_51021_) {
-		super(p_51021_);
+	public TarSprouts(Properties properties) {
+		super(properties);
 	}
 	
 	@Override
@@ -29,7 +29,7 @@ public class TarSprouts extends BushBlock implements net.minecraftforge.common.I
 	   }
 	
 	public BlockBehaviour.OffsetType getOffsetType() {
-	      return BlockBehaviour.OffsetType.XYZ;
+	      return BlockBehaviour.OffsetType.XZ;
 	   }
 
 }

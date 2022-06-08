@@ -1,10 +1,11 @@
 package com.github.dragoni7.dreamland.util;
 
-import java.util.Random;
+
+import net.minecraft.util.RandomSource;
 
 public class RollBoolean {
 	
-	public static Boolean roll(int bound, Random rand) {
+	public static Boolean roll(int bound, RandomSource rand) {
 		return rand.nextInt(bound) == 0;
 	}
 }

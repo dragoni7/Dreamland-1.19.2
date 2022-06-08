@@ -1,3 +1,6 @@
 {
-  "parent": "dreamland:block/flowering_undergrowth"
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "dreamland:block/flowering_undergrowth"
+  }
 }

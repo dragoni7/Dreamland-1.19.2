@@ -14,6 +14,7 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.RandomSource;
 import net.minecraft.util.TimeUtil;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.Difficulty;
@@ -142,7 +143,7 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 	      }
 	}
 	
-	public static boolean checkLarvaSpawnRules(EntityType<? extends Monster> entityType, ServerLevelAccessor serverLevel, MobSpawnType spawnType, BlockPos pos, Random rand) {
+	public static boolean checkLarvaSpawnRules(EntityType<? extends Monster> entityType, ServerLevelAccessor serverLevel, MobSpawnType spawnType, BlockPos pos, RandomSource rand) {
 		if (serverLevel.getDifficulty() != Difficulty.PEACEFUL) {
 			return true;
 		}
@@ -152,7 +153,7 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 	   }
 	
 	public boolean checkSpawnRules(LevelAccessor level, MobSpawnType spawnReason) {
-		Random rand = getRandom();
+		RandomSource rand = getRandom();
 		
         if (spawnReason == MobSpawnType.SPAWNER) {
         	return true;

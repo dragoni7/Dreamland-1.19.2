@@ -6,6 +6,7 @@ import com.github.dragoni7.dreamland.common.world.feature.util.FeatureBuilder;
 import com.mojang.serialization.Codec;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -25,7 +26,7 @@ public class TarBone extends Feature<NoneFeatureConfiguration> {
 	public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
 		WorldGenLevel worldgenlevel = context.level();
 		BlockPos blockpos = context.origin();
-		Random random = context.random();
+		RandomSource random = context.random();
 		boolean status = false;
 		FeatureBuilder tarBoneBuilder = new FeatureBuilder();
 		

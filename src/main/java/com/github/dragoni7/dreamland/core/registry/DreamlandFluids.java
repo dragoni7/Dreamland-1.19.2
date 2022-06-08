@@ -38,6 +38,6 @@ public class DreamlandFluids {
 	
 	public static final RegistryObject<LiquidBlock> TAR_BLOCK = DreamlandBlocks.BLOCKS.register("tar",
 			() -> new TarLiquidBlock(() -> DreamlandFluids.TAR_FLUID.get(), BlockBehaviour.Properties.of(Material.LAVA)
-					.noCollission().strength(100f).noDrops()));
+					.noCollission().strength(100f)));
 	
 }

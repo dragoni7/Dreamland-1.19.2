@@ -13,6 +13,7 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityDimensions;
@@ -101,7 +102,7 @@ public class OozeEntity extends Monster implements IAnimatable {
 		return MobType.UNDEFINED;
 	}
 	
-	public static boolean checkOozeSpawnRules(EntityType<? extends Monster> entityType, ServerLevelAccessor serverLevel, MobSpawnType spawnType, BlockPos pos, Random rand) {
+	public static boolean checkOozeSpawnRules(EntityType<? extends Monster> entityType, ServerLevelAccessor serverLevel, MobSpawnType spawnType, BlockPos pos, RandomSource rand) {
 		if (serverLevel.getDifficulty() != Difficulty.PEACEFUL) {
 			if (serverLevel.getBlockState(pos.below()).is(DreamlandFluids.TAR_BLOCK.get()) && !serverLevel.getFluidState(pos.below().below()).is(DreamlandFluids.TAR_FLUID.get())) {
 				return true;
@@ -113,7 +114,7 @@ public class OozeEntity extends Monster implements IAnimatable {
 	   }
 	
 	public boolean checkSpawnRules(LevelAccessor level, MobSpawnType spawnReason) {
-		Random rand = getRandom();
+		RandomSource rand = getRandom();
 		
         if (spawnReason == MobSpawnType.SPAWNER) {
         	return true;
