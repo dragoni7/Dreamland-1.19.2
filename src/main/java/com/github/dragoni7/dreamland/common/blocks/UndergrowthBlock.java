@@ -10,8 +10,8 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class UndergrowthBlock extends BushBlock implements net.minecraftforge.common.IForgeShearable {
-	protected static final float AABB_OFFSET = 3.0F;
-	protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 5.0D, 14.0D);
+	
+	protected static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 15.0D, 2.0D, 15.0D);
 	   
 	public UndergrowthBlock(Properties properties) {
 		super(properties);
@@ -19,10 +19,6 @@ public class UndergrowthBlock extends BushBlock implements net.minecraftforge.co
 	
 	public VoxelShape getShape(BlockState state, BlockGetter blockGetter, BlockPos pos, CollisionContext context) {
 	      return SHAPE;
-	   }
-	
-	public BlockBehaviour.OffsetType getOffsetType() {
-	      return BlockBehaviour.OffsetType.XZ;
 	   }
 
 }

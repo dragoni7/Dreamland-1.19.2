@@ -20,9 +20,5 @@ public class GroundPlant extends BushBlock implements net.minecraftforge.common.
 	public VoxelShape getShape(BlockState state, BlockGetter blockGetter, BlockPos pos, CollisionContext context) {
 	      return SHAPE;
 	   }
-	
-	public BlockBehaviour.OffsetType getOffsetType() {
-	      return BlockBehaviour.OffsetType.XZ;
-	   }
 
 }

@@ -165,7 +165,7 @@ public class DreamlandBlocks {
 	public static final RegistryObject<Block> TAR_BARK_SAPLING = createSaplingBlock("tar_bark_sapling", DreamlandFeatures.TAR_BARK_TREE_FEATURE);
 	
 	public static final RegistryObject<Block> TAR_SPROUTS = BLOCKS.register("tar_sprouts",
-			() -> new TarSprouts(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+			() -> new TarSprouts(BlockBehaviour.Properties.copy(Blocks.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
 	
 	public static final RegistryObject<Block> TAR_BARK_LEAVES = createLeavesBlock("tar_bark_leaves", MaterialColor.COLOR_LIGHT_GREEN);
 	
@@ -180,10 +180,10 @@ public class DreamlandBlocks {
 			() -> new FlowerBlock(MobEffects.LUCK, 5, BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.GRASS)));
 	
 	public static final RegistryObject<Block> PINK_CRAB_GRASS = BLOCKS.register("pink_crab_grass",
-			() -> new GroundPlant(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+			() -> new GroundPlant(BlockBehaviour.Properties.copy(Blocks.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
 	
 	public static final RegistryObject<Block> FLOWERING_UNDERGROWTH = BLOCKS.register("flowering_undergrowth",
-			() -> new UndergrowthBlock(BlockBehaviour.Properties.copy(Blocks.GRASS)));
+			() -> new UndergrowthBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).offsetType(BlockBehaviour.OffsetType.NONE)));
 	
 	public static final RegistryObject<Block> PLUM_BIRCH_SAPLING = createSaplingBlock("plum_birch_sapling", DreamlandFeatures.PLUM_BIRCH_TREE_FEATURE);
 	

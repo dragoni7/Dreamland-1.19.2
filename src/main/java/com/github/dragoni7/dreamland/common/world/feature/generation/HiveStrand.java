@@ -1,7 +1,5 @@
 package com.github.dragoni7.dreamland.common.world.feature.generation;
 
-import java.util.Random;
-
 import com.github.dragoni7.dreamland.common.world.feature.util.FeatureBuilder;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.util.RollBoolean;
@@ -55,7 +53,7 @@ public class HiveStrand extends Feature<NoneFeatureConfiguration> {
 		builder.addInput(worldgenlevel, strandBlock, blockpos.offset(i,j-1,k));
 		
 		if(fill) {
-			while(blockpos.offset(i,height,k).getY() < MAXSIZE && blockpos.offset(i,height,k).getY() > worldgenlevel.getMinBuildHeight()) {
+			while(blockpos.offset(i,height,k).getY() < MAXSIZE && blockpos.offset(i,height,k).getY() > blockpos.getY()) {
 				
 				builder.addInput(worldgenlevel, fillBlock, blockpos.offset(i,height,k));
 				height--;
@@ -65,7 +63,7 @@ public class HiveStrand extends Feature<NoneFeatureConfiguration> {
 		if (!status) {
 			if(fill) {
 				height = j-2;
-				while(blockpos.offset(i,height,k).getY() < 60 && blockpos.offset(i,height,k).getY() > worldgenlevel.getMinBuildHeight()) {
+				while(blockpos.offset(i,height,k).getY() < MAXSIZE && blockpos.offset(i,height,k).getY() > blockpos.getY()) {
 					
 					builder.addInput(worldgenlevel, strandBlock, blockpos.offset(i,height,k));
 					height--;

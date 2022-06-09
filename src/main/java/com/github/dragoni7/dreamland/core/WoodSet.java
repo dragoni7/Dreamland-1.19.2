@@ -104,7 +104,7 @@ public class WoodSet {
 		TRAPDOOR = DreamlandBlocks.BLOCKS.register(setName + "_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).strength(2.0F, 3.0F).noOcclusion()));
 		BUTTON = DreamlandBlocks.BLOCKS.register(setName + "_button", () -> new WoodButtonBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().strength(0.5F).sound(SoundType.WOOD)));
 		PRESSURE_PLATE = DreamlandBlocks.BLOCKS.register(setName + "_pressure_plate", () -> new PressurePlateBlock(Sensitivity.EVERYTHING, BlockBehaviour.Properties.of(Material.WOOD, color).noCollission().strength(0.5F).sound(SoundType.WOOD)));
-		LADDER = DreamlandBlocks.BLOCKS.register(setName + "_ladder", () -> new LadderBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(2.0F, 3.0F)));
+		LADDER = DreamlandBlocks.BLOCKS.register(setName + "_ladder", () -> new LadderBlock(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.WOOD).strength(2.0F, 3.0F).noOcclusion()));
 	}
 	
 	private void registerItems() {

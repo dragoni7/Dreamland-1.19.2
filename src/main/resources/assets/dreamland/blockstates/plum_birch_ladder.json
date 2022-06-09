@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "dreamland:block/plum_birch_ladder",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "dreamland:block/plum_birch_ladder"
+    },
+    "facing=south": {
+      "model": "dreamland:block/plum_birch_ladder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "dreamland:block/plum_birch_ladder",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "dreamland:block/tar_bark_ladder",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "dreamland:block/tar_bark_ladder"
+    },
+    "facing=south": {
+      "model": "dreamland:block/tar_bark_ladder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "dreamland:block/tar_bark_ladder",
+      "y": 270
+    }
+  }
+}

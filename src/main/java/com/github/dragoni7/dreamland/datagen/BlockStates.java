@@ -18,7 +18,9 @@ import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
+import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class BlockStates extends BlockStateProvider{
@@ -65,8 +67,11 @@ public class BlockStates extends BlockStateProvider{
 		ResourceLocation plankTxt = modLoc("block/" + setName + "_planks");
 		ResourceLocation trapDoorTxt = modLoc("block/" + setName + "_trapdoor");
 		ResourceLocation doorTop = modLoc("block/" + setName + "_door_top");
-		//ResourceLocation doorBottom = modLoc("block/" + setName + "_door_bottom");
-		ResourceLocation ladderTxt = modLoc("block/" + setName + "_ladder");
+		ResourceLocation doorBottom = modLoc("block/" + setName + "_door_bottom");
+		ModelFile bottomLeft = models().withExistingParent("door/" + setName + "_bottom_left", "block/door_" + "bottom_left").texture("bottom", doorBottom).texture("top", doorTop);
+		ModelFile bottomRight = models().withExistingParent("door/" + setName + "_bottom_right", "block/door_" + "bottom_right").texture("bottom", doorBottom).texture("top", doorTop);
+		ModelFile topLeft = models().withExistingParent("door/" + setName + "_top_left", "block/door_" + "top_left").texture("bottom", doorBottom).texture("top", doorTop);
+		ModelFile topRight = models().withExistingParent("door/" + setName + "_top_right", "block/door_" + "top_right").texture("bottom", doorBottom).texture("top", doorTop);
 		
 		axisBlock((RotatedPillarBlock) set.getLog().get(), logSide, logTop);
 		axisBlock((RotatedPillarBlock) set.getStrippedLog().get(), strippedLogSide, strippedLogTop);
@@ -76,9 +81,13 @@ public class BlockStates extends BlockStateProvider{
 		stairsBlock((StairBlock) set.getStair().get(), plankTxt, plankTxt, plankTxt);
 		fenceBlock((FenceBlock) set.getFence().get(), plankTxt);
 		fenceGateBlock((FenceGateBlock) set.getFenceGate().get(), plankTxt);
-		//doorBlock((DoorBlock) set.getDoor().get(), doorBottom, doorTop);
+		doorBlock((DoorBlock) set.getDoor().get(), bottomLeft, bottomRight, topLeft, topRight);
 		trapdoorBlock((TrapDoorBlock) set.getTrapDoor().get(), trapDoorTxt, true);
 		buttonBlock((ButtonBlock) set.getButton().get(), plankTxt);
 		pressurePlateBlock((PressurePlateBlock) set.getPressurePlate().get(), plankTxt);
+	}
+	
+	private BlockModelBuilder doorModel(String name, String type, ResourceLocation bottom, ResourceLocation top) {
+		return models().withExistingParent(name, "block/door_" + type).texture("bottom", bottom).texture("top", top);
 	}
 }

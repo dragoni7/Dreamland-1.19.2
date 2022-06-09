@@ -1,9 +1,6 @@
 package com.github.dragoni7.dreamland.common.entities.mobs;
 
-import java.util.Random;
-
 import com.github.dragoni7.dreamland.common.entities.projectiles.TarBall;
-import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
 import com.github.dragoni7.dreamland.util.RollBoolean;
 
@@ -28,9 +25,8 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.monster.Ghast;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -47,7 +43,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 public class OozeEntity extends Monster implements IAnimatable {
 	
 	private AnimationFactory factory = new AnimationFactory(this);
-	private static final EntityDataAccessor<Boolean> DATA_IS_CHARGING = SynchedEntityData.defineId(Ghast.class, EntityDataSerializers.BOOLEAN);
+	private static final EntityDataAccessor<Boolean> DATA_OOZE_IS_CHARGING = SynchedEntityData.defineId(OozeEntity.class, EntityDataSerializers.BOOLEAN);
 	
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		
@@ -68,12 +64,17 @@ public class OozeEntity extends Monster implements IAnimatable {
 				.add(Attributes.KNOCKBACK_RESISTANCE, 10.0D);
 	}
 	
-	public boolean isCharging() {
-	      return this.entityData.get(DATA_IS_CHARGING);
+	public boolean isOozeCharging() {
+	      return this.entityData.get(DATA_OOZE_IS_CHARGING);
 	   }
-
-	   public void setCharging(boolean p_32759_) {
-	      this.entityData.set(DATA_IS_CHARGING, p_32759_);
+	
+	public void setOozeCharging(boolean charging) {
+	      this.entityData.set(DATA_OOZE_IS_CHARGING, charging);
+	   }
+	
+	protected void defineSynchedData() {
+	      super.defineSynchedData();
+	      this.entityData.define(DATA_OOZE_IS_CHARGING, false);
 	   }
 
 	@Override
@@ -86,6 +87,8 @@ public class OozeEntity extends Monster implements IAnimatable {
 		this.goalSelector.addGoal(0, new LookAtPlayerGoal(this, Player.class, 8.0F));
 		this.goalSelector.addGoal(1, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(2, new OozeShootTarGoal(this));
+		
+		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
 	}
 	
 	protected float getStandingEyeHeight(Pose pose, EntityDimensions entityDimensions) {
@@ -145,18 +148,17 @@ public class OozeEntity extends Monster implements IAnimatable {
 		}
 		
 		public void start() {
-	         this.chargeTime = 0;
-	      }
+	       this.chargeTime = 0;
+	    }
 
-	      public void stop() {
-	         this.ooze.setCharging(false);
-	      }
+	    public void stop() {
+	       this.ooze.setOozeCharging(false);
+	    }
 
-	      public boolean requiresUpdateEveryTick() {
-	         return true;
-	      }
-
-		@Override
+	    public boolean requiresUpdateEveryTick() {
+	       return true;
+	    }
+	      
 		public boolean canUse() {
 			return this.ooze.getTarget() != null;
 		}
@@ -165,25 +167,30 @@ public class OozeEntity extends Monster implements IAnimatable {
 			LivingEntity livingentity = this.ooze.getTarget();
 			
 			if (livingentity != null) {
+				this.ooze.getLookControl().setLookAt(livingentity);
 				if (livingentity.distanceToSqr(this.ooze) < 2048.0D && this.ooze.hasLineOfSight(livingentity)) {
 					Level level = this.ooze.level;
 					++this.chargeTime;
-					if (this.chargeTime == 5) {
+					if (this.chargeTime == 40) {
 						level.levelEvent((Player)null, 1015, this.ooze.blockPosition(), 0);
 					}
 					
-					if (this.chargeTime == 10) {
-						double d1 = 4.0D;
+					if (this.chargeTime == 60) {
 						Vec3 vec3 = this.ooze.getViewVector(1.0F);
+						double d2 = livingentity.getX() - (this.ooze.getX() + vec3.x);
+						double d3 = livingentity.getY(0.5D) - (0.5D + this.ooze.getY(0.5));
+						double d4 = livingentity.getZ() - (this.ooze.getZ() + vec3.z);
 						
-						TarBall tarball = new TarBall(this.ooze, level);
+						TarBall tarball = new TarBall(level, this.ooze, d2, d3, d4);
+						tarball.setPos(this.ooze.getX() + vec3.x, this.ooze.getY(0.5D) + 0.5D, this.ooze.getZ() + vec3.z);
 						level.addFreshEntity(tarball);
+						this.chargeTime = -120;
 					}
 				} else if (this.chargeTime > 0) {
 					--this.chargeTime;
 				}
 				
-				this.ooze.setCharging(this.chargeTime > 5);
+				this.ooze.setOozeCharging(this.chargeTime > 40);
 			}
 		}
 		

@@ -43,7 +43,8 @@ public class ItemModels extends ItemModelProvider{
 		
 		createBlockItemModel(DreamlandItems.PLUM_BIRCH_LEAVES, "block/plum_birch_leaves1");
 		createBlockItemModel(DreamlandItems.MINERAL_DIRT, "block/mineral_dirt");
-		createBlockItemModel(DreamlandItems.FLOWERING_GRASS, "block/flowering_grass");
+		createBlockItemModel(DreamlandItems.FLOWERING_GRASS, "block/flowering_grass");		
+		createBlockItemModel(DreamlandItems.FLOWERING_UNDERGROWTH, "block/flowering_undergrowth");
 		
 		createSingleTextureModel(DreamlandItems.HIVE_JELLY_ITEM, "item/hive_jelly");
 		createSingleTextureModel(DreamlandItems.CAVE_SLIME, "block/cave_slime");
@@ -51,7 +52,6 @@ public class ItemModels extends ItemModelProvider{
 		createSingleTextureModel(DreamlandItems.TAR_SPROUTS, "block/tar_sprouts");
 		createSingleTextureModel(DreamlandItems.OPALINE_MARIGOLD, "block/opaline_marigold");
 		createSingleTextureModel(DreamlandItems.PINK_CRAB_GRASS, "block/pink_crab_grass");
-		createSingleTextureModel(DreamlandItems.FLOWERING_UNDERGROWTH, "block/flowering_undergrowth");
 		
 		registerWoodSet(DreamlandWoodSets.PLUM_BIRCH);
 		registerWoodSet(DreamlandWoodSets.TAR_BARK);
@@ -67,6 +67,7 @@ public class ItemModels extends ItemModelProvider{
 		createBlockItemModel(set.getSlabItem(), path + "_slab");
 		createBlockItemModel(set.getFenceItem(), path + "_fence_side");
 		createBlockItemModel(set.getFenceGateItem(), path + "_fence_gate");
+		createSingleTextureModel(set.getLadderItem(), "block/" + set.getSetName() + "_ladder");
 		createSingleTextureModel(set.getDoorItem(), "item/" + set.getSetName() + "_door");
 		createBlockItemModel(set.getTrapDoorItem(), path + "_trapdoor_bottom");
 		createBlockItemModel(set.getButtonItem(), path + "_button");

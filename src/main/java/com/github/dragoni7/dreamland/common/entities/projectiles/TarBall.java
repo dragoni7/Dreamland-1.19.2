@@ -1,13 +1,18 @@
 package com.github.dragoni7.dreamland.common.entities.projectiles;
 
+import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractHurtingProjectile;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.EntityHitResult;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -26,17 +31,39 @@ public class TarBall extends AbstractHurtingProjectile implements IAnimatable {
 		return PlayState.CONTINUE;
 	}
 
-	public TarBall(EntityType<? extends AbstractHurtingProjectile> type, Level level) {
+	public TarBall(EntityType<? extends TarBall> type, Level level) {
 		super(type, level);
+	}
+	
+	public TarBall(Level level, LivingEntity entity, double x, double y, double z) {
+		super(DreamlandEntities.TAR_BALL.get(), entity, x, y, z, level);
 	}
 	
 	public TarBall(LivingEntity owner, Level level) {
 		super(DreamlandEntities.TAR_BALL.get(), level);
 	}
 	
+	protected void onHitEntity(EntityHitResult hitResult) {
+	      super.onHitEntity(hitResult);
+	      if (!this.level.isClientSide) {
+	         Entity entity = hitResult.getEntity();
+	         Entity owner = this.getOwner();
+	         
+	         if (owner instanceof LivingEntity) {
+	        	entity.hurt(DamageSource.indirectMobAttack(this, (LivingEntity) owner), 1.0F);
+	            this.doEnchantDamageEffects((LivingEntity)owner, entity);
+	         }
+	         
+	         if (entity instanceof LivingEntity) {
+	        	 ((LivingEntity) entity).addEffect(new MobEffectInstance(DreamlandEffects.TARRED.get(), 40));
+	         }
+
+	      }
+	   }
+	
 	@Override
-	protected ParticleOptions getTrailParticle() {
-	      return ParticleTypes.SMOKE;
+	protected boolean shouldBurn() {
+	      return false;
 	   }
 
 	@Override
