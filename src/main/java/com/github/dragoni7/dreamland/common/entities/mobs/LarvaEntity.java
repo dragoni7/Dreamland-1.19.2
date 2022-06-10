@@ -1,9 +1,8 @@
 package com.github.dragoni7.dreamland.common.entities.mobs;
 
-import java.util.Random;
 import java.util.UUID;
 
-import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
+import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
 import com.github.dragoni7.dreamland.util.RollBoolean;
 
 import net.minecraft.core.BlockPos;
@@ -19,6 +18,8 @@ import net.minecraft.util.TimeUtil;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -62,7 +63,7 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 	private UUID persistentAngerTarget;
 	private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(LarvaEntity.class, EntityDataSerializers.BYTE);
 	private static final EntityDataAccessor<Integer> DATA_REMAINING_ANGER_TIME = SynchedEntityData.defineId(LarvaEntity.class, EntityDataSerializers.INT);
-	private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(20, 39);
+	private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(3, 5);
 	
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		if(event.isMoving()) {
@@ -97,8 +98,9 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 	public static AttributeSupplier.Builder customAttributes() {
 		return Mob.createMobAttributes()
 				.add(Attributes.MAX_HEALTH, 8.0D)
-				.add(Attributes.MOVEMENT_SPEED, 0.3D)
+				.add(Attributes.MOVEMENT_SPEED, 0.35D)
 				.add(Attributes.ATTACK_DAMAGE, 1.5D)
+				.add(Attributes.JUMP_STRENGTH, 2.0D)
 				.add(Attributes.FOLLOW_RANGE, 48.0D);
 	}
 	
@@ -113,7 +115,7 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 		
 		
 		this.targetSelector.addGoal(1, (new LarvaEntity.LarvaHurtByOtherGoal(this)).setAlertOthers(new Class[0]));
-		this.targetSelector.addGoal(1, (new LarvaEntity.LarvaBecomeAngryTargetGoal(this)));
+		this.targetSelector.addGoal(2, (new LarvaEntity.LarvaBecomeAngryTargetGoal(this)));
 		this.targetSelector.addGoal(3, new ResetUniversalAngerTargetGoal<>(this, true));
 	}
 	
@@ -253,10 +255,10 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
         return true;
      }
 	
-	static class LarvaBecomeAngryTargetGoal extends NearestAttackableTargetGoal<Player> {
+	static class LarvaBecomeAngryTargetGoal extends NearestAttackableTargetGoal<LivingEntity> {
 
 		LarvaBecomeAngryTargetGoal(LarvaEntity larvaEntity) {
-			super(larvaEntity, Player.class, 10, true, false, larvaEntity::isAngryAt);
+			super(larvaEntity, LivingEntity.class, 10, false, false, larvaEntity::isAngryAt);
 		}
 		
 		public boolean canUse() {
@@ -299,20 +301,24 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 	}
 	 
 	 class LarvaHurtByOtherGoal extends HurtByTargetGoal {
+		 
 		 LarvaHurtByOtherGoal(LarvaEntity larva) {
 	         super(larva);
 	      }
-
-	      public boolean canContinueToUse() {
+		 
+		 public boolean canContinueToUse() {
 	         return LarvaEntity.this.isAngry() && super.canContinueToUse();
 	      }
-
-	      protected void alertOther(Mob mob, LivingEntity entity) {
-	         if (mob instanceof LarvaEntity) {
-	            mob.setTarget(entity);
-	         }
-
+		 
+		 protected void alertOther(Mob mob, LivingEntity entity) {
+	    	 int i = 1;
+	    	 MobEffect antagonized = DreamlandEffects.ANTAGONIZED.get();
+	    	 
+	    	 if (entity.hasEffect(antagonized)) {
+	    		 i++;
+	    	 }
+	    	 
+	         entity.addEffect(new MobEffectInstance(antagonized, 200, i));
 	      }
 	   }
-
 }
