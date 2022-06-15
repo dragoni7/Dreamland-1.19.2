@@ -27,7 +27,8 @@
       "minecraft:lake_lava_underground",
       "minecraft:lake_lava_surface",
       "dreamland:tar_delta",
-      "dreamland:bordered_drought_disk"
+      "dreamland:bordered_drought_disk",
+      "dreamland:lake_tar_underground"
     ],
     [
       "minecraft:amethyst_geode"
@@ -75,7 +76,8 @@
     [],
     [
       "minecraft:spring_water",
-      "minecraft:spring_lava"
+      "minecraft:spring_lava",
+      "dreamland:spring_tar"
     ],
     [
       "minecraft:glow_lichen",
@@ -99,7 +101,7 @@
         "type": "dreamland:ooze",
         "maxCount": 1,
         "minCount": 1,
-        "weight": 5
+        "weight": 7
       }
     ],
     "underground_water_creature": [],

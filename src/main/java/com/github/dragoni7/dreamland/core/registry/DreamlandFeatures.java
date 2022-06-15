@@ -7,6 +7,7 @@ import com.github.dragoni7.dreamland.common.world.biome.DreamlandOverworldBiomes
 import com.github.dragoni7.dreamland.common.world.feature.configs.EllipsoidConfig;
 import com.github.dragoni7.dreamland.common.world.feature.generation.Ellipsoid;
 import com.github.dragoni7.dreamland.common.world.feature.generation.HiveComb;
+import com.github.dragoni7.dreamland.common.world.feature.generation.HiveGrowthLayer;
 import com.github.dragoni7.dreamland.common.world.feature.generation.HiveStrand;
 import com.github.dragoni7.dreamland.common.world.feature.generation.PlumBirchTree;
 import com.github.dragoni7.dreamland.common.world.feature.generation.TarBarkTree;
@@ -28,6 +29,7 @@ public class DreamlandFeatures {
 	
 	public static final Feature<NoneFeatureConfiguration> HIVE_STRAND = new HiveStrand(NoneFeatureConfiguration.CODEC.stable());
 	public static final Feature<BlockStateConfiguration> HIVE_COMB = new HiveComb(BlockStateConfiguration.CODEC.stable());
+	public static final Feature<NoneFeatureConfiguration> HIVE_GROWTH_LAYER = new HiveGrowthLayer(NoneFeatureConfiguration.CODEC.stable());
 	public static final Feature<SurfaceLake.Configuration> SURFACE_LAKE = new SurfaceLake(SurfaceLake.Configuration.CODEC.stable());
 	public static final Feature<NoneFeatureConfiguration> TAR_BARK_TREE_FEATURE = new TarBarkTree(NoneFeatureConfiguration.CODEC.stable());
 	public static final Feature<NoneFeatureConfiguration> TAR_SKELETON = new TarSkeleton(NoneFeatureConfiguration.CODEC.stable());
@@ -41,6 +43,7 @@ public class DreamlandFeatures {
 		event.register(ForgeRegistries.Keys.FEATURES, helper -> {
 			helper.register("hive_strand_feature", DreamlandFeatures.HIVE_STRAND);
 			helper.register("hive_comb_feature", DreamlandFeatures.HIVE_COMB);
+			helper.register("hive_growth_layer", DreamlandFeatures.HIVE_GROWTH_LAYER);
 			helper.register("surface_lake_feature", DreamlandFeatures.SURFACE_LAKE);
 			helper.register("tar_bark_tree_feature", DreamlandFeatures.TAR_BARK_TREE_FEATURE);
 			helper.register("tar_skeleton", DreamlandFeatures.TAR_SKELETON);

@@ -37,7 +37,6 @@ public class BlockStates extends BlockStateProvider{
 		simpleBlocks.add(DreamlandBlocks.CLAY_SOIL.get());
 		simpleBlocks.add(DreamlandBlocks.DARK_QUARTZITE.get());
 		simpleBlocks.add(DreamlandBlocks.DUSK_ICE.get());
-		simpleBlocks.add(DreamlandBlocks.HIVE_MEMBRANE.get());
 		simpleBlocks.add(DreamlandBlocks.HIVE_IRON.get());
 		simpleBlocks.add(DreamlandBlocks.HIVE_COPPER.get());
 		simpleBlocks.add(DreamlandBlocks.HIVE_REDSTONE.get());

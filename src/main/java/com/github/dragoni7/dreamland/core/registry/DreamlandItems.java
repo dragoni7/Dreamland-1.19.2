@@ -39,6 +39,8 @@ public class DreamlandItems {
 	
 	public static final RegistryObject<Item> HIVE_MEMBRANE = registerBlockItem("hive_membrane", () -> DreamlandBlocks.HIVE_MEMBRANE.get());
 	
+	public static final RegistryObject<Item> HIVE_MEMBRANE_CORE = registerBlockItem("hive_membrane_core", () -> DreamlandBlocks.HIVE_MEMBRANE_CORE.get());
+	
 	public static final RegistryObject<Item> HIVE_BLOCK_WITH_JELLY = registerBlockItem("hive_block_with_jelly", () -> DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.get());
 	
 	public static final RegistryObject<Item> HIVE_GROWTH = registerBlockItem("hive_growth", () -> DreamlandBlocks.HIVE_GROWTH.get());

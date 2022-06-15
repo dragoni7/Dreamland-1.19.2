@@ -83,7 +83,8 @@ public class AddBlockTags extends BlockTagsProvider{
 		tag(BlockTags.MINEABLE_WITH_PICKAXE)
 		.add(DreamlandBlocks.DARK_QUARTZITE.get())
 		.add(DreamlandBlocks.HIVE_BLOCK.get())
-		.add(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.get());
+		.add(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.get())
+		.add(DreamlandBlocks.HIVE_MEMBRANE_CORE.get());
 		
 		tag(BlockTags.NEEDS_STONE_TOOL)
 		.add(DreamlandBlocks.HIVE_BLOCK.get())
@@ -91,9 +92,18 @@ public class AddBlockTags extends BlockTagsProvider{
 		.add(DreamlandBlocks.INFESTED_HIVE_JELLY_CLUSTER.get())
 		.add(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.get())
 		.add(DreamlandBlocks.HIVE_MEMBRANE.get());
+		
+		tag(BlockTags.NEEDS_DIAMOND_TOOL)
+		.add(DreamlandBlocks.HIVE_MEMBRANE_CORE.get());
 	
 		tag(DreamlandBlockTags.HIVE_ORES_REPLACEABLE)
 		.add(DreamlandBlocks.HIVE_BLOCK.get());
+		
+		tag(BlockTags.STONE_ORE_REPLACEABLES)
+		.add(DreamlandBlocks.TAR_SOIL.get());
+		
+		tag(BlockTags.FEATURES_CANNOT_REPLACE)
+		.add(DreamlandBlocks.HIVE_MEMBRANE.get());
 		
 		addCopperOreTags(DreamlandBlocks.HIVE_COPPER.get());
 		addIronOreTags(DreamlandBlocks.HIVE_IRON.get());

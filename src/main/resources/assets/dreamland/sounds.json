@@ -1,0 +1,47 @@
+{
+    "hive_block_break": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dreamland:hive_block_break1"
+            },
+            {
+                "name": "dreamland:hive_block_break2"
+            },
+            {
+                "name": "dreamland:hive_block_break3"
+            },
+            {
+                "name": "dreamland:hive_block_break4"
+            },
+            {
+                "name": "dreamland:hive_block_break5"
+            }
+        ],
+        "subtitle": "dreamland.sounds.subtitle.hive_block_break"
+    },
+    "hive_block_step": {
+        "category": "neutral",
+        "sounds": [
+            {
+                "name": "dreamland:hive_block_step1"
+            },
+            {
+                "name": "dreamland:hive_block_step2"
+            },
+            {
+                "name": "dreamland:hive_block_step3"
+            },
+            {
+                "name": "dreamland:hive_block_step4"
+            },
+            {
+                "name": "dreamland:hive_block_step5"
+            },
+            {
+                "name": "dreamland:hive_block_step6"
+            }
+        ],
+        "subtitle": "dreamland.sounds.subtitle.hive_block_step"
+    }
+}

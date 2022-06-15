@@ -1,4 +1,4 @@
-// 1.19	2022-06-08T17:54:36.5535699	Item Models: dreamland
+// 1.19	2022-06-14T16:31:25.0569433	Item Models: dreamland
 753673f49cec07146d029af5bb036103cbac5ce5 assets/dreamland/models/item/cave_slime.json
 1e70d6474fa73213401e11d78c67c8ebd125aab0 assets/dreamland/models/item/clay_soil.json
 7e43bd557a5b205c8eeece1ae797f2ba79cef7a1 assets/dreamland/models/item/dark_quartzite.json
@@ -17,7 +17,8 @@ f1e8a4f9f8e3fd35935c42a6a4c09b07af5a5370 assets/dreamland/models/item/hive_iron.
 d6d1f298a5b9691d38dcba11021bb932a1d9e67d assets/dreamland/models/item/hive_jelly.json
 af52bbe353c4db173a4c9e34cf7347aaaf19b7e4 assets/dreamland/models/item/hive_jelly_cluster.json
 6b0b8f6e7d0020e902331cd496d8c3ea8c580f0e assets/dreamland/models/item/hive_lapis.json
-f2eadd9569594336a1449ebd920d0fe996f700b4 assets/dreamland/models/item/hive_membrane.json
+db1dac60a0a06bc658b3b9229b050729d54d1ed1 assets/dreamland/models/item/hive_membrane.json
+df6605c1adce4bd95fe70335837892f3804b9f76 assets/dreamland/models/item/hive_membrane_core.json
 27dac0da551cf658c118d6f76303c85db2d5451a assets/dreamland/models/item/hive_redstone.json
 e837462748a5ec6bdc6942586b898b60d30ab368 assets/dreamland/models/item/mineral_dirt.json
 931e8f3eea8a2608b07f93f4467af31fcde4007b assets/dreamland/models/item/opaline_marigold.json

@@ -16,6 +16,7 @@ public class LarvaEyesFeatureRenderer extends GeoLayerRenderer<LarvaEntity> {
 	private final LarvaEyesEntityRenderer larvaEyesEntityRenderer;
 	
 	private ResourceLocation larvaLayer = DreamlandLoc.createLoc("textures/entity/larva_layer.png");
+	private ResourceLocation larvaAngryLayer = DreamlandLoc.createLoc("textures/entity/larva_angry_layer.png");
 
 	public LarvaEyesFeatureRenderer(IGeoRenderer<LarvaEntity> entityRendererIn, LarvaEyesEntityRenderer larvaEyesEntityRenderer) {
 		super(entityRendererIn);
@@ -23,11 +24,15 @@ public class LarvaEyesFeatureRenderer extends GeoLayerRenderer<LarvaEntity> {
 	}
 
 	@Override
-	public void render(PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn,
-			LarvaEntity larvaEntity, float limbSwing, float limbSwingAmount, float partialTicks,
-			float ageInTicks, float netHeadYaw, float headPitch) {
+	public void render(PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn, LarvaEntity larvaEntity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+		ResourceLocation txt = larvaLayer;
+		
+		if (larvaEntity.isAngry()) {
+			txt = larvaAngryLayer;
+		}
+		
 		larvaEyesEntityRenderer.render(getEntityModel().getModel(getEntityModel().getModelResource(larvaEntity)),
-				larvaEntity, partialTicks, RenderType.eyes(larvaLayer), matrixStackIn, bufferIn, bufferIn.getBuffer(RenderType.eyes(larvaLayer)), 15728640, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
+				larvaEntity, partialTicks, RenderType.eyes(txt), matrixStackIn, bufferIn, bufferIn.getBuffer(RenderType.eyes(txt)), 15728640, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
 	}
 
 }

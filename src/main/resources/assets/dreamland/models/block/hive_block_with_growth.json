@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube_column",
   "textures": {
-    "all": "dreamland:block/hive_block_with_growth"
+    "side": "dreamland:block/hive_block_with_growth",
+    "end": "dreamland:block/hive_block_with_growth"
   }
 }

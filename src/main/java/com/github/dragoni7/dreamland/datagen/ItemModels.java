@@ -12,7 +12,7 @@ import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
-public class ItemModels extends ItemModelProvider{
+public class ItemModels extends ItemModelProvider {
 
 	public ItemModels(DataGenerator generator, String modid, ExistingFileHelper existingFileHelper) {
 		super(generator, modid, existingFileHelper);
@@ -27,7 +27,8 @@ public class ItemModels extends ItemModelProvider{
 		createBlockItemModel(DreamlandItems.DARK_QUARTZITE,"block/dark_quartzite");
 		createBlockItemModel(DreamlandItems.DUSK_ICE,"block/dusk_ice");
 		createBlockItemModel(DreamlandItems.HIVE_JELLY_CLUSTER, "block/hive_jelly_cluster");
-		createBlockItemModel(DreamlandItems.HIVE_MEMBRANE, "block/hive_membrane");
+		createBlockItemModel(DreamlandItems.HIVE_MEMBRANE, "block/hive_membrane_connected");
+		createBlockItemModel(DreamlandItems.HIVE_MEMBRANE_CORE, "block/hive_membrane_core");
 		createBlockItemModel(DreamlandItems.HIVE_IRON, "block/hive_iron");
 		createBlockItemModel(DreamlandItems.HIVE_COPPER, "block/hive_copper");
 		createBlockItemModel(DreamlandItems.HIVE_GOLD, "block/hive_gold");

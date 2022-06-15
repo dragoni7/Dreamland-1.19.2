@@ -14,6 +14,8 @@ import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFeatures;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
 import com.github.dragoni7.dreamland.core.registry.DreamlandItems;
+import com.github.dragoni7.dreamland.core.registry.DreamlandSoundEvents;
+import com.github.dragoni7.dreamland.core.registry.DreamlandSoundTypes;
 import com.github.dragoni7.dreamland.core.registry.DreamlandWoodSets;
 import com.github.dragoni7.dreamland.network.Networking;
 import com.github.dragoni7.dreamland.util.DreamlandLoc;
@@ -52,7 +54,9 @@ public class Dreamland
         GeckoLib.initialize();
         
         forgeBus.register(this);
-        
+
+        DreamlandSoundEvents.SOUND_EVENTS.register(modBus);
+        DreamlandSoundTypes.init();
         DreamlandEntities.ENTITY_TYPES.register(modBus);
         DreamlandBlocks.BLOCKS.register(modBus);
         DreamlandFluids.FLUIDS.register(modBus);

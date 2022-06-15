@@ -1,10 +1,13 @@
 package com.github.dragoni7.dreamland.common.blocks;
 
+import java.util.Random;
+
 import javax.annotation.Nullable;
 
 import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.player.Player;
@@ -22,13 +25,9 @@ public class LarvaAngerableBlock extends Block {
 	
 	public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack itemStack) {
 	      super.playerDestroy(level, player, pos, state, blockEntity, itemStack);
-	      int i = 1;
+	      
 	      MobEffect antagonized = DreamlandEffects.ANTAGONIZED.get();
 	      
-	      if (player.hasEffect(antagonized)) {
-	    	  i++;
-	      }
-	      
-	      player.addEffect(new MobEffectInstance(DreamlandEffects.ANTAGONIZED.get(), 200, i));
+	      player.addEffect(new MobEffectInstance(antagonized, 200));
 	   }
 }

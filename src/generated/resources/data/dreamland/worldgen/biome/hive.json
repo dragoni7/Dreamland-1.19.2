@@ -20,15 +20,14 @@
     "water_fog_color": 9680288
   },
   "features": [
-    [
-      "dreamland:hive_cave"
-    ],
+    [],
     [
       "minecraft:lake_lava_underground",
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode"
+      "minecraft:amethyst_geode",
+      "dreamland:hive_cave"
     ],
     [
       "minecraft:monster_room",
@@ -113,7 +112,7 @@
         "type": "dreamland:larva",
         "maxCount": 2,
         "minCount": 1,
-        "weight": 6
+        "weight": 20
       }
     ],
     "underground_water_creature": [],

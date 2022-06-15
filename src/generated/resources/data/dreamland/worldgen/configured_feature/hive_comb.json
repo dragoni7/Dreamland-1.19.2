@@ -2,7 +2,7 @@
   "type": "dreamland:hive_comb_feature",
   "config": {
     "state": {
-      "Name": "dreamland:hive_membrane"
+      "Name": "dreamland:hive_block_with_jelly"
     }
   }
 }

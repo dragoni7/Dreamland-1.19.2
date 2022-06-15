@@ -18,7 +18,7 @@ public class LootTables extends BaseLootTableProvider {
 	protected void addTables() {
 		basicBlockTable(DreamlandBlocks.HIVE_BLOCK.get(), "hive_block");
 		basicBlockTable(DreamlandBlocks.BUMBLE_BLOCK.get(), "bumble_block");
-		basicBlockTable(DreamlandBlocks.HIVE_MEMBRANE.get(), "hive_membrane");
+		
 		
 		oreTable(DreamlandBlocks.HIVE_COPPER.get(), Items.RAW_COPPER, "hive_copper");
 		oreTable(DreamlandBlocks.HIVE_DIAMOND.get(), Items.DIAMOND, "hive_diamond");

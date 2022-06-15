@@ -165,13 +165,13 @@ public class OozeEntity extends Monster implements IAnimatable {
 		public void tick() {
 			LivingEntity livingentity = this.ooze.getTarget();
 			
-			if (livingentity != null) {
+			if (livingentity != null && RollBoolean.roll(9, livingentity.getRandom())) {
 				this.ooze.getLookControl().setLookAt(livingentity);
 				if (livingentity.distanceToSqr(this.ooze) < 2048.0D && this.ooze.hasLineOfSight(livingentity)) {
 					Level level = this.ooze.level;
 					++this.chargeTime;
 					if (this.chargeTime == 40) {
-						level.levelEvent((Player)null, 1015, this.ooze.blockPosition(), 0);
+						level.levelEvent((Player)null, 1018, this.ooze.blockPosition(), 0);
 					}
 					
 					if (this.chargeTime == 60) {

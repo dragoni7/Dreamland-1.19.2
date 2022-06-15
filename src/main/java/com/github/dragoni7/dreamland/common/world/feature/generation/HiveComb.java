@@ -33,7 +33,7 @@ public class HiveComb extends Feature<BlockStateConfiguration> {
 		BlockState combBlock = DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState();
 		BlockState altFilling = DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState();
 		
-		if (RollBoolean.roll(1, random)) {
+		if (RollBoolean.roll(9, random)) {
 			altFilling = blockstateconfig.state;
 		}
 		

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "dreamland:block/hive_membrane_core_front",
+    "side": "dreamland:block/hive_membrane_core_side",
+    "top": "dreamland:block/hive_membrane_core_top"
+  }
+}

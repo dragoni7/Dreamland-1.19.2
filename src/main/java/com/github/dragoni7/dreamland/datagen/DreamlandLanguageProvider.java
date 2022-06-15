@@ -32,6 +32,7 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandBlocks.HIVE_LAPIS.get(), "Hive Lapis Ore");
 		add(DreamlandBlocks.HIVE_REDSTONE.get(), "Hive Redstone Ore");
 		add(DreamlandBlocks.HIVE_MEMBRANE.get(), "Hive Membrane");
+		add(DreamlandBlocks.HIVE_MEMBRANE_CORE.get(), "Hive Weaver");
 		add(DreamlandBlocks.HIVE_JELLY_CLUSTER.get(), "Hive Jelly Cluster");
 		add(DreamlandBlocks.INFESTED_HIVE_JELLY_CLUSTER.get(), "Hive Jelly Cluster");
 		add(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.get(), "Hive Block With Jelly");
@@ -42,6 +43,7 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		
 		add(DreamlandBlocks.DRIED_TAR.get(), "Dried Tar");
 		add(DreamlandBlocks.TAR_SOIL.get(), "Tar Soil");
+		add(DreamlandBlocks.DROUGHT_SOIL.get(), "Drought Soil");
 		add(DreamlandFluids.TAR_BLOCK.get(), "Tar");
 		add(DreamlandBlocks.TAR_BARK_SAPLING.get(), "Joshua Sapling");
 		add(DreamlandBlocks.TAR_SPROUTS.get(), "Tar Sprouts");

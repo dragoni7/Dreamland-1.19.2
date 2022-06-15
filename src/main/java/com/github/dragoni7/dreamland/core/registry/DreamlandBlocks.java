@@ -15,6 +15,7 @@ import com.github.dragoni7.dreamland.common.blocks.HiveBlock;
 import com.github.dragoni7.dreamland.common.blocks.HiveCluster;
 import com.github.dragoni7.dreamland.common.blocks.HiveGrowth;
 import com.github.dragoni7.dreamland.common.blocks.HiveMembrane;
+import com.github.dragoni7.dreamland.common.blocks.HiveMembraneCore;
 import com.github.dragoni7.dreamland.common.blocks.InfestedHiveCluster;
 import com.github.dragoni7.dreamland.common.blocks.JellySplotch;
 import com.github.dragoni7.dreamland.common.blocks.LarvaAngerableBlock;
@@ -28,8 +29,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.MudBlock;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.TallGrassBlock;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
@@ -68,9 +69,8 @@ public class DreamlandBlocks {
 			() -> new HiveBlock(BlockBehaviour.Properties
 					.of(Material.STONE, MaterialColor.COLOR_PURPLE)
 					.requiresCorrectToolForDrops()
-					.strength(1.5F,6.0F)
-					.sound(SoundType.NETHERRACK)
-					.randomTicks()
+					.strength(1.5F, 6.0F)
+					.sound(DreamlandSoundTypes.HIVE_BLOCK)
 					));
 	
 	public static final RegistryObject<Block> CAVE_SLIME = BLOCKS.register("cave_slime", 
@@ -116,21 +116,30 @@ public class DreamlandBlocks {
 	public static final RegistryObject<Block> HIVE_MEMBRANE = BLOCKS.register("hive_membrane",
 			() -> new HiveMembrane(BlockBehaviour.Properties
 					.of(Material.SPONGE, MaterialColor.COLOR_CYAN)
-					.strength(1.5F, 6.0F)
-					.requiresCorrectToolForDrops()
+					.strength(-1.0F, 3600000.0F)
+					.noLootTable()
 					.sound(SoundType.SLIME_BLOCK)
 					.noOcclusion()
+					.randomTicks()
 					.hasPostProcess(DreamlandBlocks::always)
 					.emissiveRendering(DreamlandBlocks::always)
 					.lightLevel((p_152684_) -> {return 1;})
 					));
+	
+	public static final RegistryObject<Block> HIVE_MEMBRANE_CORE = BLOCKS.register("hive_membrane_core",
+			() -> new HiveMembraneCore(BlockBehaviour.Properties
+					.of(Material.SPONGE, MaterialColor.COLOR_CYAN)
+					.strength(1.5F, 6.0F)
+					.requiresCorrectToolForDrops()
+					.sound(DreamlandSoundTypes.HIVE_BLOCK)
+					.noOcclusion()));
 	
 	public static final RegistryObject<Block> HIVE_BLOCK_WITH_JELLY = BLOCKS.register("hive_block_with_jelly",
 			() -> new EmissiveHiveBlock(BlockBehaviour.Properties
 					.of(Material.SPONGE)
 					.strength(1.5F, 6.0F)
 					.requiresCorrectToolForDrops()
-					.sound(SoundType.SLIME_BLOCK)
+					.sound(DreamlandSoundTypes.HIVE_BLOCK)
 					.lightLevel(EmissiveHiveBlock.emission(6))
 					));
 	
@@ -158,7 +167,7 @@ public class DreamlandBlocks {
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.SANDSTONE)));
 	
 	public static final RegistryObject<Block> TAR_SOIL = BLOCKS.register("tar_soil",
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.SOUL_SOIL).sound(SoundType.ROOTED_DIRT)));
+			() -> new MudBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.MUD).color(MaterialColor.COLOR_PURPLE)));
 	
 	public static final RegistryObject<Block> DROUGHT_SOIL = createDirtBlock("drought_soil");
 	
@@ -204,7 +213,7 @@ public class DreamlandBlocks {
 				() -> new LarvaAngerableBlock(BlockBehaviour.Properties
 						.of(Material.STONE)
 						.strength(3.0F, 3.0F)
-						.sound(SoundType.NETHERRACK)
+						.sound(DreamlandSoundTypes.HIVE_BLOCK)
 						.requiresCorrectToolForDrops()
 						));
 	}

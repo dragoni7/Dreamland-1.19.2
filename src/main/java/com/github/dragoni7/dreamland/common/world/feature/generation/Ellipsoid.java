@@ -6,6 +6,7 @@ import com.github.dragoni7.dreamland.common.world.feature.util.OpenSimplex2S;
 import com.mojang.serialization.Codec;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
@@ -52,7 +53,9 @@ public class Ellipsoid extends Feature<EllipsoidConfig> {
 						continue;
 					}
 					
-					status = ellipsoidBuilder.addInput(worldgenlevel, state, pos, true);
+					if (!worldgenlevel.getBlockState(pos).is(BlockTags.FEATURES_CANNOT_REPLACE)) {
+						status = ellipsoidBuilder.addInput(worldgenlevel, state, pos, true);
+					}
 				}
 			}
 		}

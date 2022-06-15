@@ -1,11 +1,13 @@
 package com.github.dragoni7.dreamland.common.blocks;
 
-import java.util.Random;
-
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -16,20 +18,17 @@ public class HiveBlock extends LarvaAngerableBlock {
 	
 	public static final BooleanProperty HAS_GROWTH = BlockStateProperties.CONDITIONAL;
 
-	public HiveBlock(Properties p_49795_) {
-		super(p_49795_);
+	public HiveBlock(Properties properties) {
+		super(properties);
 		this.registerDefaultState(this.stateDefinition.any().setValue(HAS_GROWTH, Boolean.valueOf(false)));
 	}
 	
-	@SuppressWarnings("deprecation")
-	public void randomTick(BlockState blockstate, ServerLevel level, BlockPos blockpos, Random random) {
-		if(!level.isAreaLoaded(blockpos, 1)) return;
-		else if(level.getBlockState(blockpos.above()).is(DreamlandBlocks.HIVE_GROWTH.get())) {
-				level.setBlockAndUpdate(blockpos, blockstate.setValue(HAS_GROWTH, Boolean.valueOf(true)));
-			}
-		else {
-			level.setBlockAndUpdate(blockpos, blockstate.setValue(HAS_GROWTH, Boolean.valueOf(false)));
-		}	
+	public BlockState updateShape(BlockState state1, Direction direction, BlockState state2, LevelAccessor accessor, BlockPos pos1, BlockPos pos2) {
+	      return direction == Direction.UP ? state1.setValue(HAS_GROWTH, Boolean.valueOf(hasGrowth(state2))) : super.updateShape(state1, direction, state2, accessor, pos1, pos2);
+	 }
+	
+	private static boolean hasGrowth(BlockState state) {
+		return state.is(DreamlandBlocks.HIVE_GROWTH.get());
 	}
 	
 	@Override

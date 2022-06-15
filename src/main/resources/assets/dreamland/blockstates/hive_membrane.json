@@ -1,7 +1,7 @@
 {
   "variants": {
-    "": {
-      "model": "dreamland:block/hive_membrane"
-    }
+    "conditional=false": {"model": "dreamland:block/hive_membrane"},
+    
+    "conditional=true": { "model": "dreamland:block/hive_membrane_connected" }
   }
 }
