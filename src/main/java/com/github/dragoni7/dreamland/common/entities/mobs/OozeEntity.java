@@ -165,7 +165,7 @@ public class OozeEntity extends Monster implements IAnimatable {
 		public void tick() {
 			LivingEntity livingentity = this.ooze.getTarget();
 			
-			if (livingentity != null && RollBoolean.roll(9, livingentity.getRandom())) {
+			if (livingentity != null) {
 				this.ooze.getLookControl().setLookAt(livingentity);
 				if (livingentity.distanceToSqr(this.ooze) < 2048.0D && this.ooze.hasLineOfSight(livingentity)) {
 					Level level = this.ooze.level;
@@ -183,7 +183,7 @@ public class OozeEntity extends Monster implements IAnimatable {
 						TarBall tarball = new TarBall(level, this.ooze, d2, d3, d4);
 						tarball.setPos(this.ooze.getX() + vec3.x, this.ooze.getY(0.5D) + 0.5D, this.ooze.getZ() + vec3.z);
 						level.addFreshEntity(tarball);
-						this.chargeTime = -120;
+						this.chargeTime = -160;
 					}
 				} else if (this.chargeTime > 0) {
 					--this.chargeTime;

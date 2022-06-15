@@ -110,8 +110,8 @@
     "monster": [
       {
         "type": "dreamland:larva",
-        "maxCount": 2,
-        "minCount": 1,
+        "maxCount": 4,
+        "minCount": 2,
         "weight": 20
       }
     ],

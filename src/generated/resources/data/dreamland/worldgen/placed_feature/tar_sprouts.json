@@ -36,7 +36,7 @@
       "max_steps": 12,
       "target_condition": {
         "type": "minecraft:matching_blocks",
-        "blocks": "dreamland:tar_soil"
+        "blocks": "dreamland:tar_mud"
       }
     },
     {

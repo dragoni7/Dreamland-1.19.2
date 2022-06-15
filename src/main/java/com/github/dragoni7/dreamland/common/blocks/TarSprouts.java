@@ -21,7 +21,7 @@ public class TarSprouts extends BushBlock implements net.minecraftforge.common.I
 	
 	@Override
 	protected boolean mayPlaceOn(BlockState state, BlockGetter blockGetter, BlockPos pos) {
-	      return state.is(DreamlandBlocks.TAR_SOIL.block().get());
+	      return state.is(DreamlandBlocks.TAR_MUD.block().get());
 	   }
 	
 	public VoxelShape getShape(BlockState p_57336_, BlockGetter p_57337_, BlockPos p_57338_, CollisionContext p_57339_) {

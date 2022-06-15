@@ -101,7 +101,19 @@
         "type": "dreamland:ooze",
         "maxCount": 1,
         "minCount": 1,
-        "weight": 7
+        "weight": 6
+      },
+      {
+        "type": "minecraft:skeleton",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 100
+      },
+      {
+        "type": "minecraft:enderman",
+        "maxCount": 4,
+        "minCount": 1,
+        "weight": 10
       }
     ],
     "underground_water_creature": [],

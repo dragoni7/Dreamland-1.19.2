@@ -18,6 +18,7 @@ import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
+import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -45,13 +46,20 @@ public class BlockStates extends BlockStateProvider{
 		simpleBlocks.add(DreamlandBlocks.HIVE_DIAMOND.block().get());
 		simpleBlocks.add(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.block().get());
 		simpleBlocks.add(DreamlandBlocks.DRIED_TAR.block().get());
-		simpleBlocks.add(DreamlandBlocks.TAR_SOIL.block().get());
+		simpleBlocks.add(DreamlandBlocks.TAR_MUD.block().get());
+		simpleBlocks.add(DreamlandBlocks.PACKED_TAR_MUD.block().get());
+		simpleBlocks.add(DreamlandBlocks.TAR_MUD_BRICKS.block().get());
 		simpleBlocks.add(DreamlandBlocks.DROUGHT_SOIL.block().get());
 		simpleBlocks.add(DreamlandBlocks.MINERAL_DIRT.block().get());
 
 		for(Block element : simpleBlocks) {
 			simpleBlock(element);
 		}
+		
+		ResourceLocation tarMudBrickTxt = modLoc("block/tar_mud_bricks");
+		slabBlock((SlabBlock) DreamlandBlocks.TAR_MUD_BRICK_SLAB.block().get(), tarMudBrickTxt, tarMudBrickTxt, tarMudBrickTxt, tarMudBrickTxt);
+		stairsBlock((StairBlock) DreamlandBlocks.TAR_MUD_BRICK_STAIRS.block().get(), tarMudBrickTxt, tarMudBrickTxt, tarMudBrickTxt);
+		wallBlock((WallBlock) DreamlandBlocks.TAR_MUD_BRICK_WALL.block().get(), tarMudBrickTxt);
 		
 		registerWoodSet(DreamlandWoodSets.PLUM_BIRCH);
 		registerWoodSet(DreamlandWoodSets.TAR_BARK);
@@ -84,9 +92,5 @@ public class BlockStates extends BlockStateProvider{
 		trapdoorBlock((TrapDoorBlock) set.getTrapDoor().get(), trapDoorTxt, true);
 		buttonBlock((ButtonBlock) set.getButton().get(), plankTxt);
 		pressurePlateBlock((PressurePlateBlock) set.getPressurePlate().get(), plankTxt);
-	}
-	
-	private BlockModelBuilder doorModel(String name, String type, ResourceLocation bottom, ResourceLocation top) {
-		return models().withExistingParent(name, "block/door_" + type).texture("bottom", bottom).texture("top", top);
 	}
 }

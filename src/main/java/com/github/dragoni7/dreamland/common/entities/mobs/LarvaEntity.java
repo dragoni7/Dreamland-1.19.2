@@ -161,7 +161,7 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
         	return true;
         }
         
-        return RollBoolean.roll(3, rand);
+        return RollBoolean.roll(2, rand);
     }
 	
 	protected void playStepSound() {

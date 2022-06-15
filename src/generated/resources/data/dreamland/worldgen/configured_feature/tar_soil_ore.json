@@ -6,7 +6,7 @@
     "targets": [
       {
         "state": {
-          "Name": "dreamland:tar_soil"
+          "Name": "dreamland:tar_mud"
         },
         "target": {
           "predicate_type": "minecraft:tag_match",

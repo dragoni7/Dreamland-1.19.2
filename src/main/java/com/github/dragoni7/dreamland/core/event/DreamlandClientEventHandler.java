@@ -53,6 +53,8 @@ public class DreamlandClientEventHandler {
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.FLOWERING_UNDERGROWTH.block().get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.TAR_BARK.getDoor().get(), RenderType.cutoutMipped());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.TAR_BARK.getLadder().get(), RenderType.cutoutMipped());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.PLUM_BIRCH_SAPLING.block().get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.TAR_BARK_SAPLING.block().get(), RenderType.cutout());
 			
 			ItemBlockRenderTypes.setRenderLayer(DreamlandFluids.TAR_BLOCK.get(), RenderType.solid());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandFluids.TAR_FLUID.get(), RenderType.solid());

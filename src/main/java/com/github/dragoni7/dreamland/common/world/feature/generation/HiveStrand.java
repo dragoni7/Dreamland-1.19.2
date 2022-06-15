@@ -1,6 +1,6 @@
 package com.github.dragoni7.dreamland.common.world.feature.generation;
 
-import com.github.dragoni7.dreamland.common.blocks.HiveMembraneCore;
+import com.github.dragoni7.dreamland.common.blocks.HiveWeaver;
 import com.github.dragoni7.dreamland.common.world.feature.util.FeatureBuilder;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.util.RollBoolean;
@@ -52,7 +52,7 @@ public class HiveStrand extends Feature<NoneFeatureConfiguration> {
 	private boolean buildStrand(WorldGenLevel worldgenlevel, FeatureBuilder builder, BlockPos blockpos, RandomSource rand, Direction direction, boolean fill, int i, int j, int k) {
 		BlockState strandBlock = DreamlandBlocks.HIVE_BLOCK.block().get().defaultBlockState();
 		BlockState fillBlock = DreamlandBlocks.HIVE_MEMBRANE.block().get().defaultBlockState();
-		BlockState core = DreamlandBlocks.HIVE_MEMBRANE_CORE.block().get().defaultBlockState().setValue(HiveMembraneCore.LEVEL, Integer.valueOf(HiveMembraneCore.MAX_LEVEL));
+		BlockState core = DreamlandBlocks.HIVE_WEAVER.block().get().defaultBlockState().setValue(HiveWeaver.LEVEL, Integer.valueOf(HiveWeaver.MAX_LEVEL));
 		int height = j - 2;
 		BlockPos fillPos = blockpos.offset(i, height, k);
 		boolean status = true;
@@ -66,7 +66,7 @@ public class HiveStrand extends Feature<NoneFeatureConfiguration> {
 		if(fill) {
 			if (j == 1 || j == 2) {
 				
-				builder.addInput(worldgenlevel, core.setValue(HorizontalDirectionalBlock.FACING, direction).setValue(HiveMembraneCore.LEVEL, Integer.valueOf(6)), blockpos.offset(i,j,k), true);
+				builder.addInput(worldgenlevel, core.setValue(HorizontalDirectionalBlock.FACING, direction).setValue(HiveWeaver.LEVEL, Integer.valueOf(6)), blockpos.offset(i,j,k), true);
 			}
 			
 			while(fillPos.getY() < MAXSIZE && fillPos.getY() > worldgenlevel.getMinBuildHeight()) {
@@ -114,7 +114,7 @@ public class HiveStrand extends Feature<NoneFeatureConfiguration> {
 				
 				height = j-2;
 				fillPos = blockpos.offset(i, height, k);
-				builder.addInput(worldgenlevel, core.setValue(HorizontalDirectionalBlock.FACING, direction).setValue(HiveMembraneCore.LEVEL, Integer.valueOf(6)), fillPos, true);
+				builder.addInput(worldgenlevel, core.setValue(HorizontalDirectionalBlock.FACING, direction).setValue(HiveWeaver.LEVEL, Integer.valueOf(6)), fillPos, true);
 				height--;
 				
 				while(fillPos.getY() < MAXSIZE && fillPos.getY() > worldgenlevel.getMinBuildHeight()) {
@@ -122,7 +122,7 @@ public class HiveStrand extends Feature<NoneFeatureConfiguration> {
 					fillPos = blockpos.offset(i, height, k);
 					
 					if (!worldgenlevel.isEmptyBlock(fillPos) && fillPos.getY() < blockpos.getY()) {
-						builder.addInput(worldgenlevel, core.setValue(HorizontalDirectionalBlock.FACING, direction).setValue(HiveMembraneCore.LEVEL, Integer.valueOf(6)), fillPos.above(rand.nextInt(4, 6)), true);
+						builder.addInput(worldgenlevel, core.setValue(HorizontalDirectionalBlock.FACING, direction).setValue(HiveWeaver.LEVEL, Integer.valueOf(6)), fillPos.above(rand.nextInt(4, 6)), true);
 						break;
 					}
 					builder.addInput(worldgenlevel, strandBlock, fillPos);

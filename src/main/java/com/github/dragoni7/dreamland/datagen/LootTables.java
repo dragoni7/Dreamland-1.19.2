@@ -23,10 +23,15 @@ public class LootTables extends BaseLootTableProvider {
 		basicBlockTable(DreamlandBlocks.HIVE_BLOCK.block().get(), "hive_block");
 		basicBlockTable(DreamlandBlocks.HIVE_GROWTH.block().get(), "hive_growth");
 		basicBlockTable(DreamlandBlocks.CAVE_SLIME.block().get(), "cave_slime");
-		basicBlockTable(DreamlandBlocks.HIVE_MEMBRANE_CORE.block().get(), "hive_membrane_core");
+		basicBlockTable(DreamlandBlocks.HIVE_WEAVER.block().get(), "hive_weaver");
 		
 		basicBlockTable(DreamlandBlocks.DRIED_TAR.block().get(), "dry_tar");
-		basicBlockTable(DreamlandBlocks.TAR_SOIL.block().get(), "tar_soil");
+		basicBlockTable(DreamlandBlocks.TAR_MUD.block().get(), "tar_mud");
+		basicBlockTable(DreamlandBlocks.PACKED_TAR_MUD.block().get(), "packed_tar_mud");
+		basicBlockTable(DreamlandBlocks.TAR_MUD_BRICKS.block().get(), "tar_mud_bricks");
+		basicBlockTable(DreamlandBlocks.TAR_MUD_BRICK_SLAB.block().get(), "tar_mud_brick_slab");
+		basicBlockTable(DreamlandBlocks.TAR_MUD_BRICK_STAIRS.block().get(), "tar_mud_brick_stairs");
+		basicBlockTable(DreamlandBlocks.TAR_MUD_BRICK_WALL.block().get(), "tar_mud_brick_wall");
 		basicBlockTable(DreamlandBlocks.DROUGHT_SOIL.block().get(), "drought_soil");
 		basicBlockTable(DreamlandBlocks.TAR_SPROUTS.block().get(), "tar_sprouts");
 		

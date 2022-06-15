@@ -32,7 +32,7 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandBlocks.HIVE_LAPIS.block().get(), "Hive Lapis Ore");
 		add(DreamlandBlocks.HIVE_REDSTONE.block().get(), "Hive Redstone Ore");
 		add(DreamlandBlocks.HIVE_MEMBRANE.block().get(), "Hive Membrane");
-		add(DreamlandBlocks.HIVE_MEMBRANE_CORE.block().get(), "Hive Weaver");
+		add(DreamlandBlocks.HIVE_WEAVER.block().get(), "Hive Weaver");
 		add(DreamlandBlocks.HIVE_JELLY_CLUSTER.block().get(), "Hive Jelly Cluster");
 		add(DreamlandBlocks.INFESTED_HIVE_JELLY_CLUSTER.block().get(), "Hive Jelly Cluster");
 		add(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.block().get(), "Hive Block With Jelly");
@@ -42,10 +42,10 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandBlocks.JELLY_SPLOTCH.get(), "Jelly Splotch");
 		
 		add(DreamlandBlocks.DRIED_TAR.block().get(), "Dried Tar");
-		add(DreamlandBlocks.TAR_SOIL.block().get(), "Tar Soil");
+		add(DreamlandBlocks.TAR_MUD.block().get(), "Tar Mud");
 		add(DreamlandBlocks.DROUGHT_SOIL.block().get(), "Drought Soil");
 		add(DreamlandFluids.TAR_BLOCK.get(), "Tar");
-		add(DreamlandBlocks.TAR_BARK_SAPLING.block().get(), "Joshua Sapling");
+		add(DreamlandBlocks.TAR_BARK_SAPLING.block().get(), "Tar Bark Sapling");
 		add(DreamlandBlocks.TAR_SPROUTS.block().get(), "Tar Sprouts");
 		add(DreamlandBlocks.TAR_BARK_LEAVES.block().get(), "Tar Bark Leaves");
 		translateWoodSet(DreamlandWoodSets.TAR_BARK, "Tar Bark");
@@ -55,6 +55,7 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandBlocks.PLUM_BIRCH_LEAVES.block().get(), "Plum Birch Leaves");
 		add(DreamlandBlocks.PINK_CRAB_GRASS.block().get(), "Pink Crab Grass");
 		add(DreamlandBlocks.OPALINE_MARIGOLD.block().get(), "Opaline Marigold");
+		add(DreamlandBlocks.PLUM_BIRCH_SAPLING.block().get(), "Plum Birch Sapling");
 		translateWoodSet(DreamlandWoodSets.PLUM_BIRCH, "Plum Birch");
 		
 		// Items
@@ -77,7 +78,7 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(set.getLadder().get(), name + " Ladder");
 		add(set.getLog().get(), name + " Log");
 		add(set.getPlank().get(), name + " Planks");
-		add(set.getPressurePlate().get(), name + "Pressure Plate");
+		add(set.getPressurePlate().get(), name + " Pressure Plate");
 		add(set.getSlab().get(), name + " Slab");
 		add(set.getStair().get(), name + " Stairs");
 		add(set.getStrippedLog().get(), "Stripped" + name + " Log");

@@ -1,7 +1,5 @@
 package com.github.dragoni7.dreamland.core.registry;
 
-import java.util.function.Supplier;
-
 import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.common.blocks.CaveSlime;
 import com.github.dragoni7.dreamland.common.blocks.CaveSlimePlant;
@@ -17,7 +15,7 @@ import com.github.dragoni7.dreamland.common.blocks.HiveBlock;
 import com.github.dragoni7.dreamland.common.blocks.HiveCluster;
 import com.github.dragoni7.dreamland.common.blocks.HiveGrowth;
 import com.github.dragoni7.dreamland.common.blocks.HiveMembrane;
-import com.github.dragoni7.dreamland.common.blocks.HiveMembraneCore;
+import com.github.dragoni7.dreamland.common.blocks.HiveWeaver;
 import com.github.dragoni7.dreamland.common.blocks.InfestedHiveCluster;
 import com.github.dragoni7.dreamland.common.blocks.JellySplotch;
 import com.github.dragoni7.dreamland.common.blocks.LarvaAngerableBlock;
@@ -27,15 +25,17 @@ import com.github.dragoni7.dreamland.core.BlockItemSet;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.MudBlock;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
@@ -131,8 +131,8 @@ public class DreamlandBlocks {
 					.lightLevel((p_152684_) -> {return 1;})
 					));
 	
-	public static final BlockItemSet HIVE_MEMBRANE_CORE = new BlockItemSet("hive_membrane_core",
-			() -> new HiveMembraneCore(BlockBehaviour.Properties
+	public static final BlockItemSet HIVE_WEAVER = new BlockItemSet("hive_weaver",
+			() -> new HiveWeaver(BlockBehaviour.Properties
 					.of(Material.SPONGE, MaterialColor.COLOR_CYAN)
 					.strength(1.5F, 6.0F)
 					.requiresCorrectToolForDrops()
@@ -171,8 +171,24 @@ public class DreamlandBlocks {
 	public static final BlockItemSet DRIED_TAR = new BlockItemSet("dried_tar",
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.SANDSTONE)));
 	
-	public static final BlockItemSet TAR_SOIL = new BlockItemSet("tar_soil",
-			() -> new MudBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.MUD).color(MaterialColor.COLOR_PURPLE)));
+	public static final BlockItemSet TAR_MUD = new BlockItemSet("tar_mud",
+			() -> new MudBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).color(MaterialColor.TERRACOTTA_PURPLE).isValidSpawn(DreamlandBlocks::always).isRedstoneConductor(DreamlandBlocks::always).isViewBlocking(DreamlandBlocks::always).isSuffocating(DreamlandBlocks::always).sound(SoundType.MUD)));
+	
+	public static final BlockItemSet PACKED_TAR_MUD = new BlockItemSet("packed_tar_mud",
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).strength(1.0F, 3.0F).sound(SoundType.PACKED_MUD)));
+	
+	public static final BlockItemSet TAR_MUD_BRICKS = new BlockItemSet("tar_mud_bricks",
+			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_PURPLE).requiresCorrectToolForDrops().strength(1.5F, 3.0F).sound(SoundType.MUD_BRICKS)));
+	
+	@SuppressWarnings("deprecation")
+	public static final BlockItemSet TAR_MUD_BRICK_STAIRS = new BlockItemSet("tar_mud_brick_stairs",
+			() -> new StairBlock(DreamlandBlocks.TAR_MUD_BRICKS.block().get().defaultBlockState(), BlockBehaviour.Properties.copy(DreamlandBlocks.TAR_MUD_BRICKS.block().get())));
+	
+	public static final BlockItemSet TAR_MUD_BRICK_SLAB = new BlockItemSet("tar_mud_brick_slab",
+			() -> new SlabBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_PURPLE).requiresCorrectToolForDrops().strength(1.5F, 3.0F).sound(SoundType.MUD_BRICKS)));
+	
+	public static final BlockItemSet TAR_MUD_BRICK_WALL = new BlockItemSet("tar_mud_brick_wall",
+			() -> new WallBlock(BlockBehaviour.Properties.copy(DreamlandBlocks.TAR_MUD_BRICKS.block().get())));
 	
 	public static final BlockItemSet DROUGHT_SOIL = createDirtBlock("drought_soil");
 	
@@ -225,5 +241,9 @@ public class DreamlandBlocks {
 	
 	private static boolean always(BlockState state, BlockGetter getter, BlockPos pos) {
 	      return true;
+	   }
+	
+	private static Boolean always(BlockState sate, BlockGetter getter, BlockPos pos, EntityType<?> type) {
+	      return (boolean)true;
 	   }
 }

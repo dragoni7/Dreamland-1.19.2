@@ -63,7 +63,8 @@ public class AddBlockTags extends BlockTagsProvider{
 		.add(DreamlandBlocks.CLAY_SOIL_GRASS.block().get())
 		.add(DreamlandBlocks.HIVE_JELLY_CLUSTER.block().get())
 		.add(DreamlandBlocks.INFESTED_HIVE_JELLY_CLUSTER.block().get())
-		.add(DreamlandBlocks.TAR_SOIL.block().get())
+		.add(DreamlandBlocks.TAR_MUD.block().get())
+		.add(DreamlandBlocks.PACKED_TAR_MUD.block().get())
 		.add(DreamlandBlocks.DROUGHT_SOIL.block().get())
 		.add(DreamlandBlocks.MINERAL_DIRT.block().get())
 		.add(DreamlandBlocks.FLOWERING_GRASS.block().get());
@@ -72,8 +73,12 @@ public class AddBlockTags extends BlockTagsProvider{
 		.add(DreamlandBlocks.DARK_QUARTZITE.block().get())
 		.add(DreamlandBlocks.HIVE_BLOCK.block().get())
 		.add(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.block().get())
-		.add(DreamlandBlocks.HIVE_MEMBRANE_CORE.block().get())
-		.add(DreamlandBlocks.DRIED_TAR.block().get());
+		.add(DreamlandBlocks.HIVE_WEAVER.block().get())
+		.add(DreamlandBlocks.DRIED_TAR.block().get())
+		.add(DreamlandBlocks.TAR_MUD_BRICKS.block().get())
+		.add(DreamlandBlocks.TAR_MUD_BRICK_SLAB.block().get())
+		.add(DreamlandBlocks.TAR_MUD_BRICK_STAIRS.block().get())
+		.add(DreamlandBlocks.TAR_MUD_BRICK_WALL.block().get());
 		
 		tag(BlockTags.NEEDS_STONE_TOOL)
 		.add(DreamlandBlocks.HIVE_BLOCK.block().get())
@@ -82,20 +87,21 @@ public class AddBlockTags extends BlockTagsProvider{
 		.add(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.block().get());
 		
 		tag(BlockTags.NEEDS_DIAMOND_TOOL)
-		.add(DreamlandBlocks.HIVE_MEMBRANE_CORE.block().get());
+		.add(DreamlandBlocks.HIVE_WEAVER.block().get());
 	
 		tag(DreamlandBlockTags.HIVE_ORES_REPLACEABLE)
 		.add(DreamlandBlocks.HIVE_BLOCK.block().get());
 		
 		tag(BlockTags.STONE_ORE_REPLACEABLES)
-		.add(DreamlandBlocks.TAR_SOIL.block().get());
+		.add(DreamlandBlocks.TAR_MUD.block().get());
 		
 		tag(BlockTags.FEATURES_CANNOT_REPLACE)
-		.add(DreamlandBlocks.HIVE_MEMBRANE.block().get());
+		.add(DreamlandBlocks.HIVE_MEMBRANE.block().get())
+		.add(DreamlandBlocks.HIVE_WEAVER.block().get());
 		
 		tag(BlockTags.SCULK_REPLACEABLE)
 		.add(DreamlandBlocks.HIVE_BLOCK.block().get())
-		.add(DreamlandBlocks.TAR_SOIL.block().get())
+		.add(DreamlandBlocks.TAR_MUD.block().get())
 		.add(DreamlandBlocks.MINERAL_DIRT.block().get())
 		.add(DreamlandBlocks.DROUGHT_SOIL.block().get())
 		.add(DreamlandBlocks.DRIED_TAR.block().get());
@@ -111,7 +117,7 @@ public class AddBlockTags extends BlockTagsProvider{
 		
 		tag(BlockTags.AZALEA_ROOT_REPLACEABLE)
 		.add(DreamlandBlocks.FLOWERING_GRASS.block().get())
-		.add(DreamlandBlocks.TAR_SOIL.block().get())
+		.add(DreamlandBlocks.TAR_MUD.block().get())
 		.add(DreamlandBlocks.HIVE_BLOCK.block().get());
 		
 		tag(BlockTags.DEAD_BUSH_MAY_PLACE_ON)
@@ -119,13 +125,23 @@ public class AddBlockTags extends BlockTagsProvider{
 		
 		tag(BlockTags.GEODE_INVALID_BLOCKS)
 		.add(DreamlandBlocks.HIVE_MEMBRANE.block().get())
-		.add(DreamlandBlocks.HIVE_MEMBRANE_CORE.block().get());
+		.add(DreamlandBlocks.HIVE_WEAVER.block().get());
 		
 		tag(BlockTags.INFINIBURN_OVERWORLD)
-		.add(DreamlandBlocks.TAR_SOIL.block().get());
+		.add(DreamlandBlocks.TAR_MUD.block().get())
+		.add(DreamlandBlocks.PACKED_TAR_MUD.block().get());
 		
 		tag(BlockTags.WITHER_IMMUNE)
 		.add(DreamlandBlocks.HIVE_MEMBRANE.block().get());
+		
+		tag(BlockTags.STAIRS)
+		.add(DreamlandBlocks.TAR_MUD_BRICK_STAIRS.block().get());
+		
+		tag(BlockTags.SLABS)
+		.add(DreamlandBlocks.TAR_MUD_BRICK_SLAB.block().get());
+		
+		tag(BlockTags.WALLS)
+		.add(DreamlandBlocks.TAR_MUD_BRICK_WALL.block().get());
 		
 		addWoodSetTags(DreamlandWoodSets.PLUM_BIRCH);
 		addWoodSetTags(DreamlandWoodSets.TAR_BARK);

@@ -121,7 +121,7 @@ public class TarBarkTree extends Feature<NoneFeatureConfiguration> {
 	}
 	
 	private static boolean createLeaves(WorldGenLevel level, BlockPos pos, FeatureBuilder builder, RandomSource rand) {
-		final BlockState leaves = DreamlandBlocks.TAR_BARK_LEAVES.block().get().defaultBlockState().setValue(LeavesBlock.DISTANCE, 1);
+		final BlockState leaves = DreamlandBlocks.TAR_BARK_LEAVES.block().get().defaultBlockState().setValue(LeavesBlock.DISTANCE, 1).setValue(LeavesBlock.PERSISTENT, Boolean.valueOf(true));
 		boolean canBuild = true;
 		int extraLength = 1 + rand.nextInt(2);
 		

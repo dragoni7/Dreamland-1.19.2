@@ -7,8 +7,10 @@ import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.sounds.Music;
 import net.minecraft.util.Mth;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
+import net.minecraft.world.level.biome.MobSpawnSettings.SpawnerData;
 
 public class DreamlandOverworldBiomes {
 
@@ -49,7 +51,7 @@ public class DreamlandOverworldBiomes {
         DreamlandBiomeFeatures.addHiveOres(biomeBuilder);
         DreamlandBiomeFeatures.hiveBiomeFeatures(biomeBuilder);
         
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(DreamlandEntities.LARVA.get(), 20, 1, 2));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(DreamlandEntities.LARVA.get(), 20, 2, 4));
         
         return biome(Biome.Precipitation.NONE, 0.8F, 0.0F, new BiomeSpecialEffects.Builder()
         		.waterColor(12511438)
@@ -68,7 +70,9 @@ public class DreamlandOverworldBiomes {
     	globalOverworldGeneration(biomeBuilder);
     	DreamlandBiomeFeatures.tardeltasBiomeFeatures(biomeBuilder);
     	
-    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(DreamlandEntities.OOZE.get(), 7, 1, 1));
+    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(DreamlandEntities.OOZE.get(), 6, 1, 1));
+    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SKELETON, 100, 4, 4));
+    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ENDERMAN, 10, 1, 4));
     	
     	return biome(Biome.Precipitation.NONE, 2.0F, 0.0F, new BiomeSpecialEffects.Builder()
 				.grassColorOverride(11334212)
@@ -88,6 +92,19 @@ public class DreamlandOverworldBiomes {
     	BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
     	globalOverworldGeneration(biomeBuilder);
     	DreamlandBiomeFeatures.jeweledForestBiomeFeatures(biomeBuilder);
+    	
+    	spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.SHEEP, 12, 4, 4));
+    	spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.CHICKEN, 10, 4, 4));
+    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SPIDER, 100, 4, 4));
+    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ZOMBIE, 95, 4, 4));
+    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ZOMBIE_VILLAGER, 5, 1, 1));
+    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SKELETON, 100, 4, 4));
+    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.CREEPER, 100, 4, 4));
+    	spawnBuilder.addSpawn(MobCategory.AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.BAT, 10, 8, 8));
+    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SLIME, 100, 4, 4));
+    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ENDERMAN, 10, 1, 4));
+    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.WITCH, 5, 1, 1));
+    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SLIME, 100, 4, 4));
     	
     	return biome(Biome.Precipitation.RAIN, 0.9F, 1.0F, new BiomeSpecialEffects.Builder()
     			.grassColorOverride(14370147)

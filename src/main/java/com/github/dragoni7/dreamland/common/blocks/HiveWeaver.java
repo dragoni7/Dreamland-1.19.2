@@ -32,15 +32,15 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 
-public class HiveMembraneCore extends LarvaAngerableBlock {
+public class HiveWeaver extends LarvaAngerableBlock {
 	
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 	public static final IntegerProperty LEVEL = BlockStateProperties.AGE_7;
 	public static final int MAX_LEVEL = 7;
 	
-	public HiveMembraneCore(Properties properties) {
+	public HiveWeaver(Properties properties) {
 		super(properties);
-		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(HiveMembraneCore.LEVEL, Integer.valueOf(0)));
+		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(HiveWeaver.LEVEL, Integer.valueOf(0)));
 	}
 	
 	public BlockState getStateForPlacement(BlockPlaceContext context) {

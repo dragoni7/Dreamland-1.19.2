@@ -6,10 +6,10 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "dreamland:tar_soil"
+          "name": "dreamland:tar_mud_bricks"
         }
       ],
-      "name": "tar_soil",
+      "name": "tar_mud_bricks",
       "rolls": 1.0
     }
   ]

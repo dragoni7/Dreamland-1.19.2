@@ -6,10 +6,10 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "dreamland:hive_membrane_core"
+          "name": "dreamland:tar_mud"
         }
       ],
-      "name": "hive_membrane_core",
+      "name": "tar_mud",
       "rolls": 1.0
     }
   ]
