@@ -26,6 +26,7 @@ import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.RegistryObject;
 
 public class WoodSet {
+	
 	private String setName;
 	
 	private MaterialColor color;

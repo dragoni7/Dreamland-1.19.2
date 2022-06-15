@@ -35,7 +35,7 @@ public class TarBarkTree extends Feature<NoneFeatureConfiguration> {
 		int trunkBaseHeight = MIN_TRUNK_HEIGHT + rand.nextInt(2);
 		boolean xzChange = rand.nextBoolean();
 		
-		if (worldgenlevel.isEmptyBlock(blockpos.below()) || !DreamlandBlocks.TAR_BARK_SAPLING.get().defaultBlockState().canSurvive(worldgenlevel, blockpos)) {
+		if (worldgenlevel.isEmptyBlock(blockpos.below()) || !DreamlandBlocks.TAR_BARK_SAPLING.block().get().defaultBlockState().canSurvive(worldgenlevel, blockpos)) {
 			return false;
 		}
 		
@@ -121,7 +121,7 @@ public class TarBarkTree extends Feature<NoneFeatureConfiguration> {
 	}
 	
 	private static boolean createLeaves(WorldGenLevel level, BlockPos pos, FeatureBuilder builder, RandomSource rand) {
-		final BlockState leaves = DreamlandBlocks.TAR_BARK_LEAVES.get().defaultBlockState().setValue(LeavesBlock.DISTANCE, 1);
+		final BlockState leaves = DreamlandBlocks.TAR_BARK_LEAVES.block().get().defaultBlockState().setValue(LeavesBlock.DISTANCE, 1);
 		boolean canBuild = true;
 		int extraLength = 1 + rand.nextInt(2);
 		

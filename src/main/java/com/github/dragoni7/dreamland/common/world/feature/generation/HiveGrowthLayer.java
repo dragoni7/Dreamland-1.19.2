@@ -30,9 +30,9 @@ public class HiveGrowthLayer extends Feature<NoneFeatureConfiguration> {
 	    	for (int y = -2; y < 2; y++) {
 	    		for (int z = -4; z < 4; z++) {
 	    			blockpos = origin.offset(x, y, z);
-	    			if (worldgenlevel.getBlockState(blockpos).is(DreamlandBlocks.HIVE_BLOCK.get()) && worldgenlevel.isEmptyBlock(blockpos.above()) && RollBoolean.roll(2, context.random())) {
-	    		    	status = builder.addInput(worldgenlevel, DreamlandBlocks.HIVE_GROWTH.get().defaultBlockState(), blockpos.above());
-	    		    	status = builder.addInput(worldgenlevel, DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState().setValue(HiveBlock.HAS_GROWTH, Boolean.valueOf(true)), blockpos, true);
+	    			if (worldgenlevel.getBlockState(blockpos).is(DreamlandBlocks.HIVE_BLOCK.block().get()) && worldgenlevel.isEmptyBlock(blockpos.above()) && RollBoolean.roll(2, context.random())) {
+	    		    	status = builder.addInput(worldgenlevel, DreamlandBlocks.HIVE_GROWTH.block().get().defaultBlockState(), blockpos.above());
+	    		    	status = builder.addInput(worldgenlevel, DreamlandBlocks.HIVE_BLOCK.block().get().defaultBlockState().setValue(HiveBlock.HAS_GROWTH, Boolean.valueOf(true)), blockpos, true);
 	    		    }
 	    		}
 	    	}

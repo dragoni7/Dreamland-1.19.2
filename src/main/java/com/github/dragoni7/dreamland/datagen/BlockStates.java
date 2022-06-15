@@ -34,20 +34,20 @@ public class BlockStates extends BlockStateProvider{
 	protected void registerStatesAndModels() {
 		
 		ArrayList<Block> simpleBlocks = new ArrayList<Block>();
-		simpleBlocks.add(DreamlandBlocks.CLAY_SOIL.get());
-		simpleBlocks.add(DreamlandBlocks.DARK_QUARTZITE.get());
-		simpleBlocks.add(DreamlandBlocks.DUSK_ICE.get());
-		simpleBlocks.add(DreamlandBlocks.HIVE_IRON.get());
-		simpleBlocks.add(DreamlandBlocks.HIVE_COPPER.get());
-		simpleBlocks.add(DreamlandBlocks.HIVE_REDSTONE.get());
-		simpleBlocks.add(DreamlandBlocks.HIVE_GOLD.get());
-		simpleBlocks.add(DreamlandBlocks.HIVE_LAPIS.get());
-		simpleBlocks.add(DreamlandBlocks.HIVE_DIAMOND.get());
-		simpleBlocks.add(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.get());
-		simpleBlocks.add(DreamlandBlocks.DRIED_TAR.get());
-		simpleBlocks.add(DreamlandBlocks.TAR_SOIL.get());
-		simpleBlocks.add(DreamlandBlocks.DROUGHT_SOIL.get());
-		simpleBlocks.add(DreamlandBlocks.MINERAL_DIRT.get());
+		simpleBlocks.add(DreamlandBlocks.CLAY_SOIL.block().get());
+		simpleBlocks.add(DreamlandBlocks.DARK_QUARTZITE.block().get());
+		simpleBlocks.add(DreamlandBlocks.DUSK_ICE.block().get());
+		simpleBlocks.add(DreamlandBlocks.HIVE_IRON.block().get());
+		simpleBlocks.add(DreamlandBlocks.HIVE_COPPER.block().get());
+		simpleBlocks.add(DreamlandBlocks.HIVE_REDSTONE.block().get());
+		simpleBlocks.add(DreamlandBlocks.HIVE_GOLD.block().get());
+		simpleBlocks.add(DreamlandBlocks.HIVE_LAPIS.block().get());
+		simpleBlocks.add(DreamlandBlocks.HIVE_DIAMOND.block().get());
+		simpleBlocks.add(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.block().get());
+		simpleBlocks.add(DreamlandBlocks.DRIED_TAR.block().get());
+		simpleBlocks.add(DreamlandBlocks.TAR_SOIL.block().get());
+		simpleBlocks.add(DreamlandBlocks.DROUGHT_SOIL.block().get());
+		simpleBlocks.add(DreamlandBlocks.MINERAL_DIRT.block().get());
 
 		for(Block element : simpleBlocks) {
 			simpleBlock(element);

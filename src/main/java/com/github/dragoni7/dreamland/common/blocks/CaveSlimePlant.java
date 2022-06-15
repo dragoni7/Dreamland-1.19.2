@@ -18,7 +18,7 @@ public class CaveSlimePlant extends GrowingPlantBodyBlock implements CaveVines {
 
 	@Override
 	protected GrowingPlantHeadBlock getHeadBlock() {
-		return (GrowingPlantHeadBlock)DreamlandBlocks.CAVE_SLIME.get();
+		return (GrowingPlantHeadBlock)DreamlandBlocks.CAVE_SLIME.block().get();
 	}
 	
 	public static ToIntFunction<BlockState> emission(int p_181223_) {

@@ -32,25 +32,25 @@ public class DreamlandClientEventHandler {
 		
 		
 		event.enqueueWork(()-> {
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.BUMBLE_BLOCK.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.HIVE_JELLY_CLUSTER.get(), RenderType.translucent());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.INFESTED_HIVE_JELLY_CLUSTER.get(), RenderType.translucent());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.CLAY_SOIL_GRASS.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.DUSK_ICE.get(), RenderType.translucent());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.HIVE_MEMBRANE.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.CAVE_SLIME.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.BUMBLE_BLOCK.block().get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.HIVE_JELLY_CLUSTER.block().get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.INFESTED_HIVE_JELLY_CLUSTER.block().get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.CLAY_SOIL_GRASS.block().get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.DUSK_ICE.block().get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.HIVE_MEMBRANE.block().get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.CAVE_SLIME.block().get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.CAVE_SLIME_PLANT.get(), RenderType.cutout());	
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.HIVE_GROWTH.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.HIVE_GROWTH.block().get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.JELLY_SPLOTCH.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.TAR_SPROUTS.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.TAR_BARK_LEAVES.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.PLUM_BIRCH_LEAVES.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.FLOWERING_GRASS.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.TAR_SPROUTS.block().get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.TAR_BARK_LEAVES.block().get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.PLUM_BIRCH_LEAVES.block().get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.FLOWERING_GRASS.block().get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.PLUM_BIRCH.getDoor().get(), RenderType.cutoutMipped());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.PLUM_BIRCH.getLadder().get(), RenderType.cutoutMipped());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.OPALINE_MARIGOLD.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.PINK_CRAB_GRASS.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.FLOWERING_UNDERGROWTH.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.OPALINE_MARIGOLD.block().get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.PINK_CRAB_GRASS.block().get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.FLOWERING_UNDERGROWTH.block().get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.TAR_BARK.getDoor().get(), RenderType.cutoutMipped());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.TAR_BARK.getLadder().get(), RenderType.cutoutMipped());
 			
@@ -70,6 +70,6 @@ public class DreamlandClientEventHandler {
 	
 	private static void registerBlockColors(final ColorHandlerEvent.Block event) {
 		final BlockColors blockColors = event.getBlockColors();
-		blockColors.register((state, world, pos, tintIndex) -> BiomeColors.getAverageGrassColor(world, pos), DreamlandBlocks.CLAY_SOIL_GRASS.get());
+		blockColors.register((state, world, pos, tintIndex) -> BiomeColors.getAverageGrassColor(world, pos), DreamlandBlocks.CLAY_SOIL_GRASS.block().get());
 	}
 }

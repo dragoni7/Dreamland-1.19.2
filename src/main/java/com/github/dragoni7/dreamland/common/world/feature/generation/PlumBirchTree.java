@@ -44,7 +44,7 @@ public class PlumBirchTree extends Feature<NoneFeatureConfiguration> {
 		Boolean branchResult = false;
 		
 		
-		if (worldgenlevel.isEmptyBlock(blockpos.below()) || !DreamlandBlocks.PLUM_BIRCH_SAPLING.get().defaultBlockState().canSurvive(worldgenlevel, blockpos)) {
+		if (worldgenlevel.isEmptyBlock(blockpos.below()) || !DreamlandBlocks.PLUM_BIRCH_SAPLING.block().get().defaultBlockState().canSurvive(worldgenlevel, blockpos)) {
 			return false;
 		}
 		
@@ -117,7 +117,7 @@ public class PlumBirchTree extends Feature<NoneFeatureConfiguration> {
 	}
 	
 	private static boolean createLeaves(WorldGenLevel level, BlockPos pos, FeatureBuilder builder, RandomSource rand, int height) {
-		final BlockState leaves = DreamlandBlocks.PLUM_BIRCH_LEAVES.get().defaultBlockState().setValue(LeavesBlock.DISTANCE, 1);
+		final BlockState leaves = DreamlandBlocks.PLUM_BIRCH_LEAVES.block().get().defaultBlockState().setValue(LeavesBlock.DISTANCE, 1);
 		BlockPos leavesPos = pos.above(height);
 		boolean canBuild = true;
 		

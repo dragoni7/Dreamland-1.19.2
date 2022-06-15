@@ -28,7 +28,7 @@ public class HiveBlock extends LarvaAngerableBlock {
 	 }
 	
 	private static boolean hasGrowth(BlockState state) {
-		return state.is(DreamlandBlocks.HIVE_GROWTH.get());
+		return state.is(DreamlandBlocks.HIVE_GROWTH.block().get());
 	}
 	
 	@Override

@@ -116,7 +116,7 @@ public class SurfaceLake extends Feature<SurfaceLake.Configuration> {
 	   }
 
 	   private boolean canReplaceBlock(BlockState state) {
-	      return !state.is(BlockTags.FEATURES_CANNOT_REPLACE) || !state.is(DreamlandBlocks.DRIED_TAR.get()) || !state.is(DreamlandBlocks.DROUGHT_SOIL.get());
+	      return !state.is(BlockTags.FEATURES_CANNOT_REPLACE) || !state.is(DreamlandBlocks.DRIED_TAR.block().get()) || !state.is(DreamlandBlocks.DROUGHT_SOIL.block().get());
 	   }
 
 	   public static record Configuration(BlockStateProvider insideBlock, BlockStateProvider barrier) implements FeatureConfiguration {

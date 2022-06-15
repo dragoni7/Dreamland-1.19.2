@@ -30,8 +30,8 @@ public class HiveComb extends Feature<BlockStateConfiguration> {
 		RandomSource random = context.random();
 		BlockStateConfiguration blockstateconfig = context.config();
 		FeatureBuilder combBuilder = new FeatureBuilder();
-		BlockState combBlock = DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState();
-		BlockState altFilling = DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState();
+		BlockState combBlock = DreamlandBlocks.HIVE_BLOCK.block().get().defaultBlockState();
+		BlockState altFilling = DreamlandBlocks.HIVE_BLOCK.block().get().defaultBlockState();
 		
 		if (RollBoolean.roll(9, random)) {
 			altFilling = blockstateconfig.state;

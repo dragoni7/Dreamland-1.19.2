@@ -21,7 +21,7 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 public class ClaySoilGrass extends DreamlandSpreadingGrassBlock {
 
 	public ClaySoilGrass(Properties blockProperties) {
-		super(blockProperties, () -> DreamlandBlocks.CLAY_SOIL.get());
+		super(blockProperties, () -> DreamlandBlocks.CLAY_SOIL.block().get());
 	}
 	
 	@Override

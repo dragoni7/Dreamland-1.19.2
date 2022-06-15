@@ -2,6 +2,7 @@ package com.github.dragoni7.dreamland.datagen;
 
 import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.common.items.DreamlandItemTags;
+import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandItems;
 
 import net.minecraft.data.DataGenerator;
@@ -22,19 +23,19 @@ public class AddItemTags extends ItemTagsProvider {
 	protected void addTags() {
 
 		tag(DreamlandItemTags.HIVE_ORES_ITEM)
-			.add(DreamlandItems.HIVE_COPPER.get())
-			.add(DreamlandItems.HIVE_DIAMOND.get())
-			.add(DreamlandItems.HIVE_GOLD.get())
-			.add(DreamlandItems.HIVE_IRON.get())
-			.add(DreamlandItems.HIVE_LAPIS.get())
-			.add(DreamlandItems.HIVE_REDSTONE.get());
+			.add(DreamlandBlocks.HIVE_COPPER.item().get())
+			.add(DreamlandBlocks.HIVE_DIAMOND.item().get())
+			.add(DreamlandBlocks.HIVE_GOLD.item().get())
+			.add(DreamlandBlocks.HIVE_IRON.item().get())
+			.add(DreamlandBlocks.HIVE_LAPIS.item().get())
+			.add(DreamlandBlocks.HIVE_REDSTONE.item().get());
 		
-		addCopperOreItemTags(DreamlandItems.HIVE_COPPER.get());
-		addIronOreItemTags(DreamlandItems.HIVE_IRON.get());
-		addGoldOreItemTags(DreamlandItems.HIVE_GOLD.get());
-		addRedstoneOreItemTags(DreamlandItems.HIVE_REDSTONE.get());
-		addLapisOreItemTags(DreamlandItems.HIVE_LAPIS.get());
-		addDiamondOreItemTags(DreamlandItems.HIVE_DIAMOND.get());
+		addCopperOreItemTags(DreamlandBlocks.HIVE_COPPER.item().get());
+		addIronOreItemTags(DreamlandBlocks.HIVE_IRON.item().get());
+		addGoldOreItemTags(DreamlandBlocks.HIVE_GOLD.item().get());
+		addRedstoneOreItemTags(DreamlandBlocks.HIVE_REDSTONE.item().get());
+		addLapisOreItemTags(DreamlandBlocks.HIVE_LAPIS.item().get());
+		addDiamondOreItemTags(DreamlandBlocks.HIVE_DIAMOND.item().get());
 	}
 	
 	private void addCopperOreItemTags(Item item) {

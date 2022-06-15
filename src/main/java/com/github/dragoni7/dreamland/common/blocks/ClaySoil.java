@@ -25,7 +25,7 @@ public class ClaySoil extends Block implements BonemealableBlock{
 	         return false;
 	      } else {
 	         for(BlockPos blockpos : BlockPos.betweenClosed(p_55003_.offset(-1, -1, -1), p_55003_.offset(1, 1, 1))) {
-	            if (p_55002_.getBlockState(blockpos).is(DreamlandBlocks.CLAY_SOIL_GRASS.get())) {
+	            if (p_55002_.getBlockState(blockpos).is(DreamlandBlocks.CLAY_SOIL_GRASS.block().get())) {
 	               return true;
 	            }
 	         }
@@ -45,7 +45,7 @@ public class ClaySoil extends Block implements BonemealableBlock{
 
 	      for(BlockPos blockpos : BlockPos.betweenClosed(p_54999_.offset(-1, -1, -1), p_54999_.offset(1, 1, 1))) {
 	         BlockState blockstate = p_54997_.getBlockState(blockpos);
-	         if (blockstate.is(DreamlandBlocks.CLAY_SOIL_GRASS.get())) {
+	         if (blockstate.is(DreamlandBlocks.CLAY_SOIL_GRASS.block().get())) {
 	            flag1 = true;
 	         }
 	         if (flag1) {
@@ -54,7 +54,7 @@ public class ClaySoil extends Block implements BonemealableBlock{
 	      }
 
 	      if (flag1) {
-	         p_54997_.setBlock(p_54999_, DreamlandBlocks.CLAY_SOIL_GRASS.get().defaultBlockState(), 3);
+	         p_54997_.setBlock(p_54999_, DreamlandBlocks.CLAY_SOIL_GRASS.block().get().defaultBlockState(), 3);
 	      }
 
 	   }

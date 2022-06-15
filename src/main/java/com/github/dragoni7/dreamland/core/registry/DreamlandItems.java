@@ -5,11 +5,15 @@ import java.util.function.Supplier;
 import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.common.items.HiveJelly;
 
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Item.Properties;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -19,52 +23,6 @@ public class DreamlandItems {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Dreamland.MODID);
 		
 	//Block Items
-	public static final RegistryObject<Item> BUMBLE_BLOCK = registerBlockItem("bumble_block", () -> DreamlandBlocks.BUMBLE_BLOCK.get());
-	
-	public static final RegistryObject<Item> DARK_QUARTZITE = registerBlockItem("dark_quartzite", () -> DreamlandBlocks.DARK_QUARTZITE.get());
-	
-	public static final RegistryObject<Item> CLAY_SOIL = registerBlockItem("clay_soil", () -> DreamlandBlocks.CLAY_SOIL.get());
-	
-	public static final RegistryObject<Item> CLAY_SOIL_GRASS = registerBlockItem("clay_soil_grass", () -> DreamlandBlocks.CLAY_SOIL_GRASS.get());
-	
-	public static final RegistryObject<Item> DUSK_ICE = registerBlockItem("dusk_ice", () -> DreamlandBlocks.DUSK_ICE.get());
-	
-	public static final RegistryObject<Item> CAVE_SLIME = registerBlockItem("cave_slime", () -> DreamlandBlocks.CAVE_SLIME.get());
-	
-	public static final RegistryObject<Item> HIVE_BLOCK = registerBlockItem("hive_block", () -> DreamlandBlocks.HIVE_BLOCK.get());
-	
-	public static final RegistryObject<Item> HIVE_JELLY_CLUSTER = registerBlockItem("hive_jelly_cluster", () -> DreamlandBlocks.HIVE_JELLY_CLUSTER.get());
-	
-	public static final RegistryObject<Item> INFESTED_HIVE_JELLY_CLUSTER = registerBlockItem("infested_hive_jelly_cluster", () -> DreamlandBlocks.INFESTED_HIVE_JELLY_CLUSTER.get());
-	
-	public static final RegistryObject<Item> HIVE_MEMBRANE = registerBlockItem("hive_membrane", () -> DreamlandBlocks.HIVE_MEMBRANE.get());
-	
-	public static final RegistryObject<Item> HIVE_MEMBRANE_CORE = registerBlockItem("hive_membrane_core", () -> DreamlandBlocks.HIVE_MEMBRANE_CORE.get());
-	
-	public static final RegistryObject<Item> HIVE_BLOCK_WITH_JELLY = registerBlockItem("hive_block_with_jelly", () -> DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.get());
-	
-	public static final RegistryObject<Item> HIVE_GROWTH = registerBlockItem("hive_growth", () -> DreamlandBlocks.HIVE_GROWTH.get());
-	
-	public static final RegistryObject<Item> HIVE_IRON = registerBlockItem("hive_iron", () -> DreamlandBlocks.HIVE_IRON.get());
-	public static final RegistryObject<Item> HIVE_GOLD = registerBlockItem("hive_gold", () -> DreamlandBlocks.HIVE_GOLD.get());
-	public static final RegistryObject<Item> HIVE_COPPER = registerBlockItem("hive_copper", () -> DreamlandBlocks.HIVE_COPPER.get());
-	public static final RegistryObject<Item> HIVE_REDSTONE = registerBlockItem("hive_redstone", () -> DreamlandBlocks.HIVE_REDSTONE.get());
-	public static final RegistryObject<Item> HIVE_LAPIS = registerBlockItem("hive_lapis", () -> DreamlandBlocks.HIVE_LAPIS.get());
-	public static final RegistryObject<Item> HIVE_DIAMOND = registerBlockItem("hive_diamond", () -> DreamlandBlocks.HIVE_DIAMOND.get());
-	
-	public static final RegistryObject<Item> DRIED_TAR = registerBlockItem("dried_tar", () -> DreamlandBlocks.DRIED_TAR.get());
-	public static final RegistryObject<Item> TAR_SOIL = registerBlockItem("tar_soil", () -> DreamlandBlocks.TAR_SOIL.get());
-	public static final RegistryObject<Item> DROUGHT_SOIL = registerBlockItem("drought_soil", () -> DreamlandBlocks.DROUGHT_SOIL.get());
-	public static final RegistryObject<Item> JOSHUA_SAPLING = registerBlockItem("joshua_sapling", () -> DreamlandBlocks.TAR_BARK_SAPLING.get());
-	public static final RegistryObject<Item> TAR_SPROUTS = registerBlockItem("tar_sprouts", () -> DreamlandBlocks.TAR_SPROUTS.get());
-	public static final RegistryObject<Item> TAR_BARK_LEAVES = registerBlockItem("tar_bark_leaves", () -> DreamlandBlocks.TAR_BARK_LEAVES.get());
-	
-	public static final RegistryObject<Item> PLUM_BIRCH_LEAVES = registerBlockItem("plum_birch_leaves", () -> DreamlandBlocks.PLUM_BIRCH_LEAVES.get());
-	public static final RegistryObject<Item> MINERAL_DIRT = registerBlockItem("mineral_dirt", () -> DreamlandBlocks.MINERAL_DIRT.get());
-	public static final RegistryObject<Item> FLOWERING_GRASS = registerBlockItem("flowering_grass", () -> DreamlandBlocks.FLOWERING_GRASS.get()); 
-	public static final RegistryObject<Item> OPALINE_MARIGOLD = registerBlockItem("opaline_marigold", () -> DreamlandBlocks.OPALINE_MARIGOLD.get());
-	public static final RegistryObject<Item> PINK_CRAB_GRASS = registerBlockItem("pink_crab_grass", () -> DreamlandBlocks.PINK_CRAB_GRASS.get());
-	public static final RegistryObject<Item> FLOWERING_UNDERGROWTH = registerBlockItem("flowering_undergrowth", () -> DreamlandBlocks.FLOWERING_UNDERGROWTH.get());
 	
 	//Items
 	public static final RegistryObject<Item> HIVE_JELLY_ITEM = registerHiveJelly("hive_jelly", new FoodProperties.Builder().nutrition(1).saturationMod(0.2F).build());
@@ -76,6 +34,16 @@ public class DreamlandItems {
 		
 		return ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(Dreamland.DreamlandTab)));
 		
+	}
+	
+	//Spawn Eggs
+	static {
+		registerSpawnEgg("spawn_egg_larva", () -> DreamlandEntities.LARVA.get(), 0X53caf5, 0X2c2870);
+		registerSpawnEgg("spawn_egg_ooze", () -> DreamlandEntities.OOZE.get(), 0X262445, 0X494587);
+	}
+	
+	private static void registerSpawnEgg(String name, Supplier<? extends EntityType<? extends Mob>> type, int backgroundColor, int highlightColor) {
+		ITEMS.register(name, () -> new ForgeSpawnEggItem(type, backgroundColor, highlightColor, new Item.Properties().tab(Dreamland.DreamlandTab)));
 	}
 	
 	@SuppressWarnings("unused")

@@ -50,13 +50,14 @@ public class HiveStrand extends Feature<NoneFeatureConfiguration> {
 	}
 	
 	private boolean buildStrand(WorldGenLevel worldgenlevel, FeatureBuilder builder, BlockPos blockpos, RandomSource rand, Direction direction, boolean fill, int i, int j, int k) {
-		BlockState strandBlock = DreamlandBlocks.HIVE_BLOCK.get().defaultBlockState();
-		BlockState fillBlock = DreamlandBlocks.HIVE_MEMBRANE.get().defaultBlockState();
-		BlockState core = DreamlandBlocks.HIVE_MEMBRANE_CORE.get().defaultBlockState().setValue(HiveMembraneCore.LEVEL, Integer.valueOf(HiveMembraneCore.MAX_LEVEL));
+		BlockState strandBlock = DreamlandBlocks.HIVE_BLOCK.block().get().defaultBlockState();
+		BlockState fillBlock = DreamlandBlocks.HIVE_MEMBRANE.block().get().defaultBlockState();
+		BlockState core = DreamlandBlocks.HIVE_MEMBRANE_CORE.block().get().defaultBlockState().setValue(HiveMembraneCore.LEVEL, Integer.valueOf(HiveMembraneCore.MAX_LEVEL));
 		int height = j - 2;
 		BlockPos fillPos = blockpos.offset(i, height, k);
 		boolean status = true;
-		int offset = rand.nextInt(0, 2);
+		int offsetxz = rand.nextInt(0, 2);
+		int offsety = rand.nextInt(0, 2);
 		
 		builder.addInput(worldgenlevel, strandBlock, blockpos.offset(i,j,k));
 		status = builder.addInput(worldgenlevel, strandBlock, blockpos.offset(i,j+1,k));
@@ -76,11 +77,12 @@ public class HiveStrand extends Feature<NoneFeatureConfiguration> {
 				}
 				if (direction.equals(Direction.NORTH)) {
 					if (placeCore(i, height)) {
-						if (offset != 0) {
+						if (offsetxz != 0 || offsety != 0) {
 							builder.addInput(worldgenlevel, fillBlock, fillPos);
 						}
-						builder.addInput(worldgenlevel, core.setValue(HorizontalDirectionalBlock.FACING, direction), fillPos.offset(offset, offset + rand.nextInt(0, 2), 0), true);
-						offset = rand.nextInt(0, 2);
+						builder.addInput(worldgenlevel, core.setValue(HorizontalDirectionalBlock.FACING, direction), fillPos.offset(offsetxz, offsety, 0), true);
+						offsetxz = rand.nextInt(0, 2);
+						offsety = rand.nextInt(0, 2);
 					}
 					else {
 						builder.addInput(worldgenlevel, fillBlock, fillPos);
@@ -88,11 +90,12 @@ public class HiveStrand extends Feature<NoneFeatureConfiguration> {
 				}
 				else if (direction.equals(Direction.WEST)) {
 					if (placeCore(k, height)) {
-						if (offset != 0) {
+						if (offsetxz != 0 || offsety != 0) {
 							builder.addInput(worldgenlevel, fillBlock, fillPos);
 						}
-						builder.addInput(worldgenlevel, core.setValue(HorizontalDirectionalBlock.FACING, direction), fillPos.offset(0, offset + rand.nextInt(0, 2), offset), true);
-						offset = rand.nextInt(0, 2);
+						builder.addInput(worldgenlevel, core.setValue(HorizontalDirectionalBlock.FACING, direction), fillPos.offset(0, offsety, offsetxz), true);
+						offsetxz = rand.nextInt(0, 2);
+						offsety = rand.nextInt(0, 2);
 					}
 					else {
 						builder.addInput(worldgenlevel, fillBlock, fillPos);

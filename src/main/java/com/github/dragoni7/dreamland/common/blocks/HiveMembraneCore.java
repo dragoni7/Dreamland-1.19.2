@@ -75,7 +75,7 @@ public class HiveMembraneCore extends LarvaAngerableBlock {
 	private void buildMembrane(BlockState state, Level level, BlockPos pos) {
 		int radius = getLevel(state) + 1;
 		Direction direction = state.getValue(HorizontalDirectionalBlock.FACING);
-		BlockState membrane = DreamlandBlocks.HIVE_MEMBRANE.get().defaultBlockState();
+		BlockState membrane = DreamlandBlocks.HIVE_MEMBRANE.block().get().defaultBlockState();
 		BlockPos membranePos;
 		
 		Boolean xSearch = direction == Direction.NORTH || direction == Direction.SOUTH;
@@ -119,7 +119,7 @@ public class HiveMembraneCore extends LarvaAngerableBlock {
 	
 	public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack itemStack) {
 		super.playerDestroy(level, player, pos, state, blockEntity, itemStack);
-		BlockState disconnect = DreamlandBlocks.HIVE_MEMBRANE.get().defaultBlockState().setValue(HiveMembrane.CONNECTED,  Boolean.valueOf(false));
+		BlockState disconnect = DreamlandBlocks.HIVE_MEMBRANE.block().get().defaultBlockState().setValue(HiveMembrane.CONNECTED,  Boolean.valueOf(false));
 		ArrayList<BlockPos> membranes = searchBlocks(state, pos, level);
 		if (membranes != null) {
 			for (BlockPos membranePos : membranes) {
@@ -157,7 +157,7 @@ public class HiveMembraneCore extends LarvaAngerableBlock {
 					checkPos = pos.offset(0, y, i);
 				}
 				
-				if (level.getBlockState(checkPos).is(DreamlandBlocks.HIVE_MEMBRANE.get())) {
+				if (level.getBlockState(checkPos).is(DreamlandBlocks.HIVE_MEMBRANE.block().get())) {
 					matches.add(checkPos);
 				}
 			}

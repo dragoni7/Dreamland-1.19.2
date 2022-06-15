@@ -34,13 +34,13 @@ import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import org.apache.logging.log4j.Logger;
 
+import com.github.dragoni7.dreamland.Dreamland;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 public abstract class BaseLootTableProvider extends LootTableProvider {
 
-	private static final Logger LOGGER = LogManager.getLogger();
-	private static final Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
+	private static final Logger LOGGER = Dreamland.LOGGER;
 	
 	protected final Map<Block, LootTable.Builder> lootTables = new HashMap<>();
 	private final DataGenerator generator;
@@ -72,6 +72,21 @@ public abstract class BaseLootTableProvider extends LootTableProvider {
 						LootItem.lootTableItem(item)
 						.apply(SetItemCountFunction.setCount(UniformGenerator.between(min, max)))
 						.apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE, 1))
+						.apply(ApplyExplosionDecay.explosionDecay())
+					)
+				);
+		return LootTable.lootTable().withPool(builder);
+	}
+	
+	protected LootTable.Builder createGrassBlockTable(String name, Block grassBlock, Item dirtBlockItem) {
+		LootPool.Builder builder = LootPool.lootPool()
+				.name(name)
+				.setRolls(ConstantValue.exactly(1))
+				.add(AlternativesEntry.alternatives(
+						LootItem.lootTableItem(grassBlock)
+						.when(MatchTool.toolMatches(ItemPredicate.Builder.item()
+								.hasEnchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.Ints.atLeast(1))))),
+						LootItem.lootTableItem(dirtBlockItem)
 						.apply(ApplyExplosionDecay.explosionDecay())
 					)
 				);

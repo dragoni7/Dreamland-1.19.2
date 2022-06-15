@@ -6,10 +6,10 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "dreamland:hive_membrane"
+          "name": "dreamland:plum_birch_log"
         }
       ],
-      "name": "hive_membrane",
+      "name": "plum_birch_log",
       "rolls": 1.0
     }
   ]

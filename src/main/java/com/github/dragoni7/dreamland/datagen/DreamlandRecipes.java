@@ -2,6 +2,7 @@ package com.github.dragoni7.dreamland.datagen;
 
 import java.util.function.Consumer;
 
+import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandItems;
 
 import net.minecraft.data.DataGenerator;
@@ -29,12 +30,12 @@ public class DreamlandRecipes extends RecipeProvider{
 		 * .save(consumer);
 		 */
 		  
-		  createOreSmeltingRecipe(consumer, DreamlandItems.HIVE_COPPER.get(), Items.COPPER_INGOT, 0.7F, 200, "hive_copper_to_ingot");
-		  createOreSmeltingRecipe(consumer, DreamlandItems.HIVE_IRON.get(), Items.IRON_INGOT, 0.7F, 200, "hive_iron_to_ingot");
-		  createOreSmeltingRecipe(consumer, DreamlandItems.HIVE_REDSTONE.get(), Items.REDSTONE, 0.7F, 200, "hive_redstone_to_gem");
-		  createOreSmeltingRecipe(consumer, DreamlandItems.HIVE_LAPIS.get(), Items.LAPIS_LAZULI, 0.2F, 200, "hive_lapis_to_gem");
-		  createOreSmeltingRecipe(consumer, DreamlandItems.HIVE_GOLD.get(), Items.GOLD_INGOT, 1.0F, 200, "hive_gold_to_ingot");
-		  createOreSmeltingRecipe(consumer, DreamlandItems.HIVE_DIAMOND.get(), Items.DIAMOND, 1.0F, 200, "hive_diamond_to_gem");
+		  createOreSmeltingRecipe(consumer, DreamlandBlocks.HIVE_COPPER.item().get(), Items.COPPER_INGOT, 0.7F, 200, "hive_copper_to_ingot");
+		  createOreSmeltingRecipe(consumer, DreamlandBlocks.HIVE_IRON.item().get(), Items.IRON_INGOT, 0.7F, 200, "hive_iron_to_ingot");
+		  createOreSmeltingRecipe(consumer, DreamlandBlocks.HIVE_REDSTONE.item().get(), Items.REDSTONE, 0.7F, 200, "hive_redstone_to_gem");
+		  createOreSmeltingRecipe(consumer, DreamlandBlocks.HIVE_LAPIS.item().get(), Items.LAPIS_LAZULI, 0.2F, 200, "hive_lapis_to_gem");
+		  createOreSmeltingRecipe(consumer, DreamlandBlocks.HIVE_GOLD.item().get(), Items.GOLD_INGOT, 1.0F, 200, "hive_gold_to_ingot");
+		  createOreSmeltingRecipe(consumer, DreamlandBlocks.HIVE_DIAMOND.item().get(), Items.DIAMOND, 1.0F, 200, "hive_diamond_to_gem");
 	}
 	
 	private void createOreSmeltingRecipe(Consumer<FinishedRecipe> consumer,Item input, Item output, float xp, int time, String name) {

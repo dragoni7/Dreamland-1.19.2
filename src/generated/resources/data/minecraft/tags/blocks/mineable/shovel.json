@@ -1,9 +1,11 @@
 {
   "values": [
     "dreamland:clay_soil",
+    "dreamland:clay_soil_grass",
     "dreamland:hive_jelly_cluster",
     "dreamland:infested_hive_jelly_cluster",
-    "dreamland:hive_membrane",
+    "dreamland:tar_soil",
+    "dreamland:drought_soil",
     "dreamland:mineral_dirt",
     "dreamland:flowering_grass"
   ]
