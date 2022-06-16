@@ -5,6 +5,7 @@ import com.github.dragoni7.dreamland.common.entities.projectiles.TarBall;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
+import com.github.dragoni7.dreamland.core.registry.DreamlandTiles;
 import com.github.dragoni7.dreamland.core.registry.DreamlandWoodSets;
 
 import net.minecraft.client.color.block.BlockColors;
@@ -68,6 +69,7 @@ public class DreamlandClientEventHandler {
 		event.registerEntityRenderer(DreamlandEntities.THROWN_HIVE_JELLY.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(DreamlandEntities.OOZE.get(), OozeRender::new);
 		event.registerEntityRenderer(DreamlandEntities.TAR_BALL.get(), TarBallRender::new);
+		event.registerBlockEntityRenderer(DreamlandTiles.ANCIENT_EGG.get(), AncientEggRender::new);
 	}
 	
 	private static void registerBlockColors(final ColorHandlerEvent.Block event) {

@@ -197,6 +197,9 @@ public class DreamlandBlocks {
 	public static final BlockItemSet TAR_SPROUTS = new BlockItemSet("tar_sprouts",
 			() -> new TarSprouts(BlockBehaviour.Properties.copy(Blocks.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
 	
+	public static final BlockItemSet ANCIENT_EGG = new BlockItemSet("ancient_egg",
+			() -> new Block(BlockBehaviour.Properties.of(Material.EGG).color(MaterialColor.COLOR_BROWN).sound(SoundType.FUNGUS).strength(3.0F, 3.0F).noOcclusion()));
+	
 	public static final BlockItemSet TAR_BARK_LEAVES = createLeavesBlock("tar_bark_leaves", MaterialColor.COLOR_LIGHT_GREEN);
 	
 	public static final BlockItemSet PLUM_BIRCH_LEAVES = createLeavesBlock("plum_birch_leaves", MaterialColor.COLOR_BLUE);

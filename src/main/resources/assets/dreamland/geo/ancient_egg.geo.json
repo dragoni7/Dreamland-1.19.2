@@ -1,0 +1,59 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.ancient_egg",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "body",
+					"pivot": [0, 4, 0]
+				},
+				{
+					"name": "egg_upper",
+					"parent": "body",
+					"pivot": [0, 10.5, 0],
+					"cubes": [
+						{
+							"origin": [-5.5, 11, -5.5],
+							"size": [11, 5, 11],
+							"uv": {
+								"north": {"uv": [0, 16], "uv_size": [11, 5]},
+								"east": {"uv": [0, 16], "uv_size": [11, 5]},
+								"south": {"uv": [0, 16], "uv_size": [11, 5]},
+								"west": {"uv": [0, 16], "uv_size": [11, 5]},
+								"up": {"uv": [16, 16], "uv_size": [-11, -11]},
+								"down": {"uv": [11, 21], "uv_size": [-11, -5]}
+							}
+						}
+					]
+				},
+				{
+					"name": "egg_lower",
+					"parent": "body",
+					"pivot": [0, 1.5, 0],
+					"cubes": [
+						{
+							"origin": [-6.5, 0, -6.5],
+							"size": [13, 11, 13],
+							"uv": {
+								"north": {"uv": [0, 21], "uv_size": [13, 11]},
+								"east": {"uv": [0, 21], "uv_size": [13, 11]},
+								"south": {"uv": [0, 21], "uv_size": [13, 11]},
+								"west": {"uv": [0, 21], "uv_size": [13, 11]},
+								"up": {"uv": [13, 32], "uv_size": [-13, -11]},
+								"down": {"uv": [13, 32], "uv_size": [-13, -11]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

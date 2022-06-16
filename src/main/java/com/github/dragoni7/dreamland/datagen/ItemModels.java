@@ -62,6 +62,7 @@ public class ItemModels extends ItemModelProvider {
 		singleTextureItemModel(DreamlandBlocks.PINK_CRAB_GRASS.item(), "block/pink_crab_grass");
 		singleTextureItemModel(DreamlandBlocks.PLUM_BIRCH_SAPLING.item(), "item/plum_birch_sapling");
 		singleTextureItemModel(DreamlandBlocks.TAR_BARK_SAPLING.item(), "item/tar_bark_sapling");
+		singleTextureItemModel(DreamlandBlocks.ANCIENT_EGG.item(), "item/ancient_egg");
 		singleTextureItemModel(DreamlandItems.TAR_BUCKET, "item/tar_bucket");
 		spawnEggItemModel(DreamlandItems.SPAWN_EGG_LARVA);
 		spawnEggItemModel(DreamlandItems.SPAWN_EGG_OOZE);

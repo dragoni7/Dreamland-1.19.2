@@ -11,7 +11,7 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider.Context;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
-public class LarvaRender extends GeoEntityRenderer<LarvaEntity>{
+public class LarvaRender extends GeoEntityRenderer<LarvaEntity> {
 
 	public LarvaRender(Context renderManager) {
 		super(renderManager, new LarvaModel());

@@ -6,7 +6,7 @@ import com.github.dragoni7.dreamland.util.DreamlandLoc;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
-public class LarvaModel extends AnimatedGeoModel<LarvaEntity>{
+public class LarvaModel extends AnimatedGeoModel<LarvaEntity> {
 
 	@Override
 	public ResourceLocation getAnimationResource(LarvaEntity animatable) {
