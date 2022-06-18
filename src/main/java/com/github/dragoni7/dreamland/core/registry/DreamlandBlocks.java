@@ -32,6 +32,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.MudBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
@@ -115,6 +116,7 @@ public class DreamlandBlocks {
 					.sound(SoundType.SLIME_BLOCK)
 					.noOcclusion()
 					.randomTicks()
+					.noLootTable()
 					.lightLevel(InfestedHiveCluster.emission(5))
 					));
 	
@@ -126,6 +128,7 @@ public class DreamlandBlocks {
 					.sound(SoundType.SLIME_BLOCK)
 					.noOcclusion()
 					.randomTicks()
+					.noLootTable()
 					.hasPostProcess(DreamlandBlocks::always)
 					.emissiveRendering(DreamlandBlocks::always)
 					.lightLevel((p_152684_) -> {return 1;})
@@ -158,6 +161,7 @@ public class DreamlandBlocks {
 					.strength(0.2F)
 					.noCollission()
 					.sound(SoundType.HONEY_BLOCK)
+					.noLootTable()
 					.lightLevel(JellySplotch.emission(7))
 					));
 	
@@ -197,8 +201,11 @@ public class DreamlandBlocks {
 	public static final BlockItemSet TAR_SPROUTS = new BlockItemSet("tar_sprouts",
 			() -> new TarSprouts(BlockBehaviour.Properties.copy(Blocks.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
 	
+	public static final BlockItemSet FOSSILIZED_EGG = new BlockItemSet("fossilized_egg",
+			() -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(DreamlandBlocks.TAR_MUD.block().get()).strength(3.0F, 3.0F).sound(SoundType.STONE)));
+	
 	public static final BlockItemSet ANCIENT_EGG = new BlockItemSet("ancient_egg",
-			() -> new Block(BlockBehaviour.Properties.of(Material.EGG).color(MaterialColor.COLOR_BROWN).sound(SoundType.FUNGUS).strength(3.0F, 3.0F).noOcclusion()));
+			() -> new Block(BlockBehaviour.Properties.of(Material.EGG).color(MaterialColor.COLOR_BROWN).sound(SoundType.FUNGUS).strength(3.0F, 3.0F).noLootTable().noOcclusion()));
 	
 	public static final BlockItemSet TAR_BARK_LEAVES = createLeavesBlock("tar_bark_leaves", MaterialColor.COLOR_LIGHT_GREEN);
 	

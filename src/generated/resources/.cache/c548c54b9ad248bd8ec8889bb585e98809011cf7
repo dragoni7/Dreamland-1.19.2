@@ -1,10 +1,11 @@
-// 1.19	2022-06-15T17:31:56.9078544	Dreamland LootTables
+// 1.19	2022-06-15T22:06:48.7566532	Dreamland LootTables
 5edeb9bd12b12facb7de034bac7cf2c1e16f9f3e data/dreamland/loot_tables/blocks/bumble_block.json
 caa1846bca6e651c75784d54ab3c39e3b9949146 data/dreamland/loot_tables/blocks/cave_slime.json
 7a177bb37b098dd8810840cf59e9512dffe176d4 data/dreamland/loot_tables/blocks/dried_tar.json
 f10a8db5fbb86e261327a3f2be803f4d8c5b3d26 data/dreamland/loot_tables/blocks/drought_soil.json
 19407f0b37fcde21e78d8a5e2bce93960488b2d0 data/dreamland/loot_tables/blocks/flowering_grass.json
 f67fa968b4b0f4e61a096f24f5ec30c8ea529be6 data/dreamland/loot_tables/blocks/flowering_undergrowth.json
+3ab47e55ba61681085224357bdafec0170c226c6 data/dreamland/loot_tables/blocks/fossilized_egg.json
 735713b3aef3c7cac0db008f9daa238e8589d690 data/dreamland/loot_tables/blocks/hive_block.json
 83bb4675afedcadf2b79d00b2dfadcfe67c2a727 data/dreamland/loot_tables/blocks/hive_block_with_jelly.json
 636875f67076c8ac065f43a6b5c844a804540aca data/dreamland/loot_tables/blocks/hive_copper.json

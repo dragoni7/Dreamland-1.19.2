@@ -78,7 +78,8 @@ public class AddBlockTags extends BlockTagsProvider{
 		.add(DreamlandBlocks.TAR_MUD_BRICKS.block().get())
 		.add(DreamlandBlocks.TAR_MUD_BRICK_SLAB.block().get())
 		.add(DreamlandBlocks.TAR_MUD_BRICK_STAIRS.block().get())
-		.add(DreamlandBlocks.TAR_MUD_BRICK_WALL.block().get());
+		.add(DreamlandBlocks.TAR_MUD_BRICK_WALL.block().get())
+		.add(DreamlandBlocks.FOSSILIZED_EGG.block().get());
 		
 		tag(BlockTags.NEEDS_STONE_TOOL)
 		.add(DreamlandBlocks.HIVE_BLOCK.block().get())
@@ -88,9 +89,16 @@ public class AddBlockTags extends BlockTagsProvider{
 		
 		tag(BlockTags.NEEDS_DIAMOND_TOOL)
 		.add(DreamlandBlocks.HIVE_WEAVER.block().get());
+		
+		tag(BlockTags.NEEDS_IRON_TOOL)
+		.add(DreamlandBlocks.FOSSILIZED_EGG.block().get());
 	
 		tag(DreamlandBlockTags.HIVE_ORES_REPLACEABLE)
 		.add(DreamlandBlocks.HIVE_BLOCK.block().get());
+		
+		tag(DreamlandBlockTags.FOSSILIZED_EGG_REPLACEABLE)
+		.add(DreamlandBlocks.TAR_MUD.block().get())
+		.add(DreamlandBlocks.DRIED_TAR.block().get());
 		
 		tag(BlockTags.STONE_ORE_REPLACEABLES)
 		.add(DreamlandBlocks.TAR_MUD.block().get());

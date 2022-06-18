@@ -46,6 +46,7 @@ public class DreamlandBiomeFeatures {
 		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.PLACED_TAR_SPROUTS);
 		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.PLACED_TAR_BARK_TREE);
 		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.PLACED_TAR_SOIL_ORE);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.FOSSILIZED_EGG);
 		builder.addFeature(GenerationStep.Decoration.LAKES, DreamlandFeaturePlacements.LAKE_TAR_UNDERGROUND);
 		builder.addFeature(GenerationStep.Decoration.FLUID_SPRINGS, DreamlandFeaturePlacements.SPRING_TAR);
 	}

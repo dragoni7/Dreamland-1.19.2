@@ -6,6 +6,7 @@ import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
 import com.github.dragoni7.dreamland.core.registry.DreamlandItems;
+import com.github.dragoni7.dreamland.core.registry.DreamlandTiles;
 import com.github.dragoni7.dreamland.core.registry.DreamlandWoodSets;
 
 import net.minecraft.data.DataGenerator;
@@ -43,11 +44,18 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		
 		add(DreamlandBlocks.DRIED_TAR.block().get(), "Dried Tar");
 		add(DreamlandBlocks.TAR_MUD.block().get(), "Tar Mud");
+		add(DreamlandBlocks.PACKED_TAR_MUD.block().get(), "Packed Tar Mud");
+		add(DreamlandBlocks.TAR_MUD_BRICKS.block().get(), "Tar Mud Bricks");
+		add(DreamlandBlocks.TAR_MUD_BRICK_SLAB.block().get(), "Tar Mud Slab");
+		add(DreamlandBlocks.TAR_MUD_BRICK_STAIRS.block().get(), "Tar Mud Brick Stairs");
+		add(DreamlandBlocks.TAR_MUD_BRICK_WALL.block().get(), "Tar Mud Brick Wall");
 		add(DreamlandBlocks.DROUGHT_SOIL.block().get(), "Drought Soil");
 		add(DreamlandFluids.TAR_BLOCK.get(), "Tar");
 		add(DreamlandBlocks.TAR_BARK_SAPLING.block().get(), "Tar Bark Sapling");
 		add(DreamlandBlocks.TAR_SPROUTS.block().get(), "Tar Sprouts");
 		add(DreamlandBlocks.TAR_BARK_LEAVES.block().get(), "Tar Bark Leaves");
+		add(DreamlandBlocks.ANCIENT_EGG.block().get(), "Ancient Egg");
+		add(DreamlandBlocks.FOSSILIZED_EGG.block().get(), "Fossilized Egg");
 		translateWoodSet(DreamlandWoodSets.TAR_BARK, "Tar Bark");
 		
 		add(DreamlandBlocks.MINERAL_DIRT.block().get(), "Mineral Dirt");
@@ -56,11 +64,14 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandBlocks.PINK_CRAB_GRASS.block().get(), "Pink Crab Grass");
 		add(DreamlandBlocks.OPALINE_MARIGOLD.block().get(), "Opaline Marigold");
 		add(DreamlandBlocks.PLUM_BIRCH_SAPLING.block().get(), "Plum Birch Sapling");
+		add(DreamlandBlocks.FLOWERING_UNDERGROWTH.block().get(), "Flowering Undergrowth");
 		translateWoodSet(DreamlandWoodSets.PLUM_BIRCH, "Plum Birch");
 		
 		// Items
 		add(DreamlandItems.HIVE_JELLY_ITEM.get(), "Hive Jelly");
 		add(DreamlandItems.TAR_BUCKET.get(), "Bucket of Tar");
+		add(DreamlandItems.SPAWN_EGG_LARVA.get(), "Larva Spawn Egg");
+		add(DreamlandItems.SPAWN_EGG_OOZE.get(), "Ooze Spawn Egg");
 		
 		// Entities
 		add(DreamlandEntities.LARVA.get(), "Larva");
@@ -81,7 +92,7 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(set.getPressurePlate().get(), name + " Pressure Plate");
 		add(set.getSlab().get(), name + " Slab");
 		add(set.getStair().get(), name + " Stairs");
-		add(set.getStrippedLog().get(), "Stripped" + name + " Log");
+		add(set.getStrippedLog().get(), " Stripped " + name + " Log");
 		add(set.getTrapDoor().get(), name + " Trap Door");
 		add(set.getWood().get(), name + " Wood");
 	}

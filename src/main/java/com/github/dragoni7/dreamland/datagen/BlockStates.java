@@ -56,6 +56,10 @@ public class BlockStates extends BlockStateProvider{
 			simpleBlock(element);
 		}
 		
+		ResourceLocation fossilizedEggTopTxt = modLoc("block/tar_mud");
+		ResourceLocation fossilizedEggSideTxt = modLoc("block/fossilized_egg");
+		axisBlock((RotatedPillarBlock) DreamlandBlocks.FOSSILIZED_EGG.block().get(), fossilizedEggSideTxt, fossilizedEggTopTxt);
+		
 		ResourceLocation tarMudBrickTxt = modLoc("block/tar_mud_bricks");
 		slabBlock((SlabBlock) DreamlandBlocks.TAR_MUD_BRICK_SLAB.block().get(), tarMudBrickTxt, tarMudBrickTxt, tarMudBrickTxt, tarMudBrickTxt);
 		stairsBlock((StairBlock) DreamlandBlocks.TAR_MUD_BRICK_STAIRS.block().get(), tarMudBrickTxt, tarMudBrickTxt, tarMudBrickTxt);

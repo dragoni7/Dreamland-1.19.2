@@ -18,6 +18,7 @@ public class EffectTarred extends MobEffect {
 		if (entity.isOnFire()) {
 			entity.setSecondsOnFire(600);
 		}
+		
 		entity.setJumping(false);
 		entity.setDeltaMovement(entity.getDeltaMovement().add(0, -0.1D, 0));
 	}

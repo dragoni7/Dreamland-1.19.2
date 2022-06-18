@@ -1,7 +1,8 @@
 package com.github.dragoni7.dreamland.core.event;
 
+import java.util.stream.Stream;
+
 import com.github.dragoni7.dreamland.client.render.*;
-import com.github.dragoni7.dreamland.common.entities.projectiles.TarBall;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
@@ -9,11 +10,11 @@ import com.github.dragoni7.dreamland.core.registry.DreamlandTiles;
 import com.github.dragoni7.dreamland.core.registry.DreamlandWoodSets;
 
 import net.minecraft.client.color.block.BlockColors;
-import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.registries.RegistryObject;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.BiomeColors;
@@ -30,8 +31,6 @@ public class DreamlandClientEventHandler {
 	}
 	
 	private static void setupClient(final FMLClientSetupEvent event) {
-		
-		
 		event.enqueueWork(()-> {
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.BUMBLE_BLOCK.block().get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.HIVE_JELLY_CLUSTER.block().get(), RenderType.translucent());
@@ -58,6 +57,7 @@ public class DreamlandClientEventHandler {
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.TAR_BARK_SAPLING.block().get(), RenderType.cutout());
 			
 			ItemBlockRenderTypes.setRenderLayer(DreamlandFluids.TAR_BLOCK.get(), RenderType.solid());
+			
 			ItemBlockRenderTypes.setRenderLayer(DreamlandFluids.TAR_FLUID.get(), RenderType.solid());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandFluids.TAR_FLOWING.get(), RenderType.solid());
 			

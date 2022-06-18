@@ -45,6 +45,7 @@ public class ItemModels extends ItemModelProvider {
 		blockItemModel(DreamlandBlocks.TAR_MUD_BRICK_SLAB.item(), "block/tar_mud_brick_slab");
 		blockItemModel(DreamlandBlocks.TAR_MUD_BRICK_STAIRS.item(), "block/tar_mud_brick_stairs");
 		blockItemModel(DreamlandBlocks.TAR_MUD_BRICK_WALL.item(), "block/tar_mud_brick_wall_side_tall");
+		blockItemModel(DreamlandBlocks.FOSSILIZED_EGG.item(), "block/fossilized_egg");
 		wallInventory("tar_mud_brick_wall", DreamlandLoc.createLoc("block/tar_mud_bricks"));
 		blockItemModel(DreamlandBlocks.DROUGHT_SOIL.item(), "block/drought_soil");
 		blockItemModel(DreamlandBlocks.TAR_BARK_LEAVES.item(), "block/tar_bark_leaves1");

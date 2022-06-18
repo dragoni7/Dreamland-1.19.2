@@ -1,7 +1,5 @@
 buildscript {
     repositories {
-        
-       
         maven { url = 'https://maven.minecraftforge.net' }
         maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
         mavenCentral()
@@ -132,9 +130,13 @@ repositories {
     // flatDir {
     //     dir 'libs'
     // }
+
+    maven { // JEI
+        url "https://dvs1.progwml6.com/files/maven"
+    }
     
     maven { // Geckolib
-        url "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/" }
+        url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
 }
 
 dependencies {
@@ -143,17 +145,11 @@ dependencies {
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
+   //compileOnly fg.deobf("mezz.jei:jei-${jei_version}:api")
+   //implementation fg.deobf("mezz.jei:jei-${jei_version}")
+
    implementation fg.deobf("com.github.glitchfiend:TerraBlender-forge:${minecraft_version}-${terrablender_version}")
    implementation fg.deobf("software.bernie.geckolib:geckolib-forge-${minecraft_version}:${geckolib_version}")
-
-    // Real mod deobf dependency examples - these get remapped to your current mappings
-    //compileOnly fg.deobf("mezz.jei:jei-${jei_version}:api") // Adds JEI API as a compile dependency
-    //implementation fg.deobf("mezz.jei:jei-${jei_version}")
-    // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei}") // Adds the full JEI mod as a runtime dependency
-    // implementation fg.deobf("com.tterrag.registrate:Registrate:MC${mc_version}-${registrate_version}") // Adds registrate as a dependency
-
-    // Examples using mod jars from ./libs
-    // implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
 }
 
 // Example for how to get properties into the manifest for reading at runtime.

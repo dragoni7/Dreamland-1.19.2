@@ -1,4 +1,4 @@
-// 1.19	2022-06-15T17:31:56.9008515	Item Models: dreamland
+// 1.19	2022-06-15T22:06:48.74465	Item Models: dreamland
 02a6524eeaab96334111ffc9f8953b1693e4f0ef assets/dreamland/models/item/ancient_egg.json
 753673f49cec07146d029af5bb036103cbac5ce5 assets/dreamland/models/item/cave_slime.json
 1e70d6474fa73213401e11d78c67c8ebd125aab0 assets/dreamland/models/item/clay_soil.json
@@ -8,6 +8,7 @@
 f705495304dc74213865f3e608142488c57ec361 assets/dreamland/models/item/dusk_ice.json
 024719047ba200c94a1acab0eb39fa55c4056c72 assets/dreamland/models/item/flowering_grass.json
 2629846464fb98d9fd63c6b1cc44194757c2e929 assets/dreamland/models/item/flowering_undergrowth.json
+862d6a2f39fcf7f4a26e13db2114ab847a5117d5 assets/dreamland/models/item/fossilized_egg.json
 6c7c71c967197a4b9d0a375df0cf2580c1611afd assets/dreamland/models/item/hive_block.json
 4b9f748b18973c35b57a03dbc6aa4b481070e473 assets/dreamland/models/item/hive_block_with_jelly.json
 82e029193878607a416f03c8a521c130aed44006 assets/dreamland/models/item/hive_copper.json

@@ -69,6 +69,7 @@ private static final ArrayList<ResourceKey<PlacedFeature>> KEYS = new ArrayList<
 	public static final ResourceKey<PlacedFeature> PLACED_TAR_SKELETON_KEY =  createPlacedFeatureKey("tar_skeleton");
 	public static final ResourceKey<PlacedFeature> PLACED_TAR_BONE_KEY = createPlacedFeatureKey("tar_bone");
 	public static final ResourceKey<PlacedFeature> PLACED_TAR_SOIL_ORE_KEY = createPlacedFeatureKey("tar_soil_ore");
+	public static final ResourceKey<PlacedFeature> PLACED_FOSSILIZED_EGG_KEY = createPlacedFeatureKey("fossilized_egg");
 	public static final ResourceKey<PlacedFeature> PLACED_LAKE_TAR_UNDERGROUND = createPlacedFeatureKey("lake_tar_underground");
 	public static final ResourceKey<PlacedFeature> PLACED_SPRING_TAR = createPlacedFeatureKey("spring_tar");
 	public static final ResourceKey<PlacedFeature> PLACED_PLUM_BIRCH_TREE_KEY = createPlacedFeatureKey("plum_birch_tree");
@@ -116,6 +117,7 @@ private static final ArrayList<ResourceKey<PlacedFeature>> KEYS = new ArrayList<
 	public static final Holder<PlacedFeature> PLACED_TAR_SOIL_ORE = registerPlacedFeature("tar_soil_ore", DreamlandConfiguredFeatures.TAR_SOIL_ORE, commonOrePlacement(16, HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(160))));
 	public static final Holder<PlacedFeature> LAKE_TAR_UNDERGROUND = registerPlacedFeature("lake_tar_underground", DreamlandConfiguredFeatures.LAKE_TAR, RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), HeightRangePlacement.of(UniformHeight.of(VerticalAnchor.absolute(0), VerticalAnchor.top())), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.allOf(BlockPredicate.not(BlockPredicate.ONLY_IN_AIR_PREDICATE), BlockPredicate.insideWorld(new BlockPos(0, -5, 0))), 32), SurfaceRelativeThresholdFilter.of(Heightmap.Types.OCEAN_FLOOR_WG, Integer.MIN_VALUE, -5), BiomeFilter.biome());
 	public static final Holder<PlacedFeature> SPRING_TAR = registerPlacedFeature("spring_tar", DreamlandConfiguredFeatures.SPRING_TAR, CountPlacement.of(25), InSquarePlacement.spread(), HeightRangePlacement.of(VeryBiasedToBottomHeight.of(VerticalAnchor.bottom(), VerticalAnchor.belowTop(8), 8)), BiomeFilter.biome());
+	public static final Holder<PlacedFeature> FOSSILIZED_EGG = registerPlacedFeature("fossilized_egg", DreamlandConfiguredFeatures.FOSSILIZED_EGG, commonOrePlacement(13, HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(160))));
 	
 	public static final Holder<PlacedFeature> PLACED_PLUM_BIRCH_TREE = registerPlacedFeature("plum_birch_tree", DreamlandConfiguredFeatures.PLUM_BIRCH_TREE, CountPlacement.of(UniformInt.of(0, 32)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 	public static final Holder<PlacedFeature> PLACED_PLUM_BIRCH_LAKE = registerPlacedFeature("plum_birch_lake", DreamlandConfiguredFeatures.PLUM_BIRCH_LAKE, RarityFilter.onAverageOnceEvery(25), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());

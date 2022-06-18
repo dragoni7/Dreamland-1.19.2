@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:ore",
+  "config": {
+    "discard_chance_on_air_exposure": 0.0,
+    "size": 1,
+    "targets": [
+      {
+        "state": {
+          "Name": "dreamland:fossilized_egg",
+          "Properties": {
+            "axis": "y"
+          }
+        },
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "dreamland:fossilized_egg_replaceable"
+        }
+      }
+    ]
+  }
+}

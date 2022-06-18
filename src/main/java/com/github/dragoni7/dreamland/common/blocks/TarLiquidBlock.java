@@ -18,12 +18,4 @@ public class TarLiquidBlock extends LiquidBlock {
 	public TarLiquidBlock(Supplier<? extends FlowingFluid> fluid, Properties blockProperties) {
 		super(fluid, blockProperties);
 	}
-
-	public void stepOn(Level level, BlockPos blockPos, BlockState state, Entity entity) {
-		if (!level.isClientSide()) {
-			if (entity instanceof LivingEntity) {
-		         ((LivingEntity) entity).addEffect(new MobEffectInstance(DreamlandEffects.TARRED.get(), 600, 1));
-		      }
-		}
-	}
 }

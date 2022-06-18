@@ -11,7 +11,7 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.renderers.geo.GeoBlockRenderer;
 
-public class AncientEggRender extends GeoBlockRenderer<AncientEggTile>{
+public class AncientEggRender extends GeoBlockRenderer<AncientEggTile> {
 
 	public AncientEggRender(BlockEntityRendererProvider.Context rendererDispatcherIn) {
 		super(rendererDispatcherIn, new AncientEggModel());

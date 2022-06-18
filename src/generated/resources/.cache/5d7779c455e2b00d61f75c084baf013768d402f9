@@ -1,9 +1,10 @@
-// 1.19	2022-06-15T17:31:56.9048522	Block States: dreamland
+// 1.19	2022-06-15T22:06:48.7666556	Block States: dreamland
 ff0d0513d2290b8fb47e6a926794ff5f76b9bcd5 assets/dreamland/blockstates/clay_soil.json
 10b6a71d8f55b0033ff0e67406c9fff690ab5b60 assets/dreamland/blockstates/dark_quartzite.json
 ff0aaf0379aff04804ef14f39296f6b4915783ca assets/dreamland/blockstates/dried_tar.json
 c604b70c34f61fdd08be5c0cb9ac6ea0501cec26 assets/dreamland/blockstates/drought_soil.json
 6e1c963e1735869497713ad82538c3e323acadf9 assets/dreamland/blockstates/dusk_ice.json
+04bcbe108a5f267b517f51007e070d65ab26cdcb assets/dreamland/blockstates/fossilized_egg.json
 e7767830b79dab57261e0fef42f154ed4a3f4ae8 assets/dreamland/blockstates/hive_block_with_jelly.json
 10fe05bc8ef7c08474ff9192f8ec1505c1a7e67d assets/dreamland/blockstates/hive_copper.json
 fae2afc702eff7b51b51266c8e2d4a758956e0a3 assets/dreamland/blockstates/hive_diamond.json
@@ -47,6 +48,8 @@ b18f44e5dc6a5e1b2aaf2b3a9578ffc01a7d2f9a assets/dreamland/models/block/dark_quar
 b8ec21b07ec8affa432e38db65698a57da5bef5b assets/dreamland/models/block/dried_tar.json
 41a282e1ee01f627944fb7be4e9bf7a94292da75 assets/dreamland/models/block/drought_soil.json
 df5cffdb1efb4f094e6d4d59972948c4f767e9db assets/dreamland/models/block/dusk_ice.json
+3d4fe359a028b32d37f6913ecd8ae0f5451f84b9 assets/dreamland/models/block/fossilized_egg.json
+1507b676330e6835b6609773109fab038555209a assets/dreamland/models/block/fossilized_egg_horizontal.json
 77c375c3167b361d4e7d02bf3f072397a445967c assets/dreamland/models/block/hive_block_with_jelly.json
 7c04b4ce3bb51202d9a707adc258e6be7a19315e assets/dreamland/models/block/hive_copper.json
 e9969cd429db252da6dee674da061498ad5c92b6 assets/dreamland/models/block/hive_diamond.json

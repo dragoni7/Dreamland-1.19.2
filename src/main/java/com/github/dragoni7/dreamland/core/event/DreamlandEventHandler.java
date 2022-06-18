@@ -48,15 +48,13 @@ public class DreamlandEventHandler {
 		LivingEntity entity = event.getEntityLiving();
 		MobEffect tarred = DreamlandEffects.TARRED.get();
 		
-		if (entity.level.getFluidState(entity.blockPosition()).is(DreamlandFluids.TAR_FLUID.get()) || entity.level.getFluidState(entity.blockPosition()).is(DreamlandFluids.TAR_FLOWING.get())) {
+		if (entity.isInFluidType(DreamlandFluids.TAR_FLUID_TYPE.get())) {
 			Vec3 motion = entity.getDeltaMovement();
 			
 			if (motion.x != 0 || motion.z != 0) {
 				
-				if (!entity.hasEffect(tarred)) {
-					entity.addEffect(new MobEffectInstance(tarred, 600));
-					Networking.sendToServer(new PacketApplyTarred(entity.getId()));
-				}
+				entity.addEffect(new MobEffectInstance(tarred, 600));
+				Networking.sendToServer(new PacketApplyTarred(entity.getId()));
 			}
 		}
 	}

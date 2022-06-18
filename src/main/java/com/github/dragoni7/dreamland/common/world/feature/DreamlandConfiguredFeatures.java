@@ -56,8 +56,8 @@ import net.minecraft.world.level.material.Fluids;
 public class DreamlandConfiguredFeatures {
 	
 	public static final RuleTest HIVE_ORES_REPLACEABLE = new TagMatchTest(DreamlandBlockTags.HIVE_ORES_REPLACEABLE);
+	public static final RuleTest FOSSILIZED_EGG_REPLACEABLE = new TagMatchTest(DreamlandBlockTags.FOSSILIZED_EGG_REPLACEABLE);
 	
-	public static final List<OreConfiguration.TargetBlockState> MOSS_GRASS_TARGET_LIST = List.of(OreConfiguration.target(new TagMatchTest(DreamlandBlockTags.GARDEN_SURFACE_REPLACEABLE), Blocks.MOSS_BLOCK.defaultBlockState()));
 	public static final List<OreConfiguration.TargetBlockState> FILLED_HIVE_TARGET_LIST = List.of(OreConfiguration.target(HIVE_ORES_REPLACEABLE, DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.block().get().defaultBlockState()));
 	public static final List<OreConfiguration.TargetBlockState> HIVE_IRON_TARGET_LIST = List.of(OreConfiguration.target(HIVE_ORES_REPLACEABLE, DreamlandBlocks.HIVE_IRON.block().get().defaultBlockState()));
 	public static final List<OreConfiguration.TargetBlockState> HIVE_COPPER_TARGET_LIST = List.of(OreConfiguration.target(HIVE_ORES_REPLACEABLE, DreamlandBlocks.HIVE_COPPER.block().get().defaultBlockState()));
@@ -65,6 +65,7 @@ public class DreamlandConfiguredFeatures {
 	public static final List<OreConfiguration.TargetBlockState> HIVE_REDSTONE_TARGET_LIST = List.of(OreConfiguration.target(HIVE_ORES_REPLACEABLE, DreamlandBlocks.HIVE_REDSTONE.block().get().defaultBlockState()));
 	public static final List<OreConfiguration.TargetBlockState> HIVE_LAPIS_TARGET_LIST = List.of(OreConfiguration.target(HIVE_ORES_REPLACEABLE, DreamlandBlocks.HIVE_LAPIS.block().get().defaultBlockState()));
 	public static final List<OreConfiguration.TargetBlockState> HIVE_DIAMOND_TARGET_LIST = List.of(OreConfiguration.target(HIVE_ORES_REPLACEABLE, DreamlandBlocks.HIVE_DIAMOND.block().get().defaultBlockState()));
+	public static final List<OreConfiguration.TargetBlockState> FOSSILIZED_EGG_TARGET_LIST = List.of(OreConfiguration.target(FOSSILIZED_EGG_REPLACEABLE, DreamlandBlocks.FOSSILIZED_EGG.block().get().defaultBlockState()));
 	
 	private static final ArrayList<ResourceKey<ConfiguredFeature<?,?>>> KEYS = new ArrayList<ResourceKey<ConfiguredFeature<?,?>>>();
 	
@@ -92,8 +93,9 @@ public class DreamlandConfiguredFeatures {
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_SKELETON_KEY = createConfiguredFeatureKey("tar_skeleton");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_BONE_KEY = createConfiguredFeatureKey("tar_bone");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_SOIL_ORE_KEY = createConfiguredFeatureKey("tar_soil_ore");
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_LAKE_TAR = createConfiguredFeatureKey("lake_tar");
-	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_SPRING_TAR = createConfiguredFeatureKey("spring_tar");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_LAKE_TAR_KEY = createConfiguredFeatureKey("lake_tar");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> CONFIGURED_FOSSILIZED_EGG_KEY = createConfiguredFeatureKey("fossilized_egg");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_SPRING_TAR_KEY = createConfiguredFeatureKey("spring_tar");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_PLUM_BIRCH_TREE_KEY = createConfiguredFeatureKey("plum_birch_tree");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_PLUM_BIRCH_LAKE = createConfiguredFeatureKey("plum_birch_lake");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_JEWELED_FOREST_VEGETATION_KEY = createConfiguredFeatureKey("jeweled_forest_vegetation");
@@ -105,7 +107,6 @@ public class DreamlandConfiguredFeatures {
 		return KEYS;
 	}
 	
-	// CONFIGURED FEATURES
 	public static final Holder<ConfiguredFeature<BlockColumnConfiguration, ?>> CAVE_SLIME = registerConfiguredFeature("cave_slime", 
 			Feature.BLOCK_COLUMN,
 					new BlockColumnConfiguration(
@@ -151,6 +152,8 @@ public class DreamlandConfiguredFeatures {
 	public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> TAR_SKELETON = registerConfiguredFeature("tar_skeleton", DreamlandFeatures.TAR_SKELETON, new NoneFeatureConfiguration());
 	public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> TAR_BONE = registerConfiguredFeature("tar_bone", DreamlandFeatures.TAR_BONE, new NoneFeatureConfiguration());
 	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> TAR_SOIL_ORE = registerConfiguredFeature("tar_soil_ore", Feature.ORE, new OreConfiguration(OreFeatures.NATURAL_STONE, DreamlandBlocks.TAR_MUD.block().get().defaultBlockState(), 64));
+	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> FOSSILIZED_EGG = registerConfiguredFeature("fossilized_egg", Feature.ORE, new OreConfiguration(FOSSILIZED_EGG_TARGET_LIST, 1));
+	
 	@SuppressWarnings("deprecation")
 	public static final Holder<ConfiguredFeature<LakeFeature.Configuration, ?>> LAKE_TAR = registerConfiguredFeature("lake_tar", Feature.LAKE, new LakeFeature.Configuration(BlockStateProvider.simple(DreamlandFluids.TAR_BLOCK.get()), BlockStateProvider.simple(Blocks.STONE.defaultBlockState())));
 	public static final Holder<ConfiguredFeature<SpringConfiguration, ?>> SPRING_TAR = registerConfiguredFeature("spring_tar", Feature.SPRING, new SpringConfiguration(DreamlandFluids.TAR_FLUID.get().defaultFluidState(), true, 4, 1, HolderSet.direct(Block::builtInRegistryHolder, Blocks.STONE, Blocks.GRANITE, Blocks.DIORITE, Blocks.ANDESITE, Blocks.DEEPSLATE, Blocks.TUFF, Blocks.CALCITE, Blocks.DIRT)));

@@ -26,14 +26,17 @@ import terrablender.api.Regions;
 import terrablender.api.SurfaceRuleManager;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fluids.FluidInteractionRegistry;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
+import net.minecraftforge.registries.ForgeRegistries;
 import software.bernie.geckolib3.GeckoLib;
 import net.minecraftforge.api.distmarker.Dist;
 
@@ -61,6 +64,7 @@ public class Dreamland
         DreamlandEntities.ENTITY_TYPES.register(modBus);
         DreamlandBlocks.BLOCKS.register(modBus);
         DreamlandTiles.TILES.register(modBus);
+        DreamlandFluids.FLUID_TYPES.register(modBus);
         DreamlandFluids.FLUIDS.register(modBus);
         DreamlandItems.ITEMS.register(modBus);
         DreamlandWoodSets.init();
@@ -77,7 +81,16 @@ public class Dreamland
     }
     
     private void commonSetup(FMLCommonSetupEvent event) {
+    	
+    	FluidInteractionRegistry.addInteraction(DreamlandFluids.TAR_FLUID_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(ForgeMod.LAVA_TYPE.get(), DreamlandBlocks.DRIED_TAR.block().get().defaultBlockState()));
+    	FluidInteractionRegistry.addInteraction(DreamlandFluids.TAR_FLUID_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(ForgeMod.WATER_TYPE.get(), DreamlandBlocks.TAR_MUD.block().get().defaultBlockState()));
+    	
     	event.enqueueWork( ()-> {
+    		
+    		ForgeRegistries.FLUIDS.forEach(fluid -> 
+    		LOGGER.info("Fluid {} has FluidType {}", ForgeRegistries.FLUIDS.getKey(fluid), ForgeRegistries.FLUID_TYPES.get().getKey(fluid.getFluidType()))
+    		);
+    		
     		Networking.registerMessages();
             SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, Dreamland.MODID, DreamlandSurfaceRules.OVERWORLD_SURFACE_RULES);
     		Regions.register(new DreamlandRegion(DreamlandLoc.createLoc("dreamland_region"), RegionType.OVERWORLD, Config.REGION_WEIGHT.get()));
