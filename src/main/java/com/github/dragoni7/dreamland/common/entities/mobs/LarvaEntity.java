@@ -3,6 +3,7 @@ package com.github.dragoni7.dreamland.common.entities.mobs;
 import java.util.UUID;
 
 import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
+import com.github.dragoni7.dreamland.core.registry.DreamlandSoundEvents;
 import com.github.dragoni7.dreamland.util.RollBoolean;
 
 import net.minecraft.core.BlockPos;
@@ -165,7 +166,7 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
     }
 	
 	protected void playStepSound() {
-		this.playSound(SoundEvents.SPIDER_STEP, 0.15F, 1.0F);
+		this.playSound(SoundEvents.SPIDER_STEP, 1.0F, 1.5F);
 	}
 	
 	public boolean onClimbable() {
@@ -173,15 +174,15 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 	   }
 	
 	protected SoundEvent getAmbientSound() {
-		return SoundEvents.SPIDER_AMBIENT;
+		return DreamlandSoundEvents.LARVA_AMBIENT.get();
 	}
 	
 	protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
-		return SoundEvents.SPIDER_HURT;
+		return DreamlandSoundEvents.LARVA_HIT.get();
 	}
 	
 	protected SoundEvent getDeathSound() {
-		return SoundEvents.SPIDER_DEATH;
+		return DreamlandSoundEvents.LARVA_DIE.get();
 	}
 	
 	@Override

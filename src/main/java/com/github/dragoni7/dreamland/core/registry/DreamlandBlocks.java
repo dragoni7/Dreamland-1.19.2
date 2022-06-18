@@ -103,7 +103,7 @@ public class DreamlandBlocks {
 					.of(Material.CLAY, MaterialColor.COLOR_CYAN)
 					.strength(1.5F, 6.0F)
 					.requiresCorrectToolForDrops()
-					.sound(SoundType.SLIME_BLOCK)
+					.sound(DreamlandSoundTypes.HIVE_JELLY)
 					.noOcclusion()
 					.lightLevel(HiveCluster.emission(5))
 					));
@@ -113,7 +113,7 @@ public class DreamlandBlocks {
 					.of(Material.CLAY, MaterialColor.COLOR_CYAN)
 					.strength(1.5F, 6.0F)
 					.requiresCorrectToolForDrops()
-					.sound(SoundType.SLIME_BLOCK)
+					.sound(DreamlandSoundTypes.HIVE_JELLY)
 					.noOcclusion()
 					.randomTicks()
 					.noLootTable()
@@ -125,7 +125,7 @@ public class DreamlandBlocks {
 					.of(Material.SPONGE, MaterialColor.COLOR_CYAN)
 					.strength(-1.0F, 3600000.0F)
 					.noLootTable()
-					.sound(SoundType.SLIME_BLOCK)
+					.sound(DreamlandSoundTypes.HIVE_JELLY)
 					.noOcclusion()
 					.randomTicks()
 					.noLootTable()
@@ -160,7 +160,7 @@ public class DreamlandBlocks {
 					.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_CYAN)
 					.strength(0.2F)
 					.noCollission()
-					.sound(SoundType.HONEY_BLOCK)
+					.sound(DreamlandSoundTypes.HIVE_JELLY)
 					.noLootTable()
 					.lightLevel(JellySplotch.emission(7))
 					));
@@ -176,13 +176,13 @@ public class DreamlandBlocks {
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.SANDSTONE)));
 	
 	public static final BlockItemSet TAR_MUD = new BlockItemSet("tar_mud",
-			() -> new MudBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).color(MaterialColor.TERRACOTTA_PURPLE).isValidSpawn(DreamlandBlocks::always).isRedstoneConductor(DreamlandBlocks::always).isViewBlocking(DreamlandBlocks::always).isSuffocating(DreamlandBlocks::always).sound(SoundType.MUD)));
+			() -> new MudBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).color(MaterialColor.TERRACOTTA_PURPLE).sound(DreamlandSoundTypes.TAR_MUD).isValidSpawn(DreamlandBlocks::always).isRedstoneConductor(DreamlandBlocks::always).isViewBlocking(DreamlandBlocks::always).isSuffocating(DreamlandBlocks::always).sound(SoundType.MUD)));
 	
 	public static final BlockItemSet PACKED_TAR_MUD = new BlockItemSet("packed_tar_mud",
-			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).strength(1.0F, 3.0F).sound(SoundType.PACKED_MUD)));
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).strength(1.0F, 3.0F).sound(DreamlandSoundTypes.PACKED_TAR_MUD)));
 	
 	public static final BlockItemSet TAR_MUD_BRICKS = new BlockItemSet("tar_mud_bricks",
-			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_PURPLE).requiresCorrectToolForDrops().strength(1.5F, 3.0F).sound(SoundType.MUD_BRICKS)));
+			() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_PURPLE).requiresCorrectToolForDrops().strength(1.5F, 3.0F).sound(DreamlandSoundTypes.TAR_MUD_BRICKS)));
 	
 	@SuppressWarnings("deprecation")
 	public static final BlockItemSet TAR_MUD_BRICK_STAIRS = new BlockItemSet("tar_mud_brick_stairs",

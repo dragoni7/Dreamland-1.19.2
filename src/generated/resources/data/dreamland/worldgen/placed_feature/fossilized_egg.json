@@ -3,7 +3,7 @@
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 13
+      "count": 25
     },
     {
       "type": "minecraft:in_square"
@@ -13,11 +13,20 @@
       "height": {
         "type": "minecraft:uniform",
         "max_inclusive": {
-          "absolute": 160
+          "below_top": 0
         },
         "min_inclusive": {
-          "absolute": 0
+          "above_bottom": 0
         }
+      }
+    },
+    {
+      "type": "minecraft:environment_scan",
+      "direction_of_search": "down",
+      "max_steps": 12,
+      "target_condition": {
+        "type": "minecraft:matching_blocks",
+        "blocks": "dreamland:tar_mud"
       }
     },
     {
