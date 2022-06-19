@@ -124,7 +124,7 @@
 							"vector": [0, 0, 0]
 						},
 						"0.52": {
-							"vector": ["Math.cos(query.anim_time*100 -25) *-30", 0, 0],
+							"vector": ["-30", 0, 0],
 							"easing": "easeInOutBounce",
 							"easingArgs": [0.1]
 						},
@@ -134,7 +134,7 @@
 							"easingArgs": [0.1]
 						},
 						"1.56": {
-							"vector": ["Math.cos(query.anim_time*100 -25) *-30", 0, 0],
+							"vector": ["-30", 0, 0],
 							"easing": "easeInOutBounce",
 							"easingArgs": [0.1]
 						},
@@ -151,7 +151,7 @@
 							"vector": [0, 0, 0]
 						},
 						"0.52": {
-							"vector": ["Math.cos(query.anim_time*100 -75) *30", 0, 0],
+							"vector": ["30", 0, 0],
 							"easing": "easeInOutBounce",
 							"easingArgs": [0.1]
 						},
@@ -161,7 +161,7 @@
 							"easingArgs": [0.1]
 						},
 						"1.56": {
-							"vector": ["Math.cos(query.anim_time*100 -75) *30", 0, 0],
+							"vector": ["30", 0, 0],
 							"easing": "easeInOutBounce",
 							"easingArgs": [0.1]
 						},
@@ -407,7 +407,7 @@
 							"vector": [0, 0, 0]
 						},
 						"1.04": {
-							"vector": ["Math.cos(query.anim_time*100 -25) *-30", 0, 0],
+							"vector": ["-30", 0, 0],
 							"easing": "easeInOutBounce",
 							"easingArgs": [0.1]
 						},
@@ -424,7 +424,7 @@
 							"vector": [0, 0, 0]
 						},
 						"1.04": {
-							"vector": ["Math.cos(query.anim_time*100 -75) *30", 0, 0],
+							"vector": ["30", 0, 0],
 							"easing": "easeInOutBounce",
 							"easingArgs": [0.1]
 						},

@@ -11,7 +11,6 @@
 							"vector": [0, 0, 0]
 						},
 						"1.04": {
-							"vector": ["-(query.health)*1.5", 0, 0],
 							"easing": "easeInOutSine"
 						},
 						"2.08": {
@@ -39,7 +38,6 @@
 							"vector": [0, 0, 0]
 						},
 						"1.04": {
-							"vector": ["-(query.health)*1.5", 0, 0],
 							"easing": "easeInOutSine"
 						},
 						"2.08": {
@@ -68,7 +66,7 @@
 							"vector": [0, 0, 0]
 						},
 						"1.04": {
-							"vector": ["-(query.health)*1.5", 0, 0],
+							"vector": [1.5, 0, 0],
 							"easing": "easeInOutSine"
 						},
 						"2.08": {
@@ -150,7 +148,7 @@
 							"vector": [1, 1, 1]
 						},
 						"0.52": {
-							"vector": ["(query.health*.02)+1", "(query.health*.02)+1", "(query.health*.02)+1"],
+							"vector": ["1", "1", "1"],
 							"easing": "easeInOutSine"
 						},
 						"2.08": {
@@ -168,7 +166,7 @@
 							"vector": [1, 1, 1]
 						},
 						"0.52": {
-							"vector": ["(query.health*.02)+1", "(query.health*.02)+1", "(query.health*.02)+1"],
+							"vector": ["1", "1", "1"],
 							"easing": "easeInOutBack",
 							"easingArgs": [1]
 						},
@@ -188,7 +186,7 @@
 							"vector": [1, 1, 1]
 						},
 						"0.52": {
-							"vector": ["(query.health*.02)+1", "(query.health*.02)+1", "(query.health*.02)+1"],
+							"vector": ["1", "1", "1"],
 							"easing": "easeInOutSine"
 						},
 						"2.08": {
@@ -302,7 +300,7 @@
 							"vector": [1, 1, 1]
 						},
 						"0.52": {
-							"vector": ["(query.health*.01)+1", "(query.health*.01)+1", "(query.health*.01)+1"],
+							"vector": ["1", "1", "1"],
 							"easing": "easeInOutSine"
 						},
 						"2.08": {
@@ -317,7 +315,7 @@
 							"vector": [1, 1, 1]
 						},
 						"0.52": {
-							"vector": ["(query.health*.005)+1", "(query.health*.005)+1", "(query.health*.005)+1"],
+							"vector": ["1", "1", "1"],
 							"easing": "easeInOutSine"
 						},
 						"2.08": {

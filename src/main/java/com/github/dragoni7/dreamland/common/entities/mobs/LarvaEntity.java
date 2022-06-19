@@ -68,12 +68,21 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 	
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		
-		if(event.isMoving()) {
+		if (this.tickCount < 20) {
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.larva.spawn", false));
+			return PlayState.CONTINUE;
+		}
+		
+		if(event.isMoving() && this.tickCount > 20) {
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.larva.walk", true));
 			return PlayState.CONTINUE;
 		}
 		
-		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.larva.idle", true));
+		if (this.tickCount > 20) {
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.larva.idle", true));
+			return PlayState.CONTINUE;
+		}
+		
 		return PlayState.CONTINUE;
 	}
 	
