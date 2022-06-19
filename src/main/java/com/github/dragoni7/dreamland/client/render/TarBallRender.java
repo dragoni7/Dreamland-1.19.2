@@ -1,6 +1,6 @@
 package com.github.dragoni7.dreamland.client.render;
 
-import com.github.dragoni7.dreamland.client.models.TarBallModel;
+import com.github.dragoni7.dreamland.client.model.TarBallModel;
 import com.github.dragoni7.dreamland.common.entities.projectiles.TarBall;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

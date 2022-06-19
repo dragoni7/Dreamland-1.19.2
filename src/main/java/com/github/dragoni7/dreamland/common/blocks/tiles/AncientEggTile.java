@@ -17,10 +17,8 @@ public class AncientEggTile extends BlockEntity implements IAnimatable {
 
 	private final AnimationFactory factory = new AnimationFactory(this);
 	
-	@SuppressWarnings({"rawtypes"})
 	private <E extends BlockEntity & IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-		AnimationController controller = event.getController();
-		controller.setAnimation(new AnimationBuilder().addAnimation("animation.ancient_egg.idle", true));
+		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.ancient_egg.idle", true));
 		return PlayState.CONTINUE;
 	}
 	

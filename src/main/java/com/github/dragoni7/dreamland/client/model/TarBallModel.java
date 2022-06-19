@@ -1,4 +1,4 @@
-package com.github.dragoni7.dreamland.client.models;
+package com.github.dragoni7.dreamland.client.model;
 
 import com.github.dragoni7.dreamland.common.entities.projectiles.TarBall;
 import com.github.dragoni7.dreamland.util.DreamlandLoc;

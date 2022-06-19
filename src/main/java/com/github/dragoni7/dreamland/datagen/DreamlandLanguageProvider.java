@@ -3,6 +3,7 @@ package com.github.dragoni7.dreamland.datagen;
 import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.core.WoodSet;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
+import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
 import com.github.dragoni7.dreamland.core.registry.DreamlandItems;
@@ -72,6 +73,7 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandItems.TAR_BUCKET.get(), "Bucket of Tar");
 		add(DreamlandItems.SPAWN_EGG_LARVA.get(), "Larva Spawn Egg");
 		add(DreamlandItems.SPAWN_EGG_OOZE.get(), "Ooze Spawn Egg");
+		add(DreamlandItems.LARVA_HELMET.get(), "Larva Symbiote Helmet");
 		
 		// Entities
 		add(DreamlandEntities.LARVA.get(), "Larva");
@@ -79,6 +81,9 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandEntities.OOZE.get(), "Ooze");
 		add(DreamlandEntities.TAR_BALL.get(), "Tar Ball");
 		
+		// Effects
+		add(DreamlandEffects.ANTAGONIZED.get(), "Antagonized");
+		add(DreamlandEffects.TARRED.get(), "Tarred");
 	}
 	
 	private void translateWoodSet(WoodSet set, String name) {

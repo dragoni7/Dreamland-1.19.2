@@ -67,8 +67,10 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 	private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(3, 5);
 	
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
+		
 		if(event.isMoving()) {
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.larva.walk", true));
+			return PlayState.CONTINUE;
 		}
 		
 		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.larva.idle", true));
@@ -115,7 +117,7 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 		this.goalSelector.addGoal(5, new LeapAtTargetGoal(this, 0.4F));
 		
 		
-		this.targetSelector.addGoal(1, (new LarvaEntity.LarvaHurtByOtherGoal(this)).setAlertOthers(new Class[0]));
+		this.targetSelector.addGoal(1, (new LarvaEntity.LarvaHurtByOtherGoal(this)));
 		this.targetSelector.addGoal(2, (new LarvaEntity.LarvaBecomeAngryTargetGoal(this)));
 		this.targetSelector.addGoal(3, new ResetUniversalAngerTargetGoal<>(this, true));
 	}
@@ -192,7 +194,7 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 	
 	@Override
 	public boolean isInvulnerableTo(DamageSource source) {
-		return source == DamageSource.IN_WALL || source == DamageSource.FALLING_BLOCK || super.isInvulnerableTo(source);
+		return source == DamageSource.IN_WALL || source == DamageSource.FALLING_BLOCK ||super.isInvulnerableTo(source);
 	}
 	
 	public boolean causeFallDamage(float p_148750_, float p_148751_, DamageSource p_148752_) {
@@ -238,8 +240,8 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 	}
 
 	@Override
-	public void setPersistentAngerTarget(UUID p_21672_) {
-		this.persistentAngerTarget = p_21672_;
+	public void setPersistentAngerTarget(UUID id) {
+		this.persistentAngerTarget = id;
 	}
 
 	@Override
@@ -309,17 +311,6 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 		 
 		 public boolean canContinueToUse() {
 	         return LarvaEntity.this.isAngry() && super.canContinueToUse();
-	      }
-		 
-		 protected void alertOther(Mob mob, LivingEntity entity) {
-	    	 int i = 1;
-	    	 MobEffect antagonized = DreamlandEffects.ANTAGONIZED.get();
-	    	 
-	    	 if (entity.hasEffect(antagonized)) {
-	    		 i++;
-	    	 }
-	    	 
-	         entity.addEffect(new MobEffectInstance(antagonized, 200, i));
 	      }
 	   }
 }

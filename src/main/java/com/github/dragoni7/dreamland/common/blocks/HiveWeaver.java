@@ -6,6 +6,7 @@ import javax.annotation.Nullable;
 
 import com.github.dragoni7.dreamland.common.items.HiveJelly;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
+import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -16,6 +17,8 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -71,6 +74,11 @@ public class HiveWeaver extends LarvaAngerableBlock {
 		return InteractionResult.CONSUME;
 		
 	   }
+	
+	@Override
+	public boolean biomeCheck() {
+		return true;
+	}
 	
 	private void buildMembrane(BlockState state, Level level, BlockPos pos) {
 		int radius = getLevel(state) + 1;

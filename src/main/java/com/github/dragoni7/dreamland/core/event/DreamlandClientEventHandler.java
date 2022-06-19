@@ -1,8 +1,7 @@
 package com.github.dragoni7.dreamland.core.event;
 
-import java.util.stream.Stream;
-
 import com.github.dragoni7.dreamland.client.render.*;
+import com.github.dragoni7.dreamland.common.items.LarvaSymbioteArmorItem;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
@@ -14,7 +13,8 @@ import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraftforge.fml.loading.FMLEnvironment;
+import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.BiomeColors;
@@ -26,6 +26,7 @@ public class DreamlandClientEventHandler {
 	public static void init(IEventBus modBus) {
 		
 		modBus.addListener(DreamlandClientEventHandler::registerEntityRenders);
+		modBus.addListener(DreamlandClientEventHandler::registerArmorRenders);
 		modBus.addListener(DreamlandClientEventHandler::registerBlockColors);
 		modBus.addListener(DreamlandClientEventHandler::setupClient);
 	}
@@ -70,6 +71,10 @@ public class DreamlandClientEventHandler {
 		event.registerEntityRenderer(DreamlandEntities.OOZE.get(), OozeRender::new);
 		event.registerEntityRenderer(DreamlandEntities.TAR_BALL.get(), TarBallRender::new);
 		event.registerBlockEntityRenderer(DreamlandTiles.ANCIENT_EGG.get(), AncientEggRender::new);
+	}
+	
+	private static void registerArmorRenders(final EntityRenderersEvent.AddLayers event) {
+		GeoArmorRenderer.registerArmorRenderer(LarvaSymbioteArmorItem.class, new LarvaSymbioteRenderer());
 	}
 	
 	private static void registerBlockColors(final ColorHandlerEvent.Block event) {

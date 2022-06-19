@@ -1,13 +1,10 @@
 package com.github.dragoni7.dreamland.common.blocks;
 
-import java.util.Random;
-
 import javax.annotation.Nullable;
 
 import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.player.Player;
@@ -28,6 +25,12 @@ public class LarvaAngerableBlock extends Block {
 	      
 	      MobEffect antagonized = DreamlandEffects.ANTAGONIZED.get();
 	      
-	      player.addEffect(new MobEffectInstance(antagonized, 200));
+	      if (!biomeCheck()) {
+	    	  player.addEffect(new MobEffectInstance(antagonized, 200));
+	      }
 	   }
+	
+	public boolean biomeCheck() {
+		return false;
+	}
 }

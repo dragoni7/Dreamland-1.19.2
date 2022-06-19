@@ -1,6 +1,6 @@
 package com.github.dragoni7.dreamland.client.render;
 
-import com.github.dragoni7.dreamland.client.models.AncientEggModel;
+import com.github.dragoni7.dreamland.client.model.AncientEggModel;
 import com.github.dragoni7.dreamland.common.blocks.tiles.AncientEggTile;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

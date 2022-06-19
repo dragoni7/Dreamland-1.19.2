@@ -99,7 +99,6 @@ public class ThrownHiveJelly extends ThrowableItemProjectile {
 	    	  Entity target = entityHitResult.getEntity();
 	    	  if(target.isAlive()) {
 	    		  target.hurt(DamageSource.thrown(this, this.getOwner()), 0);
-	    		  target.setGlowingTag(true);
 	    	  }
 	      }
 	      
