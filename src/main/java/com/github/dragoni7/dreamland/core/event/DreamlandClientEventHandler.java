@@ -1,16 +1,20 @@
 package com.github.dragoni7.dreamland.core.event;
 
+import com.github.dragoni7.dreamland.client.particles.TarBubbleParticle;
 import com.github.dragoni7.dreamland.client.render.*;
 import com.github.dragoni7.dreamland.common.items.LarvaSymbioteArmorItem;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
+import com.github.dragoni7.dreamland.core.registry.DreamlandParticles;
 import com.github.dragoni7.dreamland.core.registry.DreamlandTiles;
 import com.github.dragoni7.dreamland.core.registry.DreamlandWoodSets;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.loading.FMLEnvironment;
@@ -29,6 +33,7 @@ public class DreamlandClientEventHandler {
 		modBus.addListener(DreamlandClientEventHandler::registerArmorRenders);
 		modBus.addListener(DreamlandClientEventHandler::registerBlockColors);
 		modBus.addListener(DreamlandClientEventHandler::setupClient);
+		modBus.addListener(DreamlandClientEventHandler::registerParticles);
 	}
 	
 	private static void setupClient(final FMLClientSetupEvent event) {
@@ -80,5 +85,10 @@ public class DreamlandClientEventHandler {
 	private static void registerBlockColors(final ColorHandlerEvent.Block event) {
 		final BlockColors blockColors = event.getBlockColors();
 		blockColors.register((state, world, pos, tintIndex) -> BiomeColors.getAverageGrassColor(world, pos), DreamlandBlocks.CLAY_SOIL_GRASS.block().get());
+	}
+	
+	@SuppressWarnings("resource")
+	private static void registerParticles(ParticleFactoryRegisterEvent event) {
+		Minecraft.getInstance().particleEngine.register(DreamlandParticles.TAR_BUBBLE.get(), TarBubbleParticle.Provider::new);
 	}
 }

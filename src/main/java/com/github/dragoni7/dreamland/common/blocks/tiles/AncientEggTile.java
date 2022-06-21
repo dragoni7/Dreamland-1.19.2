@@ -26,7 +26,6 @@ public class AncientEggTile extends BlockEntity implements IAnimatable {
 		super(DreamlandTiles.ANCIENT_EGG.get(), pos, state);
 	}
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public void registerControllers(AnimationData data) {
 		data.addAnimationController(new AnimationController<AncientEggTile>(this, "AncientEggController", 0, this::predicate));

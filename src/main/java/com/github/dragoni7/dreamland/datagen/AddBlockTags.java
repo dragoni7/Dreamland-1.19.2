@@ -1,10 +1,10 @@
 package com.github.dragoni7.dreamland.datagen;
 
 import com.github.dragoni7.dreamland.Dreamland;
-import com.github.dragoni7.dreamland.common.blocks.DreamlandBlockTags;
-import com.github.dragoni7.dreamland.core.WoodSet;
+import com.github.dragoni7.dreamland.core.DreamlandBlockTags;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandWoodSets;
+import com.github.dragoni7.dreamland.util.WoodSet;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;

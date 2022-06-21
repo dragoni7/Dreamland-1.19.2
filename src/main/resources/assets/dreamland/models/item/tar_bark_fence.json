@@ -1,3 +1,6 @@
 {
-  "parent": "dreamland:block/tar_bark_fence_side"
+  "parent": "minecraft:block/fence_inventory",
+  "textures": {
+    "texture": "dreamland:block/tar_bark_planks"
+  }
 }

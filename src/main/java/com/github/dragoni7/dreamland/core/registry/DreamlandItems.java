@@ -3,7 +3,7 @@ package com.github.dragoni7.dreamland.core.registry;
 import java.util.function.Supplier;
 
 import com.github.dragoni7.dreamland.Dreamland;
-import com.github.dragoni7.dreamland.common.items.HiveJelly;
+import com.github.dragoni7.dreamland.common.items.HiveJellyItem;
 import com.github.dragoni7.dreamland.common.items.LarvaSymbioteArmorItem;
 
 import net.minecraft.world.entity.EntityType;
@@ -34,8 +34,8 @@ public class DreamlandItems {
 			() -> new BucketItem(DreamlandFluids.TAR_FLUID, new Item.Properties().craftRemainder(Items.BUCKET).tab(Dreamland.DreamlandTab).stacksTo(1)));
 	
 	//Armor
-	public static final RegistryObject<LarvaSymbioteArmorItem> LARVA_HELMET = ITEMS.register("larva_symbiote",
-			() -> new LarvaSymbioteArmorItem(ArmorMaterials.DIAMOND, EquipmentSlot.HEAD, new Item.Properties().rarity(Rarity.RARE).tab(Dreamland.DreamlandTab)));
+	public static final RegistryObject<Item> LARVA_HELMET = ITEMS.register("larva_symbiote",
+			() -> new LarvaSymbioteArmorItem(DreamlandArmorMaterials.LARVA, EquipmentSlot.HEAD, new Item.Properties().rarity(Rarity.RARE).tab(Dreamland.DreamlandTab)));
 	
 	//Spawn Eggs
 	public static final RegistryObject<Item> SPAWN_EGG_LARVA = registerSpawnEgg("spawn_egg_larva", () -> DreamlandEntities.LARVA.get(), 0Xa9f8fc, 0X2c2870);
@@ -59,6 +59,6 @@ public class DreamlandItems {
 	
 	private static RegistryObject<Item> registerHiveJelly(String name, FoodProperties foodProperty) {
 		
-		return ITEMS.register(name, () -> new HiveJelly(new Item.Properties().tab(Dreamland.DreamlandTab).food(foodProperty).stacksTo(16)));
+		return ITEMS.register(name, () -> new HiveJellyItem(new Item.Properties().tab(Dreamland.DreamlandTab).food(foodProperty).stacksTo(16)));
 	}
 }

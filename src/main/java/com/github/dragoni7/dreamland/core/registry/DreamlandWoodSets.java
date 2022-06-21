@@ -1,6 +1,6 @@
 package com.github.dragoni7.dreamland.core.registry;
 
-import com.github.dragoni7.dreamland.core.WoodSet;
+import com.github.dragoni7.dreamland.util.WoodSet;
 
 import net.minecraft.world.level.material.MaterialColor;
 

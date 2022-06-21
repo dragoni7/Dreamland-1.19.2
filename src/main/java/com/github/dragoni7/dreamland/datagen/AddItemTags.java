@@ -1,7 +1,7 @@
 package com.github.dragoni7.dreamland.datagen;
 
 import com.github.dragoni7.dreamland.Dreamland;
-import com.github.dragoni7.dreamland.common.items.DreamlandItemTags;
+import com.github.dragoni7.dreamland.core.DreamlandItemTags;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandItems;
 

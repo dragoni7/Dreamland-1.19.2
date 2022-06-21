@@ -1,6 +1,6 @@
 package com.github.dragoni7.dreamland.common.world.feature.util;
 
-import com.github.dragoni7.dreamland.common.blocks.DreamlandSapling;
+import com.github.dragoni7.dreamland.common.blocks.DreamlandSaplingBlock;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.WorldGenLevel;
@@ -32,6 +32,6 @@ public class FeatureBuilderInput {
 		}
 		
 		BlockState state = level.getBlockState(pos);
-		return level.isEmptyBlock(pos) || state.getMaterial().isLiquid() || state.getMaterial().isReplaceable() || state.getBlock() instanceof DreamlandSapling;
+		return level.isEmptyBlock(pos) || state.getMaterial().isLiquid() || state.getMaterial().isReplaceable() || state.getBlock() instanceof DreamlandSaplingBlock;
 	}
 }

@@ -85,7 +85,7 @@ public class DreamlandEventHandler {
 		int interval = 20;
 		
 		if (interval == 20) {
-			if (!level.isClientSide) {
+			if (!level.isClientSide && entity != null) {
 				if (entity.hasEffect(DreamlandEffects.ANTAGONIZED.get())) {
 					List<LarvaEntity> list = level.getEntitiesOfClass(LarvaEntity.class, (new AABB(pos)).inflate(16.0D, 10.0D, 16.0D));
 					if (!list.isEmpty()) {

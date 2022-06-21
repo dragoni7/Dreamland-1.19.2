@@ -1,10 +1,10 @@
 package com.github.dragoni7.dreamland.datagen;
 
-import com.github.dragoni7.dreamland.core.WoodSet;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandItems;
 import com.github.dragoni7.dreamland.core.registry.DreamlandWoodSets;
 import com.github.dragoni7.dreamland.util.DreamlandLoc;
+import com.github.dragoni7.dreamland.util.WoodSet;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
@@ -58,6 +58,7 @@ public class ItemModels extends ItemModelProvider {
 		singleTextureItemModel(DreamlandItems.HIVE_JELLY_ITEM, "item/hive_jelly");
 		singleTextureItemModel(DreamlandBlocks.CAVE_SLIME.item(), "block/cave_slime");
 		singleTextureItemModel(DreamlandBlocks.HIVE_GROWTH.item(), "block/hive_growth_cross");
+		singleTextureItemModel(DreamlandItems.LARVA_HELMET, "item/larva_symbiote_helmet");
 		singleTextureItemModel(DreamlandBlocks.TAR_SPROUTS.item(), "block/tar_sprouts");
 		singleTextureItemModel(DreamlandBlocks.OPALINE_MARIGOLD.item(), "block/opaline_marigold");
 		singleTextureItemModel(DreamlandBlocks.PINK_CRAB_GRASS.item(), "block/pink_crab_grass");

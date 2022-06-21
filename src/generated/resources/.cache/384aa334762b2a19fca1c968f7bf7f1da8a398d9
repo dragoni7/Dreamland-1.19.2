@@ -1,4 +1,4 @@
-// 1.19	2022-06-15T22:06:48.74465	Item Models: dreamland
+// 1.19	2022-06-20T17:45:10.3468395	Item Models: dreamland
 02a6524eeaab96334111ffc9f8953b1693e4f0ef assets/dreamland/models/item/ancient_egg.json
 753673f49cec07146d029af5bb036103cbac5ce5 assets/dreamland/models/item/cave_slime.json
 1e70d6474fa73213401e11d78c67c8ebd125aab0 assets/dreamland/models/item/clay_soil.json
@@ -22,6 +22,7 @@ af52bbe353c4db173a4c9e34cf7347aaaf19b7e4 assets/dreamland/models/item/hive_jelly
 db1dac60a0a06bc658b3b9229b050729d54d1ed1 assets/dreamland/models/item/hive_membrane.json
 27dac0da551cf658c118d6f76303c85db2d5451a assets/dreamland/models/item/hive_redstone.json
 65d60aaa6e12f64167585574c85f0aefa87de07e assets/dreamland/models/item/hive_weaver.json
+ae9d351ccebeca51a6c198c7999d291d287827eb assets/dreamland/models/item/larva_symbiote.json
 e837462748a5ec6bdc6942586b898b60d30ab368 assets/dreamland/models/item/mineral_dirt.json
 931e8f3eea8a2608b07f93f4467af31fcde4007b assets/dreamland/models/item/opaline_marigold.json
 d3d641804796792482d3077e4f5d2bcea1631761 assets/dreamland/models/item/packed_tar_mud.json

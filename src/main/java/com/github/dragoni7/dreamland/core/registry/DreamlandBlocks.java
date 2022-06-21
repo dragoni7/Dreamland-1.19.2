@@ -1,27 +1,27 @@
 package com.github.dragoni7.dreamland.core.registry;
 
 import com.github.dragoni7.dreamland.Dreamland;
-import com.github.dragoni7.dreamland.common.blocks.CaveSlime;
-import com.github.dragoni7.dreamland.common.blocks.CaveSlimePlant;
-import com.github.dragoni7.dreamland.common.blocks.ClaySoil;
-import com.github.dragoni7.dreamland.common.blocks.ClaySoilGrass;
-import com.github.dragoni7.dreamland.common.blocks.DarkQuartzite;
-import com.github.dragoni7.dreamland.common.blocks.DreamlandSapling;
-import com.github.dragoni7.dreamland.common.blocks.DuskIce;
+import com.github.dragoni7.dreamland.common.blocks.CaveSlimeBlock;
+import com.github.dragoni7.dreamland.common.blocks.CaveSlimePlantBlock;
+import com.github.dragoni7.dreamland.common.blocks.ClaySoilBlock;
+import com.github.dragoni7.dreamland.common.blocks.ClaySoilGrassBlock;
+import com.github.dragoni7.dreamland.common.blocks.DarkQuartziteBlock;
+import com.github.dragoni7.dreamland.common.blocks.DreamlandSaplingBlock;
+import com.github.dragoni7.dreamland.common.blocks.DuskIceBlock;
 import com.github.dragoni7.dreamland.common.blocks.EmissiveHiveBlock;
 import com.github.dragoni7.dreamland.common.blocks.FloweringUndergrowthBlock;
-import com.github.dragoni7.dreamland.common.blocks.GroundPlant;
+import com.github.dragoni7.dreamland.common.blocks.GroundPlantBlock;
 import com.github.dragoni7.dreamland.common.blocks.HiveBlock;
-import com.github.dragoni7.dreamland.common.blocks.HiveCluster;
-import com.github.dragoni7.dreamland.common.blocks.HiveGrowth;
-import com.github.dragoni7.dreamland.common.blocks.HiveMembrane;
-import com.github.dragoni7.dreamland.common.blocks.HiveWeaver;
-import com.github.dragoni7.dreamland.common.blocks.InfestedHiveCluster;
-import com.github.dragoni7.dreamland.common.blocks.JellySplotch;
+import com.github.dragoni7.dreamland.common.blocks.HiveClusterBlock;
+import com.github.dragoni7.dreamland.common.blocks.HiveGrowthBlock;
+import com.github.dragoni7.dreamland.common.blocks.HiveMembraneBlock;
+import com.github.dragoni7.dreamland.common.blocks.HiveWeaverBlock;
+import com.github.dragoni7.dreamland.common.blocks.InfestedHiveClusterBlock;
+import com.github.dragoni7.dreamland.common.blocks.JellySplotchBlock;
 import com.github.dragoni7.dreamland.common.blocks.LarvaAngerableBlock;
-import com.github.dragoni7.dreamland.common.blocks.TarSprouts;
+import com.github.dragoni7.dreamland.common.blocks.TarSproutsBlock;
 import com.github.dragoni7.dreamland.common.blocks.UndergrowthBlock;
-import com.github.dragoni7.dreamland.core.BlockItemSet;
+import com.github.dragoni7.dreamland.util.BlockItemSet;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffects;
@@ -53,14 +53,14 @@ public class DreamlandBlocks {
 	
 	public static final BlockItemSet BUMBLE_BLOCK = new BlockItemSet("bumble_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.YELLOW_WOOL)));
 	
-	public static final BlockItemSet DARK_QUARTZITE = new BlockItemSet("dark_quartzite", () -> new DarkQuartzite(BlockBehaviour.Properties.copy(Blocks.STONE)));
+	public static final BlockItemSet DARK_QUARTZITE = new BlockItemSet("dark_quartzite", () -> new DarkQuartziteBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
 	
-	public static final BlockItemSet CLAY_SOIL = new BlockItemSet("clay_soil", () -> new ClaySoil(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.ROOTED_DIRT)));
+	public static final BlockItemSet CLAY_SOIL = new BlockItemSet("clay_soil", () -> new ClaySoilBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.ROOTED_DIRT)));
 	
-	public static final BlockItemSet CLAY_SOIL_GRASS = new BlockItemSet("clay_soil_grass", () -> new ClaySoilGrass((BlockBehaviour.Properties.of(Material.GRASS).randomTicks().strength(0.6F).sound(SoundType.GRASS))));
+	public static final BlockItemSet CLAY_SOIL_GRASS = new BlockItemSet("clay_soil_grass", () -> new ClaySoilGrassBlock((BlockBehaviour.Properties.of(Material.GRASS).randomTicks().strength(0.6F).sound(SoundType.GRASS))));
 	
 	public static final BlockItemSet DUSK_ICE = new BlockItemSet("dusk_ice", 
-			() -> new DuskIce(BlockBehaviour.Properties
+			() -> new DuskIceBlock(BlockBehaviour.Properties
 					.of(Material.ICE)
 					.strength(0.5F)
 					.sound(SoundType.GLASS)
@@ -80,36 +80,36 @@ public class DreamlandBlocks {
 					));
 	
 	public static final BlockItemSet CAVE_SLIME = new BlockItemSet("cave_slime", 
-			() -> new CaveSlime(BlockBehaviour.Properties
+			() -> new CaveSlimeBlock(BlockBehaviour.Properties
 					.of(Material.PLANT, MaterialColor.COLOR_CYAN)
 					.sound(SoundType.HONEY_BLOCK)
 					.noCollission()
 					.instabreak()
 					.randomTicks()
-					.lightLevel(CaveSlimePlant.emission(5))
+					.lightLevel(CaveSlimePlantBlock.emission(5))
 					));
 	
 	public static final RegistryObject<Block> CAVE_SLIME_PLANT = BLOCKS.register("cave_slime_plant", 
-			() -> new CaveSlimePlant(BlockBehaviour.Properties
+			() -> new CaveSlimePlantBlock(BlockBehaviour.Properties
 					.of(Material.PLANT, MaterialColor.COLOR_CYAN)
 					.sound(SoundType.HONEY_BLOCK)
 					.noCollission()
 					.instabreak()
-					.lightLevel(CaveSlimePlant.emission(5))
+					.lightLevel(CaveSlimePlantBlock.emission(5))
 					));
 	
 	public static final BlockItemSet HIVE_JELLY_CLUSTER = new BlockItemSet("hive_jelly_cluster",
-			() -> new HiveCluster(BlockBehaviour.Properties
+			() -> new HiveClusterBlock(BlockBehaviour.Properties
 					.of(Material.CLAY, MaterialColor.COLOR_CYAN)
 					.strength(1.5F, 6.0F)
 					.requiresCorrectToolForDrops()
 					.sound(DreamlandSoundTypes.HIVE_JELLY)
 					.noOcclusion()
-					.lightLevel(HiveCluster.emission(5))
+					.lightLevel(HiveClusterBlock.emission(5))
 					));
 	
 	public static final BlockItemSet INFESTED_HIVE_JELLY_CLUSTER = new BlockItemSet("infested_hive_jelly_cluster",
-			() -> new InfestedHiveCluster(BlockBehaviour.Properties
+			() -> new InfestedHiveClusterBlock(BlockBehaviour.Properties
 					.of(Material.CLAY, MaterialColor.COLOR_CYAN)
 					.strength(1.5F, 6.0F)
 					.requiresCorrectToolForDrops()
@@ -117,11 +117,11 @@ public class DreamlandBlocks {
 					.noOcclusion()
 					.randomTicks()
 					.noLootTable()
-					.lightLevel(InfestedHiveCluster.emission(5))
+					.lightLevel(InfestedHiveClusterBlock.emission(5))
 					));
 	
 	public static final BlockItemSet HIVE_MEMBRANE = new BlockItemSet("hive_membrane",
-			() -> new HiveMembrane(BlockBehaviour.Properties
+			() -> new HiveMembraneBlock(BlockBehaviour.Properties
 					.of(Material.SPONGE, MaterialColor.COLOR_CYAN)
 					.strength(-1.0F, 3600000.0F)
 					.noLootTable()
@@ -135,7 +135,7 @@ public class DreamlandBlocks {
 					));
 	
 	public static final BlockItemSet HIVE_WEAVER = new BlockItemSet("hive_weaver",
-			() -> new HiveWeaver(BlockBehaviour.Properties
+			() -> new HiveWeaverBlock(BlockBehaviour.Properties
 					.of(Material.SPONGE, MaterialColor.COLOR_CYAN)
 					.strength(1.5F, 6.0F)
 					.requiresCorrectToolForDrops()
@@ -152,17 +152,17 @@ public class DreamlandBlocks {
 					));
 	
 	public static final BlockItemSet HIVE_GROWTH = new BlockItemSet("hive_growth",
-			() -> new HiveGrowth(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_RED).noOcclusion().sound(SoundType.MOSS_CARPET).instabreak()
+			() -> new HiveGrowthBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_RED).noOcclusion().sound(SoundType.MOSS_CARPET).instabreak()
 					));
 	
 	public static final RegistryObject<Block> JELLY_SPLOTCH = BLOCKS.register("jelly_splotch",
-			() -> new JellySplotch(BlockBehaviour.Properties
+			() -> new JellySplotchBlock(BlockBehaviour.Properties
 					.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_CYAN)
 					.strength(0.2F)
 					.noCollission()
 					.sound(DreamlandSoundTypes.HIVE_JELLY)
 					.noLootTable()
-					.lightLevel(JellySplotch.emission(7))
+					.lightLevel(JellySplotchBlock.emission(7))
 					));
 	
 	public static final BlockItemSet HIVE_IRON = createHiveOre("hive_iron");
@@ -199,7 +199,7 @@ public class DreamlandBlocks {
 	public static final BlockItemSet TAR_BARK_SAPLING = createSaplingBlock("tar_bark_sapling", DreamlandFeatures.TAR_BARK_TREE_FEATURE);
 	
 	public static final BlockItemSet TAR_SPROUTS = new BlockItemSet("tar_sprouts",
-			() -> new TarSprouts(BlockBehaviour.Properties.copy(Blocks.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
+			() -> new TarSproutsBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
 	
 	public static final BlockItemSet FOSSILIZED_EGG = new BlockItemSet("fossilized_egg",
 			() -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(DreamlandBlocks.TAR_MUD.block().get()).strength(3.0F, 3.0F).sound(SoundType.STONE)));
@@ -220,7 +220,7 @@ public class DreamlandBlocks {
 			() -> new FlowerBlock(MobEffects.LUCK, 5, BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.GRASS)));
 	
 	public static final BlockItemSet PINK_CRAB_GRASS = new BlockItemSet("pink_crab_grass",
-			() -> new GroundPlant(BlockBehaviour.Properties.copy(Blocks.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
+			() -> new GroundPlantBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
 	
 	public static final BlockItemSet FLOWERING_UNDERGROWTH = new BlockItemSet("flowering_undergrowth",
 			() -> new UndergrowthBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).offsetType(BlockBehaviour.OffsetType.NONE)));
@@ -228,7 +228,7 @@ public class DreamlandBlocks {
 	public static final BlockItemSet PLUM_BIRCH_SAPLING = createSaplingBlock("plum_birch_sapling", DreamlandFeatures.PLUM_BIRCH_TREE_FEATURE);
 	
 	private static BlockItemSet createSaplingBlock(String name, Feature<NoneFeatureConfiguration> tree) {
-		return new BlockItemSet(name, () -> new DreamlandSapling(tree, BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+		return new BlockItemSet(name, () -> new DreamlandSaplingBlock(tree, BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 	}
 	
 	private static BlockItemSet createLeavesBlock(String name, MaterialColor color) {

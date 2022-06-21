@@ -3,10 +3,9 @@ package com.github.dragoni7.dreamland.common.world.feature;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.github.dragoni7.dreamland.common.blocks.DreamlandBlockTags;
-import com.github.dragoni7.dreamland.common.blocks.HiveBlock;
 import com.github.dragoni7.dreamland.common.world.feature.configs.EllipsoidConfig;
 import com.github.dragoni7.dreamland.common.world.feature.generation.SurfaceLake;
+import com.github.dragoni7.dreamland.core.DreamlandBlockTags;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFeatures;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
@@ -17,7 +16,6 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;
-import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
@@ -158,7 +156,6 @@ public class DreamlandConfiguredFeatures {
 	public static final Holder<ConfiguredFeature<SpringConfiguration, ?>> SPRING_TAR = registerConfiguredFeature("spring_tar", Feature.SPRING, new SpringConfiguration(DreamlandFluids.TAR_FLUID.get().defaultFluidState(), true, 4, 1, HolderSet.direct(Block::builtInRegistryHolder, Blocks.STONE, Blocks.GRANITE, Blocks.DIORITE, Blocks.ANDESITE, Blocks.DEEPSLATE, Blocks.TUFF, Blocks.CALCITE, Blocks.DIRT)));
 	
 	public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> PLUM_BIRCH_TREE = registerConfiguredFeature("plum_birch_tree", DreamlandFeatures.PLUM_BIRCH_TREE_FEATURE, new NoneFeatureConfiguration());
-	@SuppressWarnings("deprecation")
 	public static final Holder<ConfiguredFeature<SurfaceLake.Configuration, ?>> PLUM_BIRCH_LAKE = registerConfiguredFeature("plum_birch_lake", DreamlandFeatures.SURFACE_LAKE, new SurfaceLake.Configuration(BlockStateProvider.simple(Blocks.WATER.defaultBlockState()), BlockStateProvider.simple(DreamlandBlocks.MINERAL_DIRT.block().get().defaultBlockState())));
 	public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> JEWELED_FOREST_VEGETATION = registerConfiguredFeature("jeweled_forest_vegetation", Feature.RANDOM_PATCH, new RandomPatchConfiguration(48, 16, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(DreamlandBlocks.PINK_CRAB_GRASS.block().get().defaultBlockState(), 50).add(DreamlandBlocks.OPALINE_MARIGOLD.block().get().defaultBlockState(), 20).add(Blocks.ALLIUM.defaultBlockState(), 15).add(Blocks.GRASS.defaultBlockState(), 10).add(Blocks.LARGE_FERN.defaultBlockState(), 5))))));
 	public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> FLOWERING_UNDERGROWTH = registerConfiguredFeature("flowering_undergrowth", Feature.RANDOM_PATCH, new RandomPatchConfiguration(48, 4, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(DreamlandBlocks.FLOWERING_UNDERGROWTH.block().get())))));

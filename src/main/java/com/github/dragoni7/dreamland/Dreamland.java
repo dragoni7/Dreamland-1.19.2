@@ -14,6 +14,7 @@ import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFeatures;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
 import com.github.dragoni7.dreamland.core.registry.DreamlandItems;
+import com.github.dragoni7.dreamland.core.registry.DreamlandParticles;
 import com.github.dragoni7.dreamland.core.registry.DreamlandSoundEvents;
 import com.github.dragoni7.dreamland.core.registry.DreamlandSoundTypes;
 import com.github.dragoni7.dreamland.core.registry.DreamlandTiles;
@@ -62,6 +63,7 @@ public class Dreamland
         DreamlandSoundEvents.SOUND_EVENTS.register(modBus);
         DreamlandSoundTypes.init();
         DreamlandEntities.ENTITY_TYPES.register(modBus);
+        DreamlandParticles.PARTICLES.register(modBus);
         DreamlandBlocks.BLOCKS.register(modBus);
         DreamlandTiles.TILES.register(modBus);
         DreamlandFluids.FLUID_TYPES.register(modBus);
