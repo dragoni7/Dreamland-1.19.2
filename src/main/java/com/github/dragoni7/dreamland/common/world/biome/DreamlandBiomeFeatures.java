@@ -3,7 +3,6 @@ package com.github.dragoni7.dreamland.common.world.biome;
 import com.github.dragoni7.dreamland.common.world.feature.DreamlandFeaturePlacements;
 
 import net.minecraft.data.worldgen.placement.OrePlacements;
-import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
 public class DreamlandBiomeFeatures {

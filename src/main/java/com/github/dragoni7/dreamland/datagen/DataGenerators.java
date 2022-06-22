@@ -18,6 +18,7 @@ import net.minecraft.core.RegistryAccess;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
+import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.resources.RegistryOps;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -48,9 +49,10 @@ public class DataGenerators {
 		if (event.includeServer()) {
 			generator.addProvider(true, new DreamlandRecipes(generator));
 			generator.addProvider(true, new LootTables(generator));
-	        generator.addProvider(true, new AddBlockTags(generator, fileHelper));
+			BlockTagsProvider blocks = new BlockTagsProvider(generator, Dreamland.MODID, fileHelper);
+	        generator.addProvider(true, blocks);
 	        generator.addProvider(true, new AddFluidTags(generator, fileHelper));
-	        //generator.addProvider(new AddItemTags(generator, null, fileHelper));
+	        generator.addProvider(true, new AddItemTags(generator, blocks, fileHelper));
 	        
 	        for (ResourceKey<ConfiguredFeature<?,?>> key : DreamlandConfiguredFeatures.getKeys()) {
 	        	generator.addProvider(true, makeBuiltinRegistryProvider(Dreamland.MODID, outputFolder, gson, ops, registries, Registry.CONFIGURED_FEATURE_REGISTRY, ConfiguredFeature.DIRECT_CODEC, 

@@ -1,7 +1,5 @@
 package com.github.dragoni7.dreamland.common.blocks;
 
-import java.util.Random;
-
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 
 import net.minecraft.core.BlockPos;

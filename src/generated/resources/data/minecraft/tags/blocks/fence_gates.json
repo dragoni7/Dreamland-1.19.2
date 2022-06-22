@@ -1,6 +1,13 @@
 {
   "values": [
-    "dreamland:plum_birch_fence_gate",
-    "dreamland:tar_bark_fence_gate"
+    "minecraft:acacia_fence_gate",
+    "minecraft:birch_fence_gate",
+    "minecraft:dark_oak_fence_gate",
+    "minecraft:jungle_fence_gate",
+    "minecraft:oak_fence_gate",
+    "minecraft:spruce_fence_gate",
+    "minecraft:crimson_fence_gate",
+    "minecraft:warped_fence_gate",
+    "minecraft:mangrove_fence_gate"
   ]
 }

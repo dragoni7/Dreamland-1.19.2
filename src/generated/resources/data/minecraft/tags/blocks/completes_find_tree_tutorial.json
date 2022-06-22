@@ -1,6 +1,7 @@
 {
   "values": [
-    "dreamland:plum_birch_log",
-    "dreamland:tar_bark_log"
+    "#minecraft:logs",
+    "#minecraft:leaves",
+    "#minecraft:wart_blocks"
   ]
 }

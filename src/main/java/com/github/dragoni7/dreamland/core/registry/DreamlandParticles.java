@@ -14,4 +14,7 @@ public class DreamlandParticles {
 	
 	public static final RegistryObject<SimpleParticleType> TAR_BUBBLE = PARTICLES.register("tar_bubble",
 			() -> new SimpleParticleType(true));
+	
+	public static final RegistryObject<SimpleParticleType> WHITE_POLLEN = PARTICLES.register("white_pollen",
+			() -> new SimpleParticleType(false));
 }

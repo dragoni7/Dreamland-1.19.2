@@ -1,6 +1,11 @@
 {
   "values": [
-    "dreamland:plum_birch_log",
-    "dreamland:tar_bark_log"
+    "minecraft:acacia_log",
+    "minecraft:birch_log",
+    "minecraft:oak_log",
+    "minecraft:jungle_log",
+    "minecraft:spruce_log",
+    "minecraft:dark_oak_log",
+    "minecraft:mangrove_log"
   ]
 }

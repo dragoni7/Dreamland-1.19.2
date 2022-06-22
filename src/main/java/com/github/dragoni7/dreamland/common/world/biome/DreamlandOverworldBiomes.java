@@ -3,6 +3,7 @@ package com.github.dragoni7.dreamland.common.world.biome;
 import javax.annotation.Nullable;
 
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
+import com.github.dragoni7.dreamland.core.registry.DreamlandParticles;
 
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.sounds.Music;
@@ -10,7 +11,6 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
-import net.minecraft.world.level.biome.MobSpawnSettings.SpawnerData;
 
 public class DreamlandOverworldBiomes {
 
@@ -113,6 +113,7 @@ public class DreamlandOverworldBiomes {
     			.fogColor(12875400)
     			.skyColor(12875400)
     			.ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+    			.ambientParticle(new AmbientParticleSettings(DreamlandParticles.WHITE_POLLEN.get(), 0.00128F))
     			.backgroundMusic(NORMAL_MUSIC)
     			.build(),
     			spawnBuilder, biomeBuilder);

@@ -1,5 +1,6 @@
 {
   "values": [
-    "dreamland:hive_lapis"
+    "minecraft:lapis_ore",
+    "minecraft:deepslate_lapis_ore"
   ]
 }

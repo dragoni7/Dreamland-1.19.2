@@ -1,21 +1,20 @@
 {
   "values": [
-    "dreamland:hive_block",
-    "dreamland:tar_mud",
-    "dreamland:mineral_dirt",
-    "dreamland:drought_soil",
-    "dreamland:dried_tar",
-    "dreamland:plum_birch_log",
-    "dreamland:plum_birch_planks",
-    "dreamland:plum_birch_slab",
-    "dreamland:plum_birch_stairs",
-    "dreamland:plum_birch_stripped_log",
-    "dreamland:plum_birch_wood",
-    "dreamland:tar_bark_log",
-    "dreamland:tar_bark_planks",
-    "dreamland:tar_bark_slab",
-    "dreamland:tar_bark_stairs",
-    "dreamland:tar_bark_stripped_log",
-    "dreamland:tar_bark_wood"
+    "#minecraft:base_stone_overworld",
+    "#minecraft:dirt",
+    "#minecraft:terracotta",
+    "#minecraft:nylium",
+    "#minecraft:base_stone_nether",
+    "#minecraft:sand",
+    "minecraft:gravel",
+    "minecraft:soul_sand",
+    "minecraft:soul_soil",
+    "minecraft:calcite",
+    "minecraft:smooth_basalt",
+    "minecraft:clay",
+    "minecraft:dripstone_block",
+    "minecraft:end_stone",
+    "minecraft:red_sandstone",
+    "minecraft:sandstone"
   ]
 }

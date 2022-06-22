@@ -1,5 +1,7 @@
 {
   "values": [
-    "dreamland:drought_soil"
+    "#minecraft:sand",
+    "#minecraft:terracotta",
+    "#minecraft:dirt"
   ]
 }

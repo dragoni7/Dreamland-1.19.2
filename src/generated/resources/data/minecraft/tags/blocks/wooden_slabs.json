@@ -1,6 +1,13 @@
 {
   "values": [
-    "dreamland:plum_birch_slab",
-    "dreamland:tar_bark_slab"
+    "minecraft:oak_slab",
+    "minecraft:spruce_slab",
+    "minecraft:birch_slab",
+    "minecraft:jungle_slab",
+    "minecraft:acacia_slab",
+    "minecraft:dark_oak_slab",
+    "minecraft:crimson_slab",
+    "minecraft:warped_slab",
+    "minecraft:mangrove_slab"
   ]
 }

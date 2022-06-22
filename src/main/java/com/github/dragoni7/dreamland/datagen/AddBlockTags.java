@@ -10,7 +10,6 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
@@ -29,6 +28,9 @@ public class AddBlockTags extends BlockTagsProvider{
 		.add(DreamlandBlocks.CLAY_SOIL_GRASS.block().get())
 		.add(DreamlandBlocks.DROUGHT_SOIL.block().get())
 		.add(DreamlandBlocks.MINERAL_DIRT.block().get())
+		.add(DreamlandBlocks.FLOWERING_GRASS.block().get());
+		
+		tag(BlockTags.ANIMALS_SPAWNABLE_ON)
 		.add(DreamlandBlocks.FLOWERING_GRASS.block().get());
 		
 		tag(Tags.Blocks.STONE)

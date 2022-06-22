@@ -1,7 +1,5 @@
 package com.github.dragoni7.dreamland.common.world.feature.generation;
 
-import java.util.Random;
-
 import com.github.dragoni7.dreamland.common.world.feature.util.FeatureBuilder;
 import com.mojang.serialization.Codec;
 

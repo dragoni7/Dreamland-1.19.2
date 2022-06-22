@@ -22,8 +22,10 @@ public enum DreamlandArmorMaterials implements ArmorMaterial {
 	   private final SoundEvent sound;
 	   private final float toughness;
 	   private final float knockbackResistance;
-	   private final LazyLoadedValue<Ingredient> repairIngredient;
+	   @SuppressWarnings("deprecation")
+	private final LazyLoadedValue<Ingredient> repairIngredient;
 	
+	@SuppressWarnings("deprecation")
 	DreamlandArmorMaterials(String name, int durabilityMult, int[] protectionValues, int enchantValue, SoundEvent equipSound, float toughnessValue,
 			float knockbackResistValue, Supplier<Ingredient> repairItem) {
 		

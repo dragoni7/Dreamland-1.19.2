@@ -1,6 +1,7 @@
 package com.github.dragoni7.dreamland.core.event;
 
 import com.github.dragoni7.dreamland.client.particles.TarBubbleParticle;
+import com.github.dragoni7.dreamland.client.particles.WhitePollenParticle;
 import com.github.dragoni7.dreamland.client.render.*;
 import com.github.dragoni7.dreamland.common.items.LarvaSymbioteArmorItem;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
@@ -17,7 +18,6 @@ import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.loading.FMLEnvironment;
 import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -90,5 +90,6 @@ public class DreamlandClientEventHandler {
 	@SuppressWarnings("resource")
 	private static void registerParticles(ParticleFactoryRegisterEvent event) {
 		Minecraft.getInstance().particleEngine.register(DreamlandParticles.TAR_BUBBLE.get(), TarBubbleParticle.Provider::new);
+		Minecraft.getInstance().particleEngine.register(DreamlandParticles.WHITE_POLLEN.get(), WhitePollenParticle.Provider::new);
 	}
 }

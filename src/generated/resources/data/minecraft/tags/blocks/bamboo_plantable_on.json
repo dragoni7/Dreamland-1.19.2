@@ -1,5 +1,9 @@
 {
   "values": [
-    "dreamland:flowering_grass"
+    "#minecraft:sand",
+    "#minecraft:dirt",
+    "minecraft:bamboo",
+    "minecraft:bamboo_sapling",
+    "minecraft:gravel"
   ]
 }

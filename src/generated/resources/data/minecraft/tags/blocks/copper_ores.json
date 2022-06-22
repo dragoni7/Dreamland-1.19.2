@@ -1,5 +1,6 @@
 {
   "values": [
-    "dreamland:hive_copper"
+    "minecraft:copper_ore",
+    "minecraft:deepslate_copper_ore"
   ]
 }

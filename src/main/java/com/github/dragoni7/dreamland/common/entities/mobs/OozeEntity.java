@@ -106,7 +106,7 @@ public class OozeEntity extends Monster implements IAnimatable {
 	
 	public static boolean checkOozeSpawnRules(EntityType<? extends Monster> entityType, ServerLevelAccessor serverLevel, MobSpawnType spawnType, BlockPos pos, RandomSource rand) {
 		if (serverLevel.getDifficulty() != Difficulty.PEACEFUL) {
-			if (serverLevel.getBlockState(pos.below()).is(DreamlandFluids.TAR_BLOCK.get()) && !serverLevel.getFluidState(pos.below().below()).is(DreamlandFluids.TAR_FLUID.get())) {
+			if (serverLevel.getBlockState(pos.below()).is(DreamlandFluids.TAR_BLOCK.get())) {
 				return true;
 			}
 		}

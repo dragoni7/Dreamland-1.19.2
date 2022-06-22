@@ -1,9 +1,13 @@
 {
   "values": [
-    "dreamland:clay_soil",
-    "dreamland:clay_soil_grass",
-    "dreamland:drought_soil",
-    "dreamland:mineral_dirt",
-    "dreamland:flowering_grass"
+    "minecraft:dirt",
+    "minecraft:grass_block",
+    "minecraft:podzol",
+    "minecraft:coarse_dirt",
+    "minecraft:mycelium",
+    "minecraft:rooted_dirt",
+    "minecraft:moss_block",
+    "minecraft:mud",
+    "minecraft:muddy_mangrove_roots"
   ]
 }

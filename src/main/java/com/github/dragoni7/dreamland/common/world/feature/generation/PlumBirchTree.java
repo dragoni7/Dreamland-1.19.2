@@ -32,6 +32,7 @@ public class PlumBirchTree extends Feature<NoneFeatureConfiguration> {
 		super(codec);
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
 		WorldGenLevel worldgenlevel = context.level();
