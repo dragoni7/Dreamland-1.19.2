@@ -3,6 +3,7 @@ package com.github.dragoni7.dreamland.datagen;
 import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.core.DreamlandItemTags;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
+import com.github.dragoni7.dreamland.core.registry.DreamlandItems;
 import com.github.dragoni7.dreamland.core.registry.DreamlandWoodSets;
 import com.github.dragoni7.dreamland.util.WoodSet;
 
@@ -53,6 +54,16 @@ public class AddItemTags extends ItemTagsProvider {
 		
 		tag(ItemTags.WALLS)
 		.add(DreamlandBlocks.TAR_MUD_BRICK_WALL.item().get());
+		
+		tag(Tags.Items.GEMS)
+		.add(DreamlandItems.OPAL.get())
+		.add(DreamlandItems.PRECIOUS_OPAL.get());
+		
+		tag(DreamlandItemTags.OPAL)
+		.add(DreamlandItems.OPAL.get());
+		
+		tag(DreamlandItemTags.PRECIOUS_OPAL)
+		.add(DreamlandItems.PRECIOUS_OPAL.get());
 		
 		addWoodSetTags(DreamlandWoodSets.PLUM_BIRCH);
 		addWoodSetTags(DreamlandWoodSets.TAR_BARK);

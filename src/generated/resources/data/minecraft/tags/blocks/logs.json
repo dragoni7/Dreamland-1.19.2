@@ -1,7 +1,6 @@
 {
   "values": [
-    "#minecraft:logs_that_burn",
-    "#minecraft:crimson_stems",
-    "#minecraft:warped_stems"
+    "dreamland:plum_birch_log",
+    "dreamland:tar_bark_log"
   ]
 }

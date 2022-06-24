@@ -1,8 +1,5 @@
 {
   "values": [
-    "minecraft:stone",
-    "minecraft:granite",
-    "minecraft:diorite",
-    "minecraft:andesite"
+    "dreamland:tar_mud"
   ]
 }

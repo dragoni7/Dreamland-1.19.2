@@ -65,6 +65,7 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandBlocks.OPALINE_MARIGOLD.block().get(), "Opaline Marigold");
 		add(DreamlandBlocks.PLUM_BIRCH_SAPLING.block().get(), "Plum Birch Sapling");
 		add(DreamlandBlocks.FLOWERING_UNDERGROWTH.block().get(), "Flowering Undergrowth");
+		add(DreamlandBlocks.PLUM_BIRCH_SHRUB.block().get(), "Plum Birch Shrub");
 		translateWoodSet(DreamlandWoodSets.PLUM_BIRCH, "Plum Birch");
 		
 		// Items
@@ -73,6 +74,8 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandItems.SPAWN_EGG_LARVA.get(), "Larva Spawn Egg");
 		add(DreamlandItems.SPAWN_EGG_OOZE.get(), "Ooze Spawn Egg");
 		add(DreamlandItems.LARVA_HELMET.get(), "Larva Symbiote Helmet");
+		add(DreamlandItems.OPAL.get(), "Opal");
+		add(DreamlandItems.PRECIOUS_OPAL.get(), "Precious Opal");
 		
 		// Entities
 		add(DreamlandEntities.LARVA.get(), "Larva");

@@ -1,0 +1,79 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"ambientocclusion": false,
+	"textures": {
+		"2": "dreamland:block/plum_birch_shrub_stem",
+		"3": "dreamland:block/plum_birch_shrub_side",
+		"4": "dreamland:block/plum_birch_shrub_top",
+		"particle": "dreamland:block/plum_birch_shrub_top"
+	},
+	"elements": [
+		{
+			"from": [8, 0, 0.1],
+			"to": [8, 15.9, 15.9],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8], "rescale": true},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#2"}
+			}
+		},
+		{
+			"from": [0.1, 0, 8],
+			"to": [15.9, 15.9, 8],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8], "rescale": true},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#2"}
+			}
+		},
+		{
+			"from": [15.99, 5, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"east": {"uv": [0, 0, 16, 11], "texture": "#3", "cullface": "east"},
+				"west": {"uv": [16, 0, 0, 11], "texture": "#3"}
+			}
+		},
+		{
+			"from": [0, 5, 0],
+			"to": [0.01, 16, 16],
+			"faces": {
+				"east": {"uv": [16, 0, 0, 11], "texture": "#3"},
+				"west": {"uv": [0, 0, 16, 11], "texture": "#3", "cullface": "west"}
+			}
+		},
+		{
+			"from": [0, 5, 0],
+			"to": [16, 16, 0.01],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 11], "texture": "#3", "cullface": "north"},
+				"south": {"uv": [16, 0, 0, 11], "texture": "#3"}
+			}
+		},
+		{
+			"from": [0, 5, 15.99],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [16, 0, 0, 11], "texture": "#3"},
+				"south": {"uv": [0, 0, 16, 11], "texture": "#3", "cullface": "south"}
+			}
+		},
+		{
+			"from": [0, 16, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#4", "cullface": "up"},
+				"down": {"uv": [0, 16, 16, 0], "texture": "#4"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "group",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [0, 1, 2, 3, 4, 5, 6]
+		}
+	]
+}

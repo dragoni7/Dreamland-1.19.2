@@ -29,6 +29,9 @@ public class DreamlandItems {
 	public static final RegistryObject<Item> TAR_BUCKET = ITEMS.register("tar_bucket", 
 			() -> new BucketItem(DreamlandFluids.TAR_FLUID, new Item.Properties().craftRemainder(Items.BUCKET).tab(Dreamland.DreamlandTab).stacksTo(1)));
 	
+	public static final RegistryObject<Item> OPAL = registerBasicItem("opal");
+	public static final RegistryObject<Item> PRECIOUS_OPAL = registerBasicItem("precious_opal");
+	
 	//Armor
 	public static final RegistryObject<Item> LARVA_HELMET = ITEMS.register("larva_symbiote",
 			() -> new LarvaSymbioteArmorItem(DreamlandArmorMaterials.LARVA, EquipmentSlot.HEAD, new Item.Properties().rarity(Rarity.RARE).tab(Dreamland.DreamlandTab)));
@@ -41,7 +44,6 @@ public class DreamlandItems {
 		return ITEMS.register(name, () -> new ForgeSpawnEggItem(type, backgroundColor, highlightColor, new Item.Properties().tab(Dreamland.DreamlandTab)));
 	}
 	
-	@SuppressWarnings("unused")
 	private static RegistryObject<Item> registerBasicItem(String name) {
 		
 		return ITEMS.register(name, () -> new Item(new Item.Properties().tab(Dreamland.DreamlandTab)));

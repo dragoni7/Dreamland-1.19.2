@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "dreamland:block/tar_mud",
+    "side": "dreamland:block/fossilized_egg"
+  }
+}

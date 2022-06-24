@@ -47,7 +47,8 @@ public class AddBlockTags extends BlockTagsProvider{
 		.add(DreamlandBlocks.HIVE_GROWTH.block().get())
 		.add(DreamlandBlocks.TAR_SPROUTS.block().get())
 		.add(DreamlandBlocks.PINK_CRAB_GRASS.block().get())
-		.add(DreamlandBlocks.FLOWERING_UNDERGROWTH.block().get());
+		.add(DreamlandBlocks.FLOWERING_UNDERGROWTH.block().get())
+		.add(DreamlandBlocks.PLUM_BIRCH_SHRUB.block().get());
 		
 		tag(BlockTags.SAPLINGS)
 		.add(DreamlandBlocks.TAR_BARK_SAPLING.block().get())
@@ -127,6 +128,7 @@ public class AddBlockTags extends BlockTagsProvider{
 		
 		tag(BlockTags.AZALEA_ROOT_REPLACEABLE)
 		.add(DreamlandBlocks.FLOWERING_GRASS.block().get())
+		.add(DreamlandBlocks.MINERAL_DIRT.block().get())
 		.add(DreamlandBlocks.TAR_MUD.block().get())
 		.add(DreamlandBlocks.HIVE_BLOCK.block().get());
 		

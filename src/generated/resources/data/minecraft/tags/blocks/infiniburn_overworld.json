@@ -1,6 +1,6 @@
 {
   "values": [
-    "minecraft:netherrack",
-    "minecraft:magma_block"
+    "dreamland:tar_mud",
+    "dreamland:packed_tar_mud"
   ]
 }

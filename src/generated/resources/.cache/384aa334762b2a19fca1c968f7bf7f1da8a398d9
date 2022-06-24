@@ -1,4 +1,4 @@
-// 1.19	2022-06-20T17:45:10.3468395	Item Models: dreamland
+// 1.19	2022-06-22T14:04:49.1157916	Item Models: dreamland
 02a6524eeaab96334111ffc9f8953b1693e4f0ef assets/dreamland/models/item/ancient_egg.json
 753673f49cec07146d029af5bb036103cbac5ce5 assets/dreamland/models/item/cave_slime.json
 1e70d6474fa73213401e11d78c67c8ebd125aab0 assets/dreamland/models/item/clay_soil.json
@@ -24,7 +24,9 @@ db1dac60a0a06bc658b3b9229b050729d54d1ed1 assets/dreamland/models/item/hive_membr
 65d60aaa6e12f64167585574c85f0aefa87de07e assets/dreamland/models/item/hive_weaver.json
 ae9d351ccebeca51a6c198c7999d291d287827eb assets/dreamland/models/item/larva_symbiote.json
 e837462748a5ec6bdc6942586b898b60d30ab368 assets/dreamland/models/item/mineral_dirt.json
+185ae6adcc32c3211207327686db62f091603aa5 assets/dreamland/models/item/opal.json
 931e8f3eea8a2608b07f93f4467af31fcde4007b assets/dreamland/models/item/opaline_marigold.json
+c4be501630987769833b38bcdbd2858922b97984 assets/dreamland/models/item/opal_diffuser.json
 d3d641804796792482d3077e4f5d2bcea1631761 assets/dreamland/models/item/packed_tar_mud.json
 ccbbe0251c2583517b39ad162e17ad1385097909 assets/dreamland/models/item/pink_crab_grass.json
 7675ad0020dfe6446dc3dfd91837b1a399a981a6 assets/dreamland/models/item/plum_birch_button.json
@@ -37,11 +39,13 @@ c209190c9454d3b550ec01e36b585375e13e54be assets/dreamland/models/item/plum_birch
 ddbe7f9386ef8e36127e18052f0e2d7f3e7057fb assets/dreamland/models/item/plum_birch_planks.json
 7372a530316163f7a8516b7c71122ce5ebe76bc0 assets/dreamland/models/item/plum_birch_pressure_plate.json
 828b56bbeec9cf8a2a0d7ecf4d96d58591c8f19a assets/dreamland/models/item/plum_birch_sapling.json
+6537ce72855eefc50af99b95653c0fa10f194ece assets/dreamland/models/item/plum_birch_shrub.json
 17e06cdb43629908afa20bd4091813680f37aace assets/dreamland/models/item/plum_birch_slab.json
 7c02fe5568b7a80316eefe3f98eaf2be8a00b443 assets/dreamland/models/item/plum_birch_stairs.json
 f8d8435ab4567d0ed52a0ca50c2fe7cde810d050 assets/dreamland/models/item/plum_birch_stripped_log.json
 18242d849ccb01dcddb1ce64786be3e643ae5812 assets/dreamland/models/item/plum_birch_trapdoor.json
 737c80a8af50e3c8872b9c140284d34878014b47 assets/dreamland/models/item/plum_birch_wood.json
+5e89667420e6b546e28298c8a051f2d388e28527 assets/dreamland/models/item/precious_opal.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dreamland/models/item/spawn_egg_larva.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dreamland/models/item/spawn_egg_ooze.json
 1d193f2173959298c3c1cb07922480fafbb588bc assets/dreamland/models/item/tar_bark_button.json

@@ -54,6 +54,8 @@ public class ItemModels extends ItemModelProvider {
 		blockItemModel(DreamlandBlocks.MINERAL_DIRT.item(), "block/mineral_dirt");
 		blockItemModel(DreamlandBlocks.FLOWERING_GRASS.item(), "block/flowering_grass");
 		blockItemModel(DreamlandBlocks.FLOWERING_UNDERGROWTH.item(), "block/flowering_undergrowth");
+		blockItemModel(DreamlandBlocks.PLUM_BIRCH_SHRUB.item(), "block/plum_birch_shrub");
+		blockItemModel(DreamlandBlocks.OPAL_DIFFUSER_BLOCK.item(), "block/opal_diffuser");
 		
 		singleTextureItemModel(DreamlandItems.HIVE_JELLY_ITEM, "item/hive_jelly");
 		singleTextureItemModel(DreamlandBlocks.CAVE_SLIME.item(), "block/cave_slime");
@@ -63,6 +65,8 @@ public class ItemModels extends ItemModelProvider {
 		singleTextureItemModel(DreamlandBlocks.OPALINE_MARIGOLD.item(), "block/opaline_marigold");
 		singleTextureItemModel(DreamlandBlocks.PINK_CRAB_GRASS.item(), "block/pink_crab_grass");
 		singleTextureItemModel(DreamlandBlocks.PLUM_BIRCH_SAPLING.item(), "item/plum_birch_sapling");
+		singleTextureItemModel(DreamlandItems.OPAL, "item/opal");
+		singleTextureItemModel(DreamlandItems.PRECIOUS_OPAL, "item/precious_opal");
 		singleTextureItemModel(DreamlandBlocks.TAR_BARK_SAPLING.item(), "item/tar_bark_sapling");
 		singleTextureItemModel(DreamlandBlocks.ANCIENT_EGG.item(), "item/ancient_egg");
 		singleTextureItemModel(DreamlandItems.TAR_BUCKET, "item/tar_bucket");

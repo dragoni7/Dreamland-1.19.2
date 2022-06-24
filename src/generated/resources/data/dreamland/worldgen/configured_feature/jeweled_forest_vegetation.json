@@ -12,7 +12,13 @@
                 "data": {
                   "Name": "dreamland:pink_crab_grass"
                 },
-                "weight": 50
+                "weight": 25
+              },
+              {
+                "data": {
+                  "Name": "dreamland:plum_birch_shrub"
+                },
+                "weight": 25
               },
               {
                 "data": {

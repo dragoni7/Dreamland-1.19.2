@@ -1,0 +1,85 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "dreamland:block/opal_diffuser",
+		"particle": "dreamland:block/opal_diffuser"
+	},
+	"elements": [
+		{
+			"from": [5, 3, 5],
+			"to": [11, 8, 11],
+			"faces": {
+				"north": {"uv": [5, 7, 8, 9.5], "texture": "#0"},
+				"east": {"uv": [8, 4, 11, 6.5], "texture": "#0"},
+				"south": {"uv": [8, 6.5, 11, 9], "texture": "#0"},
+				"west": {"uv": [9, 0, 12, 2.5], "texture": "#0"},
+				"up": {"uv": [8, 7, 5, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "base 2",
+			"from": [4, 2, 4],
+			"to": [12, 3, 12],
+			"faces": {
+				"north": {"uv": [9, 3.5, 13, 4], "texture": "#0"},
+				"east": {"uv": [10, 10, 14, 10.5], "texture": "#0"},
+				"south": {"uv": [10, 10.5, 14, 11], "texture": "#0"},
+				"west": {"uv": [0, 11, 4, 11.5], "texture": "#0"},
+				"up": {"uv": [9, 4, 5, 0], "texture": "#0"}
+			}
+		},
+		{
+			"name": "base",
+			"from": [3, 0, 3],
+			"to": [13, 2, 13],
+			"faces": {
+				"north": {"uv": [9, 2.5, 14, 3.5], "texture": "#0"},
+				"east": {"uv": [8, 9, 13, 10], "texture": "#0"},
+				"south": {"uv": [0, 10, 5, 11], "texture": "#0"},
+				"west": {"uv": [5, 10, 10, 11], "texture": "#0"},
+				"up": {"uv": [5, 5, 0, 0], "texture": "#0"},
+				"down": {"uv": [5, 5, 0, 10], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 45, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 225, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [0, 3, 0],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [30, 225, 0],
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"fixed": {
+			"scale": [0.5, 0.5, 0.5]
+		}
+	},
+	"groups": [
+		{
+			"name": "group",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0, 1, 2]
+		}
+	]
+}

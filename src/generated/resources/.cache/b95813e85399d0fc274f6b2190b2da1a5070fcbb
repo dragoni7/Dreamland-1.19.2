@@ -1,5 +1,7 @@
-// 1.19	2022-06-20T21:50:41.5836827	Dreamland Item Tags
+// 1.19	2022-06-22T14:04:49.1227931	Dreamland Item Tags
 c0a505fa839af937b16b68705a9233d0c8784f8a data/dreamland/tags/items/hive_ores.json
+fea313e9bd821ed8c7dba9e9ff974555d6f492e7 data/forge/tags/items/gems.json
+deda1b280200a25cbeebddcab815559daec04391 data/forge/tags/items/opal.json
 dd6dd3b3a201352ac240ade1c42ca7a6f6bcbd0a data/forge/tags/items/ores.json
 dc2cad800fb4f276cd4e421bec1158b838135184 data/forge/tags/items/ores/copper.json
 ad9861f7d55d5bc4b4ccdfbe5ab1ec2d88a2c9a9 data/forge/tags/items/ores/diamond.json
@@ -7,6 +9,7 @@ ad9861f7d55d5bc4b4ccdfbe5ab1ec2d88a2c9a9 data/forge/tags/items/ores/diamond.json
 90e9bc4d387f698e699398a76ca49aeec5be742c data/forge/tags/items/ores/iron.json
 01f6733632aa393389f1a96c21690af9dd91cf4b data/forge/tags/items/ores/lapis.json
 b49b84e2992b922177097ce190432d0a3d819de5 data/forge/tags/items/ores/redstone.json
+900bfdc30da69fd0f3b42a4d6fe5916b5ca0b072 data/forge/tags/items/precious_opal.json
 7cf4794b9830fb2e7385342547da669b50760b65 data/minecraft/tags/items/completes_find_tree_tutorial.json
 dc2cad800fb4f276cd4e421bec1158b838135184 data/minecraft/tags/items/copper_ores.json
 ad9861f7d55d5bc4b4ccdfbe5ab1ec2d88a2c9a9 data/minecraft/tags/items/diamond_ores.json

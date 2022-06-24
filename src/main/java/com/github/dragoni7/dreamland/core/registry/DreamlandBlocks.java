@@ -19,8 +19,10 @@ import com.github.dragoni7.dreamland.common.blocks.HiveWeaverBlock;
 import com.github.dragoni7.dreamland.common.blocks.InfestedHiveClusterBlock;
 import com.github.dragoni7.dreamland.common.blocks.JellySplotchBlock;
 import com.github.dragoni7.dreamland.common.blocks.LarvaAngerableBlock;
+import com.github.dragoni7.dreamland.common.blocks.OpalDiffuserBlock;
 import com.github.dragoni7.dreamland.common.blocks.TarSproutsBlock;
 import com.github.dragoni7.dreamland.common.blocks.UndergrowthBlock;
+import com.github.dragoni7.dreamland.common.blocks.VioletShrubBlock;
 import com.github.dragoni7.dreamland.util.BlockItemSet;
 
 import net.minecraft.core.BlockPos;
@@ -224,6 +226,12 @@ public class DreamlandBlocks {
 	
 	public static final BlockItemSet FLOWERING_UNDERGROWTH = new BlockItemSet("flowering_undergrowth",
 			() -> new UndergrowthBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).offsetType(BlockBehaviour.OffsetType.NONE)));
+	
+	public static final BlockItemSet PLUM_BIRCH_SHRUB = new BlockItemSet("plum_birch_shrub",
+			() -> new VioletShrubBlock(BlockBehaviour.Properties.copy(Blocks.FLOWERING_AZALEA)));
+	
+	public static final BlockItemSet OPAL_DIFFUSER_BLOCK = new BlockItemSet("opal_diffuser",
+			() -> new OpalDiffuserBlock(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion()));
 	
 	public static final BlockItemSet PLUM_BIRCH_SAPLING = createSaplingBlock("plum_birch_sapling", DreamlandFeatures.PLUM_BIRCH_TREE_FEATURE);
 	
