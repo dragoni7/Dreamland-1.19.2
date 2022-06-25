@@ -6,6 +6,7 @@ import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
 import com.github.dragoni7.dreamland.core.registry.DreamlandItems;
+import com.github.dragoni7.dreamland.core.registry.DreamlandTiles;
 import com.github.dragoni7.dreamland.core.registry.DreamlandWoodSets;
 import com.github.dragoni7.dreamland.util.WoodSet;
 
@@ -66,6 +67,8 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandBlocks.PLUM_BIRCH_SAPLING.block().get(), "Plum Birch Sapling");
 		add(DreamlandBlocks.FLOWERING_UNDERGROWTH.block().get(), "Flowering Undergrowth");
 		add(DreamlandBlocks.PLUM_BIRCH_SHRUB.block().get(), "Plum Birch Shrub");
+		add(DreamlandBlocks.OPAL_DIFFUSER_BLOCK.block().get(), "Opal Diffuser");
+		add(DreamlandBlocks.OPAL_CLUSTER.block().get(), "Opal Cluster");
 		translateWoodSet(DreamlandWoodSets.PLUM_BIRCH, "Plum Birch");
 		
 		// Items

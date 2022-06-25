@@ -10,6 +10,9 @@ import com.github.dragoni7.dreamland.core.registry.DreamlandTiles;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
@@ -35,21 +38,17 @@ public class OpalDiffuserTile extends BlockEntity {
 	private boolean isDiffusing = false;
 	private int duration;
 	private int counter;
+	private int color;
 
 	public OpalDiffuserTile(BlockPos pos, BlockState state) {
 		super(DreamlandTiles.OPAL_DIFFUSER.get(), pos, state);
 	}
 	
-	@Override
-    public void setRemoved() {
-        super.setRemoved();
-        handler.invalidate();
-    }
-	
 	public void tickServer() {
 		ItemStack stack = itemHandler.getStackInSlot(0).copy();
 		
 		if (stack.getItem() == Items.POTION) {
+			color = PotionUtils.getColor(stack);
 			List<MobEffectInstance> effects = PotionUtils.getMobEffects(stack);
 			BlockPos pos = this.getBlockPos();
 			
@@ -66,7 +65,8 @@ public class OpalDiffuserTile extends BlockEntity {
 			}
 			else {
 				if (counter <= duration) {
-					if(counter % 20 == 0) {
+					// Every two seconds try to apply effect
+					if(counter % 40 == 0) { 
 						List<LivingEntity> entities = this.level.getEntitiesOfClass(LivingEntity.class, new AABB(pos).inflate(5));
 						if (!entities.isEmpty() && !effects.isEmpty()) {
 							for (LivingEntity entity : entities) {
@@ -94,10 +94,25 @@ public class OpalDiffuserTile extends BlockEntity {
 	}
 	
 	private void setDiffusing(boolean value) {
+		if (value == false) {
+			color = 0;
+		}
+		
 		isDiffusing = value;
 		BlockState blockstate = this.level.getBlockState(worldPosition);
 		this.level.setBlock(worldPosition, blockstate.setValue(BlockStateProperties.CONDITIONAL, value), Block.UPDATE_ALL);
+		this.level.sendBlockUpdated(worldPosition, blockstate, blockstate, Block.UPDATE_CLIENTS);
 	}
+	
+	public int getColor() {
+		return color;
+	}
+	
+	@Override
+    public void setRemoved() {
+        super.setRemoved();
+        handler.invalidate();
+    }
 	
 	@Override
     public void load(CompoundTag tag) {
@@ -108,6 +123,7 @@ public class OpalDiffuserTile extends BlockEntity {
         isDiffusing = tag.getBoolean("isDiffusing");
         duration = tag.getInt("duration");
         counter = tag.getInt("counter");
+        color = tag.getInt("color");
         
         super.load(tag);
     }
@@ -118,7 +134,20 @@ public class OpalDiffuserTile extends BlockEntity {
         tag.putBoolean("isDiffusing", isDiffusing);
         tag.putInt("duration", duration);
         tag.putInt("counter", counter);
+        tag.putInt("color", color);
     }
+	
+	@Override
+	public CompoundTag getUpdateTag() {
+		CompoundTag tag = super.getUpdateTag();
+		tag.putInt("color", color);
+		return tag;
+	}
+	
+	@Override
+	public Packet<ClientGamePacketListener> getUpdatePacket() {
+		return ClientboundBlockEntityDataPacket.create(this);
+	}
 	
 	private ItemStackHandler createHandler() {
         return new ItemStackHandler(1) {

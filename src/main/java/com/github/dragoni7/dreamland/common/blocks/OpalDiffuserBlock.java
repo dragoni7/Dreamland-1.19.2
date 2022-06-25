@@ -3,10 +3,10 @@ package com.github.dragoni7.dreamland.common.blocks;
 import javax.annotation.Nullable;
 
 import com.github.dragoni7.dreamland.common.blocks.tiles.OpalDiffuserTile;
+import com.mojang.math.Vector3f;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Position;
-import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
@@ -14,9 +14,11 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
+import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -25,10 +27,15 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
 
 public class OpalDiffuserBlock extends Block implements EntityBlock {
+	
+	protected static final VoxelShape SHAPE = Shapes.or(Block.box(3.0D, 0.0D, 3.0D, 13.0D, 2.0D, 13.0D), Block.box(4, 2, 4, 12, 3, 12), Block.box(5, 3, 5, 11, 8, 11));
 	
 	public static final BooleanProperty IS_DIFFUSING = BlockStateProperties.CONDITIONAL;
 
@@ -37,9 +44,25 @@ public class OpalDiffuserBlock extends Block implements EntityBlock {
 		this.registerDefaultState(this.stateDefinition.any().setValue(IS_DIFFUSING, Boolean.valueOf(false)));
 	}
 	
+	public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
+	    return SHAPE;
+	}
+	
 	public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource rand) {
 		if (state.getValue(BlockStateProperties.CONDITIONAL)) {
-			level.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, pos.getX() + 0.5D, pos.getY() + 1.0D, pos.getZ() + 0.5D, 0.0D, 0.0D, 0.0D);
+			BlockEntity tile = level.getBlockEntity(pos);
+			int color = 0;
+			if (tile instanceof OpalDiffuserTile) {
+				color = ((OpalDiffuserTile) tile).getColor();
+			}
+			
+			if (color > 0) {
+				float b = color % 256;
+				float g = ((color - b)/256) % 256;
+				float r = ((color - b) / Mth.square(256)) - g/256;
+				
+				level.addParticle(new DustParticleOptions(new Vector3f(r/255.0F, g/255.0F, b/255.0F), 1.0F), (double)pos.getX() + 0.5D, (double)pos.getY() + 0.75D + rand.nextDouble(), (double)pos.getZ() + 0.5D, 0.0D, 0.0D, 0.0D);
+			}
 		}
 	}
 
@@ -63,7 +86,7 @@ public class OpalDiffuserBlock extends Block implements EntityBlock {
 	
     @Override
     public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult trace) {
-        if (!world.isClientSide) {
+        if (!world.isClientSide && state.getValue(BlockStateProperties.CONDITIONAL) == Boolean.valueOf(false)) {
             BlockEntity tileEntity = world.getBlockEntity(pos);
             if (tileEntity instanceof OpalDiffuserTile) {
             	ItemStack item = player.getItemInHand(hand);
@@ -73,8 +96,10 @@ public class OpalDiffuserBlock extends Block implements EntityBlock {
                 	});
                  }
             }
+            return InteractionResult.SUCCESS;
         }
-        return InteractionResult.SUCCESS;
+        
+        return InteractionResult.PASS;
     }
     
     @Override

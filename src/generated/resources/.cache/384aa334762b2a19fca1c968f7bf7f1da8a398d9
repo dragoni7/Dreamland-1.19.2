@@ -1,4 +1,4 @@
-// 1.19	2022-06-22T14:04:49.1157916	Item Models: dreamland
+// 1.19	2022-06-24T18:09:57.0006953	Item Models: dreamland
 02a6524eeaab96334111ffc9f8953b1693e4f0ef assets/dreamland/models/item/ancient_egg.json
 753673f49cec07146d029af5bb036103cbac5ce5 assets/dreamland/models/item/cave_slime.json
 1e70d6474fa73213401e11d78c67c8ebd125aab0 assets/dreamland/models/item/clay_soil.json
@@ -26,6 +26,7 @@ ae9d351ccebeca51a6c198c7999d291d287827eb assets/dreamland/models/item/larva_symb
 e837462748a5ec6bdc6942586b898b60d30ab368 assets/dreamland/models/item/mineral_dirt.json
 185ae6adcc32c3211207327686db62f091603aa5 assets/dreamland/models/item/opal.json
 931e8f3eea8a2608b07f93f4467af31fcde4007b assets/dreamland/models/item/opaline_marigold.json
+7a2370733bead838b8c2b891ae8ef28ba6a49131 assets/dreamland/models/item/opal_cluster.json
 c4be501630987769833b38bcdbd2858922b97984 assets/dreamland/models/item/opal_diffuser.json
 d3d641804796792482d3077e4f5d2bcea1631761 assets/dreamland/models/item/packed_tar_mud.json
 ccbbe0251c2583517b39ad162e17ad1385097909 assets/dreamland/models/item/pink_crab_grass.json

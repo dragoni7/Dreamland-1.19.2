@@ -2,7 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "block/cluster"
+		"0": "dreamland:block/opal_cluster",
+		"particle": "dreamland:block/opal_cluster"
 	},
 	"elements": [
 		{
@@ -37,7 +38,6 @@
 			"rotation": {"angle": 0, "axis": "y", "origin": [-2, 0, 1]},
 			"faces": {
 				"north": {"uv": [0, 9, 1, 12.5], "texture": "#0"},
-				"east": {"uv": [1, 9, 2, 12.5], "texture": "#0"},
 				"south": {"uv": [2, 9, 3, 12.5], "texture": "#0"},
 				"west": {"uv": [3, 9, 4, 12.5], "texture": "#0"},
 				"up": {"uv": [5, 10, 4, 9], "texture": "#0"},
@@ -97,10 +97,12 @@
 		},
 		"firstperson_righthand": {
 			"rotation": [0, 45, 0],
+			"translation": [0, 3, 0],
 			"scale": [0.4, 0.4, 0.4]
 		},
 		"firstperson_lefthand": {
 			"rotation": [0, 225, 0],
+			"translation": [0, 3, 0],
 			"scale": [0.4, 0.4, 0.4]
 		},
 		"ground": {

@@ -41,12 +41,32 @@
 				"up": {"uv": [5, 5, 0, 0], "texture": "#0"},
 				"down": {"uv": [5, 5, 0, 10], "texture": "#0"}
 			}
+		},
+		{
+			"name": "cross1",
+			"from": [4.03033, 8, 8.03033],
+			"to": [12.03033, 10, 8.03033],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8.03033, 9, 8.03033]},
+			"faces": {
+				"north": {"uv": [4, 11, 8, 12], "texture": "#0"},
+				"south": {"uv": [4, 11, 8, 12], "texture": "#0"}
+			}
+		},
+		{
+			"name": "cross2",
+			"from": [8.03033, 8, 4.03033],
+			"to": [8.03033, 10, 12.03033],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8.03033, 9, 8.03033]},
+			"faces": {
+				"east": {"uv": [4, 11, 8, 12], "texture": "#0"},
+				"west": {"uv": [4, 11, 8, 12], "texture": "#0"}
+			}
 		}
 	],
 	"display": {
 		"thirdperson_righthand": {
-			"rotation": [75, 45, 0],
-			"translation": [0, 2.5, 0],
+			"rotation": [58.14, 12.11, -7.31],
+			"translation": [0, 3.25, 2.5],
 			"scale": [0.375, 0.375, 0.375]
 		},
 		"thirdperson_lefthand": {
@@ -56,6 +76,7 @@
 		},
 		"firstperson_righthand": {
 			"rotation": [0, 45, 0],
+			"translation": [0, 2.5, 0],
 			"scale": [0.4, 0.4, 0.4]
 		},
 		"firstperson_lefthand": {
@@ -79,7 +100,7 @@
 			"name": "group",
 			"origin": [8, 8, 8],
 			"color": 0,
-			"children": [0, 1, 2]
+			"children": [0, 1, 2, 3, 4]
 		}
 	]
 }

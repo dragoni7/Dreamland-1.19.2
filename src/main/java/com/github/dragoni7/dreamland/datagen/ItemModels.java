@@ -56,6 +56,7 @@ public class ItemModels extends ItemModelProvider {
 		blockItemModel(DreamlandBlocks.FLOWERING_UNDERGROWTH.item(), "block/flowering_undergrowth");
 		blockItemModel(DreamlandBlocks.PLUM_BIRCH_SHRUB.item(), "block/plum_birch_shrub");
 		blockItemModel(DreamlandBlocks.OPAL_DIFFUSER_BLOCK.item(), "block/opal_diffuser");
+		blockItemModel(DreamlandBlocks.OPAL_CLUSTER.item(), "block/opal_cluster");
 		
 		singleTextureItemModel(DreamlandItems.HIVE_JELLY_ITEM, "item/hive_jelly");
 		singleTextureItemModel(DreamlandBlocks.CAVE_SLIME.item(), "block/cave_slime");
