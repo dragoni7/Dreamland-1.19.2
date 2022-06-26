@@ -14,6 +14,7 @@ import net.minecraft.data.DataProvider;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -28,6 +29,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraftforge.common.Tags.Items;
 
 import org.apache.logging.log4j.Logger;
 
@@ -86,6 +88,14 @@ public abstract class BaseLootTableProvider extends LootTableProvider {
 					)
 				);
 		return LootTable.lootTable().withPool(builder);
+	}
+	
+	protected LootTable.Builder createShearableVegetationBlockTable(String name, Block block) {
+		LootPool.Builder builder = LootPool.lootPool()
+				.name(name)
+				.setRolls(ConstantValue.exactly(1))
+				.add(LootItem.lootTableItem(block).when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(Items.SHEARS))));
+				return LootTable.lootTable().withPool(builder);
 	}
 	
 	@Override

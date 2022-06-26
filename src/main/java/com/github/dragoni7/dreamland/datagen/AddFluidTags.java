@@ -17,9 +17,6 @@ public class AddFluidTags extends FluidTagsProvider {
 	@Override
 	protected void addTags() {
 		
-		tag(FluidTags.WATER)
-		.add(DreamlandFluids.TAR_FLUID.get())
-		.add(DreamlandFluids.TAR_FLOWING.get());
 	}
 	
 	@Override

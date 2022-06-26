@@ -82,13 +82,17 @@ public class AddBlockTags extends BlockTagsProvider{
 		.add(DreamlandBlocks.TAR_MUD_BRICK_SLAB.block().get())
 		.add(DreamlandBlocks.TAR_MUD_BRICK_STAIRS.block().get())
 		.add(DreamlandBlocks.TAR_MUD_BRICK_WALL.block().get())
-		.add(DreamlandBlocks.FOSSILIZED_EGG.block().get());
+		.add(DreamlandBlocks.FOSSILIZED_EGG.block().get())
+		.add(DreamlandBlocks.OPAL_DIFFUSER_BLOCK.block().get())
+		.add(DreamlandBlocks.OPAL_CLUSTER.block().get());
 		
 		tag(BlockTags.NEEDS_STONE_TOOL)
 		.add(DreamlandBlocks.HIVE_BLOCK.block().get())
 		.add(DreamlandBlocks.HIVE_JELLY_CLUSTER.block().get())
 		.add(DreamlandBlocks.INFESTED_HIVE_JELLY_CLUSTER.block().get())
-		.add(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.block().get());
+		.add(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.block().get())
+		.add(DreamlandBlocks.OPAL_DIFFUSER_BLOCK.block().get())
+		.add(DreamlandBlocks.OPAL_CLUSTER.block().get());
 		
 		tag(BlockTags.NEEDS_DIAMOND_TOOL)
 		.add(DreamlandBlocks.HIVE_WEAVER.block().get());

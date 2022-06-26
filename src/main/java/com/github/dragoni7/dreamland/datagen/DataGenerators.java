@@ -48,7 +48,7 @@ public class DataGenerators {
 		
 		if (event.includeServer()) {
 			generator.addProvider(true, new DreamlandRecipes(generator));
-			generator.addProvider(true, new LootTables(generator));
+			generator.addProvider(true, new DreamlandLootTables(generator));
 			BlockTagsProvider blocks = new BlockTagsProvider(generator, Dreamland.MODID, fileHelper);
 	        generator.addProvider(true, new AddBlockTags(generator, fileHelper));
 	        generator.addProvider(true, new AddFluidTags(generator, fileHelper));

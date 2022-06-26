@@ -235,7 +235,7 @@ public class DreamlandBlocks {
 			() -> new OpalDiffuserBlock(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.DEEPSLATE_TILES).requiresCorrectToolForDrops().strength(0.5F).noOcclusion()));
 	
 	public static final BlockItemSet OPAL_CLUSTER = new BlockItemSet("opal_cluster",
-			() -> new OpalClusterBlock(BlockBehaviour.Properties.of(Material.STONE).strength(3.0F, 3.0F).sound(SoundType.STONE).requiresCorrectToolForDrops().noOcclusion()));
+			() -> new OpalClusterBlock(BlockBehaviour.Properties.of(Material.STONE).strength(3.0F, 3.0F).sound(SoundType.METAL).requiresCorrectToolForDrops().noOcclusion()));
 	
 	public static final BlockItemSet PLUM_BIRCH_SAPLING = createSaplingBlock("plum_birch_sapling", DreamlandFeatures.PLUM_BIRCH_TREE_FEATURE);
 	

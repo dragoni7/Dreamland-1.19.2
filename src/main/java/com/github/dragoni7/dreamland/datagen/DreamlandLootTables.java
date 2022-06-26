@@ -10,9 +10,9 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 
-public class LootTables extends BaseLootTableProvider {
+public class DreamlandLootTables extends BaseLootTableProvider {
 	
-	public LootTables(DataGenerator dataGeneratorIn) {
+	public DreamlandLootTables(DataGenerator dataGeneratorIn) {
 		super(dataGeneratorIn);
 	}
 	
@@ -32,14 +32,20 @@ public class LootTables extends BaseLootTableProvider {
 		basicBlockTable(DreamlandBlocks.TAR_MUD_BRICK_SLAB.block().get(), "tar_mud_brick_slab");
 		basicBlockTable(DreamlandBlocks.TAR_MUD_BRICK_STAIRS.block().get(), "tar_mud_brick_stairs");
 		basicBlockTable(DreamlandBlocks.TAR_MUD_BRICK_WALL.block().get(), "tar_mud_brick_wall");
+		shearableVegetationTable(DreamlandBlocks.TAR_BARK_LEAVES.block().get(), "tar_bark_leaves");
 		basicBlockTable(DreamlandBlocks.DROUGHT_SOIL.block().get(), "drought_soil");
-		basicBlockTable(DreamlandBlocks.TAR_SPROUTS.block().get(), "tar_sprouts");
+		basicBlockTable(DreamlandBlocks.TAR_BARK_SAPLING.block().get(), "tar_bark_sapling");
+		shearableVegetationTable(DreamlandBlocks.TAR_SPROUTS.block().get(), "tar_sprouts");
 		
 		basicBlockTable(DreamlandBlocks.MINERAL_DIRT.block().get(), "mineral_dirt");
 		grassBlockTable(DreamlandBlocks.FLOWERING_GRASS.block().get(), DreamlandBlocks.MINERAL_DIRT.item().get(), "flowering_grass");
 		basicBlockTable(DreamlandBlocks.OPALINE_MARIGOLD.block().get(), "opaline_marigold");
-		basicBlockTable(DreamlandBlocks.PINK_CRAB_GRASS.block().get(), "pink_crab_grass");
-		basicBlockTable(DreamlandBlocks.FLOWERING_UNDERGROWTH.block().get(), "flowering_undergrowth");
+		shearableVegetationTable(DreamlandBlocks.PINK_CRAB_GRASS.block().get(), "pink_crab_grass");
+		shearableVegetationTable(DreamlandBlocks.FLOWERING_UNDERGROWTH.block().get(), "flowering_undergrowth");
+		shearableVegetationTable(DreamlandBlocks.PLUM_BIRCH_LEAVES.block().get(), "plum_birch_leaves");
+		basicBlockTable(DreamlandBlocks.PLUM_BIRCH_SHRUB.block().get(), "plum_birch_shrub");
+		basicBlockTable(DreamlandBlocks.PLUM_BIRCH_SAPLING.block().get(), "plum_birch_sapling");
+		basicBlockTable(DreamlandBlocks.OPAL_DIFFUSER_BLOCK.block().get(), "opal_diffuser");
 		
 		createWoodSetTable(DreamlandWoodSets.TAR_BARK);
 		createWoodSetTable(DreamlandWoodSets.PLUM_BIRCH);
@@ -54,6 +60,7 @@ public class LootTables extends BaseLootTableProvider {
 		silkTouchTable(DreamlandBlocks.HIVE_JELLY_CLUSTER.block().get(), DreamlandItems.HIVE_JELLY_ITEM.get(), "hive_jelly_cluster", 2, 3);
 		silkTouchTable(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.block().get(), DreamlandItems.HIVE_JELLY_ITEM.get(), "hive_block_with_jelly", 1, 1);
 		silkTouchTable(DreamlandBlocks.FOSSILIZED_EGG.block().get(), DreamlandBlocks.ANCIENT_EGG.item().get(), "fossilized_egg", 1, 1);
+		silkTouchTable(DreamlandBlocks.OPAL_CLUSTER.block().get(), DreamlandItems.OPAL.get(), "opal_cluster", 1, 3);
 	}
 	
 	private void createWoodSetTable(WoodSet set) {
@@ -91,5 +98,9 @@ public class LootTables extends BaseLootTableProvider {
 	
 	private void grassBlockTable(Block block, Item item, String name) {
 		lootTables.put(block, createGrassBlockTable(name, block, item));
+	}
+	
+	private void shearableVegetationTable(Block block, String name) {
+		lootTables.put(block, createShearableVegetationBlockTable(name, block));
 	}
 }
