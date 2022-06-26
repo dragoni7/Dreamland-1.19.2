@@ -41,7 +41,7 @@ public class PlumBirchTree extends Feature<NoneFeatureConfiguration> {
 		BlockPos blockpos = context.origin();
 		BlockPos branchPos = blockpos.above(height - rand.nextInt(5, 6));
 		FeatureBuilder plumBirchTreeBuilder = new FeatureBuilder();
-		final BlockState log = DreamlandWoodSets.PLUM_BIRCH.getLog().get().defaultBlockState();
+		final BlockState log = DreamlandWoodSets.PLUM_BIRCH.log().block().get().defaultBlockState();
 		Boolean branchResult = false;
 		
 		

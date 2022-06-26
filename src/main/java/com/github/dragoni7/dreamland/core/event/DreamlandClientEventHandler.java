@@ -52,15 +52,15 @@ public class DreamlandClientEventHandler {
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.TAR_BARK_LEAVES.block().get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.PLUM_BIRCH_LEAVES.block().get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.FLOWERING_GRASS.block().get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.PLUM_BIRCH.getDoor().get(), RenderType.cutoutMipped());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.PLUM_BIRCH.getLadder().get(), RenderType.cutoutMipped());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.PLUM_BIRCH.door().block().get(), RenderType.cutoutMipped());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.PLUM_BIRCH.ladder().block().get(), RenderType.cutoutMipped());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.OPALINE_MARIGOLD.block().get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.PINK_CRAB_GRASS.block().get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.FLOWERING_UNDERGROWTH.block().get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.OPAL_DIFFUSER_BLOCK.block().get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.PLUM_BIRCH_SHRUB.block().get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.TAR_BARK.getDoor().get(), RenderType.cutoutMipped());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.TAR_BARK.getLadder().get(), RenderType.cutoutMipped());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.TAR_BARK.door().block().get(), RenderType.cutoutMipped());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.TAR_BARK.ladder().block().get(), RenderType.cutoutMipped());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.PLUM_BIRCH_SAPLING.block().get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.TAR_BARK_SAPLING.block().get(), RenderType.cutout());
 			

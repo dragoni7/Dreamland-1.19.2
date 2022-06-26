@@ -80,17 +80,17 @@ public class ItemModels extends ItemModelProvider {
 	
 	private void registerWoodSet(WoodSet set) {
 		String path = "block/" + set.getSetName();
-		blockItemModel(set.getLogItem(), path + "_log");
-		blockItemModel(set.getStrippedLogItem(), path + "_stripped_log");
-		blockItemModel(set.getWoodItem(), path + "_wood");
-		blockItemModel(set.getPlankItem(), path + "_planks");
-		blockItemModel(set.getStairItem(), path + "_stairs");
-		blockItemModel(set.getSlabItem(), path + "_slab");
-		blockItemModel(set.getFenceGateItem(), path + "_fence_gate");
+		blockItemModel(set.log().item(), path + "_log");
+		blockItemModel(set.strippedLog().item(), path + "_stripped_log");
+		blockItemModel(set.wood().item(), path + "_wood");
+		blockItemModel(set.plank().item(), path + "_planks");
+		blockItemModel(set.stair().item(), path + "_stairs");
+		blockItemModel(set.slab().item(), path + "_slab");
+		blockItemModel(set.fenceGate().item(), path + "_fence_gate");
 		fenceInventory(set.getSetName() + "_fence", DreamlandLoc.createLoc(path + "_planks"));
-		singleTextureItemModel(set.getLadderItem(), "block/" + set.getSetName() + "_ladder");
-		singleTextureItemModel(set.getDoorItem(), "item/" + set.getSetName() + "_door");
-		blockItemModel(set.getTrapDoorItem(), path + "_trapdoor_bottom");
+		singleTextureItemModel(set.ladder().item(), "block/" + set.getSetName() + "_ladder");
+		singleTextureItemModel(set.door().item(), "item/" + set.getSetName() + "_door");
+		blockItemModel(set.trapDoor().item(), path + "_trapdoor_bottom");
 		buttonInventory(set.getSetName() + "_button", DreamlandLoc.createLoc(path + "_planks"));
 		pressurePlate(set.getSetName() + "_pressure_plate", DreamlandLoc.createLoc(path + "_planks"));
 	}

@@ -83,17 +83,17 @@ public class BlockStates extends BlockStateProvider{
 		ModelFile topLeft = models().withExistingParent("door/" + setName + "_top_left", "block/door_" + "top_left").texture("bottom", doorBottom).texture("top", doorTop);
 		ModelFile topRight = models().withExistingParent("door/" + setName + "_top_right", "block/door_" + "top_right").texture("bottom", doorBottom).texture("top", doorTop);
 		
-		axisBlock((RotatedPillarBlock) set.getLog().get(), logSide, logTop);
-		axisBlock((RotatedPillarBlock) set.getStrippedLog().get(), strippedLogSide, strippedLogTop);
-		axisBlock((RotatedPillarBlock) set.getWood().get(), logSide, logSide);
-		simpleBlock(set.getPlank().get());
-		slabBlock((SlabBlock) set.getSlab().get(), plankTxt, plankTxt, plankTxt, plankTxt);
-		stairsBlock((StairBlock) set.getStair().get(), plankTxt, plankTxt, plankTxt);
-		fenceBlock((FenceBlock) set.getFence().get(), plankTxt);
-		fenceGateBlock((FenceGateBlock) set.getFenceGate().get(), plankTxt);
-		doorBlock((DoorBlock) set.getDoor().get(), bottomLeft, bottomRight, topLeft, topRight);
-		trapdoorBlock((TrapDoorBlock) set.getTrapDoor().get(), trapDoorTxt, true);
-		buttonBlock((ButtonBlock) set.getButton().get(), plankTxt);
-		pressurePlateBlock((PressurePlateBlock) set.getPressurePlate().get(), plankTxt);
+		axisBlock((RotatedPillarBlock) set.log().block().get(), logSide, logTop);
+		axisBlock((RotatedPillarBlock) set.strippedLog().block().get(), strippedLogSide, strippedLogTop);
+		axisBlock((RotatedPillarBlock) set.wood().block().get(), logSide, logSide);
+		simpleBlock(set.plank().block().get());
+		slabBlock((SlabBlock) set.slab().block().get(), plankTxt, plankTxt, plankTxt, plankTxt);
+		stairsBlock((StairBlock) set.stair().block().get(), plankTxt, plankTxt, plankTxt);
+		fenceBlock((FenceBlock) set.fence().block().get(), plankTxt);
+		fenceGateBlock((FenceGateBlock) set.fenceGate().block().get(), plankTxt);
+		doorBlock((DoorBlock) set.door().block().get(), bottomLeft, bottomRight, topLeft, topRight);
+		trapdoorBlock((TrapDoorBlock) set.trapDoor().block().get(), trapDoorTxt, true);
+		buttonBlock((ButtonBlock) set.button().block().get(), plankTxt);
+		pressurePlateBlock((PressurePlateBlock) set.pressurePlate().block().get(), plankTxt);
 	}
 }

@@ -65,19 +65,19 @@ public class DreamlandLootTables extends BaseLootTableProvider {
 	
 	private void createWoodSetTable(WoodSet set) {
 		String name = set.getSetName();
-		basicBlockTable(set.getButton().get(), name + "_button");
-		basicBlockTable(set.getDoor().get(), name + "_door");
-		basicBlockTable(set.getFence().get(), name + "_fence");
-		basicBlockTable(set.getFenceGate().get(), name + "_fence_gate");
-		basicBlockTable(set.getLadder().get(), name + "_ladder");
-		basicBlockTable(set.getLog().get(), name + "_log");
-		basicBlockTable(set.getPlank().get(), name + "_planks");
-		basicBlockTable(set.getPressurePlate().get(), name + "_pressure_plate");
-		basicBlockTable(set.getSlab().get(), name + "_slab");
-		basicBlockTable(set.getStair().get(), name + "_stair");
-		basicBlockTable(set.getStrippedLog().get(), name + "_stripped_log");
-		basicBlockTable(set.getTrapDoor().get(), name + "_trap_door");
-		basicBlockTable(set.getWood().get(), name + "_wood");
+		basicBlockTable(set.button().block().get(), name + "_button");
+		basicBlockTable(set.door().block().get(), name + "_door");
+		basicBlockTable(set.fence().block().get(), name + "_fence");
+		basicBlockTable(set.fenceGate().block().get(), name + "_fence_gate");
+		basicBlockTable(set.ladder().block().get(), name + "_ladder");
+		basicBlockTable(set.log().block().get(), name + "_log");
+		basicBlockTable(set.plank().block().get(), name + "_planks");
+		basicBlockTable(set.pressurePlate().block().get(), name + "_pressure_plate");
+		basicBlockTable(set.slab().block().get(), name + "_slab");
+		basicBlockTable(set.stair().block().get(), name + "_stair");
+		basicBlockTable(set.strippedLog().block().get(), name + "_stripped_log");
+		basicBlockTable(set.trapDoor().block().get(), name + "_trap_door");
+		basicBlockTable(set.wood().block().get(), name + "_wood");
 	}
 
 	private void basicBlockTable(Block block, String name) {

@@ -92,19 +92,19 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 	}
 	
 	private void translateWoodSet(WoodSet set, String name) {
-		add(set.getButtonItem().get(), name + " Button");
-		add(set.getDoor().get(), name + " Door");
-		add(set.getFenceGate().get(), name + " Fence Gate");
-		add(set.getFence().get(), name + " Fence");
-		add(set.getLadder().get(), name + " Ladder");
-		add(set.getLog().get(), name + " Log");
-		add(set.getPlank().get(), name + " Planks");
-		add(set.getPressurePlate().get(), name + " Pressure Plate");
-		add(set.getSlab().get(), name + " Slab");
-		add(set.getStair().get(), name + " Stairs");
-		add(set.getStrippedLog().get(), " Stripped " + name + " Log");
-		add(set.getTrapDoor().get(), name + " Trap Door");
-		add(set.getWood().get(), name + " Wood");
+		add(set.button().block().get(), name + " Button");
+		add(set.door().block().get(), name + " Door");
+		add(set.fenceGate().block().get(), name + " Fence Gate");
+		add(set.fence().block().get(), name + " Fence");
+		add(set.ladder().block().get(), name + " Ladder");
+		add(set.log().block().get(), name + " Log");
+		add(set.plank().block().get(), name + " Planks");
+		add(set.pressurePlate().block().get(), name + " Pressure Plate");
+		add(set.slab().block().get(), name + " Slab");
+		add(set.stair().block().get(), name + " Stairs");
+		add(set.strippedLog().block().get(), " Stripped " + name + " Log");
+		add(set.trapDoor().block().get(), name + " Trap Door");
+		add(set.wood().block().get(), name + " Wood");
 	}
 
 }

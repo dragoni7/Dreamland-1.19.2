@@ -56,7 +56,7 @@ public class TarBarkTree extends Feature<NoneFeatureConfiguration> {
 	}
 	
 	private static boolean createTrunk(WorldGenLevel worldgenlevel, Boolean xzChange, int baseHeight, FeatureBuilder builder, BlockPos blockpos) {
-		final BlockState log = DreamlandWoodSets.TAR_BARK.getLog().get().defaultBlockState();
+		final BlockState log = DreamlandWoodSets.TAR_BARK.log().block().get().defaultBlockState();
 		
 		for (int i = 0; i <= MAX_TRUNK_HEIGHT; i++) {
 		
@@ -84,7 +84,7 @@ public class TarBarkTree extends Feature<NoneFeatureConfiguration> {
 	}
 	
 	private static boolean createBranches(WorldGenLevel level, Boolean xzChange, RandomSource rand, int baseHeight, BlockPos pos, FeatureBuilder builder) {
-		final BlockState log = DreamlandWoodSets.TAR_BARK.getLog().get().defaultBlockState();
+		final BlockState log = DreamlandWoodSets.TAR_BARK.log().block().get().defaultBlockState();
 		int northBranchHeight = baseHeight+rand.nextInt(1, 3);
 		int westBranchHeight = baseHeight+rand.nextInt(2, 3);
 		int eastBranchHeight = baseHeight+rand.nextInt(1, 2);

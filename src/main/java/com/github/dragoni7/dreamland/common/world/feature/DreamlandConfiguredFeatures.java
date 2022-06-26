@@ -85,7 +85,7 @@ public class DreamlandConfiguredFeatures {
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_BONE_KEY = createConfiguredFeatureKey("tar_bone");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_SOIL_ORE_KEY = createConfiguredFeatureKey("tar_soil_ore");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_LAKE_TAR_KEY = createConfiguredFeatureKey("lake_tar");
-	public static final ResourceKey<ConfiguredFeature<?, ?>> CONFIGURED_FOSSILIZED_EGG_KEY = createConfiguredFeatureKey("fossilized_egg");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_FOSSILIZED_EGG_KEY = createConfiguredFeatureKey("fossilized_egg");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_SPRING_TAR_KEY = createConfiguredFeatureKey("spring_tar");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_PLUM_BIRCH_TREE_KEY = createConfiguredFeatureKey("plum_birch_tree");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_PLUM_BIRCH_LAKE = createConfiguredFeatureKey("plum_birch_lake");

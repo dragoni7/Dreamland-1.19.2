@@ -112,8 +112,7 @@ public class AddBlockTags extends BlockTagsProvider{
 		
 		tag(BlockTags.FEATURES_CANNOT_REPLACE)
 		.add(DreamlandBlocks.HIVE_MEMBRANE.block().get())
-		.add(DreamlandBlocks.HIVE_WEAVER.block().get())
-		.add(DreamlandWoodSets.PLUM_BIRCH.getLog().get());
+		.add(DreamlandBlocks.HIVE_WEAVER.block().get());
 		
 		tag(BlockTags.SCULK_REPLACEABLE)
 		.add(DreamlandBlocks.HIVE_BLOCK.block().get())
@@ -174,44 +173,44 @@ public class AddBlockTags extends BlockTagsProvider{
 	}
 	
 	private void addWoodSetTags(WoodSet set) {
-		tag(BlockTags.LOGS).add(set.getLog().get());
-		tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(set.getLog().get());
-		tag(BlockTags.LOGS_THAT_BURN).add(set.getLog().get());
-		tag(BlockTags.WOODEN_BUTTONS).add(set.getButton().get());
-		tag(BlockTags.WOODEN_DOORS).add(set.getDoor().get());
-		tag(BlockTags.WOODEN_FENCES).add(set.getFence().get());
-		tag(BlockTags.WOODEN_PRESSURE_PLATES).add(set.getPressurePlate().get());
-		tag(BlockTags.WOODEN_SLABS).add(set.getSlab().get());
-		tag(BlockTags.WOODEN_STAIRS).add(set.getStair().get());
-		tag(BlockTags.WOODEN_TRAPDOORS).add(set.getTrapDoor().get());
-		tag(BlockTags.FENCES).add(set.getFence().get());
-		tag(BlockTags.FENCE_GATES).add(set.getFenceGate().get());
-		tag(BlockTags.PLANKS).add(set.getPlank().get());
-		tag(BlockTags.CLIMBABLE).add(set.getLadder().get());
-		tag(BlockTags.COMPLETES_FIND_TREE_TUTORIAL).add(set.getLog().get());
+		tag(BlockTags.LOGS).add(set.log().block().get());
+		tag(BlockTags.OVERWORLD_NATURAL_LOGS).add(set.log().block().get());
+		tag(BlockTags.LOGS_THAT_BURN).add(set.log().block().get());
+		tag(BlockTags.WOODEN_BUTTONS).add(set.button().block().get());
+		tag(BlockTags.WOODEN_DOORS).add(set.door().block().get());
+		tag(BlockTags.WOODEN_FENCES).add(set.fence().block().get());
+		tag(BlockTags.WOODEN_PRESSURE_PLATES).add(set.pressurePlate().block().get());
+		tag(BlockTags.WOODEN_SLABS).add(set.slab().block().get());
+		tag(BlockTags.WOODEN_STAIRS).add(set.stair().block().get());
+		tag(BlockTags.WOODEN_TRAPDOORS).add(set.trapDoor().block().get());
+		tag(BlockTags.FENCES).add(set.fence().block().get());
+		tag(BlockTags.FENCE_GATES).add(set.fenceGate().block().get());
+		tag(BlockTags.PLANKS).add(set.plank().block().get());
+		tag(BlockTags.CLIMBABLE).add(set.ladder().block().get());
+		tag(BlockTags.COMPLETES_FIND_TREE_TUTORIAL).add(set.log().block().get());
 		
 		tag(BlockTags.MINEABLE_WITH_AXE)
-		.add(set.getButton().get())
-		.add(set.getDoor().get())
-		.add(set.getFence().get())
-		.add(set.getFenceGate().get())
-		.add(set.getLadder().get())
-		.add(set.getLog().get())
-		.add(set.getPlank().get())
-		.add(set.getPressurePlate().get())
-		.add(set.getSlab().get())
-		.add(set.getStair().get())
-		.add(set.getStrippedLog().get())
-		.add(set.getTrapDoor().get())
-		.add(set.getWood().get());
+		.add(set.button().block().get())
+		.add(set.door().block().get())
+		.add(set.fence().block().get())
+		.add(set.fenceGate().block().get())
+		.add(set.ladder().block().get())
+		.add(set.log().block().get())
+		.add(set.plank().block().get())
+		.add(set.pressurePlate().block().get())
+		.add(set.slab().block().get())
+		.add(set.stair().block().get())
+		.add(set.strippedLog().block().get())
+		.add(set.trapDoor().block().get())
+		.add(set.wood().block().get());
 		
 		tag(BlockTags.SCULK_REPLACEABLE)
-		.add(set.getLog().get())
-		.add(set.getPlank().get())
-		.add(set.getSlab().get())
-		.add(set.getStair().get())
-		.add(set.getStrippedLog().get())
-		.add(set.getWood().get());
+		.add(set.log().block().get())
+		.add(set.plank().block().get())
+		.add(set.slab().block().get())
+		.add(set.stair().block().get())
+		.add(set.strippedLog().block().get())
+		.add(set.wood().block().get());
 	}
 	
 	private void addCopperOreTags(Block block) {

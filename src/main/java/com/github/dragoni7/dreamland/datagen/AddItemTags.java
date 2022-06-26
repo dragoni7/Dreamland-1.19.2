@@ -86,19 +86,19 @@ public class AddItemTags extends ItemTagsProvider {
 	}
 	
 	private void addWoodSetTags(WoodSet set) {
-		tag(ItemTags.LOGS).add(set.getLogItem().get());
-		tag(ItemTags.OVERWORLD_NATURAL_LOGS).add(set.getLogItem().get());
-		tag(ItemTags.LOGS_THAT_BURN).add(set.getLogItem().get());
-		tag(ItemTags.WOODEN_BUTTONS).add(set.getButtonItem().get());
-		tag(ItemTags.WOODEN_DOORS).add(set.getDoorItem().get());
-		tag(ItemTags.WOODEN_FENCES).add(set.getFenceItem().get());
-		tag(ItemTags.WOODEN_PRESSURE_PLATES).add(set.getPressurePlateItem().get());
-		tag(ItemTags.WOODEN_SLABS).add(set.getSlabItem().get());
-		tag(ItemTags.WOODEN_STAIRS).add(set.getStairItem().get());
-		tag(ItemTags.WOODEN_TRAPDOORS).add(set.getTrapDoorItem().get());
-		tag(ItemTags.FENCES).add(set.getFenceItem().get());
-		tag(ItemTags.PLANKS).add(set.getPlankItem().get());
-		tag(ItemTags.COMPLETES_FIND_TREE_TUTORIAL).add(set.getLogItem().get());
+		tag(ItemTags.LOGS).add(set.log().item().get());
+		tag(ItemTags.OVERWORLD_NATURAL_LOGS).add(set.log().item().get());
+		tag(ItemTags.LOGS_THAT_BURN).add(set.log().item().get());
+		tag(ItemTags.WOODEN_BUTTONS).add(set.button().item().get());
+		tag(ItemTags.WOODEN_DOORS).add(set.door().item().get());
+		tag(ItemTags.WOODEN_FENCES).add(set.fence().item().get());
+		tag(ItemTags.WOODEN_PRESSURE_PLATES).add(set.pressurePlate().item().get());
+		tag(ItemTags.WOODEN_SLABS).add(set.slab().item().get());
+		tag(ItemTags.WOODEN_STAIRS).add(set.stair().item().get());
+		tag(ItemTags.WOODEN_TRAPDOORS).add(set.trapDoor().item().get());
+		tag(ItemTags.FENCES).add(set.fence().item().get());
+		tag(ItemTags.PLANKS).add(set.plank().item().get());
+		tag(ItemTags.COMPLETES_FIND_TREE_TUTORIAL).add(set.log().item().get());
 		
 	}
 	
