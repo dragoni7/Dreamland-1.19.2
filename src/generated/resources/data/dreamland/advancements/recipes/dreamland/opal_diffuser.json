@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dreamland:opal_diffuser"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "precious_opal": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dreamland:precious_opal"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "precious_opal",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dreamland:opal_diffuser"
+    ]
+  }
+}

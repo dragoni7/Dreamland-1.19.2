@@ -100,6 +100,11 @@ public class AddItemTags extends ItemTagsProvider {
 		tag(ItemTags.PLANKS).add(set.plank().item().get());
 		tag(ItemTags.COMPLETES_FIND_TREE_TUTORIAL).add(set.log().item().get());
 		
+		tag(set.getlogItemTag())
+		.add(set.log().item().get())
+		.add(set.strippedLog().item().get())
+		.add(set.wood().item().get());
+		
 	}
 	
 	private void addCopperOreItemTags(Item item) {

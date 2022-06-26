@@ -86,6 +86,7 @@ public class BlockStates extends BlockStateProvider{
 		axisBlock((RotatedPillarBlock) set.log().block().get(), logSide, logTop);
 		axisBlock((RotatedPillarBlock) set.strippedLog().block().get(), strippedLogSide, strippedLogTop);
 		axisBlock((RotatedPillarBlock) set.wood().block().get(), logSide, logSide);
+		axisBlock((RotatedPillarBlock) set.strippedWood().block().get(), strippedLogSide, strippedLogSide);
 		simpleBlock(set.plank().block().get());
 		slabBlock((SlabBlock) set.slab().block().get(), plankTxt, plankTxt, plankTxt, plankTxt);
 		stairsBlock((StairBlock) set.stair().block().get(), plankTxt, plankTxt, plankTxt);

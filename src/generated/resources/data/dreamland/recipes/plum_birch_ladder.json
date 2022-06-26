@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "dreamland",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "s": {
+      "item": "dreamland:plum_birch_slab"
+    }
+  },
+  "pattern": [
+    "# #",
+    "#s#",
+    "# #"
+  ],
+  "result": {
+    "count": 4,
+    "item": "dreamland:plum_birch_ladder"
+  }
+}

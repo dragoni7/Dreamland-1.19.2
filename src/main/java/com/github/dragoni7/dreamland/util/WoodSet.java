@@ -1,5 +1,7 @@
 package com.github.dragoni7.dreamland.util;
 
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
@@ -21,6 +23,10 @@ public class WoodSet {
 	
 	private String setName;
 	
+	private final TagKey<Item> logItemTag;
+	
+	private final TagKey<Block> logBlockTag;
+	
 	private MaterialColor color;
 	
 	private BlockItemSet LOG;
@@ -28,6 +34,8 @@ public class WoodSet {
 	private BlockItemSet STRIPPED_LOG;
 	
 	private BlockItemSet WOOD;
+	
+	private BlockItemSet STRIPPED_WOOD;
 	
 	private BlockItemSet PLANK;
 	
@@ -53,13 +61,19 @@ public class WoodSet {
 		this.setName = name;
 		this.color = color;
 		
+		this.logItemTag = TagCreator.createItemTag(setName + "_logs");
+		this.logBlockTag = TagCreator.createBlockTag(setName + "_logs");
+		
 		register();
+		
+		
 	}
 	
 	private void register() {
 		LOG = new BlockItemSet(setName + "_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(2.0F)));
 		STRIPPED_LOG = new BlockItemSet(setName + "_stripped_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).strength(2.0F)));
 		WOOD = new BlockItemSet(setName + "_wood", ()-> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, color).sound(SoundType.WOOD).strength(2.0F, 3.0F)));
+		STRIPPED_WOOD = new BlockItemSet(setName + "_stripped_wood", ()-> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, color).sound(SoundType.WOOD).strength(2.0F, 3.0F)));
 		PLANK = new BlockItemSet(setName + "_planks", () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, color).sound(SoundType.WOOD).strength(2.0F, 3.0F)));
 		SLAB = new BlockItemSet(setName + "_slab", () -> new SlabBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(2.0F, 3.0F)));
 		STAIR = new BlockItemSet(setName + "_stairs", () -> new StairBlock(() -> PLANK.block().get().defaultBlockState(), BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).strength(2.0F, 3.0F).noOcclusion()));
@@ -74,6 +88,14 @@ public class WoodSet {
 
 	public String getSetName() {
 		return setName;
+	}
+	
+	public TagKey<Item> getlogItemTag() {
+		return logItemTag;
+	}
+	
+	public TagKey<Block> getlogBlockTag() {
+		return logBlockTag;
 	}
 
 	public BlockItemSet log() {
@@ -126,5 +148,9 @@ public class WoodSet {
 
 	public BlockItemSet wood() {
 		return WOOD;
+	}
+	
+	public BlockItemSet strippedWood() {
+		return STRIPPED_WOOD;
 	}
 }

@@ -105,6 +105,7 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(set.strippedLog().block().get(), " Stripped " + name + " Log");
 		add(set.trapDoor().block().get(), name + " Trap Door");
 		add(set.wood().block().get(), name + " Wood");
+		add(set.strippedWood().block().get(), "Stripped " + name + " Wood");
 	}
 
 }

@@ -1,4 +1,4 @@
-// 1.19	2022-06-25T18:06:14.8325234	Dreamland LootTables
+// 1.19	2022-06-26T12:17:39.6627847	Dreamland LootTables
 5edeb9bd12b12facb7de034bac7cf2c1e16f9f3e data/dreamland/loot_tables/blocks/bumble_block.json
 caa1846bca6e651c75784d54ab3c39e3b9949146 data/dreamland/loot_tables/blocks/cave_slime.json
 7a177bb37b098dd8810840cf59e9512dffe176d4 data/dreamland/loot_tables/blocks/dried_tar.json
@@ -36,7 +36,8 @@ aa129a45dfc9b4067bebca067e26d7600f5a1db0 data/dreamland/loot_tables/blocks/plum_
 fbdf1e81901bb217a58fc50856f68e35769cfcda data/dreamland/loot_tables/blocks/plum_birch_shrub.json
 a26da2fb19fb5382d9c2e502d2999ab5336b035a data/dreamland/loot_tables/blocks/plum_birch_slab.json
 a167aa2335313835c386a187395ee27b41bdc51f data/dreamland/loot_tables/blocks/plum_birch_stairs.json
-a4e113fa74b5f726482cc4f5996fdbe3071467ea data/dreamland/loot_tables/blocks/plum_birch_stripped_log.json
+240fe5c7e6725354b94093ea6c500bfeda73970b data/dreamland/loot_tables/blocks/plum_birch_stripped_log.json
+edc84ccf97f9701b26e3f2e087615fbe3839c13e data/dreamland/loot_tables/blocks/plum_birch_stripped_wood.json
 46f035d6246530871e3d9566888636eada182487 data/dreamland/loot_tables/blocks/plum_birch_trapdoor.json
 df8aa23b24424d2219ff81652ee112955ae47c53 data/dreamland/loot_tables/blocks/plum_birch_wood.json
 ed1e17c70a8d1f33ef1b41c3345fde4f04d5dfe0 data/dreamland/loot_tables/blocks/tar_bark_button.json
@@ -51,7 +52,8 @@ e1bd9066a8fb2f47ed38fce0bdeb0e4909275d8c data/dreamland/loot_tables/blocks/tar_b
 a9981a331f1f03390fe0d9ad94e6c6fcae26b0ad data/dreamland/loot_tables/blocks/tar_bark_sapling.json
 6e7aecf77e9506f0afa30aa670110cd0e69f9d04 data/dreamland/loot_tables/blocks/tar_bark_slab.json
 7eb8729372898041268c6ed6d14f9336ddc23494 data/dreamland/loot_tables/blocks/tar_bark_stairs.json
-32cbeacc8480d5804d3f26a2c9277eda69e2d7b7 data/dreamland/loot_tables/blocks/tar_bark_stripped_log.json
+03c68ea15e715a951ab31d5e27a207a93fb1b4c4 data/dreamland/loot_tables/blocks/tar_bark_stripped_log.json
+6fe90adebae47a4746fb8fde3e670ec5b7519992 data/dreamland/loot_tables/blocks/tar_bark_stripped_wood.json
 90b70ea839fffe3a810430aabae11a635f27b067 data/dreamland/loot_tables/blocks/tar_bark_trapdoor.json
 c349cef2a60d737648ec814ab975f1aac1380e9c data/dreamland/loot_tables/blocks/tar_bark_wood.json
 7143079d90a758a697884439b526408f575cf24d data/dreamland/loot_tables/blocks/tar_mud.json

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "dreamland:plum_birch_stripped_wood"
+        }
+      ],
+      "name": "stripped_plum_birch_wood",
+      "rolls": 1.0
+    }
+  ]
+}

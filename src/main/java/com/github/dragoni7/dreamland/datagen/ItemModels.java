@@ -83,6 +83,7 @@ public class ItemModels extends ItemModelProvider {
 		blockItemModel(set.log().item(), path + "_log");
 		blockItemModel(set.strippedLog().item(), path + "_stripped_log");
 		blockItemModel(set.wood().item(), path + "_wood");
+		blockItemModel(set.strippedWood().item(), path + "_stripped_wood");
 		blockItemModel(set.plank().item(), path + "_planks");
 		blockItemModel(set.stair().item(), path + "_stairs");
 		blockItemModel(set.slab().item(), path + "_slab");

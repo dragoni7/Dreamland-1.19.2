@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "dreamland",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "s": {
+      "item": "dreamland:tar_bark_slab"
+    }
+  },
+  "pattern": [
+    "# #",
+    "#s#",
+    "# #"
+  ],
+  "result": {
+    "count": 4,
+    "item": "dreamland:tar_bark_ladder"
+  }
+}

@@ -1,5 +1,7 @@
-// 1.19	2022-06-22T14:04:49.1227931	Dreamland Item Tags
+// 1.19	2022-06-26T12:22:25.9378857	Dreamland Item Tags
 c0a505fa839af937b16b68705a9233d0c8784f8a data/dreamland/tags/items/hive_ores.json
+4eca4ad1e699f194d9ed0673410da0486da163b5 data/dreamland/tags/items/plum_birch_logs.json
+307086431dc21982e06a542fde8df6004d8ef340 data/dreamland/tags/items/tar_bark_logs.json
 fea313e9bd821ed8c7dba9e9ff974555d6f492e7 data/forge/tags/items/gems.json
 deda1b280200a25cbeebddcab815559daec04391 data/forge/tags/items/opal.json
 dd6dd3b3a201352ac240ade1c42ca7a6f6bcbd0a data/forge/tags/items/ores.json

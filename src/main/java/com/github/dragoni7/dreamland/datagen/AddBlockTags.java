@@ -17,7 +17,6 @@ public class AddBlockTags extends BlockTagsProvider{
 
 	public AddBlockTags(DataGenerator generator, ExistingFileHelper helper) {
 		super(generator, Dreamland.MODID, helper);
-		
 	}
 	
 	@Override
@@ -189,6 +188,12 @@ public class AddBlockTags extends BlockTagsProvider{
 		tag(BlockTags.CLIMBABLE).add(set.ladder().block().get());
 		tag(BlockTags.COMPLETES_FIND_TREE_TUTORIAL).add(set.log().block().get());
 		
+		tag(set.getlogBlockTag())
+		.add(set.wood().block().get())
+		.add(set.strippedLog().block().get())
+		.add(set.strippedWood().block().get())
+		.add(set.log().block().get());
+		
 		tag(BlockTags.MINEABLE_WITH_AXE)
 		.add(set.button().block().get())
 		.add(set.door().block().get())
@@ -202,15 +207,14 @@ public class AddBlockTags extends BlockTagsProvider{
 		.add(set.stair().block().get())
 		.add(set.strippedLog().block().get())
 		.add(set.trapDoor().block().get())
-		.add(set.wood().block().get());
+		.add(set.wood().block().get())
+		.add(set.strippedWood().block().get());
 		
 		tag(BlockTags.SCULK_REPLACEABLE)
 		.add(set.log().block().get())
 		.add(set.plank().block().get())
 		.add(set.slab().block().get())
-		.add(set.stair().block().get())
-		.add(set.strippedLog().block().get())
-		.add(set.wood().block().get());
+		.add(set.stair().block().get());
 	}
 	
 	private void addCopperOreTags(Block block) {

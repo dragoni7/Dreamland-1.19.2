@@ -75,9 +75,10 @@ public class DreamlandLootTables extends BaseLootTableProvider {
 		basicBlockTable(set.pressurePlate().block().get(), name + "_pressure_plate");
 		basicBlockTable(set.slab().block().get(), name + "_slab");
 		basicBlockTable(set.stair().block().get(), name + "_stair");
-		basicBlockTable(set.strippedLog().block().get(), name + "_stripped_log");
+		basicBlockTable(set.strippedLog().block().get(), "stripped_" + name + "_log");
 		basicBlockTable(set.trapDoor().block().get(), name + "_trap_door");
 		basicBlockTable(set.wood().block().get(), name + "_wood");
+		basicBlockTable(set.strippedWood().block().get(), "stripped_" + name + "_wood");
 	}
 
 	private void basicBlockTable(Block block, String name) {
