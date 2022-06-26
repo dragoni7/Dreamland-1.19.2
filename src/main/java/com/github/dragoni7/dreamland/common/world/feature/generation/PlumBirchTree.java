@@ -77,12 +77,12 @@ public class PlumBirchTree extends Feature<NoneFeatureConfiguration> {
 			}
 			}
 			
-			if ( !branchResult) {
+			if (!branchResult) {
 				return false;
 			}
 		}
 		
-		if ( !createLeaves(worldgenlevel, blockpos, plumBirchTreeBuilder, rand, height)) {
+		if (!createLeaves(worldgenlevel, blockpos, plumBirchTreeBuilder, rand, height)) {
 			return false;
 		}
 		

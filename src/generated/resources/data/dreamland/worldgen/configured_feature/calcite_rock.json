@@ -10,27 +10,27 @@
     "noiseBlock": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "minecraft:diorite"
+        "Name": "minecraft:amethyst_block"
       }
     },
     "xRadius": {
       "type": "minecraft:uniform",
       "value": {
-        "max_inclusive": 6,
+        "max_inclusive": 5,
         "min_inclusive": 4
       }
     },
     "yRadius": {
       "type": "minecraft:uniform",
       "value": {
-        "max_inclusive": 8,
-        "min_inclusive": 6
+        "max_inclusive": 7,
+        "min_inclusive": 5
       }
     },
     "zRadius": {
       "type": "minecraft:uniform",
       "value": {
-        "max_inclusive": 6,
+        "max_inclusive": 5,
         "min_inclusive": 3
       }
     }

@@ -1,6 +1,5 @@
 package com.github.dragoni7.dreamland.common.blocks;
 
-import java.util.Random;
 import java.util.function.Supplier;
 
 import net.minecraft.core.BlockPos;
@@ -58,7 +57,7 @@ public abstract class DreamlandSpreadingGrassBlock extends Block implements Bone
 	   }
 	
 	@SuppressWarnings("deprecation")
-	public void randomTick(BlockState state, ServerLevel serverLevel, BlockPos pos, Random rand) {
+	public void randomTick(BlockState state, ServerLevel serverLevel, BlockPos pos, RandomSource rand) {
 	      if (!canBeGrass(state, serverLevel, pos)) {
 	         if (!serverLevel.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
 	         serverLevel.setBlockAndUpdate(pos, dirt.get().defaultBlockState());

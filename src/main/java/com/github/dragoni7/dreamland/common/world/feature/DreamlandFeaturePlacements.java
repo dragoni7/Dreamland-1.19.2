@@ -75,6 +75,7 @@ private static final ArrayList<ResourceKey<PlacedFeature>> KEYS = new ArrayList<
 	public static final ResourceKey<PlacedFeature> PLACED_FLOWERING_UNDERGROWTH_KEY = createPlacedFeatureKey("flowering_undergrowth");
 	public static final ResourceKey<PlacedFeature> PLACED_CALCITE_ROCK_KEY = createPlacedFeatureKey("calcite_rock");
 	public static final ResourceKey<PlacedFeature> PLACED_HIVE_CAVE_KEY = createPlacedFeatureKey("hive_cave");
+	public static final ResourceKey<PlacedFeature> PLACED_OPAL_CLUSTER_KEY = createPlacedFeatureKey("opal_cluster");
 	
 	public static ArrayList<ResourceKey<PlacedFeature>> getKeys() {
 		return KEYS;
@@ -121,6 +122,8 @@ private static final ArrayList<ResourceKey<PlacedFeature>> KEYS = new ArrayList<
 	public static final Holder<PlacedFeature> PLACED_JEWELED_FOREST_VEGETATION = registerPlacedFeature("jeweled_forest_vegetation", DreamlandConfiguredFeatures.JEWELED_FOREST_VEGETATION, CountPlacement.of(UniformInt.of(16, 96)), HeightRangePlacement.uniform(VerticalAnchor.absolute(50), VerticalAnchor.top()), InSquarePlacement.spread(), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.matchesBlocks(List.of(DreamlandBlocks.FLOWERING_GRASS.block().get())), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
 	public static final Holder<PlacedFeature> PLACED_FLOWERING_UNDERGROWTH = registerPlacedFeature("flowering_undergrowth", DreamlandConfiguredFeatures.FLOWERING_UNDERGROWTH, CountPlacement.of(UniformInt.of(64, 96)), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(50), VerticalAnchor.top()), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.matchesBlocks(List.of(DreamlandBlocks.FLOWERING_GRASS.block().get(), Blocks.GRASS_BLOCK)), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
 	public static final Holder<PlacedFeature> PLACED_CALCITE_ROCK = registerPlacedFeature("calcite_rock", DreamlandConfiguredFeatures.CALCITE_ROCK, RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, RandomOffsetPlacement.vertical(UniformInt.of(-14, -8)), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE, 12), BiomeFilter.biome());
+	public static final Holder<PlacedFeature> PLACED_OPAL_CLUSTER = registerPlacedFeature("opal_cluster", DreamlandConfiguredFeatures.OPAL_CLUSTER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), BiomeFilter.biome());
+	
 	
 	private static List<PlacementModifier> orePlacement(PlacementModifier palcementModifiers, PlacementModifier p_195348_) {
 		      return List.of(palcementModifiers, InSquarePlacement.spread(), p_195348_, BiomeFilter.biome());

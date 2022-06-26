@@ -112,7 +112,8 @@ public class AddBlockTags extends BlockTagsProvider{
 		
 		tag(BlockTags.FEATURES_CANNOT_REPLACE)
 		.add(DreamlandBlocks.HIVE_MEMBRANE.block().get())
-		.add(DreamlandBlocks.HIVE_WEAVER.block().get());
+		.add(DreamlandBlocks.HIVE_WEAVER.block().get())
+		.add(DreamlandWoodSets.PLUM_BIRCH.getLog().get());
 		
 		tag(BlockTags.SCULK_REPLACEABLE)
 		.add(DreamlandBlocks.HIVE_BLOCK.block().get())

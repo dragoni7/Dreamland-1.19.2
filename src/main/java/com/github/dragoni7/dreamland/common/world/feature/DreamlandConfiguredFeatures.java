@@ -93,6 +93,7 @@ public class DreamlandConfiguredFeatures {
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_FLOWERING_UNDERGROWTH_KEY = createConfiguredFeatureKey("flowering_undergrowth");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_CALCITE_ROCK_KEY = createConfiguredFeatureKey("calcite_rock");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_CAVE_KEY = createConfiguredFeatureKey("hive_cave");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_OPAL_CLUSTER_KEY = createConfiguredFeatureKey("opal_cluster");
 	
 	public static ArrayList<ResourceKey<ConfiguredFeature<?, ?>>> getKeys() {
 		return KEYS;
@@ -153,7 +154,8 @@ public class DreamlandConfiguredFeatures {
 	public static final Holder<ConfiguredFeature<SurfaceLake.Configuration, ?>> PLUM_BIRCH_LAKE = registerConfiguredFeature("plum_birch_lake", DreamlandFeatures.SURFACE_LAKE, new SurfaceLake.Configuration(BlockStateProvider.simple(Blocks.WATER.defaultBlockState()), BlockStateProvider.simple(DreamlandBlocks.MINERAL_DIRT.block().get().defaultBlockState())));
 	public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> JEWELED_FOREST_VEGETATION = registerConfiguredFeature("jeweled_forest_vegetation", Feature.RANDOM_PATCH, new RandomPatchConfiguration(48, 16, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(DreamlandBlocks.PINK_CRAB_GRASS.block().get().defaultBlockState(), 25).add(DreamlandBlocks.PLUM_BIRCH_SHRUB.block().get().defaultBlockState(), 25).add(DreamlandBlocks.OPALINE_MARIGOLD.block().get().defaultBlockState(), 20).add(Blocks.ALLIUM.defaultBlockState(), 15).add(Blocks.GRASS.defaultBlockState(), 10).add(Blocks.LARGE_FERN.defaultBlockState(), 5))))));
 	public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> FLOWERING_UNDERGROWTH = registerConfiguredFeature("flowering_undergrowth", Feature.RANDOM_PATCH, new RandomPatchConfiguration(48, 4, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(DreamlandBlocks.FLOWERING_UNDERGROWTH.block().get())))));
-	public static final Holder<ConfiguredFeature<EllipsoidConfig, ?>> CALCITE_ROCK = registerConfiguredFeature("calcite_rock", DreamlandFeatures.ELLIPSOID, new EllipsoidConfig(BlockStateProvider.simple(Blocks.CALCITE), BlockStateProvider.simple(Blocks.DIORITE), UniformInt.of(4, 6), UniformInt.of(6, 8), UniformInt.of(3, 6)));
+	public static final Holder<ConfiguredFeature<EllipsoidConfig, ?>> CALCITE_ROCK = registerConfiguredFeature("calcite_rock", DreamlandFeatures.ELLIPSOID, new EllipsoidConfig(BlockStateProvider.simple(Blocks.CALCITE), BlockStateProvider.simple(Blocks.AMETHYST_BLOCK), UniformInt.of(4, 5), UniformInt.of(5, 7), UniformInt.of(3, 5)));
+	public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> OPAL_CLUSTER = registerConfiguredFeature("opal_cluster", DreamlandFeatures.OPAL_CLUSTER, new NoneFeatureConfiguration());
 	
 	private static <FC extends FeatureConfiguration, F extends Feature<FC>> Holder<ConfiguredFeature<FC, ?>> registerConfiguredFeature(String name, F feature, FC config) {
 		return BuiltinRegistries.registerExact(BuiltinRegistries.CONFIGURED_FEATURE, DreamlandLoc.createLoc(name).toString(), new ConfiguredFeature<>(feature,config));

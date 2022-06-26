@@ -7,6 +7,7 @@ import com.github.dragoni7.dreamland.common.world.feature.generation.Ellipsoid;
 import com.github.dragoni7.dreamland.common.world.feature.generation.HiveComb;
 import com.github.dragoni7.dreamland.common.world.feature.generation.HiveGrowthLayer;
 import com.github.dragoni7.dreamland.common.world.feature.generation.HiveStrand;
+import com.github.dragoni7.dreamland.common.world.feature.generation.OpalCluster;
 import com.github.dragoni7.dreamland.common.world.feature.generation.PlumBirchTree;
 import com.github.dragoni7.dreamland.common.world.feature.generation.TarBarkTree;
 import com.github.dragoni7.dreamland.common.world.feature.generation.TarBone;
@@ -31,6 +32,7 @@ public class DreamlandFeatures {
 	public static final Feature<NoneFeatureConfiguration> TAR_BONE = new TarBone(NoneFeatureConfiguration.CODEC.stable());
 	public static final Feature<NoneFeatureConfiguration> PLUM_BIRCH_TREE_FEATURE = new PlumBirchTree(NoneFeatureConfiguration.CODEC.stable());
 	public static final Feature<EllipsoidConfig> ELLIPSOID = new Ellipsoid(EllipsoidConfig.CODEC.stable());
+	public static final Feature<NoneFeatureConfiguration> OPAL_CLUSTER = new OpalCluster(NoneFeatureConfiguration.CODEC.stable());
 	
 	@SubscribeEvent
 	public static void onRegisterEvent(RegisterEvent event) {
@@ -45,6 +47,7 @@ public class DreamlandFeatures {
 			helper.register("tar_bone", DreamlandFeatures.TAR_BONE);
 			helper.register("plum_birch_tree", DreamlandFeatures.PLUM_BIRCH_TREE_FEATURE);
 			helper.register("ellipsoid", DreamlandFeatures.ELLIPSOID);
+			helper.register("opal_cluster", DreamlandFeatures.OPAL_CLUSTER);
 		});
 	}
 }

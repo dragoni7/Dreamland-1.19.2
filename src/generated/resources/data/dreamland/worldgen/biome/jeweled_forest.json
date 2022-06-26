@@ -85,7 +85,8 @@
     ],
     [
       "minecraft:freeze_top_layer",
-      "dreamland:calcite_rock"
+      "dreamland:calcite_rock",
+      "dreamland:opal_cluster"
     ]
   ],
   "precipitation": "rain",
