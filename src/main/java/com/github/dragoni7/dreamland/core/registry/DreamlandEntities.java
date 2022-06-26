@@ -2,6 +2,7 @@ package com.github.dragoni7.dreamland.core.registry;
 
 
 import com.github.dragoni7.dreamland.Dreamland;
+import com.github.dragoni7.dreamland.common.entities.mobs.BumbleBeastEntity;
 import com.github.dragoni7.dreamland.common.entities.mobs.LarvaEntity;
 import com.github.dragoni7.dreamland.common.entities.mobs.OozeEntity;
 import com.github.dragoni7.dreamland.common.entities.projectiles.TarBall;
@@ -22,6 +23,12 @@ public class DreamlandEntities {
 	public static final DeferredRegister<MenuType<?>> CONTAINERS = DeferredRegister.create(ForgeRegistries.CONTAINERS, Dreamland.MODID);
 	
 	// MOBS
+	public static final RegistryObject<EntityType<BumbleBeastEntity>> BUMBLE_BEAST = ENTITY_TYPES.register("bumble_beast",
+			() -> EntityType.Builder.<BumbleBeastEntity>of(BumbleBeastEntity::new, MobCategory.CREATURE)
+			.sized(2.0F, 2.0F)
+			.clientTrackingRange(10)
+			.build(DreamlandLoc.createLoc("bumble_beast").toString()));
+	
 	public static final RegistryObject<EntityType<LarvaEntity>> LARVA = ENTITY_TYPES.register("larva", 
 			() -> EntityType.Builder.<LarvaEntity>of(LarvaEntity::new, MobCategory.MONSTER)
 			.sized(0.7F, 0.4F)

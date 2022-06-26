@@ -54,7 +54,7 @@ public class DreamlandBlocks {
 	
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Dreamland.MODID);
 	
-	public static final BlockItemSet BUMBLE_BLOCK = new BlockItemSet("bumble_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.YELLOW_WOOL)));
+	public static final BlockItemSet BUMBLE_BLOCK = new BlockItemSet("bumble_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.YELLOW_WOOL).sound(DreamlandSoundTypes.BUMBLE_BLOCK).noOcclusion()));
 	
 	public static final BlockItemSet DARK_QUARTZITE = new BlockItemSet("dark_quartzite", () -> new DarkQuartziteBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
 	

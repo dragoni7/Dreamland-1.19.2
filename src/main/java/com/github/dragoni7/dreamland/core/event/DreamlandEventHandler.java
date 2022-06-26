@@ -3,6 +3,7 @@ package com.github.dragoni7.dreamland.core.event;
 
 import java.util.List;
 
+import com.github.dragoni7.dreamland.common.entities.mobs.BumbleBeastEntity;
 import com.github.dragoni7.dreamland.common.entities.mobs.LarvaEntity;
 import com.github.dragoni7.dreamland.common.entities.mobs.OozeEntity;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
@@ -41,8 +42,10 @@ public class DreamlandEventHandler {
 		
 	public static void addAttributes(EntityAttributeCreationEvent event) {
 		
+		SpawnPlacements.register(DreamlandEntities.BUMBLE_BEAST.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, BumbleBeastEntity::checkBumbleBeastSpawnRules);
 		SpawnPlacements.register(DreamlandEntities.LARVA.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, LarvaEntity::checkLarvaSpawnRules);
 		SpawnPlacements.register(DreamlandEntities.OOZE.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, OozeEntity::checkOozeSpawnRules);
+		event.put(DreamlandEntities.BUMBLE_BEAST.get(), BumbleBeastEntity.customAttributes().build());
 		event.put(DreamlandEntities.LARVA.get(), LarvaEntity.customAttributes().build());
 		event.put(DreamlandEntities.OOZE.get(), OozeEntity.customAttributes().build());
 	}

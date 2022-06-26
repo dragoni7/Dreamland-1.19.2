@@ -73,6 +73,7 @@ public class DreamlandClientEventHandler {
 	}
 	
 	private static void registerEntityRenders(final EntityRenderersEvent.RegisterRenderers event) {
+		event.registerEntityRenderer(DreamlandEntities.BUMBLE_BEAST.get(), BumbleBeastRender::new);
 		event.registerEntityRenderer(DreamlandEntities.LARVA.get(), LarvaRender::new);
 		event.registerEntityRenderer(DreamlandEntities.THROWN_HIVE_JELLY.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(DreamlandEntities.OOZE.get(), OozeRender::new);

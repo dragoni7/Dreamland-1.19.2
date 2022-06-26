@@ -103,6 +103,12 @@
     "axolotls": [],
     "creature": [
       {
+        "type": "dreamland:bumble_beast",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 6
+      },
+      {
         "type": "minecraft:sheep",
         "maxCount": 4,
         "minCount": 4,
