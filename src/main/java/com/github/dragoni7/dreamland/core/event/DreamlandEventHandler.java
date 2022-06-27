@@ -52,10 +52,9 @@ public class DreamlandEventHandler {
 	
 	public static void updateTarredEffect(LivingEvent.LivingUpdateEvent event) {
 		LivingEntity entity = event.getEntityLiving();
-		MobEffect tarred = DreamlandEffects.TARRED.get();
-		
 		if (entity.isInFluidType(DreamlandFluids.TAR_FLUID_TYPE.get())) {
 			Vec3 motion = entity.getDeltaMovement();
+			MobEffect tarred = DreamlandEffects.TARRED.get();
 			
 			if (motion.x != 0 || motion.z != 0) {
 				
@@ -75,12 +74,11 @@ public class DreamlandEventHandler {
 	}
 	
 	public static void setLarvaTarget(LivingEvent.LivingUpdateEvent event) {
-		LivingEntity entity = event.getEntityLiving();
-		BlockPos pos = entity.blockPosition();
-		Level level = entity.getLevel();
 		int interval = 20;
-		
 		if (interval == 20) {
+			LivingEntity entity = event.getEntityLiving();
+			BlockPos pos = entity.blockPosition();
+			Level level = entity.getLevel();
 			if (!level.isClientSide && entity != null) {
 				if (entity.hasEffect(DreamlandEffects.ANTAGONIZED.get())) {
 					List<LarvaEntity> list = level.getEntitiesOfClass(LarvaEntity.class, (new AABB(pos)).inflate(16.0D, 10.0D, 16.0D));

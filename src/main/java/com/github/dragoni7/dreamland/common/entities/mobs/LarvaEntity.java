@@ -105,7 +105,7 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 	   }
 	
 	public static AttributeSupplier.Builder customAttributes() {
-		return Mob.createMobAttributes()
+		return Monster.createMobAttributes()
 				.add(Attributes.MAX_HEALTH, 8.0D)
 				.add(Attributes.MOVEMENT_SPEED, 0.35D)
 				.add(Attributes.ATTACK_DAMAGE, 1.5D)
@@ -262,7 +262,7 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 	
 	public boolean requiresUpdateEveryTick() {
         return true;
-     }
+    }
 	
 	static class LarvaBecomeAngryTargetGoal extends NearestAttackableTargetGoal<LivingEntity> {
 

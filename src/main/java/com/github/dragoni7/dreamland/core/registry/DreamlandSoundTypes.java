@@ -6,7 +6,7 @@ import net.minecraftforge.common.util.ForgeSoundType;
 
 public class DreamlandSoundTypes {
 	
-	public static final SoundType BUMBLE_BLOCK = new ForgeSoundType(0.8F, 1.0F, () -> SoundEvents.WOOL_BREAK, () -> SoundEvents.BEE_HURT, () -> SoundEvents.BEE_HURT, () -> SoundEvents.WOOL_HIT, () -> SoundEvents.WOOL_FALL);
+	public static final SoundType BUMBLE_BLOCK = new ForgeSoundType(0.8F, 0.7F, () -> SoundEvents.WOOL_BREAK, () -> SoundEvents.BEE_HURT, () -> SoundEvents.BEE_HURT, () -> SoundEvents.WOOL_HIT, () -> SoundEvents.WOOL_FALL);
 	public static final SoundType HIVE_BLOCK = new ForgeSoundType(1.3F, 1.0F, () -> DreamlandSoundEvents.HIVE_BLOCK_BREAK.get(), () -> DreamlandSoundEvents.HIVE_BLOCK_STEP.get(), () -> DreamlandSoundEvents.HIVE_BLOCK_BREAK.get(), () -> DreamlandSoundEvents.HIVE_BLOCK_BREAK.get(), () -> DreamlandSoundEvents.HIVE_BLOCK_BREAK.get());
 	public static final SoundType HIVE_JELLY = new ForgeSoundType(1.0F, 0.8F, () -> SoundEvents.SLIME_BLOCK_BREAK, () -> DreamlandSoundEvents.HIVE_JELLY_STEP.get(), () -> SoundEvents.SLIME_BLOCK_PLACE, () -> SoundEvents.SLIME_BLOCK_HIT, () -> SoundEvents.SLIME_BLOCK_FALL);
 	public static final SoundType TAR_MUD = new ForgeSoundType(0.8F, 0.4F, () -> SoundEvents.MUD_BREAK, () -> SoundEvents.MUD_STEP, () -> SoundEvents.MUD_PLACE, () -> SoundEvents.MUD_HIT, () -> SoundEvents.MUD_FALL);

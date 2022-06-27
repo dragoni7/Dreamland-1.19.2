@@ -25,7 +25,7 @@ public class DreamlandEntities {
 	// MOBS
 	public static final RegistryObject<EntityType<BumbleBeastEntity>> BUMBLE_BEAST = ENTITY_TYPES.register("bumble_beast",
 			() -> EntityType.Builder.<BumbleBeastEntity>of(BumbleBeastEntity::new, MobCategory.CREATURE)
-			.sized(2.0F, 2.0F)
+			.sized(2.0F, 4.5F)
 			.clientTrackingRange(10)
 			.build(DreamlandLoc.createLoc("bumble_beast").toString()));
 	

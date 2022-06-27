@@ -93,7 +93,7 @@ public class DreamlandOverworldBiomes {
     	globalOverworldGeneration(biomeBuilder);
     	DreamlandBiomeFeatures.jeweledForestBiomeFeatures(biomeBuilder);
     	
-    	spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(DreamlandEntities.BUMBLE_BEAST.get(), 6, 1, 1));
+    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(DreamlandEntities.BUMBLE_BEAST.get(), 15, 1, 1));
     	spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.SHEEP, 12, 4, 4));
     	spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.CHICKEN, 10, 4, 4));
     	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SPIDER, 100, 4, 4));
