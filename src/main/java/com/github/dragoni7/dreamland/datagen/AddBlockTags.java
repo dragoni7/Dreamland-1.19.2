@@ -120,9 +120,6 @@ public class AddBlockTags extends BlockTagsProvider{
 		.add(DreamlandBlocks.DROUGHT_SOIL.block().get())
 		.add(DreamlandBlocks.DRIED_TAR.block().get());
 		
-		tag(BlockTags.ANIMALS_SPAWNABLE_ON)
-		.add(DreamlandBlocks.FLOWERING_GRASS.block().get());
-		
 		tag(BlockTags.AZALEA_GROWS_ON)
 		.add(DreamlandBlocks.FLOWERING_GRASS.block().get());
 		

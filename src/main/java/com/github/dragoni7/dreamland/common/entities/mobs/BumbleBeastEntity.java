@@ -47,6 +47,7 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.ResetUniversalAngerTargetGoal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -99,7 +100,6 @@ public class BumbleBeastEntity extends Animal implements IAnimatable, NeutralMob
 		this.setPathfindingMalus(BlockPathTypes.DANGER_FIRE, -1.0F);
 	    this.setPathfindingMalus(BlockPathTypes.WATER, -1.0F);
 	    this.setPathfindingMalus(BlockPathTypes.WATER_BORDER, 16.0F);
-	    this.setPathfindingMalus(BlockPathTypes.LEAVES, -1.0F);
 	}
 	
 	protected void defineSynchedData() {
@@ -109,11 +109,11 @@ public class BumbleBeastEntity extends Animal implements IAnimatable, NeutralMob
 	   }
 	
 	public static AttributeSupplier.Builder customAttributes() {
-		return Mob.createMobAttributes()
-				.add(Attributes.MAX_HEALTH, 32.0D)
+		return Monster.createMobAttributes()
+				.add(Attributes.MAX_HEALTH, 40.0D)
 				.add(Attributes.MOVEMENT_SPEED, 0.35D)
-				.add(Attributes.ATTACK_DAMAGE, 3.0D)
-				.add(Attributes.JUMP_STRENGTH, 2.0D)
+				.add(Attributes.ATTACK_DAMAGE, 5.0D)
+				.add(Attributes.JUMP_STRENGTH, 3.0D)
 				.add(Attributes.FOLLOW_RANGE, 48.0D)
 				.add(Attributes.KNOCKBACK_RESISTANCE, 2.0D)
 				.add(Attributes.ARMOR, 3.0D);
@@ -121,8 +121,7 @@ public class BumbleBeastEntity extends Animal implements IAnimatable, NeutralMob
 	
 	@Override
 	protected void registerGoals() {
-		//this.goalSelector.addGoal(0, new MeleeAttackGoal(this, 1.0D, true));
-		this.goalSelector.addGoal(0, new BumbleBeastEntity.BumbleBeastAttackGoal(this, 1.0D, true));
+		this.goalSelector.addGoal(0, new BumbleBeastEntity.BumbleBeastAttackGoal(this, 1.3D, true));
 		this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, 8.0F));
 		this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 1.0F));
@@ -289,7 +288,7 @@ public class BumbleBeastEntity extends Animal implements IAnimatable, NeutralMob
 		}
 		
 		protected double getAttackReachSqr(LivingEntity entity) {
-	         return (double)(-2.0F + entity.getBbWidth());
+	         return (double)(10.0F + entity.getBbWidth());
 	    } 
 	}
 }

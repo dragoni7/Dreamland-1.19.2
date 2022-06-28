@@ -77,6 +77,7 @@ public class DreamlandClientEventHandler {
 		event.registerEntityRenderer(DreamlandEntities.LARVA.get(), LarvaRender::new);
 		event.registerEntityRenderer(DreamlandEntities.THROWN_HIVE_JELLY.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(DreamlandEntities.OOZE.get(), OozeRender::new);
+		event.registerEntityRenderer(DreamlandEntities.OPAL_SHELL.get(), OpalShellRender::new);
 		event.registerEntityRenderer(DreamlandEntities.TAR_BALL.get(), TarBallRender::new);
 		event.registerBlockEntityRenderer(DreamlandTiles.ANCIENT_EGG.get(), AncientEggRender::new);
 	}

@@ -5,6 +5,7 @@ import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.common.entities.mobs.BumbleBeastEntity;
 import com.github.dragoni7.dreamland.common.entities.mobs.LarvaEntity;
 import com.github.dragoni7.dreamland.common.entities.mobs.OozeEntity;
+import com.github.dragoni7.dreamland.common.entities.mobs.OpalShellEntity;
 import com.github.dragoni7.dreamland.common.entities.projectiles.TarBall;
 import com.github.dragoni7.dreamland.common.entities.projectiles.ThrownHiveJelly;
 import com.github.dragoni7.dreamland.util.DreamlandLoc;
@@ -25,7 +26,7 @@ public class DreamlandEntities {
 	// MOBS
 	public static final RegistryObject<EntityType<BumbleBeastEntity>> BUMBLE_BEAST = ENTITY_TYPES.register("bumble_beast",
 			() -> EntityType.Builder.<BumbleBeastEntity>of(BumbleBeastEntity::new, MobCategory.CREATURE)
-			.sized(2.0F, 4.5F)
+			.sized(2.5F, 4.5F)
 			.clientTrackingRange(10)
 			.build(DreamlandLoc.createLoc("bumble_beast").toString()));
 	
@@ -40,6 +41,12 @@ public class DreamlandEntities {
 			.sized(1.0F, 3.50F)
 			.clientTrackingRange(10)
 			.build(DreamlandLoc.createLoc("ooze").toString()));
+	
+	public static final RegistryObject<EntityType<OpalShellEntity>> OPAL_SHELL = ENTITY_TYPES.register("opal_shell",
+			() -> EntityType.Builder.<OpalShellEntity>of(OpalShellEntity::new, MobCategory.CREATURE)
+			.sized(1.0F, 1.0F)
+			.clientTrackingRange(10)
+			.build(DreamlandLoc.createLoc("opal_shell").toString()));
 	
 	public static final RegistryObject<EntityType<TarBall>> TAR_BALL = ENTITY_TYPES.register("tar_ball",
 			() -> EntityType.Builder.<TarBall>of(TarBall::new, MobCategory.MISC)
