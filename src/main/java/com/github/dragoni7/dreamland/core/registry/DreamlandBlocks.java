@@ -237,6 +237,12 @@ public class DreamlandBlocks {
 	public static final BlockItemSet OPAL_CLUSTER = new BlockItemSet("opal_cluster",
 			() -> new OpalClusterBlock(BlockBehaviour.Properties.of(Material.STONE).strength(3.0F, 3.0F).sound(SoundType.METAL).requiresCorrectToolForDrops().noOcclusion()));
 	
+	public static final BlockItemSet OPAL_BLOCK = new BlockItemSet("opal_block",
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.LAPIS_BLOCK)));
+	
+	public static final BlockItemSet PRECIOUS_OPAL_BLOCK = new BlockItemSet("precious_opal_block",
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK)));
+	
 	public static final BlockItemSet PLUM_BIRCH_SAPLING = createSaplingBlock("plum_birch_sapling", DreamlandFeatures.PLUM_BIRCH_TREE_FEATURE);
 	
 	private static BlockItemSet createSaplingBlock(String name, Feature<NoneFeatureConfiguration> tree) {

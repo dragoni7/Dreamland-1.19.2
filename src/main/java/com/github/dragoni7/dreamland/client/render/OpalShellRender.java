@@ -22,7 +22,7 @@ public class OpalShellRender extends GeoEntityRenderer<OpalShellEntity> {
 	public RenderType getRenderType(OpalShellEntity animatable, float partialTicks, PoseStack stack,
 			MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn,
 			ResourceLocation texureLocation) {
-		return RenderType.entitySolid(getTextureLocation(animatable));
+		return RenderType.entityCutout(getTextureLocation(animatable));
 	}
 
 }

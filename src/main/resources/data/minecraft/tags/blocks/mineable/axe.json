@@ -13,6 +13,7 @@
     "dreamland:plum_birch_stripped_log",
     "dreamland:plum_birch_trapdoor",
     "dreamland:plum_birch_wood",
+    "dreamland:plum_birch_stripped_wood",
     "dreamland:tar_bark_button",
     "dreamland:tar_bark_door",
     "dreamland:tar_bark_fence",
@@ -25,6 +26,7 @@
     "dreamland:tar_bark_stairs",
     "dreamland:tar_bark_stripped_log",
     "dreamland:tar_bark_trapdoor",
-    "dreamland:tar_bark_wood"
+    "dreamland:tar_bark_wood",
+    "dreamland:tar_bark_stripped_wood"
   ]
 }

@@ -1,4 +1,4 @@
-// 1.19	2022-06-26T12:17:39.6527823	Block States: dreamland
+// 1.19	2022-06-30T12:48:21.0540706	Block States: dreamland
 ff0d0513d2290b8fb47e6a926794ff5f76b9bcd5 assets/dreamland/blockstates/clay_soil.json
 10b6a71d8f55b0033ff0e67406c9fff690ab5b60 assets/dreamland/blockstates/dark_quartzite.json
 ff0aaf0379aff04804ef14f39296f6b4915783ca assets/dreamland/blockstates/dried_tar.json
@@ -13,6 +13,7 @@ fae2afc702eff7b51b51266c8e2d4a758956e0a3 assets/dreamland/blockstates/hive_diamo
 24cf1a4ea30bfbb9accfa21b8f19f6c8b3a5ae7e assets/dreamland/blockstates/hive_lapis.json
 92283e36b47c6b286c6f72d46396f1ce1feec2af assets/dreamland/blockstates/hive_redstone.json
 5eceb09aba217e5d4de4a1588415762f477a331c assets/dreamland/blockstates/mineral_dirt.json
+ce831d031ae351a9ef6e9622c16eeef9f87c8d6d assets/dreamland/blockstates/opal_block.json
 6acf2fb241df80bd090a5f51140f3e7f50dc4803 assets/dreamland/blockstates/packed_tar_mud.json
 c6b2afb58d1f1af8edd7943055d97ce4d89bfcb5 assets/dreamland/blockstates/plum_birch_button.json
 5509aaa0ea93dd2244797de563f9dcc529a1230b assets/dreamland/blockstates/plum_birch_door.json
@@ -27,6 +28,7 @@ b0b94b23805be936d5e10b7cecb0836df92dd506 assets/dreamland/blockstates/plum_birch
 837d04ea782b835a7b1c0559da1e0214861ddd07 assets/dreamland/blockstates/plum_birch_stripped_wood.json
 675b7056680c71410ea7f7031dbec780133644ae assets/dreamland/blockstates/plum_birch_trapdoor.json
 7f3234d9cfbd93063d772afda1e1f620b998e0ae assets/dreamland/blockstates/plum_birch_wood.json
+9fe367fc3a40a7c5ce01394c52605f426c7c6df4 assets/dreamland/blockstates/precious_opal_block.json
 e66129c9324c2ec2e49ca656e5400046eb209a04 assets/dreamland/blockstates/tar_bark_button.json
 2f62ea50c07de27bbb0569e39ca88163d728736c assets/dreamland/blockstates/tar_bark_door.json
 337f460be02e69e465c821b59e7b0082b2610227 assets/dreamland/blockstates/tar_bark_fence.json
@@ -60,6 +62,7 @@ e9969cd429db252da6dee674da061498ad5c92b6 assets/dreamland/models/block/hive_diam
 db1b5ec3da4a28f8dfcfb0954be4855b83f726a6 assets/dreamland/models/block/hive_lapis.json
 a74583fe032579a5a476f3b7874e5cf2aca053b9 assets/dreamland/models/block/hive_redstone.json
 d18fa0b26629f372b662ecb4ee8cd5957a4cd93e assets/dreamland/models/block/mineral_dirt.json
+b7052dd711d53469b767622bdcbc20f368c3b33f assets/dreamland/models/block/opal_block.json
 66c064f85cb3ced28531638e12e591ede2b07490 assets/dreamland/models/block/packed_tar_mud.json
 bfd41b62812d01f4e9685b3b4a99473b76422a9a assets/dreamland/models/block/plum_birch_button.json
 aff1678db51f3e23d64bcb686904eb3888475f5e assets/dreamland/models/block/plum_birch_button_pressed.json
@@ -88,6 +91,7 @@ fbae6eed1e4500898684bc0793eebe96cc8d8ee1 assets/dreamland/models/block/plum_birc
 857aee7f0ae224dc0740843193f211aa906ebb51 assets/dreamland/models/block/plum_birch_trapdoor_top.json
 8b076c2c69dcc432c2d7bcb700a9a8d7b1b1a44a assets/dreamland/models/block/plum_birch_wood.json
 03cd9d551d54d1dede310ad3209647c22e5bd09b assets/dreamland/models/block/plum_birch_wood_horizontal.json
+ce6354cc411cd8b8c83cffc50978c68a8c926e9b assets/dreamland/models/block/precious_opal_block.json
 d902ba485851fa0614c4537ffbe1dbf23f6814ce assets/dreamland/models/block/tar_bark_button.json
 df442d99a8c28529b7b75448f042aa2d74ba3d65 assets/dreamland/models/block/tar_bark_button_pressed.json
 96a9db4b112f69bbfe910b03f334953404fc7104 assets/dreamland/models/block/tar_bark_fence_gate.json

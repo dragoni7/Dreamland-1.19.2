@@ -1,0 +1,17 @@
+{
+  "type": "dreamland:surface_lake_feature",
+  "config": {
+    "barrier": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "dreamland:dried_tar"
+      }
+    },
+    "insideBlock": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "dreamland:drought_soil"
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-// 1.19	2022-06-26T12:22:25.9228823	Dreamland Block Tags
+// 1.19	2022-06-30T13:54:47.4359686	Dreamland Block Tags
 8f1de98b3239009a155cb9246d22c3c197c86c85 data/dreamland/tags/blocks/fossilized_egg_replaceable.json
 9168b95796707296915d8fd7e0eb6a8ed53ec2af data/dreamland/tags/blocks/hive_ores_replaceable.json
 37de7720c2909e0b72df14405ff130b54775d875 data/dreamland/tags/blocks/plum_birch_logs.json
@@ -11,7 +11,10 @@ ad9861f7d55d5bc4b4ccdfbe5ab1ec2d88a2c9a9 data/forge/tags/blocks/ores/diamond.jso
 01f6733632aa393389f1a96c21690af9dd91cf4b data/forge/tags/blocks/ores/lapis.json
 b49b84e2992b922177097ce190432d0a3d819de5 data/forge/tags/blocks/ores/redstone.json
 b1b3f3aaa80d4e855874f7ebd80c2f99f1549b41 data/forge/tags/blocks/stone.json
-b5179572a22fa8040890cec4e640b299df9ae9f3 data/minecraft/tags/blocks/animals_spawnable_on.json
+bafa07bd98a726d6e4e1d1cb03f21c5b11a64397 data/forge/tags/blocks/storage_blocks.json
+bdb06c1f146f527a8928ef4840709efae0f900cb data/forge/tags/blocks/storage_blocks/opal.json
+accdbeec75dfb6b019eb351c31063c3bba0a38bb data/forge/tags/blocks/storage_blocks/precious_opal.json
+e056655bce753e68f7bf7609ee6f8e537f7b8f4d data/minecraft/tags/blocks/animals_spawnable_on.json
 e056655bce753e68f7bf7609ee6f8e537f7b8f4d data/minecraft/tags/blocks/azalea_grows_on.json
 7a8957a3afbc4679efce017fe7a7f264c15b73e4 data/minecraft/tags/blocks/azalea_root_replaceable.json
 e056655bce753e68f7bf7609ee6f8e537f7b8f4d data/minecraft/tags/blocks/bamboo_plantable_on.json
@@ -35,11 +38,11 @@ f79357ee237d9ccf1cd56d5bbb6e99b152e52c71 data/minecraft/tags/blocks/geode_invali
 7cf4794b9830fb2e7385342547da669b50760b65 data/minecraft/tags/blocks/logs.json
 7cf4794b9830fb2e7385342547da669b50760b65 data/minecraft/tags/blocks/logs_that_burn.json
 6dc90b3e57b6613ed44458004f2ef58d68d51684 data/minecraft/tags/blocks/mineable/axe.json
-e135093e5e6749fe60d9b0f3f595df83a19224a5 data/minecraft/tags/blocks/mineable/pickaxe.json
+0eaca068eab0d832265b2c0c7fdfefee084bdded data/minecraft/tags/blocks/mineable/pickaxe.json
 39453cc9f1e571e63b69f6a8d97244a864edb633 data/minecraft/tags/blocks/mineable/shovel.json
-e44b8069fb1a4615add71f4df19f8ead97f5506e data/minecraft/tags/blocks/needs_diamond_tool.json
+3719297f8c168fbb0b5b3e02d37590cf7a3702a5 data/minecraft/tags/blocks/needs_diamond_tool.json
 8ed0b2192e398d90102acee8a66d0aa9e4642dde data/minecraft/tags/blocks/needs_iron_tool.json
-6f6ce36ee29b3ba970acdad3d0ad65947c552e2b data/minecraft/tags/blocks/needs_stone_tool.json
+13c38a8fcc05af522369af2a2330ebe34cd7383c data/minecraft/tags/blocks/needs_stone_tool.json
 7cf4794b9830fb2e7385342547da669b50760b65 data/minecraft/tags/blocks/overworld_natural_logs.json
 7cbd974fa306dbbdb1cb48e3e4e377be1b6639b4 data/minecraft/tags/blocks/planks.json
 b49b84e2992b922177097ce190432d0a3d819de5 data/minecraft/tags/blocks/redstone_ores.json

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dreamland:tar_bark_button"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "tar_bark_button": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dreamland:tar_bark_planks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "tar_bark_button",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dreamland:tar_bark_button"
+    ]
+  }
+}

@@ -61,8 +61,8 @@ public class WoodSet {
 		this.setName = name;
 		this.color = color;
 		
-		this.logItemTag = TagCreator.createItemTag(setName + "_logs");
-		this.logBlockTag = TagCreator.createBlockTag(setName + "_logs");
+		this.logItemTag = TagCreator.dreamlandItemTag(setName + "_logs");
+		this.logBlockTag = TagCreator.dreamlandBlockTag(setName + "_logs");
 		
 		register();
 		

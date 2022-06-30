@@ -106,7 +106,7 @@ public class BumbleBeastEntity extends Animal implements IAnimatable, NeutralMob
 	      super.defineSynchedData();
 	      this.entityData.define(DATA_REMAINING_ANGER_TIME, 0);
 	      this.entityData.define(HAS_HONEY, Boolean.valueOf(false));
-	   }
+	}
 	
 	public static AttributeSupplier.Builder customAttributes() {
 		return Monster.createMobAttributes()
@@ -144,17 +144,19 @@ public class BumbleBeastEntity extends Animal implements IAnimatable, NeutralMob
 	
 	public boolean requiresUpdateEveryTick() {
         return true;
-     }
+    }
 	
 	public void tick() {
 		super.tick();
-		if (counter == 6000 && honeyAmount < 3) {
-			this.setHasHoney(true);
-			honeyAmount++;
-			counter = 0;
-		}
-		else if (counter < 6000) {
-			counter++;
+		if (honeyAmount < 3) {
+			if (counter == 4800) {
+				this.setHasHoney(true);
+				honeyAmount++;
+				counter = 0;
+			}
+			else if (counter < 4800) {
+				counter++;
+			}
 		}
 	}
 	

@@ -1,0 +1,8 @@
+// 1.19	2022-06-30T13:54:47.453973	Tags for minecraft:worldgen/biome
+704a820923b1d7da4205ad6770aa58367a7377eb data/forge/tags/worldgen/biome/is_dense/overworld.json
+ef6f998ced2f46b060afd80a46f58f17584c4067 data/forge/tags/worldgen/biome/is_dry/overworld.json
+ef6f998ced2f46b060afd80a46f58f17584c4067 data/forge/tags/worldgen/biome/is_hot/overworld.json
+cd3824c78be42fb3bdd29d32ea3eae9bd22df5f9 data/forge/tags/worldgen/biome/is_spooky.json
+cd3824c78be42fb3bdd29d32ea3eae9bd22df5f9 data/forge/tags/worldgen/biome/is_underground.json
+704a820923b1d7da4205ad6770aa58367a7377eb data/minecraft/tags/worldgen/biome/is_forest.json
+ef6f998ced2f46b060afd80a46f58f17584c4067 data/minecraft/tags/worldgen/biome/spawns_warm_variant_frogs.json

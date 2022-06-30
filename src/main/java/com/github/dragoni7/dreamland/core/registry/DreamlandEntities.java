@@ -44,8 +44,7 @@ public class DreamlandEntities {
 	
 	public static final RegistryObject<EntityType<OpalShellEntity>> OPAL_SHELL = ENTITY_TYPES.register("opal_shell",
 			() -> EntityType.Builder.<OpalShellEntity>of(OpalShellEntity::new, MobCategory.CREATURE)
-			.sized(1.0F, 1.0F)
-			.clientTrackingRange(10)
+			.sized(1.5F, 1.35F)
 			.build(DreamlandLoc.createLoc("opal_shell").toString()));
 	
 	public static final RegistryObject<EntityType<TarBall>> TAR_BALL = ENTITY_TYPES.register("tar_ball",

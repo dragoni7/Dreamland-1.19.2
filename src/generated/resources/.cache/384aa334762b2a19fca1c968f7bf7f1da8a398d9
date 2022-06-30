@@ -1,4 +1,4 @@
-// 1.19	2022-06-26T12:17:39.6647854	Item Models: dreamland
+// 1.19	2022-06-30T12:48:21.0700733	Item Models: dreamland
 02a6524eeaab96334111ffc9f8953b1693e4f0ef assets/dreamland/models/item/ancient_egg.json
 753673f49cec07146d029af5bb036103cbac5ce5 assets/dreamland/models/item/cave_slime.json
 1e70d6474fa73213401e11d78c67c8ebd125aab0 assets/dreamland/models/item/clay_soil.json
@@ -26,6 +26,7 @@ ae9d351ccebeca51a6c198c7999d291d287827eb assets/dreamland/models/item/larva_symb
 e837462748a5ec6bdc6942586b898b60d30ab368 assets/dreamland/models/item/mineral_dirt.json
 185ae6adcc32c3211207327686db62f091603aa5 assets/dreamland/models/item/opal.json
 931e8f3eea8a2608b07f93f4467af31fcde4007b assets/dreamland/models/item/opaline_marigold.json
+24cbb99bfbd9110d24a84d9ac2bb33e990575145 assets/dreamland/models/item/opal_block.json
 7a2370733bead838b8c2b891ae8ef28ba6a49131 assets/dreamland/models/item/opal_cluster.json
 c4be501630987769833b38bcdbd2858922b97984 assets/dreamland/models/item/opal_diffuser.json
 d3d641804796792482d3077e4f5d2bcea1631761 assets/dreamland/models/item/packed_tar_mud.json
@@ -48,8 +49,11 @@ f8d8435ab4567d0ed52a0ca50c2fe7cde810d050 assets/dreamland/models/item/plum_birch
 18242d849ccb01dcddb1ce64786be3e643ae5812 assets/dreamland/models/item/plum_birch_trapdoor.json
 737c80a8af50e3c8872b9c140284d34878014b47 assets/dreamland/models/item/plum_birch_wood.json
 5e89667420e6b546e28298c8a051f2d388e28527 assets/dreamland/models/item/precious_opal.json
+2cbc4b3d4885f4044dcbaa6ae21698f694ad22e3 assets/dreamland/models/item/precious_opal_block.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dreamland/models/item/spawn_egg_bumble_beast.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dreamland/models/item/spawn_egg_larva.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dreamland/models/item/spawn_egg_ooze.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dreamland/models/item/spawn_egg_opal_shell.json
 1d193f2173959298c3c1cb07922480fafbb588bc assets/dreamland/models/item/tar_bark_button.json
 e89cd69a4eb9e7f57ca87e01f67b22f12b2e9d61 assets/dreamland/models/item/tar_bark_door.json
 215414385b8f188346e30c1545e98f109723b502 assets/dreamland/models/item/tar_bark_fence.json

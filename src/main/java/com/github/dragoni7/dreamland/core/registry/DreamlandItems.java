@@ -39,7 +39,8 @@ public class DreamlandItems {
 	//Spawn Eggs
 	public static final RegistryObject<Item> SPAWN_EGG_LARVA = registerSpawnEgg("spawn_egg_larva", () -> DreamlandEntities.LARVA.get(), 0Xa9f8fc, 0X2c2870);
 	public static final RegistryObject<Item> SPAWN_EGG_OOZE = registerSpawnEgg("spawn_egg_ooze", () -> DreamlandEntities.OOZE.get(), 0X262445, 0X494587);
-	
+	public static final RegistryObject<Item> SPAWN_EGG_OPAL_SHELL = registerSpawnEgg("spawn_egg_opal_shell", () -> DreamlandEntities.OPAL_SHELL.get(), 0X2d595c, 0Xad1d1d);
+	public static final RegistryObject<Item> SPAWN_EGG_BUMBLE_BEAST = registerSpawnEgg("spawn_egg_bumble_beast", () -> DreamlandEntities.BUMBLE_BEAST.get(), 0Xc7b922, 0X292609);
 	private static RegistryObject<Item> registerSpawnEgg(String name, Supplier<? extends EntityType<? extends Mob>> type, int backgroundColor, int highlightColor) {
 		return ITEMS.register(name, () -> new ForgeSpawnEggItem(type, backgroundColor, highlightColor, new Item.Properties().tab(Dreamland.DreamlandTab)));
 	}

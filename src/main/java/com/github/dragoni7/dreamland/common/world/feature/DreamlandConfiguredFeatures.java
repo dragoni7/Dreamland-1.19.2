@@ -5,10 +5,10 @@ import java.util.List;
 
 import com.github.dragoni7.dreamland.common.world.feature.configs.EllipsoidConfig;
 import com.github.dragoni7.dreamland.common.world.feature.generation.SurfaceLake;
-import com.github.dragoni7.dreamland.core.DreamlandBlockTags;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFeatures;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
+import com.github.dragoni7.dreamland.data.DreamlandBlockTags;
 import com.github.dragoni7.dreamland.util.DreamlandLoc;
 
 import net.minecraft.core.Direction;

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "dreamland:tar_mud_bricks"
+  },
+  "result": "dreamland:tar_mud_brick_stairs"
+}

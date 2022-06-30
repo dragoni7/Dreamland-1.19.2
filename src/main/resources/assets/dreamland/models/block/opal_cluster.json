@@ -3,7 +3,7 @@
 	"texture_size": [32, 32],
 	"textures": {
 		"0": "dreamland:block/opal_cluster",
-		"particle": "dreamland:block/opal_cluster"
+		"particle": "dreamland:block/opal_block"
 	},
 	"elements": [
 		{

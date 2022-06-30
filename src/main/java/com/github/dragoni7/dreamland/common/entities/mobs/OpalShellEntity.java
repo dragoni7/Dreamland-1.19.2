@@ -1,15 +1,24 @@
 package com.github.dragoni7.dreamland.common.entities.mobs;
 
+import com.github.dragoni7.dreamland.Dreamland;
+import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
-import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
+import com.github.dragoni7.dreamland.core.registry.DreamlandItems;
 import com.github.dragoni7.dreamland.util.RollBoolean;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.Difficulty;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
@@ -28,8 +37,9 @@ import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.TemptGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
@@ -37,6 +47,8 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.common.Tags;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -48,11 +60,14 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 public class OpalShellEntity extends Animal implements IAnimatable {
 	
 	private AnimationFactory factory = new AnimationFactory(this);
+	private static final EntityDataAccessor<Integer> OPAL_AMOUNT = SynchedEntityData.defineId(OpalShellEntity.class, EntityDataSerializers.INT);
+	private int counter = 0;
 	
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		
 		if(event.isMoving()) {
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.opal_shell.walk", true));
+			return PlayState.CONTINUE;
 		}
 		
 		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.opal_shell.idle", true));
@@ -69,10 +84,12 @@ public class OpalShellEntity extends Animal implements IAnimatable {
 	public OpalShellEntity(EntityType<? extends OpalShellEntity> entityType, Level worldIn) {
 		super(entityType, worldIn);
 		this.moveControl = new MoveControl(this);
-		this.setPathfindingMalus(BlockPathTypes.DANGER_FIRE, -1.0F);
-	    this.setPathfindingMalus(BlockPathTypes.WATER, -1.0F);
-	    this.setPathfindingMalus(BlockPathTypes.WATER_BORDER, 16.0F);
 	    this.setPathfindingMalus(BlockPathTypes.FENCE, -1.0F);
+	}
+	
+	protected void defineSynchedData() {
+	      super.defineSynchedData();
+	      this.entityData.define(OPAL_AMOUNT, 0);
 	}
 	
 	public static AttributeSupplier.Builder customAttributes() {
@@ -90,24 +107,100 @@ public class OpalShellEntity extends Animal implements IAnimatable {
 	      this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
 	}
 	
-	public static boolean checkOpalShellSpawnRules(EntityType<? extends Animal> entityType, ServerLevelAccessor serverLevel, MobSpawnType spawnType, BlockPos pos, RandomSource rand) {
-		if (serverLevel.getBlockState(pos.below()).is(BlockTags.ANIMALS_SPAWNABLE_ON) && serverLevel.getRawBrightness(pos, 0) > 8) {
-			return true;
+	public void addAdditionalSaveData(CompoundTag tag) {
+		super.addAdditionalSaveData(tag);
+		tag.putInt("OpalAmount", this.getOpalAmount());
+		tag.putInt("counter", counter);
+	}
+	
+	public void readAdditionalSaveData(CompoundTag tag) {
+		super.readAdditionalSaveData(tag);
+		this.setOpalAmount(tag.getInt("OpalAmount"));
+		if (tag.contains("counter")) {
+			this.counter = tag.getInt("counter");
 		}
-		
-		return false;
-	   }
+	}
+	
+	public boolean requiresUpdateEveryTick() {
+        return true;
+    }
+	
+	public void tick() {
+		super.tick();
+		int currentAmount = this.getOpalAmount();
+		if (currentAmount < 4) {
+			if (counter == 2400) {
+				counter = 0;
+				this.setOpalAmount(++currentAmount);
+			}
+			else if (counter < 2400) {
+				counter++;
+			}
+		}
+	}
+	
+	public static boolean checkOpalShellSpawnRules(EntityType<? extends Animal> entityType, ServerLevelAccessor serverLevel, MobSpawnType spawnType, BlockPos pos, RandomSource rand) {
+		return serverLevel.getBlockState(pos.below()).is(BlockTags.ANIMALS_SPAWNABLE_ON) && serverLevel.getRawBrightness(pos, 0) > 8;
+	}
 	
 	public boolean checkSpawnRules(LevelAccessor level, MobSpawnType spawnReason) {
         return true;
     }
 	
-	protected void playStepSound(BlockPos p_28301_, BlockState p_28302_) {
-	      this.playSound(SoundEvents.COW_STEP, 0.15F, 0.6F);
+	protected void playStepSound(BlockPos pos, BlockState state) {
+	    this.playSound(SoundEvents.COW_STEP, 0.15F, 0.6F);
 	}
 
 	protected float getSoundVolume() {
-	      return 0.4F;
+	    return 0.4F;
+	}
+	
+	public boolean isFood(ItemStack stack) {
+	    return stack.is(Items.APPLE);
+	}
+	
+	public InteractionResult mobInteract(Player player, InteractionHand hand) {
+		int currentAmount = this.getOpalAmount();
+		Dreamland.LOGGER.atDebug().log("current amount = " + currentAmount);
+		if (currentAmount > 0) {
+			ItemStack itemstack = player.getItemInHand(hand);
+			
+			if (itemstack.is(Tags.Items.SHEARS) && !this.isBaby()) {
+				player.playSound(SoundEvents.METAL_BREAK);
+				this.setOpalAmount(--currentAmount);
+				counter = 0;
+				
+				Vec3 vec3 = this.position();
+				double d0 = (double)Mth.randomBetween(this.random, -0.2F, 0.2F);
+		        double d1 = (double)Mth.randomBetween(this.random, 0.3F, 0.5F);
+		        double d2 = (double)Mth.randomBetween(this.random, -0.2F, 0.2F);
+		        ItemStack opal = new ItemStack(DreamlandItems.OPAL.get());
+		        
+		        if (RollBoolean.roll(8, random)) {
+		        	opal = new ItemStack(DreamlandItems.PRECIOUS_OPAL.get());
+		        }
+		        
+				ItemEntity itemEntity = new ItemEntity(this.level, vec3.x(), vec3.y(), vec3.z(), opal, d0, d1, d2);
+				this.level.addParticle(ParticleTypes.ELECTRIC_SPARK, this.getRandomX(1.0D), this.getRandomY() + 0.5D, this.getRandomZ(1.0D), d0, d1, d2);
+				this.level.addFreshEntity(itemEntity);
+				
+				return InteractionResult.sidedSuccess(this.level.isClientSide);
+			}
+			else {
+				return super.mobInteract(player, hand);
+			}
+		}
+		return super.mobInteract(player, hand);
+	}
+	
+	
+	public int getOpalAmount() {
+		return this.entityData.get(OPAL_AMOUNT);
+	}
+
+	
+	public void setOpalAmount(int amount) {
+		this.entityData.set(OPAL_AMOUNT, amount);
 	}
 
 	@Override
