@@ -2,7 +2,6 @@ package com.github.dragoni7.dreamland.common.world.biome;
 
 import javax.annotation.Nullable;
 
-import com.github.dragoni7.dreamland.Config;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandParticles;
 

@@ -1,6 +1,5 @@
 {
   "values": [
-    "dreamland:dark_quartzite",
     "dreamland:hive_block",
     "dreamland:hive_block_with_jelly",
     "dreamland:hive_weaver",
@@ -14,6 +13,15 @@
     "dreamland:opal_cluster",
     "dreamland:opal_block",
     "dreamland:precious_opal_block",
+    "dreamland:opal_tile",
+    "dreamland:opal_slab",
+    "dreamland:opal_stairs",
+    "dreamland:opal_wall",
+    "dreamland:precious_opal_tile",
+    "dreamland:precious_opal_slab",
+    "dreamland:precious_opal_stairs",
+    "dreamland:precious_opal_wall",
+    "dreamland:jeweled_deepslate",
     "dreamland:hive_copper",
     "dreamland:hive_iron",
     "dreamland:hive_gold",

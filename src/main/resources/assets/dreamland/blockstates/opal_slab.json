@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "dreamland:block/opal_slab"
+    },
+    "type=double": {
+      "model": "dreamland:block/opal_tile"
+    },
+    "type=top": {
+      "model": "dreamland:block/opal_slab_top"
+    }
+  }
+}

@@ -47,10 +47,11 @@ public class Dreamland
 	
     public Dreamland() {
     	
-    	ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.COMMON_CONFIG);
-    	
         IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
         IEventBus forgeBus = MinecraftForge.EVENT_BUS;
+        
+        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, Config.SERVER_CONFIG);
+    	ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.COMMON_CONFIG);
         
         GeckoLib.initialize();
         

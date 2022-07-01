@@ -49,7 +49,7 @@ public class TarBall extends AbstractHurtingProjectile implements IAnimatable {
 	         Entity owner = this.getOwner();
 	         
 	         if (owner instanceof LivingEntity) {
-	        	entity.hurt(DamageSource.indirectMobAttack(this, (LivingEntity) owner), Config.OOZE_DAMAGE.get().floatValue());
+	        	entity.hurt(DamageSource.indirectMobAttack(this, (LivingEntity) owner), 1.0F);
 	            this.doEnchantDamageEffects((LivingEntity)owner, entity);
 	         }
 	         

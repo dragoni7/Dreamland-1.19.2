@@ -10,7 +10,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.BowlFoodItem;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -54,12 +53,6 @@ public class DreamlandItems {
 	private static RegistryObject<Item> registerBasicItem(String name) {
 		
 		return ITEMS.register(name, () -> new Item(new Item.Properties().tab(Dreamland.DreamlandTab)));
-	}
-	
-	@SuppressWarnings("unused")
-	private static RegistryObject<Item> registerEdibleItem(String name, FoodProperties foodProperty) {
-		
-		return ITEMS.register(name, () -> new Item(new Item.Properties().tab(Dreamland.DreamlandTab).food(foodProperty)));
 	}
 	
 	private static RegistryObject<Item> registerHiveJelly(String name, FoodProperties foodProperty) {

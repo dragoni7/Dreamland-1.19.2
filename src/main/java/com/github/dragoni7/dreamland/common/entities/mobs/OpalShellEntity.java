@@ -92,7 +92,7 @@ public class OpalShellEntity extends Animal implements IAnimatable {
 	}
 	
 	public static AttributeSupplier.Builder customAttributes() {
-	      return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, Config.OPAL_SHELL_HEALTH.get()).add(Attributes.MOVEMENT_SPEED, (double)0.2F);
+	      return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 15.0D).add(Attributes.MOVEMENT_SPEED, (double)0.2F);
 	}
 	
 	protected void registerGoals() {

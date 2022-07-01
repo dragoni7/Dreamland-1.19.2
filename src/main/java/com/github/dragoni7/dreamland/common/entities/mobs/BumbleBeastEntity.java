@@ -109,9 +109,9 @@ public class BumbleBeastEntity extends Animal implements IAnimatable, NeutralMob
 	
 	public static AttributeSupplier.Builder customAttributes() {
 		return Monster.createMobAttributes()
-				.add(Attributes.MAX_HEALTH, Config.BUMBLE_BEAST_HEALTH.get())
+				.add(Attributes.MAX_HEALTH, 40.0D)
 				.add(Attributes.MOVEMENT_SPEED, 0.35D)
-				.add(Attributes.ATTACK_DAMAGE, Config.BUMBLE_BEAST_DAMAGE.get())
+				.add(Attributes.ATTACK_DAMAGE, 5.0D)
 				.add(Attributes.JUMP_STRENGTH, 3.0D)
 				.add(Attributes.FOLLOW_RANGE, 48.0D)
 				.add(Attributes.KNOCKBACK_RESISTANCE, 2.0D)
