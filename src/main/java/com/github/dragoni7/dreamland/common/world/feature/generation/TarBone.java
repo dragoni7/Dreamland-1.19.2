@@ -4,9 +4,11 @@ import com.github.dragoni7.dreamland.common.world.feature.util.FeatureBuilder;
 import com.mojang.serialization.Codec;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
@@ -40,28 +42,32 @@ public class TarBone extends Feature<NoneFeatureConfiguration> {
 			blockpos = blockpos.above();
 			status = tarBoneBuilder.addInput(worldgenlevel, BONE, blockpos, true);
 		}
-		
+		BlockState rotated = BONE;
 		switch (random.nextInt(3)) {
 		case 0: {
 			blockpos = blockpos.offset(0, 1 , 1);
+			rotated = rotated.setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z);
 			break;
 		}
 		case 1: {
 			blockpos = blockpos.offset(0, 1 , -1);
+			rotated = rotated.setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z);
 			break;
 		}
 		case 2: {
 			blockpos = blockpos.offset(1, 1 , 0);
+			rotated = rotated.setValue(RotatedPillarBlock.AXIS, Direction.Axis.X);
 			break;
 		}
 		case 3: {
 			blockpos = blockpos.offset(-1, 1 , 0);
+			rotated = rotated.setValue(RotatedPillarBlock.AXIS, Direction.Axis.X);
 			break;
 		}
 		default: return status;
 		}
 		
-		status = tarBoneBuilder.addInput(worldgenlevel, BONE, blockpos, true);
+		status = tarBoneBuilder.addInput(worldgenlevel, rotated, blockpos, true);
 		tarBoneBuilder.build(worldgenlevel);
 		return status;
 	}

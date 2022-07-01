@@ -5,8 +5,6 @@ import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.FluidTagsProvider;
-import net.minecraft.tags.FluidTags;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class AddFluidTags extends FluidTagsProvider {

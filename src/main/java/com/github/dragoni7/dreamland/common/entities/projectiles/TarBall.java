@@ -1,5 +1,6 @@
 package com.github.dragoni7.dreamland.common.entities.projectiles;
 
+import com.github.dragoni7.dreamland.Config;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 
@@ -48,7 +49,7 @@ public class TarBall extends AbstractHurtingProjectile implements IAnimatable {
 	         Entity owner = this.getOwner();
 	         
 	         if (owner instanceof LivingEntity) {
-	        	entity.hurt(DamageSource.indirectMobAttack(this, (LivingEntity) owner), 1.0F);
+	        	entity.hurt(DamageSource.indirectMobAttack(this, (LivingEntity) owner), Config.OOZE_DAMAGE.get().floatValue());
 	            this.doEnchantDamageEffects((LivingEntity)owner, entity);
 	         }
 	         

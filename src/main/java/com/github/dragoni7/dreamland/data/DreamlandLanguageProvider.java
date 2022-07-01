@@ -6,7 +6,6 @@ import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
 import com.github.dragoni7.dreamland.core.registry.DreamlandItems;
-import com.github.dragoni7.dreamland.core.registry.DreamlandTiles;
 import com.github.dragoni7.dreamland.core.registry.DreamlandWoodSets;
 import com.github.dragoni7.dreamland.util.WoodSet;
 
@@ -84,6 +83,7 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		
 		// Items
 		add(DreamlandItems.HIVE_JELLY_ITEM.get(), "Hive Jelly");
+		add(DreamlandItems.JELLY_BOWL_ITEM.get(), "Bowl of Jelly");
 		add(DreamlandItems.TAR_BUCKET.get(), "Bucket of Tar");
 		add(DreamlandItems.SPAWN_EGG_LARVA.get(), "Larva Spawn Egg");
 		add(DreamlandItems.SPAWN_EGG_OOZE.get(), "Ooze Spawn Egg");

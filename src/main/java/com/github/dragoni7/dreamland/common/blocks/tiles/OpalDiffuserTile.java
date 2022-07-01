@@ -65,7 +65,6 @@ public class OpalDiffuserTile extends BlockEntity {
 			}
 			else {
 				if (counter <= duration) {
-					// Every two seconds try to apply effect
 					if(counter % 40 == 0) { 
 						List<LivingEntity> entities = this.level.getEntitiesOfClass(LivingEntity.class, new AABB(pos).inflate(5));
 						if (!entities.isEmpty() && !effects.isEmpty()) {

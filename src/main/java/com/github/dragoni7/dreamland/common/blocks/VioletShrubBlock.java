@@ -20,5 +20,4 @@ public class VioletShrubBlock extends BushBlock {
 	public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
 	    return SHAPE;
 	}
-
 }

@@ -44,8 +44,8 @@ public class HiveWeaverBlock extends LarvaAngerableBlock {
 	}
 	
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
-	      return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite()).setValue(LEVEL, Integer.valueOf(0));
-	   }
+	    return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite()).setValue(LEVEL, Integer.valueOf(0));
+	}
 	
 	@Override
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
@@ -104,8 +104,8 @@ public class HiveWeaverBlock extends LarvaAngerableBlock {
 	}
 	
 	public IntegerProperty getLevelProperty() {
-	      return LEVEL;
-	   }
+	    return LEVEL;
+	}
 	
 	protected int getLevel(BlockState state) {
 		return state.getValue(this.getLevelProperty());

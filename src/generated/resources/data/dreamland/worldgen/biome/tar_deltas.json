@@ -102,7 +102,7 @@
         "type": "dreamland:ooze",
         "maxCount": 2,
         "minCount": 1,
-        "weight": 10
+        "weight": 15
       },
       {
         "type": "minecraft:skeleton",

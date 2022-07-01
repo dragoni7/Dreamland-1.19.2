@@ -15,7 +15,6 @@ import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -28,6 +27,15 @@ public class DreamlandRecipes extends RecipeProvider{
 	
 	@Override
 	protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
+		
+		ShapedRecipeBuilder.shaped(DreamlandItems.JELLY_BOWL_ITEM.get())
+		  .pattern("###")
+		  .pattern("###")
+		  .pattern(" b ")
+		  .define('b', Items.BOWL)
+		  .define('#', DreamlandItems.HIVE_JELLY_ITEM.get())
+		  .group("dreamland").unlockedBy("hive_jelly", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandItems.HIVE_JELLY_ITEM.get())).save(consumer);
+		  
 		
 		  ShapedRecipeBuilder.shaped(DreamlandBlocks.OPAL_DIFFUSER_BLOCK.block().get())
 		  .pattern(" # ")
@@ -77,16 +85,16 @@ public class DreamlandRecipes extends RecipeProvider{
 		  .requires(Items.CHISELED_DEEPSLATE)
 		  .group("dreamland").unlockedBy("precious_opal", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandItems.PRECIOUS_OPAL.get())).save(consumer);
 		  
-		  ShapedRecipeBuilder.shaped(DreamlandBlocks.OPAL_TILE.block().get(), 4)
+		  ShapedRecipeBuilder.shaped(DreamlandBlocks.OPAL_TILE.block().get())
 		  .pattern("## ")
 		  .pattern("## ")
-		  .define('#', DreamlandBlocks.OPAL_BLOCK.item().get())
+		  .define('#', DreamlandItems.OPAL.get())
 		  .group("dreamland").unlockedBy("opal", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandItems.OPAL.get())).save(consumer);
 		  
-		  ShapedRecipeBuilder.shaped(DreamlandBlocks.PRECIOUS_OPAL_TILE.block().get(), 4)
+		  ShapedRecipeBuilder.shaped(DreamlandBlocks.PRECIOUS_OPAL_TILE.block().get())
 		  .pattern("## ")
 		  .pattern("## ")
-		  .define('#', DreamlandBlocks.PRECIOUS_OPAL_BLOCK.item().get())
+		  .define('#', DreamlandItems.PRECIOUS_OPAL.get())
 		  .group("dreamland").unlockedBy("precious_opal", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandItems.PRECIOUS_OPAL.get())).save(consumer);
 		  
 		  slabBuilder(DreamlandBlocks.OPAL_SLAB.item().get(),
@@ -96,11 +104,11 @@ public class DreamlandRecipes extends RecipeProvider{
 		  wallBuilder(DreamlandBlocks.OPAL_WALL.item().get(),
 				  Ingredient.of(DreamlandBlocks.OPAL_TILE.item().get())).group("dreamland").unlockedBy("opal_tile", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandBlocks.OPAL_TILE.item().get())).save(consumer);
 		  slabBuilder(DreamlandBlocks.PRECIOUS_OPAL_SLAB.item().get(),
-				  Ingredient.of(DreamlandBlocks.OPAL_TILE.item().get())).group("dreamland").unlockedBy("precious_opal_tile", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandBlocks.PRECIOUS_OPAL_TILE.item().get())).save(consumer);
+				  Ingredient.of(DreamlandBlocks.PRECIOUS_OPAL_TILE.item().get())).group("dreamland").unlockedBy("precious_opal_tile", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandBlocks.PRECIOUS_OPAL_TILE.item().get())).save(consumer);
 		  stairBuilder(DreamlandBlocks.PRECIOUS_OPAL_STAIRS.item().get(),
-				  Ingredient.of(DreamlandBlocks.OPAL_TILE.item().get())).group("dreamland").unlockedBy("precious_opal_tile", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandBlocks.PRECIOUS_OPAL_TILE.item().get())).save(consumer);
+				  Ingredient.of(DreamlandBlocks.PRECIOUS_OPAL_TILE.item().get())).group("dreamland").unlockedBy("precious_opal_tile", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandBlocks.PRECIOUS_OPAL_TILE.item().get())).save(consumer);
 		  wallBuilder(DreamlandBlocks.PRECIOUS_OPAL_WALL.item().get(),
-				  Ingredient.of(DreamlandBlocks.OPAL_TILE.item().get())).group("dreamland").unlockedBy("precious_opal_tile", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandBlocks.PRECIOUS_OPAL_TILE.item().get())).save(consumer);
+				  Ingredient.of(DreamlandBlocks.PRECIOUS_OPAL_TILE.item().get())).group("dreamland").unlockedBy("precious_opal_tile", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandBlocks.PRECIOUS_OPAL_TILE.item().get())).save(consumer);
 		  
 		  slabBuilder(DreamlandBlocks.TAR_MUD_BRICK_SLAB.item().get(),
 				  Ingredient.of(DreamlandBlocks.TAR_MUD_BRICKS.item().get())).group("dreamland").unlockedBy("tar_mud_bricks", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandBlocks.TAR_MUD_BRICKS.item().get())).save(consumer);
@@ -108,6 +116,14 @@ public class DreamlandRecipes extends RecipeProvider{
 				  Ingredient.of(DreamlandBlocks.TAR_MUD_BRICKS.item().get())).group("dreamland").unlockedBy("tar_mud_bricks", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandBlocks.TAR_MUD_BRICKS.item().get())).save(consumer);
 		  wallBuilder(DreamlandBlocks.TAR_MUD_BRICK_WALL.item().get(),
 				  Ingredient.of(DreamlandBlocks.TAR_MUD_BRICKS.item().get())).group("dreamland").unlockedBy("tar_mud_bricks", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandBlocks.TAR_MUD_BRICKS.item().get())).save(consumer);
+		  
+		  stonecutterResultFromBase(consumer, DreamlandBlocks.OPAL_SLAB.item().get(), DreamlandBlocks.OPAL_TILE.item().get(), 2);
+		  stonecutterResultFromBase(consumer, DreamlandBlocks.OPAL_STAIRS.item().get(), DreamlandBlocks.OPAL_TILE.item().get());
+		  stonecutterResultFromBase(consumer, DreamlandBlocks.OPAL_WALL.item().get(), DreamlandBlocks.OPAL_TILE.item().get());
+		  
+		  stonecutterResultFromBase(consumer, DreamlandBlocks.PRECIOUS_OPAL_SLAB.item().get(), DreamlandBlocks.PRECIOUS_OPAL_TILE.item().get(), 2);
+		  stonecutterResultFromBase(consumer, DreamlandBlocks.PRECIOUS_OPAL_STAIRS.item().get(), DreamlandBlocks.PRECIOUS_OPAL_TILE.item().get());
+		  stonecutterResultFromBase(consumer, DreamlandBlocks.PRECIOUS_OPAL_WALL.item().get(), DreamlandBlocks.PRECIOUS_OPAL_TILE.item().get());
 		  
 		  stonecutterResultFromBase(consumer, DreamlandBlocks.TAR_MUD_BRICK_SLAB.item().get(), DreamlandBlocks.TAR_MUD_BRICKS.item().get(), 2);
 		  stonecutterResultFromBase(consumer, DreamlandBlocks.TAR_MUD_BRICK_STAIRS.item().get(), DreamlandBlocks.TAR_MUD_BRICKS.item().get());

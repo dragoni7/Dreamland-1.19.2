@@ -9,7 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class ThrownHiveJellyRender extends EntityRenderer<ThrownHiveJelly>{
 
-	protected ThrownHiveJellyRender(EntityRendererProvider.Context context) {
+	public ThrownHiveJellyRender(EntityRendererProvider.Context context) {
 		super(context);
 	}
 

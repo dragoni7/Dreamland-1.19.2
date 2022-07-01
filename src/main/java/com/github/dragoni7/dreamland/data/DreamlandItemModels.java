@@ -24,9 +24,9 @@ public class DreamlandItemModels extends ItemModelProvider {
 	protected void registerModels() {
 		
 		blockItemModel(DreamlandBlocks.HIVE_BLOCK.item(),"block/hive_block1");
-		blockItemModel(DreamlandBlocks.CLAY_SOIL.item(),"block/clay_soil");
-		blockItemModel(DreamlandBlocks.DARK_QUARTZITE.item(),"block/dark_quartzite");
-		blockItemModel(DreamlandBlocks.DUSK_ICE.item(),"block/dusk_ice");
+		//blockItemModel(DreamlandBlocks.CLAY_SOIL.item(),"block/clay_soil");
+		//blockItemModel(DreamlandBlocks.DARK_QUARTZITE.item(),"block/dark_quartzite");
+		//blockItemModel(DreamlandBlocks.DUSK_ICE.item(),"block/dusk_ice");
 		blockItemModel(DreamlandBlocks.HIVE_JELLY_CLUSTER.item(), "block/hive_jelly_cluster");
 		blockItemModel(DreamlandBlocks.HIVE_MEMBRANE.item(), "block/hive_membrane_connected");
 		blockItemModel(DreamlandBlocks.HIVE_WEAVER.item(), "block/hive_weaver");
@@ -69,6 +69,7 @@ public class DreamlandItemModels extends ItemModelProvider {
 		blockItemModel(DreamlandBlocks.JEWELED_DEEPSLATE.item(), "block/jeweled_deepslate");
 		
 		singleTextureItemModel(DreamlandItems.HIVE_JELLY_ITEM, "item/hive_jelly");
+		singleTextureItemModel(DreamlandItems.JELLY_BOWL_ITEM, "item/bowl_of_jelly");
 		singleTextureItemModel(DreamlandBlocks.CAVE_SLIME.item(), "block/cave_slime");
 		singleTextureItemModel(DreamlandBlocks.HIVE_GROWTH.item(), "block/hive_growth_cross");
 		singleTextureItemModel(DreamlandItems.LARVA_HELMET, "item/larva_symbiote_helmet");

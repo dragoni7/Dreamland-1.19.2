@@ -17,7 +17,6 @@ public class UndergrowthBlock extends BushBlock implements net.minecraftforge.co
 	}
 	
 	public VoxelShape getShape(BlockState state, BlockGetter blockGetter, BlockPos pos, CollisionContext context) {
-	      return SHAPE;
-	   }
-
+	    return SHAPE;
+	 }
 }

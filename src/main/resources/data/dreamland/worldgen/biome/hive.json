@@ -112,7 +112,7 @@
         "type": "dreamland:larva",
         "maxCount": 4,
         "minCount": 2,
-        "weight": 20
+        "weight": 25
       }
     ],
     "underground_water_creature": [],

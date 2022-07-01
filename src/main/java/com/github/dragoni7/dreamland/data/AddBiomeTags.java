@@ -4,7 +4,6 @@ import org.jetbrains.annotations.Nullable;
 
 import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.common.world.biome.BiomeKeys;
-import com.github.dragoni7.dreamland.common.world.biome.DreamlandOverworldBiomes;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BiomeTagsProvider;

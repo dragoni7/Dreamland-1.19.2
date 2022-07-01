@@ -2,8 +2,6 @@ package com.github.dragoni7.dreamland.common.blocks;
 
 import java.util.List;
 
-import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
@@ -19,7 +17,7 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 public class ClaySoilGrassBlock extends DreamlandSpreadingGrassBlock {
 
 	public ClaySoilGrassBlock(Properties blockProperties) {
-		super(blockProperties, () -> DreamlandBlocks.CLAY_SOIL.block().get());
+		super(blockProperties, () -> Blocks.DIRT);
 	}
 	
 	@Override

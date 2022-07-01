@@ -1,5 +1,6 @@
 package com.github.dragoni7.dreamland.common.entities.mobs;
 
+import com.github.dragoni7.dreamland.Config;
 import com.github.dragoni7.dreamland.common.entities.projectiles.TarBall;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
 import com.github.dragoni7.dreamland.util.RollBoolean;
@@ -57,7 +58,7 @@ public class OozeEntity extends Monster implements IAnimatable {
 	
 	public static AttributeSupplier.Builder customAttributes() {
 		return Mob.createMobAttributes()
-				.add(Attributes.MAX_HEALTH, 20.0D)
+				.add(Attributes.MAX_HEALTH, Config.OOZE_HEALTH.get())
 				.add(Attributes.MOVEMENT_SPEED, 0.0D)
 				.add(Attributes.FOLLOW_RANGE, 48.0D)
 				.add(Attributes.KNOCKBACK_RESISTANCE, 10.0D);
@@ -112,7 +113,6 @@ public class OozeEntity extends Monster implements IAnimatable {
 		}
 		
 		return false;
-		
 	   }
 	
 	public boolean checkSpawnRules(LevelAccessor level, MobSpawnType spawnReason) {
@@ -122,7 +122,7 @@ public class OozeEntity extends Monster implements IAnimatable {
         	return true;
         }
         
-        return RollBoolean.roll(4, rand);
+        return RollBoolean.roll(Config.OOZE_EXTRA_ROLL.get(), rand);
     }
 	
 	protected SoundEvent getAmbientSound() {

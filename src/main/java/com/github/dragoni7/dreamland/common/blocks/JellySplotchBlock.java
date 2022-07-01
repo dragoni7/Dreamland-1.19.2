@@ -22,41 +22,41 @@ import net.minecraft.world.level.material.Fluids;
 public class JellySplotchBlock extends MultifaceBlock implements SimpleWaterloggedBlock {
 	private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	
-	public JellySplotchBlock(BlockBehaviour.Properties p_153822_) {
-		super(p_153822_);
+	public JellySplotchBlock(BlockBehaviour.Properties properties) {
+		super(properties);
 		this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(false)));
 	}
 	
-	public static ToIntFunction<BlockState> emission(int p_181223_) {
-	      return (p_181221_) -> {
-	         return MultifaceBlock.hasAnyFace(p_181221_) ? p_181223_ : 0;
+	public static ToIntFunction<BlockState> emission(int lightLevel) {
+	      return (light) -> {
+	         return MultifaceBlock.hasAnyFace(light) ? lightLevel : 0;
 	      };
 	   }
 	
-	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> p_153309_) {
-	      super.createBlockStateDefinition(p_153309_);
-	      p_153309_.add(WATERLOGGED);
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> state) {
+	      super.createBlockStateDefinition(state);
+	      state.add(WATERLOGGED);
 	   }
 	
-	public BlockState updateShape(BlockState p_153302_, Direction p_153303_, BlockState p_153304_, LevelAccessor p_153305_, BlockPos p_153306_, BlockPos p_153307_) {
-	      if (p_153302_.getValue(WATERLOGGED)) {
-	         p_153305_.scheduleTick(p_153306_, Fluids.WATER, Fluids.WATER.getTickDelay(p_153305_));
+	public BlockState updateShape(BlockState state1, Direction direction, BlockState state2, LevelAccessor level, BlockPos pos1, BlockPos pos2) {
+	      if (state1.getValue(WATERLOGGED)) {
+	         level.scheduleTick(pos1, Fluids.WATER, Fluids.WATER.getTickDelay(level));
 	      }
 
-	      return super.updateShape(p_153302_, p_153303_, p_153304_, p_153305_, p_153306_, p_153307_);
+	      return super.updateShape(state1, direction, state2, level, pos1, pos2);
 	   }
 	
-	public boolean canBeReplaced(BlockState p_153299_, BlockPlaceContext p_153300_) {
-	      return super.canBeReplaced(p_153299_, p_153300_);
+	public boolean canBeReplaced(BlockState state, BlockPlaceContext context) {
+	      return super.canBeReplaced(state, context);
 	   }
 	
 	@SuppressWarnings("deprecation")
-	public FluidState getFluidState(BlockState p_153311_) {
-	      return p_153311_.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(p_153311_);
+	public FluidState getFluidState(BlockState state) {
+	      return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
 	   }
 
-	   public boolean propagatesSkylightDown(BlockState p_181225_, BlockGetter p_181226_, BlockPos p_181227_) {
-	      return p_181225_.getFluidState().isEmpty();
+	   public boolean propagatesSkylightDown(BlockState state, BlockGetter blockGetter, BlockPos pos) {
+	      return state.getFluidState().isEmpty();
 	   }
 
 	@Override

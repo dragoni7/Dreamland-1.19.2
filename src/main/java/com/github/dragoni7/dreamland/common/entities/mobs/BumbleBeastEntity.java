@@ -2,7 +2,7 @@ package com.github.dragoni7.dreamland.common.entities.mobs;
 
 import java.util.UUID;
 
-import com.github.dragoni7.dreamland.Dreamland;
+import com.github.dragoni7.dreamland.Config;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.util.RollBoolean;
 
@@ -27,7 +27,6 @@ import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.NeutralMob;
@@ -110,9 +109,9 @@ public class BumbleBeastEntity extends Animal implements IAnimatable, NeutralMob
 	
 	public static AttributeSupplier.Builder customAttributes() {
 		return Monster.createMobAttributes()
-				.add(Attributes.MAX_HEALTH, 40.0D)
+				.add(Attributes.MAX_HEALTH, Config.BUMBLE_BEAST_HEALTH.get())
 				.add(Attributes.MOVEMENT_SPEED, 0.35D)
-				.add(Attributes.ATTACK_DAMAGE, 5.0D)
+				.add(Attributes.ATTACK_DAMAGE, Config.BUMBLE_BEAST_DAMAGE.get())
 				.add(Attributes.JUMP_STRENGTH, 3.0D)
 				.add(Attributes.FOLLOW_RANGE, 48.0D)
 				.add(Attributes.KNOCKBACK_RESISTANCE, 2.0D)
@@ -175,7 +174,7 @@ public class BumbleBeastEntity extends Animal implements IAnimatable, NeutralMob
         	return true;
         }
         
-        return RollBoolean.roll(2, rand);
+        return RollBoolean.roll(Config.BUMBLE_BEAST_EXTRA_ROLL.get(), rand);
     }
 	
 	protected void playStepSound() {

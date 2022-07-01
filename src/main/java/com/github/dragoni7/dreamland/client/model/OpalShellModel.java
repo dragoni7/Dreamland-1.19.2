@@ -1,6 +1,5 @@
 package com.github.dragoni7.dreamland.client.model;
 
-import com.github.dragoni7.dreamland.common.entities.mobs.BumbleBeastEntity;
 import com.github.dragoni7.dreamland.common.entities.mobs.OpalShellEntity;
 import com.github.dragoni7.dreamland.util.DreamlandLoc;
 
@@ -19,6 +18,10 @@ public class OpalShellModel extends AnimatedGeoModel<OpalShellEntity> {
 
 	@Override
 	public ResourceLocation getModelResource(OpalShellEntity object) {
+		
+		if (object.isBaby()) {
+			return DreamlandLoc.createLoc("geo/opal_shell_baby.geo.json");
+		}
 		return DreamlandLoc.createLoc("geo/opal_shell.geo.json");
 	}
 

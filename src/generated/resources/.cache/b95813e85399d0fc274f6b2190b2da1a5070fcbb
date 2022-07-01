@@ -1,4 +1,4 @@
-// 1.19	2022-06-30T17:38:07.8962986	Dreamland Item Tags
+// 1.19	2022-07-01T13:13:12.8331867	Dreamland Item Tags
 c0a505fa839af937b16b68705a9233d0c8784f8a data/dreamland/tags/items/hive_ores.json
 4eca4ad1e699f194d9ed0673410da0486da163b5 data/dreamland/tags/items/plum_birch_logs.json
 307086431dc21982e06a542fde8df6004d8ef340 data/dreamland/tags/items/tar_bark_logs.json
@@ -15,7 +15,7 @@ b49b84e2992b922177097ce190432d0a3d819de5 data/forge/tags/items/ores/redstone.jso
 7cf4794b9830fb2e7385342547da669b50760b65 data/minecraft/tags/items/completes_find_tree_tutorial.json
 dc2cad800fb4f276cd4e421bec1158b838135184 data/minecraft/tags/items/copper_ores.json
 ad9861f7d55d5bc4b4ccdfbe5ab1ec2d88a2c9a9 data/minecraft/tags/items/diamond_ores.json
-2d6e401e82dc5e5a6d2a81a0f986fe2669577dc3 data/minecraft/tags/items/dirt.json
+18ab68d2a0ecae8811c6970e4260565fc4e7a27c data/minecraft/tags/items/dirt.json
 689134db6cd5b0d5185a830fbcaa5199f4c167eb data/minecraft/tags/items/fences.json
 29159b09dc5239f03c636e589f27ca3453e5f709 data/minecraft/tags/items/flowers.json
 3e9eee36315921fecf8023a5c40ab117600d88ec data/minecraft/tags/items/gold_ores.json

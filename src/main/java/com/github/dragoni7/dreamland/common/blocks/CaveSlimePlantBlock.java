@@ -12,8 +12,8 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class CaveSlimePlantBlock extends GrowingPlantBodyBlock implements CaveVines {
 
-	public CaveSlimePlantBlock(BlockBehaviour.Properties p_53886_) {
-		super(p_53886_, Direction.DOWN , SHAPE, false);
+	public CaveSlimePlantBlock(BlockBehaviour.Properties properties) {
+		super(properties, Direction.DOWN , SHAPE, false);
 	}
 
 	@Override
@@ -21,9 +21,9 @@ public class CaveSlimePlantBlock extends GrowingPlantBodyBlock implements CaveVi
 		return (GrowingPlantHeadBlock)DreamlandBlocks.CAVE_SLIME.block().get();
 	}
 	
-	public static ToIntFunction<BlockState> emission(int p_181223_) {
-	      return (p_181221_) -> {
-	         return p_181223_;
+	public static ToIntFunction<BlockState> emission(int lightLevel) {
+	      return (light) -> {
+	         return lightLevel;
 	      };
 	   }
 

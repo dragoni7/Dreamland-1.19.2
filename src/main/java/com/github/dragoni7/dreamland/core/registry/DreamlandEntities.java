@@ -39,7 +39,8 @@ public class DreamlandEntities {
 	public static final RegistryObject<EntityType<OozeEntity>> OOZE = ENTITY_TYPES.register("ooze",
 			() -> EntityType.Builder.<OozeEntity>of(OozeEntity::new, MobCategory.MONSTER)
 			.sized(1.0F, 3.50F)
-			.clientTrackingRange(10)
+			.clientTrackingRange(15)
+			.canSpawnFarFromPlayer()
 			.build(DreamlandLoc.createLoc("ooze").toString()));
 	
 	public static final RegistryObject<EntityType<OpalShellEntity>> OPAL_SHELL = ENTITY_TYPES.register("opal_shell",

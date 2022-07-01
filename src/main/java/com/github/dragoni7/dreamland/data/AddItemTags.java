@@ -24,8 +24,8 @@ public class AddItemTags extends ItemTagsProvider {
 	protected void addTags() {
 		
 		tag(ItemTags.DIRT)
-		.add(DreamlandBlocks.CLAY_SOIL.item().get())
-		.add(DreamlandBlocks.CLAY_SOIL_GRASS.item().get())
+		//.add(DreamlandBlocks.CLAY_SOIL.item().get())
+		//.add(DreamlandBlocks.CLAY_SOIL_GRASS.item().get())
 		.add(DreamlandBlocks.DROUGHT_SOIL.item().get())
 		.add(DreamlandBlocks.MINERAL_DIRT.item().get())
 		.add(DreamlandBlocks.FLOWERING_GRASS.item().get());

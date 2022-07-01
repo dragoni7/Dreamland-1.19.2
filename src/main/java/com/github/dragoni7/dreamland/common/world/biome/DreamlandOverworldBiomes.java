@@ -2,6 +2,7 @@ package com.github.dragoni7.dreamland.common.world.biome;
 
 import javax.annotation.Nullable;
 
+import com.github.dragoni7.dreamland.Config;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandParticles;
 
@@ -11,7 +12,6 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
-import net.minecraft.world.level.biome.MobSpawnSettings.SpawnerData;
 
 public class DreamlandOverworldBiomes {
 
@@ -52,7 +52,7 @@ public class DreamlandOverworldBiomes {
         DreamlandBiomeFeatures.addHiveOres(biomeBuilder);
         DreamlandBiomeFeatures.hiveBiomeFeatures(biomeBuilder);
         
-        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(DreamlandEntities.LARVA.get(), 20, 2, 4));
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(DreamlandEntities.LARVA.get(), 25, 2, 4));
         
         return biome(Biome.Precipitation.NONE, 0.8F, 0.0F, new BiomeSpecialEffects.Builder()
         		.waterColor(12511438)
@@ -71,7 +71,7 @@ public class DreamlandOverworldBiomes {
     	globalOverworldGeneration(biomeBuilder);
     	DreamlandBiomeFeatures.tardeltasBiomeFeatures(biomeBuilder);
     	
-    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(DreamlandEntities.OOZE.get(), 10, 1, 2));
+    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(DreamlandEntities.OOZE.get(), 15, 1, 2));
     	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SKELETON, 100, 4, 4));
     	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ENDERMAN, 10, 1, 4));
     	

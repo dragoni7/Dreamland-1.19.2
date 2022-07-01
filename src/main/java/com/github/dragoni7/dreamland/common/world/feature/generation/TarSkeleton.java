@@ -5,9 +5,11 @@ import com.github.dragoni7.dreamland.util.RollBoolean;
 import com.mojang.serialization.Codec;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -54,7 +56,7 @@ public class TarSkeleton extends Feature<NoneFeatureConfiguration> {
 		
 		for (int i = 0; i < 3; i++) {
 			for (int xChange = 0; xChange < 3; xChange++) {
-				status = builder.addInput(worldgenlevel, BONE.rotate(Rotation.CLOCKWISE_180), pos, true);
+				status = builder.addInput(worldgenlevel, BONE.setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), pos, true);
 				pos = pos.north();
 			}
 			pos = pos.above();
@@ -78,7 +80,7 @@ public class TarSkeleton extends Feature<NoneFeatureConfiguration> {
 		
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 3; j++) {
-				status = builder.addInput(worldgenlevel, BONE.rotate(Rotation.CLOCKWISE_180), pos, true);
+				status = builder.addInput(worldgenlevel, BONE.setValue(RotatedPillarBlock.AXIS, Direction.Axis.X), pos, true);
 				pos = pos.south();
 			}
 			pos = pos.above();

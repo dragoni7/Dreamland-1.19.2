@@ -2,6 +2,7 @@ package com.github.dragoni7.dreamland.common.entities.mobs;
 
 import java.util.UUID;
 
+import com.github.dragoni7.dreamland.Config;
 import com.github.dragoni7.dreamland.core.registry.DreamlandSoundEvents;
 import com.github.dragoni7.dreamland.util.RollBoolean;
 
@@ -21,7 +22,6 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.NeutralMob;
@@ -106,9 +106,9 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 	
 	public static AttributeSupplier.Builder customAttributes() {
 		return Monster.createMobAttributes()
-				.add(Attributes.MAX_HEALTH, 8.0D)
+				.add(Attributes.MAX_HEALTH,  Config.LARVA_HEALTH.get())
 				.add(Attributes.MOVEMENT_SPEED, 0.35D)
-				.add(Attributes.ATTACK_DAMAGE, 1.5D)
+				.add(Attributes.ATTACK_DAMAGE, Config.LARVA_DAMAGE.get())
 				.add(Attributes.JUMP_STRENGTH, 2.0D)
 				.add(Attributes.FOLLOW_RANGE, 48.0D);
 	}
@@ -160,7 +160,6 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 		}
 		
 		return false;
-		
 	   }
 	
 	public boolean checkSpawnRules(LevelAccessor level, MobSpawnType spawnReason) {
@@ -170,7 +169,7 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
         	return true;
         }
         
-        return RollBoolean.roll(2, rand);
+        return RollBoolean.roll(Config.LARVA_EXTRA_ROLL.get(), rand);
     }
 	
 	protected void playStepSound() {

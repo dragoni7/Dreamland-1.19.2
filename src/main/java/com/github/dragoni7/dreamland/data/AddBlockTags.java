@@ -22,8 +22,8 @@ public class AddBlockTags extends BlockTagsProvider {
 	@Override
 	protected void addTags() {
 		tag(BlockTags.DIRT)
-		.add(DreamlandBlocks.CLAY_SOIL.block().get())
-		.add(DreamlandBlocks.CLAY_SOIL_GRASS.block().get())
+		//.add(DreamlandBlocks.CLAY_SOIL.block().get())
+		//.add(DreamlandBlocks.CLAY_SOIL_GRASS.block().get())
 		.add(DreamlandBlocks.DROUGHT_SOIL.block().get())
 		.add(DreamlandBlocks.MINERAL_DIRT.block().get())
 		.add(DreamlandBlocks.FLOWERING_GRASS.block().get());
@@ -31,15 +31,15 @@ public class AddBlockTags extends BlockTagsProvider {
 		tag(BlockTags.ANIMALS_SPAWNABLE_ON)
 		.add(DreamlandBlocks.FLOWERING_GRASS.block().get());
 		
-		tag(Tags.Blocks.STONE)
-		.add(DreamlandBlocks.DARK_QUARTZITE.block().get());
+		/*tag(Tags.Blocks.STONE)
+		.add(DreamlandBlocks.DARK_QUARTZITE.block().get());*/
 		
 		tag(BlockTags.LEAVES)
 		.add(DreamlandBlocks.TAR_BARK_LEAVES.block().get())
 		.add(DreamlandBlocks.PLUM_BIRCH_LEAVES.block().get());
 		
-		tag(BlockTags.ICE)
-		.add(DreamlandBlocks.DUSK_ICE.block().get());
+		/*tag(BlockTags.ICE)
+		.add(DreamlandBlocks.DUSK_ICE.block().get());*/
 		
 		tag(BlockTags.REPLACEABLE_PLANTS)
 		.add(DreamlandBlocks.HIVE_GROWTH.block().get())
@@ -60,8 +60,8 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.FLOWERING_UNDERGROWTH.block().get());
 		
 		tag(BlockTags.MINEABLE_WITH_SHOVEL)
-		.add(DreamlandBlocks.CLAY_SOIL.block().get())
-		.add(DreamlandBlocks.CLAY_SOIL_GRASS.block().get())
+		//.add(DreamlandBlocks.CLAY_SOIL.block().get())
+		//.add(DreamlandBlocks.CLAY_SOIL_GRASS.block().get())
 		.add(DreamlandBlocks.HIVE_JELLY_CLUSTER.block().get())
 		.add(DreamlandBlocks.INFESTED_HIVE_JELLY_CLUSTER.block().get())
 		.add(DreamlandBlocks.TAR_MUD.block().get())
@@ -71,7 +71,7 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.FLOWERING_GRASS.block().get());
 		
 		tag(BlockTags.MINEABLE_WITH_PICKAXE)
-		.add(DreamlandBlocks.DARK_QUARTZITE.block().get())
+		//.add(DreamlandBlocks.DARK_QUARTZITE.block().get())
 		.add(DreamlandBlocks.HIVE_BLOCK.block().get())
 		.add(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.block().get())
 		.add(DreamlandBlocks.HIVE_WEAVER.block().get())

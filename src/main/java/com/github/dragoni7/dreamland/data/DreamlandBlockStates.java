@@ -34,9 +34,9 @@ public class DreamlandBlockStates extends BlockStateProvider{
 	protected void registerStatesAndModels() {
 		
 		ArrayList<Block> simpleBlocks = new ArrayList<Block>();
-		simpleBlocks.add(DreamlandBlocks.CLAY_SOIL.block().get());
-		simpleBlocks.add(DreamlandBlocks.DARK_QUARTZITE.block().get());
-		simpleBlocks.add(DreamlandBlocks.DUSK_ICE.block().get());
+		//simpleBlocks.add(DreamlandBlocks.CLAY_SOIL.block().get());
+		//simpleBlocks.add(DreamlandBlocks.DARK_QUARTZITE.block().get());
+		//simpleBlocks.add(DreamlandBlocks.DUSK_ICE.block().get());
 		simpleBlocks.add(DreamlandBlocks.HIVE_IRON.block().get());
 		simpleBlocks.add(DreamlandBlocks.HIVE_COPPER.block().get());
 		simpleBlocks.add(DreamlandBlocks.HIVE_REDSTONE.block().get());

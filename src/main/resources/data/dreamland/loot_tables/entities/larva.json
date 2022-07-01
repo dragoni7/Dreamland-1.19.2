@@ -1,0 +1,22 @@
+{
+  "pools": [
+    {
+      "name": "larva_symbiote",
+      "conditions": [
+        {
+          "condition": "random_chance_with_looting",
+          "chance": 0.02,
+          "looting_multiplier": 0.02
+        }
+      ],
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "dreamland:larva_symbiote",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

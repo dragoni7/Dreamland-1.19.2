@@ -15,7 +15,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.BlockStateConfi
 
 public class HiveComb extends Feature<BlockStateConfiguration> {
 	
-	private static final int SIZE = 4;
+	private static final int SIZE = 2;
 
 	public HiveComb(Codec<BlockStateConfiguration> codec) {
 		super(codec);

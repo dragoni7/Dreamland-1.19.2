@@ -21,8 +21,8 @@ public class HiveBlock extends LarvaAngerableBlock {
 	}
 	
 	public BlockState updateShape(BlockState state1, Direction direction, BlockState state2, LevelAccessor accessor, BlockPos pos1, BlockPos pos2) {
-	      return direction == Direction.UP ? state1.setValue(HAS_GROWTH, Boolean.valueOf(hasGrowth(state2))) : super.updateShape(state1, direction, state2, accessor, pos1, pos2);
-	 }
+	    return direction == Direction.UP ? state1.setValue(HAS_GROWTH, Boolean.valueOf(hasGrowth(state2))) : super.updateShape(state1, direction, state2, accessor, pos1, pos2);
+	}
 	
 	private static boolean hasGrowth(BlockState state) {
 		return state.is(DreamlandBlocks.HIVE_GROWTH.block().get());
@@ -30,7 +30,7 @@ public class HiveBlock extends LarvaAngerableBlock {
 	
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-	      builder.add(HAS_GROWTH);
-	   }
+	    builder.add(HAS_GROWTH);
+	}
 
 }

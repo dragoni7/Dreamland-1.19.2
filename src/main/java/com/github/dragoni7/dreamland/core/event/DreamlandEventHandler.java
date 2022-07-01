@@ -3,6 +3,7 @@ package com.github.dragoni7.dreamland.core.event;
 
 import java.util.List;
 
+import com.github.dragoni7.dreamland.Config;
 import com.github.dragoni7.dreamland.common.entities.mobs.BumbleBeastEntity;
 import com.github.dragoni7.dreamland.common.entities.mobs.LarvaEntity;
 import com.github.dragoni7.dreamland.common.entities.mobs.OozeEntity;
@@ -72,13 +73,13 @@ public class DreamlandEventHandler {
 		Entity attacker = event.getSource().getEntity();
 		
 		if (attacker instanceof LivingEntity && target instanceof LarvaEntity && !(attacker instanceof LarvaEntity)) {
-			((LivingEntity) attacker).addEffect(new MobEffectInstance(DreamlandEffects.ANTAGONIZED.get(), 200));
+			((LivingEntity) attacker).addEffect(new MobEffectInstance(DreamlandEffects.ANTAGONIZED.get(), Config.ANTAGONIZED_DURATION.get()));
 		}
 	}
 	
 	public static void setLarvaTarget(LivingEvent.LivingUpdateEvent event) {
-		int interval = 20;
-		if (interval == 20) {
+		int i = 20;
+		if (i == 20) {
 			LivingEntity entity = event.getEntityLiving();
 			BlockPos pos = entity.blockPosition();
 			Level level = entity.getLevel();
@@ -93,10 +94,10 @@ public class DreamlandEventHandler {
 				}
 			}
 			
-			interval = 0;
+			i = 0;
 		}
 		
-		interval++;
+		i++;
 	}
 	
 	public static void entityHitLarvaSymbiote(LivingHurtEvent event) {
@@ -105,7 +106,7 @@ public class DreamlandEventHandler {
 		
 		if (target.getItemBySlot(EquipmentSlot.HEAD).is(DreamlandItems.LARVA_HELMET.get())) {
 			if (attacker instanceof LivingEntity && !(attacker instanceof LarvaEntity)) {
-				((LivingEntity) attacker).addEffect(new MobEffectInstance(DreamlandEffects.ANTAGONIZED.get(), 200));
+				((LivingEntity) attacker).addEffect(new MobEffectInstance(DreamlandEffects.ANTAGONIZED.get(), Config.ANTAGONIZED_DURATION.get()));
 				Level level = target.level;
 				if (!level.isClientSide()) {
 					final LarvaEntity larva = DreamlandEntities.LARVA.get().create(level);

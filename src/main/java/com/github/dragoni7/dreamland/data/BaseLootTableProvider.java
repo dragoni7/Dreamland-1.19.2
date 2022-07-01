@@ -14,7 +14,6 @@ import net.minecraft.data.DataProvider;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -96,14 +95,6 @@ public abstract class BaseLootTableProvider extends LootTableProvider {
 				.setRolls(ConstantValue.exactly(1))
 				.add(LootItem.lootTableItem(block).when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(Items.SHEARS))));
 				return LootTable.lootTable().withPool(builder);
-	}
-	
-	protected LootTable.Builder createMobDropTable(String name, Item drop) {
-		LootPool.Builder builder = LootPool.lootPool()
-				.name(name)
-				.setRolls(ConstantValue.exactly(1))
-				.add(LootItem.lootTableItem(drop));
-		return LootTable.lootTable().withPool(builder);
 	}
 	
 	@Override

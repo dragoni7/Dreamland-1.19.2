@@ -1,7 +1,6 @@
 package com.github.dragoni7.dreamland.common.entities.mobs;
 
-import com.github.dragoni7.dreamland.Dreamland;
-import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
+import com.github.dragoni7.dreamland.Config;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandItems;
 import com.github.dragoni7.dreamland.util.RollBoolean;
@@ -93,7 +92,7 @@ public class OpalShellEntity extends Animal implements IAnimatable {
 	}
 	
 	public static AttributeSupplier.Builder customAttributes() {
-	      return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 15.0D).add(Attributes.MOVEMENT_SPEED, (double)0.2F);
+	      return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, Config.OPAL_SHELL_HEALTH.get()).add(Attributes.MOVEMENT_SPEED, (double)0.2F);
 	}
 	
 	protected void registerGoals() {
@@ -144,7 +143,7 @@ public class OpalShellEntity extends Animal implements IAnimatable {
 	}
 	
 	public boolean checkSpawnRules(LevelAccessor level, MobSpawnType spawnReason) {
-        return true;
+        return RollBoolean.roll(Config.OPAL_SHELL_EXTRA_ROLL.get(), random);
     }
 	
 	protected void playStepSound(BlockPos pos, BlockState state) {
@@ -161,7 +160,6 @@ public class OpalShellEntity extends Animal implements IAnimatable {
 	
 	public InteractionResult mobInteract(Player player, InteractionHand hand) {
 		int currentAmount = this.getOpalAmount();
-		Dreamland.LOGGER.atDebug().log("current amount = " + currentAmount);
 		if (currentAmount > 0) {
 			ItemStack itemstack = player.getItemInHand(hand);
 			

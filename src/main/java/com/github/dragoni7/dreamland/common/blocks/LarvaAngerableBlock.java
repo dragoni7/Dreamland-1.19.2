@@ -2,6 +2,7 @@ package com.github.dragoni7.dreamland.common.blocks;
 
 import javax.annotation.Nullable;
 
+import com.github.dragoni7.dreamland.Config;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
 
 import net.minecraft.core.BlockPos;
@@ -26,7 +27,7 @@ public class LarvaAngerableBlock extends Block {
 	      MobEffect antagonized = DreamlandEffects.ANTAGONIZED.get();
 	      
 	      if (!biomeCheck()) {
-	    	  player.addEffect(new MobEffectInstance(antagonized, 200));
+	    	  player.addEffect(new MobEffectInstance(antagonized, Config.ANTAGONIZED_DURATION.get()));
 	      }
 	   }
 	

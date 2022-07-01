@@ -18,7 +18,6 @@ public class DreamlandLootTables extends BaseLootTableProvider {
 	
 	@Override
 	protected void addTables() {
-		
 		basicBlockTable(DreamlandBlocks.BUMBLE_BLOCK.block().get(), "bumble_block");
 		basicBlockTable(DreamlandBlocks.HIVE_BLOCK.block().get(), "hive_block");
 		basicBlockTable(DreamlandBlocks.HIVE_GROWTH.block().get(), "hive_growth");
@@ -57,7 +56,6 @@ public class DreamlandLootTables extends BaseLootTableProvider {
 		basicBlockTable(DreamlandBlocks.PRECIOUS_OPAL_STAIRS.block().get(), "precious_opal_stairs");
 		basicBlockTable(DreamlandBlocks.PRECIOUS_OPAL_WALL.block().get(), "precious_opal_wall");
 		basicBlockTable(DreamlandBlocks.JEWELED_DEEPSLATE.block().get(), "jeweled_deepslate");
-		
 		
 		createWoodSetTable(DreamlandWoodSets.TAR_BARK);
 		createWoodSetTable(DreamlandWoodSets.PLUM_BIRCH);

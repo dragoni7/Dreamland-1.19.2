@@ -3,11 +3,7 @@ package com.github.dragoni7.dreamland.core.registry;
 import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.common.blocks.CaveSlimeBlock;
 import com.github.dragoni7.dreamland.common.blocks.CaveSlimePlantBlock;
-import com.github.dragoni7.dreamland.common.blocks.ClaySoilBlock;
-import com.github.dragoni7.dreamland.common.blocks.ClaySoilGrassBlock;
-import com.github.dragoni7.dreamland.common.blocks.DarkQuartziteBlock;
 import com.github.dragoni7.dreamland.common.blocks.DreamlandSaplingBlock;
-import com.github.dragoni7.dreamland.common.blocks.DuskIceBlock;
 import com.github.dragoni7.dreamland.common.blocks.EmissiveHiveBlock;
 import com.github.dragoni7.dreamland.common.blocks.FloweringUndergrowthBlock;
 import com.github.dragoni7.dreamland.common.blocks.GroundPlantBlock;
@@ -56,13 +52,13 @@ public class DreamlandBlocks {
 	
 	public static final BlockItemSet BUMBLE_BLOCK = new BlockItemSet("bumble_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.YELLOW_WOOL).sound(DreamlandSoundTypes.BUMBLE_BLOCK).noOcclusion()));
 	
-	public static final BlockItemSet DARK_QUARTZITE = new BlockItemSet("dark_quartzite", () -> new DarkQuartziteBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
+	//public static final BlockItemSet DARK_QUARTZITE = new BlockItemSet("dark_quartzite", () -> new DarkQuartziteBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
 	
-	public static final BlockItemSet CLAY_SOIL = new BlockItemSet("clay_soil", () -> new ClaySoilBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.ROOTED_DIRT)));
+	//public static final BlockItemSet CLAY_SOIL = new BlockItemSet("clay_soil", () -> new ClaySoilBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.ROOTED_DIRT)));
 	
-	public static final BlockItemSet CLAY_SOIL_GRASS = new BlockItemSet("clay_soil_grass", () -> new ClaySoilGrassBlock((BlockBehaviour.Properties.of(Material.GRASS).randomTicks().strength(0.6F).sound(SoundType.GRASS))));
+	//public static final BlockItemSet CLAY_SOIL_GRASS = new BlockItemSet("clay_soil_grass", () -> new ClaySoilGrassBlock((BlockBehaviour.Properties.of(Material.GRASS).randomTicks().strength(0.6F).sound(SoundType.GRASS))));
 	
-	public static final BlockItemSet DUSK_ICE = new BlockItemSet("dusk_ice", 
+	/*public static final BlockItemSet DUSK_ICE = new BlockItemSet("dusk_ice", 
 			() -> new DuskIceBlock(BlockBehaviour.Properties
 					.of(Material.ICE)
 					.strength(0.5F)
@@ -72,7 +68,7 @@ public class DreamlandBlocks {
 					.friction(0.98F)
 					.hasPostProcess(DreamlandBlocks::always)
 					.emissiveRendering(DreamlandBlocks::always)
-					));
+					)); */
 	
 	public static final BlockItemSet HIVE_BLOCK = new BlockItemSet("hive_block", 
 			() -> new HiveBlock(BlockBehaviour.Properties
@@ -119,7 +115,6 @@ public class DreamlandBlocks {
 					.sound(DreamlandSoundTypes.HIVE_JELLY)
 					.noOcclusion()
 					.randomTicks()
-					.noLootTable()
 					.lightLevel(InfestedHiveClusterBlock.emission(5))
 					));
 	

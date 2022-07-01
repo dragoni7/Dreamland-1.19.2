@@ -10,19 +10,19 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class HiveGrowthBlock extends CarpetBlock {
 
-	public HiveGrowthBlock(Properties p_152915_) {
-		super(p_152915_);
+	public HiveGrowthBlock(Properties properties) {
+		super(properties);
 	}
 	
-	public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource p_54903_) {
-	      super.animateTick(state, level, pos, p_54903_);
-	      if (p_54903_.nextInt(10) == 0) {
-	         level.addParticle(ParticleTypes.MYCELIUM, (double)pos.getX() + p_54903_.nextDouble(), (double)pos.getY() + 1.1D, (double)pos.getZ() + p_54903_.nextDouble(), 0.0D, 0.0D, 0.0D);
+	public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource rand) {
+	      super.animateTick(state, level, pos, rand);
+	      if (rand.nextInt(10) == 0) {
+	         level.addParticle(ParticleTypes.MYCELIUM, (double)pos.getX() + rand.nextDouble(), (double)pos.getY() + 1.1D, (double)pos.getZ() + rand.nextDouble(), 0.0D, 0.0D, 0.0D);
 	      }
 	}
 	
 	@SuppressWarnings("deprecation")
-	public boolean canBeReplaced(BlockState p_153299_, BlockPlaceContext p_153300_) {
-	      return super.canBeReplaced(p_153299_, p_153300_);
-	   }
+	public boolean canBeReplaced(BlockState state, BlockPlaceContext context) {
+	    return super.canBeReplaced(state, context);
+	}
 }

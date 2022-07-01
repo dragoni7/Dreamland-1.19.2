@@ -3,7 +3,7 @@
   "group": "dreamland",
   "key": {
     "#": {
-      "item": "dreamland:opal"
+      "item": "dreamland:precious_opal"
     }
   },
   "pattern": [
@@ -11,7 +11,6 @@
     "## "
   ],
   "result": {
-    "count": 4,
     "item": "dreamland:precious_opal_tile"
   }
 }
