@@ -71,6 +71,15 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandBlocks.OPAL_CLUSTER.block().get(), "Opal Cluster");
 		add(DreamlandBlocks.OPAL_BLOCK.block().get(), "Opal Block");
 		add(DreamlandBlocks.PRECIOUS_OPAL_BLOCK.block().get(), "Precious Opal Block");
+		add(DreamlandBlocks.OPAL_TILE.block().get(), "Opal Tile");
+		add(DreamlandBlocks.OPAL_SLAB.block().get(), "Opal Slab");
+		add(DreamlandBlocks.OPAL_STAIRS.block().get(), "Opal Stairs");
+		add(DreamlandBlocks.OPAL_WALL.block().get(), "Opal Wall");
+		add(DreamlandBlocks.PRECIOUS_OPAL_TILE.block().get(), "Precious Opal Tile");
+		add(DreamlandBlocks.PRECIOUS_OPAL_SLAB.block().get(), "Precious Opal Slab");
+		add(DreamlandBlocks.PRECIOUS_OPAL_STAIRS.block().get(), "Precious Opal Stairs");
+		add(DreamlandBlocks.PRECIOUS_OPAL_WALL.block().get(), "Precious Opal Wall");
+		add(DreamlandBlocks.JEWELED_DEEPSLATE.block().get(), "Jeweled Deepslate");
 		translateWoodSet(DreamlandWoodSets.PLUM_BIRCH, "Plum Birch");
 		
 		// Items

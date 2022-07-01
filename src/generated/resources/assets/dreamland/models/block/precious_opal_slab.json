@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "dreamland:block/precious_opal_tile",
+    "side": "dreamland:block/precious_opal_tile",
+    "top": "dreamland:block/precious_opal_tile"
+  }
+}

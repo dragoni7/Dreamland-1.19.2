@@ -1,4 +1,4 @@
-// 1.19	2022-06-30T12:48:21.0700733	Item Models: dreamland
+// 1.19	2022-06-30T17:38:07.9023008	Item Models: dreamland
 02a6524eeaab96334111ffc9f8953b1693e4f0ef assets/dreamland/models/item/ancient_egg.json
 753673f49cec07146d029af5bb036103cbac5ce5 assets/dreamland/models/item/cave_slime.json
 1e70d6474fa73213401e11d78c67c8ebd125aab0 assets/dreamland/models/item/clay_soil.json
@@ -22,6 +22,7 @@ af52bbe353c4db173a4c9e34cf7347aaaf19b7e4 assets/dreamland/models/item/hive_jelly
 db1dac60a0a06bc658b3b9229b050729d54d1ed1 assets/dreamland/models/item/hive_membrane.json
 27dac0da551cf658c118d6f76303c85db2d5451a assets/dreamland/models/item/hive_redstone.json
 65d60aaa6e12f64167585574c85f0aefa87de07e assets/dreamland/models/item/hive_weaver.json
+28523d4d7cc275deb2e33d4c9dc22be105e97084 assets/dreamland/models/item/jeweled_deepslate.json
 ae9d351ccebeca51a6c198c7999d291d287827eb assets/dreamland/models/item/larva_symbiote.json
 e837462748a5ec6bdc6942586b898b60d30ab368 assets/dreamland/models/item/mineral_dirt.json
 185ae6adcc32c3211207327686db62f091603aa5 assets/dreamland/models/item/opal.json
@@ -29,6 +30,10 @@ e837462748a5ec6bdc6942586b898b60d30ab368 assets/dreamland/models/item/mineral_di
 24cbb99bfbd9110d24a84d9ac2bb33e990575145 assets/dreamland/models/item/opal_block.json
 7a2370733bead838b8c2b891ae8ef28ba6a49131 assets/dreamland/models/item/opal_cluster.json
 c4be501630987769833b38bcdbd2858922b97984 assets/dreamland/models/item/opal_diffuser.json
+36db1501b87610383ffe69575f01e392681f3866 assets/dreamland/models/item/opal_slab.json
+bca7c7511f07c7b2f53e1fd50414ebdc2aed612e assets/dreamland/models/item/opal_stairs.json
+dd7020041f41ae06857ba583c3a357b322e05338 assets/dreamland/models/item/opal_tile.json
+f5b06e49219fbdf5065006f6bf0b9daff9cda525 assets/dreamland/models/item/opal_wall.json
 d3d641804796792482d3077e4f5d2bcea1631761 assets/dreamland/models/item/packed_tar_mud.json
 ccbbe0251c2583517b39ad162e17ad1385097909 assets/dreamland/models/item/pink_crab_grass.json
 7675ad0020dfe6446dc3dfd91837b1a399a981a6 assets/dreamland/models/item/plum_birch_button.json
@@ -50,6 +55,10 @@ f8d8435ab4567d0ed52a0ca50c2fe7cde810d050 assets/dreamland/models/item/plum_birch
 737c80a8af50e3c8872b9c140284d34878014b47 assets/dreamland/models/item/plum_birch_wood.json
 5e89667420e6b546e28298c8a051f2d388e28527 assets/dreamland/models/item/precious_opal.json
 2cbc4b3d4885f4044dcbaa6ae21698f694ad22e3 assets/dreamland/models/item/precious_opal_block.json
+ead96d0ce11b9b3ad4f9076aae8d6e1f42af5c72 assets/dreamland/models/item/precious_opal_slab.json
+1d789f6edd3b80982888ad4bc0163de1532e0e94 assets/dreamland/models/item/precious_opal_stairs.json
+f778ea5668522f2e2ba0fa68103a321b03323312 assets/dreamland/models/item/precious_opal_tile.json
+d6ab2e5680802ffd662f0967cd9a608d16731c06 assets/dreamland/models/item/precious_opal_wall.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dreamland/models/item/spawn_egg_bumble_beast.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dreamland/models/item/spawn_egg_larva.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dreamland/models/item/spawn_egg_ooze.json

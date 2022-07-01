@@ -84,7 +84,16 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.OPAL_DIFFUSER_BLOCK.block().get())
 		.add(DreamlandBlocks.OPAL_CLUSTER.block().get())
 		.add(DreamlandBlocks.OPAL_BLOCK.block().get())
-		.add(DreamlandBlocks.PRECIOUS_OPAL_BLOCK.block().get());
+		.add(DreamlandBlocks.PRECIOUS_OPAL_BLOCK.block().get())
+		.add(DreamlandBlocks.OPAL_TILE.block().get())
+		.add(DreamlandBlocks.OPAL_SLAB.block().get())
+		.add(DreamlandBlocks.OPAL_STAIRS.block().get())
+		.add(DreamlandBlocks.OPAL_WALL.block().get())
+		.add(DreamlandBlocks.PRECIOUS_OPAL_TILE.block().get())
+		.add(DreamlandBlocks.PRECIOUS_OPAL_SLAB.block().get())
+		.add(DreamlandBlocks.PRECIOUS_OPAL_STAIRS.block().get())
+		.add(DreamlandBlocks.PRECIOUS_OPAL_WALL.block().get())
+		.add(DreamlandBlocks.JEWELED_DEEPSLATE.block().get());
 		
 		tag(BlockTags.NEEDS_STONE_TOOL)
 		.add(DreamlandBlocks.HIVE_BLOCK.block().get())
@@ -93,7 +102,16 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.block().get())
 		.add(DreamlandBlocks.OPAL_DIFFUSER_BLOCK.block().get())
 		.add(DreamlandBlocks.OPAL_CLUSTER.block().get())
-		.add(DreamlandBlocks.OPAL_BLOCK.block().get());
+		.add(DreamlandBlocks.OPAL_BLOCK.block().get())
+		.add(DreamlandBlocks.OPAL_TILE.block().get())
+		.add(DreamlandBlocks.OPAL_SLAB.block().get())
+		.add(DreamlandBlocks.OPAL_STAIRS.block().get())
+		.add(DreamlandBlocks.OPAL_WALL.block().get())
+		.add(DreamlandBlocks.PRECIOUS_OPAL_TILE.block().get())
+		.add(DreamlandBlocks.PRECIOUS_OPAL_SLAB.block().get())
+		.add(DreamlandBlocks.PRECIOUS_OPAL_STAIRS.block().get())
+		.add(DreamlandBlocks.PRECIOUS_OPAL_WALL.block().get())
+		.add(DreamlandBlocks.JEWELED_DEEPSLATE.block().get());
 		
 		tag(BlockTags.NEEDS_DIAMOND_TOOL)
 		.add(DreamlandBlocks.HIVE_WEAVER.block().get())
@@ -150,13 +168,19 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.HIVE_MEMBRANE.block().get());
 		
 		tag(BlockTags.STAIRS)
-		.add(DreamlandBlocks.TAR_MUD_BRICK_STAIRS.block().get());
+		.add(DreamlandBlocks.TAR_MUD_BRICK_STAIRS.block().get())
+		.add(DreamlandBlocks.OPAL_STAIRS.block().get())
+		.add(DreamlandBlocks.PRECIOUS_OPAL_STAIRS.block().get());
 		
 		tag(BlockTags.SLABS)
-		.add(DreamlandBlocks.TAR_MUD_BRICK_SLAB.block().get());
+		.add(DreamlandBlocks.TAR_MUD_BRICK_SLAB.block().get())
+		.add(DreamlandBlocks.OPAL_SLAB.block().get())
+		.add(DreamlandBlocks.PRECIOUS_OPAL_SLAB.block().get());
 		
 		tag(BlockTags.WALLS)
-		.add(DreamlandBlocks.TAR_MUD_BRICK_WALL.block().get());
+		.add(DreamlandBlocks.TAR_MUD_BRICK_WALL.block().get())
+		.add(DreamlandBlocks.OPAL_WALL.block().get())
+		.add(DreamlandBlocks.PRECIOUS_OPAL_WALL.block().get());
 		
 		tag(DreamlandBlockTags.STORAGE_BLOCKS_OPAL).add(DreamlandBlocks.OPAL_BLOCK.block().get());
 		tag(DreamlandBlockTags.STORAGE_BLOCKS_PRECIOUS_OPAL).add(DreamlandBlocks.PRECIOUS_OPAL_BLOCK.block().get());

@@ -44,7 +44,6 @@ public class DreamlandItemModels extends ItemModelProvider {
 		blockItemModel(DreamlandBlocks.TAR_MUD_BRICKS.item(), "block/tar_mud_bricks");
 		blockItemModel(DreamlandBlocks.TAR_MUD_BRICK_SLAB.item(), "block/tar_mud_brick_slab");
 		blockItemModel(DreamlandBlocks.TAR_MUD_BRICK_STAIRS.item(), "block/tar_mud_brick_stairs");
-		blockItemModel(DreamlandBlocks.TAR_MUD_BRICK_WALL.item(), "block/tar_mud_brick_wall_side_tall");
 		blockItemModel(DreamlandBlocks.FOSSILIZED_EGG.item(), "block/fossilized_egg");
 		wallInventory("tar_mud_brick_wall", DreamlandLoc.createLoc("block/tar_mud_bricks"));
 		blockItemModel(DreamlandBlocks.DROUGHT_SOIL.item(), "block/drought_soil");
@@ -59,6 +58,15 @@ public class DreamlandItemModels extends ItemModelProvider {
 		blockItemModel(DreamlandBlocks.OPAL_CLUSTER.item(), "block/opal_cluster");
 		blockItemModel(DreamlandBlocks.OPAL_BLOCK.item(), "block/opal_block");
 		blockItemModel(DreamlandBlocks.PRECIOUS_OPAL_BLOCK.item(), "block/precious_opal_block");
+		blockItemModel(DreamlandBlocks.OPAL_TILE.item(), "block/opal_tile");
+		blockItemModel(DreamlandBlocks.PRECIOUS_OPAL_TILE.item(), "block/precious_opal_tile");
+		blockItemModel(DreamlandBlocks.OPAL_SLAB.item(), "block/opal_slab");
+		blockItemModel(DreamlandBlocks.OPAL_STAIRS.item(), "block/opal_stairs");
+		wallInventory("opal_wall", DreamlandLoc.createLoc("block/opal_tile"));
+		blockItemModel(DreamlandBlocks.PRECIOUS_OPAL_SLAB.item(), "block/precious_opal_slab");
+		blockItemModel(DreamlandBlocks.PRECIOUS_OPAL_STAIRS.item(), "block/precious_opal_stairs");
+		wallInventory("precious_opal_wall", DreamlandLoc.createLoc("block/precious_opal_tile"));
+		blockItemModel(DreamlandBlocks.JEWELED_DEEPSLATE.item(), "block/jeweled_deepslate");
 		
 		singleTextureItemModel(DreamlandItems.HIVE_JELLY_ITEM, "item/hive_jelly");
 		singleTextureItemModel(DreamlandBlocks.CAVE_SLIME.item(), "block/cave_slime");

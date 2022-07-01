@@ -243,6 +243,33 @@ public class DreamlandBlocks {
 	public static final BlockItemSet PRECIOUS_OPAL_BLOCK = new BlockItemSet("precious_opal_block",
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK)));
 	
+	public static final BlockItemSet OPAL_TILE = new BlockItemSet("opal_tile",
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
+	
+	public static final BlockItemSet OPAL_SLAB = new BlockItemSet("opal_slab",
+			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_SLAB)));
+	
+	public static final BlockItemSet OPAL_STAIRS = new BlockItemSet("opal_stairs",
+			() -> new StairBlock(() -> DreamlandBlocks.OPAL_TILE.block().get().defaultBlockState(), BlockBehaviour.Properties.copy(DreamlandBlocks.OPAL_TILE.block().get())));
+	
+	public static final BlockItemSet OPAL_WALL = new BlockItemSet("opal_wall",
+			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)));
+	
+	public static final BlockItemSet PRECIOUS_OPAL_TILE = new BlockItemSet("precious_opal_tile",
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
+	
+	public static final BlockItemSet PRECIOUS_OPAL_SLAB = new BlockItemSet("precious_opal_slab",
+			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_SLAB)));
+	
+	public static final BlockItemSet PRECIOUS_OPAL_STAIRS = new BlockItemSet("precious_opal_stairs",
+			() -> new StairBlock(() -> DreamlandBlocks.OPAL_TILE.block().get().defaultBlockState(), BlockBehaviour.Properties.copy(DreamlandBlocks.PRECIOUS_OPAL_TILE.block().get())));
+	
+	public static final BlockItemSet PRECIOUS_OPAL_WALL = new BlockItemSet("precious_opal_wall",
+			() -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_WALL)));
+	
+	public static final BlockItemSet JEWELED_DEEPSLATE = new BlockItemSet("jeweled_deepslate",
+			() -> new Block(BlockBehaviour.Properties.copy(Blocks.CHISELED_DEEPSLATE)));
+	
 	public static final BlockItemSet PLUM_BIRCH_SAPLING = createSaplingBlock("plum_birch_sapling", DreamlandFeatures.PLUM_BIRCH_TREE_FEATURE);
 	
 	private static BlockItemSet createSaplingBlock(String name, Feature<NoneFeatureConfiguration> tree) {

@@ -1,4 +1,4 @@
-// 1.19	2022-06-30T13:54:47.4359686	Dreamland Block Tags
+// 1.19	2022-06-30T17:38:07.907302	Dreamland Block Tags
 8f1de98b3239009a155cb9246d22c3c197c86c85 data/dreamland/tags/blocks/fossilized_egg_replaceable.json
 9168b95796707296915d8fd7e0eb6a8ed53ec2af data/dreamland/tags/blocks/hive_ores_replaceable.json
 37de7720c2909e0b72df14405ff130b54775d875 data/dreamland/tags/blocks/plum_birch_logs.json
@@ -38,22 +38,22 @@ f79357ee237d9ccf1cd56d5bbb6e99b152e52c71 data/minecraft/tags/blocks/geode_invali
 7cf4794b9830fb2e7385342547da669b50760b65 data/minecraft/tags/blocks/logs.json
 7cf4794b9830fb2e7385342547da669b50760b65 data/minecraft/tags/blocks/logs_that_burn.json
 6dc90b3e57b6613ed44458004f2ef58d68d51684 data/minecraft/tags/blocks/mineable/axe.json
-0eaca068eab0d832265b2c0c7fdfefee084bdded data/minecraft/tags/blocks/mineable/pickaxe.json
+0adbba96cc7a04db8641f2b50212ead27ad85675 data/minecraft/tags/blocks/mineable/pickaxe.json
 39453cc9f1e571e63b69f6a8d97244a864edb633 data/minecraft/tags/blocks/mineable/shovel.json
 3719297f8c168fbb0b5b3e02d37590cf7a3702a5 data/minecraft/tags/blocks/needs_diamond_tool.json
 8ed0b2192e398d90102acee8a66d0aa9e4642dde data/minecraft/tags/blocks/needs_iron_tool.json
-13c38a8fcc05af522369af2a2330ebe34cd7383c data/minecraft/tags/blocks/needs_stone_tool.json
+347f29ef114f957db0a20be72a97da7f822e4e6e data/minecraft/tags/blocks/needs_stone_tool.json
 7cf4794b9830fb2e7385342547da669b50760b65 data/minecraft/tags/blocks/overworld_natural_logs.json
 7cbd974fa306dbbdb1cb48e3e4e377be1b6639b4 data/minecraft/tags/blocks/planks.json
 b49b84e2992b922177097ce190432d0a3d819de5 data/minecraft/tags/blocks/redstone_ores.json
 714153f8e225f023219ba181d6b4ebe72348904e data/minecraft/tags/blocks/replaceable_plants.json
 ae0cd91dea8899b163c9e085fdd4a59b990d5b17 data/minecraft/tags/blocks/saplings.json
 b9bc7ec42ae0a1e29865e162ad08e09c1ed72b22 data/minecraft/tags/blocks/sculk_replaceable.json
-26cb22f4b2983a67d4707f2cd71676f23c367f09 data/minecraft/tags/blocks/slabs.json
+8c8e328818a0603daa1fcdca69745788ddac8e22 data/minecraft/tags/blocks/slabs.json
 29159b09dc5239f03c636e589f27ca3453e5f709 data/minecraft/tags/blocks/small_flowers.json
-cf17cf4df394ef1d3221b7e994073d8de6cfdf43 data/minecraft/tags/blocks/stairs.json
+0e3ae6ce87d3dd471de84330f088d64fbe2c7497 data/minecraft/tags/blocks/stairs.json
 4875225c6c9ecf0d01db9f2accc520041f424f8e data/minecraft/tags/blocks/stone_ore_replaceables.json
-9d75c17d8448f423ab6005eb99f351f27170bb71 data/minecraft/tags/blocks/walls.json
+5b45cf8b78d9d11ccd2aef5fab75f9d6092d578b data/minecraft/tags/blocks/walls.json
 1c748e12d6f0f452e1ea1d5e9937bb6ed6da028a data/minecraft/tags/blocks/wither_immune.json
 9ffe84bb744c0d7e17fd270eef2b427f4b6660f4 data/minecraft/tags/blocks/wooden_buttons.json
 3fd0c199736dcef662cd93eaf3c75fd0b53bde32 data/minecraft/tags/blocks/wooden_doors.json

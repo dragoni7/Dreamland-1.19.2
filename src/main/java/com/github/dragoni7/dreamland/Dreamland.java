@@ -4,7 +4,6 @@ import org.apache.logging.log4j.Logger;
 
 import com.github.dragoni7.dreamland.common.world.DreamlandRegion;
 import com.github.dragoni7.dreamland.common.world.DreamlandSurfaceRules;
-import com.github.dragoni7.dreamland.core.Config;
 import com.github.dragoni7.dreamland.core.event.DreamlandClientEventHandler;
 import com.github.dragoni7.dreamland.core.event.DreamlandEventHandler;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;

@@ -52,6 +52,9 @@ public class DreamlandBlockStates extends BlockStateProvider{
 		simpleBlocks.add(DreamlandBlocks.MINERAL_DIRT.block().get());
 		simpleBlocks.add(DreamlandBlocks.OPAL_BLOCK.block().get());
 		simpleBlocks.add(DreamlandBlocks.PRECIOUS_OPAL_BLOCK.block().get());
+		simpleBlocks.add(DreamlandBlocks.OPAL_TILE.block().get());
+		simpleBlocks.add(DreamlandBlocks.PRECIOUS_OPAL_TILE.block().get());
+		simpleBlocks.add(DreamlandBlocks.JEWELED_DEEPSLATE.block().get());
 
 		for(Block element : simpleBlocks) {
 			simpleBlock(element);
@@ -60,6 +63,16 @@ public class DreamlandBlockStates extends BlockStateProvider{
 		ResourceLocation fossilizedEggTopTxt = modLoc("block/tar_mud");
 		ResourceLocation fossilizedEggSideTxt = modLoc("block/fossilized_egg");
 		axisBlock((RotatedPillarBlock) DreamlandBlocks.FOSSILIZED_EGG.block().get(), fossilizedEggSideTxt, fossilizedEggTopTxt);
+		
+		ResourceLocation opalTileTxt = modLoc("block/opal_tile");
+		slabBlock((SlabBlock) DreamlandBlocks.OPAL_SLAB.block().get(), opalTileTxt, opalTileTxt, opalTileTxt, opalTileTxt);
+		stairsBlock((StairBlock) DreamlandBlocks.OPAL_STAIRS.block().get(), opalTileTxt, opalTileTxt, opalTileTxt);
+		wallBlock((WallBlock) DreamlandBlocks.OPAL_WALL.block().get(), opalTileTxt);
+		
+		ResourceLocation preciousOpalTileTxt = modLoc("block/precious_opal_tile");
+		slabBlock((SlabBlock) DreamlandBlocks.PRECIOUS_OPAL_SLAB.block().get(), preciousOpalTileTxt, preciousOpalTileTxt, preciousOpalTileTxt, preciousOpalTileTxt);
+		stairsBlock((StairBlock) DreamlandBlocks.PRECIOUS_OPAL_STAIRS.block().get(), preciousOpalTileTxt, preciousOpalTileTxt, preciousOpalTileTxt);
+		wallBlock((WallBlock) DreamlandBlocks.PRECIOUS_OPAL_WALL.block().get(), preciousOpalTileTxt);
 		
 		ResourceLocation tarMudBrickTxt = modLoc("block/tar_mud_bricks");
 		slabBlock((SlabBlock) DreamlandBlocks.TAR_MUD_BRICK_SLAB.block().get(), tarMudBrickTxt, tarMudBrickTxt, tarMudBrickTxt, tarMudBrickTxt);

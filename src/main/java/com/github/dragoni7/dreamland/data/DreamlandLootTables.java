@@ -46,6 +46,18 @@ public class DreamlandLootTables extends BaseLootTableProvider {
 		basicBlockTable(DreamlandBlocks.PLUM_BIRCH_SHRUB.block().get(), "plum_birch_shrub");
 		basicBlockTable(DreamlandBlocks.PLUM_BIRCH_SAPLING.block().get(), "plum_birch_sapling");
 		basicBlockTable(DreamlandBlocks.OPAL_DIFFUSER_BLOCK.block().get(), "opal_diffuser");
+		basicBlockTable(DreamlandBlocks.OPAL_BLOCK.block().get(), "opal_block");
+		basicBlockTable(DreamlandBlocks.PRECIOUS_OPAL_BLOCK.block().get(), "precious_opal_block");
+		basicBlockTable(DreamlandBlocks.OPAL_TILE.block().get(), "opal_tile");
+		basicBlockTable(DreamlandBlocks.OPAL_SLAB.block().get(), "opal_slab");
+		basicBlockTable(DreamlandBlocks.OPAL_STAIRS.block().get(), "opal_stairs");
+		basicBlockTable(DreamlandBlocks.OPAL_WALL.block().get(), "opal_wall");
+		basicBlockTable(DreamlandBlocks.PRECIOUS_OPAL_TILE.block().get(), "precious_opal_tile");
+		basicBlockTable(DreamlandBlocks.PRECIOUS_OPAL_SLAB.block().get(), "precious_opal_slab");
+		basicBlockTable(DreamlandBlocks.PRECIOUS_OPAL_STAIRS.block().get(), "precious_opal_stairs");
+		basicBlockTable(DreamlandBlocks.PRECIOUS_OPAL_WALL.block().get(), "precious_opal_wall");
+		basicBlockTable(DreamlandBlocks.JEWELED_DEEPSLATE.block().get(), "jeweled_deepslate");
+		
 		
 		createWoodSetTable(DreamlandWoodSets.TAR_BARK);
 		createWoodSetTable(DreamlandWoodSets.PLUM_BIRCH);

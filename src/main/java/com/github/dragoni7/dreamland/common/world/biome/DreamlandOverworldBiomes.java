@@ -71,7 +71,7 @@ public class DreamlandOverworldBiomes {
     	globalOverworldGeneration(biomeBuilder);
     	DreamlandBiomeFeatures.tardeltasBiomeFeatures(biomeBuilder);
     	
-    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(DreamlandEntities.OOZE.get(), 6, 1, 1));
+    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(DreamlandEntities.OOZE.get(), 10, 1, 2));
     	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SKELETON, 100, 4, 4));
     	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ENDERMAN, 10, 1, 4));
     	

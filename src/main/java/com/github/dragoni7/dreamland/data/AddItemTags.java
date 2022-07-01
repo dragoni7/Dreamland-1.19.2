@@ -46,13 +46,19 @@ public class AddItemTags extends ItemTagsProvider {
 		.add(DreamlandBlocks.FLOWERING_UNDERGROWTH.item().get());
 		
 		tag(ItemTags.STAIRS)
-		.add(DreamlandBlocks.TAR_MUD_BRICK_STAIRS.item().get());
+		.add(DreamlandBlocks.TAR_MUD_BRICK_STAIRS.item().get())
+		.add(DreamlandBlocks.OPAL_STAIRS.item().get())
+		.add(DreamlandBlocks.PRECIOUS_OPAL_STAIRS.item().get());
 		
 		tag(ItemTags.SLABS)
-		.add(DreamlandBlocks.TAR_MUD_BRICK_SLAB.item().get());
+		.add(DreamlandBlocks.TAR_MUD_BRICK_SLAB.item().get())
+		.add(DreamlandBlocks.OPAL_SLAB.item().get())
+		.add(DreamlandBlocks.PRECIOUS_OPAL_SLAB.item().get());
 		
 		tag(ItemTags.WALLS)
-		.add(DreamlandBlocks.TAR_MUD_BRICK_WALL.item().get());
+		.add(DreamlandBlocks.TAR_MUD_BRICK_WALL.item().get())
+		.add(DreamlandBlocks.OPAL_WALL.item().get())
+		.add(DreamlandBlocks.PRECIOUS_OPAL_WALL.item().get());
 		
 		tag(Tags.Items.GEMS)
 		.add(DreamlandItems.OPAL.get())

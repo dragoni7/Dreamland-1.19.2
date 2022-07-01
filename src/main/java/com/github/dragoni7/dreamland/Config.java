@@ -1,4 +1,4 @@
-package com.github.dragoni7.dreamland.core;
+package com.github.dragoni7.dreamland;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;

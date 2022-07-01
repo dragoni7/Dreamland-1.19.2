@@ -18,6 +18,7 @@ import net.minecraft.world.level.block.PressurePlateBlock.Sensitivity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
+import com.github.dragoni7.dreamland.common.blocks.StrippablePillarBlock;
 
 public class WoodSet {
 	
@@ -29,33 +30,33 @@ public class WoodSet {
 	
 	private MaterialColor color;
 	
-	private BlockItemSet LOG;
+	private BlockItemSet log;
 	
-	private BlockItemSet STRIPPED_LOG;
+	private BlockItemSet stripped_log;
 	
-	private BlockItemSet WOOD;
+	private BlockItemSet wood;
 	
-	private BlockItemSet STRIPPED_WOOD;
+	private BlockItemSet stripped_wood;
 	
-	private BlockItemSet PLANK;
+	private BlockItemSet plank;
 	
-	private BlockItemSet SLAB;
+	private BlockItemSet slab;
 	
-	private BlockItemSet STAIR;
+	private BlockItemSet stairs;
 	
-	private BlockItemSet FENCE;
+	private BlockItemSet fence;
 	
-	private BlockItemSet FENCE_GATE;
+	private BlockItemSet fence_gate;
 	
-	private BlockItemSet DOOR;
+	private BlockItemSet door;
 	
-	private BlockItemSet TRAPDOOR;
+	private BlockItemSet trapdoor;
 	
-	private BlockItemSet BUTTON;
+	private BlockItemSet button;
 	
-	private BlockItemSet PRESSURE_PLATE;
+	private BlockItemSet pressure_plate;
 	
-	private BlockItemSet LADDER;
+	private BlockItemSet ladder;
 	
 	public WoodSet(String name, MaterialColor color) {
 		this.setName = name;
@@ -70,20 +71,20 @@ public class WoodSet {
 	}
 	
 	private void register() {
-		LOG = new BlockItemSet(setName + "_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(2.0F)));
-		STRIPPED_LOG = new BlockItemSet(setName + "_stripped_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).strength(2.0F)));
-		WOOD = new BlockItemSet(setName + "_wood", ()-> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, color).sound(SoundType.WOOD).strength(2.0F, 3.0F)));
-		STRIPPED_WOOD = new BlockItemSet(setName + "_stripped_wood", ()-> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, color).sound(SoundType.WOOD).strength(2.0F, 3.0F)));
-		PLANK = new BlockItemSet(setName + "_planks", () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, color).sound(SoundType.WOOD).strength(2.0F, 3.0F)));
-		SLAB = new BlockItemSet(setName + "_slab", () -> new SlabBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(2.0F, 3.0F)));
-		STAIR = new BlockItemSet(setName + "_stairs", () -> new StairBlock(() -> PLANK.block().get().defaultBlockState(), BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).strength(2.0F, 3.0F).noOcclusion()));
-		FENCE = new BlockItemSet(setName + "_fence", () -> new FenceBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(2.0F, 3.0F)));
-		FENCE_GATE = new BlockItemSet(setName + "_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(2.0F, 3.0F)));
-		DOOR = new BlockItemSet(setName + "_door", () -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).strength(2.0F, 3.0F).noOcclusion()));
-		TRAPDOOR = new BlockItemSet(setName + "_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).strength(2.0F, 3.0F).noOcclusion()));
-		BUTTON = new BlockItemSet(setName + "_button", () -> new WoodButtonBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().strength(0.5F).sound(SoundType.WOOD)));
-		PRESSURE_PLATE = new BlockItemSet(setName + "_pressure_plate", () -> new PressurePlateBlock(Sensitivity.EVERYTHING, BlockBehaviour.Properties.of(Material.WOOD, color).noCollission().strength(0.5F).sound(SoundType.WOOD)));
-		LADDER = new BlockItemSet(setName + "_ladder", () -> new LadderBlock(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.WOOD).strength(2.0F, 3.0F).noOcclusion()));
+		stripped_log = new BlockItemSet(setName + "_stripped_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).strength(2.0F)));
+		log = new BlockItemSet(setName + "_log", () -> new StrippablePillarBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(2.0F), () -> stripped_log.block().get()));
+		wood = new BlockItemSet(setName + "_wood", ()-> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, color).sound(SoundType.WOOD).strength(2.0F, 3.0F)));
+		stripped_wood = new BlockItemSet(setName + "_stripped_wood", ()-> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, color).sound(SoundType.WOOD).strength(2.0F, 3.0F)));
+		plank = new BlockItemSet(setName + "_planks", () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, color).sound(SoundType.WOOD).strength(2.0F, 3.0F)));
+		slab = new BlockItemSet(setName + "_slab", () -> new SlabBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(2.0F, 3.0F)));
+		stairs = new BlockItemSet(setName + "_stairs", () -> new StairBlock(() -> plank.block().get().defaultBlockState(), BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).strength(2.0F, 3.0F).noOcclusion()));
+		fence = new BlockItemSet(setName + "_fence", () -> new FenceBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(2.0F, 3.0F)));
+		fence_gate = new BlockItemSet(setName + "_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(2.0F, 3.0F)));
+		door = new BlockItemSet(setName + "_door", () -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).strength(2.0F, 3.0F).noOcclusion()));
+		trapdoor = new BlockItemSet(setName + "_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).strength(2.0F, 3.0F).noOcclusion()));
+		button = new BlockItemSet(setName + "_button", () -> new WoodButtonBlock(BlockBehaviour.Properties.of(Material.DECORATION).noCollission().strength(0.5F).sound(SoundType.WOOD)));
+		pressure_plate = new BlockItemSet(setName + "_pressure_plate", () -> new PressurePlateBlock(Sensitivity.EVERYTHING, BlockBehaviour.Properties.of(Material.WOOD, color).noCollission().strength(0.5F).sound(SoundType.WOOD)));
+		ladder = new BlockItemSet(setName + "_ladder", () -> new LadderBlock(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.WOOD).strength(2.0F, 3.0F).noOcclusion()));
 	}
 
 	public String getSetName() {
@@ -99,58 +100,58 @@ public class WoodSet {
 	}
 
 	public BlockItemSet log() {
-		return LOG;
+		return log;
 	}
 
 	public BlockItemSet strippedLog() {
-		return STRIPPED_LOG;
+		return stripped_log;
 	}
 	
 	public BlockItemSet plank() {
-		return PLANK;
+		return plank;
 	}
 
 	public BlockItemSet slab() {
-		return SLAB;
+		return slab;
 	}
 
 	public BlockItemSet stair() {
-		return STAIR;
+		return stairs;
 	}
 
 	public BlockItemSet fence() {
-		return FENCE;
+		return fence;
 	}
 
 	public BlockItemSet fenceGate() {
-		return FENCE_GATE;
+		return fence_gate;
 	}
 
 	public BlockItemSet door() {
-		return DOOR;
+		return door;
 	}
 
 	public BlockItemSet trapDoor() {
-		return TRAPDOOR;
+		return trapdoor;
 	}
 
 	public BlockItemSet button() {
-		return BUTTON;
+		return button;
 	}
 
 	public BlockItemSet pressurePlate() {
-		return PRESSURE_PLATE;
+		return pressure_plate;
 	}
 
 	public BlockItemSet ladder() {
-		return LADDER;
+		return ladder;
 	}
 
 	public BlockItemSet wood() {
-		return WOOD;
+		return wood;
 	}
 	
 	public BlockItemSet strippedWood() {
-		return STRIPPED_WOOD;
+		return stripped_wood;
 	}
 }

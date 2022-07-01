@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dreamland:opal_wall"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "opal_tile": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dreamland:opal_tile"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "opal_tile",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dreamland:opal_wall"
+    ]
+  }
+}
