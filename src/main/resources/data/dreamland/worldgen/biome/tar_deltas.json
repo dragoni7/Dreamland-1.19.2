@@ -100,7 +100,7 @@
     "monster": [
       {
         "type": "dreamland:ooze",
-        "maxCount": 2,
+        "maxCount": 25,
         "minCount": 1,
         "weight": 15
       },
