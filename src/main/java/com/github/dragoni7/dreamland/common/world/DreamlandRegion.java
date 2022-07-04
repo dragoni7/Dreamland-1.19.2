@@ -25,6 +25,8 @@ public class DreamlandRegion extends Region
     	this.addModifiedVanillaOverworldBiomes(mapper, builder -> { 
     		builder.replaceBiome(Biomes.DRIPSTONE_CAVES, BiomeKeys.HIVE);
     		builder.replaceBiome(Biomes.DESERT, BiomeKeys.TAR_DELTAS);
+    		builder.replaceBiome(Biomes.FLOWER_FOREST, BiomeKeys.JEWELED_FOREST);
+    		builder.replaceBiome(Biomes.FOREST, BiomeKeys.JEWELED_FOREST);
     		builder.replaceBiome(Biomes.BIRCH_FOREST, BiomeKeys.JEWELED_FOREST);
     		builder.replaceBiome(Biomes.OLD_GROWTH_BIRCH_FOREST, BiomeKeys.JEWELED_FOREST);
     	});
