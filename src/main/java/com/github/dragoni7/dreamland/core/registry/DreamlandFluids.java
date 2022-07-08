@@ -17,7 +17,7 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.client.IFluidTypeRenderProperties;
+import net.minecraftforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.minecraftforge.common.SoundActions;
 import net.minecraftforge.fluids.FluidType;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
@@ -46,8 +46,8 @@ public class DreamlandFluids {
 			    }
 				
 				@Override
-				public void initializeClient(Consumer<IFluidTypeRenderProperties> consumer) {
-					consumer.accept(new IFluidTypeRenderProperties() {
+				public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
+					consumer.accept(new IClientFluidTypeExtensions() { 
 						private static final ResourceLocation STILL = DreamlandLoc.createLoc("block/tar_still"),
 						FLOW = DreamlandLoc.createLoc("block/tar_flow"),
 						OVERLAY = DreamlandLoc.createLoc("block/tar");
