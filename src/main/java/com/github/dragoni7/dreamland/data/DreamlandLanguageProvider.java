@@ -1,6 +1,7 @@
 package com.github.dragoni7.dreamland.data;
 
 import com.github.dragoni7.dreamland.Dreamland;
+import com.github.dragoni7.dreamland.common.world.biome.BiomeKeys;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
@@ -104,6 +105,12 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		// Effects
 		add(DreamlandEffects.ANTAGONIZED.get(), "Antagonized");
 		add(DreamlandEffects.TARRED.get(), "Tarred");
+		
+		// Biomes
+		add(BiomeKeys.HIVE.location().getPath(), "Hive");
+		add(BiomeKeys.JEWELED_FOREST.location().getPath(), "Jeweled Forest");
+		add(BiomeKeys.TAR_DELTAS.location().getPath(), "Tar Deltas");
+		
 	}
 	
 	private void translateWoodSet(WoodSet set, String name) {

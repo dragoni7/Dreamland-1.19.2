@@ -5,7 +5,6 @@ import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.SurfaceRules;
-import net.minecraft.world.level.levelgen.VerticalAnchor;
 
 public class DreamlandSurfaceRules
 {

@@ -1,6 +1,5 @@
 package com.github.dragoni7.dreamland.common.entities.projectiles;
 
-import com.github.dragoni7.dreamland.Config;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 

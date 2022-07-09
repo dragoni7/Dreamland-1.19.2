@@ -20,6 +20,7 @@ import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.core.Registry;
 
 public class DreamlandClientEventHandler {
 
@@ -88,9 +89,10 @@ public class DreamlandClientEventHandler {
 		blockColors.register((state, world, pos, tintIndex) -> BiomeColors.getAverageGrassColor(world, pos), DreamlandBlocks.CLAY_SOIL_GRASS.block().get());
 	}*/
 	
-	@SuppressWarnings("resource")
 	private static void registerParticles(RegisterParticleProvidersEvent event) {
-		Minecraft.getInstance().particleEngine.register(DreamlandParticles.TAR_BUBBLE.get(), TarBubbleParticle.Provider::new);
-		Minecraft.getInstance().particleEngine.register(DreamlandParticles.WHITE_POLLEN.get(), WhitePollenParticle.Provider::new);
+		event.register(DreamlandParticles.TAR_BUBBLE.get(), TarBubbleParticle.Provider::new);
+		event.register(DreamlandParticles.WHITE_POLLEN.get(), WhitePollenParticle.Provider::new);
+		//Minecraft.getInstance().particleEngine.register(DreamlandParticles.TAR_BUBBLE.get(), TarBubbleParticle.Provider::new);
+		//Minecraft.getInstance().particleEngine.register(DreamlandParticles.WHITE_POLLEN.get(), WhitePollenParticle.Provider::new);
 	}
 }
