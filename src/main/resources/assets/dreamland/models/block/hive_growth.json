@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+	"render_type": "cutout",
 	"textures": {
 		"0": "dreamland:block/hive_growth_carpet",
 		"1": "dreamland:block/hive_growth_cross",

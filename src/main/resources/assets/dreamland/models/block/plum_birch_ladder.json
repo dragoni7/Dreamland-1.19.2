@@ -1,5 +1,6 @@
 {
     "ambientocclusion": false,
+    "render_type": "cutout_mipped",
     "textures": {
         "particle": "dreamland:block/plum_birch_ladder",
         "texture": "dreamland:block/plum_birch_ladder"

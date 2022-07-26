@@ -1,5 +1,6 @@
 {
   "parent": "dreamland:block/fancy_leaves2",
+  "render_type": "cutout",
   "textures": {
     "all": "dreamland:block/plum_birch_leaves",
     "cross": "dreamland:block/plum_birch_leaves_cross",

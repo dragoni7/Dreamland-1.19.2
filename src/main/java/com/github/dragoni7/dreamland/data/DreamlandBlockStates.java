@@ -93,10 +93,14 @@ public class DreamlandBlockStates extends BlockStateProvider{
 		ResourceLocation trapDoorTxt = modLoc("block/" + setName + "_trapdoor");
 		ResourceLocation doorTop = modLoc("block/" + setName + "_door_top");
 		ResourceLocation doorBottom = modLoc("block/" + setName + "_door_bottom");
-		ModelFile bottomLeft = models().withExistingParent("door/" + setName + "_bottom_left", "block/door_" + "bottom_left").texture("bottom", doorBottom).texture("top", doorTop);
-		ModelFile bottomRight = models().withExistingParent("door/" + setName + "_bottom_right", "block/door_" + "bottom_right").texture("bottom", doorBottom).texture("top", doorTop);
-		ModelFile topLeft = models().withExistingParent("door/" + setName + "_top_left", "block/door_" + "top_left").texture("bottom", doorBottom).texture("top", doorTop);
-		ModelFile topRight = models().withExistingParent("door/" + setName + "_top_right", "block/door_" + "top_right").texture("bottom", doorBottom).texture("top", doorTop);
+		ModelFile bottomLeft = models().withExistingParent("door/" + setName + "_bottom_left", "block/door_" + "bottom_left").texture("bottom", doorBottom).texture("top", doorTop).renderType("cutout_mipped");
+		ModelFile bottomLeftOpen = models().withExistingParent("door/" + setName + "_bottom_left_open", "block/door_" + "bottom_left_open").texture("bottom", doorBottom).texture("top", doorTop).renderType("cutout_mipped");
+		ModelFile bottomRight = models().withExistingParent("door/" + setName + "_bottom_right", "block/door_" + "bottom_right").texture("bottom", doorBottom).texture("top", doorTop).renderType("cutout_mipped");
+		ModelFile bottomRightOpen = models().withExistingParent("door/" + setName + "_bottom_right_open", "block/door_" + "bottom_right_open").texture("bottom", doorBottom).texture("top", doorTop).renderType("cutout_mipped");
+		ModelFile topLeft = models().withExistingParent("door/" + setName + "_top_left", "block/door_" + "top_left").texture("bottom", doorBottom).texture("top", doorTop).renderType("cutout_mipped");
+		ModelFile topLeftOpen = models().withExistingParent("door/" + setName + "_top_left_open", "block/door_" + "top_left_open").texture("bottom", doorBottom).texture("top", doorTop).renderType("cutout_mipped");
+		ModelFile topRight = models().withExistingParent("door/" + setName + "_top_right", "block/door_" + "top_right").texture("bottom", doorBottom).texture("top", doorTop).renderType("cutout_mipped");
+		ModelFile topRightOpen = models().withExistingParent("door/" + setName + "_top_right_open", "block/door_" + "top_right_open").texture("bottom", doorBottom).texture("top", doorTop).renderType("cutout_mipped");
 		
 		axisBlock((RotatedPillarBlock) set.log().block().get(), logSide, logTop);
 		axisBlock((RotatedPillarBlock) set.strippedLog().block().get(), strippedLogSide, strippedLogTop);
@@ -107,7 +111,7 @@ public class DreamlandBlockStates extends BlockStateProvider{
 		stairsBlock((StairBlock) set.stair().block().get(), plankTxt, plankTxt, plankTxt);
 		fenceBlock((FenceBlock) set.fence().block().get(), plankTxt);
 		fenceGateBlock((FenceGateBlock) set.fenceGate().block().get(), plankTxt);
-		doorBlock((DoorBlock) set.door().block().get(), bottomLeft, bottomRight, topLeft, topRight);
+		doorBlock((DoorBlock) set.door().block().get(), bottomLeft, bottomLeftOpen, bottomRight, bottomRightOpen, topLeft, topLeftOpen, topRight, topRightOpen);
 		trapdoorBlock((TrapDoorBlock) set.trapDoor().block().get(), trapDoorTxt, true);
 		buttonBlock((ButtonBlock) set.button().block().get(), plankTxt);
 		pressurePlateBlock((PressurePlateBlock) set.pressurePlate().block().get(), plankTxt);

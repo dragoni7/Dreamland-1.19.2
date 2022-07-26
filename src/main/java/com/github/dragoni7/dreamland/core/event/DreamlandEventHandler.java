@@ -28,6 +28,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
+import net.minecraftforge.event.entity.living.LivingEvent.LivingTickEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 
@@ -54,8 +55,8 @@ public class DreamlandEventHandler {
 		event.put(DreamlandEntities.OPAL_SHELL.get(), OpalShellEntity.customAttributes().build());
 	}
 	
-	public static void updateTarredEffect(LivingEvent.LivingUpdateEvent event) {
-		LivingEntity entity = event.getEntityLiving();
+	public static void updateTarredEffect(LivingEvent.LivingTickEvent event) {
+		LivingEntity entity = event.getEntity();
 		if (entity.isInFluidType(DreamlandFluids.TAR_FLUID_TYPE.get())) {
 			Vec3 motion = entity.getDeltaMovement();
 			MobEffect tarred = DreamlandEffects.TARRED.get();
@@ -69,7 +70,7 @@ public class DreamlandEventHandler {
 	}
 	
 	public static void onLarvaAttacked(LivingHurtEvent event) {
-		LivingEntity target = event.getEntityLiving();
+		LivingEntity target = event.getEntity();
 		Entity attacker = event.getSource().getEntity();
 		
 		if (attacker instanceof LivingEntity && target instanceof LarvaEntity && !(attacker instanceof LarvaEntity)) {
@@ -77,10 +78,10 @@ public class DreamlandEventHandler {
 		}
 	}
 	
-	public static void setLarvaTarget(LivingEvent.LivingUpdateEvent event) {
+	public static void setLarvaTarget(LivingTickEvent event) {
 		int i = 20;
 		if (i == 20) {
-			LivingEntity entity = event.getEntityLiving();
+			LivingEntity entity = event.getEntity();
 			BlockPos pos = entity.blockPosition();
 			Level level = entity.getLevel();
 			if (!level.isClientSide && entity != null) {
@@ -101,7 +102,7 @@ public class DreamlandEventHandler {
 	}
 	
 	public static void entityHitLarvaSymbiote(LivingHurtEvent event) {
-		LivingEntity target = event.getEntityLiving();
+		LivingEntity target = event.getEntity();
 		Entity attacker = event.getSource().getEntity();
 		
 		if (target.getItemBySlot(EquipmentSlot.HEAD).is(DreamlandItems.LARVA_HELMET.get())) {

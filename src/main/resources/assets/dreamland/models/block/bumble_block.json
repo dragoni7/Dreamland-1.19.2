@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+	"render_type": "cutout",
 	"textures": {
 		"0": "dreamland:block/bumble_block_side",
 		"1": "dreamland:block/bumble_block_top",

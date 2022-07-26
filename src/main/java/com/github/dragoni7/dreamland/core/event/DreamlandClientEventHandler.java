@@ -4,14 +4,11 @@ import com.github.dragoni7.dreamland.client.particles.TarBubbleParticle;
 import com.github.dragoni7.dreamland.client.particles.WhitePollenParticle;
 import com.github.dragoni7.dreamland.client.render.*;
 import com.github.dragoni7.dreamland.common.items.LarvaSymbioteArmorItem;
-import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
 import com.github.dragoni7.dreamland.core.registry.DreamlandParticles;
 import com.github.dragoni7.dreamland.core.registry.DreamlandTiles;
-import com.github.dragoni7.dreamland.core.registry.DreamlandWoodSets;
 
-import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -20,7 +17,6 @@ import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
-import net.minecraft.core.Registry;
 
 public class DreamlandClientEventHandler {
 
@@ -36,31 +32,31 @@ public class DreamlandClientEventHandler {
 	
 	private static void setupClient(final FMLClientSetupEvent event) {
 		event.enqueueWork(()-> {
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.BUMBLE_BLOCK.block().get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.HIVE_JELLY_CLUSTER.block().get(), RenderType.translucent());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.INFESTED_HIVE_JELLY_CLUSTER.block().get(), RenderType.translucent());
+			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.BUMBLE_BLOCK.block().get(), RenderType.cutout());
+			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.HIVE_JELLY_CLUSTER.block().get(), RenderType.translucent());
+			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.INFESTED_HIVE_JELLY_CLUSTER.block().get(), RenderType.translucent());
 			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.CLAY_SOIL_GRASS.block().get(), RenderType.cutout());
 			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.DUSK_ICE.block().get(), RenderType.translucent());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.HIVE_MEMBRANE.block().get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.CAVE_SLIME.block().get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.CAVE_SLIME_PLANT.get(), RenderType.cutout());	
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.HIVE_GROWTH.block().get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.JELLY_SPLOTCH.get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.TAR_SPROUTS.block().get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.TAR_BARK_LEAVES.block().get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.PLUM_BIRCH_LEAVES.block().get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.FLOWERING_GRASS.block().get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.PLUM_BIRCH.door().block().get(), RenderType.cutoutMipped());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.PLUM_BIRCH.ladder().block().get(), RenderType.cutoutMipped());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.OPALINE_MARIGOLD.block().get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.PINK_CRAB_GRASS.block().get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.FLOWERING_UNDERGROWTH.block().get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.OPAL_DIFFUSER_BLOCK.block().get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.PLUM_BIRCH_SHRUB.block().get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.TAR_BARK.door().block().get(), RenderType.cutoutMipped());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.TAR_BARK.ladder().block().get(), RenderType.cutoutMipped());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.PLUM_BIRCH_SAPLING.block().get(), RenderType.cutout());
-			ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.TAR_BARK_SAPLING.block().get(), RenderType.cutout());
+			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.HIVE_MEMBRANE.block().get(), RenderType.cutout());
+			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.CAVE_SLIME.block().get(), RenderType.cutout());
+			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.CAVE_SLIME_PLANT.get(), RenderType.cutout());	
+			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.HIVE_GROWTH.block().get(), RenderType.cutout());
+			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.JELLY_SPLOTCH.get(), RenderType.cutout());
+			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.TAR_SPROUTS.block().get(), RenderType.cutout());
+			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.TAR_BARK_LEAVES.block().get(), RenderType.cutout());
+			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.PLUM_BIRCH_LEAVES.block().get(), RenderType.cutout());
+			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.FLOWERING_GRASS.block().get(), RenderType.cutout());
+			//ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.PLUM_BIRCH.door().block().get(), RenderType.cutoutMipped());
+			//ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.PLUM_BIRCH.ladder().block().get(), RenderType.cutoutMipped());
+			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.OPALINE_MARIGOLD.block().get(), RenderType.cutout());
+			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.PINK_CRAB_GRASS.block().get(), RenderType.cutout());
+			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.FLOWERING_UNDERGROWTH.block().get(), RenderType.cutout());
+			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.OPAL_DIFFUSER_BLOCK.block().get(), RenderType.cutout());
+			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.PLUM_BIRCH_SHRUB.block().get(), RenderType.cutout());
+			//ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.TAR_BARK.door().block().get(), RenderType.cutoutMipped());
+			//ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.TAR_BARK.ladder().block().get(), RenderType.cutoutMipped());
+			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.PLUM_BIRCH_SAPLING.block().get(), RenderType.cutout());
+			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.TAR_BARK_SAPLING.block().get(), RenderType.cutout());
 			
 			ItemBlockRenderTypes.setRenderLayer(DreamlandFluids.TAR_BLOCK.get(), RenderType.solid());
 			

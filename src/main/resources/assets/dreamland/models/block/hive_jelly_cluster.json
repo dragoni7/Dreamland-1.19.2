@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+	"render_type": "translucent",
 	"textures": {
 		"1": "dreamland:block/hive_jelly_overlay",
 		"3": "dreamland:block/hive_jelly_cluster",

@@ -1,5 +1,6 @@
 {
   "parent": "dreamland:block/fancy_leaves5",
+  "render_type": "cutout",
   "textures": {
     "all": "dreamland:block/tar_bark_leaves",
     "cross": "dreamland:block/tar_bark_leaves_cross",

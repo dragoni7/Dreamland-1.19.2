@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/door_bottom_left",
+  "parent": "minecraft:block/door_top_left_open",
   "render_type": "minecraft:cutout_mipped",
   "textures": {
     "bottom": "dreamland:block/tar_bark_door_bottom",

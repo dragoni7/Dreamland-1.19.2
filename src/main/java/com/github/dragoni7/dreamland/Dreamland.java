@@ -68,7 +68,6 @@ public class Dreamland
         DreamlandItems.ITEMS.register(modBus);
         DreamlandWoodSets.init();
         DreamlandEntities.TILES.register(modBus);
-        DreamlandEntities.CONTAINERS.register(modBus);
         DreamlandEffects.MOB_EFFECTS.register(modBus);
         DreamlandEventHandler.init(modBus, forgeBus);
         modBus.addListener(this::commonSetup);
