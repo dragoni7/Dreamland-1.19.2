@@ -31,21 +31,21 @@ Enhances your Overworld exploration experience with the addition of a few fantas
 [[dependencies.forge]]
     modId = "forge"
     mandatory = true
-    versionRange = "[41.0.62,)"
+    versionRange = "[42.0.1,)"
     ordering = "NONE"
     side = "BOTH"
 
 [[dependencies.terrablender]]
     modId = "terrablender"
     mandatory = true
-    versionRange = "[2.0.0.117,)"
+    versionRange = "[2.0.0.121,)"
     ordering = "AFTER"
     side = "BOTH"
 
 [[dependencies.geckolib]]
     modId = "geckolib3"
     mandatory = true
-    versionRange = "[3.1.6,)"
+    versionRange = "[3.1.12,)"
     ordering = "BEFORE"
     side = "BOTH"
 
