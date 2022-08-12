@@ -29,6 +29,8 @@ public class Config {
 	
 	public static ForgeConfigSpec.IntValue ANTAGONIZED_DURATION;
 	
+	public static ForgeConfigSpec.IntValue MIDASHROOM_GOLD_CONVERSION_CHANCE;
+	
 	public static ForgeConfigSpec SERVER_CONFIG;
 	public static ForgeConfigSpec COMMON_CONFIG;
 	
@@ -68,6 +70,9 @@ public class Config {
 		COMMON_BUILDER.comment("Misc").push(CATEGORY_MISC);
 		ANTAGONIZED_DURATION = COMMON_BUILDER.comment("Duration the antagonized effect is applied for. Default 200 ticks. Note: 20 ticks = 1 sec").defineInRange("duration", 200, 0, Integer.MAX_VALUE);
 		COMMON_BUILDER.pop();
+		COMMON_BUILDER.push("Midashroom gold conversion");
+		MIDASHROOM_GOLD_CONVERSION_CHANCE = COMMON_BUILDER.comment("Chance that the midashroom will convert a bonemealable block to a gold block when fertilizing. Default = 1/24").defineInRange("gold conversion chance", 24, 0, Integer.MAX_VALUE);
+		
 		
 		COMMON_CONFIG = COMMON_BUILDER.build();
 		SERVER_CONFIG = SERVER_BUILDER.build();

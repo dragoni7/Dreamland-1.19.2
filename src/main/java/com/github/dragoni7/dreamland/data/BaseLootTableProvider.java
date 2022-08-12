@@ -49,11 +49,19 @@ public abstract class BaseLootTableProvider extends LootTableProvider {
 	
 	protected abstract void addTables();
 	
-	protected LootTable.Builder createSimpleTable(String name, Block block) {
+	protected LootTable.Builder createSimpleBlockTable(String name, Block block) {
 		LootPool.Builder builder = LootPool.lootPool()
 		.name(name)
 		.setRolls(ConstantValue.exactly(1))
 		.add(LootItem.lootTableItem(block));
+		return LootTable.lootTable().withPool(builder);
+	}
+	
+	protected LootTable.Builder createSimpleItemTable(String name, Item item) {
+		LootPool.Builder builder = LootPool.lootPool()
+		.name(name)
+		.setRolls(ConstantValue.exactly(1))
+		.add(LootItem.lootTableItem(item));
 		return LootTable.lootTable().withPool(builder);
 	}
 	
@@ -70,6 +78,18 @@ public abstract class BaseLootTableProvider extends LootTableProvider {
 						.apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE, 1))
 						.apply(ApplyExplosionDecay.explosionDecay())
 					)
+				);
+		return LootTable.lootTable().withPool(builder);
+	}
+	
+	protected LootTable.Builder createDelicateBlockTable(String name, Block block) {
+		LootPool.Builder builder = LootPool.lootPool()
+				.name(name)
+				.setRolls(ConstantValue.exactly(1))
+				.add(AlternativesEntry.alternatives(
+						LootItem.lootTableItem(block)
+						.when(MatchTool.toolMatches(ItemPredicate.Builder.item()
+								.hasEnchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.Ints.atLeast(1))))))
 				);
 		return LootTable.lootTable().withPool(builder);
 	}

@@ -16,6 +16,7 @@ public class DreamlandBiomes {
 	public static void onRegisterEvent(RegisterEvent event) {
 		
 		event.register(ForgeRegistries.Keys.BIOMES, helper -> {
+			helper.register(BiomeKeys.MIDAS_CAVES.location().getPath(), DreamlandOverworldBiomes.midascaves());
 			helper.register(BiomeKeys.HIVE.location().getPath(), DreamlandOverworldBiomes.hive());
 			helper.register(BiomeKeys.TAR_DELTAS.location().getPath(), DreamlandOverworldBiomes.tardeltas());
 			helper.register(BiomeKeys.JEWELED_FOREST.location().getPath(), DreamlandOverworldBiomes.jeweledforest());

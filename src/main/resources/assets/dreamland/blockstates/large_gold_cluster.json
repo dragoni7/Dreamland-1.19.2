@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "dreamland:block/large_gold_cluster",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "dreamland:block/large_gold_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "dreamland:block/large_gold_cluster",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "dreamland:block/large_gold_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "dreamland:block/large_gold_cluster"
+    },
+    "facing=west": {
+      "model": "dreamland:block/large_gold_cluster",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

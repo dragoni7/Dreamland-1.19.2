@@ -14,7 +14,8 @@ import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConf
 
 public class DreamlandSaplingBlock extends SaplingBlock {
 	
-	public final Feature<NoneFeatureConfiguration> tree;
+	private final Feature<NoneFeatureConfiguration> tree;
+	
 	public DreamlandSaplingBlock(Feature<NoneFeatureConfiguration> tree, BlockBehaviour.Properties properties) {
 		super(null, properties);
 		this.tree = tree;

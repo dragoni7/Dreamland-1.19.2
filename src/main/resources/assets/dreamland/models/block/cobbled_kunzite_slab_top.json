@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "dreamland:block/cobbled_kunzite_stone",
+    "side": "dreamland:block/cobbled_kunzite_stone",
+    "top": "dreamland:block/cobbled_kunzite_stone"
+  }
+}

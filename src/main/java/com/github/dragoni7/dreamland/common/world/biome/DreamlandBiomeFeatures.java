@@ -2,6 +2,7 @@ package com.github.dragoni7.dreamland.common.world.biome;
 
 import com.github.dragoni7.dreamland.common.world.feature.DreamlandFeaturePlacements;
 
+import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.placement.OrePlacements;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
@@ -20,6 +21,36 @@ public class DreamlandBiomeFeatures {
 		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.HIVE_LAPIS);
 		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.HIVE_DIAMOND);
 		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.HIVE_DIAMOND_LARGE);
+	}
+	
+	public static void midascavesBiomeFeatures(BiomeGenerationSettings.Builder builder) {
+		BiomeDefaultFeatures.addDefaultCarversAndLakes(builder);
+        BiomeDefaultFeatures.addDefaultCrystalFormations(builder);
+        BiomeDefaultFeatures.addDefaultMonsterRoom(builder);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(builder);
+        BiomeDefaultFeatures.addDefaultSprings(builder);
+        BiomeDefaultFeatures.addSurfaceFreezing(builder);
+        
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.KUNZITE_COPPER);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.KUNZITE_COPPER_LARGE);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.KUNZITE_DIAMOND);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.KUNZITE_DIAMOND_LARGE);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.KUNZITE_EMERALD);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.KUNZITE_IRON_MIDDLE);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.KUNZITE_IRON_SMALL);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.KUNZITE_IRON_UPPER);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.KUNZITE_LAPIS);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.KUNZITE_REDSTONE);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.KUNZITE_REDSTONE_LOWER);
+		
+		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.OPULENT_DEPTHS_VEGETATION);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, DreamlandFeaturePlacements.KUNZITE_POINTS_PATCH_UP);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, DreamlandFeaturePlacements.KUNZITE_POINTS_PATCH_DOWN);
+		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.KUNZITE_POINTS_NORTH);
+		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.KUNZITE_POINTS_SOUTH);
+		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.KUNZITE_POINTS_EAST);
+		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.KUNZITE_POINTS_WEST);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, DreamlandFeaturePlacements.GOLD_GEODE);
 	}
 	
 	public static void hiveBiomeFeatures(BiomeGenerationSettings.Builder builder) {

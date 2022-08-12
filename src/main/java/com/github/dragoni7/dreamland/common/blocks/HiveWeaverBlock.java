@@ -118,7 +118,7 @@ public class HiveWeaverBlock extends LarvaAngerableBlock {
 	          double d0 = random.nextGaussian() * 0.02D;
 	          double d1 = random.nextGaussian() * 0.02D;
 	          double d2 = random.nextGaussian() * 0.02D;
-	          level.addParticle(particleoptions, pos.getX() + random.nextDouble(), pos.getY() + 0.5D + + random.nextDouble(), pos.getZ() + 1.2D, d0, d1, d2);
+	          level.addParticle(particleoptions, pos.getX() + random.nextDouble(), pos.getY() + 0.5D + random.nextDouble(), pos.getZ() + 1.2D, d0, d1, d2);
 	       }
 	   }
 	

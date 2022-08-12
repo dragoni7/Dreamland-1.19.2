@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "dreamland:block/kunzite_point_block_top",
+    "side": "dreamland:block/kunzite_point_block"
+  }
+}

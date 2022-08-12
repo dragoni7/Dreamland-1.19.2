@@ -3,6 +3,7 @@ package com.github.dragoni7.dreamland.common.world.feature;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.github.dragoni7.dreamland.common.blocks.KunzitePointBlock;
 import com.github.dragoni7.dreamland.common.world.feature.configs.EllipsoidConfig;
 import com.github.dragoni7.dreamland.common.world.feature.generation.SurfaceLake;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
@@ -19,6 +20,7 @@ import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.IntProvider;
@@ -27,6 +29,9 @@ import net.minecraft.util.valueproviders.WeightedListInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.GeodeBlockSettings;
+import net.minecraft.world.level.levelgen.GeodeCrackSettings;
+import net.minecraft.world.level.levelgen.GeodeLayerSettings;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -35,20 +40,31 @@ import net.minecraft.world.level.levelgen.feature.configurations.BlockColumnConf
 import net.minecraft.world.level.levelgen.feature.configurations.BlockStateConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.DeltaFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.GeodeConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SpringConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.VegetationPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
+import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 
 public class DreamlandConfiguredFeatures {
 	
+	public static final RuleTest KUNZITE_ORES_REPLACEABLE = new TagMatchTest(DreamlandBlockTags.KUNZITE_ORES_REPLACEABLE);
 	public static final RuleTest HIVE_ORES_REPLACEABLE = new TagMatchTest(DreamlandBlockTags.HIVE_ORES_REPLACEABLE);
 	public static final RuleTest FOSSILIZED_EGG_REPLACEABLE = new TagMatchTest(DreamlandBlockTags.FOSSILIZED_EGG_REPLACEABLE);
+	
+	public static final List<OreConfiguration.TargetBlockState> KUNZITE_COPPER_TARGET_LIST = List.of(OreConfiguration.target(KUNZITE_ORES_REPLACEABLE, DreamlandBlocks.KUNZITE_COPPER_ORE.block().get().defaultBlockState()));
+	public static final List<OreConfiguration.TargetBlockState> KUNZITE_IRON_TARGET_LIST = List.of(OreConfiguration.target(KUNZITE_ORES_REPLACEABLE, DreamlandBlocks.KUNZITE_IRON_ORE.block().get().defaultBlockState()));
+	public static final List<OreConfiguration.TargetBlockState> KUNZITE_REDSTONE_TARGET_LIST = List.of(OreConfiguration.target(KUNZITE_ORES_REPLACEABLE, DreamlandBlocks.KUNZITE_REDSTONE_ORE.block().get().defaultBlockState()));
+	public static final List<OreConfiguration.TargetBlockState> KUNZITE_LAPIS_TARGET_LIST = List.of(OreConfiguration.target(KUNZITE_ORES_REPLACEABLE, DreamlandBlocks.KUNZITE_LAPIS_ORE.block().get().defaultBlockState()));
+	public static final List<OreConfiguration.TargetBlockState> KUNZITE_EMERALD_TARGET_LIST = List.of(OreConfiguration.target(KUNZITE_ORES_REPLACEABLE, DreamlandBlocks.KUNZITE_EMERALD_ORE.block().get().defaultBlockState()));
+	public static final List<OreConfiguration.TargetBlockState> KUNZITE_DIAMOND_TARGET_LIST = List.of(OreConfiguration.target(KUNZITE_ORES_REPLACEABLE, DreamlandBlocks.KUNZITE_DIAMOND_ORE.block().get().defaultBlockState()));
 	
 	public static final List<OreConfiguration.TargetBlockState> FILLED_HIVE_TARGET_LIST = List.of(OreConfiguration.target(HIVE_ORES_REPLACEABLE, DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.block().get().defaultBlockState()));
 	public static final List<OreConfiguration.TargetBlockState> HIVE_IRON_TARGET_LIST = List.of(OreConfiguration.target(HIVE_ORES_REPLACEABLE, DreamlandBlocks.HIVE_IRON.block().get().defaultBlockState()));
@@ -94,6 +110,27 @@ public class DreamlandConfiguredFeatures {
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_CALCITE_ROCK_KEY = createConfiguredFeatureKey("calcite_rock");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_HIVE_CAVE_KEY = createConfiguredFeatureKey("hive_cave");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_OPAL_CLUSTER_KEY = createConfiguredFeatureKey("opal_cluster");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_KUNZITE_POINTS_DOWN_KEY = createConfiguredFeatureKey("kunzite_points_down");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_KUNZITE_POINTS_EAST_KEY = createConfiguredFeatureKey("kunzite_points_east");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_KUNZITE_POINTS_NORTH_KEY = createConfiguredFeatureKey("kunzite_points_north");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_KUNZITE_POINTS_PATCH_DOWN = createConfiguredFeatureKey("kunzite_points_patch_down");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_KUNZITE_POINTS_PATCH_UP = createConfiguredFeatureKey("kunzite_points_patch_up");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_KUNZITE_POINTS_SOUTH_KEY = createConfiguredFeatureKey("kunzite_points_south");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_KUNZITE_POINTS_UP_KEY = createConfiguredFeatureKey("kunzite_points_up");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_KUNZITE_POINTS_WEST_KEY = createConfiguredFeatureKey("kunzite_points_west");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_KUNZITE_IRON_KEY = createConfiguredFeatureKey("kunzite_iron_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_KUNZITE_IRON_SMALL_KEY = createConfiguredFeatureKey("kunzite_iron_small_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_KUNZITE_EMERALD_KEY = createConfiguredFeatureKey("kunzite_emerald_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_KUNZITE_REDSTONE_KEY = createConfiguredFeatureKey("kunzite_redstone_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_KUNZITE_LAPIS_KEY = createConfiguredFeatureKey("kunzite_lapis_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_KUNZITE_COPPER_KEY = createConfiguredFeatureKey("kunzite_copper_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_KUNZITE_COPPER_LARGE_KEY = createConfiguredFeatureKey("kunzite_copper_large_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_KUNZITE_DIAMOND_KEY = createConfiguredFeatureKey("kunzite_diamond_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_KUNZITE_DIAMOND_LARGE_KEY = createConfiguredFeatureKey("kunzite_diamond_large_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_GOLDEN_MOSS_VEGETATION_KEY = createConfiguredFeatureKey("golden_moss_vegetation");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_GOLDEN_MOSS_PATCH_KEY = createConfiguredFeatureKey("golden_moss_patch");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_GOLDEN_CAP_KEY = createConfiguredFeatureKey("golden_cap");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_GOLD_GEODE_KEY = createConfiguredFeatureKey("gold_geode");
 	
 	public static ArrayList<ResourceKey<ConfiguredFeature<?, ?>>> getKeys() {
 		return KEYS;
@@ -102,7 +139,7 @@ public class DreamlandConfiguredFeatures {
 	public static final Holder<ConfiguredFeature<BlockColumnConfiguration, ?>> CAVE_SLIME = registerConfiguredFeature("cave_slime", 
 			Feature.BLOCK_COLUMN,
 					new BlockColumnConfiguration(
-							List.of(BlockColumnConfiguration.layer( 
+							List.of(BlockColumnConfiguration.layer(
 									new WeightedListInt(
 											SimpleWeightedRandomList.<IntProvider>builder()
 											.add(UniformInt.of(0, 19), 2)
@@ -157,6 +194,31 @@ public class DreamlandConfiguredFeatures {
 	public static final Holder<ConfiguredFeature<EllipsoidConfig, ?>> CALCITE_ROCK = registerConfiguredFeature("calcite_rock", DreamlandFeatures.ELLIPSOID, new EllipsoidConfig(BlockStateProvider.simple(Blocks.CALCITE), BlockStateProvider.simple(Blocks.AMETHYST_BLOCK), UniformInt.of(4, 5), UniformInt.of(5, 7), UniformInt.of(3, 5)));
 	public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> OPAL_CLUSTER = registerConfiguredFeature("opal_cluster", DreamlandFeatures.OPAL_CLUSTER, new NoneFeatureConfiguration());
 	
+	public static final Holder<ConfiguredFeature<BlockColumnConfiguration, ?>> KUNZITE_POINTS_UP = registerConfiguredFeature("kunzite_points_up", Feature.BLOCK_COLUMN, new BlockColumnConfiguration(List.of(BlockColumnConfiguration.layer(UniformInt.of(0, 7), BlockStateProvider.simple(DreamlandBlocks.KUNZITE_POINT.block().get().defaultBlockState().setValue(KunzitePointBlock.FACING, Direction.UP)))), Direction.UP, BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE, true));
+	public static final Holder<ConfiguredFeature<BlockColumnConfiguration, ?>> KUNZITE_POINTS_DOWN = registerConfiguredFeature("kunzite_points_down", Feature.BLOCK_COLUMN, new BlockColumnConfiguration(List.of(BlockColumnConfiguration.layer(UniformInt.of(0, 5), BlockStateProvider.simple(DreamlandBlocks.KUNZITE_POINT.block().get().defaultBlockState().setValue(KunzitePointBlock.FACING, Direction.DOWN)))), Direction.DOWN, BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE, true));
+	public static final Holder<ConfiguredFeature<VegetationPatchConfiguration, ?>> KUNZITE_POINTS_PATCH_UP = registerConfiguredFeature("kunzite_points_patch_up", Feature.VEGETATION_PATCH, new VegetationPatchConfiguration(DreamlandBlockTags.KUNZITE_ORES_REPLACEABLE, BlockStateProvider.simple(DreamlandBlocks.KUNZITE_STONE.block().get()), PlacementUtils.inlinePlaced(KUNZITE_POINTS_UP), CaveSurface.FLOOR, ConstantInt.of(1), 0.0F, 5, 0.4F, UniformInt.of(1, 3), 0.3F));
+	public static final Holder<ConfiguredFeature<VegetationPatchConfiguration, ?>> KUNZITE_POINTS_PATCH_DOWN = registerConfiguredFeature("kunzite_points_patch_down", Feature.VEGETATION_PATCH, new VegetationPatchConfiguration(DreamlandBlockTags.KUNZITE_ORES_REPLACEABLE, BlockStateProvider.simple(DreamlandBlocks.KUNZITE_STONE.block().get()), PlacementUtils.inlinePlaced(KUNZITE_POINTS_DOWN), CaveSurface.CEILING, UniformInt.of(1, 2), 0.0F, 35, 0.35F, UniformInt.of(2, 4), 0.3F));
+	public static final Holder<ConfiguredFeature<BlockColumnConfiguration, ?>> KUNZITE_POINTS_NORTH = registerConfiguredFeature("kunzite_points_north", Feature.BLOCK_COLUMN, new BlockColumnConfiguration(List.of(BlockColumnConfiguration.layer(UniformInt.of(1, 4), BlockStateProvider.simple(DreamlandBlocks.KUNZITE_POINT.block().get().defaultBlockState().setValue(KunzitePointBlock.FACING, Direction.NORTH)))), Direction.NORTH, BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE, true));
+	public static final Holder<ConfiguredFeature<BlockColumnConfiguration, ?>> KUNZITE_POINTS_SOUTH = registerConfiguredFeature("kunzite_points_south", Feature.BLOCK_COLUMN, new BlockColumnConfiguration(List.of(BlockColumnConfiguration.layer(UniformInt.of(1, 4), BlockStateProvider.simple(DreamlandBlocks.KUNZITE_POINT.block().get().defaultBlockState().setValue(KunzitePointBlock.FACING, Direction.SOUTH)))), Direction.SOUTH, BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE, true));
+	public static final Holder<ConfiguredFeature<BlockColumnConfiguration, ?>> KUNZITE_POINTS_EAST = registerConfiguredFeature("kunzite_points_east", Feature.BLOCK_COLUMN, new BlockColumnConfiguration(List.of(BlockColumnConfiguration.layer(UniformInt.of(1, 4), BlockStateProvider.simple(DreamlandBlocks.KUNZITE_POINT.block().get().defaultBlockState().setValue(KunzitePointBlock.FACING, Direction.EAST)))), Direction.EAST, BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE, true));
+	public static final Holder<ConfiguredFeature<BlockColumnConfiguration, ?>> KUNZITE_POINTS_WEST = registerConfiguredFeature("kunzite_points_west", Feature.BLOCK_COLUMN, new BlockColumnConfiguration(List.of(BlockColumnConfiguration.layer(UniformInt.of(1, 4), BlockStateProvider.simple(DreamlandBlocks.KUNZITE_POINT.block().get().defaultBlockState().setValue(KunzitePointBlock.FACING, Direction.WEST)))), Direction.WEST, BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE, true));
+	
+	
+	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> KUNZITE_IRON = registerConfiguredFeature("kunzite_iron_ore", Feature.ORE, new OreConfiguration(KUNZITE_IRON_TARGET_LIST, 9));
+	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> KUNZITE_IRON_SMALL = registerConfiguredFeature("kunzite_iron_small_ore", Feature.ORE, new OreConfiguration(KUNZITE_IRON_TARGET_LIST, 4));
+	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> KUNZITE_EMERALD = registerConfiguredFeature("kunzite_emerald_ore", Feature.ORE, new OreConfiguration(KUNZITE_EMERALD_TARGET_LIST, 3));
+	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> KUNZITE_REDSTONE = registerConfiguredFeature("kunzite_redstone_ore", Feature.ORE, new OreConfiguration(KUNZITE_REDSTONE_TARGET_LIST, 8));
+	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> KUNZITE_LAPIS = registerConfiguredFeature("kunzite_lapis_ore", Feature.ORE, new OreConfiguration(KUNZITE_LAPIS_TARGET_LIST, 7));
+	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> KUNZITE_COPPER = registerConfiguredFeature("kunzite_copper_ore", Feature.ORE, new OreConfiguration(KUNZITE_COPPER_TARGET_LIST, 10));
+	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> KUNZITE_COPPER_LARGE = registerConfiguredFeature("kunzite_copper_large_ore", Feature.ORE, new OreConfiguration(KUNZITE_COPPER_TARGET_LIST, 20));
+	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> KUNZITE_DIAMOND = registerConfiguredFeature("kunzite_diamond_ore", Feature.ORE, new OreConfiguration(KUNZITE_DIAMOND_TARGET_LIST, 4, 0.5F));
+	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> KUNZITE_DIAMOND_LARGE = registerConfiguredFeature("kunzite_diamond_large_ore", Feature.ORE, new OreConfiguration(KUNZITE_DIAMOND_TARGET_LIST, 12, 0.7F));	
+	public static final Holder<ConfiguredFeature<SimpleBlockConfiguration, ?>> GOLDEN_MOSS_VEGETATION = registerConfiguredFeature("golden_moss_vegetation", Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(DreamlandBlocks.GOLDEN_MOSS_CARPET.block().get().defaultBlockState(), 25).add(DreamlandBlocks.GOLD_FRONDS.block().get().defaultBlockState(), 25).add(Blocks.GRASS.defaultBlockState(), 25).add(DreamlandBlocks.GOLDEN_CAP.block().get().defaultBlockState(), 9).add(DreamlandBlocks.MIDASHROOM.block().get().defaultBlockState(), 1).add(DreamlandBlocks.SMALL_GOLDEN_CAP.block().get().defaultBlockState(), 15))));
+	public static final Holder<ConfiguredFeature<VegetationPatchConfiguration, ?>> GOLDEN_MOSS_PATCH = registerConfiguredFeature("golden_moss_patch", Feature.VEGETATION_PATCH, new VegetationPatchConfiguration(DreamlandBlockTags.KUNZITE_ORES_REPLACEABLE, BlockStateProvider.simple(DreamlandBlocks.GOLDEN_MOSS_BLOCK.block().get()), PlacementUtils.inlinePlaced(GOLDEN_MOSS_VEGETATION), CaveSurface.FLOOR, ConstantInt.of(1), 0.2F, 5, 0.8F, UniformInt.of(4, 7), 0.3F));
+	public static final Holder<ConfiguredFeature<SimpleBlockConfiguration, ?>> GOLDEN_CAP = registerConfiguredFeature("golden_cap", Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(DreamlandBlocks.GOLDEN_CAP.block().get().defaultBlockState(), 95).add(DreamlandBlocks.MIDASHROOM.block().get().defaultBlockState(), 5))));
+	public static final Holder<ConfiguredFeature<GeodeConfiguration, ?>> GOLD_GEODE = registerConfiguredFeature("gold_geode", Feature.GEODE, new GeodeConfiguration(new GeodeBlockSettings(BlockStateProvider.simple(Blocks.AIR), BlockStateProvider.simple(DreamlandBlocks.GOLD_BEARING_QUARTZITE.block().get()), BlockStateProvider.simple(DreamlandBlocks.BUDDING_GOLD.block().get()), BlockStateProvider.simple(Blocks.SMOOTH_QUARTZ), BlockStateProvider.simple(Blocks.SMOOTH_BASALT), List.of(DreamlandBlocks.SMALL_GOLD_CLUSTER.block().get().defaultBlockState(), DreamlandBlocks.MEDIUM_GOLD_CLUSTER.block().get().defaultBlockState(), DreamlandBlocks.LARGE_GOLD_CLUSTER.block().get().defaultBlockState(), DreamlandBlocks.GOLD_CLUSTER.block().get().defaultBlockState()), BlockTags.FEATURES_CANNOT_REPLACE, BlockTags.GEODE_INVALID_BLOCKS), new GeodeLayerSettings(1.7D, 2.2D, 3.2D, 5.2D), new GeodeCrackSettings(0.95D, 2.0D, 2), 0.35D, 0.083D, true, UniformInt.of(4, 6), UniformInt.of(3, 4), UniformInt.of(1, 2), -16, 16, 0.05D, 1));
+	
+	
 	private static <FC extends FeatureConfiguration, F extends Feature<FC>> Holder<ConfiguredFeature<FC, ?>> registerConfiguredFeature(String name, F feature, FC config) {
 		return BuiltinRegistries.registerExact(BuiltinRegistries.CONFIGURED_FEATURE, DreamlandLoc.createLoc(name).toString(), new ConfiguredFeature<>(feature,config));
 	}
@@ -165,5 +227,5 @@ public class DreamlandConfiguredFeatures {
 		ResourceKey<ConfiguredFeature<?,?>> key = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, DreamlandLoc.createLoc(name));
 		KEYS.add(key);
 		return key;
-	   }
+	}
 }

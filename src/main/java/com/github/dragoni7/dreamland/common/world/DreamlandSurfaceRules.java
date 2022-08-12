@@ -4,11 +4,17 @@ import com.github.dragoni7.dreamland.common.world.biome.BiomeKeys;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.Noises;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 
 public class DreamlandSurfaceRules
 {
 	private static final SurfaceRules.ConditionSource AT_OR_ABOVE_WATER = SurfaceRules.waterBlockCheck(-1, 0);
+	
+	private static final SurfaceRules.RuleSource RAW_GOLD_BANDS = SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.CAVE_CHEESE, -0.0025, 0.0125), SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.CAVE_CHEESE, -0.0025, 0.0025), SurfaceRules.state(Blocks.RAW_GOLD_BLOCK.defaultBlockState())), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.CAVE_CHEESE, 0.0025, 0.0125), SurfaceRules.state(DreamlandBlocks.GOLD_BEARING_QUARTZITE.block().get().defaultBlockState())))));
+	
+	private static final SurfaceRules.RuleSource OPULENT_DEPTHS_SURFACE = SurfaceRules.sequence(SurfaceRules.state(DreamlandBlocks.KUNZITE_STONE.block().get().defaultBlockState()));
+	private static final SurfaceRules.RuleSource OPULENT_DEPTHS = SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeKeys.MIDAS_CAVES), SurfaceRules.sequence(RAW_GOLD_BANDS, OPULENT_DEPTHS_SURFACE));
 	
 	private static final SurfaceRules.RuleSource HIVE_SURFACE = SurfaceRules.sequence(SurfaceRules.state(DreamlandBlocks.HIVE_BLOCK.block().get().defaultBlockState()));
 	private static final SurfaceRules.RuleSource HIVE = SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeKeys.HIVE), HIVE_SURFACE);
@@ -21,7 +27,7 @@ public class DreamlandSurfaceRules
     
     private static final SurfaceRules.RuleSource OVERWORLD = SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.sequence(TAR_DELTAS, JEWELED_FOREST));
     
-    private static final SurfaceRules.RuleSource OVERWORLD_UNDERGROUND = SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.abovePreliminarySurface()), HIVE);
+    private static final SurfaceRules.RuleSource OVERWORLD_UNDERGROUND = SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.abovePreliminarySurface()), SurfaceRules.sequence(HIVE, OPULENT_DEPTHS));
     
     public static final SurfaceRules.RuleSource OVERWORLD_SURFACE_RULES = SurfaceRules.sequence(OVERWORLD, OVERWORLD_UNDERGROUND);
 }

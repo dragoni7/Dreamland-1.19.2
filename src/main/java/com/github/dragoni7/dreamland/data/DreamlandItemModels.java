@@ -23,9 +23,31 @@ public class DreamlandItemModels extends ItemModelProvider {
 	@Override
 	protected void registerModels() {
 		
+		blockItemModel(DreamlandBlocks.KUNZITE_STONE.item(), "block/kunzite");
+		blockItemModel(DreamlandBlocks.COBBLED_KUNZITE_STONE.item(), "block/cobbled_kunzite_stone");
+		blockItemModel(DreamlandBlocks.KUNZITE_TILE.item(), "block/kunzite_tile");
+		blockItemModel(DreamlandBlocks.CHISELED_KUNZITE.item(), "block/chiseled_kunzite");
+		blockItemModel(DreamlandBlocks.KUNZITE_BRICKS.item(), "block/kunzite_bricks");
+		blockItemModel(DreamlandBlocks.KUNZITE_BRICK_SLAB.item(), "block/kunzite_brick_slab");
+		blockItemModel(DreamlandBlocks.KUNZITE_BRICK_STAIRS.item(), "block/kunzite_brick_stairs");
+		wallInventory("kunzite_brick_wall", DreamlandLoc.createLoc("block/kunzite_bricks"));
+		blockItemModel(DreamlandBlocks.COBBLED_KUNZITE_SLAB.item(), "block/cobbled_kunzite_slab");
+		blockItemModel(DreamlandBlocks.COBBLED_KUNZITE_STAIRS.item(), "block/cobbled_kunzite_stairs");
+		wallInventory("cobbled_kunzite_wall", DreamlandLoc.createLoc("block/cobbled_kunzite_stone"));
+		blockItemModel(DreamlandBlocks.KUNZITE_POINT_BLOCK.item(), "block/kunzite_point_block");
+		blockItemModel(DreamlandBlocks.KUNZITE_COPPER_ORE.item(), "block/kunzite_copper_ore");
+		blockItemModel(DreamlandBlocks.KUNZITE_IRON_ORE.item(), "block/kunzite_iron_ore");
+		blockItemModel(DreamlandBlocks.KUNZITE_LAPIS_ORE.item(), "block/kunzite_lapis_ore");
+		blockItemModel(DreamlandBlocks.KUNZITE_REDSTONE_ORE.item(), "block/kunzite_redstone_ore");
+		blockItemModel(DreamlandBlocks.KUNZITE_EMERALD_ORE.item(), "block/kunzite_emerald_ore");
+		blockItemModel(DreamlandBlocks.KUNZITE_DIAMOND_ORE.item(), "block/kunzite_diamond_ore");
+		blockItemModel(DreamlandBlocks.GOLD_BEARING_QUARTZITE.item(), "block/gold_bearing_quartzite");
+		blockItemModel(DreamlandBlocks.BUDDING_GOLD.item(), "block/budding_gold");
+		blockItemModel(DreamlandBlocks.GOLDEN_MOSS_BLOCK.item(), "block/golden_moss_block");
+		blockItemModel(DreamlandBlocks.GOLDEN_MOSS_CARPET.item(), "block/golden_moss_carpet");
+		
 		blockItemModel(DreamlandBlocks.HIVE_BLOCK.item(),"block/hive_block1");
 		//blockItemModel(DreamlandBlocks.CLAY_SOIL.item(),"block/clay_soil");
-		//blockItemModel(DreamlandBlocks.DARK_QUARTZITE.item(),"block/dark_quartzite");
 		//blockItemModel(DreamlandBlocks.DUSK_ICE.item(),"block/dusk_ice");
 		blockItemModel(DreamlandBlocks.HIVE_JELLY_CLUSTER.item(), "block/hive_jelly_cluster");
 		blockItemModel(DreamlandBlocks.HIVE_MEMBRANE.item(), "block/hive_membrane_connected");
@@ -63,25 +85,38 @@ public class DreamlandItemModels extends ItemModelProvider {
 		blockItemModel(DreamlandBlocks.OPAL_SLAB.item(), "block/opal_slab");
 		blockItemModel(DreamlandBlocks.OPAL_STAIRS.item(), "block/opal_stairs");
 		wallInventory("opal_wall", DreamlandLoc.createLoc("block/opal_tile"));
+		blockItemModel(DreamlandBlocks.PRECIOUS_OPAL_LAMP.item(), "block/precious_opal_lamp");
 		blockItemModel(DreamlandBlocks.PRECIOUS_OPAL_SLAB.item(), "block/precious_opal_slab");
 		blockItemModel(DreamlandBlocks.PRECIOUS_OPAL_STAIRS.item(), "block/precious_opal_stairs");
 		wallInventory("precious_opal_wall", DreamlandLoc.createLoc("block/precious_opal_tile"));
 		blockItemModel(DreamlandBlocks.JEWELED_DEEPSLATE.item(), "block/jeweled_deepslate");
+		
+		singleTextureItemModel(DreamlandBlocks.GOLD_FRONDS.item(), "block/gold_fronds");
+		singleTextureItemModel(DreamlandBlocks.KUNZITE_POINT.item(), "block/kunzite_point_end");
+		singleTextureItemModel(DreamlandBlocks.GOLD_CLUSTER.item(), "block/gold_cluster");
+		singleTextureItemModel(DreamlandBlocks.MIDASHROOM.item(), "item/midashroom_item");
+		singleTextureItemModel(DreamlandBlocks.SMALL_GOLD_CLUSTER.item(), "block/small_gold_cluster");
+		singleTextureItemModel(DreamlandBlocks.MEDIUM_GOLD_CLUSTER.item(), "block/medium_gold_cluster");
+		singleTextureItemModel(DreamlandBlocks.LARGE_GOLD_CLUSTER.item(), "block/large_gold_cluster");
+		singleTextureItemModel(DreamlandBlocks.KUNZITE_BARS.item(), "block/kunzite_bars");
 		
 		singleTextureItemModel(DreamlandItems.HIVE_JELLY_ITEM, "item/hive_jelly");
 		singleTextureItemModel(DreamlandItems.JELLY_BOWL_ITEM, "item/bowl_of_jelly");
 		singleTextureItemModel(DreamlandBlocks.CAVE_SLIME.item(), "block/cave_slime");
 		singleTextureItemModel(DreamlandBlocks.HIVE_GROWTH.item(), "block/hive_growth_cross");
 		singleTextureItemModel(DreamlandItems.LARVA_HELMET, "item/larva_symbiote_helmet");
+		
 		singleTextureItemModel(DreamlandBlocks.TAR_SPROUTS.item(), "block/tar_sprouts");
+		singleTextureItemModel(DreamlandBlocks.TAR_BARK_SAPLING.item(), "item/tar_bark_sapling");
+		singleTextureItemModel(DreamlandBlocks.ANCIENT_EGG.item(), "item/ancient_egg");
+		singleTextureItemModel(DreamlandItems.TAR_BUCKET, "item/tar_bucket");
+		
 		singleTextureItemModel(DreamlandBlocks.OPALINE_MARIGOLD.item(), "block/opaline_marigold");
 		singleTextureItemModel(DreamlandBlocks.PINK_CRAB_GRASS.item(), "block/pink_crab_grass");
 		singleTextureItemModel(DreamlandBlocks.PLUM_BIRCH_SAPLING.item(), "item/plum_birch_sapling");
 		singleTextureItemModel(DreamlandItems.OPAL, "item/opal");
 		singleTextureItemModel(DreamlandItems.PRECIOUS_OPAL, "item/precious_opal");
-		singleTextureItemModel(DreamlandBlocks.TAR_BARK_SAPLING.item(), "item/tar_bark_sapling");
-		singleTextureItemModel(DreamlandBlocks.ANCIENT_EGG.item(), "item/ancient_egg");
-		singleTextureItemModel(DreamlandItems.TAR_BUCKET, "item/tar_bucket");
+		
 		spawnEggItemModel(DreamlandItems.SPAWN_EGG_LARVA);
 		spawnEggItemModel(DreamlandItems.SPAWN_EGG_OOZE);
 		spawnEggItemModel(DreamlandItems.SPAWN_EGG_BUMBLE_BEAST);

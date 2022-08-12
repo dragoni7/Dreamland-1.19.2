@@ -20,7 +20,7 @@ public class BlockItemSet {
 		this.block = DreamlandBlocks.BLOCKS.register(name, block);
 		item = DreamlandItems.ITEMS.register(name, () -> new BlockItem(this.block.get(), new Item.Properties().tab(Dreamland.DreamlandTab)));
 	}
-	
+
 	public RegistryObject<Block> block() {
 		return block;
 	}

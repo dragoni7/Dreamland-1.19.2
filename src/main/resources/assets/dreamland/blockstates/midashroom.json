@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "conditional=false": {
+      "model": "dreamland:block/midashroom"
+    },
+    "conditional=true": {
+      "model": "dreamland:block/midashroom_active"
+    }
+  }
+}

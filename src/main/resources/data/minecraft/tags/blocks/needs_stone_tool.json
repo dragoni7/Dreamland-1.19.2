@@ -1,5 +1,16 @@
 {
   "values": [
+    "dreamland:kunzite",
+    "dreamland:cobbled_kunzite_stone",
+    "dreamland:kunzite_bricks",
+    "dreamland:kunzite_brick_slab",
+    "dreamland:kunzite_brick_stairs",
+    "dreamland:kunzite_brick_wall",
+    "dreamland:cobbled_kunzite_slab",
+    "dreamland:cobbled_kunzite_stairs",
+    "dreamland:cobbled_kunzite_wall",
+    "dreamland:kunzite_tile",
+    "dreamland:chiseled_kunzite",
     "dreamland:hive_block",
     "dreamland:hive_jelly_cluster",
     "dreamland:infested_hive_jelly_cluster",
@@ -16,6 +27,10 @@
     "dreamland:precious_opal_stairs",
     "dreamland:precious_opal_wall",
     "dreamland:jeweled_deepslate",
+    "dreamland:midashroom",
+    "dreamland:kunzite_copper_ore",
+    "dreamland:kunzite_iron_ore",
+    "dreamland:kunzite_lapis_ore",
     "dreamland:hive_copper",
     "dreamland:hive_iron",
     "dreamland:hive_lapis"

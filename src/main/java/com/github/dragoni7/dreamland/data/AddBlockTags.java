@@ -24,6 +24,7 @@ public class AddBlockTags extends BlockTagsProvider {
 		tag(BlockTags.DIRT)
 		//.add(DreamlandBlocks.CLAY_SOIL.block().get())
 		//.add(DreamlandBlocks.CLAY_SOIL_GRASS.block().get())
+		.add(DreamlandBlocks.GOLDEN_MOSS_BLOCK.block().get())
 		.add(DreamlandBlocks.DROUGHT_SOIL.block().get())
 		.add(DreamlandBlocks.MINERAL_DIRT.block().get())
 		.add(DreamlandBlocks.FLOWERING_GRASS.block().get());
@@ -31,8 +32,11 @@ public class AddBlockTags extends BlockTagsProvider {
 		tag(BlockTags.ANIMALS_SPAWNABLE_ON)
 		.add(DreamlandBlocks.FLOWERING_GRASS.block().get());
 		
-		/*tag(Tags.Blocks.STONE)
-		.add(DreamlandBlocks.DARK_QUARTZITE.block().get());*/
+		tag(Tags.Blocks.STONE)
+		.add(DreamlandBlocks.KUNZITE_STONE.block().get());
+		
+		tag(Tags.Blocks.COBBLESTONE)
+		.add(DreamlandBlocks.COBBLED_KUNZITE_STONE.block().get());
 		
 		tag(BlockTags.LEAVES)
 		.add(DreamlandBlocks.TAR_BARK_LEAVES.block().get())
@@ -42,6 +46,7 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.DUSK_ICE.block().get());*/
 		
 		tag(BlockTags.REPLACEABLE_PLANTS)
+		.add(DreamlandBlocks.GOLD_FRONDS.block().get())
 		.add(DreamlandBlocks.HIVE_GROWTH.block().get())
 		.add(DreamlandBlocks.TAR_SPROUTS.block().get())
 		.add(DreamlandBlocks.PINK_CRAB_GRASS.block().get())
@@ -71,7 +76,29 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.FLOWERING_GRASS.block().get());
 		
 		tag(BlockTags.MINEABLE_WITH_PICKAXE)
-		//.add(DreamlandBlocks.DARK_QUARTZITE.block().get())
+		.add(DreamlandBlocks.KUNZITE_STONE.block().get())
+		.add(DreamlandBlocks.COBBLED_KUNZITE_STONE.block().get())
+		.add(DreamlandBlocks.KUNZITE_BRICKS.block().get())
+		.add(DreamlandBlocks.KUNZITE_BRICK_SLAB.block().get())
+		.add(DreamlandBlocks.KUNZITE_BRICK_STAIRS.block().get())
+		.add(DreamlandBlocks.KUNZITE_BRICK_WALL.block().get())
+		.add(DreamlandBlocks.COBBLED_KUNZITE_SLAB.block().get())
+		.add(DreamlandBlocks.COBBLED_KUNZITE_STAIRS.block().get())
+		.add(DreamlandBlocks.COBBLED_KUNZITE_WALL.block().get())
+		.add(DreamlandBlocks.KUNZITE_TILE.block().get())
+		.add(DreamlandBlocks.CHISELED_KUNZITE.block().get())
+		.add(DreamlandBlocks.KUNZITE_BRICK_SLAB.block().get())
+		.add(DreamlandBlocks.KUNZITE_BRICK_STAIRS.block().get())
+		.add(DreamlandBlocks.KUNZITE_BRICK_WALL.block().get())
+		.add(DreamlandBlocks.KUNZITE_POINT.block().get())
+		.add(DreamlandBlocks.KUNZITE_POINT_BLOCK.block().get())
+		.add(DreamlandBlocks.KUNZITE_BARS.block().get())
+		.add(DreamlandBlocks.GOLD_BEARING_QUARTZITE.block().get())
+		.add(DreamlandBlocks.GOLD_CLUSTER.block().get())
+		.add(DreamlandBlocks.SMALL_GOLD_CLUSTER.block().get())
+		.add(DreamlandBlocks.MEDIUM_GOLD_CLUSTER.block().get())
+		.add(DreamlandBlocks.LARGE_GOLD_CLUSTER.block().get())
+		.add(DreamlandBlocks.BUDDING_GOLD.block().get())
 		.add(DreamlandBlocks.HIVE_BLOCK.block().get())
 		.add(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.block().get())
 		.add(DreamlandBlocks.HIVE_WEAVER.block().get())
@@ -95,7 +122,22 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.PRECIOUS_OPAL_WALL.block().get())
 		.add(DreamlandBlocks.JEWELED_DEEPSLATE.block().get());
 		
+		tag(BlockTags.MINEABLE_WITH_AXE)
+		.add(DreamlandBlocks.GOLDEN_CAP.block().get())
+		.add(DreamlandBlocks.MIDASHROOM.block().get());
+		
 		tag(BlockTags.NEEDS_STONE_TOOL)
+		.add(DreamlandBlocks.KUNZITE_STONE.block().get())
+		.add(DreamlandBlocks.COBBLED_KUNZITE_STONE.block().get())
+		.add(DreamlandBlocks.KUNZITE_BRICKS.block().get())
+		.add(DreamlandBlocks.KUNZITE_BRICK_SLAB.block().get())
+		.add(DreamlandBlocks.KUNZITE_BRICK_STAIRS.block().get())
+		.add(DreamlandBlocks.KUNZITE_BRICK_WALL.block().get())
+		.add(DreamlandBlocks.COBBLED_KUNZITE_SLAB.block().get())
+		.add(DreamlandBlocks.COBBLED_KUNZITE_STAIRS.block().get())
+		.add(DreamlandBlocks.COBBLED_KUNZITE_WALL.block().get())
+		.add(DreamlandBlocks.KUNZITE_TILE.block().get())
+		.add(DreamlandBlocks.CHISELED_KUNZITE.block().get())
 		.add(DreamlandBlocks.HIVE_BLOCK.block().get())
 		.add(DreamlandBlocks.HIVE_JELLY_CLUSTER.block().get())
 		.add(DreamlandBlocks.INFESTED_HIVE_JELLY_CLUSTER.block().get())
@@ -111,14 +153,27 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.PRECIOUS_OPAL_SLAB.block().get())
 		.add(DreamlandBlocks.PRECIOUS_OPAL_STAIRS.block().get())
 		.add(DreamlandBlocks.PRECIOUS_OPAL_WALL.block().get())
-		.add(DreamlandBlocks.JEWELED_DEEPSLATE.block().get());
+		.add(DreamlandBlocks.JEWELED_DEEPSLATE.block().get())
+		.add(DreamlandBlocks.MIDASHROOM.block().get());
 		
 		tag(BlockTags.NEEDS_DIAMOND_TOOL)
 		.add(DreamlandBlocks.HIVE_WEAVER.block().get())
 		.add(DreamlandBlocks.PRECIOUS_OPAL_BLOCK.block().get());
 		
 		tag(BlockTags.NEEDS_IRON_TOOL)
+		.add(DreamlandBlocks.KUNZITE_POINT.block().get())
+		.add(DreamlandBlocks.KUNZITE_POINT_BLOCK.block().get())
+		.add(DreamlandBlocks.KUNZITE_BARS.block().get())
+		.add(DreamlandBlocks.GOLD_BEARING_QUARTZITE.block().get())
+		.add(DreamlandBlocks.BUDDING_GOLD.block().get())
+		.add(DreamlandBlocks.GOLD_CLUSTER.block().get())
+		.add(DreamlandBlocks.SMALL_GOLD_CLUSTER.block().get())
+		.add(DreamlandBlocks.MEDIUM_GOLD_CLUSTER.block().get())
+		.add(DreamlandBlocks.LARGE_GOLD_CLUSTER.block().get())
 		.add(DreamlandBlocks.FOSSILIZED_EGG.block().get());
+		
+		tag(DreamlandBlockTags.KUNZITE_ORES_REPLACEABLE)
+		.add(DreamlandBlocks.KUNZITE_STONE.block().get());
 	
 		tag(DreamlandBlockTags.HIVE_ORES_REPLACEABLE)
 		.add(DreamlandBlocks.HIVE_BLOCK.block().get());
@@ -128,6 +183,7 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.DRIED_TAR.block().get());
 		
 		tag(BlockTags.STONE_ORE_REPLACEABLES)
+		.add(DreamlandBlocks.KUNZITE_STONE.block().get())
 		.add(DreamlandBlocks.TAR_MUD.block().get());
 		
 		tag(BlockTags.FEATURES_CANNOT_REPLACE)
@@ -135,6 +191,7 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.HIVE_WEAVER.block().get());
 		
 		tag(BlockTags.SCULK_REPLACEABLE)
+		.add(DreamlandBlocks.KUNZITE_STONE.block().get())
 		.add(DreamlandBlocks.HIVE_BLOCK.block().get())
 		.add(DreamlandBlocks.TAR_MUD.block().get())
 		.add(DreamlandBlocks.MINERAL_DIRT.block().get())
@@ -145,7 +202,8 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.FLOWERING_GRASS.block().get());
 		
 		tag(BlockTags.BAMBOO_PLANTABLE_ON)
-		.add(DreamlandBlocks.FLOWERING_GRASS.block().get());
+		.add(DreamlandBlocks.FLOWERING_GRASS.block().get())
+		.add(DreamlandBlocks.GOLDEN_MOSS_BLOCK.block().get());
 		
 		tag(BlockTags.AZALEA_ROOT_REPLACEABLE)
 		.add(DreamlandBlocks.FLOWERING_GRASS.block().get())
@@ -168,16 +226,19 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.HIVE_MEMBRANE.block().get());
 		
 		tag(BlockTags.STAIRS)
+		.add(DreamlandBlocks.KUNZITE_BRICK_STAIRS.block().get())
 		.add(DreamlandBlocks.TAR_MUD_BRICK_STAIRS.block().get())
 		.add(DreamlandBlocks.OPAL_STAIRS.block().get())
 		.add(DreamlandBlocks.PRECIOUS_OPAL_STAIRS.block().get());
 		
 		tag(BlockTags.SLABS)
+		.add(DreamlandBlocks.KUNZITE_BRICK_SLAB.block().get())
 		.add(DreamlandBlocks.TAR_MUD_BRICK_SLAB.block().get())
 		.add(DreamlandBlocks.OPAL_SLAB.block().get())
 		.add(DreamlandBlocks.PRECIOUS_OPAL_SLAB.block().get());
 		
 		tag(BlockTags.WALLS)
+		.add(DreamlandBlocks.KUNZITE_BRICK_WALL.block().get())
 		.add(DreamlandBlocks.TAR_MUD_BRICK_WALL.block().get())
 		.add(DreamlandBlocks.OPAL_WALL.block().get())
 		.add(DreamlandBlocks.PRECIOUS_OPAL_WALL.block().get());
@@ -189,6 +250,13 @@ public class AddBlockTags extends BlockTagsProvider {
 		
 		addWoodSetTags(DreamlandWoodSets.PLUM_BIRCH);
 		addWoodSetTags(DreamlandWoodSets.TAR_BARK);
+		
+		addCopperOreTags(DreamlandBlocks.KUNZITE_COPPER_ORE.block().get());
+		addIronOreTags(DreamlandBlocks.KUNZITE_IRON_ORE.block().get());
+		addEmeraldOreTags(DreamlandBlocks.KUNZITE_EMERALD_ORE.block().get());
+		addRedstoneOreTags(DreamlandBlocks.KUNZITE_REDSTONE_ORE.block().get());
+		addLapisOreTags(DreamlandBlocks.KUNZITE_LAPIS_ORE.block().get());
+		addDiamondOreTags(DreamlandBlocks.KUNZITE_DIAMOND_ORE.block().get());
 		
 		addCopperOreTags(DreamlandBlocks.HIVE_COPPER.block().get());
 		addIronOreTags(DreamlandBlocks.HIVE_IRON.block().get());
@@ -289,6 +357,15 @@ public class AddBlockTags extends BlockTagsProvider {
 		
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
 		tag(BlockTags.NEEDS_STONE_TOOL).add(block);
+	}
+	
+	private void addEmeraldOreTags(Block block) {
+		tag(Tags.Blocks.ORES).add(block);
+		tag(BlockTags.EMERALD_ORES).add(block);
+		tag(Tags.Blocks.ORES_EMERALD).add(block);
+		
+		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
+		tag(BlockTags.NEEDS_IRON_TOOL).add(block);
 	}
 	
 	private void addDiamondOreTags(Block block) {

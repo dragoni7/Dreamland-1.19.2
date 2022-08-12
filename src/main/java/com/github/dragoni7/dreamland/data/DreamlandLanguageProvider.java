@@ -2,6 +2,8 @@ package com.github.dragoni7.dreamland.data;
 
 import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.common.world.biome.BiomeKeys;
+import com.github.dragoni7.dreamland.common.world.biome.DreamlandOverworldBiomes;
+import com.github.dragoni7.dreamland.core.registry.DreamlandBiomes;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
@@ -25,6 +27,39 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		
 		// Block
 		add(DreamlandBlocks.BUMBLE_BLOCK.block().get(), "Bumble Block");
+		add(DreamlandBlocks.KUNZITE_STONE.block().get(), "Kunzite Stone");
+		add(DreamlandBlocks.COBBLED_KUNZITE_STONE.block().get(), "Cobbled Kunzite Stone");
+		add(DreamlandBlocks.KUNZITE_TILE.block().get(), "Kunzite Tile");
+		add(DreamlandBlocks.CHISELED_KUNZITE.block().get(), "Chiseled Kunzite");
+		add(DreamlandBlocks.KUNZITE_POINT.block().get(), "Kunzite Point");
+		add(DreamlandBlocks.KUNZITE_POINT_BLOCK.block().get(), "Kunzite Point Block");
+		add(DreamlandBlocks.KUNZITE_BARS.block().get(), "Kunzite Bars");
+		add(DreamlandBlocks.KUNZITE_BRICKS.block().get(), "Kunzite Bricks");
+		add(DreamlandBlocks.KUNZITE_BRICK_SLAB.block().get(), "Kunzite Brick Slab");
+		add(DreamlandBlocks.KUNZITE_BRICK_STAIRS.block().get(), "Kunzite Brick Stairs");
+		add(DreamlandBlocks.KUNZITE_BRICK_WALL.block().get(), "Kunzite Brick Wall");
+		add(DreamlandBlocks.COBBLED_KUNZITE_SLAB.block().get(), "Cobbled Kunzite Slab");
+		add(DreamlandBlocks.COBBLED_KUNZITE_STAIRS.block().get(), "Cobbled Kunzite Stairs");
+		add(DreamlandBlocks.COBBLED_KUNZITE_WALL.block().get(), "Cobbled Kunzite Wall");
+		add(DreamlandBlocks.KUNZITE_COPPER_ORE.block().get(), "Kunzite Copper Ore");
+		add(DreamlandBlocks.KUNZITE_IRON_ORE.block().get(), "Kunzite Iron Ore");
+		add(DreamlandBlocks.KUNZITE_LAPIS_ORE.block().get(), "Kunzite Lapis Ore");
+		add(DreamlandBlocks.KUNZITE_REDSTONE_ORE.block().get(), "Kunzite Redstone Ore");
+		add(DreamlandBlocks.KUNZITE_EMERALD_ORE.block().get(), "Kunzite Emerald Ore");
+		add(DreamlandBlocks.KUNZITE_DIAMOND_ORE.block().get(), "Kunzite Diamond Ore");
+		add(DreamlandBlocks.GOLD_BEARING_QUARTZITE.block().get(), "Gold Bearing Quartzite");
+		add(DreamlandBlocks.MIDASHROOM.block().get(), "Midashroom");
+		add(DreamlandBlocks.BUDDING_GOLD.block().get(), "Budding Gold");
+		add(DreamlandBlocks.GOLD_CLUSTER.block().get(), "Gold Cluster");
+		add(DreamlandBlocks.SMALL_GOLD_CLUSTER.block().get(), "Small Gold Cluster");
+		add(DreamlandBlocks.MEDIUM_GOLD_CLUSTER.block().get(), "Medium Gold Cluster");
+		add(DreamlandBlocks.LARGE_GOLD_CLUSTER.block().get(), "Large Gold Cluster");
+		add(DreamlandBlocks.GOLD_FRONDS.block().get(), "Gold Fronds");
+		add(DreamlandBlocks.GOLDEN_MOSS_BLOCK.block().get(), "Golden Moss Block");
+		add(DreamlandBlocks.GOLDEN_MOSS_CARPET.block().get(), "Golden Moss Carpet");
+		add(DreamlandBlocks.GOLDEN_CAP.block().get(), "Golden Cap");
+		add(DreamlandBlocks.SMALL_GOLDEN_CAP.block().get(), "Small Golden Cap");
+		
 		
 		add(DreamlandBlocks.HIVE_BLOCK.block().get(), "Hive Block");
 		add(DreamlandBlocks.HIVE_COPPER.block().get(), "Hive Copper Ore");
@@ -75,6 +110,7 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandBlocks.OPAL_SLAB.block().get(), "Opal Slab");
 		add(DreamlandBlocks.OPAL_STAIRS.block().get(), "Opal Stairs");
 		add(DreamlandBlocks.OPAL_WALL.block().get(), "Opal Wall");
+		add(DreamlandBlocks.PRECIOUS_OPAL_LAMP.block().get(), "Precious Opal Lamp");
 		add(DreamlandBlocks.PRECIOUS_OPAL_TILE.block().get(), "Precious Opal Tile");
 		add(DreamlandBlocks.PRECIOUS_OPAL_SLAB.block().get(), "Precious Opal Slab");
 		add(DreamlandBlocks.PRECIOUS_OPAL_STAIRS.block().get(), "Precious Opal Stairs");
@@ -107,9 +143,10 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandEffects.TARRED.get(), "Tarred");
 		
 		// Biomes
-		add(BiomeKeys.HIVE.location().getPath(), "Hive");
-		add(BiomeKeys.JEWELED_FOREST.location().getPath(), "Jeweled Forest");
-		add(BiomeKeys.TAR_DELTAS.location().getPath(), "Tar Deltas");
+		add("biome.dreamland.midas_caves", "Midas Caves");
+		add("biome.dreamland.hive", "Hive");
+		add("biome.dreamland.jeweled_forest", "Jeweled Forest");
+		add("biome.dreamland.tar_deltas", "Tar Deltas");
 		
 	}
 	

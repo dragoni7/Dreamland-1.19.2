@@ -18,4 +18,10 @@ public class DreamlandParticles {
 	
 	public static final RegistryObject<SimpleParticleType> WHITE_POLLEN = PARTICLES.register("white_pollen",
 			() -> new SimpleParticleType(false));
+	
+	public static final RegistryObject<SimpleParticleType> 	GOLD_GLITTER = PARTICLES.register("gold_glitter",
+			() -> new SimpleParticleType(true));
+	
+	public static final RegistryObject<SimpleParticleType> 	MIDASHROOM_SPORES = PARTICLES.register("midashroom_spores",
+			() -> new SimpleParticleType(true));
 }

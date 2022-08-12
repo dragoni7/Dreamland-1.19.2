@@ -1,0 +1,17 @@
+{
+  "variants": {
+    "conditional=false,facing=up": {"model": "dreamland:block/kunzite_point_end"},
+    "conditional=false,facing=down": {"model": "dreamland:block/kunzite_point_end", "x": 180},
+    "conditional=false,facing=north": {"model": "dreamland:block/kunzite_point_end", "x": 90},
+    "conditional=false,facing=south": {"model": "dreamland:block/kunzite_point_end", "x": 90, "y": 180},
+    "conditional=false,facing=east": {"model": "dreamland:block/kunzite_point_end", "x": 90, "y": 90},
+    "conditional=false,facing=west": {"model": "dreamland:block/kunzite_point_end", "x": 90, "y": 270},
+
+    "conditional=true,facing=up": {"model": "dreamland:block/kunzite_point"},
+    "conditional=true,facing=down": {"model": "dreamland:block/kunzite_point", "x": 180},
+    "conditional=true,facing=north": {"model": "dreamland:block/kunzite_point", "x": 90},
+    "conditional=true,facing=south": {"model": "dreamland:block/kunzite_point", "x": 90, "y": 180},
+    "conditional=true,facing=east": {"model": "dreamland:block/kunzite_point", "x": 90, "y": 90},
+    "conditional=true,facing=west": {"model": "dreamland:block/kunzite_point", "x": 90, "y": 270}
+  }
+}

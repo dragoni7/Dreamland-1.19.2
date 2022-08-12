@@ -1,0 +1,49 @@
+{
+  "type": "minecraft:simple_block",
+  "config": {
+    "to_place": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "dreamland:golden_moss_carpet"
+          },
+          "weight": 25
+        },
+        {
+          "data": {
+            "Name": "dreamland:gold_fronds"
+          },
+          "weight": 25
+        },
+        {
+          "data": {
+            "Name": "minecraft:grass"
+          },
+          "weight": 25
+        },
+        {
+          "data": {
+            "Name": "dreamland:golden_cap"
+          },
+          "weight": 9
+        },
+        {
+          "data": {
+            "Name": "dreamland:midashroom",
+            "Properties": {
+              "conditional": "false"
+            }
+          },
+          "weight": 1
+        },
+        {
+          "data": {
+            "Name": "dreamland:small_golden_cap"
+          },
+          "weight": 15
+        }
+      ]
+    }
+  }
+}

@@ -35,7 +35,18 @@ public class DreamlandBlockStates extends BlockStateProvider{
 		
 		ArrayList<Block> simpleBlocks = new ArrayList<Block>();
 		//simpleBlocks.add(DreamlandBlocks.CLAY_SOIL.block().get());
-		//simpleBlocks.add(DreamlandBlocks.DARK_QUARTZITE.block().get());
+		simpleBlocks.add(DreamlandBlocks.KUNZITE_STONE.block().get());
+		simpleBlocks.add(DreamlandBlocks.COBBLED_KUNZITE_STONE.block().get());
+		simpleBlocks.add(DreamlandBlocks.KUNZITE_BRICKS.block().get());
+		simpleBlocks.add(DreamlandBlocks.KUNZITE_TILE.block().get());
+		simpleBlocks.add(DreamlandBlocks.CHISELED_KUNZITE.block().get());
+		simpleBlocks.add(DreamlandBlocks.KUNZITE_COPPER_ORE.block().get());
+		simpleBlocks.add(DreamlandBlocks.KUNZITE_IRON_ORE.block().get());
+		simpleBlocks.add(DreamlandBlocks.KUNZITE_REDSTONE_ORE.block().get());
+		simpleBlocks.add(DreamlandBlocks.KUNZITE_LAPIS_ORE.block().get());
+		simpleBlocks.add(DreamlandBlocks.KUNZITE_EMERALD_ORE.block().get());
+		simpleBlocks.add(DreamlandBlocks.KUNZITE_DIAMOND_ORE.block().get());
+		simpleBlocks.add(DreamlandBlocks.GOLD_BEARING_QUARTZITE.block().get());
 		//simpleBlocks.add(DreamlandBlocks.DUSK_ICE.block().get());
 		simpleBlocks.add(DreamlandBlocks.HIVE_IRON.block().get());
 		simpleBlocks.add(DreamlandBlocks.HIVE_COPPER.block().get());
@@ -54,6 +65,7 @@ public class DreamlandBlockStates extends BlockStateProvider{
 		simpleBlocks.add(DreamlandBlocks.PRECIOUS_OPAL_BLOCK.block().get());
 		simpleBlocks.add(DreamlandBlocks.OPAL_TILE.block().get());
 		simpleBlocks.add(DreamlandBlocks.PRECIOUS_OPAL_TILE.block().get());
+		simpleBlocks.add(DreamlandBlocks.PRECIOUS_OPAL_LAMP.block().get());
 		simpleBlocks.add(DreamlandBlocks.JEWELED_DEEPSLATE.block().get());
 
 		for(Block element : simpleBlocks) {
@@ -78,6 +90,20 @@ public class DreamlandBlockStates extends BlockStateProvider{
 		slabBlock((SlabBlock) DreamlandBlocks.TAR_MUD_BRICK_SLAB.block().get(), tarMudBrickTxt, tarMudBrickTxt, tarMudBrickTxt, tarMudBrickTxt);
 		stairsBlock((StairBlock) DreamlandBlocks.TAR_MUD_BRICK_STAIRS.block().get(), tarMudBrickTxt, tarMudBrickTxt, tarMudBrickTxt);
 		wallBlock((WallBlock) DreamlandBlocks.TAR_MUD_BRICK_WALL.block().get(), tarMudBrickTxt);
+		
+		ResourceLocation kunziteBricksTxt = modLoc("block/kunzite_bricks");
+		slabBlock((SlabBlock) DreamlandBlocks.KUNZITE_BRICK_SLAB.block().get(), kunziteBricksTxt, kunziteBricksTxt, kunziteBricksTxt, kunziteBricksTxt);
+		stairsBlock((StairBlock) DreamlandBlocks.KUNZITE_BRICK_STAIRS.block().get(), kunziteBricksTxt, kunziteBricksTxt, kunziteBricksTxt);
+		wallBlock((WallBlock) DreamlandBlocks.KUNZITE_BRICK_WALL.block().get(), kunziteBricksTxt);
+		
+		ResourceLocation cobbledKunziteTxt = modLoc("block/cobbled_kunzite_stone");
+		slabBlock((SlabBlock) DreamlandBlocks.COBBLED_KUNZITE_SLAB.block().get(), cobbledKunziteTxt, cobbledKunziteTxt, cobbledKunziteTxt, cobbledKunziteTxt);
+		stairsBlock((StairBlock) DreamlandBlocks.COBBLED_KUNZITE_STAIRS.block().get(), cobbledKunziteTxt, cobbledKunziteTxt, cobbledKunziteTxt);
+		wallBlock((WallBlock) DreamlandBlocks.COBBLED_KUNZITE_WALL.block().get(), cobbledKunziteTxt);
+		
+		ResourceLocation kunzitePointBlockTop = modLoc("block/kunzite_point_block_top");
+		ResourceLocation kunzitePointBlockSide = modLoc("block/kunzite_point_block");
+		axisBlock((RotatedPillarBlock) DreamlandBlocks.KUNZITE_POINT_BLOCK.block().get(), kunzitePointBlockSide, kunzitePointBlockTop);
 		
 		registerWoodSet(DreamlandWoodSets.PLUM_BIRCH);
 		registerWoodSet(DreamlandWoodSets.TAR_BARK);

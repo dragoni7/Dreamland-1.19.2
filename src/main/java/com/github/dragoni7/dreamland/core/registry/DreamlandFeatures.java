@@ -48,6 +48,7 @@ public class DreamlandFeatures {
 			helper.register("plum_birch_tree", DreamlandFeatures.PLUM_BIRCH_TREE_FEATURE);
 			helper.register("ellipsoid", DreamlandFeatures.ELLIPSOID);
 			helper.register("opal_cluster", DreamlandFeatures.OPAL_CLUSTER);
+			
 		});
 	}
 }

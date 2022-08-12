@@ -1,25 +1,7 @@
 package com.github.dragoni7.dreamland.core.registry;
 
 import com.github.dragoni7.dreamland.Dreamland;
-import com.github.dragoni7.dreamland.common.blocks.CaveSlimeBlock;
-import com.github.dragoni7.dreamland.common.blocks.CaveSlimePlantBlock;
-import com.github.dragoni7.dreamland.common.blocks.DreamlandSaplingBlock;
-import com.github.dragoni7.dreamland.common.blocks.EmissiveHiveBlock;
-import com.github.dragoni7.dreamland.common.blocks.FloweringUndergrowthBlock;
-import com.github.dragoni7.dreamland.common.blocks.GroundPlantBlock;
-import com.github.dragoni7.dreamland.common.blocks.HiveBlock;
-import com.github.dragoni7.dreamland.common.blocks.HiveClusterBlock;
-import com.github.dragoni7.dreamland.common.blocks.HiveGrowthBlock;
-import com.github.dragoni7.dreamland.common.blocks.HiveMembraneBlock;
-import com.github.dragoni7.dreamland.common.blocks.HiveWeaverBlock;
-import com.github.dragoni7.dreamland.common.blocks.InfestedHiveClusterBlock;
-import com.github.dragoni7.dreamland.common.blocks.JellySplotchBlock;
-import com.github.dragoni7.dreamland.common.blocks.LarvaAngerableBlock;
-import com.github.dragoni7.dreamland.common.blocks.OpalClusterBlock;
-import com.github.dragoni7.dreamland.common.blocks.OpalDiffuserBlock;
-import com.github.dragoni7.dreamland.common.blocks.TarSproutsBlock;
-import com.github.dragoni7.dreamland.common.blocks.UndergrowthBlock;
-import com.github.dragoni7.dreamland.common.blocks.VioletShrubBlock;
+import com.github.dragoni7.dreamland.common.blocks.*;
 import com.github.dragoni7.dreamland.util.BlockItemSet;
 
 import net.minecraft.core.BlockPos;
@@ -28,6 +10,10 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CarpetBlock;
+import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.block.RedStoneOreBlock;
+import net.minecraft.world.level.block.MossBlock;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.MudBlock;
@@ -36,6 +22,7 @@ import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
@@ -52,7 +39,75 @@ public class DreamlandBlocks {
 	
 	public static final BlockItemSet BUMBLE_BLOCK = new BlockItemSet("bumble_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.YELLOW_WOOL).sound(DreamlandSoundTypes.BUMBLE_BLOCK).noOcclusion()));
 	
-	//public static final BlockItemSet DARK_QUARTZITE = new BlockItemSet("dark_quartzite", () -> new DarkQuartziteBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
+	public static final BlockItemSet KUNZITE_STONE = new BlockItemSet("kunzite", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).color(MaterialColor.COLOR_PINK)));
+	
+	public static final BlockItemSet COBBLED_KUNZITE_STONE = new BlockItemSet("cobbled_kunzite_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.COBBLED_DEEPSLATE).color(MaterialColor.COLOR_PINK)));
+	
+	public static final BlockItemSet KUNZITE_POINT = new BlockItemSet("kunzite_point", () -> new KunzitePointBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).color(MaterialColor.COLOR_PINK).noOcclusion().dynamicShape().hasPostProcess(DreamlandBlocks::always).emissiveRendering(DreamlandBlocks::always).lightLevel((light) -> {return 4;})));
+	
+	public static final BlockItemSet KUNZITE_COPPER_ORE = new BlockItemSet("kunzite_copper_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_COPPER_ORE)));
+	
+	public static final BlockItemSet KUNZITE_IRON_ORE = new BlockItemSet("kunzite_iron_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
+	
+	public static final BlockItemSet KUNZITE_LAPIS_ORE = new BlockItemSet("kunzite_lapis_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_LAPIS_ORE)));
+	
+	public static final BlockItemSet KUNZITE_REDSTONE_ORE = new BlockItemSet("kunzite_redstone_ore", () -> new RedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_REDSTONE_ORE)));
+	
+	public static final BlockItemSet KUNZITE_EMERALD_ORE = new BlockItemSet("kunzite_emerald_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_EMERALD_ORE)));
+	
+	public static final BlockItemSet KUNZITE_DIAMOND_ORE = new BlockItemSet("kunzite_diamond_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_DIAMOND_ORE)));
+	
+	public static final BlockItemSet GOLD_BEARING_QUARTZITE = new BlockItemSet("gold_bearing_quartzite", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_GOLD_ORE)));
+	
+	public static final BlockItemSet MIDASHROOM = new BlockItemSet("midashroom", () -> new MidashroomBlock(BlockBehaviour.Properties.of(Material.PLANT).color(MaterialColor.GOLD).sound(SoundType.SHROOMLIGHT).strength(2.0F).randomTicks().noOcclusion().hasPostProcess(DreamlandBlocks::always).emissiveRendering(DreamlandBlocks::always)));
+	
+	public static final BlockItemSet GOLD_FRONDS = new BlockItemSet("gold_fronds", () -> new GroundPlantBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).color(MaterialColor.GOLD).offsetType(BlockBehaviour.OffsetType.XZ)));
+	
+	public static final BlockItemSet GOLDEN_MOSS_CARPET = new BlockItemSet("golden_moss_carpet", () -> new CarpetBlock(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.GOLD).strength(0.1F).sound(SoundType.MOSS_CARPET)));
+	
+	public static final BlockItemSet GOLDEN_MOSS_BLOCK = new BlockItemSet("golden_moss_block", () -> new MossBlock(BlockBehaviour.Properties.copy(DreamlandBlocks.GOLDEN_MOSS_CARPET.block().get())));
+	
+	public static final BlockItemSet SMALL_GOLDEN_CAP = new BlockItemSet("small_golden_cap", () -> new SmallGoldenCapBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM).color(MaterialColor.GOLD).lightLevel(SmallGoldenCapBlock.emission(1))));
+	
+	public static final BlockItemSet GOLDEN_CAP = new BlockItemSet("golden_cap", () -> new GoldenCapBlock(BlockBehaviour.Properties.copy(Blocks.BROWN_MUSHROOM_BLOCK).color(MaterialColor.GOLD).strength(0.5F).lightLevel((light) -> {
+      return 3;}).hasPostProcess(DreamlandBlocks::always).emissiveRendering(DreamlandBlocks::always).noOcclusion()));
+	
+	public static final BlockItemSet BUDDING_GOLD = new BlockItemSet("budding_gold", () -> new BuddingGoldBlock(BlockBehaviour.Properties.of(Material.STONE).randomTicks().strength(4.5F, 3.0F).sound(SoundType.DEEPSLATE).noLootTable()));
+	
+	public static final BlockItemSet GOLD_CLUSTER = new BlockItemSet("gold_cluster", () -> new GoldClusterBlock(7, 2, BlockBehaviour.Properties.of(Material.METAL).noOcclusion().sound(SoundType.NETHER_GOLD_ORE).strength(1.5F).lightLevel((light) -> {
+	  return 5;})));
+	
+	public static final BlockItemSet LARGE_GOLD_CLUSTER = new BlockItemSet("large_gold_cluster", () -> new GoldClusterBlock(5, 2, BlockBehaviour.Properties.copy(GOLD_CLUSTER.block().get()).lightLevel((light) -> {
+	  return 4;})));
+	
+	public static final BlockItemSet MEDIUM_GOLD_CLUSTER = new BlockItemSet("medium_gold_cluster", () -> new GoldClusterBlock(4, 2, BlockBehaviour.Properties.copy(GOLD_CLUSTER.block().get()).lightLevel((light) -> {
+	  return 2;})));
+	
+	public static final BlockItemSet SMALL_GOLD_CLUSTER = new BlockItemSet("small_gold_cluster", () -> new GoldClusterBlock(3, 4, BlockBehaviour.Properties.copy(GOLD_CLUSTER.block().get()).lightLevel((light) -> {
+	  return 1;})));
+	
+	public static final BlockItemSet KUNZITE_POINT_BLOCK = new BlockItemSet("kunzite_point_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).color(MaterialColor.COLOR_PINK).hasPostProcess(DreamlandBlocks::always).emissiveRendering(DreamlandBlocks::always).lightLevel((light) -> {return 4;})));
+	
+	public static final BlockItemSet KUNZITE_BARS = new BlockItemSet("kunzite_bars", () -> new IronBarsBlock(BlockBehaviour.Properties.copy(KUNZITE_POINT_BLOCK.block().get()).noOcclusion()));
+	
+	public static final BlockItemSet KUNZITE_BRICKS = new BlockItemSet("kunzite_bricks", () -> new Block(BlockBehaviour.Properties.copy(KUNZITE_STONE.block().get()).sound(SoundType.DEEPSLATE_BRICKS)));
+	
+	public static final BlockItemSet KUNZITE_BRICK_STAIRS = new BlockItemSet("kunzite_brick_stairs", () -> new StairBlock(KUNZITE_BRICKS.block().get().defaultBlockState(), BlockBehaviour.Properties.copy(KUNZITE_BRICKS.block().get())));
+	
+	public static final BlockItemSet KUNZITE_BRICK_SLAB = new BlockItemSet("kunzite_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(KUNZITE_BRICKS.block().get())));
+	
+	public static final BlockItemSet KUNZITE_BRICK_WALL = new BlockItemSet("kunzite_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(KUNZITE_BRICKS.block().get())));
+	
+	public static final BlockItemSet COBBLED_KUNZITE_SLAB = new BlockItemSet("cobbled_kunzite_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(COBBLED_KUNZITE_STONE.block().get())));
+	
+	public static final BlockItemSet COBBLED_KUNZITE_STAIRS = new BlockItemSet("cobbled_kunzite_stairs", () -> new StairBlock(COBBLED_KUNZITE_STONE.block().get().defaultBlockState(), BlockBehaviour.Properties.copy(COBBLED_KUNZITE_STONE.block().get())));
+	
+	public static final BlockItemSet COBBLED_KUNZITE_WALL = new BlockItemSet("cobbled_kunzite_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(COBBLED_KUNZITE_STONE.block().get())));
+	
+	public static final BlockItemSet CHISELED_KUNZITE = new BlockItemSet("chiseled_kunzite", () -> new Block(BlockBehaviour.Properties.copy(KUNZITE_BRICKS.block().get())));
+	
+	public static final BlockItemSet KUNZITE_TILE = new BlockItemSet("kunzite_tile", () -> new Block(BlockBehaviour.Properties.copy(KUNZITE_BRICKS.block().get())));
+	
 	
 	//public static final BlockItemSet CLAY_SOIL = new BlockItemSet("clay_soil", () -> new ClaySoilBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.ROOTED_DIRT)));
 	
@@ -129,7 +184,7 @@ public class DreamlandBlocks {
 					.noLootTable()
 					.hasPostProcess(DreamlandBlocks::always)
 					.emissiveRendering(DreamlandBlocks::always)
-					.lightLevel((p_152684_) -> {return 1;})
+					.lightLevel((light) -> {return 2;})
 					));
 	
 	public static final BlockItemSet HIVE_WEAVER = new BlockItemSet("hive_weaver",
@@ -150,7 +205,7 @@ public class DreamlandBlocks {
 					));
 	
 	public static final BlockItemSet HIVE_GROWTH = new BlockItemSet("hive_growth",
-			() -> new HiveGrowthBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_RED).noOcclusion().sound(SoundType.MOSS_CARPET).instabreak()
+			() -> new HiveGrowthBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_RED).noOcclusion().sound(SoundType.NETHER_SPROUTS).instabreak()
 					));
 	
 	public static final RegistryObject<Block> JELLY_SPLOTCH = BLOCKS.register("jelly_splotch",
@@ -252,6 +307,8 @@ public class DreamlandBlocks {
 	
 	public static final BlockItemSet PRECIOUS_OPAL_TILE = new BlockItemSet("precious_opal_tile",
 			() -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
+	
+	public static final BlockItemSet PRECIOUS_OPAL_LAMP = new BlockItemSet("precious_opal_lamp", () -> new Block(BlockBehaviour.Properties.copy(Blocks.SEA_LANTERN).color(MaterialColor.COLOR_PURPLE)));
 	
 	public static final BlockItemSet PRECIOUS_OPAL_SLAB = new BlockItemSet("precious_opal_slab",
 			() -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_SLAB)));

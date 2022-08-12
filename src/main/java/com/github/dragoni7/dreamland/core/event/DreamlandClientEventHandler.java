@@ -1,5 +1,7 @@
 package com.github.dragoni7.dreamland.core.event;
 
+import com.github.dragoni7.dreamland.client.particles.GoldGlitterParticle;
+import com.github.dragoni7.dreamland.client.particles.MidashroomSporesParticle;
 import com.github.dragoni7.dreamland.client.particles.TarBubbleParticle;
 import com.github.dragoni7.dreamland.client.particles.WhitePollenParticle;
 import com.github.dragoni7.dreamland.client.render.*;
@@ -32,31 +34,6 @@ public class DreamlandClientEventHandler {
 	
 	private static void setupClient(final FMLClientSetupEvent event) {
 		event.enqueueWork(()-> {
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.BUMBLE_BLOCK.block().get(), RenderType.cutout());
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.HIVE_JELLY_CLUSTER.block().get(), RenderType.translucent());
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.INFESTED_HIVE_JELLY_CLUSTER.block().get(), RenderType.translucent());
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.CLAY_SOIL_GRASS.block().get(), RenderType.cutout());
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.DUSK_ICE.block().get(), RenderType.translucent());
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.HIVE_MEMBRANE.block().get(), RenderType.cutout());
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.CAVE_SLIME.block().get(), RenderType.cutout());
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.CAVE_SLIME_PLANT.get(), RenderType.cutout());	
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.HIVE_GROWTH.block().get(), RenderType.cutout());
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.JELLY_SPLOTCH.get(), RenderType.cutout());
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.TAR_SPROUTS.block().get(), RenderType.cutout());
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.TAR_BARK_LEAVES.block().get(), RenderType.cutout());
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.PLUM_BIRCH_LEAVES.block().get(), RenderType.cutout());
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.FLOWERING_GRASS.block().get(), RenderType.cutout());
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.PLUM_BIRCH.door().block().get(), RenderType.cutoutMipped());
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.PLUM_BIRCH.ladder().block().get(), RenderType.cutoutMipped());
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.OPALINE_MARIGOLD.block().get(), RenderType.cutout());
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.PINK_CRAB_GRASS.block().get(), RenderType.cutout());
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.FLOWERING_UNDERGROWTH.block().get(), RenderType.cutout());
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.OPAL_DIFFUSER_BLOCK.block().get(), RenderType.cutout());
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.PLUM_BIRCH_SHRUB.block().get(), RenderType.cutout());
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.TAR_BARK.door().block().get(), RenderType.cutoutMipped());
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandWoodSets.TAR_BARK.ladder().block().get(), RenderType.cutoutMipped());
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.PLUM_BIRCH_SAPLING.block().get(), RenderType.cutout());
-			//ItemBlockRenderTypes.setRenderLayer(DreamlandBlocks.TAR_BARK_SAPLING.block().get(), RenderType.cutout());
 			
 			ItemBlockRenderTypes.setRenderLayer(DreamlandFluids.TAR_BLOCK.get(), RenderType.solid());
 			
@@ -88,7 +65,7 @@ public class DreamlandClientEventHandler {
 	private static void registerParticles(RegisterParticleProvidersEvent event) {
 		event.register(DreamlandParticles.TAR_BUBBLE.get(), TarBubbleParticle.Provider::new);
 		event.register(DreamlandParticles.WHITE_POLLEN.get(), WhitePollenParticle.Provider::new);
-		//Minecraft.getInstance().particleEngine.register(DreamlandParticles.TAR_BUBBLE.get(), TarBubbleParticle.Provider::new);
-		//Minecraft.getInstance().particleEngine.register(DreamlandParticles.WHITE_POLLEN.get(), WhitePollenParticle.Provider::new);
+		event.register(DreamlandParticles.GOLD_GLITTER.get(), GoldGlitterParticle.Provider::new);
+		event.register(DreamlandParticles.MIDASHROOM_SPORES.get(), MidashroomSporesParticle.Provider::new);
 	}
 }

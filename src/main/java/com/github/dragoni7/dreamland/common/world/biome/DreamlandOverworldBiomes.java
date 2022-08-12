@@ -24,13 +24,11 @@ public class DreamlandOverworldBiomes {
         return Mth.hsvToRgb(0.62222224F - $$1 * 0.05F, 0.5F + $$1 * 0.1F, 1.0F);
     }
 
-    private static Biome biome(Biome.Precipitation precipitation, float temperature, float downfall, BiomeSpecialEffects specialEffects, MobSpawnSettings.Builder spawnBuilder, BiomeGenerationSettings.Builder biomeBuilder)
-    {
+    private static Biome biome(Biome.Precipitation precipitation, float temperature, float downfall, BiomeSpecialEffects specialEffects, MobSpawnSettings.Builder spawnBuilder, BiomeGenerationSettings.Builder biomeBuilder) {
         return (new Biome.BiomeBuilder()).precipitation(precipitation).temperature(temperature).downfall(downfall).specialEffects(specialEffects).mobSpawnSettings(spawnBuilder.build()).generationSettings(biomeBuilder.build()).build();
     }
 
-    private static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder)
-    {
+    private static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder) {
         BiomeDefaultFeatures.addDefaultCarversAndLakes(builder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(builder);
         BiomeDefaultFeatures.addDefaultMonsterRoom(builder);
@@ -40,9 +38,33 @@ public class DreamlandOverworldBiomes {
         BiomeDefaultFeatures.addDefaultOres(builder);
         BiomeDefaultFeatures.addDefaultSoftDisks(builder);
     }
+    
+    public static Biome midascaves() {
+    	MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
+        DreamlandBiomeFeatures.midascavesBiomeFeatures(biomeBuilder);
+        
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SKELETON, 105, 4, 4));
+    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.CREEPER, 100, 4, 4));
+    	spawnBuilder.addSpawn(MobCategory.AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.BAT, 10, 8, 8));
+    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SPIDER, 100, 4, 4));
+    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ENDERMAN, 10, 1, 4));
+        
+        return biome(Biome.Precipitation.NONE, 0.8F, 0.0F, new BiomeSpecialEffects.Builder()
+        		.grassColorOverride(13082890)
+				.foliageColorOverride(13082890)
+        		.waterColor(4789140)
+        		.waterFogColor(4789140)
+        		.fogColor(4789140)
+        		.skyColor(calculateSkyColor(0.8F))
+        		.ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+        		.ambientParticle(new AmbientParticleSettings(DreamlandParticles.GOLD_GLITTER.get(), 0.001F))
+        		.backgroundMusic(NORMAL_MUSIC)
+        		.build(),
+        		 spawnBuilder, biomeBuilder);
+    }
 
-    public static Biome hive()
-    {	
+    public static Biome hive() {	
     	MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
         BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
@@ -106,7 +128,6 @@ public class DreamlandOverworldBiomes {
     	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SLIME, 100, 4, 4));
     	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ENDERMAN, 10, 1, 4));
     	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.WITCH, 5, 1, 1));
-    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SLIME, 100, 4, 4));
     	
     	return biome(Biome.Precipitation.RAIN, 0.9F, 1.0F, new BiomeSpecialEffects.Builder()
     			.grassColorOverride(14370147)

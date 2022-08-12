@@ -100,9 +100,9 @@
     "monster": [
       {
         "type": "dreamland:ooze",
-        "maxCount": 25,
+        "maxCount": 2,
         "minCount": 1,
-        "weight": 15
+        "weight": 25
       },
       {
         "type": "minecraft:skeleton",
