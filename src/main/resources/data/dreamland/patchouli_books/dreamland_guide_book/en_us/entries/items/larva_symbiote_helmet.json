@@ -1,0 +1,16 @@
+{
+    "name": "Larva Symbiote Helmet",
+    "icon": "dreamland:larva_symbiote",
+    "category": "dreamland:items",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "The larva symbiote is an item that rarely drops from a larva. Upon placing the larva on your head, the larva will protect you just as any helmet, but with a special ability. Whenever the wearing is struck, the larva symbiote will emite phermones, summoning larva that will attack the target."
+        },
+
+        {
+            "type": "patchouli:spotlight",
+            "item": "dreamland:larva_symbiote"
+        }
+    ]
+}

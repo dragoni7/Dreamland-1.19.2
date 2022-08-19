@@ -31,7 +31,7 @@ Enhances your Overworld exploration experience with the addition of a few fantas
 [[dependencies.forge]]
     modId = "forge"
     mandatory = true
-    versionRange = "[43.0.8,)"
+    versionRange = "[43.1.1,)"
     ordering = "NONE"
     side = "BOTH"
 

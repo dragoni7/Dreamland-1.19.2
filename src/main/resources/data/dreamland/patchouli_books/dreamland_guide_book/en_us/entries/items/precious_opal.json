@@ -1,0 +1,16 @@
+{
+    "name": "Precious Opal",
+    "icon": "dreamland:precious_opal",
+    "category": "dreamland:items",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "Precious opal is a rare varient of opal, dropping occasionally when shearing opal shells"
+        },
+
+        {
+            "type": "patchouli:spotlight",
+            "item": "dreamland:precious_opal"
+        }
+    ]
+}

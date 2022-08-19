@@ -1,0 +1,16 @@
+{
+    "name": "Opal Potion Diffuser",
+    "icon": "dreamland:opal_diffuser",
+    "category": "dreamland:blocks",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "This potion diffuser, a decive created with rare precious opal utilizes the properties of the gem to diffuse potions into the air in small area around it. Simple insert any potion into the device and it will begin diffusing for the potion's duration."
+        },
+
+        {
+            "type": "patchouli:spotlight",
+            "item": "dreamland:opal_diffuser"
+        }
+    ]
+}

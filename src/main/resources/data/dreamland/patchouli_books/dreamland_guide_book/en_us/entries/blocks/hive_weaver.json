@@ -1,0 +1,16 @@
+{
+    "name": "Hive Weaver",
+    "icon": "dreamland:hive_weaver",
+    "category": "dreamland:blocks",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "The hive weaver is a block found in the hive biome. There appears to be a subspecies of larva that live within the block, weaving a web of membrane around itself. This larva membrane is as tough as bedrock, yet if the weaver is destroyed, the member begins to decay. It has been observed that the weaver can only preform it's function every time it consumes hive jelly, as well as there being a limit as to how far it can weave membrane"
+        },
+
+        {
+            "type": "patchouli:spotlight",
+            "item": "dreamland:hive_weaver"
+        }
+    ]
+}

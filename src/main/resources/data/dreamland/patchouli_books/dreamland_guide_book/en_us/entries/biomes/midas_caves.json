@@ -1,0 +1,17 @@
+{
+    "name": "Midas Caves",
+    "icon": "dreamland:kunzite",
+    "category": "dreamland:biomes",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "$(bold)Biome Name:$() $(6)Midas Caves$() $(br)$(bold)Danger Level$(): $(#dbdb21)medium$() $(br)$(bold)Description$():$(br)The cave biome that will strike one rich. The midas caves are filled with copious amounts of rare minerals and golden vegetation. If one can brave the typical hostile mobs that spawn underground, be sure to look for large gold veins that form along the cave walls, along with rare gold-forming geodes. The mushrooms that grow along the golden moss carpet have strange characteristics, the largest able to use gold to fertilize crops"
+        },
+
+        {
+            "type": "patchouli:image",
+            "images": ["dreamland:textures/gui/entries/midas_caves_biome.png"],
+            "border": true
+        }
+    ]
+}

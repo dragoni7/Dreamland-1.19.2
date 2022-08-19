@@ -1,0 +1,16 @@
+{
+    "name": "Hive Jelly",
+    "icon": "dreamland:hive_jelly",
+    "category": "dreamland:items",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "This jelly can be harvested throughout the larva's hive, though the risk is high. The jelly itself is a very versitile item, function as food, and a throwable light source (shift right click)."
+        },
+
+        {
+            "type": "patchouli:spotlight",
+            "item": "dreamland:hive_jelly"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Midashroom",
+    "icon": "dreamland:midashroom",
+    "category": "dreamland:blocks",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "The midashroom is a strange mushroom found within the moss carpet growth of the midas caves. It is also possible to grow the mushroom from a regular golden cap shroom, though, rarely. This mushroom possesses the strange ability to consume golden items as nutrients, spraying out golden spores. These spores have fertilization properties, though caution must be taken. The spores have been noted to occasionally transform crops into gold"
+        },
+
+        {
+            "type": "patchouli:spotlight",
+            "item": "dreamland:midashroom"
+        }
+    ]
+}

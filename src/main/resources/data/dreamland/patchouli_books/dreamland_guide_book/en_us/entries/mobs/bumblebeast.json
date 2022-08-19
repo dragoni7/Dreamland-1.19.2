@@ -1,0 +1,15 @@
+{
+    "name": "Bumblebeast",
+    "icon": "dreamland:bumble_block",
+    "category": "dreamland:mobs",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "The bumblebeasts are another resident of the $(d)jeweled forest$(). These intimidating creatures are actually peaceful, so don't be fooled. Although, like their smaller counterparts, $(4)attacking one will anger it$(). The hives found growing on the abdomen of bumblebeasts seem to funtion in the production of honey, harvestable with glass bottle when full. These creatures also love honey blocks, and will drop a block of their fuzz when fed."
+        },
+        {
+            "type": "patchouli:entity",
+            "entity": "dreamland:bumble_beast"
+        }
+    ]
+}

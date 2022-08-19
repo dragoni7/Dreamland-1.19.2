@@ -1,0 +1,17 @@
+{
+    "name": "Hive",
+    "icon": "dreamland:hive_block",
+    "category": "dreamland:biomes",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "$(bold)Biome Name:$() $(5)Hive$() $(br)$(bold)Danger Level$(): $(4)high$() $(br)$(bold)Description$():$(br)The hive biome is a vast underground territory presumably built by it's residents, the larva. Teeming with rich resources, daring explorers may attempt to nab some for themselves despite the high risk. Although be warned, no one likes when their things are stolen..."
+        },
+
+        {
+            "type": "patchouli:image",
+            "images": ["dreamland:textures/gui/entries/hive_biome.png"],
+            "border": true
+        }
+    ]
+}

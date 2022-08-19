@@ -1,0 +1,10 @@
+{
+    "name": "Guide to Biomes of Dreams",
+    "landing_text": "The following is a compilation of notes gathered from many explorer who encountered these strange, dream-like biomes. If one wishes to be better prepared when encountering these lands, read this guide.",
+    "book_texture": "patchouli:textures/gui/book_cyan.png",
+    "text_overflow_mode ": "resize",
+    "model": "dreamland:dreamland_guide_book",
+    "show_progress": false,
+    "creative_tab": "dreamland",
+    "version": 1
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Tar",
+    "icon": "dreamland:tar_bucket",
+    "category": "dreamland:blocks",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "Pools of this thick dangerous fluid can be found everywhere in the tar deltas. Stepping in the fluid will result in one being weighed down by the tar, making it nearly impossible to jump and slow to move. To avoid peril, remaining still until the effect wears off will increase survival chances"
+        },
+
+        {
+            "type": "patchouli:spotlight",
+            "item": "dreamland:tar_bucket"
+        }
+    ]
+}

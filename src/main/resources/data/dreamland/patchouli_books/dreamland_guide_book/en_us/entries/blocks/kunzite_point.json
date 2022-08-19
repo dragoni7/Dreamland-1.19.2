@@ -1,0 +1,16 @@
+{
+    "name": "Kunzite Points",
+    "icon": "dreamland:kunzite_point",
+    "category": "dreamland:blocks",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "Kunzite points can be found on the walls of midas caves. These formations are purely decorative and emite a glow"
+        },
+
+        {
+            "type": "patchouli:spotlight",
+            "item": "dreamland:kunzite_point"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Opal",
+    "icon": "dreamland:opal",
+    "category": "dreamland:items",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "Opal is a gem found in the jeweled forest. Formations of this gem can be found growing on calcite throughout the biome. Another way to attain this resource would be to shear the shells of the local opal shells"
+        },
+
+        {
+            "type": "patchouli:spotlight",
+            "item": "dreamland:opal"
+        }
+    ]
+}

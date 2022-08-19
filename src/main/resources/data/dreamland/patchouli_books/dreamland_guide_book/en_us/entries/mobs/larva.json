@@ -1,0 +1,17 @@
+{
+    "name": "Larva",
+    "icon": "dreamland:larva_symbiote",
+    "category": "dreamland:mobs",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "The larva are the resident and presumably the ones responsible for the $(5)hive biome$(). It is unknown why these creatures are permently in their larval form. Although weak on their own, larva can swarm and quickly overwhelm unprepared individuals. It is recommended to avoid fighting these whenever possible, breaking hive blocks will antagonize you, $(4)angering nearby larva$()"
+        },
+
+        {
+            "type": "patchouli:image",
+            "images": ["dreamland:textures/gui/entries/larva.png"],
+            "border": true
+        }
+    ]
+}

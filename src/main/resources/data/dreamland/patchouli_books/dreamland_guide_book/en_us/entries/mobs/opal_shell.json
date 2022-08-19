@@ -1,0 +1,17 @@
+{
+    "name": "Opal Shell",
+    "icon": "minecraft:red_terracotta",
+    "category": "dreamland:mobs",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "The opal shell are the $(1)peaceful$() grazers of the $(d)jeweled forest$() biome, found in small groups throughout the forest. These large tortoises can be observed to have opal growths on their shells which seem to increase in size over time. Shearing them for the opal on their shell causes them no harm, therefore doing so is encouraged. It has been noted that sometimes the shearing has resulted in a rare, deep purple opal varient to drop"
+        },
+
+        {
+            "type": "patchouli:image",
+            "images": ["dreamland:textures/gui/entries/opal_shell.png"],
+            "border": true
+        }
+    ]
+}

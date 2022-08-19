@@ -1,0 +1,16 @@
+{
+    "name": "The Ooze",
+    "icon": "minecraft:black_terracotta",
+    "category": "dreamland:mobs",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "The ooze is a $(4)hostile$() mob encountered in the $(#6f4a8a)tar deltas$(). These monsters reside in pools of tar and do not possess the ability to move, making them easy targets. In fact, these mobs are more of a pest, the projectile they launch does little damage, only slowing the player and preventing jumping"
+        },
+
+        {
+            "type": "patchouli:entity",
+            "entity": "dreamland:ooze"
+        }
+    ]
+}

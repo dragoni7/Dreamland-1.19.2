@@ -1,0 +1,16 @@
+{
+    "name": "Budding Gold",
+    "icon": "dreamland:budding_gold",
+    "category": "dreamland:blocks",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "The budding gold block is a block found in gold geodes in the midas caves. This block behaves almost exactly like budding amethyst, growing gold clusters on it's sides"
+        },
+
+        {
+            "type": "patchouli:spotlight",
+            "item": "dreamland:budding_gold"
+        }
+    ]
+}

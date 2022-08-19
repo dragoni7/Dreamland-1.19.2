@@ -1,0 +1,17 @@
+{
+    "name": "Tar Deltas",
+    "icon": "dreamland:tar_mud",
+    "category": "dreamland:biomes",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "$(bold)Biome Name:$() $(#6f4a8a)Tar Deltas$() $(br)$(bold)Danger Level$(): $(#dbdb21)medium$() $(br)$(bold)Description$():$(br)The tar deltas is a hot, arid biome found near deserts. Characteristic features include wide deltas of dark grey-purple tar blocks, and dangerous puddles filled with this tar liquid. Despite the seemingly unlivable environment, patches of droughted soil can be found, flourishing with vegetation. Be cautious to avoid the tar puddles, hostile mobs known as oozes reside here."
+        },
+
+        {
+            "type": "patchouli:image",
+            "images": ["dreamland:textures/gui/entries/tar_deltas_biome.png"],
+            "border": true
+        }
+    ]
+}

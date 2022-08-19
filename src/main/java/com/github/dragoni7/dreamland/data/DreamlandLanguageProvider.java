@@ -1,9 +1,6 @@
 package com.github.dragoni7.dreamland.data;
 
 import com.github.dragoni7.dreamland.Dreamland;
-import com.github.dragoni7.dreamland.common.world.biome.BiomeKeys;
-import com.github.dragoni7.dreamland.common.world.biome.DreamlandOverworldBiomes;
-import com.github.dragoni7.dreamland.core.registry.DreamlandBiomes;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;

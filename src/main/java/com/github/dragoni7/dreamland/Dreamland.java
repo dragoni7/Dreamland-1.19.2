@@ -95,7 +95,7 @@ public class Dreamland
     public static final CreativeModeTab DreamlandTab = (new CreativeModeTab("dreamland")  {
     		@Override
     		public ItemStack makeIcon() {
-    			return new ItemStack(DreamlandBlocks.HIVE_BLOCK.block().get());
+    			return new ItemStack(DreamlandItems.LARVA_HELMET.get());
     		}
     	});
 

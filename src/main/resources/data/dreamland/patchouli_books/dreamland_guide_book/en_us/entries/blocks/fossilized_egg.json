@@ -1,0 +1,16 @@
+{
+    "name": "Fossilized Egg",
+    "icon": "dreamland:fossilized_egg",
+    "category": "dreamland:blocks",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "Nothing is yet known of this block (Block is WIP)"
+        },
+
+        {
+            "type": "patchouli:spotlight",
+            "item": "dreamland:fossilized_egg"
+        }
+    ]
+}

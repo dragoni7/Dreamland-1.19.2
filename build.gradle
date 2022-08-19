@@ -109,14 +109,6 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-    // Put repositories for dependencies here
-    // ForgeGradle automatically adds the Forge maven and Maven Central for you
-
-    // If you have mod jar dependencies in ./libs, you can declare them as a repository like so:
-    // flatDir {
-    //     dir 'libs'
-    // }
-
     maven {
     // location of the maven that hosts JEI files
     name = "Progwml6 maven"
@@ -127,10 +119,12 @@ repositories {
     name = "ModMaven"
     url = "https://modmaven.dev"
   }
-    
     maven { // Geckolib
         url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
   }
+  maven { // Patchouli
+    url 'https://maven.blamejared.com' 
+    }
 }
 
 dependencies {
@@ -143,6 +137,9 @@ dependencies {
 
   implementation fg.deobf("com.github.glitchfiend:TerraBlender-forge:${minecraft_version}-${terrablender_version}")
   implementation fg.deobf("software.bernie.geckolib:geckolib-forge-1.19:${geckolib_version}")
+
+  compileOnly fg.deobf("vazkii.patchouli:Patchouli:${minecraft_version}-${patchouli_version}:api")
+  runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${minecraft_version}-${patchouli_version}")
 }
 
 jar {

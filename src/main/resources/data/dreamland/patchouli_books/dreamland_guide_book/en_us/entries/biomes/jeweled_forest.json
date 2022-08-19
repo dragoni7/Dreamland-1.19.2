@@ -1,0 +1,17 @@
+{
+    "name": "Jeweled Forest",
+    "icon": "dreamland:flowering_grass",
+    "category": "dreamland:biomes",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "$(bold)Biome Name:$() $(d)Jeweled Forest$() $(br)$(bold)Danger Level$(): $(1)low$() $(br)$(bold)Description$():$(br)The jeweled forest is a lucious, vibrant forest filled with geological formations. Among calcite formations, opal and amethyst can be found. Mobs found here offer many resource gathering opportunites"
+        },
+
+        {
+            "type": "patchouli:image",
+            "images": ["dreamland:textures/gui/entries/jeweled_forest_biome.png"],
+            "border": true
+        }
+    ]
+}
