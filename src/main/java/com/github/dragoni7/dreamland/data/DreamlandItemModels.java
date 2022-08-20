@@ -108,7 +108,7 @@ public class DreamlandItemModels extends ItemModelProvider {
 		
 		singleTextureItemModel(DreamlandBlocks.TAR_SPROUTS.item(), "block/tar_sprouts");
 		singleTextureItemModel(DreamlandBlocks.TAR_BARK_SAPLING.item(), "item/tar_bark_sapling");
-		singleTextureItemModel(DreamlandBlocks.ANCIENT_EGG.item(), "item/ancient_egg");
+		//singleTextureItemModel(DreamlandBlocks.ANCIENT_EGG.item(), "item/ancient_egg");
 		singleTextureItemModel(DreamlandItems.TAR_BUCKET, "item/tar_bucket");
 		singleTextureItemModel(DreamlandItems.OOZE_BALL, "item/ooze_ball");
 		singleTextureItemModel(DreamlandItems.CANDIED_OOZE, "item/candied_ooze");

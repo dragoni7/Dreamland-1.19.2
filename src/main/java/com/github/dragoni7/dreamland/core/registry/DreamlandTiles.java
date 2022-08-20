@@ -13,8 +13,8 @@ public class DreamlandTiles {
 
 	public static final DeferredRegister<BlockEntityType<?>> TILES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, Dreamland.MODID);
 	
-	public static final RegistryObject<BlockEntityType<AncientEggTile>> ANCIENT_EGG = TILES.register("ancient_egg_tile",
-			() -> BlockEntityType.Builder.of(AncientEggTile::new, DreamlandBlocks.ANCIENT_EGG.block().get()).build(null));
+	//public static final RegistryObject<BlockEntityType<AncientEggTile>> ANCIENT_EGG = TILES.register("ancient_egg_tile",
+	//		() -> BlockEntityType.Builder.of(AncientEggTile::new, DreamlandBlocks.ANCIENT_EGG.block().get()).build(null));
 	
 	public static final RegistryObject<BlockEntityType<OpalDiffuserTile>> OPAL_DIFFUSER = TILES.register("opal_diffuser",
 			() -> BlockEntityType.Builder.of(OpalDiffuserTile::new, DreamlandBlocks.OPAL_DIFFUSER_BLOCK.block().get()).build(null));

@@ -76,7 +76,7 @@ public class DreamlandLootTables extends BaseLootTableProvider {
 		basicBlockTable(DreamlandBlocks.DROUGHT_SOIL.block().get(), "drought_soil");
 		basicBlockTable(DreamlandBlocks.TAR_BARK_SAPLING.block().get(), "tar_bark_sapling");
 		shearableVegetationTable(DreamlandBlocks.TAR_SPROUTS.block().get(), "tar_sprouts");
-		silkTouchTable(DreamlandBlocks.FOSSILIZED_EGG.block().get(), DreamlandBlocks.ANCIENT_EGG.item().get(), "fossilized_egg", 1, 1);
+		//silkTouchTable(DreamlandBlocks.FOSSILIZED_EGG.block().get(), DreamlandBlocks.ANCIENT_EGG.item().get(), "fossilized_egg", 1, 1);
 		basicBlockTable(DreamlandBlocks.OOZE_BLOCK.block().get(), "ooze_block");
 		
 		basicBlockTable(DreamlandBlocks.MINERAL_DIRT.block().get(), "mineral_dirt");

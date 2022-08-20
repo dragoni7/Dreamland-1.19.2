@@ -17,7 +17,7 @@ public class AncientEggBlock extends Block implements EntityBlock {
 
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-		return DreamlandTiles.ANCIENT_EGG.get().create(pos, state);
+		return null;
 	}
 	
 	@Override

@@ -50,7 +50,7 @@ public class DreamlandClientEventHandler {
 		event.registerEntityRenderer(DreamlandEntities.OOZE.get(), OozeRender::new);
 		event.registerEntityRenderer(DreamlandEntities.OPAL_SHELL.get(), OpalShellRender::new);
 		event.registerEntityRenderer(DreamlandEntities.TAR_BALL.get(), TarBallRender::new);
-		event.registerBlockEntityRenderer(DreamlandTiles.ANCIENT_EGG.get(), AncientEggRender::new);
+		//event.registerBlockEntityRenderer(DreamlandTiles.ANCIENT_EGG.get(), AncientEggRender::new);
 	}
 	
 	private static void registerArmorRenders(final EntityRenderersEvent.AddLayers event) {

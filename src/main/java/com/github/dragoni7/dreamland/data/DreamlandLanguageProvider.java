@@ -87,7 +87,7 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandBlocks.TAR_BARK_SAPLING.block().get(), "Tar Bark Sapling");
 		add(DreamlandBlocks.TAR_SPROUTS.block().get(), "Tar Sprouts");
 		add(DreamlandBlocks.TAR_BARK_LEAVES.block().get(), "Tar Bark Leaves");
-		add(DreamlandBlocks.ANCIENT_EGG.block().get(), "Ancient Egg");
+		//add(DreamlandBlocks.ANCIENT_EGG.block().get(), "Ancient Egg");
 		add(DreamlandBlocks.FOSSILIZED_EGG.block().get(), "Fossilized Egg");
 		add(DreamlandBlocks.OOZE_BLOCK.block().get(), "Ooze Block");
 		translateWoodSet(DreamlandWoodSets.TAR_BARK, "Tar Bark");
