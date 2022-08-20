@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "dreamland",
+  "key": {
+    "#": {
+      "item": "dreamland:ooze_ball"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "dreamland:ooze_block"
+  }
+}

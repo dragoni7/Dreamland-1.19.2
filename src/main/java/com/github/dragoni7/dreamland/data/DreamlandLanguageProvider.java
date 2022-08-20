@@ -89,6 +89,7 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandBlocks.TAR_BARK_LEAVES.block().get(), "Tar Bark Leaves");
 		add(DreamlandBlocks.ANCIENT_EGG.block().get(), "Ancient Egg");
 		add(DreamlandBlocks.FOSSILIZED_EGG.block().get(), "Fossilized Egg");
+		add(DreamlandBlocks.OOZE_BLOCK.block().get(), "Ooze Block");
 		translateWoodSet(DreamlandWoodSets.TAR_BARK, "Tar Bark");
 		
 		add(DreamlandBlocks.MINERAL_DIRT.block().get(), "Mineral Dirt");
@@ -118,12 +119,16 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		// Items
 		add(DreamlandItems.HIVE_JELLY_ITEM.get(), "Hive Jelly");
 		add(DreamlandItems.JELLY_BOWL_ITEM.get(), "Bowl of Jelly");
-		add(DreamlandItems.TAR_BUCKET.get(), "Bucket of Tar");
-		add(DreamlandItems.SPAWN_EGG_LARVA.get(), "Larva Spawn Egg");
-		add(DreamlandItems.SPAWN_EGG_OOZE.get(), "Ooze Spawn Egg");
 		add(DreamlandItems.LARVA_HELMET.get(), "Larva Symbiote Helmet");
+		
+		add(DreamlandItems.TAR_BUCKET.get(), "Bucket of Tar");
+		add(DreamlandItems.OOZE_BALL.get(), "Ooze Ball");
+		
 		add(DreamlandItems.OPAL.get(), "Opal");
 		add(DreamlandItems.PRECIOUS_OPAL.get(), "Precious Opal");
+		
+		add(DreamlandItems.SPAWN_EGG_LARVA.get(), "Larva Spawn Egg");
+		add(DreamlandItems.SPAWN_EGG_OOZE.get(), "Ooze Spawn Egg");
 		add(DreamlandItems.SPAWN_EGG_BUMBLE_BEAST.get(), "Bumble Beast Spawn Egg");
 		add(DreamlandItems.SPAWN_EGG_OPAL_SHELL.get(), "Spawn Egg Opal Shell");
 		
@@ -144,6 +149,10 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add("biome.dreamland.hive", "Hive");
 		add("biome.dreamland.jeweled_forest", "Jeweled Forest");
 		add("biome.dreamland.tar_deltas", "Tar Deltas");
+		
+		// JEED
+		add("effect.dreamland.tarred.description", "Slows, and severly reduces jump height. Extends burn time");
+		add("effect.dreamland.antagonized.description", "Nearby larva become angry at the entity that is antagonized, and attack");
 		
 	}
 	

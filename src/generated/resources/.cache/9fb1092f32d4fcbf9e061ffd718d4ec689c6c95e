@@ -1,4 +1,4 @@
-// 1.19.1	2022-08-11T22:44:57.1689075	Recipes
+// 1.19.2	2022-08-19T19:46:36.3206961	Recipes
 8a16d95bf91304d52803acce0bf268be8e54c72c data/dreamland/advancements/recipes/dreamland/chiseled_kunzite.json
 29edda6546127ca9ccafae9025625fe9b5d7f5b5 data/dreamland/advancements/recipes/dreamland/cobbled_kunzite_slab.json
 6f9f79c62c994c1d293d7e6a85c70c973a462205 data/dreamland/advancements/recipes/dreamland/cobbled_kunzite_stairs.json
@@ -10,6 +10,7 @@ eb673de420b8b630168adf3484ddac186758cf41 data/dreamland/advancements/recipes/dre
 7a27881c2429cc6f317cc0c18ff0539b85f672af data/dreamland/advancements/recipes/dreamland/kunzite_brick_wall.json
 145ea64aa9d08392d0a6188111a23df770e991f4 data/dreamland/advancements/recipes/dreamland/kunzite_point_block.json
 a6cbe4d066606ff02010e12bf510d1010eb636ad data/dreamland/advancements/recipes/dreamland/kunzite_tile.json
+0fb64a6fc03d205d811fb4800f1cb92f276125df data/dreamland/advancements/recipes/dreamland/ooze_block.json
 ecdeec15bdb5de66747d22c8a5f197809ab52973 data/dreamland/advancements/recipes/dreamland/opal.json
 d232742ab529a536c50587d60f1c7b5c4d3ee5c9 data/dreamland/advancements/recipes/dreamland/opal_block.json
 0a4d33608e2b0ea1a1bfbd6a7c66a82b3d197339 data/dreamland/advancements/recipes/dreamland/opal_diffuser.json
@@ -66,6 +67,7 @@ ddfd196dd13a36275cb8cecf921cfa2423a986b9 data/dreamland/recipes/kunzite_brick_st
 86b6445ac724127807ee153b4e1d0a07c26b76ae data/dreamland/recipes/kunzite_brick_wall.json
 3dbc219704a9e1b08993e80f162eceaf0cf84ee0 data/dreamland/recipes/kunzite_point_block.json
 b89aaf018449a5950bc2e48683f1026eecae2fb9 data/dreamland/recipes/kunzite_tile.json
+9ab5ea7d7e1ce72c0efe0e4eb7e8742447254243 data/dreamland/recipes/ooze_block.json
 3971d1e4c1bf09c23193a0d6637ab99ceec2d242 data/dreamland/recipes/opal.json
 27f3a45b44b4f12f80a05ff0ac8feed5cdd4672a data/dreamland/recipes/opal_block.json
 91d5f6ecba24a07f1fda86d8bb1c79a4d62cf987 data/dreamland/recipes/opal_diffuser.json

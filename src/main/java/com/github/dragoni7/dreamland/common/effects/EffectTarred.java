@@ -5,6 +5,7 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.phys.Vec3;
 
 public class EffectTarred extends MobEffect {
 
@@ -20,7 +21,12 @@ public class EffectTarred extends MobEffect {
 		}
 		
 		entity.setJumping(false);
-		entity.setDeltaMovement(entity.getDeltaMovement().add(0, -0.1D, 0));
+		
+		Vec3 motion = entity.getDeltaMovement();
+		
+		if (motion.y > 0.0D) {
+			entity.setDeltaMovement(motion.multiply(1.0D, -0.9D, 1.0D));
+		}
 	}
 	
 	public boolean isDurationEffectTick(int duration, int amplifier) {

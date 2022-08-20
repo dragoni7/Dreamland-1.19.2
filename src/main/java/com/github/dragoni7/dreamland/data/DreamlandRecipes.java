@@ -79,6 +79,13 @@ public class DreamlandRecipes extends RecipeProvider{
 		  .define('#', DreamlandBlocks.PACKED_TAR_MUD.item().get())
 		  .group("dreamland").unlockedBy("packed_tar_mud", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandBlocks.PACKED_TAR_MUD.item().get())).save(consumer);
 		  
+		  ShapedRecipeBuilder.shaped(DreamlandBlocks.OOZE_BLOCK.block().get())
+		  .pattern("###")
+		  .pattern("###")
+		  .pattern("###")
+		  .define('#', DreamlandItems.OOZE_BALL.get())
+		  .group("dreamland").unlockedBy("ooze_ball", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandItems.OOZE_BALL.get())).save(consumer);
+		  
 		  ShapelessRecipeBuilder.shapeless(DreamlandBlocks.JEWELED_DEEPSLATE.item().get())
 		  .requires(DreamlandItems.PRECIOUS_OPAL.get())
 		  .requires(DreamlandItems.OPAL.get(), 2)

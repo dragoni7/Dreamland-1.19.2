@@ -41,7 +41,16 @@ public class DreamlandFluids {
 				@Override
 				public boolean move(FluidState state, LivingEntity entity, Vec3 movementVector, double gravity)
 			    {
-					entity.setDeltaMovement(entity.getDeltaMovement().add(0, -0.10D, 0).multiply(0.5, 1, 0.5));
+					Vec3 motion = entity.getDeltaMovement();
+					
+					if (motion.y > 0.0D && entity.hasEffect(DreamlandEffects.TARRED.get())) {
+						entity.setDeltaMovement(motion.multiply(0.5D, 0.7D, 0.5D)); // entity ascends slower
+					} else if (motion.y < 0.0D) {
+						entity.setDeltaMovement(motion.multiply(0.5D, 0.9D, 0.5D)); // entity sinks slower
+					} else {
+						entity.setDeltaMovement(motion.multiply(0.5D, 1.0D, 0.5D)); // entity moves slower on xz axis
+					}
+					
 					return false;
 			    }
 				

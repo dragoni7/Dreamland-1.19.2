@@ -1,4 +1,4 @@
-// 1.19.1	2022-08-11T22:35:46.5038668	Dreamland LootTables
+// 1.19.2	2022-08-19T20:14:29.2324345	Dreamland LootTables
 5edeb9bd12b12facb7de034bac7cf2c1e16f9f3e data/dreamland/loot_tables/blocks/bumble_block.json
 caa1846bca6e651c75784d54ab3c39e3b9949146 data/dreamland/loot_tables/blocks/cave_slime.json
 7a1a0d94249b48ee6a0de4f02210ecec3e8e251c data/dreamland/loot_tables/blocks/chiseled_kunzite.json
@@ -48,6 +48,7 @@ c235841335dab710c4a85672424fc4a955d9b019 data/dreamland/loot_tables/blocks/kunzi
 b999956efe989d6b5c9d42eb7552c167cb1aa319 data/dreamland/loot_tables/blocks/medium_gold_cluster.json
 722cd097be2e0db4fd104c6f0038ec1f265200fc data/dreamland/loot_tables/blocks/midashroom.json
 20ccb332a1b2d57ae7af050cd988e7769aefb18d data/dreamland/loot_tables/blocks/mineral_dirt.json
+6cfefe5bd6797bcaaf252eb14ddb268f9e3c5742 data/dreamland/loot_tables/blocks/ooze_block.json
 edeb3db520fb5671be936ed4b07fb7cce5cc8c65 data/dreamland/loot_tables/blocks/opaline_marigold.json
 abb6871ed797abcb2fbaae155ac0238a6ca3b0fb data/dreamland/loot_tables/blocks/opal_block.json
 33e6a5526909b3a0ede98fb19b9cecbda3354c62 data/dreamland/loot_tables/blocks/opal_cluster.json

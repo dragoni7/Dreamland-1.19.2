@@ -8,6 +8,7 @@ import com.github.dragoni7.dreamland.common.entities.mobs.BumbleBeastEntity;
 import com.github.dragoni7.dreamland.common.entities.mobs.LarvaEntity;
 import com.github.dragoni7.dreamland.common.entities.mobs.OozeEntity;
 import com.github.dragoni7.dreamland.common.entities.mobs.OpalShellEntity;
+import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;

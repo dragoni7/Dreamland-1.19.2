@@ -34,6 +34,8 @@ public class DreamlandItems {
 	public static final RegistryObject<Item> TAR_BUCKET = ITEMS.register("tar_bucket", 
 			() -> new BucketItem(DreamlandFluids.TAR_FLUID, new Item.Properties().craftRemainder(Items.BUCKET).tab(Dreamland.DreamlandTab).stacksTo(1)));
 	
+	public static final RegistryObject<Item> OOZE_BALL = registerBasicItem("ooze_ball");
+	
 	public static final RegistryObject<Item> OPAL = registerBasicItem("opal");
 	public static final RegistryObject<Item> PRECIOUS_OPAL = registerBasicItem("precious_opal");
 	

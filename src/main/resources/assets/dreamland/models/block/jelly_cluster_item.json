@@ -1,0 +1,77 @@
+{
+	"credit": "Made with Blockbench",
+	"render_type": "cutout",
+	"textures": {
+		"1": "dreamland:block/hive_jelly_cluster",
+		"3": "dreamland:block/hive_jelly_cluster",
+		"particle": "dreamland:block/hive_jelly_cluster"
+	},
+	"elements": [
+		{
+			"from": [3, 0, 3],
+			"to": [13, 10, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 5, 0]},
+			"faces": {
+				"north": {"uv": [3, 3, 13, 13], "texture": "#3"},
+				"east": {"uv": [3, 3, 13, 13], "texture": "#3"},
+				"south": {"uv": [3, 3, 13, 13], "texture": "#3"},
+				"west": {"uv": [3, 3, 13, 13], "texture": "#3"},
+				"up": {"uv": [3, 3, 13, 13], "texture": "#3"},
+				"down": {"uv": [3, 3, 13, 13], "texture": "#3"}
+			}
+		},
+		{
+			"name": "overlay",
+			"from": [2.5, 0, 2.5],
+			"to": [13.5, 11, 13.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 5, 0]},
+			"faces": {
+				"north": {"uv": [3, 3, 13, 13], "texture": "#1"},
+				"east": {"uv": [3, 3, 13, 13], "texture": "#1"},
+				"south": {"uv": [3, 3, 13, 13], "texture": "#1"},
+				"west": {"uv": [3, 3, 13, 13], "texture": "#1"},
+				"up": {"uv": [3, 3, 13, 13], "texture": "#1"},
+				"down": {"uv": [3, 3, 13, 13], "texture": "#1"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 45, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 225, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [0, 3, 0],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [30, 225, 0],
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"fixed": {
+			"scale": [0.5, 0.5, 0.5]
+		}
+	},
+	"groups": [
+		{
+			"name": "hive_jelly_cluster",
+			"origin": [0, 5, 0],
+			"color": 0,
+			"children": [0, 1]
+		}
+	]
+}

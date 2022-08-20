@@ -1,4 +1,4 @@
-// 1.19.1	2022-08-11T20:22:07.9093428	Tags for minecraft:worldgen/biome
+// 1.19.2	2022-08-19T19:46:36.3136948	Tags for minecraft:worldgen/biome
 704a820923b1d7da4205ad6770aa58367a7377eb data/forge/tags/worldgen/biome/is_dense/overworld.json
 ef6f998ced2f46b060afd80a46f58f17584c4067 data/forge/tags/worldgen/biome/is_dry/overworld.json
 ef6f998ced2f46b060afd80a46f58f17584c4067 data/forge/tags/worldgen/biome/is_hot/overworld.json
