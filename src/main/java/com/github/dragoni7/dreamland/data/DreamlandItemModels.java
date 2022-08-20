@@ -111,6 +111,8 @@ public class DreamlandItemModels extends ItemModelProvider {
 		singleTextureItemModel(DreamlandBlocks.ANCIENT_EGG.item(), "item/ancient_egg");
 		singleTextureItemModel(DreamlandItems.TAR_BUCKET, "item/tar_bucket");
 		singleTextureItemModel(DreamlandItems.OOZE_BALL, "item/ooze_ball");
+		singleTextureItemModel(DreamlandItems.CANDIED_OOZE, "item/candied_ooze");
+		singleTextureItemModel(DreamlandItems.OOZE_PIE, "item/ooze_pie");
 		
 		singleTextureItemModel(DreamlandBlocks.OPALINE_MARIGOLD.item(), "block/opaline_marigold");
 		singleTextureItemModel(DreamlandBlocks.PINK_CRAB_GRASS.item(), "block/pink_crab_grass");

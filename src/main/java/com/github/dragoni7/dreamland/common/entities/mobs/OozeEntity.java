@@ -92,7 +92,7 @@ public class OozeEntity extends Monster implements IAnimatable {
 	}
 	
 	protected float getStandingEyeHeight(Pose pose, EntityDimensions entityDimensions) {
-	      return 3.0F;
+	    return 3.0F;
 	}
 
 	@Override
@@ -170,7 +170,8 @@ public class OozeEntity extends Monster implements IAnimatable {
 				if (livingentity.distanceToSqr(this.ooze) < 2048.0D && this.ooze.hasLineOfSight(livingentity)) {
 					Level level = this.ooze.level;
 					++this.chargeTime;
-					if (this.chargeTime == 40) {
+					
+					if (this.chargeTime == 55) {
 						level.levelEvent((Player)null, 1018, this.ooze.blockPosition(), 0);
 					}
 					

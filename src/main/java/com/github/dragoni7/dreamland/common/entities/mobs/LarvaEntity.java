@@ -65,6 +65,11 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 	
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		
+		if (this.dead || this.getHealth() < 0.01 || this.isDeadOrDying()) {
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.larva.death", false));
+			return PlayState.CONTINUE;
+		}
+		
 		if (this.tickCount < 20) {
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.larva.spawn", false));
 			return PlayState.CONTINUE;
@@ -194,8 +199,8 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 	
 	@Override
 	protected float getStandingEyeHeight(Pose pose, EntityDimensions entityDimensions) {
-	      return 0.5F;
-	   }
+	    return 0.5F;
+	 }
 	
 	@Override
 	public boolean isInvulnerableTo(DamageSource source) {
@@ -203,11 +208,11 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 	}
 	
 	public boolean causeFallDamage(float p_148750_, float p_148751_, DamageSource p_148752_) {
-	      return false;
-	   }
+	    return false;
+	}
 
 	protected void checkFallDamage(double p_27754_, boolean p_27755_, BlockState p_27756_, BlockPos p_27757_) {
-	   }
+	}
 	
 	@Override
 	public MobType getMobType() {
@@ -257,6 +262,14 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 	@Override
 	public AnimationFactory getFactory() {
 		return this.factory;
+	}
+	
+	@Override
+	protected void tickDeath() {
+		++this.deathTime;
+		if (this.deathTime == 20) {
+			this.remove(RemovalReason.KILLED);
+		}
 	}
 	
 	public boolean requiresUpdateEveryTick() {

@@ -6,13 +6,13 @@ import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.common.items.HiveJellyItem;
 import com.github.dragoni7.dreamland.common.items.LarvaSymbioteArmorItem;
 
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BowlFoodItem;
 import net.minecraft.world.item.BucketItem;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
@@ -29,12 +29,16 @@ public class DreamlandItems {
 	public static final RegistryObject<Item> HIVE_JELLY_ITEM = registerHiveJelly("hive_jelly", new FoodProperties.Builder().nutrition(1).saturationMod(0.2F).build());
 	
 	public static final RegistryObject<Item> JELLY_BOWL_ITEM = ITEMS.register("bowl_of_jelly",
-			() -> new BowlFoodItem((new Item.Properties()).stacksTo(1).tab(CreativeModeTab.TAB_FOOD).food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).build())));
+			() -> new BowlFoodItem((new Item.Properties()).stacksTo(1).tab(Dreamland.DreamlandTab).food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).build())));
 	
 	public static final RegistryObject<Item> TAR_BUCKET = ITEMS.register("tar_bucket", 
 			() -> new BucketItem(DreamlandFluids.TAR_FLUID, new Item.Properties().craftRemainder(Items.BUCKET).tab(Dreamland.DreamlandTab).stacksTo(1)));
 	
 	public static final RegistryObject<Item> OOZE_BALL = registerBasicItem("ooze_ball");
+	
+	public static final RegistryObject<Item> CANDIED_OOZE = registerFoodItem("candied_ooze", new FoodProperties.Builder().nutrition(2).saturationMod(0.1F).effect(() -> new MobEffectInstance(DreamlandEffects.TARRED.get(), 40), 1.0F).build());
+	
+	public static final RegistryObject<Item> OOZE_PIE = registerFoodItem("ooze_pie", new FoodProperties.Builder().nutrition(8).saturationMod(0.3F).effect(() ->  new MobEffectInstance(DreamlandEffects.TARRED.get(), 40), 1.0F).build());
 	
 	public static final RegistryObject<Item> OPAL = registerBasicItem("opal");
 	public static final RegistryObject<Item> PRECIOUS_OPAL = registerBasicItem("precious_opal");
@@ -55,6 +59,10 @@ public class DreamlandItems {
 	private static RegistryObject<Item> registerBasicItem(String name) {
 		
 		return ITEMS.register(name, () -> new Item(new Item.Properties().tab(Dreamland.DreamlandTab)));
+	}
+	
+	private static RegistryObject<Item> registerFoodItem(String name, FoodProperties foodProperties) {
+		return ITEMS.register(name, () -> new Item(new Item.Properties().tab(Dreamland.DreamlandTab).food(foodProperties)));
 	}
 	
 	private static RegistryObject<Item> registerHiveJelly(String name, FoodProperties foodProperty) {

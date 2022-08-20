@@ -24,5 +24,10 @@ public class LarvaRender extends GeoEntityRenderer<LarvaEntity> {
 			ResourceLocation texureLocation) {
 		return RenderType.entityCutout(getTextureLocation(animatable));
 	}
+	
+	@Override
+	protected float getDeathMaxRotation(LarvaEntity entityLivingBaseIn) {
+		return 0.0F;
+	}
 
 }

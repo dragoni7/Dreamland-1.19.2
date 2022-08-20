@@ -1,7 +1,8 @@
-// 1.19.2	2022-08-19T19:46:36.2966909	Item Models: dreamland
+// 1.19.2	2022-08-20T16:23:00.4001632	Item Models: dreamland
 02a6524eeaab96334111ffc9f8953b1693e4f0ef assets/dreamland/models/item/ancient_egg.json
 1ad253bb878c44ee03afc1c5198c29e0035a59a6 assets/dreamland/models/item/bowl_of_jelly.json
 d517b231b93921fa2f763fe4b475da716d1e9cc1 assets/dreamland/models/item/budding_gold.json
+13716639ba80aa0d10cd278ab1635402f8a113f1 assets/dreamland/models/item/candied_ooze.json
 753673f49cec07146d029af5bb036103cbac5ce5 assets/dreamland/models/item/cave_slime.json
 0f539be7bb79942350d60d8ec69ac283ceeed9eb assets/dreamland/models/item/chiseled_kunzite.json
 b159e073c0114b80e47a7d79aa637edee2981ba0 assets/dreamland/models/item/cobbled_kunzite_slab.json
@@ -53,6 +54,7 @@ ae9d351ccebeca51a6c198c7999d291d287827eb assets/dreamland/models/item/larva_symb
 27f95580e51bc2b8b6a37451355c1e604781443a assets/dreamland/models/item/midashroom.json
 e837462748a5ec6bdc6942586b898b60d30ab368 assets/dreamland/models/item/mineral_dirt.json
 493db635b4a6024f30e9a75d78e9250ea9b50f1d assets/dreamland/models/item/ooze_ball.json
+f9b0e774652506fe14ebc8866644d5c3e1ea6b60 assets/dreamland/models/item/ooze_pie.json
 185ae6adcc32c3211207327686db62f091603aa5 assets/dreamland/models/item/opal.json
 931e8f3eea8a2608b07f93f4467af31fcde4007b assets/dreamland/models/item/opaline_marigold.json
 24cbb99bfbd9110d24a84d9ac2bb33e990575145 assets/dreamland/models/item/opal_block.json

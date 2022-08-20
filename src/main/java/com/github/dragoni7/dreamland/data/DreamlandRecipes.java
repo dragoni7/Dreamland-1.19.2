@@ -86,6 +86,18 @@ public class DreamlandRecipes extends RecipeProvider{
 		  .define('#', DreamlandItems.OOZE_BALL.get())
 		  .group("dreamland").unlockedBy("ooze_ball", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandItems.OOZE_BALL.get())).save(consumer);
 		  
+		  ShapedRecipeBuilder.shaped(DreamlandItems.CANDIED_OOZE.get(), 8)
+		  .pattern("OSO")
+		  .define('O', DreamlandItems.OOZE_BALL.get())
+		  .define('S', Items.SUGAR)
+		  .group("dreamland").unlockedBy("candied_ooze", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandItems.OOZE_BALL.get())).save(consumer);
+		  
+		  ShapelessRecipeBuilder.shapeless(DreamlandItems.OOZE_PIE.get())
+		  .requires(DreamlandItems.OOZE_BALL.get(), 2)
+		  .requires(Items.EGG)
+		  .requires(Items.SUGAR)
+		  .group("dreamland").unlockedBy("ooze_pie", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandItems.OOZE_BALL.get())).save(consumer);
+		  
 		  ShapelessRecipeBuilder.shapeless(DreamlandBlocks.JEWELED_DEEPSLATE.item().get())
 		  .requires(DreamlandItems.PRECIOUS_OPAL.get())
 		  .requires(DreamlandItems.OPAL.get(), 2)

@@ -123,6 +123,8 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		
 		add(DreamlandItems.TAR_BUCKET.get(), "Bucket of Tar");
 		add(DreamlandItems.OOZE_BALL.get(), "Ooze Ball");
+		add(DreamlandItems.CANDIED_OOZE.get(), "Candied Ooze");
+		add(DreamlandItems.OOZE_PIE.get(), "Ooze Pie");
 		
 		add(DreamlandItems.OPAL.get(), "Opal");
 		add(DreamlandItems.PRECIOUS_OPAL.get(), "Precious Opal");

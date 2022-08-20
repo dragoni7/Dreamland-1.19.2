@@ -1,8 +1,11 @@
 package com.github.dragoni7.dreamland.common.entities.projectiles;
 
+import com.github.dragoni7.dreamland.common.entities.mobs.OozeEntity;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
+import com.github.dragoni7.dreamland.core.registry.DreamlandParticles;
 
+import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
@@ -47,27 +50,38 @@ public class TarBall extends AbstractHurtingProjectile implements IAnimatable {
 	         Entity entity = hitResult.getEntity();
 	         Entity owner = this.getOwner();
 	         
-	         if (owner instanceof LivingEntity) {
-	        	entity.hurt(DamageSource.indirectMobAttack(this, (LivingEntity) owner), 1.0F);
-	            this.doEnchantDamageEffects((LivingEntity)owner, entity);
-	         }
-	         
-	         if (entity instanceof LivingEntity) {
-	        	 ((LivingEntity) entity).addEffect(new MobEffectInstance(DreamlandEffects.TARRED.get(), 40));
+	         if (!(entity instanceof OozeEntity)) {
+	        	 if (owner instanceof LivingEntity) {
+	 	        	entity.hurt(DamageSource.indirectMobAttack(this, (LivingEntity) owner), 2.0F);
+	 	            this.doEnchantDamageEffects((LivingEntity)owner, entity);
+	 	         }
+	 	         
+	 	         if (entity instanceof LivingEntity) {
+	 	        	 ((LivingEntity) entity).addEffect(new MobEffectInstance(DreamlandEffects.TARRED.get(), 40));
+	 	         } 
 	         }
 
 	      }
 	   }
 	
 	@Override
+	protected ParticleOptions getTrailParticle() {
+	      return DreamlandParticles.TAR_BUBBLE.get();
+	}
+	
+	@Override
+	protected float getInertia() {
+	      return 0.95F;
+	}
+	
+	@Override
 	protected boolean shouldBurn() {
 	      return false;
-	   }
+	}
 
 	@Override
 	public void registerControllers(AnimationData data) {
 		data.addAnimationController(new AnimationController<TarBall>(this, "TarBall Controller", 0, this::predicate));
-		
 	}
 
 	@Override
