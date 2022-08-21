@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "tag": "forge:shears"
+              }
+            }
+          ],
+          "name": "dreamland:tar_bark_leaves"
+        }
+      ],
+      "name": "tar_bark_leaves",
+      "rolls": 1.0
+    }
+  ]
+}

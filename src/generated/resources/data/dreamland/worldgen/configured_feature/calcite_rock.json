@@ -1,0 +1,38 @@
+{
+  "type": "dreamland:ellipsoid",
+  "config": {
+    "block": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:calcite"
+      }
+    },
+    "noiseBlock": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:amethyst_block"
+      }
+    },
+    "xRadius": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 5,
+        "min_inclusive": 4
+      }
+    },
+    "yRadius": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 7,
+        "min_inclusive": 5
+      }
+    },
+    "zRadius": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 5,
+        "min_inclusive": 3
+      }
+    }
+  }
+}

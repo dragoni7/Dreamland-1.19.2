@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "dreamland:block/tar_bark_planks",
+    "side": "dreamland:block/tar_bark_planks",
+    "top": "dreamland:block/tar_bark_planks"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_side",
+  "textures": {
+    "wall": "dreamland:block/tar_mud_bricks"
+  }
+}

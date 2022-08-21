@@ -1,7 +1,7 @@
 package com.github.dragoni7.dreamland.common.world.feature.generation;
 
+import com.github.dragoni7.dreamland.common.world.feature.util.FastNoiseLite;
 import com.github.dragoni7.dreamland.common.world.feature.util.FeatureBuilder;
-import com.github.dragoni7.dreamland.common.world.feature.util.OpenSimplex2S;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.util.RollBoolean;
 import com.mojang.serialization.Codec;
@@ -31,6 +31,7 @@ public class OpalCluster extends Feature<NoneFeatureConfiguration> {
 		WorldGenLevel worldgenlevel = context.level();
 		BlockPos origin = context.origin();
 		RandomSource rand = context.random();
+		FastNoiseLite clusterNoise = createNoise(worldgenlevel.getSeed());
 		boolean status = false;
 		FeatureBuilder builder = new FeatureBuilder();
 		BlockState state = DreamlandBlocks.OPAL_CLUSTER.block().get().defaultBlockState();
@@ -43,7 +44,7 @@ public class OpalCluster extends Feature<NoneFeatureConfiguration> {
 		int yRadius = rand.nextIntBetweenInclusive(2, 4);
 		int zRadius = rand.nextIntBetweenInclusive(1, 2);
 		
-		float noise = OpenSimplex2S.noise3_ImproveXY(worldgenlevel.getSeed(), origin.north().getX(), origin.north().getY(), origin.north().getZ());
+		float noise = clusterNoise.GetNoise(origin.north().getX(), origin.north().getY(), origin.north().getZ());
 		
 		status = builder.addInput(worldgenlevel, BASE, origin, true);
 		status = builder.addInput(worldgenlevel, BASE, origin.north(), true);
@@ -55,7 +56,7 @@ public class OpalCluster extends Feature<NoneFeatureConfiguration> {
 			status = builder.addInput(worldgenlevel, BASE, origin.south().west(), true);
 		}
 		
-		noise = OpenSimplex2S.noise3_ImproveXY(worldgenlevel.getSeed(), origin.south().getX(), origin.south().getY(), origin.south().getZ());
+		noise = clusterNoise.GetNoise(origin.south().getX(), origin.south().getY(), origin.south().getZ());
 		
 		status = builder.addInput(worldgenlevel, BASE, origin.south(), true);
 		
@@ -79,7 +80,7 @@ public class OpalCluster extends Feature<NoneFeatureConfiguration> {
 					
 					BlockPos pos = origin.offset(x, y, z);
 					double distance = Mth.square((double)x/xRadius) + Mth.square((double)y/yRadius) + Mth.square((double)z/zRadius);
-					noise = OpenSimplex2S.noise3_ImproveXY(worldgenlevel.getSeed(), x, y, z);
+					noise = clusterNoise.GetNoise(x, y, z);
 					BlockState state1;
 					
 					if ((distance < 1 && distance > 0.8) && noise < 0) {
@@ -101,6 +102,14 @@ public class OpalCluster extends Feature<NoneFeatureConfiguration> {
 		
 		builder.build(worldgenlevel);
 		return status;
+	}
+	
+	private static FastNoiseLite createNoise(long seed) {
+		FastNoiseLite noise = new FastNoiseLite((int) seed);
+		noise.SetNoiseType(FastNoiseLite.NoiseType.Cellular);
+		noise.SetFractalOctaves(3);
+		noise.SetFrequency(0.0F);
+		return noise;
 	}
 
 }

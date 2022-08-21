@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "dreamland",
+  "key": {
+    "#": {
+      "item": "dreamland:kunzite_bricks"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "dreamland:kunzite_brick_slab"
+  }
+}

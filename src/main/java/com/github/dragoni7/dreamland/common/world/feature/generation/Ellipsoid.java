@@ -1,8 +1,8 @@
 package com.github.dragoni7.dreamland.common.world.feature.generation;
 
 import com.github.dragoni7.dreamland.common.world.feature.configs.EllipsoidConfig;
+import com.github.dragoni7.dreamland.common.world.feature.util.FastNoiseLite;
 import com.github.dragoni7.dreamland.common.world.feature.util.FeatureBuilder;
-import com.github.dragoni7.dreamland.common.world.feature.util.OpenSimplex2S;
 import com.mojang.serialization.Codec;
 
 import net.minecraft.core.BlockPos;
@@ -26,6 +26,7 @@ public class Ellipsoid extends Feature<EllipsoidConfig> {
 	public boolean place(FeaturePlaceContext<EllipsoidConfig> context) {
 		WorldGenLevel worldgenlevel = context.level();
 		RandomSource rand = context.random();
+		FastNoiseLite ellipsoidNoise = createNoise(worldgenlevel.getSeed());
 		EllipsoidConfig config = context.config();
 		boolean status = false;
 		FeatureBuilder ellipsoidBuilder = new FeatureBuilder();
@@ -40,10 +41,10 @@ public class Ellipsoid extends Feature<EllipsoidConfig> {
 					
 					BlockPos pos = origin.offset(x, y, z);
 					double distance = Mth.square((double)x/xRadius) + Mth.square((double)y/yRadius) + Mth.square((double)z/zRadius);
-					float noise = OpenSimplex2S.noise3_ImproveXY(worldgenlevel.getSeed(), x, y, z);
+					float noise = ellipsoidNoise.GetNoise(x, y, z);
 					BlockState state;
 					
-					if (distance < ONE && noise < 0) {
+					if (distance < ONE - 0.1 && noise < 0) {
 						state = config.noiseBlock().getState(rand, origin);
 					} 
 					else if (distance < ONE + Mth.nextDouble(rand, 0.1, 0.3)) {
@@ -62,5 +63,13 @@ public class Ellipsoid extends Feature<EllipsoidConfig> {
 		
 		ellipsoidBuilder.build(worldgenlevel);
 		return status;
+	}
+	
+	private static FastNoiseLite createNoise(long seed) {
+		FastNoiseLite noise = new FastNoiseLite((int) seed);
+		noise.SetNoiseType(FastNoiseLite.NoiseType.OpenSimplex2S);
+		noise.SetFractalOctaves(6);
+		noise.SetFrequency(0.001F);
+		return noise;
 	}
 }

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "dreamland:kunzite_bricks"
+  },
+  "result": "dreamland:kunzite_brick_stairs"
+}

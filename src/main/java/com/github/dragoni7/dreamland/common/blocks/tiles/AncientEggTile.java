@@ -23,7 +23,7 @@ public class AncientEggTile extends BlockEntity implements IAnimatable {
 	}
 	
 	public AncientEggTile(BlockPos pos, BlockState state) {
-		super(null, pos, state);
+		super(DreamlandTiles.ANCIENT_EGG.get(), pos, state);
 	}
 
 	@Override

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "dreamland",
+  "key": {
+    "#": {
+      "item": "dreamland:kunzite_point"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "dreamland:kunzite_point_block"
+  }
+}

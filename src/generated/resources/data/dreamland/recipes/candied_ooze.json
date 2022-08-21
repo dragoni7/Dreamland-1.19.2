@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "dreamland",
+  "key": {
+    "O": {
+      "item": "dreamland:ooze_ball"
+    },
+    "S": {
+      "item": "minecraft:sugar"
+    }
+  },
+  "pattern": [
+    "OSO"
+  ],
+  "result": {
+    "count": 8,
+    "item": "dreamland:candied_ooze"
+  }
+}

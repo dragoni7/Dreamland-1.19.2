@@ -1,5 +1,6 @@
 package com.github.dragoni7.dreamland.common.blocks;
 
+import com.github.dragoni7.dreamland.common.blocks.tiles.AncientEggTile;
 import com.github.dragoni7.dreamland.core.registry.DreamlandTiles;
 
 import net.minecraft.core.BlockPos;
@@ -17,7 +18,7 @@ public class AncientEggBlock extends Block implements EntityBlock {
 
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-		return null;
+		return new AncientEggTile(pos, state);
 	}
 	
 	@Override

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "dreamland:block/medium_gold_cluster"
+  }
+}

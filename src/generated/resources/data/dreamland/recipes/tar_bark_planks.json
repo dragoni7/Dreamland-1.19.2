@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "dreamland",
+  "ingredients": [
+    {
+      "tag": "dreamland:tar_bark_logs"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "dreamland:tar_bark_planks"
+  }
+}

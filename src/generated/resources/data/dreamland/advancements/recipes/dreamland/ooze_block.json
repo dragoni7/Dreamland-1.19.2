@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dreamland:ooze_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "ooze_ball": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dreamland:ooze_ball"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "ooze_ball",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dreamland:ooze_block"
+    ]
+  }
+}
