@@ -31,7 +31,9 @@
       "dreamland:lake_tar_underground"
     ],
     [
-      "minecraft:amethyst_geode"
+      "minecraft:amethyst_geode",
+      "dreamland:tar_hill",
+      "dreamland:drought_soil_hill"
     ],
     [
       "minecraft:monster_room",

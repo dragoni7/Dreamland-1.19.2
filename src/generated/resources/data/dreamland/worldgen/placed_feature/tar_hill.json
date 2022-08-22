@@ -1,15 +1,9 @@
 {
-  "feature": "dreamland:cave_slime",
+  "feature": "dreamland:tar_hill",
   "placement": [
     {
-      "type": "minecraft:count",
-      "count": {
-        "type": "minecraft:uniform",
-        "value": {
-          "max_inclusive": 256,
-          "min_inclusive": 90
-        }
-      }
+      "type": "minecraft:rarity_filter",
+      "chance": 4
     },
     {
       "type": "minecraft:in_square"
@@ -19,7 +13,7 @@
       "height": {
         "type": "minecraft:uniform",
         "max_inclusive": {
-          "below_top": 0
+          "below_top": 67
         },
         "min_inclusive": {
           "above_bottom": 0
@@ -29,20 +23,28 @@
     {
       "type": "minecraft:environment_scan",
       "allowed_search_condition": {
-        "type": "minecraft:matching_blocks",
-        "blocks": "minecraft:air"
+        "type": "minecraft:not",
+        "predicate": {
+          "type": "minecraft:matching_blocks",
+          "blocks": "dreamland:drought_soil"
+        }
       },
-      "direction_of_search": "up",
+      "direction_of_search": "down",
       "max_steps": 12,
       "target_condition": {
-        "type": "minecraft:has_sturdy_face",
-        "direction": "down"
+        "type": "minecraft:solid"
       }
     },
     {
       "type": "minecraft:random_offset",
       "xz_spread": 0,
-      "y_spread": -1
+      "y_spread": {
+        "type": "minecraft:uniform",
+        "value": {
+          "max_inclusive": -1,
+          "min_inclusive": -5
+        }
+      }
     },
     {
       "type": "minecraft:biome"

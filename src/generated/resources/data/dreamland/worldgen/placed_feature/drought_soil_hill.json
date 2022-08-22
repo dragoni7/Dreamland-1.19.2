@@ -1,15 +1,9 @@
 {
-  "feature": "dreamland:tar_sprouts",
+  "feature": "dreamland:drought_soil_hill",
   "placement": [
     {
-      "type": "minecraft:count",
-      "count": {
-        "type": "minecraft:uniform",
-        "value": {
-          "max_inclusive": 96,
-          "min_inclusive": 24
-        }
-      }
+      "type": "minecraft:rarity_filter",
+      "chance": 4
     },
     {
       "type": "minecraft:in_square"
@@ -19,30 +13,38 @@
       "height": {
         "type": "minecraft:uniform",
         "max_inclusive": {
-          "below_top": 0
+          "below_top": 70
         },
         "min_inclusive": {
-          "absolute": 55
+          "above_bottom": 50
         }
       }
     },
     {
       "type": "minecraft:environment_scan",
       "allowed_search_condition": {
-        "type": "minecraft:matching_blocks",
-        "blocks": "minecraft:air"
+        "type": "minecraft:not",
+        "predicate": {
+          "type": "minecraft:matching_blocks",
+          "blocks": "dreamland:drought_soil"
+        }
       },
       "direction_of_search": "down",
       "max_steps": 12,
       "target_condition": {
-        "type": "minecraft:matching_blocks",
-        "blocks": "dreamland:tar_mud"
+        "type": "minecraft:solid"
       }
     },
     {
       "type": "minecraft:random_offset",
       "xz_spread": 0,
-      "y_spread": 1
+      "y_spread": {
+        "type": "minecraft:uniform",
+        "value": {
+          "max_inclusive": -1,
+          "min_inclusive": -5
+        }
+      }
     },
     {
       "type": "minecraft:biome"

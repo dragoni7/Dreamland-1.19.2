@@ -1,37 +1,39 @@
 {
-  "type": "dreamland:ellipsoid",
+  "type": "dreamland:hill",
   "config": {
     "block": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "minecraft:calcite"
+        "Name": "dreamland:dried_tar"
       }
     },
-    "noiseBlock": {
+    "lakeFrequency": 1,
+    "liquid": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "minecraft:amethyst_block"
+        "Name": "dreamland:drought_soil"
       }
     },
+    "noiseFrequency": 0.1,
     "xRadius": {
       "type": "minecraft:uniform",
       "value": {
-        "max_inclusive": 5,
-        "min_inclusive": 4
+        "max_inclusive": 14,
+        "min_inclusive": 7
       }
     },
-    "yRadius": {
+    "yHeight": {
       "type": "minecraft:uniform",
       "value": {
-        "max_inclusive": 7,
-        "min_inclusive": 5
+        "max_inclusive": 24,
+        "min_inclusive": 7
       }
     },
     "zRadius": {
       "type": "minecraft:uniform",
       "value": {
-        "max_inclusive": 5,
-        "min_inclusive": 3
+        "max_inclusive": 14,
+        "min_inclusive": 7
       }
     }
   }

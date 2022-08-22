@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.github.dragoni7.dreamland.common.blocks.KunzitePointBlock;
 import com.github.dragoni7.dreamland.common.world.feature.configs.EllipsoidConfig;
+import com.github.dragoni7.dreamland.common.world.feature.configs.HillConfig;
 import com.github.dragoni7.dreamland.common.world.feature.generation.SurfaceLake;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFeatures;
@@ -22,6 +23,7 @@ import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.random.SimpleWeightedRandomList;
+import net.minecraft.util.valueproviders.ConstantFloat;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -102,6 +104,8 @@ public class DreamlandConfiguredFeatures {
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_TAR_SOIL_ORE_KEY = createConfiguredFeatureKey("tar_soil_ore");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_LAKE_TAR_KEY = createConfiguredFeatureKey("lake_tar");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_FOSSILIZED_EGG_KEY = createConfiguredFeatureKey("fossilized_egg");
+	public static final ResourceKey<ConfiguredFeature<?,?>>	CONFIGURED_TAR_HILL_KEY = createConfiguredFeatureKey("tar_hill");
+	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_DROUGHT_SOIL_HILL = createConfiguredFeatureKey("drought_soil_hill");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_SPRING_TAR_KEY = createConfiguredFeatureKey("spring_tar");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_PLUM_BIRCH_TREE_KEY = createConfiguredFeatureKey("plum_birch_tree");
 	public static final ResourceKey<ConfiguredFeature<?,?>> CONFIGURED_PLUM_BIRCH_LAKE = createConfiguredFeatureKey("plum_birch_lake");
@@ -182,6 +186,8 @@ public class DreamlandConfiguredFeatures {
 	public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> TAR_BONE = registerConfiguredFeature("tar_bone", DreamlandFeatures.TAR_BONE, new NoneFeatureConfiguration());
 	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> TAR_SOIL_ORE = registerConfiguredFeature("tar_soil_ore", Feature.ORE, new OreConfiguration(OreFeatures.NATURAL_STONE, DreamlandBlocks.TAR_MUD.block().get().defaultBlockState(), 64));
 	public static final Holder<ConfiguredFeature<SimpleBlockConfiguration, ?>> FOSSILIZED_EGG = registerConfiguredFeature("fossilized_egg", Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(DreamlandBlocks.FOSSILIZED_EGG.block().get())));
+	public static final Holder<ConfiguredFeature<HillConfig, ?>> TAR_HILL = registerConfiguredFeature("tar_hill", DreamlandFeatures.HILL, new HillConfig(BlockStateProvider.simple(DreamlandBlocks.DRIED_TAR.block().get()), BlockStateProvider.simple(DreamlandFluids.TAR_BLOCK.get()), UniformInt.of(7, 10), UniformInt.of(7, 24), UniformInt.of(7, 10), ConstantInt.of(1), ConstantFloat.of(0.1F)));
+	public static final Holder<ConfiguredFeature<HillConfig, ?>> DROUGHT_SOIL_HILL = registerConfiguredFeature("drought_soil_hill", DreamlandFeatures.HILL, new HillConfig(BlockStateProvider.simple(DreamlandBlocks.DRIED_TAR.block().get()), BlockStateProvider.simple(DreamlandBlocks.DROUGHT_SOIL.block().get()), UniformInt.of(7, 14), UniformInt.of(7, 24), UniformInt.of(7, 14), ConstantInt.of(1), ConstantFloat.of(0.1F)));
 	
 	@SuppressWarnings("deprecation")
 	public static final Holder<ConfiguredFeature<LakeFeature.Configuration, ?>> LAKE_TAR = registerConfiguredFeature("lake_tar", Feature.LAKE, new LakeFeature.Configuration(BlockStateProvider.simple(DreamlandFluids.TAR_BLOCK.get()), BlockStateProvider.simple(Blocks.STONE.defaultBlockState())));

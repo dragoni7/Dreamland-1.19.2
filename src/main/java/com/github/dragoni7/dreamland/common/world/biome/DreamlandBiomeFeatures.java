@@ -79,6 +79,8 @@ public class DreamlandBiomeFeatures {
 		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.FOSSILIZED_EGG);
 		builder.addFeature(GenerationStep.Decoration.LAKES, DreamlandFeaturePlacements.LAKE_TAR_UNDERGROUND);
 		builder.addFeature(GenerationStep.Decoration.FLUID_SPRINGS, DreamlandFeaturePlacements.SPRING_TAR);
+		builder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, DreamlandFeaturePlacements.TAR_HILL);
+		builder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, DreamlandFeaturePlacements.DROUGHT_SOIL_HILL);
 	}
 	
 	public static void jeweledForestBiomeFeatures(BiomeGenerationSettings.Builder builder) {

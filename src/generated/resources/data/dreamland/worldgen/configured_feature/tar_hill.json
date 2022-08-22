@@ -1,37 +1,42 @@
 {
-  "type": "dreamland:ellipsoid",
+  "type": "dreamland:hill",
   "config": {
     "block": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "minecraft:cave_air"
+        "Name": "dreamland:dried_tar"
       }
     },
-    "noiseBlock": {
+    "lakeFrequency": 1,
+    "liquid": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "minecraft:cave_air"
+        "Name": "dreamland:tar",
+        "Properties": {
+          "level": "0"
+        }
       }
     },
+    "noiseFrequency": 0.1,
     "xRadius": {
       "type": "minecraft:uniform",
       "value": {
-        "max_inclusive": 16,
-        "min_inclusive": 4
+        "max_inclusive": 10,
+        "min_inclusive": 7
       }
     },
-    "yRadius": {
+    "yHeight": {
       "type": "minecraft:uniform",
       "value": {
-        "max_inclusive": 8,
-        "min_inclusive": 2
+        "max_inclusive": 24,
+        "min_inclusive": 7
       }
     },
     "zRadius": {
       "type": "minecraft:uniform",
       "value": {
-        "max_inclusive": 12,
-        "min_inclusive": 2
+        "max_inclusive": 10,
+        "min_inclusive": 7
       }
     }
   }

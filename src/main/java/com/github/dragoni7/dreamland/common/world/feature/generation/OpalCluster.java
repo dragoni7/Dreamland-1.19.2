@@ -31,7 +31,8 @@ public class OpalCluster extends Feature<NoneFeatureConfiguration> {
 		WorldGenLevel worldgenlevel = context.level();
 		BlockPos origin = context.origin();
 		RandomSource rand = context.random();
-		FastNoiseLite clusterNoise = createNoise(worldgenlevel.getSeed());
+		FastNoiseLite clusterNoise = new FastNoiseLite((int) worldgenlevel.getSeed());
+		clusterNoise.SetNoiseType(FastNoiseLite.NoiseType.Cellular);
 		boolean status = false;
 		FeatureBuilder builder = new FeatureBuilder();
 		BlockState state = DreamlandBlocks.OPAL_CLUSTER.block().get().defaultBlockState();
@@ -103,13 +104,4 @@ public class OpalCluster extends Feature<NoneFeatureConfiguration> {
 		builder.build(worldgenlevel);
 		return status;
 	}
-	
-	private static FastNoiseLite createNoise(long seed) {
-		FastNoiseLite noise = new FastNoiseLite((int) seed);
-		noise.SetNoiseType(FastNoiseLite.NoiseType.Cellular);
-		noise.SetFractalOctaves(3);
-		noise.SetFrequency(0.0F);
-		return noise;
-	}
-
 }
