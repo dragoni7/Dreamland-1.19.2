@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "dreamland:block/mold_wood_log",
+    "side": "dreamland:block/mold_wood_log"
+  }
+}

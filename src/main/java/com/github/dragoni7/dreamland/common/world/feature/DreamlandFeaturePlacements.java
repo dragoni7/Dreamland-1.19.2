@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
+import com.github.dragoni7.dreamland.data.DreamlandBlockTags;
 import com.github.dragoni7.dreamland.util.DreamlandLoc;
+import com.google.common.collect.ImmutableList;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -33,76 +35,12 @@ import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import net.minecraft.world.level.levelgen.placement.RandomOffsetPlacement;
 import net.minecraft.world.level.levelgen.placement.RarityFilter;
 import net.minecraft.world.level.levelgen.placement.SurfaceRelativeThresholdFilter;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 
 public class DreamlandFeaturePlacements {
 	
-private static final ArrayList<ResourceKey<PlacedFeature>> KEYS = new ArrayList<ResourceKey<PlacedFeature>>();
+	private static final ArrayList<ResourceKey<PlacedFeature>> KEYS = new ArrayList<ResourceKey<PlacedFeature>>();
 	
-	// KEYS
-	public static final ResourceKey<PlacedFeature> PLACED_HIVE_COMB_CEILING_KEY = createPlacedFeatureKey("hive_comb_ceiling");
-	public static final ResourceKey<PlacedFeature> PLACED_HIVE_COMB_KEY = createPlacedFeatureKey("hive_comb");
-	public static final ResourceKey<PlacedFeature> PLACED_HIVE_STRAND_KEY = createPlacedFeatureKey("hive_strand");
-	public static final ResourceKey<PlacedFeature> PLACED_CAVE_SLIME_KEY = createPlacedFeatureKey("cave_slime");
-	public static final ResourceKey<PlacedFeature> PLACED_HIVE_JELLY_CLUSTER_KEY = createPlacedFeatureKey("hive_jelly_cluster");
-	public static final ResourceKey<PlacedFeature> PLACED_INFESTED_HIVE_JELLY_CLUSTER_KEY = createPlacedFeatureKey("infested_hive_jelly_cluster");
-	public static final ResourceKey<PlacedFeature> PLACED_HIVE_GROWTH_KEY = createPlacedFeatureKey("hive_growth");
-	public static final ResourceKey<PlacedFeature> PLACED_FILLED_HIVE_BLOCK_KEY = createPlacedFeatureKey("filled_hive_block");
-	public static final ResourceKey<PlacedFeature> PLACED_HIVE_IRON_UPPER_KEY = createPlacedFeatureKey("hive_iron_upper");
-	public static final ResourceKey<PlacedFeature> PLACED_HIVE_IRON_MIDDLE_KEY = createPlacedFeatureKey("hive_iron_middle");
-	public static final ResourceKey<PlacedFeature> PLACED_HIVE_GOLD_KEY = createPlacedFeatureKey("hive_gold");
-	public static final ResourceKey<PlacedFeature> PLACED_HIVE_GOLD_LOWER_KEY = createPlacedFeatureKey("hive_gold_lower");
-	public static final ResourceKey<PlacedFeature> PLACED_HIVE_REDSTONE_KEY = createPlacedFeatureKey("hive_redstone");
-	public static final ResourceKey<PlacedFeature> PLACED_HIVE_REDSTONE_LOWER_KEY = createPlacedFeatureKey("hive_redstone_lower");
-	public static final ResourceKey<PlacedFeature> PLACED_HIVE_DIAMOND_KEY = createPlacedFeatureKey("hive_diamond");
-	public static final ResourceKey<PlacedFeature> PLACED_HIVE_DIAMOND_LARGE_KEY = createPlacedFeatureKey("hive_diamond_large");
-	public static final ResourceKey<PlacedFeature> PLACED_HIVE_LAPIS_KEY = createPlacedFeatureKey("hive_lapis");
-	public static final ResourceKey<PlacedFeature> PLACED_HIVE_COPPER_KEY = createPlacedFeatureKey("hive_copper");
-	public static final ResourceKey<PlacedFeature> PLACED_HIVE_COPPER_LARGE_KEY = createPlacedFeatureKey("hive_copper_large");
-	public static final ResourceKey<PlacedFeature> PLACED_TAR_DELTA_KEY = createPlacedFeatureKey("tar_delta");
-	public static final ResourceKey<PlacedFeature> PLACED_TAR_BARK_TREE_KEY = createPlacedFeatureKey("tar_bark_tree");
-	public static final ResourceKey<PlacedFeature> PLACED_BORDERED_DROUGHT_DISK_KEY = createPlacedFeatureKey("bordered_drought_disk");
-	public static final ResourceKey<PlacedFeature> PLACED_DROUGHT_VEGETATION_KEY = createPlacedFeatureKey("drought_vegetation");
-	public static final ResourceKey<PlacedFeature> PLACED_TAR_SPROUTS_KEY = createPlacedFeatureKey("tar_sprouts");
-	public static final ResourceKey<PlacedFeature> PLACED_TAR_SKELETON_KEY =  createPlacedFeatureKey("tar_skeleton");
-	public static final ResourceKey<PlacedFeature> PLACED_TAR_BONE_KEY = createPlacedFeatureKey("tar_bone");
-	public static final ResourceKey<PlacedFeature> PLACED_TAR_SOIL_ORE_KEY = createPlacedFeatureKey("tar_soil_ore");
-	public static final ResourceKey<PlacedFeature> PLACED_FOSSILIZED_EGG_KEY = createPlacedFeatureKey("fossilized_egg");
-	public static final ResourceKey<PlacedFeature> PLACED_TAR_HILL_KEY = createPlacedFeatureKey("tar_hill");
-	public static final ResourceKey<PlacedFeature> PLACED_DROUGHT_SOIL_HILL = createPlacedFeatureKey("drought_soil_hill");
-	public static final ResourceKey<PlacedFeature> PLACED_LAKE_TAR_UNDERGROUND = createPlacedFeatureKey("lake_tar_underground");
-	public static final ResourceKey<PlacedFeature> PLACED_SPRING_TAR = createPlacedFeatureKey("spring_tar");
-	public static final ResourceKey<PlacedFeature> PLACED_PLUM_BIRCH_TREE_KEY = createPlacedFeatureKey("plum_birch_tree");
-	public static final ResourceKey<PlacedFeature> PLACED_PLUM_BIRCH_LAKE_KEY = createPlacedFeatureKey("plum_birch_lake");
-	public static final ResourceKey<PlacedFeature> PLACED_JEWELED_FOREST_VEGETATION_KEY = createPlacedFeatureKey("jeweled_forest_vegetation");
-	public static final ResourceKey<PlacedFeature> PLACED_FLOWERING_UNDERGROWTH_KEY = createPlacedFeatureKey("flowering_undergrowth");
-	public static final ResourceKey<PlacedFeature> PLACED_CALCITE_ROCK_KEY = createPlacedFeatureKey("calcite_rock");
-	public static final ResourceKey<PlacedFeature> PLACED_HIVE_CAVE_KEY = createPlacedFeatureKey("hive_cave");
-	public static final ResourceKey<PlacedFeature> PLACED_OPAL_CLUSTER_KEY = createPlacedFeatureKey("opal_cluster");
-	public static final ResourceKey<PlacedFeature> PLACED_KUNZITE_POINTS_EAST_KEY = createPlacedFeatureKey("placed_kunzite_points_east");
-	public static final ResourceKey<PlacedFeature> PLACED_KUNZITE_POINTS_NORTH_KEY = createPlacedFeatureKey("placed_kunzite_points_north");
-	public static final ResourceKey<PlacedFeature> PLACED_KUNZITE_POINTS_PATCH_DOWN_KEY = createPlacedFeatureKey("kunzite_points_patch_down");
-	public static final ResourceKey<PlacedFeature> PLACED_KUNZITE_POINTS_PATCH_UP_KEY = createPlacedFeatureKey("kunzite_points_patch_up");
-	public static final ResourceKey<PlacedFeature> PLACED_KUNZITE_POINTS_SOUTH_KEY = createPlacedFeatureKey("placed_kunzite_points_south");
-	public static final ResourceKey<PlacedFeature> PLACED_KUNZITE_POINTS_WEST_KEY = createPlacedFeatureKey("placed_kunzite_points_west");
-	public static final ResourceKey<PlacedFeature> PLACED_KUNZITE_IRON_UPPER_KEY = createPlacedFeatureKey("kunzite_iron_upper_ore");
-	public static final ResourceKey<PlacedFeature> PLACED_KUNZITE_IRON_MIDDLE_KEY = createPlacedFeatureKey("kunzite_iron_middle_ore");
-	public static final ResourceKey<PlacedFeature> PLACED_KUNZITE_IRON_SMALL_KEY = createPlacedFeatureKey("kunzite_iron_small_ore");
-	public static final ResourceKey<PlacedFeature> PLACED_KUNZITE_EMERALD_KEY = createPlacedFeatureKey("kunzite_emerald_ore");
-	public static final ResourceKey<PlacedFeature> PLACED_KUNZITE_REDSTONE_KEY = createPlacedFeatureKey("kunzite_redstone_ore");
-	public static final ResourceKey<PlacedFeature> PLACED_KUNZITE_REDSTONE_LOWER_KEY = createPlacedFeatureKey("kunzite_redstone_lower_ore");
-	public static final ResourceKey<PlacedFeature> PLACED_KUNZITE_DIAMOND_KEY = createPlacedFeatureKey("kunzite_diamond_ore");
-	public static final ResourceKey<PlacedFeature> PLACED_KUNZITE_DIAMOND_LARGE_KEY = createPlacedFeatureKey("kunzite_diamond_large_ore");
-	public static final ResourceKey<PlacedFeature> PLACED_KUNZITE_LAPIS_KEY = createPlacedFeatureKey("kunzite_lapis_ore");
-	public static final ResourceKey<PlacedFeature> PLACED_KUNZITE_COPPER_KEY = createPlacedFeatureKey("kunzite_copper_ore");
-	public static final ResourceKey<PlacedFeature> PLACED_KUNZITE_COPPER_LARGE_KEY = createPlacedFeatureKey("kunzite_copper_large_ore");
-	public static final ResourceKey<PlacedFeature> PLACED_OPULENT_DEPTHS_VEGETATION_KEY = createPlacedFeatureKey("opulent_depths_vegetation");
-	public static final ResourceKey<PlacedFeature> PLACED_GOLD_GEODE_KEY = createPlacedFeatureKey("gold_geode");
-	
-	public static ArrayList<ResourceKey<PlacedFeature>> getKeys() {
-		return KEYS;
-	}
-	
-	// PLACED FEATURES
 	public static final Holder<PlacedFeature> PLACED_HIVE_COMB_CEILING = registerPlacedFeature("hive_comb_ceiling", DreamlandConfiguredFeatures.HIVE_COMB, CountPlacement.of(UniformInt.of(90, 256)), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.top()), EnvironmentScanPlacement.scanningFor(Direction.UP, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(-1)), BiomeFilter.biome());
 	public static final Holder<PlacedFeature> PLACED_HIVE_COMB = registerPlacedFeature("hive_comb", DreamlandConfiguredFeatures.HIVE_COMB, CountPlacement.of(UniformInt.of(80, 256)), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.top()), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
 	public static final Holder<PlacedFeature> PLACED_HIVE_STRAND = registerPlacedFeature("hive_strand", DreamlandConfiguredFeatures.HIVE_STRAND, CountPlacement.of(UniformInt.of(90, 96)), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.top()), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
@@ -140,12 +78,13 @@ private static final ArrayList<ResourceKey<PlacedFeature>> KEYS = new ArrayList<
 	public static final Holder<PlacedFeature> TAR_HILL = registerPlacedFeature("tar_hill", DreamlandConfiguredFeatures.TAR_HILL, RarityFilter.onAverageOnceEvery(3), InSquarePlacement.spread(), HeightRangePlacement.of(UniformHeight.of(VerticalAnchor.aboveBottom(50), VerticalAnchor.belowTop(67))), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.not(BlockPredicate.matchesBlocks(DreamlandBlocks.DROUGHT_SOIL.block().get())), 12), RandomOffsetPlacement.vertical(UniformInt.of(-5, -1)),BiomeFilter.biome());
 	public static final Holder<PlacedFeature> DROUGHT_SOIL_HILL = registerPlacedFeature("drought_soil_hill", DreamlandConfiguredFeatures.DROUGHT_SOIL_HILL, RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(), HeightRangePlacement.of(UniformHeight.of(VerticalAnchor.aboveBottom(50), VerticalAnchor.belowTop(70))), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.not(BlockPredicate.matchesBlocks(DreamlandBlocks.DROUGHT_SOIL.block().get())), 12), RandomOffsetPlacement.vertical(UniformInt.of(-5, -1)),BiomeFilter.biome());
 	
-	public static final Holder<PlacedFeature> PLACED_PLUM_BIRCH_TREE = registerPlacedFeature("plum_birch_tree", DreamlandConfiguredFeatures.PLUM_BIRCH_TREE, CountPlacement.of(UniformInt.of(0, 24)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+	public static final Holder<PlacedFeature> PLACED_PLUM_BIRCH_TREE = registerPlacedFeature("plum_birch_tree", DreamlandConfiguredFeatures.PLUM_BIRCH_TREE, CountPlacement.of(UniformInt.of(9, 32)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome());
 	public static final Holder<PlacedFeature> PLACED_PLUM_BIRCH_LAKE = registerPlacedFeature("plum_birch_lake", DreamlandConfiguredFeatures.PLUM_BIRCH_LAKE, RarityFilter.onAverageOnceEvery(25), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
 	public static final Holder<PlacedFeature> PLACED_JEWELED_FOREST_VEGETATION = registerPlacedFeature("jeweled_forest_vegetation", DreamlandConfiguredFeatures.JEWELED_FOREST_VEGETATION, CountPlacement.of(UniformInt.of(16, 96)), HeightRangePlacement.uniform(VerticalAnchor.absolute(50), VerticalAnchor.top()), InSquarePlacement.spread(), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.matchesBlocks(List.of(DreamlandBlocks.FLOWERING_GRASS.block().get())), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
 	public static final Holder<PlacedFeature> PLACED_FLOWERING_UNDERGROWTH = registerPlacedFeature("flowering_undergrowth", DreamlandConfiguredFeatures.FLOWERING_UNDERGROWTH, CountPlacement.of(UniformInt.of(64, 96)), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(50), VerticalAnchor.top()), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.matchesBlocks(List.of(DreamlandBlocks.FLOWERING_GRASS.block().get(), Blocks.GRASS_BLOCK)), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
-	public static final Holder<PlacedFeature> PLACED_CALCITE_ROCK = registerPlacedFeature("calcite_rock", DreamlandConfiguredFeatures.CALCITE_ROCK, RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, RandomOffsetPlacement.vertical(UniformInt.of(-14, -8)), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE, 12), BiomeFilter.biome());
-	public static final Holder<PlacedFeature> PLACED_OPAL_CLUSTER = registerPlacedFeature("opal_cluster", DreamlandConfiguredFeatures.OPAL_CLUSTER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), BiomeFilter.biome());
+	public static final Holder<PlacedFeature> PLACED_CALCITE_ROCK = registerPlacedFeature("calcite_rock", DreamlandConfiguredFeatures.CALCITE_ROCK, RarityFilter.onAverageOnceEvery(9), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, RandomOffsetPlacement.vertical(UniformInt.of(-14, -8)), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE, 12), BiomeFilter.biome());
+	public static final Holder<PlacedFeature> PLACED_OPAL_CLUSTER = registerPlacedFeature("opal_cluster", DreamlandConfiguredFeatures.OPAL_CLUSTER, RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, RandomOffsetPlacement.vertical(UniformInt.of(-2, -1)), BiomeFilter.biome());
+	public static final Holder<PlacedFeature> PLACED_AMETHYST_ROCK = registerPlacedFeature("amethyst_rock", DreamlandConfiguredFeatures.AMETHYST_ROCK, RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(UniformInt.of(-5, -2)), BiomeFilter.biome());
 	
 	public static final Holder<PlacedFeature> KUNZITE_POINTS_EAST = registerPlacedFeature("placed_kunzite_points_east", DreamlandConfiguredFeatures.KUNZITE_POINTS_EAST, CountPlacement.of(UniformInt.of(16, 32)), InSquarePlacement.spread(), PlacementUtils.filteredByBlockSurvival(DreamlandBlocks.KUNZITE_POINT.block().get()), BiomeFilter.biome());
 	public static final Holder<PlacedFeature> KUNZITE_POINTS_NORTH = registerPlacedFeature("placed_kunzite_points_north", DreamlandConfiguredFeatures.KUNZITE_POINTS_NORTH, CountPlacement.of(UniformInt.of(16, 32)), InSquarePlacement.spread(), PlacementUtils.filteredByBlockSurvival(DreamlandBlocks.KUNZITE_POINT.block().get()), BiomeFilter.biome());
@@ -167,9 +106,26 @@ private static final ArrayList<ResourceKey<PlacedFeature>> KEYS = new ArrayList<
 	public static final Holder<PlacedFeature> OPULENT_DEPTHS_VEGETATION = registerPlacedFeature("opulent_depths_vegetation", DreamlandConfiguredFeatures.GOLDEN_MOSS_PATCH, CountPlacement.of(100), InSquarePlacement.spread(), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
 	public static final Holder<PlacedFeature> GOLD_GEODE = registerPlacedFeature("gold_geode", DreamlandConfiguredFeatures.GOLD_GEODE, RarityFilter.onAverageOnceEvery(24), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(35)), BiomeFilter.biome());
 	
+	public static final Holder<PlacedFeature> POROUS_SPIRES = registerPlacedFeature("porous_spires", DreamlandConfiguredFeatures.POROUS_SPIRES, RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), 3), RandomOffsetPlacement.vertical(UniformInt.of(-4, -1)), BiomeFilter.biome());
+	public static final Holder<PlacedFeature> POROUS_SPHERE = registerPlacedFeature("porous_sphere", DreamlandConfiguredFeatures.POROUS_SPHERE, RarityFilter.onAverageOnceEvery(24), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), 3), RandomOffsetPlacement.vertical(UniformInt.of(-11, -3)), BiomeFilter.biome());
+	public static final Holder<PlacedFeature> MOLD_PUFF_TREE = registerPlacedFeature("placed_mold_puff_tree", DreamlandConfiguredFeatures.MOLD_PUFF_TREE, treePlacement(PlacementUtils.countExtra(3, 0.25F, 1)));
+	public static final Holder<PlacedFeature> POROUS_HILL = registerPlacedFeature("porous_hill", DreamlandConfiguredFeatures.POROUS_HILL, RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.matchesBlocks(DreamlandBlocks.WHITE_MOLD.block().get()), 12), RandomOffsetPlacement.vertical(UniformInt.of(-2, -1)), BiomeFilter.biome());
+	public static final Holder<PlacedFeature> TOXIC_JUNGLE_VEGETATION = registerPlacedFeature("toxic_jungle_vegetations", DreamlandConfiguredFeatures.TOXIC_JUNGLE_VEGETATION, CountPlacement.of(100), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(-10), VerticalAnchor.absolute(75)), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.matchesTag(DreamlandBlockTags.TOXIC_JUNGLE_GROUND_BLOCKS), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
+	public static final Holder<PlacedFeature> MOLD_GROWTH = registerPlacedFeature("mold_growth", DreamlandConfiguredFeatures.MOLD_GROWTH, treePlacement(PlacementUtils.countExtra(1, 0.1F, 1)));
+	public static final Holder<PlacedFeature> MOLD_WOOD_STUMP = registerPlacedFeature("mold_wood_stump", DreamlandConfiguredFeatures.MOLD_WOOD_STUMP, RarityFilter.onAverageOnceEvery(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.matchesTag(DreamlandBlockTags.TOXIC_JUNGLE_GROUND_BLOCKS), 12), RandomOffsetPlacement.vertical(UniformInt.of(-4, -3)), BiomeFilter.biome());
+	public static final Holder<PlacedFeature> MOLD_WOOD_ROOTS = registerPlacedFeature("mold_wood_roots", DreamlandConfiguredFeatures.MOLD_WOOD_ROOTS, CountPlacement.of(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.matchesBlocks(List.of(DreamlandBlocks.WHITE_MOLD.block().get(), DreamlandBlocks.BLACK_MOLD.block().get(), DreamlandBlocks.POROUS_STONE.block().get(), DreamlandBlocks.TOXIC_GRASS.block().get(), DreamlandBlocks.TOXIC_DIRT.block().get())), 12), BiomeFilter.biome());
+	
+	private static ImmutableList.Builder<PlacementModifier> treePlacementSurfaceBase(PlacementModifier modifier) {
+	    return ImmutableList.<PlacementModifier>builder().add(modifier).add(InSquarePlacement.spread()).add(VegetationPlacements.TREE_THRESHOLD).add(PlacementUtils.HEIGHTMAP_WORLD_SURFACE).add(BiomeFilter.biome());
+	 }
+	
+	public static List<PlacementModifier> treePlacement(PlacementModifier modifier) {
+	    return treePlacementSurfaceBase(modifier).build();
+	 }
+	
 	private static List<PlacementModifier> orePlacement(PlacementModifier palcementModifiers, PlacementModifier p_195348_) {
-		      return List.of(palcementModifiers, InSquarePlacement.spread(), p_195348_, BiomeFilter.biome());
-		   }
+		return List.of(palcementModifiers, InSquarePlacement.spread(), p_195348_, BiomeFilter.biome());
+	 }
 	   
 	   private static List<PlacementModifier> commonOrePlacement(int count, PlacementModifier palcementModifiers) {
 		      return orePlacement(CountPlacement.of(count), palcementModifiers);
@@ -184,12 +140,16 @@ private static final ArrayList<ResourceKey<PlacedFeature>> KEYS = new ArrayList<
 	   }
 	   
 	   private static <FC extends FeatureConfiguration> Holder<PlacedFeature> registerPlacedFeature(String name, Holder<ConfiguredFeature<FC,?>> feature, PlacementModifier... placementModifiers) {
+		   createKey(name);
 		   return registerPlacedFeature(name, feature, List.of(placementModifiers));
 	   }
 	   
-	   private static ResourceKey<PlacedFeature> createPlacedFeatureKey(String name) {
+	   private static void createKey(String name) {
 		   ResourceKey<PlacedFeature> key = ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY, DreamlandLoc.createLoc(name));
 		   KEYS.add(key);
-		   return key;
+	   }
+	   
+	   public static ArrayList<ResourceKey<PlacedFeature>> getKeys() {
+		   return KEYS;
 	   }
 }

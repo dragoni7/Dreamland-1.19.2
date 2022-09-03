@@ -29,6 +29,20 @@
     "dreamland:tar_bark_stripped_log",
     "dreamland:tar_bark_trapdoor",
     "dreamland:tar_bark_wood",
-    "dreamland:tar_bark_stripped_wood"
+    "dreamland:tar_bark_stripped_wood",
+    "dreamland:mold_wood_button",
+    "dreamland:mold_wood_door",
+    "dreamland:mold_wood_fence",
+    "dreamland:mold_wood_fence_gate",
+    "dreamland:mold_wood_ladder",
+    "dreamland:mold_wood_log",
+    "dreamland:mold_wood_planks",
+    "dreamland:mold_wood_pressure_plate",
+    "dreamland:mold_wood_slab",
+    "dreamland:mold_wood_stairs",
+    "dreamland:mold_wood_stripped_log",
+    "dreamland:mold_wood_trapdoor",
+    "dreamland:mold_wood_wood",
+    "dreamland:mold_wood_stripped_wood"
   ]
 }

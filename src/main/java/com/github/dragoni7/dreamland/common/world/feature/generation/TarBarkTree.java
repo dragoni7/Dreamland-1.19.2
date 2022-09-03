@@ -30,7 +30,7 @@ public class TarBarkTree extends Feature<NoneFeatureConfiguration> {
 		WorldGenLevel worldgenlevel = context.level();
 		BlockPos blockpos = context.origin();
 		RandomSource rand = context.random();
-		FeatureBuilder joshuaTreeBuilder = new FeatureBuilder();
+		FeatureBuilder builder = new FeatureBuilder();
 		
 		int trunkBaseHeight = MIN_TRUNK_HEIGHT + rand.nextInt(2);
 		boolean xzChange = rand.nextBoolean();
@@ -39,19 +39,19 @@ public class TarBarkTree extends Feature<NoneFeatureConfiguration> {
 			return false;
 		}
 		
-		if(!createTrunk(worldgenlevel, xzChange, trunkBaseHeight, joshuaTreeBuilder, blockpos)) {
+		if(!createTrunk(worldgenlevel, xzChange, trunkBaseHeight, builder, blockpos)) {
 			return false;
 		}
 		
-		if (!createBranches(worldgenlevel, xzChange, rand, trunkBaseHeight, blockpos, joshuaTreeBuilder)) {
+		if (!createBranches(worldgenlevel, xzChange, rand, trunkBaseHeight, blockpos, builder)) {
 			return false;
 		}
 		
-		if(!createLeaves(worldgenlevel, blockpos.above(MAX_TRUNK_HEIGHT+2), joshuaTreeBuilder, rand)) {
+		if(!createLeaves(worldgenlevel, blockpos.above(MAX_TRUNK_HEIGHT+2), builder, rand)) {
 			return false;
 		}
 		
-		joshuaTreeBuilder.build(worldgenlevel);
+		builder.build(worldgenlevel);
 		return true;
 	}
 	

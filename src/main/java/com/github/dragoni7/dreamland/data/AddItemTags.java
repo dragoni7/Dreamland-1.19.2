@@ -90,6 +90,7 @@ public class AddItemTags extends ItemTagsProvider {
 		
 		addWoodSetTags(DreamlandWoodSets.PLUM_BIRCH);
 		addWoodSetTags(DreamlandWoodSets.TAR_BARK);
+		addWoodSetTags(DreamlandWoodSets.MOLD_WOOD);
 		
 		tag(DreamlandItemTags.KUNZITE_ORES_ITEM)
 		.add(DreamlandBlocks.KUNZITE_COPPER_ORE.item().get())

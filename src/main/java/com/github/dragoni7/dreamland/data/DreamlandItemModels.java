@@ -91,6 +91,19 @@ public class DreamlandItemModels extends ItemModelProvider {
 		wallInventory("precious_opal_wall", DreamlandLoc.createLoc("block/precious_opal_tile"));
 		blockItemModel(DreamlandBlocks.JEWELED_DEEPSLATE.item(), "block/jeweled_deepslate");
 		
+		blockItemModel(DreamlandBlocks.WHITE_MOLD.item(), "block/white_mold_1");
+		blockItemModel(DreamlandBlocks.BLACK_MOLD.item(), "block/black_mold_1");
+		blockItemModel(DreamlandBlocks.MOLDED_STONE.item(), "block/molded_stone");
+		blockItemModel(DreamlandBlocks.POROUS_STONE.item(), "block/porous_stone");
+		blockItemModel(DreamlandBlocks.OVERGROWN_POROUS_STONE.item(), "block/overgrown_porous_stone");
+		blockItemModel(DreamlandBlocks.PETRIFIED_VEGETATION.item(), "block/petrified_vegetation");
+		blockItemModel(DreamlandBlocks.TOXIC_DIRT.item(), "block/toxic_dirt");
+		blockItemModel(DreamlandBlocks.TOXIC_GRASS.item(), "block/toxic_grass");
+		blockItemModel(DreamlandBlocks.TOXIC_VEGETATION.item(), "block/toxic_vegetation");
+		blockItemModel(DreamlandBlocks.DENSE_VEGETATION.item(), "block/dense_vegetation");
+		singleTextureItemModel(DreamlandBlocks.SPORE_PUFF.item(), "block/spore_puff");
+		singleTextureItemModel(DreamlandBlocks.SPONGE_PUFF.item(), "block/sponge_puff");
+		
 		singleTextureItemModel(DreamlandBlocks.GOLD_FRONDS.item(), "block/gold_fronds");
 		singleTextureItemModel(DreamlandBlocks.KUNZITE_POINT.item(), "block/kunzite_point_end");
 		singleTextureItemModel(DreamlandBlocks.GOLD_CLUSTER.item(), "block/gold_cluster");
@@ -127,6 +140,7 @@ public class DreamlandItemModels extends ItemModelProvider {
 		
 		registerWoodSet(DreamlandWoodSets.PLUM_BIRCH);
 		registerWoodSet(DreamlandWoodSets.TAR_BARK);
+		registerWoodSet(DreamlandWoodSets.MOLD_WOOD);
 	}
 	
 	private void registerWoodSet(WoodSet set) {

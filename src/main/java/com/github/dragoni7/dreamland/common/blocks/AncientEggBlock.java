@@ -1,7 +1,6 @@
 package com.github.dragoni7.dreamland.common.blocks;
 
 import com.github.dragoni7.dreamland.common.blocks.tiles.AncientEggTile;
-import com.github.dragoni7.dreamland.core.registry.DreamlandTiles;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.Block;

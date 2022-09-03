@@ -9,7 +9,6 @@ import com.github.dragoni7.dreamland.common.items.LarvaSymbioteArmorItem;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
 import com.github.dragoni7.dreamland.core.registry.DreamlandParticles;
-import com.github.dragoni7.dreamland.core.registry.DreamlandTiles;
 
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;

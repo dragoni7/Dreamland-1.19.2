@@ -67,6 +67,13 @@ public class DreamlandBlockStates extends BlockStateProvider{
 		simpleBlocks.add(DreamlandBlocks.PRECIOUS_OPAL_TILE.block().get());
 		simpleBlocks.add(DreamlandBlocks.PRECIOUS_OPAL_LAMP.block().get());
 		simpleBlocks.add(DreamlandBlocks.JEWELED_DEEPSLATE.block().get());
+		simpleBlocks.add(DreamlandBlocks.POROUS_STONE.block().get());
+		simpleBlocks.add(DreamlandBlocks.OVERGROWN_POROUS_STONE.block().get());
+		simpleBlocks.add(DreamlandBlocks.MOLDED_STONE.block().get());
+		simpleBlocks.add(DreamlandBlocks.PETRIFIED_VEGETATION.block().get());
+		simpleBlocks.add(DreamlandBlocks.TOXIC_DIRT.block().get());
+		simpleBlocks.add(DreamlandBlocks.TOXIC_VEGETATION.block().get());
+		simpleBlocks.add(DreamlandBlocks.DENSE_VEGETATION.block().get());
 
 		for(Block element : simpleBlocks) {
 			simpleBlock(element);
@@ -107,6 +114,7 @@ public class DreamlandBlockStates extends BlockStateProvider{
 		
 		registerWoodSet(DreamlandWoodSets.PLUM_BIRCH);
 		registerWoodSet(DreamlandWoodSets.TAR_BARK);
+		registerWoodSet(DreamlandWoodSets.MOLD_WOOD);
 	}
 	
 	private void registerWoodSet(WoodSet set) {

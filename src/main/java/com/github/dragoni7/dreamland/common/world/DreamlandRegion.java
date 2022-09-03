@@ -30,6 +30,9 @@ public class DreamlandRegion extends Region
     		builder.replaceBiome(Biomes.FOREST, BiomeKeys.JEWELED_FOREST);
     		builder.replaceBiome(Biomes.BIRCH_FOREST, BiomeKeys.JEWELED_FOREST);
     		builder.replaceBiome(Biomes.OLD_GROWTH_BIRCH_FOREST, BiomeKeys.JEWELED_FOREST);
+    		builder.replaceBiome(Biomes.JUNGLE, BiomeKeys.TOXIC_JUNGLE);
+    		builder.replaceBiome(Biomes.BAMBOO_JUNGLE, BiomeKeys.TOXIC_JUNGLE);
+    		builder.replaceBiome(Biomes.SPARSE_JUNGLE, BiomeKeys.TOXIC_JUNGLE);
     	});
     }
 }

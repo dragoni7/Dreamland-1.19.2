@@ -6,7 +6,7 @@
       "minecraft:canyon"
     ]
   },
-  "downfall": 1.0,
+  "downfall": 0.6,
   "effects": {
     "fog_color": 12875400,
     "grass_color": 14370147,
@@ -30,8 +30,7 @@
     [],
     [
       "minecraft:lake_lava_underground",
-      "minecraft:lake_lava_surface",
-      "dreamland:plum_birch_lake"
+      "minecraft:lake_lava_surface"
     ],
     [
       "minecraft:amethyst_geode"
@@ -40,7 +39,10 @@
       "minecraft:monster_room",
       "minecraft:monster_room_deep"
     ],
-    [],
+    [
+      "dreamland:calcite_rock",
+      "dreamland:amethyst_rock"
+    ],
     [],
     [
       "minecraft:ore_dirt",
@@ -78,15 +80,14 @@
       "minecraft:spring_lava"
     ],
     [
-      "minecraft:glow_lichen",
-      "dreamland:plum_birch_tree",
-      "dreamland:jeweled_forest_vegetation",
-      "dreamland:flowering_undergrowth"
+      "minecraft:glow_lichen"
     ],
     [
       "minecraft:freeze_top_layer",
-      "dreamland:calcite_rock",
-      "dreamland:opal_cluster"
+      "dreamland:opal_cluster",
+      "dreamland:plum_birch_tree",
+      "dreamland:jeweled_forest_vegetation",
+      "dreamland:flowering_undergrowth"
     ]
   ],
   "precipitation": "rain",
@@ -182,5 +183,5 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 0.9
+  "temperature": 0.6
 }

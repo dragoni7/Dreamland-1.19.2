@@ -6,8 +6,8 @@
       "count": {
         "type": "minecraft:uniform",
         "value": {
-          "max_inclusive": 24,
-          "min_inclusive": 0
+          "max_inclusive": 32,
+          "min_inclusive": 9
         }
       }
     },
@@ -16,7 +16,7 @@
     },
     {
       "type": "minecraft:heightmap",
-      "heightmap": "MOTION_BLOCKING"
+      "heightmap": "OCEAN_FLOOR_WG"
     },
     {
       "type": "minecraft:biome"

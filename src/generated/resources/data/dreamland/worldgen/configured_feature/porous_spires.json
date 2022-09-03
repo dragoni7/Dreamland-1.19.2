@@ -1,0 +1,49 @@
+{
+  "type": "dreamland:noise_cone",
+  "config": {
+    "block1": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "dreamland:overgrown_porous_stone"
+          },
+          "weight": 25
+        },
+        {
+          "data": {
+            "Name": "dreamland:porous_stone"
+          },
+          "weight": 75
+        }
+      ]
+    },
+    "block2": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:air"
+      }
+    },
+    "height": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 13,
+        "min_inclusive": 10
+      }
+    },
+    "noiseFrequency": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_exclusive": 0.2,
+        "min_inclusive": 0.1
+      }
+    },
+    "radius": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 11,
+        "min_inclusive": 8
+      }
+    }
+  }
+}

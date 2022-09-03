@@ -30,7 +30,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.ItemHandlerHelper;
 
 public class OpalDiffuserBlock extends Block implements EntityBlock {
@@ -95,7 +95,7 @@ public class OpalDiffuserBlock extends Block implements EntityBlock {
             if (tileEntity instanceof OpalDiffuserTile) {
             	ItemStack item = player.getItemInHand(hand);
             	if (item.is(Items.POTION)) {
-            		tileEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(h -> {
+            		tileEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(h -> {
                 		player.setItemInHand(hand, ItemHandlerHelper.insertItem(h, item, false));
                 	});
                  }

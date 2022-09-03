@@ -102,8 +102,16 @@ public class DreamlandLootTables extends BaseLootTableProvider {
 		silkTouchTable(DreamlandBlocks.OPAL_CLUSTER.block().get(), DreamlandItems.OPAL.get(), "opal_cluster", 1, 3);
 		delicateBlockTable(DreamlandBlocks.PRECIOUS_OPAL_LAMP.block().get(), "precious_opal_lamp");
 		
+		basicBlockTable(DreamlandBlocks.WHITE_MOLD.block().get(), "white_mold");
+		basicBlockTable(DreamlandBlocks.WHITE_MOLD_CARPET.block().get(), "white_mold_carpet");
+		basicBlockTable(DreamlandBlocks.POROUS_STONE.block().get(), "porous_stone");
+		basicBlockTable(DreamlandBlocks.OVERGROWN_POROUS_STONE.block().get(), "overgrown_porous_stone");
+		basicBlockTable(DreamlandBlocks.PETRIFIED_VEGETATION.block().get(), "strand_stone");
+		basicBlockTable(DreamlandBlocks.MOLDED_STONE.block().get(), "toxic_stone");
+		
 		createWoodSetTable(DreamlandWoodSets.TAR_BARK);
 		createWoodSetTable(DreamlandWoodSets.PLUM_BIRCH);
+		createWoodSetTable(DreamlandWoodSets.MOLD_WOOD);
 	}
 	
 	private void createWoodSetTable(WoodSet set) {

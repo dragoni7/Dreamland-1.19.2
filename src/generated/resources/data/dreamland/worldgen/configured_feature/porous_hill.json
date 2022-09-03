@@ -1,0 +1,43 @@
+{
+  "type": "dreamland:noise_hill",
+  "config": {
+    "block": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "dreamland:petrified_vegetation"
+      }
+    },
+    "lakeFrequency": 1,
+    "liquid": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:mycelium",
+        "Properties": {
+          "snowy": "false"
+        }
+      }
+    },
+    "noiseFrequency": 0.1,
+    "xRadius": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 8,
+        "min_inclusive": 7
+      }
+    },
+    "yHeight": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 5,
+        "min_inclusive": 4
+      }
+    },
+    "zRadius": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 9,
+        "min_inclusive": 7
+      }
+    }
+  }
+}

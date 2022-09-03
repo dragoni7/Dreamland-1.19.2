@@ -1,0 +1,11 @@
+{
+	"parent": "block/grass_block",
+	"render_type": "cutout",
+	"textures": {
+	  "particle": "dreamland:block/toxic_vegetation",
+	  "top": "dreamland:block/toxic_vegetation",
+	  "bottom": "dreamland:block/toxic_dirt",
+	  "side": "dreamland:block/toxic_grass_side",
+	  "overlay": "dreamland:block/toxic_grass_side"
+	}
+  }

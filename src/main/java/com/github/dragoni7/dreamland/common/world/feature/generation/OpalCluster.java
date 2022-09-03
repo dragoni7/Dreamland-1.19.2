@@ -101,6 +101,10 @@ public class OpalCluster extends Feature<NoneFeatureConfiguration> {
 			}
 		}
 		
+		if (!status) {
+			return false;
+		}
+		
 		builder.build(worldgenlevel);
 		return status;
 	}

@@ -21,13 +21,20 @@ public class AddBlockTags extends BlockTagsProvider {
 	@SuppressWarnings("unchecked")
 	@Override
 	protected void addTags() {
+		
 		tag(BlockTags.DIRT)
 		//.add(DreamlandBlocks.CLAY_SOIL.block().get())
 		//.add(DreamlandBlocks.CLAY_SOIL_GRASS.block().get())
 		.add(DreamlandBlocks.GOLDEN_MOSS_BLOCK.block().get())
 		.add(DreamlandBlocks.DROUGHT_SOIL.block().get())
 		.add(DreamlandBlocks.MINERAL_DIRT.block().get())
+		.add(DreamlandBlocks.TOXIC_DIRT.block().get())
+		.add(DreamlandBlocks.TOXIC_GRASS.block().get())
 		.add(DreamlandBlocks.FLOWERING_GRASS.block().get());
+		
+		tag(BlockTags.MUSHROOM_GROW_BLOCK)
+		.add(DreamlandBlocks.WHITE_MOLD.block().get())
+		.add(DreamlandBlocks.BLACK_MOLD.block().get());
 		
 		tag(BlockTags.ANIMALS_SPAWNABLE_ON)
 		.add(DreamlandBlocks.FLOWERING_GRASS.block().get());
@@ -51,6 +58,7 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.TAR_SPROUTS.block().get())
 		.add(DreamlandBlocks.PINK_CRAB_GRASS.block().get())
 		.add(DreamlandBlocks.FLOWERING_UNDERGROWTH.block().get())
+		.add(DreamlandBlocks.SPONGE_PUFF.block().get())
 		.add(DreamlandBlocks.PLUM_BIRCH_SHRUB.block().get());
 		
 		tag(BlockTags.SAPLINGS)
@@ -59,6 +67,7 @@ public class AddBlockTags extends BlockTagsProvider {
 		
 		tag(BlockTags.FLOWERS)
 		.add(DreamlandBlocks.OPALINE_MARIGOLD.block().get())
+		.add(DreamlandBlocks.SPORE_PUFF.block().get())
 		.add(DreamlandBlocks.FLOWERING_UNDERGROWTH.block().get());
 		tag(BlockTags.SMALL_FLOWERS)
 		.add(DreamlandBlocks.OPALINE_MARIGOLD.block().get())
@@ -248,8 +257,15 @@ public class AddBlockTags extends BlockTagsProvider {
 		
 		tag(Tags.Blocks.STORAGE_BLOCKS).addTags(DreamlandBlockTags.STORAGE_BLOCKS_OPAL, DreamlandBlockTags.STORAGE_BLOCKS_PRECIOUS_OPAL);
 		
+		tag(DreamlandBlockTags.TOXIC_JUNGLE_GROUND_BLOCKS)
+		.add(DreamlandBlocks.WHITE_MOLD.block().get())
+		.add(DreamlandBlocks.TOXIC_DIRT.block().get())
+		.add(DreamlandBlocks.TOXIC_GRASS.block().get())
+		.add(DreamlandBlocks.BLACK_MOLD.block().get());
+		
 		addWoodSetTags(DreamlandWoodSets.PLUM_BIRCH);
 		addWoodSetTags(DreamlandWoodSets.TAR_BARK);
+		addWoodSetTags(DreamlandWoodSets.MOLD_WOOD);
 		
 		addCopperOreTags(DreamlandBlocks.KUNZITE_COPPER_ORE.block().get());
 		addIronOreTags(DreamlandBlocks.KUNZITE_IRON_ORE.block().get());

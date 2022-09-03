@@ -50,7 +50,7 @@ public class DreamlandOverworldBiomes {
     	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SPIDER, 100, 4, 4));
     	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ENDERMAN, 10, 1, 4));
         
-        return biome(Biome.Precipitation.NONE, 0.8F, 0.0F, new BiomeSpecialEffects.Builder()
+        return biome(Biome.Precipitation.NONE, 0.7F, 0.0F, new BiomeSpecialEffects.Builder()
         		.grassColorOverride(13082890)
 				.foliageColorOverride(13082890)
         		.waterColor(4789140)
@@ -75,7 +75,7 @@ public class DreamlandOverworldBiomes {
         
         spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(DreamlandEntities.LARVA.get(), 35, 2, 4));
         
-        return biome(Biome.Precipitation.NONE, 0.8F, 0.0F, new BiomeSpecialEffects.Builder()
+        return biome(Biome.Precipitation.NONE, 0.8F, 0.2F, new BiomeSpecialEffects.Builder()
         		.waterColor(12511438)
         		.waterFogColor(9680288)
         		.fogColor(12638463)
@@ -129,7 +129,7 @@ public class DreamlandOverworldBiomes {
     	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ENDERMAN, 10, 1, 4));
     	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.WITCH, 5, 1, 1));
     	
-    	return biome(Biome.Precipitation.RAIN, 0.9F, 1.0F, new BiomeSpecialEffects.Builder()
+    	return biome(Biome.Precipitation.RAIN, 0.6F, 0.6F, new BiomeSpecialEffects.Builder()
     			.grassColorOverride(14370147)
     			.waterColor(4751787)
     			.waterFogColor(4751787)
@@ -137,6 +137,31 @@ public class DreamlandOverworldBiomes {
     			.skyColor(12875400)
     			.ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
     			.ambientParticle(new AmbientParticleSettings(DreamlandParticles.WHITE_POLLEN.get(), 0.00128F))
+    			.backgroundMusic(NORMAL_MUSIC)
+    			.build(),
+    			spawnBuilder, biomeBuilder);
+    }
+    
+    public static Biome toxicjungle() {
+    	MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+    	BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
+    	globalOverworldGeneration(biomeBuilder);
+    	DreamlandBiomeFeatures.toxicJungleBiomeFeatures(biomeBuilder);
+    	
+    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SPIDER, 100, 4, 4));
+    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SKELETON, 100, 4, 4));
+    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.CREEPER, 110, 4, 4));
+    	spawnBuilder.addSpawn(MobCategory.AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.BAT, 10, 8, 8));
+    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SLIME, 100, 4, 4));
+    	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ENDERMAN, 10, 1, 4));
+    	
+    	return biome(Biome.Precipitation.RAIN, 0.95F, 0.9F, new BiomeSpecialEffects.Builder()
+    			.grassColorOverride(7315624)
+    			.waterColor(6280390)
+    			.waterFogColor(6280390)
+    			.fogColor(5880459)
+    			.skyColor(9541304)
+    			.ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
     			.backgroundMusic(NORMAL_MUSIC)
     			.build(),
     			spawnBuilder, biomeBuilder);

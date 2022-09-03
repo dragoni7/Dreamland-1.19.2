@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "": [
+      {"model": "dreamland:block/black_mold_1"},
+      {"model": "dreamland:block/black_mold_2"},
+      {"model": "dreamland:block/black_mold_3"}
+    ]
+  }
+}

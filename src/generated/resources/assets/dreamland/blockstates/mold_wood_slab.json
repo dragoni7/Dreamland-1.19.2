@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "dreamland:block/mold_wood_slab"
+    },
+    "type=double": {
+      "model": "dreamland:block/mold_wood_planks"
+    },
+    "type=top": {
+      "model": "dreamland:block/mold_wood_slab_top"
+    }
+  }
+}

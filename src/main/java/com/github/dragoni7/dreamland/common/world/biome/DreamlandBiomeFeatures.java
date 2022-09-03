@@ -79,16 +79,30 @@ public class DreamlandBiomeFeatures {
 		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.FOSSILIZED_EGG);
 		builder.addFeature(GenerationStep.Decoration.LAKES, DreamlandFeaturePlacements.LAKE_TAR_UNDERGROUND);
 		builder.addFeature(GenerationStep.Decoration.FLUID_SPRINGS, DreamlandFeaturePlacements.SPRING_TAR);
-		builder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, DreamlandFeaturePlacements.TAR_HILL);
-		builder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, DreamlandFeaturePlacements.DROUGHT_SOIL_HILL);
+		builder.addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, DreamlandFeaturePlacements.TAR_HILL);
+		builder.addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, DreamlandFeaturePlacements.DROUGHT_SOIL_HILL);
 	}
 	
 	public static void jeweledForestBiomeFeatures(BiomeGenerationSettings.Builder builder) {
-		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.PLACED_PLUM_BIRCH_TREE);
-		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.PLACED_JEWELED_FOREST_VEGETATION);
-		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.PLACED_FLOWERING_UNDERGROWTH);
-		builder.addFeature(GenerationStep.Decoration.LAKES, DreamlandFeaturePlacements.PLACED_PLUM_BIRCH_LAKE);
-		builder.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, DreamlandFeaturePlacements.PLACED_CALCITE_ROCK);
+		//builder.addFeature(GenerationStep.Decoration.LAKES, DreamlandFeaturePlacements.PLACED_PLUM_BIRCH_LAKE);
+		builder.addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, DreamlandFeaturePlacements.PLACED_CALCITE_ROCK);
+		builder.addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, DreamlandFeaturePlacements.PLACED_AMETHYST_ROCK);
+		
 		builder.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, DreamlandFeaturePlacements.PLACED_OPAL_CLUSTER);
+		builder.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, DreamlandFeaturePlacements.PLACED_PLUM_BIRCH_TREE);
+		builder.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, DreamlandFeaturePlacements.PLACED_JEWELED_FOREST_VEGETATION);
+		builder.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, DreamlandFeaturePlacements.PLACED_FLOWERING_UNDERGROWTH);
+	}
+	
+	public static void toxicJungleBiomeFeatures(BiomeGenerationSettings.Builder builder) {
+		builder.addFeature(GenerationStep.Decoration.RAW_GENERATION, DreamlandFeaturePlacements.POROUS_SPIRES);
+		builder.addFeature(GenerationStep.Decoration.RAW_GENERATION, DreamlandFeaturePlacements.POROUS_SPHERE);
+		builder.addFeature(GenerationStep.Decoration.RAW_GENERATION, DreamlandFeaturePlacements.POROUS_HILL);
+		builder.addFeature(GenerationStep.Decoration.RAW_GENERATION, DreamlandFeaturePlacements.MOLD_WOOD_ROOTS);
+		
+		builder.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, DreamlandFeaturePlacements.MOLD_GROWTH);
+		builder.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, DreamlandFeaturePlacements.MOLD_WOOD_STUMP);
+		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.MOLD_PUFF_TREE);
+		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.TOXIC_JUNGLE_VEGETATION);
 	}
 }

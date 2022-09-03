@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "dreamland:mold_wood_stripped_log"
+        }
+      ],
+      "name": "stripped_mold_wood_log",
+      "rolls": 1.0
+    }
+  ]
+}

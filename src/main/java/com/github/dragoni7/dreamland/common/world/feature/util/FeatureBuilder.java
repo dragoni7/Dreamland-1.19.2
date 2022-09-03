@@ -22,7 +22,6 @@ public class FeatureBuilder {
 			inputs.add(input);
 			return true;
 		}
-		
 		return false;
 	}
 

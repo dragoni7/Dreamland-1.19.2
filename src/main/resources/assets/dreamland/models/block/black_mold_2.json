@@ -1,0 +1,9 @@
+{
+	"parent": "dreamland:block/mold_2",
+	"render_type": "cutout",
+	"textures": {
+	  "all": "dreamland:block/black_mold",
+	  "cross": "dreamland:block/black_mold_cross",
+	  "particle": "dreamland:block/black_mold"
+	}
+  }

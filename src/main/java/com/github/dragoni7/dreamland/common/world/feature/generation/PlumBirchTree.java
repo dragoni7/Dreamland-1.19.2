@@ -10,6 +10,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.WorldGenLevel;
@@ -45,11 +46,11 @@ public class PlumBirchTree extends Feature<NoneFeatureConfiguration> {
 		Boolean branchResult = false;
 		
 		
-		if (worldgenlevel.isEmptyBlock(blockpos.below()) || !DreamlandBlocks.PLUM_BIRCH_SAPLING.block().get().defaultBlockState().canSurvive(worldgenlevel, blockpos)) {
+		if (!worldgenlevel.getBlockState(blockpos.below()).is(BlockTags.DIRT) || worldgenlevel.isEmptyBlock(blockpos.below()) || !worldgenlevel.isEmptyBlock(blockpos.above()) || !DreamlandBlocks.PLUM_BIRCH_SAPLING.block().get().defaultBlockState().canSurvive(worldgenlevel, blockpos)) {
 			return false;
 		}
 		
-		if ( !createTrunk(worldgenlevel, plumBirchTreeBuilder, blockpos, log, height)) {
+		if (!createTrunk(worldgenlevel, plumBirchTreeBuilder, blockpos, log, height)) {
 			return false;
 		}
 		

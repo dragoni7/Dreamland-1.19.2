@@ -1,5 +1,7 @@
 package com.github.dragoni7.dreamland.core.registry;
 
+import com.github.dragoni7.dreamland.Dreamland;
+
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraftforge.common.util.ForgeSoundType;
@@ -14,6 +16,6 @@ public class DreamlandSoundTypes {
 	public static final SoundType TAR_MUD_BRICKS = new ForgeSoundType(0.8F, 0.5F, () -> SoundEvents.MUD_BRICKS_BREAK, () -> SoundEvents.MUD_BRICKS_STEP, () -> SoundEvents.MUD_BRICKS_PLACE, () -> SoundEvents.MUD_BRICKS_HIT, () -> SoundEvents.MUD_BRICKS_FALL);
 	
 	public static void init() {
-		
+		Dreamland.LOGGER.always().log("Registering Dreamland Sound Types...");
 	}
 }

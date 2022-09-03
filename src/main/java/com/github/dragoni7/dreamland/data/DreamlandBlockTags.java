@@ -12,4 +12,5 @@ public class DreamlandBlockTags {
 	public static final TagKey<Block> FOSSILIZED_EGG_REPLACEABLE = TagCreator.dreamlandBlockTag("fossilized_egg_replaceable");
 	public static final TagKey<Block> STORAGE_BLOCKS_OPAL = TagCreator.forgeBlockTag("storage_blocks/opal");
 	public static final TagKey<Block> STORAGE_BLOCKS_PRECIOUS_OPAL = TagCreator.forgeBlockTag("storage_blocks/precious_opal");
+	public static final TagKey<Block> TOXIC_JUNGLE_GROUND_BLOCKS = TagCreator.forgeBlockTag("toxic_jungle_ground_blocks");
 }

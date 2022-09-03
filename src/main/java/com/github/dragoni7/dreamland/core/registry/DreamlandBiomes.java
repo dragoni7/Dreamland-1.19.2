@@ -20,6 +20,7 @@ public class DreamlandBiomes {
 			helper.register(BiomeKeys.HIVE.location().getPath(), DreamlandOverworldBiomes.hive());
 			helper.register(BiomeKeys.TAR_DELTAS.location().getPath(), DreamlandOverworldBiomes.tardeltas());
 			helper.register(BiomeKeys.JEWELED_FOREST.location().getPath(), DreamlandOverworldBiomes.jeweledforest());
+			helper.register(BiomeKeys.TOXIC_JUNGLE.location().getPath(), DreamlandOverworldBiomes.toxicjungle());
 		});
 	}
 

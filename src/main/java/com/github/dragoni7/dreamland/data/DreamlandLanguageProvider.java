@@ -23,7 +23,6 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add("itemGroup." + Dreamland.MODID, "Dreamland");
 		
 		// Block
-		add(DreamlandBlocks.BUMBLE_BLOCK.block().get(), "Bumble Block");
 		add(DreamlandBlocks.KUNZITE_STONE.block().get(), "Kunzite Stone");
 		add(DreamlandBlocks.COBBLED_KUNZITE_STONE.block().get(), "Cobbled Kunzite Stone");
 		add(DreamlandBlocks.KUNZITE_TILE.block().get(), "Kunzite Tile");
@@ -92,6 +91,7 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandBlocks.OOZE_BLOCK.block().get(), "Ooze Block");
 		translateWoodSet(DreamlandWoodSets.TAR_BARK, "Tar Bark");
 		
+		add(DreamlandBlocks.BUMBLE_BLOCK.block().get(), "Bumble Block");
 		add(DreamlandBlocks.MINERAL_DIRT.block().get(), "Mineral Dirt");
 		add(DreamlandBlocks.FLOWERING_GRASS.block().get(), "Flowering Undergrowth");
 		add(DreamlandBlocks.PLUM_BIRCH_LEAVES.block().get(), "Plum Birch Leaves");
@@ -115,6 +115,20 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandBlocks.PRECIOUS_OPAL_WALL.block().get(), "Precious Opal Wall");
 		add(DreamlandBlocks.JEWELED_DEEPSLATE.block().get(), "Jeweled Deepslate");
 		translateWoodSet(DreamlandWoodSets.PLUM_BIRCH, "Plum Birch");
+		
+		add(DreamlandBlocks.WHITE_MOLD.block().get(), "White Mold");
+		add(DreamlandBlocks.BLACK_MOLD.block().get(), "Black Mold");
+		add(DreamlandBlocks.WHITE_MOLD_CARPET.block().get(), "White Mold Carpet");
+		add(DreamlandBlocks.BLACK_MOLD_CARPET.block().get(), "Black Mold Carpet");
+		add(DreamlandBlocks.POROUS_STONE.block().get(), "Porous Stone");
+		add(DreamlandBlocks.OVERGROWN_POROUS_STONE.block().get(), "Overgrown Porous Stone");
+		add(DreamlandBlocks.MOLDED_STONE.block().get(), "Molded Stone");
+		add(DreamlandBlocks.PETRIFIED_VEGETATION.block().get(), "Petrified Vegetation");
+		add(DreamlandBlocks.TOXIC_DIRT.block().get(), "Toxic Dirt");
+		add(DreamlandBlocks.TOXIC_GRASS.block().get(), "Toxic Grass");
+		add(DreamlandBlocks.TOXIC_VEGETATION.block().get(), "Toxic Vegetation");
+		add(DreamlandBlocks.DENSE_VEGETATION.block().get(), "Dense Vegetation");
+		translateWoodSet(DreamlandWoodSets.MOLD_WOOD, "Mold Wood");
 		
 		// Items
 		add(DreamlandItems.HIVE_JELLY_ITEM.get(), "Hive Jelly");
@@ -151,6 +165,7 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add("biome.dreamland.hive", "Hive");
 		add("biome.dreamland.jeweled_forest", "Jeweled Forest");
 		add("biome.dreamland.tar_deltas", "Tar Deltas");
+		add("biome.dreamland.toxic_jungle", "Toxic Jungle");
 		
 		// JEED
 		add("effect.dreamland.tarred.description", "Slows, and severly reduces jump height. Extends burn time");

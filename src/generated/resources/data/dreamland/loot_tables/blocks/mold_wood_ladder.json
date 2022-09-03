@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "dreamland:mold_wood_ladder"
+        }
+      ],
+      "name": "mold_wood_ladder",
+      "rolls": 1.0
+    }
+  ]
+}

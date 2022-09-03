@@ -1,0 +1,34 @@
+{
+  "type": "dreamland:noise_hill",
+  "config": {
+    "block": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "dreamland:mold_wood_wood",
+        "Properties": {
+          "axis": "y"
+        }
+      }
+    },
+    "lakeFrequency": 1,
+    "liquid": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "dreamland:mold_wood_stripped_log",
+        "Properties": {
+          "axis": "y"
+        }
+      }
+    },
+    "noiseFrequency": 0.1,
+    "xRadius": 7,
+    "yHeight": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 7,
+        "min_inclusive": 6
+      }
+    },
+    "zRadius": 7
+  }
+}

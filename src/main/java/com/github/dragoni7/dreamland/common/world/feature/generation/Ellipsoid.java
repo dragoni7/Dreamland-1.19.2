@@ -3,6 +3,7 @@ package com.github.dragoni7.dreamland.common.world.feature.generation;
 import com.github.dragoni7.dreamland.common.world.feature.configs.EllipsoidConfig;
 import com.github.dragoni7.dreamland.common.world.feature.util.FastNoiseLite;
 import com.github.dragoni7.dreamland.common.world.feature.util.FeatureBuilder;
+import com.github.dragoni7.dreamland.common.world.feature.util.FeatureMath;
 import com.mojang.serialization.Codec;
 
 import net.minecraft.core.BlockPos;
@@ -40,7 +41,7 @@ public class Ellipsoid extends Feature<EllipsoidConfig> {
 				for (int z = -zRadius; z < zRadius; z++) {
 					
 					BlockPos pos = origin.offset(x, y, z);
-					double distance = Mth.square((double)x/xRadius) + Mth.square((double)y/yRadius) + Mth.square((double)z/zRadius);
+					double distance = FeatureMath.distance(x, y, z, xRadius, yRadius, zRadius);
 					float noise = ellipsoidNoise.GetNoise(x, y, z);
 					BlockState state;
 					
@@ -59,6 +60,10 @@ public class Ellipsoid extends Feature<EllipsoidConfig> {
 					}
 				}
 			}
+		}
+		
+		if (!status) {
+			return false;
 		}
 		
 		ellipsoidBuilder.build(worldgenlevel);
