@@ -1,20 +1,15 @@
 package com.github.dragoni7.dreamland.common.world.feature.generation;
 
 import com.github.dragoni7.dreamland.common.world.feature.util.FeatureBuilder;
-import com.github.dragoni7.dreamland.core.registry.DreamlandWoodSets;
 import com.mojang.serialization.Codec;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.core.Holder;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 public class MoldGrowth extends Feature<SimpleBlockConfiguration> {
 	

@@ -29,24 +29,24 @@ public class OpalShellModel extends AnimatedGeoModel<OpalShellEntity> {
 	public ResourceLocation getTextureResource(OpalShellEntity object) {
 		
 		switch (object.getOpalAmount()) {
-		case 0: {
-			return DreamlandLoc.createLoc("textures/entity/opal_shell_0.png");
-		}
-		case 1: {
-			return DreamlandLoc.createLoc("textures/entity/opal_shell_1.png");
-		}
-		case 2: {
-			return DreamlandLoc.createLoc("textures/entity/opal_shell_2.png");
-		}
-		case 3: {
-			return DreamlandLoc.createLoc("textures/entity/opal_shell_3.png");
-		}
-		case 4: {
-			return DreamlandLoc.createLoc("textures/entity/opal_shell_4.png");
-		}
-		default: {
-			return DreamlandLoc.createLoc("textures/entity/opal_shell_0.png");
-		}
+			case 0: {
+				return DreamlandLoc.createLoc("textures/entity/opal_shell_0.png");
+			}
+			case 1: {
+				return DreamlandLoc.createLoc("textures/entity/opal_shell_1.png");
+			}
+			case 2: {
+				return DreamlandLoc.createLoc("textures/entity/opal_shell_2.png");
+			}
+			case 3: {
+				return DreamlandLoc.createLoc("textures/entity/opal_shell_3.png");
+			}
+			case 4: {
+				return DreamlandLoc.createLoc("textures/entity/opal_shell_4.png");
+			}
+			default: {
+				return DreamlandLoc.createLoc("textures/entity/opal_shell_0.png");
+			}
 		}
 	}
 	

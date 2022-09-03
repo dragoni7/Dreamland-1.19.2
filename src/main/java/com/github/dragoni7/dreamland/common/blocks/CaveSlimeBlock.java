@@ -40,5 +40,5 @@ public class CaveSlimeBlock extends GrowingPlantHeadBlock implements CaveVines {
 	      return (light) -> {
 	         return lightLevel;
 	      };
-	   }
+	}
 }

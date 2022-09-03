@@ -34,7 +34,6 @@ public class Config {
 	public static ForgeConfigSpec SERVER_CONFIG;
 	public static ForgeConfigSpec COMMON_CONFIG;
 	
-	
 	static {
 		ForgeConfigSpec.Builder COMMON_BUILDER = new ForgeConfigSpec.Builder();
 		ForgeConfigSpec.Builder SERVER_BUILDER = new ForgeConfigSpec.Builder();
@@ -72,7 +71,6 @@ public class Config {
 		COMMON_BUILDER.pop();
 		COMMON_BUILDER.push("Midashroom gold conversion");
 		MIDASHROOM_GOLD_CONVERSION_CHANCE = COMMON_BUILDER.comment("Chance that the midashroom will convert a bonemealable block to a gold block when fertilizing. Default = 1/24").defineInRange("gold conversion chance", 24, 0, Integer.MAX_VALUE);
-		
 		
 		COMMON_CONFIG = COMMON_BUILDER.build();
 		SERVER_CONFIG = SERVER_BUILDER.build();

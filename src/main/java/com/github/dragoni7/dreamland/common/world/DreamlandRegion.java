@@ -27,7 +27,6 @@ public class DreamlandRegion extends Region
     		builder.replaceBiome(Biomes.LUSH_CAVES, BiomeKeys.MIDAS_CAVES);
     		builder.replaceBiome(Biomes.DESERT, BiomeKeys.TAR_DELTAS);
     		builder.replaceBiome(Biomes.FLOWER_FOREST, BiomeKeys.JEWELED_FOREST);
-    		builder.replaceBiome(Biomes.FOREST, BiomeKeys.JEWELED_FOREST);
     		builder.replaceBiome(Biomes.BIRCH_FOREST, BiomeKeys.JEWELED_FOREST);
     		builder.replaceBiome(Biomes.OLD_GROWTH_BIRCH_FOREST, BiomeKeys.JEWELED_FOREST);
     		builder.replaceBiome(Biomes.JUNGLE, BiomeKeys.TOXIC_JUNGLE);

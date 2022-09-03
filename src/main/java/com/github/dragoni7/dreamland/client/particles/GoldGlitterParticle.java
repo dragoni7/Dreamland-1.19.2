@@ -49,7 +49,6 @@ public class GoldGlitterParticle extends TextureSheetParticle {
 
 	      public Particle createParticle(SimpleParticleType p_172430_, ClientLevel p_172431_, double p_172432_, double p_172433_, double p_172434_, double p_172435_, double p_172436_, double p_172437_) {
 	    	  GoldGlitterParticle goldglitterparticle = new GoldGlitterParticle(p_172431_, this.sprite, p_172432_, p_172433_, p_172434_, 0.0D, (double)-0.8F, 0.0D) {
-	            
 	         };
 	         goldglitterparticle.lifetime = Mth.randomBetweenInclusive(p_172431_.random, 250, 650);
 	         goldglitterparticle.gravity = 0.01F;

@@ -16,7 +16,7 @@ public class DreamlandOverworldBiomes {
 
 	@Nullable
     private static final Music NORMAL_MUSIC = null;
-
+	
     protected static int calculateSkyColor(float color)
     {
         float $$1 = color / 3.0F;

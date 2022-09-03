@@ -116,40 +116,40 @@ public class DreamlandFeaturePlacements {
 	public static final Holder<PlacedFeature> MOLD_WOOD_ROOTS = registerPlacedFeature("mold_wood_roots", DreamlandConfiguredFeatures.MOLD_WOOD_ROOTS, CountPlacement.of(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.matchesBlocks(List.of(DreamlandBlocks.WHITE_MOLD.block().get(), DreamlandBlocks.BLACK_MOLD.block().get(), DreamlandBlocks.POROUS_STONE.block().get(), DreamlandBlocks.TOXIC_GRASS.block().get(), DreamlandBlocks.TOXIC_DIRT.block().get())), 12), BiomeFilter.biome());
 	
 	private static ImmutableList.Builder<PlacementModifier> treePlacementSurfaceBase(PlacementModifier modifier) {
-	    return ImmutableList.<PlacementModifier>builder().add(modifier).add(InSquarePlacement.spread()).add(VegetationPlacements.TREE_THRESHOLD).add(PlacementUtils.HEIGHTMAP_WORLD_SURFACE).add(BiomeFilter.biome());
-	 }
+	       return ImmutableList.<PlacementModifier>builder().add(modifier).add(InSquarePlacement.spread()).add(VegetationPlacements.TREE_THRESHOLD).add(PlacementUtils.HEIGHTMAP_WORLD_SURFACE).add(BiomeFilter.biome());
+	   }
 	
 	public static List<PlacementModifier> treePlacement(PlacementModifier modifier) {
-	    return treePlacementSurfaceBase(modifier).build();
-	 }
+	       return treePlacementSurfaceBase(modifier).build();
+	   }
 	
-	private static List<PlacementModifier> orePlacement(PlacementModifier palcementModifiers, PlacementModifier p_195348_) {
-		return List.of(palcementModifiers, InSquarePlacement.spread(), p_195348_, BiomeFilter.biome());
-	 }
-	   
-	   private static List<PlacementModifier> commonOrePlacement(int count, PlacementModifier palcementModifiers) {
-		      return orePlacement(CountPlacement.of(count), palcementModifiers);
-		   }
-	   
-	   private static List<PlacementModifier> rareOrePlacement(int count, PlacementModifier palcementModifiers) {
-		      return orePlacement(RarityFilter.onAverageOnceEvery(count), palcementModifiers);
-		   }
-	   
-	   private static <FC extends FeatureConfiguration> Holder<PlacedFeature> registerPlacedFeature(String name, Holder<ConfiguredFeature<FC,?>> feature, List<PlacementModifier> placementModifiers) {
+	private static List<PlacementModifier> orePlacement(PlacementModifier palcementModifiers, PlacementModifier placementModifier) {
+		   return List.of(palcementModifiers, InSquarePlacement.spread(), placementModifier, BiomeFilter.biome());
+	   }
+	
+	private static List<PlacementModifier> commonOrePlacement(int count, PlacementModifier palcementModifiers) {
+		   return orePlacement(CountPlacement.of(count), palcementModifiers);
+	   }
+	
+	private static List<PlacementModifier> rareOrePlacement(int count, PlacementModifier palcementModifiers) {
+		   return orePlacement(RarityFilter.onAverageOnceEvery(count), palcementModifiers);
+	   }
+	
+	private static <FC extends FeatureConfiguration> Holder<PlacedFeature> registerPlacedFeature(String name, Holder<ConfiguredFeature<FC,?>> feature, List<PlacementModifier> placementModifiers) {
 		   return BuiltinRegistries.register(BuiltinRegistries.PLACED_FEATURE, DreamlandLoc.createLoc(name), new PlacedFeature(Holder.hackyErase(feature), List.copyOf(placementModifiers)));
 	   }
-	   
-	   private static <FC extends FeatureConfiguration> Holder<PlacedFeature> registerPlacedFeature(String name, Holder<ConfiguredFeature<FC,?>> feature, PlacementModifier... placementModifiers) {
+	
+	private static <FC extends FeatureConfiguration> Holder<PlacedFeature> registerPlacedFeature(String name, Holder<ConfiguredFeature<FC,?>> feature, PlacementModifier... placementModifiers) {
 		   createKey(name);
 		   return registerPlacedFeature(name, feature, List.of(placementModifiers));
 	   }
-	   
-	   private static void createKey(String name) {
+	
+	private static void createKey(String name) {
 		   ResourceKey<PlacedFeature> key = ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY, DreamlandLoc.createLoc(name));
 		   KEYS.add(key);
 	   }
-	   
-	   public static ArrayList<ResourceKey<PlacedFeature>> getKeys() {
+	
+	public static ArrayList<ResourceKey<PlacedFeature>> getKeys() {
 		   return KEYS;
 	   }
 }

@@ -40,7 +40,6 @@ import net.minecraftforge.api.distmarker.Dist;
 @Mod(Dreamland.MODID)
 public class Dreamland
 {
-	
 	public static final String MODID = "dreamland";
 	
 	public static final Logger LOGGER = LogManager.getLogger();
@@ -84,7 +83,6 @@ public class Dreamland
     	FluidInteractionRegistry.addInteraction(DreamlandFluids.TAR_FLUID_TYPE.get(), new FluidInteractionRegistry.InteractionInformation(ForgeMod.WATER_TYPE.get(), DreamlandBlocks.TAR_MUD.block().get().defaultBlockState()));
     	
     	event.enqueueWork( ()-> {
-    		
     		Networking.registerMessages();
             SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, Dreamland.MODID, DreamlandSurfaceRules.OVERWORLD_SURFACE_RULES);
     		Regions.register(new DreamlandRegion(DreamlandLoc.createLoc("dreamland_region"), RegionType.OVERWORLD, Config.REGION_WEIGHT.get()));
