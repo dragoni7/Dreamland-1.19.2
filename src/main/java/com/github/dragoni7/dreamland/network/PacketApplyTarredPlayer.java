@@ -12,15 +12,15 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraftforge.network.NetworkEvent;
 
-public class PacketApplyTarred {
+public class PacketApplyTarredPlayer {
 
 	private int livingEntity;
 	
-	public PacketApplyTarred(FriendlyByteBuf buf) {
+	public PacketApplyTarredPlayer(FriendlyByteBuf buf) {
 		livingEntity = buf.readInt();
 	}
 	
-	public PacketApplyTarred(int entity) {
+	public PacketApplyTarredPlayer(int entity) {
 		this.livingEntity = entity;
 	}
 	
@@ -32,12 +32,7 @@ public class PacketApplyTarred {
 		context.get().enqueueWork(() -> {
 			if (context.get().getDirection().getReceptionSide().isServer()) {
 				ServerPlayer player = context.get().getSender();
-				ServerLevel world = player.getLevel();
-				Entity entity = world.getEntity(livingEntity);
-				
-				if (entity instanceof LivingEntity) {
-					((LivingEntity) entity).addEffect(new MobEffectInstance(DreamlandEffects.TARRED.get(), 600));
-				}
+				player.addEffect(new MobEffectInstance(DreamlandEffects.TARRED.get(), 600));
 			}
 		});
 		

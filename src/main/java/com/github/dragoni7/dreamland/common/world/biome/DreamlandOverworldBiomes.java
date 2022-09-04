@@ -156,7 +156,7 @@ public class DreamlandOverworldBiomes {
     	spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ENDERMAN, 10, 1, 4));
     	
     	return biome(Biome.Precipitation.RAIN, 0.95F, 0.9F, new BiomeSpecialEffects.Builder()
-    			.grassColorOverride(7315624)
+    			.grassColorOverride(2470001)
     			.waterColor(6280390)
     			.waterFogColor(6280390)
     			.fogColor(5880459)

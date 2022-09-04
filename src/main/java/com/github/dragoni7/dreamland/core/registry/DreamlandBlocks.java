@@ -37,10 +37,6 @@ public class DreamlandBlocks {
 	
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Dreamland.MODID);
 	
-	//public static final BlockItemSet CLAY_SOIL = new BlockItemSet("clay_soil", () -> new ClaySoilBlock(BlockBehaviour.Properties.copy(Blocks.DIRT).sound(SoundType.ROOTED_DIRT)));
-	
-		//public static final BlockItemSet CLAY_SOIL_GRASS = new BlockItemSet("clay_soil_grass", () -> new ClaySoilGrassBlock((BlockBehaviour.Properties.of(Material.GRASS).randomTicks().strength(0.6F).sound(SoundType.GRASS))));
-		
 		/*public static final BlockItemSet DUSK_ICE = new BlockItemSet("dusk_ice", 
 				() -> new DuskIceBlock(BlockBehaviour.Properties
 						.of(Material.ICE)
@@ -246,8 +242,8 @@ public class DreamlandBlocks {
 	public static final BlockItemSet SPONGE_PUFF = new BlockItemSet("sponge_puff", () -> new MoldVegetationBlock(BlockBehaviour.Properties.copy(SPORE_PUFF.block().get()).sound(SoundType.NETHER_SPROUTS)));
 	public static final BlockItemSet TOXIC_DIRT = createDirtBlock("toxic_dirt");
 	public static final BlockItemSet TOXIC_GRASS = new BlockItemSet("toxic_grass", () -> new ToxicGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
-	public static final BlockItemSet TOXIC_VEGETATION = new BlockItemSet("toxic_vegetation", () -> new Block(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN).strength(0.2F).sound(SoundType.CROP)));
-	public static final BlockItemSet DENSE_VEGETATION = new BlockItemSet("dense_vegetation", () -> new Block(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN).strength(1.5F, 1.0F).sound(SoundType.AZALEA_LEAVES)));
+	public static final BlockItemSet TOXIC_VEGETATION = new BlockItemSet("toxic_vegetation", () -> new Block(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN).strength(0.2F).sound(SoundType.AZALEA_LEAVES)));
+	public static final BlockItemSet DENSE_VEGETATION = new BlockItemSet("dense_vegetation", () -> new Block(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN).strength(1.5F, 1.0F).sound(SoundType.HARD_CROP)));
 	
 	private static BlockItemSet createSaplingBlock(String name, Feature<NoneFeatureConfiguration> tree) {
 		return new BlockItemSet(name, () -> new DreamlandSaplingBlock(tree, BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));

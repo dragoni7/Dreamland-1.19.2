@@ -1,5 +1,9 @@
 {
   "values": [
+    "dreamland:toxic_dirt",
+    "dreamland:toxic_grass",
+    "dreamland:white_mold",
+    "dreamland:black_mold",
     "dreamland:hive_jelly_cluster",
     "dreamland:infested_hive_jelly_cluster",
     "dreamland:tar_mud",

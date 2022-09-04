@@ -98,7 +98,6 @@ public class DreamlandItemModels extends ItemModelProvider {
 		blockItemModel(DreamlandBlocks.OVERGROWN_POROUS_STONE.item(), "block/overgrown_porous_stone");
 		blockItemModel(DreamlandBlocks.PETRIFIED_VEGETATION.item(), "block/petrified_vegetation");
 		blockItemModel(DreamlandBlocks.TOXIC_DIRT.item(), "block/toxic_dirt");
-		blockItemModel(DreamlandBlocks.TOXIC_GRASS.item(), "block/toxic_grass");
 		blockItemModel(DreamlandBlocks.TOXIC_VEGETATION.item(), "block/toxic_vegetation");
 		blockItemModel(DreamlandBlocks.DENSE_VEGETATION.item(), "block/dense_vegetation");
 		singleTextureItemModel(DreamlandBlocks.SPORE_PUFF.item(), "block/spore_puff");

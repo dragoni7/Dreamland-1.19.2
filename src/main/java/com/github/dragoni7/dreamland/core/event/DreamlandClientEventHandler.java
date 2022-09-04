@@ -6,15 +6,20 @@ import com.github.dragoni7.dreamland.client.particles.TarBubbleParticle;
 import com.github.dragoni7.dreamland.client.particles.WhitePollenParticle;
 import com.github.dragoni7.dreamland.client.render.*;
 import com.github.dragoni7.dreamland.common.items.LarvaSymbioteArmorItem;
+import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
 import com.github.dragoni7.dreamland.core.registry.DreamlandParticles;
+import com.github.dragoni7.dreamland.core.registry.DreamlandTiles;
 
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
+import net.minecraft.client.color.block.BlockColors;
+import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
@@ -26,7 +31,7 @@ public class DreamlandClientEventHandler {
 		
 		modBus.addListener(DreamlandClientEventHandler::registerEntityRenders);
 		modBus.addListener(DreamlandClientEventHandler::registerArmorRenders);
-		//modBus.addListener(DreamlandClientEventHandler::registerBlockColors);
+		modBus.addListener(DreamlandClientEventHandler::registerBlockColors);
 		modBus.addListener(DreamlandClientEventHandler::setupClient);
 		modBus.addListener(DreamlandClientEventHandler::registerParticles);
 	}
@@ -35,7 +40,6 @@ public class DreamlandClientEventHandler {
 		event.enqueueWork(()-> {
 			
 			ItemBlockRenderTypes.setRenderLayer(DreamlandFluids.TAR_BLOCK.get(), RenderType.solid());
-			
 			ItemBlockRenderTypes.setRenderLayer(DreamlandFluids.TAR_FLUID.get(), RenderType.solid());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandFluids.TAR_FLOWING.get(), RenderType.solid());
 			
@@ -49,17 +53,17 @@ public class DreamlandClientEventHandler {
 		event.registerEntityRenderer(DreamlandEntities.OOZE.get(), OozeRender::new);
 		event.registerEntityRenderer(DreamlandEntities.OPAL_SHELL.get(), OpalShellRender::new);
 		event.registerEntityRenderer(DreamlandEntities.TAR_BALL.get(), TarBallRender::new);
-		//event.registerBlockEntityRenderer(DreamlandTiles.ANCIENT_EGG.get(), AncientEggRender::new);
+		event.registerBlockEntityRenderer(DreamlandTiles.ANCIENT_EGG.get(), AncientEggRender::new);
 	}
 	
 	private static void registerArmorRenders(final EntityRenderersEvent.AddLayers event) {
 		GeoArmorRenderer.registerArmorRenderer(LarvaSymbioteArmorItem.class, new LarvaSymbioteRenderer());
 	}
 	
-	/*private static void registerBlockColors(final ColorHandlerEvent.Block event) {
+	private static void registerBlockColors(final RegisterColorHandlersEvent.Block event) {
 		final BlockColors blockColors = event.getBlockColors();
-		blockColors.register((state, world, pos, tintIndex) -> BiomeColors.getAverageGrassColor(world, pos), DreamlandBlocks.CLAY_SOIL_GRASS.block().get());
-	}*/
+		blockColors.register((state, world, pos, tintIndex) -> BiomeColors.getAverageGrassColor(world, pos), DreamlandBlocks.TOXIC_GRASS.block().get());
+	}
 	
 	private static void registerParticles(RegisterParticleProvidersEvent event) {
 		event.register(DreamlandParticles.TAR_BUBBLE.get(), TarBubbleParticle.Provider::new);

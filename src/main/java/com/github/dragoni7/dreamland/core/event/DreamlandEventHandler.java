@@ -13,15 +13,17 @@ import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
 import com.github.dragoni7.dreamland.core.registry.DreamlandItems;
 import com.github.dragoni7.dreamland.network.Networking;
-import com.github.dragoni7.dreamland.network.PacketApplyTarred;
+import com.github.dragoni7.dreamland.network.PacketApplyTarredPlayer;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.AABB;
@@ -62,9 +64,11 @@ public class DreamlandEventHandler {
 			MobEffect tarred = DreamlandEffects.TARRED.get();
 			
 			if (motion.x != 0 || motion.z != 0) {
-				
-				entity.addEffect(new MobEffectInstance(tarred, 600));
-				Networking.sendToServer(new PacketApplyTarred(entity.getId()));
+				if (entity instanceof Player) {
+					Networking.sendToServer(new PacketApplyTarredPlayer(entity.getId()));
+				} else if (entity.isAlive()) {
+					entity.addEffect(new MobEffectInstance(tarred, 600));
+				}
 			}
 		}
 	}

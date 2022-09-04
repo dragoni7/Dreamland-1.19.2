@@ -23,8 +23,6 @@ public class AddBlockTags extends BlockTagsProvider {
 	protected void addTags() {
 		
 		tag(BlockTags.DIRT)
-		//.add(DreamlandBlocks.CLAY_SOIL.block().get())
-		//.add(DreamlandBlocks.CLAY_SOIL_GRASS.block().get())
 		.add(DreamlandBlocks.GOLDEN_MOSS_BLOCK.block().get())
 		.add(DreamlandBlocks.DROUGHT_SOIL.block().get())
 		.add(DreamlandBlocks.MINERAL_DIRT.block().get())
@@ -33,13 +31,19 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.FLOWERING_GRASS.block().get());
 		
 		tag(BlockTags.MUSHROOM_GROW_BLOCK)
+		.add(DreamlandBlocks.TOXIC_GRASS.block().get())
+		.add(DreamlandBlocks.TOXIC_DIRT.block().get())
 		.add(DreamlandBlocks.WHITE_MOLD.block().get())
 		.add(DreamlandBlocks.BLACK_MOLD.block().get());
 		
 		tag(BlockTags.ANIMALS_SPAWNABLE_ON)
+		.add(DreamlandBlocks.TOXIC_GRASS.block().get())
 		.add(DreamlandBlocks.FLOWERING_GRASS.block().get());
 		
 		tag(Tags.Blocks.STONE)
+		.add(DreamlandBlocks.POROUS_STONE.block().get())
+		.add(DreamlandBlocks.OVERGROWN_POROUS_STONE.block().get())
+		.add(DreamlandBlocks.MOLDED_STONE.block().get())
 		.add(DreamlandBlocks.KUNZITE_STONE.block().get());
 		
 		tag(Tags.Blocks.COBBLESTONE)
@@ -74,8 +78,10 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.FLOWERING_UNDERGROWTH.block().get());
 		
 		tag(BlockTags.MINEABLE_WITH_SHOVEL)
-		//.add(DreamlandBlocks.CLAY_SOIL.block().get())
-		//.add(DreamlandBlocks.CLAY_SOIL_GRASS.block().get())
+		.add(DreamlandBlocks.TOXIC_DIRT.block().get())
+		.add(DreamlandBlocks.TOXIC_GRASS.block().get())
+		.add(DreamlandBlocks.WHITE_MOLD.block().get())
+		.add(DreamlandBlocks.BLACK_MOLD.block().get())
 		.add(DreamlandBlocks.HIVE_JELLY_CLUSTER.block().get())
 		.add(DreamlandBlocks.INFESTED_HIVE_JELLY_CLUSTER.block().get())
 		.add(DreamlandBlocks.TAR_MUD.block().get())
@@ -85,6 +91,9 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.FLOWERING_GRASS.block().get());
 		
 		tag(BlockTags.MINEABLE_WITH_PICKAXE)
+		.add(DreamlandBlocks.POROUS_STONE.block().get())
+		.add(DreamlandBlocks.OVERGROWN_POROUS_STONE.block().get())
+		.add(DreamlandBlocks.MOLDED_STONE.block().get())
 		.add(DreamlandBlocks.KUNZITE_STONE.block().get())
 		.add(DreamlandBlocks.COBBLED_KUNZITE_STONE.block().get())
 		.add(DreamlandBlocks.KUNZITE_BRICKS.block().get())
@@ -132,10 +141,15 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.JEWELED_DEEPSLATE.block().get());
 		
 		tag(BlockTags.MINEABLE_WITH_AXE)
+		.add(DreamlandBlocks.PETRIFIED_VEGETATION.block().get())
+		.add(DreamlandBlocks.DENSE_VEGETATION.block().get())
+		.add(DreamlandBlocks.TOXIC_VEGETATION.block().get())
 		.add(DreamlandBlocks.GOLDEN_CAP.block().get())
 		.add(DreamlandBlocks.MIDASHROOM.block().get());
 		
 		tag(BlockTags.NEEDS_STONE_TOOL)
+		.add(DreamlandBlocks.PETRIFIED_VEGETATION.block().get())
+		.add(DreamlandBlocks.DENSE_VEGETATION.block().get())
 		.add(DreamlandBlocks.KUNZITE_STONE.block().get())
 		.add(DreamlandBlocks.COBBLED_KUNZITE_STONE.block().get())
 		.add(DreamlandBlocks.KUNZITE_BRICKS.block().get())
@@ -165,11 +179,8 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.JEWELED_DEEPSLATE.block().get())
 		.add(DreamlandBlocks.MIDASHROOM.block().get());
 		
-		tag(BlockTags.NEEDS_DIAMOND_TOOL)
-		.add(DreamlandBlocks.HIVE_WEAVER.block().get())
-		.add(DreamlandBlocks.PRECIOUS_OPAL_BLOCK.block().get());
-		
 		tag(BlockTags.NEEDS_IRON_TOOL)
+		.add(DreamlandBlocks.MOLDED_STONE.block().get())
 		.add(DreamlandBlocks.KUNZITE_POINT.block().get())
 		.add(DreamlandBlocks.KUNZITE_POINT_BLOCK.block().get())
 		.add(DreamlandBlocks.KUNZITE_BARS.block().get())
@@ -180,6 +191,10 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.MEDIUM_GOLD_CLUSTER.block().get())
 		.add(DreamlandBlocks.LARGE_GOLD_CLUSTER.block().get())
 		.add(DreamlandBlocks.FOSSILIZED_EGG.block().get());
+		
+		tag(BlockTags.NEEDS_DIAMOND_TOOL)
+		.add(DreamlandBlocks.HIVE_WEAVER.block().get())
+		.add(DreamlandBlocks.PRECIOUS_OPAL_BLOCK.block().get());
 		
 		tag(DreamlandBlockTags.KUNZITE_ORES_REPLACEABLE)
 		.add(DreamlandBlocks.KUNZITE_STONE.block().get());
@@ -192,6 +207,7 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.DRIED_TAR.block().get());
 		
 		tag(BlockTags.STONE_ORE_REPLACEABLES)
+		.add(DreamlandBlocks.POROUS_STONE.block().get())
 		.add(DreamlandBlocks.KUNZITE_STONE.block().get())
 		.add(DreamlandBlocks.TAR_MUD.block().get());
 		

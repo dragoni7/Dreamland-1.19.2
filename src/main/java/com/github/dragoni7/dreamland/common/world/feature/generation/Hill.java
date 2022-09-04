@@ -23,7 +23,7 @@ public class Hill extends Feature<HillConfig> {
 	public boolean place(FeaturePlaceContext<HillConfig> context) {
 		WorldGenLevel worldgenlevel = context.level();
 		RandomSource rand = context.random();
-		FastNoiseLite hillNoise = createNoise(worldgenlevel.getSeed(), context.config().noiseFrequency().sample(rand));
+		FastNoiseLite hillNoise = createNoise(worldgenlevel.getSeed() + rand.nextLong(), context.config().noiseFrequency().sample(rand));
 		FeatureBuilder builder = new FeatureBuilder();
 		BlockPos origin = context.origin();
 		Boolean status = false;
