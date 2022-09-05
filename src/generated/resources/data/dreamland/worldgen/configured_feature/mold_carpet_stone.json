@@ -1,0 +1,30 @@
+{
+  "type": "dreamland:hive_growth_layer",
+  "config": {
+    "growthBlock": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "dreamland:black_mold_carpet"
+          },
+          "weight": 25
+        },
+        {
+          "data": {
+            "Name": "dreamland:white_mold_carpet"
+          },
+          "weight": 75
+        }
+      ]
+    },
+    "height": 3,
+    "radius": 4,
+    "underBlock": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "dreamland:porous_stone"
+      }
+    }
+  }
+}
