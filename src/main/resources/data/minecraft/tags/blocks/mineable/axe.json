@@ -1,8 +1,9 @@
 {
   "values": [
     "dreamland:petrified_vegetation",
-    "dreamland:dense_vegetation",
+    "dreamland:decayed_vegetation",
     "dreamland:toxic_vegetation",
+    "dreamland:glowing_mold_wood",
     "dreamland:golden_cap",
     "dreamland:midashroom",
     "dreamland:plum_birch_button",

@@ -1,4 +1,4 @@
-// 1.19.2	2022-09-05T13:08:52.4447265	Item Models: dreamland
+// 1.19.2	2022-09-05T16:01:18.6081368	Item Models: dreamland
 02a6524eeaab96334111ffc9f8953b1693e4f0ef assets/dreamland/models/item/ancient_egg.json
 4fb267762954b517ed71652604e2dcced065fba9 assets/dreamland/models/item/black_mold.json
 1ad253bb878c44ee03afc1c5198c29e0035a59a6 assets/dreamland/models/item/bowl_of_jelly.json
@@ -16,7 +16,6 @@ b19f517cec49eb567b2e7322fd9485d3b8148606 assets/dreamland/models/item/decayed_ve
 024719047ba200c94a1acab0eb39fa55c4056c72 assets/dreamland/models/item/flowering_grass.json
 2629846464fb98d9fd63c6b1cc44194757c2e929 assets/dreamland/models/item/flowering_undergrowth.json
 862d6a2f39fcf7f4a26e13db2114ab847a5117d5 assets/dreamland/models/item/fossilized_egg.json
-5f9b0caead377de983ec04ae72d6f25101c69a42 assets/dreamland/models/item/glowing_mold_log.json
 3563376b4b3f7a6bdebf3085069793c390ba0425 assets/dreamland/models/item/glowing_mold_wood.json
 bcd5d36a4ef75858a34f8d693c4ea351e8a0bf4b assets/dreamland/models/item/glow_fronds.json
 2ceae6756819e6cba9a178312e6315b9885f2c92 assets/dreamland/models/item/golden_moss_block.json
@@ -54,6 +53,7 @@ ca9bb3c29ec44c054116c2e01fbadaeb83976105 assets/dreamland/models/item/kunzite_co
 c925d532b9214085ab86f60ace7e1f18bc8e3832 assets/dreamland/models/item/kunzite_redstone_ore.json
 ec872ea37eda5595e2de195edfdb47a74a3d7d77 assets/dreamland/models/item/kunzite_tile.json
 4b526e745ffd3ef638db01e94a4672435a3e7f7f assets/dreamland/models/item/large_gold_cluster.json
+b8bbc98b343803c1ae49e86692ba60e6b1d003dc assets/dreamland/models/item/large_spore_puff.json
 ae9d351ccebeca51a6c198c7999d291d287827eb assets/dreamland/models/item/larva_symbiote.json
 6b7395a4906936dfbbf452b3ceb221090011663f assets/dreamland/models/item/medium_gold_cluster.json
 27f95580e51bc2b8b6a37451355c1e604781443a assets/dreamland/models/item/midashroom.json
@@ -113,7 +113,7 @@ ead96d0ce11b9b3ad4f9076aae8d6e1f42af5c72 assets/dreamland/models/item/precious_o
 1d789f6edd3b80982888ad4bc0163de1532e0e94 assets/dreamland/models/item/precious_opal_stairs.json
 f778ea5668522f2e2ba0fa68103a321b03323312 assets/dreamland/models/item/precious_opal_tile.json
 d6ab2e5680802ffd662f0967cd9a608d16731c06 assets/dreamland/models/item/precious_opal_wall.json
-5058f83aaf360d1e0444045b58c09e9fb85a9414 assets/dreamland/models/item/shelf_vegetation.json
+d593a8e3fdf646d487ee5e479a8fde26803f09f5 assets/dreamland/models/item/shelf_vegetation.json
 08c6ef4b0cfad306e194389db5f7d523e3119171 assets/dreamland/models/item/small_gold_cluster.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dreamland/models/item/spawn_egg_bumble_beast.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dreamland/models/item/spawn_egg_larva.json

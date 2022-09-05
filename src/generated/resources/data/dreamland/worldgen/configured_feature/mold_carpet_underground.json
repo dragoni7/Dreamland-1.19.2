@@ -19,7 +19,7 @@
       ]
     },
     "height": 2,
-    "radius": 5,
+    "radius": 8,
     "underBlock": {
       "type": "minecraft:simple_state_provider",
       "state": {

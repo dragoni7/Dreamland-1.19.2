@@ -113,10 +113,6 @@ public class DreamlandBlockStates extends BlockStateProvider{
 		ResourceLocation kunzitePointBlockSide = modLoc("block/kunzite_point_block");
 		axisBlock((RotatedPillarBlock) DreamlandBlocks.KUNZITE_POINT_BLOCK.block().get(), kunzitePointBlockSide, kunzitePointBlockTop);
 		
-		ResourceLocation glowingMoldLogTop = modLoc("block/mold_wood_log_top");
-		ResourceLocation glowingMoldLogSide = modLoc("block/glowing_mold_wood");
-		axisBlock((RotatedPillarBlock) DreamlandBlocks.GLOWING_MOLD_LOG.block().get(), glowingMoldLogSide, glowingMoldLogTop);
-		
 		registerWoodSet(DreamlandWoodSets.PLUM_BIRCH);
 		registerWoodSet(DreamlandWoodSets.TAR_BARK);
 		registerWoodSet(DreamlandWoodSets.MOLD_WOOD);

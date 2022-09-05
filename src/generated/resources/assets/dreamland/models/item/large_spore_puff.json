@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "dreamland:item/shelf_vegetation"
+    "layer0": "dreamland:item/large_spore_puff"
   }
 }

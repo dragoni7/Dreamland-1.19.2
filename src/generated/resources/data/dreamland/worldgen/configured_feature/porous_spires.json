@@ -2,6 +2,12 @@
   "type": "dreamland:noise_cone",
   "config": {
     "block1": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "dreamland:white_mold"
+      }
+    },
+    "block2": {
       "type": "minecraft:weighted_state_provider",
       "entries": [
         {
@@ -18,31 +24,19 @@
         }
       ]
     },
-    "block2": {
-      "type": "minecraft:simple_state_provider",
-      "state": {
-        "Name": "minecraft:air"
-      }
-    },
     "height": {
       "type": "minecraft:uniform",
       "value": {
-        "max_inclusive": 13,
-        "min_inclusive": 10
+        "max_inclusive": 10,
+        "min_inclusive": 7
       }
     },
-    "noiseFrequency": {
-      "type": "minecraft:uniform",
-      "value": {
-        "max_exclusive": 0.2,
-        "min_inclusive": 0.1
-      }
-    },
+    "noiseFrequency": 0.1,
     "radius": {
       "type": "minecraft:uniform",
       "value": {
-        "max_inclusive": 11,
-        "min_inclusive": 8
+        "max_inclusive": 8,
+        "min_inclusive": 5
       }
     }
   }

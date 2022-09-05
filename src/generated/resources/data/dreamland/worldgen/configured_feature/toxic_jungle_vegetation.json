@@ -18,7 +18,7 @@
                 "data": {
                   "Name": "dreamland:spore_puff"
                 },
-                "weight": 25
+                "weight": 15
               },
               {
                 "data": {
@@ -43,9 +43,9 @@
               },
               {
                 "data": {
-                  "Name": "minecraft:red_mushroom"
+                  "Name": "dreamland:large_spore_puff"
                 },
-                "weight": 10
+                "weight": 20
               }
             ]
           }

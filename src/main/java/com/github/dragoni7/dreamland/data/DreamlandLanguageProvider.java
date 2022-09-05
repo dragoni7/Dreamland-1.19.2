@@ -130,8 +130,8 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandBlocks.DECAYED_VEGETATION.block().get(), "Decayed Vegetation");
 		add(DreamlandBlocks.SHELF_VEGETATION.block().get(), "Shelf Vegetation");
 		add(DreamlandBlocks.GLOW_FRONDS.block().get(), "Glow Fronds");
-		add(DreamlandBlocks.GLOWING_MOLD_LOG.block().get(), "Glowing Mold Log");
 		add(DreamlandBlocks.GLOWING_MOLD_WOOD.block().get(), "Glowing Mold Wood");
+		add(DreamlandBlocks.LARGE_SPORE_PUFF.block().get(), "Large Spore Puff");
 		translateWoodSet(DreamlandWoodSets.MOLD_WOOD, "Mold Wood");
 		
 		// Items

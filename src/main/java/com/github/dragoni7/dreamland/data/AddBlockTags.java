@@ -64,6 +64,8 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.FLOWERING_UNDERGROWTH.block().get())
 		.add(DreamlandBlocks.SPONGE_PUFF.block().get())
 		.add(DreamlandBlocks.SPORE_PUFF.block().get())
+		.add(DreamlandBlocks.SHELF_VEGETATION.block().get())
+		.add(DreamlandBlocks.GLOW_FRONDS.block().get())
 		.add(DreamlandBlocks.PLUM_BIRCH_SHRUB.block().get());
 		
 		tag(BlockTags.SAPLINGS)
@@ -72,7 +74,6 @@ public class AddBlockTags extends BlockTagsProvider {
 		
 		tag(BlockTags.FLOWERS)
 		.add(DreamlandBlocks.OPALINE_MARIGOLD.block().get())
-		.add(DreamlandBlocks.SPORE_PUFF.block().get())
 		.add(DreamlandBlocks.FLOWERING_UNDERGROWTH.block().get());
 		tag(BlockTags.SMALL_FLOWERS)
 		.add(DreamlandBlocks.OPALINE_MARIGOLD.block().get())
@@ -145,6 +146,7 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.PETRIFIED_VEGETATION.block().get())
 		.add(DreamlandBlocks.DECAYED_VEGETATION.block().get())
 		.add(DreamlandBlocks.TOXIC_VEGETATION.block().get())
+		.add(DreamlandBlocks.GLOWING_MOLD_WOOD.block().get())
 		.add(DreamlandBlocks.GOLDEN_CAP.block().get())
 		.add(DreamlandBlocks.MIDASHROOM.block().get());
 		

@@ -83,16 +83,17 @@
       "minecraft:glow_lichen",
       "dreamland:placed_mold_puff_tree",
       "dreamland:toxic_jungle_vegetations",
-      "dreamland:mold_carpet_dirt",
-      "dreamland:mold_carpet_stone",
       "dreamland:toxic_jungle_glow_lichen",
-      "dreamland:shelf_vegetation"
+      "dreamland:shelf_vegetation",
+      "dreamland:glowing_mold_wood"
     ],
     [
       "minecraft:freeze_top_layer",
       "dreamland:mold_growth",
       "dreamland:mold_wood_stump",
-      "dreamland:mold_wood_tree"
+      "dreamland:mold_wood_tree",
+      "dreamland:mold_carpet_dirt",
+      "dreamland:mold_carpet_stone"
     ]
   ],
   "precipitation": "rain",
