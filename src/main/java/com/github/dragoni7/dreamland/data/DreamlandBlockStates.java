@@ -73,7 +73,8 @@ public class DreamlandBlockStates extends BlockStateProvider{
 		simpleBlocks.add(DreamlandBlocks.PETRIFIED_VEGETATION.block().get());
 		simpleBlocks.add(DreamlandBlocks.TOXIC_DIRT.block().get());
 		simpleBlocks.add(DreamlandBlocks.TOXIC_VEGETATION.block().get());
-		simpleBlocks.add(DreamlandBlocks.DENSE_VEGETATION.block().get());
+		simpleBlocks.add(DreamlandBlocks.DECAYED_VEGETATION.block().get());
+		simpleBlocks.add(DreamlandBlocks.GLOWING_MOLD_WOOD.block().get());
 
 		for(Block element : simpleBlocks) {
 			simpleBlock(element);
@@ -111,6 +112,10 @@ public class DreamlandBlockStates extends BlockStateProvider{
 		ResourceLocation kunzitePointBlockTop = modLoc("block/kunzite_point_block_top");
 		ResourceLocation kunzitePointBlockSide = modLoc("block/kunzite_point_block");
 		axisBlock((RotatedPillarBlock) DreamlandBlocks.KUNZITE_POINT_BLOCK.block().get(), kunzitePointBlockSide, kunzitePointBlockTop);
+		
+		ResourceLocation glowingMoldLogTop = modLoc("block/mold_wood_log_top");
+		ResourceLocation glowingMoldLogSide = modLoc("block/glowing_mold_wood");
+		axisBlock((RotatedPillarBlock) DreamlandBlocks.GLOWING_MOLD_LOG.block().get(), glowingMoldLogSide, glowingMoldLogTop);
 		
 		registerWoodSet(DreamlandWoodSets.PLUM_BIRCH);
 		registerWoodSet(DreamlandWoodSets.TAR_BARK);

@@ -14,6 +14,7 @@ import com.github.dragoni7.dreamland.common.world.feature.generation.HiveStrand;
 import com.github.dragoni7.dreamland.common.world.feature.generation.MoldGrowth;
 import com.github.dragoni7.dreamland.common.world.feature.generation.MoldPuffTree;
 import com.github.dragoni7.dreamland.common.world.feature.generation.MoldWoodRoots;
+import com.github.dragoni7.dreamland.common.world.feature.generation.MoldWoodTree;
 import com.github.dragoni7.dreamland.common.world.feature.generation.OpalCluster;
 import com.github.dragoni7.dreamland.common.world.feature.generation.PlumBirchTree;
 import com.github.dragoni7.dreamland.common.world.feature.generation.Sphere;
@@ -48,6 +49,7 @@ public class DreamlandFeatures {
 	public static final Feature<SimpleBlockConfiguration> MOLD_PUFF_TREE = new MoldPuffTree(SimpleBlockConfiguration.CODEC.stable());
 	public static final Feature<SimpleBlockConfiguration> MOLD_GROWTH = new MoldGrowth(SimpleBlockConfiguration.CODEC.stable());
 	public static final Feature<NoneFeatureConfiguration> MOLD_WOOD_ROOTS = new MoldWoodRoots(NoneFeatureConfiguration.CODEC.stable());
+	public static final Feature<NoneFeatureConfiguration> MOLD_WOOD_TREE = new MoldWoodTree(NoneFeatureConfiguration.CODEC.stable());
 	
 	@SubscribeEvent
 	public static void onRegisterEvent(RegisterEvent event) {
@@ -69,6 +71,7 @@ public class DreamlandFeatures {
 			helper.register("mold_puff_tree", DreamlandFeatures.MOLD_PUFF_TREE);
 			helper.register("mold_growth", DreamlandFeatures.MOLD_GROWTH);
 			helper.register("mold_wood_roots", DreamlandFeatures.MOLD_WOOD_ROOTS);
+			helper.register("mold_wood_tree", DreamlandFeatures.MOLD_WOOD_TREE);
 			
 		});
 	}

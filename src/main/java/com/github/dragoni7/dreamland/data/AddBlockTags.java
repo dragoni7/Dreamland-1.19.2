@@ -63,6 +63,7 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.PINK_CRAB_GRASS.block().get())
 		.add(DreamlandBlocks.FLOWERING_UNDERGROWTH.block().get())
 		.add(DreamlandBlocks.SPONGE_PUFF.block().get())
+		.add(DreamlandBlocks.SPORE_PUFF.block().get())
 		.add(DreamlandBlocks.PLUM_BIRCH_SHRUB.block().get());
 		
 		tag(BlockTags.SAPLINGS)
@@ -142,14 +143,14 @@ public class AddBlockTags extends BlockTagsProvider {
 		
 		tag(BlockTags.MINEABLE_WITH_AXE)
 		.add(DreamlandBlocks.PETRIFIED_VEGETATION.block().get())
-		.add(DreamlandBlocks.DENSE_VEGETATION.block().get())
+		.add(DreamlandBlocks.DECAYED_VEGETATION.block().get())
 		.add(DreamlandBlocks.TOXIC_VEGETATION.block().get())
 		.add(DreamlandBlocks.GOLDEN_CAP.block().get())
 		.add(DreamlandBlocks.MIDASHROOM.block().get());
 		
 		tag(BlockTags.NEEDS_STONE_TOOL)
 		.add(DreamlandBlocks.PETRIFIED_VEGETATION.block().get())
-		.add(DreamlandBlocks.DENSE_VEGETATION.block().get())
+		.add(DreamlandBlocks.DECAYED_VEGETATION.block().get())
 		.add(DreamlandBlocks.KUNZITE_STONE.block().get())
 		.add(DreamlandBlocks.COBBLED_KUNZITE_STONE.block().get())
 		.add(DreamlandBlocks.KUNZITE_BRICKS.block().get())
@@ -208,8 +209,12 @@ public class AddBlockTags extends BlockTagsProvider {
 		
 		tag(BlockTags.STONE_ORE_REPLACEABLES)
 		.add(DreamlandBlocks.POROUS_STONE.block().get())
+		.add(DreamlandBlocks.PETRIFIED_VEGETATION.block().get())
 		.add(DreamlandBlocks.KUNZITE_STONE.block().get())
 		.add(DreamlandBlocks.TAR_MUD.block().get());
+		
+		tag(BlockTags.DEEPSLATE_ORE_REPLACEABLES)
+		.add(DreamlandBlocks.MOLDED_STONE.block().get());
 		
 		tag(BlockTags.FEATURES_CANNOT_REPLACE)
 		.add(DreamlandBlocks.HIVE_MEMBRANE.block().get())

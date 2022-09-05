@@ -99,9 +99,13 @@ public class DreamlandItemModels extends ItemModelProvider {
 		blockItemModel(DreamlandBlocks.PETRIFIED_VEGETATION.item(), "block/petrified_vegetation");
 		blockItemModel(DreamlandBlocks.TOXIC_DIRT.item(), "block/toxic_dirt");
 		blockItemModel(DreamlandBlocks.TOXIC_VEGETATION.item(), "block/toxic_vegetation");
-		blockItemModel(DreamlandBlocks.DENSE_VEGETATION.item(), "block/dense_vegetation");
+		blockItemModel(DreamlandBlocks.DECAYED_VEGETATION.item(), "block/decayed_vegetation");
+		blockItemModel(DreamlandBlocks.GLOWING_MOLD_LOG.item(), "block/glowing_mold_log");
+		blockItemModel(DreamlandBlocks.GLOWING_MOLD_WOOD.item(), "block/glowing_mold_wood");
 		singleTextureItemModel(DreamlandBlocks.SPORE_PUFF.item(), "block/spore_puff");
 		singleTextureItemModel(DreamlandBlocks.SPONGE_PUFF.item(), "block/sponge_puff");
+		singleTextureItemModel(DreamlandBlocks.SHELF_VEGETATION.item(), "block/shelf_vegetation");
+		singleTextureItemModel(DreamlandBlocks.GLOW_FRONDS.item(), "block/glow_fronds");
 		
 		singleTextureItemModel(DreamlandBlocks.GOLD_FRONDS.item(), "block/gold_fronds");
 		singleTextureItemModel(DreamlandBlocks.KUNZITE_POINT.item(), "block/kunzite_point_end");

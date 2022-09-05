@@ -2,6 +2,7 @@ package com.github.dragoni7.dreamland.common.world.feature;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Supplier;
 
 import com.github.dragoni7.dreamland.common.blocks.KunzitePointBlock;
 import com.github.dragoni7.dreamland.common.world.feature.configs.ConeConfig;
@@ -34,6 +35,7 @@ import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.util.valueproviders.WeightedListInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.MultifaceBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.GeodeBlockSettings;
 import net.minecraft.world.level.levelgen.GeodeCrackSettings;
@@ -47,6 +49,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.BlockStateConfi
 import net.minecraft.world.level.levelgen.feature.configurations.DeltaFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.GeodeConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.MultifaceGrowthConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
@@ -66,6 +69,7 @@ public class DreamlandConfiguredFeatures {
 	public static final RuleTest KUNZITE_ORES_REPLACEABLE = new TagMatchTest(DreamlandBlockTags.KUNZITE_ORES_REPLACEABLE);
 	public static final RuleTest HIVE_ORES_REPLACEABLE = new TagMatchTest(DreamlandBlockTags.HIVE_ORES_REPLACEABLE);
 	public static final RuleTest FOSSILIZED_EGG_REPLACEABLE = new TagMatchTest(DreamlandBlockTags.FOSSILIZED_EGG_REPLACEABLE);
+	public static final RuleTest TOXIC_JUNGLE_GROUND = new TagMatchTest(DreamlandBlockTags.TOXIC_JUNGLE_GROUND_BLOCKS);
 	
 	public static final List<OreConfiguration.TargetBlockState> KUNZITE_COPPER_TARGET_LIST = List.of(OreConfiguration.target(KUNZITE_ORES_REPLACEABLE, DreamlandBlocks.KUNZITE_COPPER_ORE.block().get().defaultBlockState()));
 	public static final List<OreConfiguration.TargetBlockState> KUNZITE_IRON_TARGET_LIST = List.of(OreConfiguration.target(KUNZITE_ORES_REPLACEABLE, DreamlandBlocks.KUNZITE_IRON_ORE.block().get().defaultBlockState()));
@@ -151,7 +155,6 @@ public class DreamlandConfiguredFeatures {
 	public static final Holder<ConfiguredFeature<BlockColumnConfiguration, ?>> KUNZITE_POINTS_SOUTH = registerConfiguredFeature("kunzite_points_south", Feature.BLOCK_COLUMN, new BlockColumnConfiguration(List.of(BlockColumnConfiguration.layer(UniformInt.of(1, 4), BlockStateProvider.simple(DreamlandBlocks.KUNZITE_POINT.block().get().defaultBlockState().setValue(KunzitePointBlock.FACING, Direction.SOUTH)))), Direction.SOUTH, BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE, true));
 	public static final Holder<ConfiguredFeature<BlockColumnConfiguration, ?>> KUNZITE_POINTS_EAST = registerConfiguredFeature("kunzite_points_east", Feature.BLOCK_COLUMN, new BlockColumnConfiguration(List.of(BlockColumnConfiguration.layer(UniformInt.of(1, 4), BlockStateProvider.simple(DreamlandBlocks.KUNZITE_POINT.block().get().defaultBlockState().setValue(KunzitePointBlock.FACING, Direction.EAST)))), Direction.EAST, BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE, true));
 	public static final Holder<ConfiguredFeature<BlockColumnConfiguration, ?>> KUNZITE_POINTS_WEST = registerConfiguredFeature("kunzite_points_west", Feature.BLOCK_COLUMN, new BlockColumnConfiguration(List.of(BlockColumnConfiguration.layer(UniformInt.of(1, 4), BlockStateProvider.simple(DreamlandBlocks.KUNZITE_POINT.block().get().defaultBlockState().setValue(KunzitePointBlock.FACING, Direction.WEST)))), Direction.WEST, BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE, true));
-	
 	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> KUNZITE_IRON = registerConfiguredFeature("kunzite_iron_ore", Feature.ORE, new OreConfiguration(KUNZITE_IRON_TARGET_LIST, 9));
 	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> KUNZITE_IRON_SMALL = registerConfiguredFeature("kunzite_iron_small_ore", Feature.ORE, new OreConfiguration(KUNZITE_IRON_TARGET_LIST, 4));
 	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> KUNZITE_EMERALD = registerConfiguredFeature("kunzite_emerald_ore", Feature.ORE, new OreConfiguration(KUNZITE_EMERALD_TARGET_LIST, 3));
@@ -170,10 +173,18 @@ public class DreamlandConfiguredFeatures {
 	public static final Holder<ConfiguredFeature<SphereConfig, ?>> POROUS_SPHERE = registerConfiguredFeature("porous_sphere", DreamlandFeatures.NOISE_SPHERE, new SphereConfig(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(DreamlandBlocks.OVERGROWN_POROUS_STONE.block().get().defaultBlockState(), 25).add(DreamlandBlocks.POROUS_STONE.block().get().defaultBlockState(), 75)), BlockStateProvider.simple(Blocks.AIR), UniformInt.of(26, 43), UniformInt.of(24, 32), UniformFloat.of(0.07F, 0.11F)));
 	public static final Holder<ConfiguredFeature<SimpleBlockConfiguration, ?>> MOLD_PUFF_TREE = registerConfiguredFeature("mold_puff_tree", DreamlandFeatures.MOLD_PUFF_TREE, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(DreamlandBlocks.BLACK_MOLD.block().get().defaultBlockState(), 50).add(DreamlandBlocks.WHITE_MOLD.block().get().defaultBlockState(), 50))));
 	public static final Holder<ConfiguredFeature<HillConfig, ?>> POROUS_HILL = registerConfiguredFeature("porous_hill", DreamlandFeatures.NOISE_HILL, new HillConfig(BlockStateProvider.simple(DreamlandBlocks.PETRIFIED_VEGETATION.block().get()), BlockStateProvider.simple(Blocks.MYCELIUM), UniformInt.of(7, 8), UniformInt.of(4, 5), UniformInt.of(7, 9), ConstantInt.of(1), ConstantFloat.of(0.1F)));
-	public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> TOXIC_JUNGLE_VEGETATION = registerConfiguredFeature("toxic_jungle_vegetation", Feature.RANDOM_PATCH, new RandomPatchConfiguration(48, 5, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(DreamlandBlocks.SPONGE_PUFF.block().get().defaultBlockState(), 25).add(DreamlandBlocks.SPORE_PUFF.block().get().defaultBlockState(), 25).add(Blocks.BROWN_MUSHROOM.defaultBlockState(), 25).add(Blocks.RED_MUSHROOM.defaultBlockState(), 25))))));
+	public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> TOXIC_JUNGLE_VEGETATION = registerConfiguredFeature("toxic_jungle_vegetation", Feature.RANDOM_PATCH, new RandomPatchConfiguration(48, 5, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(DreamlandBlocks.SPONGE_PUFF.block().get().defaultBlockState(), 25).add(DreamlandBlocks.SPORE_PUFF.block().get().defaultBlockState(), 25).add(Blocks.BROWN_MUSHROOM.defaultBlockState(), 10).add(Blocks.TALL_GRASS.defaultBlockState(), 15).add(DreamlandBlocks.GLOW_FRONDS.block().get().defaultBlockState(), 15).add(Blocks.RED_MUSHROOM.defaultBlockState(), 10))))));
+	public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> MOLD_CARPET = registerConfiguredFeature("mold_carpet", Feature.RANDOM_PATCH, new RandomPatchConfiguration(24, 8, 1, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(DreamlandBlocks.WHITE_MOLD_CARPET.block().get().defaultBlockState(), 75).add(DreamlandBlocks.BLACK_MOLD_CARPET.block().get().defaultBlockState(), 25))))));
 	public static final Holder<ConfiguredFeature<SimpleBlockConfiguration, ?>> MOLD_GROWTH = registerConfiguredFeature("mold_growth", DreamlandFeatures.MOLD_GROWTH, new SimpleBlockConfiguration((new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(DreamlandBlocks.BLACK_MOLD.block().get().defaultBlockState(), 50).add(DreamlandBlocks.WHITE_MOLD.block().get().defaultBlockState(), 50)))));
 	public static final Holder<ConfiguredFeature<HillConfig, ?>> MOLD_WOOD_STUMP = registerConfiguredFeature("mold_wood_stump", DreamlandFeatures.NOISE_HILL, new HillConfig(BlockStateProvider.simple(DreamlandWoodSets.MOLD_WOOD.wood().block().get().defaultBlockState()), BlockStateProvider.simple(DreamlandWoodSets.MOLD_WOOD.strippedLog().block().get().defaultBlockState()), ConstantInt.of(7), UniformInt.of(6, 7), ConstantInt.of(7), ConstantInt.of(1), ConstantFloat.of(0.1F)));
 	public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> MOLD_WOOD_ROOTS = registerConfiguredFeature("mold_wood_roots", DreamlandFeatures.MOLD_WOOD_ROOTS, new NoneFeatureConfiguration());
+	public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> MOLD_WOOD_TREE = registerConfiguredFeature("mold_wood_tree", DreamlandFeatures.MOLD_WOOD_TREE, new NoneFeatureConfiguration());
+	private static final MultifaceBlock GLOW_LICHEN_BLOCK = (MultifaceBlock)Blocks.GLOW_LICHEN;
+	public static final Holder<ConfiguredFeature<MultifaceGrowthConfiguration, ?>> TOXIC_JUNGLE_GLOW_LICHEN = registerConfiguredFeature("toxic_jungle_glow_lichen", Feature.MULTIFACE_GROWTH, new MultifaceGrowthConfiguration(GLOW_LICHEN_BLOCK, 24, true, true, true, 0.6F, HolderSet.direct(Block::builtInRegistryHolder, DreamlandWoodSets.MOLD_WOOD.log().block().get(), DreamlandWoodSets.MOLD_WOOD.wood().block().get(), DreamlandBlocks.POROUS_STONE.block().get(), DreamlandBlocks.OVERGROWN_POROUS_STONE.block().get(), DreamlandBlocks.PETRIFIED_VEGETATION.block().get(), DreamlandBlocks.MOLDED_STONE.block().get())));
+	private static final MultifaceBlock SHELF_VEGETATION_BLOCK = (MultifaceBlock)DreamlandBlocks.SHELF_VEGETATION.block().get();
+	public static final Holder<ConfiguredFeature<MultifaceGrowthConfiguration, ?>> SHELF_VEGETATION = registerConfiguredFeature("shelf_vegetation", Feature.MULTIFACE_GROWTH, new MultifaceGrowthConfiguration(SHELF_VEGETATION_BLOCK, 24, true, true, true, 0.8F, HolderSet.direct(Block::builtInRegistryHolder, DreamlandWoodSets.MOLD_WOOD.log().block().get(), DreamlandWoodSets.MOLD_WOOD.wood().block().get(), DreamlandBlocks.POROUS_STONE.block().get(), DreamlandBlocks.OVERGROWN_POROUS_STONE.block().get(), DreamlandBlocks.PETRIFIED_VEGETATION.block().get())));
+	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> TOXIC_VEGETATION = registerConfiguredFeature("toxic_vegetation", Feature.ORE, new OreConfiguration(TOXIC_JUNGLE_GROUND, DreamlandBlocks.TOXIC_VEGETATION.block().get().defaultBlockState(), 16));
+	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> DECAYED_VEGETATION = registerConfiguredFeature("decayed_vegetation", Feature.ORE, new OreConfiguration(TOXIC_JUNGLE_GROUND, DreamlandBlocks.DECAYED_VEGETATION.block().get().defaultBlockState(), 8));
 	
 	private static <FC extends FeatureConfiguration, F extends Feature<FC>> Holder<ConfiguredFeature<FC, ?>> registerConfiguredFeature(String name, F feature, FC config) {
 		createKey(name);

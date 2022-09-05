@@ -24,13 +24,28 @@
                 "data": {
                   "Name": "minecraft:brown_mushroom"
                 },
-                "weight": 25
+                "weight": 10
+              },
+              {
+                "data": {
+                  "Name": "minecraft:tall_grass",
+                  "Properties": {
+                    "half": "lower"
+                  }
+                },
+                "weight": 15
+              },
+              {
+                "data": {
+                  "Name": "dreamland:glow_fronds"
+                },
+                "weight": 15
               },
               {
                 "data": {
                   "Name": "minecraft:red_mushroom"
                 },
-                "weight": 25
+                "weight": 10
               }
             ]
           }

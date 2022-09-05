@@ -243,7 +243,11 @@ public class DreamlandBlocks {
 	public static final BlockItemSet TOXIC_DIRT = createDirtBlock("toxic_dirt");
 	public static final BlockItemSet TOXIC_GRASS = new BlockItemSet("toxic_grass", () -> new ToxicGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
 	public static final BlockItemSet TOXIC_VEGETATION = new BlockItemSet("toxic_vegetation", () -> new Block(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN).strength(0.2F).sound(SoundType.AZALEA_LEAVES)));
-	public static final BlockItemSet DENSE_VEGETATION = new BlockItemSet("dense_vegetation", () -> new Block(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN).strength(1.5F, 1.0F).sound(SoundType.HARD_CROP)));
+	public static final BlockItemSet DECAYED_VEGETATION = new BlockItemSet("decayed_vegetation", () -> new Block(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN).strength(1.5F, 1.0F).sound(SoundType.HARD_CROP)));
+	public static final BlockItemSet SHELF_VEGETATION = new BlockItemSet("shelf_vegetation", () -> new ShelfVegetationBlock(BlockBehaviour.Properties.copy(Blocks.GLOW_LICHEN)));
+	public static final BlockItemSet GLOWING_MOLD_WOOD = new BlockItemSet("glowing_mold_wood", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_LIGHT_GREEN).sound(SoundType.WOOD).strength(2.0F, 3.0F).lightLevel((light) -> {return 3;}).hasPostProcess(DreamlandBlocks::always).emissiveRendering(DreamlandBlocks::always))))));
+	public static final BlockItemSet GLOWING_MOLD_LOG = new BlockItemSet("glowing_mold_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_LIGHT_GREEN).sound(SoundType.WOOD).strength(2.0F).lightLevel((light) -> {return 3;}).hasPostProcess(DreamlandBlocks::always).emissiveRendering(DreamlandBlocks::always)))));
+	public static final BlockItemSet GLOW_FRONDS = new BlockItemSet("glow_fronds", () -> new MoldVegetationBlock(BlockBehaviour.Properties.copy(SPORE_PUFF.block().get()).lightLevel((light) -> {return 5;}).hasPostProcess(DreamlandBlocks::always).emissiveRendering(DreamlandBlocks::always)))));
 	
 	private static BlockItemSet createSaplingBlock(String name, Feature<NoneFeatureConfiguration> tree) {
 		return new BlockItemSet(name, () -> new DreamlandSaplingBlock(tree, BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));

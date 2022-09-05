@@ -1,0 +1,75 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"render_type": "cutout",
+	"textures": {
+		"0": "dreamland:block/shelf_vegetation",
+		"particle": "dreamland:block/shelf_vegetation"
+	},
+	"elements": [
+		{
+			"name": "base",
+			"from": [0, 0, 15.75],
+			"to": [16, 16, 15.75],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 8.25]},
+			"faces": {
+				"north": {"uv": [8, 0, 0, 7.5], "texture": "#0", "cullface": "south"},
+				"east": {"uv": [8, 0, 0, 7.5], "texture": "#0", "cullface": "south"},
+				"south": {"uv": [8, 0, 0, 7.5], "texture": "#0", "cullface": "south"},
+				"west": {"uv": [8, 0, 0, 7.5], "texture": "#0", "cullface": "south"},
+				"up": {"uv": [8, 0, 0, 7.5], "texture": "#0", "cullface": "south"},
+				"down": {"uv": [8, 0, 0, 7.5], "texture": "#0", "cullface": "south"}
+			}
+		},
+		{
+			"name": "shelf_upper",
+			"from": [0.5, 13, 10.75],
+			"to": [15.5, 13, 15.75],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 13, 16.25]},
+			"faces": {
+				"north": {"uv": [7.5, 7.5, 0, 10.625], "texture": "#0"},
+				"east": {"uv": [7.5, 7.5, 0, 10.625], "texture": "#0"},
+				"south": {"uv": [7.5, 7.5, 0, 10.625], "texture": "#0"},
+				"west": {"uv": [7.5, 7.5, 0, 10.625], "texture": "#0"},
+				"up": {"uv": [7.5, 7.5, 0, 10.625], "texture": "#0"},
+				"down": {"uv": [7.5, 10.625, 0, 7.5], "texture": "#0"}
+			}
+		},
+		{
+			"name": "shelf_lower",
+			"from": [0.5, 3, 10.75],
+			"to": [15.5, 3, 15.75],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 3, 16.25]},
+			"faces": {
+				"north": {"uv": [15.5, 10.5, 8, 13], "texture": "#0"},
+				"east": {"uv": [15.5, 10.5, 8, 13], "texture": "#0"},
+				"south": {"uv": [15.5, 10.5, 8, 13], "texture": "#0"},
+				"west": {"uv": [15.5, 10.5, 8, 13], "texture": "#0"},
+				"up": {"uv": [15.5, 10.5, 8, 13], "texture": "#0"},
+				"down": {"uv": [15.5, 13, 8, 10.5], "texture": "#0"}
+			}
+		},
+		{
+			"name": "shelf_middle",
+			"from": [0.5, 8, 7.75],
+			"to": [15.5, 8, 15.75],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 8, 16.25]},
+			"faces": {
+				"north": {"uv": [15.5, 0, 8, 4], "texture": "#0"},
+				"east": {"uv": [15.5, 0, 8, 4], "texture": "#0"},
+				"south": {"uv": [15.5, 0, 8, 4], "texture": "#0"},
+				"west": {"uv": [15.5, 0, 8, 4], "texture": "#0"},
+				"up": {"uv": [15.5, 0, 8, 4], "texture": "#0"},
+				"down": {"uv": [15.5, 4, 8, 0], "texture": "#0"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "shelf_vegetation",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0, 1, 2, 3]
+		}
+	]
+}

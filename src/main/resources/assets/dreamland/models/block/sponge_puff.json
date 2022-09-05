@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
-  "render_type": "translucent",
+  "render_type": "cutout",
   "textures": {
     "cross": "dreamland:block/sponge_puff"
   }

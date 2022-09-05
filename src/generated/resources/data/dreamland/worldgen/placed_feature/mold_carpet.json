@@ -1,0 +1,55 @@
+{
+  "feature": "dreamland:mold_carpet",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": 100
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "max_inclusive": {
+          "below_top": 0
+        },
+        "min_inclusive": {
+          "absolute": -10
+        }
+      }
+    },
+    {
+      "type": "minecraft:environment_scan",
+      "allowed_search_condition": {
+        "type": "minecraft:matching_blocks",
+        "blocks": "minecraft:air"
+      },
+      "direction_of_search": "down",
+      "max_steps": 12,
+      "target_condition": {
+        "type": "minecraft:matching_blocks",
+        "blocks": [
+          "dreamland:mold_wood_log",
+          "dreamland:mold_wood_wood",
+          "dreamland:toxic_dirt",
+          "dreamland:toxic_grass",
+          "dreamland:black_mold",
+          "dreamland:white_mold",
+          "dreamland:porous_stone",
+          "dreamland:overgrown_porous_stone",
+          "dreamland:petrified_vegetation"
+        ]
+      }
+    },
+    {
+      "type": "minecraft:random_offset",
+      "xz_spread": 0,
+      "y_spread": 1
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

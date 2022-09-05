@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:multiface_growth",
+  "config": {
+    "block": "minecraft:glow_lichen",
+    "can_be_placed_on": [
+      "dreamland:mold_wood_log",
+      "dreamland:mold_wood_wood",
+      "dreamland:porous_stone",
+      "dreamland:overgrown_porous_stone",
+      "dreamland:petrified_vegetation",
+      "dreamland:molded_stone"
+    ],
+    "can_place_on_ceiling": true,
+    "can_place_on_floor": true,
+    "can_place_on_wall": true,
+    "chance_of_spreading": 0.6,
+    "search_range": 24
+  }
+}

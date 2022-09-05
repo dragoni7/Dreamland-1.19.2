@@ -13,6 +13,10 @@
     "dreamland:tar_bark_log",
     "dreamland:tar_bark_planks",
     "dreamland:tar_bark_slab",
-    "dreamland:tar_bark_stairs"
+    "dreamland:tar_bark_stairs",
+    "dreamland:mold_wood_log",
+    "dreamland:mold_wood_planks",
+    "dreamland:mold_wood_slab",
+    "dreamland:mold_wood_stairs"
   ]
 }

@@ -1,0 +1,140 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "up": "true"
+      },
+      "apply": {
+        "model": "dreamland:block/shelf_vegetation_up",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "up": "false",
+        "north": "false",
+        "west": "false",
+        "south": "false",
+        "east": "false",
+        "down": "false"
+      },
+      "apply": {
+        "model": "dreamland:block/shelf_vegetation_up",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "north": "true"
+      },
+      "apply": {
+        "model": "dreamland:block/shelf_vegetation_north"
+      }
+    },
+    {
+      "when": {
+        "up": "false",
+        "north": "false",
+        "west": "false",
+        "south": "false",
+        "east": "false",
+        "down": "false"
+      },
+      "apply": {
+        "model": "dreamland:block/shelf_vegetation_north"
+      }
+    },
+    {
+      "when": {
+        "west": "true"
+      },
+      "apply": {
+        "model": "dreamland:block/shelf_vegetation_west",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "up": "false",
+        "north": "false",
+        "west": "false",
+        "south": "false",
+        "east": "false",
+        "down": "false"
+      },
+      "apply": {
+        "model": "dreamland:block/shelf_vegetation_west",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "south": "true"
+      },
+      "apply": {
+        "model": "dreamland:block/shelf_vegetation_south",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "up": "false",
+        "north": "false",
+        "west": "false",
+        "south": "false",
+        "east": "false",
+        "down": "false"
+      },
+      "apply": {
+        "model": "dreamland:block/shelf_vegetation_south",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "east": "true"
+      },
+      "apply": {
+        "model": "dreamland:block/shelf_vegetation_east",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "up": "false",
+        "north": "false",
+        "west": "false",
+        "south": "false",
+        "east": "false",
+        "down": "false"
+      },
+      "apply": {
+        "model": "dreamland:block/shelf_vegetation_east",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": "true"
+      },
+      "apply": {
+        "model": "dreamland:block/shelf_vegetation_down",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "up": "false",
+        "north": "false",
+        "west": "false",
+        "south": "false",
+        "east": "false",
+        "down": "false"
+      },
+      "apply": {
+        "model": "dreamland:block/shelf_vegetation_down",
+        "uvlock": true
+      }
+    }
+  ]
+}

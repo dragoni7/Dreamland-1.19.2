@@ -127,7 +127,11 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandBlocks.TOXIC_DIRT.block().get(), "Toxic Dirt");
 		add(DreamlandBlocks.TOXIC_GRASS.block().get(), "Toxic Grass");
 		add(DreamlandBlocks.TOXIC_VEGETATION.block().get(), "Toxic Vegetation");
-		add(DreamlandBlocks.DENSE_VEGETATION.block().get(), "Dense Vegetation");
+		add(DreamlandBlocks.DECAYED_VEGETATION.block().get(), "Decayed Vegetation");
+		add(DreamlandBlocks.SHELF_VEGETATION.block().get(), "Shelf Vegetation");
+		add(DreamlandBlocks.GLOW_FRONDS.block().get(), "Glow Fronds");
+		add(DreamlandBlocks.GLOWING_MOLD_LOG.block().get(), "Glowing Mold Log");
+		add(DreamlandBlocks.GLOWING_MOLD_WOOD.block().get(), "Glowing Mold Wood");
 		translateWoodSet(DreamlandWoodSets.MOLD_WOOD, "Mold Wood");
 		
 		// Items

@@ -9,7 +9,7 @@
   "downfall": 0.9,
   "effects": {
     "fog_color": 5880459,
-    "grass_color": 2470001,
+    "grass_color": 2464688,
     "mood_sound": {
       "block_search_extent": 8,
       "offset": 2.0,
@@ -68,7 +68,9 @@
       "minecraft:underwater_magma",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "minecraft:disk_gravel",
+      "dreamland:toxic_vegetation",
+      "dreamland:decayed_vegetation"
     ],
     [],
     [
@@ -78,12 +80,16 @@
     [
       "minecraft:glow_lichen",
       "dreamland:placed_mold_puff_tree",
-      "dreamland:toxic_jungle_vegetations"
+      "dreamland:toxic_jungle_vegetations",
+      "dreamland:mold_carpet",
+      "dreamland:toxic_jungle_glow_lichen",
+      "dreamland:shelf_vegetation"
     ],
     [
       "minecraft:freeze_top_layer",
       "dreamland:mold_growth",
-      "dreamland:mold_wood_stump"
+      "dreamland:mold_wood_stump",
+      "dreamland:mold_wood_tree"
     ]
   ],
   "precipitation": "rain",
