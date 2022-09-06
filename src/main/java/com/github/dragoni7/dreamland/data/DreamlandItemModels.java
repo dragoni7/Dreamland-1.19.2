@@ -101,6 +101,7 @@ public class DreamlandItemModels extends ItemModelProvider {
 		blockItemModel(DreamlandBlocks.TOXIC_VEGETATION.item(), "block/toxic_vegetation");
 		blockItemModel(DreamlandBlocks.DECAYED_VEGETATION.item(), "block/decayed_vegetation");
 		blockItemModel(DreamlandBlocks.GLOWING_MOLD_WOOD.item(), "block/glowing_mold_wood");
+		blockItemModel(DreamlandBlocks.SPORE_NODE.item(), "block/spore_node_down");
 		singleTextureItemModel(DreamlandBlocks.SPORE_PUFF.item(), "block/spore_puff");
 		singleTextureItemModel(DreamlandBlocks.LARGE_SPORE_PUFF.item(), "item/large_spore_puff");
 		singleTextureItemModel(DreamlandBlocks.SPONGE_PUFF.item(), "block/sponge_puff");

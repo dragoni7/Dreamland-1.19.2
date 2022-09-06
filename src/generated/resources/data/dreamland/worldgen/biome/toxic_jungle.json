@@ -85,7 +85,8 @@
       "dreamland:toxic_jungle_vegetations",
       "dreamland:toxic_jungle_glow_lichen",
       "dreamland:shelf_vegetation",
-      "dreamland:glowing_mold_wood"
+      "dreamland:glowing_mold_wood",
+      "dreamland:spore_node"
     ],
     [
       "minecraft:freeze_top_layer",

@@ -124,6 +124,7 @@ public class DreamlandFeaturePlacements {
 	public static final Holder<PlacedFeature> TOXIC_VEGETATION = registerPlacedFeature("toxic_vegetation", DreamlandConfiguredFeatures.TOXIC_VEGETATION, commonOrePlacement(24, HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.top())));
 	public static final Holder<PlacedFeature> DECAYED_VEGETATION = registerPlacedFeature("decayed_vegetation", DreamlandConfiguredFeatures.DECAYED_VEGETATION, commonOrePlacement(16, HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.top())));
 	public static final Holder<PlacedFeature> GLOWING_MOLD_WOOD = registerPlacedFeature("glowing_mold_wood", DreamlandConfiguredFeatures.GLOWING_MOLD_WOOD, commonOrePlacement(32, HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.top())));
+	public static final Holder<PlacedFeature> SPORE_NODE = registerPlacedFeature("spore_node", DreamlandConfiguredFeatures.SPORE_NODE, CountPlacement.of(UniformInt.of(215, 256)), HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.top()), InSquarePlacement.spread(), BiomeFilter.biome());
 	
 	private static ImmutableList.Builder<PlacementModifier> treePlacementSurfaceBase(PlacementModifier modifier) {
 	       return ImmutableList.<PlacementModifier>builder().add(modifier).add(InSquarePlacement.spread()).add(VegetationPlacements.TREE_THRESHOLD).add(PlacementUtils.HEIGHTMAP_WORLD_SURFACE).add(BiomeFilter.biome());

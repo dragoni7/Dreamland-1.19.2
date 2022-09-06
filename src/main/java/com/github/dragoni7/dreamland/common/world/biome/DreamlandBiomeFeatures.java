@@ -112,5 +112,6 @@ public class DreamlandBiomeFeatures {
 		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.TOXIC_JUNGLE_GLOW_LICHEN);
 		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.SHELF_VEGETATION);
 		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.GLOWING_MOLD_WOOD);
+		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.SPORE_NODE);
 	}
 }

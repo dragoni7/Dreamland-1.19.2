@@ -248,6 +248,7 @@ public class DreamlandBlocks {
 	public static final BlockItemSet GLOWING_MOLD_WOOD = new BlockItemSet("glowing_mold_wood", () -> new EmissiveRotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_LIGHT_GREEN).sound(SoundType.WOOD).strength(2.0F, 3.0F).lightLevel(EmissiveRotatedPillarBlock.emission(8)))))));
 	public static final BlockItemSet GLOW_FRONDS = new BlockItemSet("glow_fronds", () -> new MoldVegetationBlock(BlockBehaviour.Properties.copy(SPORE_PUFF.block().get()).lightLevel((light) -> {return 8;}).hasPostProcess(DreamlandBlocks::always).emissiveRendering(DreamlandBlocks::always)))));
 	public static final BlockItemSet LARGE_SPORE_PUFF = new BlockItemSet("large_spore_puff", () -> new MoldVegetationBlock(BlockBehaviour.Properties.copy(SPORE_PUFF.block().get()).noOcclusion()));
+	public static final BlockItemSet SPORE_NODE = new BlockItemSet("spore_node", () -> new SporeNodeBlock(BlockBehaviour.Properties.of(Material.WEB, MaterialColor.COLOR_LIGHT_BLUE).sound(SoundType.WOOL).strength(1.5F, 1.0F).noOcclusion().randomTicks()));
 	
 	private static BlockItemSet createSaplingBlock(String name, Feature<NoneFeatureConfiguration> tree) {
 		return new BlockItemSet(name, () -> new DreamlandSaplingBlock(tree, BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));

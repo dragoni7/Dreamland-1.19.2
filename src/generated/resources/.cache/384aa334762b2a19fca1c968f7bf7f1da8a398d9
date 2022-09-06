@@ -1,4 +1,4 @@
-// 1.19.2	2022-09-05T16:01:18.6081368	Item Models: dreamland
+// 1.19.2	2022-09-05T18:02:21.7346922	Item Models: dreamland
 02a6524eeaab96334111ffc9f8953b1693e4f0ef assets/dreamland/models/item/ancient_egg.json
 4fb267762954b517ed71652604e2dcced065fba9 assets/dreamland/models/item/black_mold.json
 1ad253bb878c44ee03afc1c5198c29e0035a59a6 assets/dreamland/models/item/bowl_of_jelly.json
@@ -120,6 +120,7 @@ d593a8e3fdf646d487ee5e479a8fde26803f09f5 assets/dreamland/models/item/shelf_vege
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dreamland/models/item/spawn_egg_ooze.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dreamland/models/item/spawn_egg_opal_shell.json
 e3bd978a8e650173f2f0ba0e90bf22f5273629cf assets/dreamland/models/item/sponge_puff.json
+fd2e388f750447b572e829349957f00f2048bc8c assets/dreamland/models/item/spore_node.json
 3a5c741e3e1224976e7eb683f9bb6eb16c4888fa assets/dreamland/models/item/spore_puff.json
 1d193f2173959298c3c1cb07922480fafbb588bc assets/dreamland/models/item/tar_bark_button.json
 e89cd69a4eb9e7f57ca87e01f67b22f12b2e9d61 assets/dreamland/models/item/tar_bark_door.json
