@@ -24,4 +24,7 @@ public class DreamlandParticles {
 	
 	public static final RegistryObject<SimpleParticleType> 	MIDASHROOM_SPORES = PARTICLES.register("midashroom_spores",
 			() -> new SimpleParticleType(true));
+	
+	public static final RegistryObject<SimpleParticleType> 	MOLD_SPORES = PARTICLES.register("mold_spores",
+			() -> new SimpleParticleType(true));
 }

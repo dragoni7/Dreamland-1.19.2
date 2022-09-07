@@ -8,6 +8,7 @@ import com.github.dragoni7.dreamland.common.entities.mobs.BumbleBeastEntity;
 import com.github.dragoni7.dreamland.common.entities.mobs.LarvaEntity;
 import com.github.dragoni7.dreamland.common.entities.mobs.OozeEntity;
 import com.github.dragoni7.dreamland.common.entities.mobs.OpalShellEntity;
+import com.github.dragoni7.dreamland.common.world.biome.BiomeKeys;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
@@ -31,6 +32,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingTickEvent;
+import net.minecraftforge.event.entity.living.LivingHealEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 
@@ -43,6 +45,7 @@ public class DreamlandEventHandler {
 		forgeBus.addListener(DreamlandEventHandler::setLarvaTarget);
 		forgeBus.addListener(DreamlandEventHandler::entityHitLarvaSymbiote);
 		forgeBus.addListener(DreamlandEventHandler::onLarvaAttacked);
+		forgeBus.addListener(DreamlandEventHandler::toxicJunglePreventHeal);
 	}
 		
 	public static void addAttributes(EntityAttributeCreationEvent event) {
@@ -124,6 +127,16 @@ public class DreamlandEventHandler {
 				}
 			}
 		}
-		
+	}
+	
+	public static void toxicJunglePreventHeal(LivingHealEvent event) {
+		LivingEntity entity = event.getEntity();
+		if (entity instanceof Player) {
+			BlockPos pos = entity.blockPosition();
+			if (entity.getLevel().getBiome(pos).is(BiomeKeys.TOXIC_JUNGLE) && pos.getY() > 0) {
+				entity.addEffect((new MobEffectInstance(DreamlandEffects.DECAY.get(), 40)));
+				event.setCanceled(true);
+			}
+		}
 	}
 }

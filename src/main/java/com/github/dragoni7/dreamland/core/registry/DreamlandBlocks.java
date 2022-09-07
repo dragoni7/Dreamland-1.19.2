@@ -230,15 +230,15 @@ public class DreamlandBlocks {
 	
 	// --------------Toxic Jungle Blocks--------------
 	
-	public static final BlockItemSet WHITE_MOLD = new BlockItemSet("white_mold", () -> new MoldBlock(BlockBehaviour.Properties.of(Material.DIRT, MaterialColor.COLOR_LIGHT_BLUE).sound(SoundType.MOSS).strength(0.1F).noOcclusion().isViewBlocking(DreamlandBlocks::always)));
+	public static final BlockItemSet WHITE_MOLD = new BlockItemSet("white_mold", () -> new MoldBlock(BlockBehaviour.Properties.of(Material.DIRT, MaterialColor.COLOR_LIGHT_BLUE).sound(SoundType.MOSS).strength(0.1F).noOcclusion().isViewBlocking(DreamlandBlocks::always).randomTicks()));
 	public static final BlockItemSet WHITE_MOLD_CARPET = new BlockItemSet("white_mold_carpet", () -> new CarpetBlock(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.COLOR_LIGHT_BLUE).strength(0.1F).sound(SoundType.MOSS_CARPET)));
-	public static final BlockItemSet BLACK_MOLD = new BlockItemSet("black_mold", () -> new MoldBlock(BlockBehaviour.Properties.of(Material.DIRT, MaterialColor.COLOR_BLACK).sound(SoundType.MOSS).strength(0.3F).noOcclusion().isViewBlocking(DreamlandBlocks::always)));
+	public static final BlockItemSet BLACK_MOLD = new BlockItemSet("black_mold", () -> new MoldBlock(BlockBehaviour.Properties.of(Material.DIRT, MaterialColor.COLOR_BLACK).sound(SoundType.MOSS).strength(0.3F).noOcclusion().isViewBlocking(DreamlandBlocks::always).randomTicks()));
 	public static final BlockItemSet BLACK_MOLD_CARPET = new BlockItemSet("black_mold_carpet", () -> new CarpetBlock(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.COLOR_BLACK).strength(0.2F).sound(SoundType.MOSS_CARPET)));
 	public static final BlockItemSet POROUS_STONE = new BlockItemSet("porous_stone", () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE).sound(SoundType.CALCITE).requiresCorrectToolForDrops().strength(1.2F, 5.2F)));
 	public static final BlockItemSet OVERGROWN_POROUS_STONE = new BlockItemSet("overgrown_porous_stone", () -> new Block(BlockBehaviour.Properties.copy(POROUS_STONE.block().get())));
 	public static final BlockItemSet MOLDED_STONE = new BlockItemSet("molded_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).color(MaterialColor.COLOR_GREEN).sound(SoundType.TUFF)));
 	public static final BlockItemSet PETRIFIED_VEGETATION = new BlockItemSet("petrified_vegetation", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).color(MaterialColor.COLOR_LIGHT_GREEN)));
-	public static final BlockItemSet SPORE_PUFF = new BlockItemSet("spore_puff", () -> new LargeSporePuffBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
+	public static final BlockItemSet SPORE_PUFF = new BlockItemSet("spore_puff", () -> new MoldVegetationBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
 	public static final BlockItemSet SPONGE_PUFF = new BlockItemSet("sponge_puff", () -> new MoldVegetationBlock(BlockBehaviour.Properties.copy(SPORE_PUFF.block().get()).sound(SoundType.NETHER_SPROUTS)));
 	public static final BlockItemSet TOXIC_DIRT = createDirtBlock("toxic_dirt");
 	public static final BlockItemSet TOXIC_GRASS = new BlockItemSet("toxic_grass", () -> new ToxicGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
@@ -247,7 +247,7 @@ public class DreamlandBlocks {
 	public static final BlockItemSet SHELF_VEGETATION = new BlockItemSet("shelf_vegetation", () -> new ShelfVegetationBlock(BlockBehaviour.Properties.copy(Blocks.GLOW_LICHEN)));
 	public static final BlockItemSet GLOWING_MOLD_WOOD = new BlockItemSet("glowing_mold_wood", () -> new EmissiveRotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_LIGHT_GREEN).sound(SoundType.WOOD).strength(2.0F, 3.0F).lightLevel(EmissiveRotatedPillarBlock.emission(8)))))));
 	public static final BlockItemSet GLOW_FRONDS = new BlockItemSet("glow_fronds", () -> new MoldVegetationBlock(BlockBehaviour.Properties.copy(SPORE_PUFF.block().get()).lightLevel((light) -> {return 8;}).hasPostProcess(DreamlandBlocks::always).emissiveRendering(DreamlandBlocks::always)))));
-	public static final BlockItemSet LARGE_SPORE_PUFF = new BlockItemSet("large_spore_puff", () -> new MoldVegetationBlock(BlockBehaviour.Properties.copy(SPORE_PUFF.block().get()).noOcclusion()));
+	public static final BlockItemSet LARGE_SPORE_PUFF = new BlockItemSet("large_spore_puff", () -> new LargeSporePuffBlock(BlockBehaviour.Properties.copy(SPORE_PUFF.block().get()).noOcclusion()));
 	public static final BlockItemSet SPORE_NODE = new BlockItemSet("spore_node", () -> new SporeNodeBlock(BlockBehaviour.Properties.of(Material.WEB, MaterialColor.COLOR_LIGHT_BLUE).sound(SoundType.WOOL).strength(1.5F, 1.0F).noOcclusion().randomTicks()));
 	
 	private static BlockItemSet createSaplingBlock(String name, Feature<NoneFeatureConfiguration> tree) {
@@ -273,10 +273,10 @@ public class DreamlandBlocks {
 	}
 	
 	private static boolean always(BlockState state, BlockGetter getter, BlockPos pos) {
-	      return true;
-	   }
+	    return true;
+	 }
 	
 	private static Boolean always(BlockState sate, BlockGetter getter, BlockPos pos, EntityType<?> type) {
-	      return (boolean)true;
-	   }
+	    return (boolean)true;
+	 }
 }

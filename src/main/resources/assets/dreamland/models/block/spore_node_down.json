@@ -3,7 +3,8 @@
 	"texture_size": [32, 32],
 	"render_type": "cutout",
 	"textures": {
-		"1": "dreamland:block/spore_node"
+		"1": "dreamland:block/spore_node",
+		"particle": "dreamland:block/white_mold"
 	},
 	"elements": [
 		{

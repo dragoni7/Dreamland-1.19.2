@@ -286,6 +286,12 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.TOXIC_GRASS.block().get())
 		.add(DreamlandBlocks.BLACK_MOLD.block().get());
 		
+		tag(DreamlandBlockTags.MOLD_SPREADABLES)
+		.addTag(BlockTags.DIRT)
+		.addTag(BlockTags.LOGS)
+		.addTag(BlockTags.CROPS)
+		.addTag(BlockTags.LEAVES);
+		
 		addWoodSetTags(DreamlandWoodSets.PLUM_BIRCH);
 		addWoodSetTags(DreamlandWoodSets.TAR_BARK);
 		addWoodSetTags(DreamlandWoodSets.MOLD_WOOD);

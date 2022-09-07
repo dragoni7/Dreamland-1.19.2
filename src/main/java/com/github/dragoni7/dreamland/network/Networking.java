@@ -24,6 +24,12 @@ public class Networking {
 		.decoder(PacketApplyTarredPlayer::new)
 		.consumer(PacketApplyTarredPlayer::handle)
 		.add();
+		
+		INSTANCE.messageBuilder(PacketUpateSporeNode.class, nextID())
+		.encoder(PacketUpateSporeNode::toBytes)
+		.decoder(PacketUpateSporeNode::new)
+		.consumer(PacketUpateSporeNode::handle)
+		.add();
 	}
 	
 	public static void sendToClient(Object packet, ServerPlayer player) {

@@ -2,6 +2,7 @@ package com.github.dragoni7.dreamland.core.event;
 
 import com.github.dragoni7.dreamland.client.particles.GoldGlitterParticle;
 import com.github.dragoni7.dreamland.client.particles.MidashroomSporesParticle;
+import com.github.dragoni7.dreamland.client.particles.MoldSporesParticle;
 import com.github.dragoni7.dreamland.client.particles.TarBubbleParticle;
 import com.github.dragoni7.dreamland.client.particles.WhitePollenParticle;
 import com.github.dragoni7.dreamland.client.render.*;
@@ -70,5 +71,6 @@ public class DreamlandClientEventHandler {
 		event.register(DreamlandParticles.WHITE_POLLEN.get(), WhitePollenParticle.Provider::new);
 		event.register(DreamlandParticles.GOLD_GLITTER.get(), GoldGlitterParticle.Provider::new);
 		event.register(DreamlandParticles.MIDASHROOM_SPORES.get(), MidashroomSporesParticle.Provider::new);
+		event.register(DreamlandParticles.MOLD_SPORES.get(), MoldSporesParticle.Provider::new);
 	}
 }

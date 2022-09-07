@@ -5,6 +5,7 @@ import javax.annotation.Nullable;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandParticles;
 
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.sounds.Music;
 import net.minecraft.util.Mth;
@@ -162,6 +163,7 @@ public class DreamlandOverworldBiomes {
     			.fogColor(5880459)
     			.skyColor(9541304)
     			.ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+    			.ambientParticle(new AmbientParticleSettings(ParticleTypes.FALLING_SPORE_BLOSSOM, 0.00128F))
     			.backgroundMusic(NORMAL_MUSIC)
     			.build(),
     			spawnBuilder, biomeBuilder);
