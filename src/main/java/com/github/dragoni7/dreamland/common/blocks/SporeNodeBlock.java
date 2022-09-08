@@ -133,7 +133,7 @@ public class SporeNodeBlock extends MultifaceBlock {
 			else {
 				return;
 			}
-			level.playLocalSound(pos.getX(), pos.getY(), pos.getZ(), SoundEvents.LAVA_POP, SoundSource.BLOCKS, 0.5F, 0.1F, false);
+			level.playLocalSound(pos.getX(), pos.getY(), pos.getZ(), SoundEvents.LAVA_POP, SoundSource.BLOCKS, 0.5F, 0.05F, false);
 			Networking.sendToServer(new PacketUpateSporeNode(pos));
 		}
 	}
