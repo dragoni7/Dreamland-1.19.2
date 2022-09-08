@@ -6,10 +6,10 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "dreamland:molded_stone"
+          "name": "dreamland:glowing_mold_wood"
         }
       ],
-      "name": "toxic_stone",
+      "name": "glowing_mold_wood",
       "rolls": 1.0
     }
   ]

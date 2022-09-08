@@ -93,7 +93,7 @@ public class DreamlandItemModels extends ItemModelProvider {
 		
 		blockItemModel(DreamlandBlocks.WHITE_MOLD.item(), "block/white_mold_1");
 		blockItemModel(DreamlandBlocks.BLACK_MOLD.item(), "block/black_mold_1");
-		blockItemModel(DreamlandBlocks.MOLDED_STONE.item(), "block/molded_stone");
+		blockItemModel(DreamlandBlocks.PURE_STONE.item(), "block/pure_stone");
 		blockItemModel(DreamlandBlocks.POROUS_STONE.item(), "block/porous_stone");
 		blockItemModel(DreamlandBlocks.OVERGROWN_POROUS_STONE.item(), "block/overgrown_porous_stone");
 		blockItemModel(DreamlandBlocks.PETRIFIED_VEGETATION.item(), "block/petrified_vegetation");

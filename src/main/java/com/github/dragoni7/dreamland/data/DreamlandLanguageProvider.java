@@ -122,7 +122,7 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandBlocks.BLACK_MOLD_CARPET.block().get(), "Black Mold Carpet");
 		add(DreamlandBlocks.POROUS_STONE.block().get(), "Porous Stone");
 		add(DreamlandBlocks.OVERGROWN_POROUS_STONE.block().get(), "Overgrown Porous Stone");
-		add(DreamlandBlocks.MOLDED_STONE.block().get(), "Molded Stone");
+		add(DreamlandBlocks.PURE_STONE.block().get(), "Pure Stone");
 		add(DreamlandBlocks.PETRIFIED_VEGETATION.block().get(), "Petrified Vegetation");
 		add(DreamlandBlocks.TOXIC_DIRT.block().get(), "Toxic Dirt");
 		add(DreamlandBlocks.TOXIC_GRASS.block().get(), "Toxic Grass");
@@ -132,6 +132,8 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandBlocks.GLOW_FRONDS.block().get(), "Glow Fronds");
 		add(DreamlandBlocks.GLOWING_MOLD_WOOD.block().get(), "Glowing Mold Wood");
 		add(DreamlandBlocks.LARGE_SPORE_PUFF.block().get(), "Large Spore Puff");
+		add(DreamlandBlocks.SPORE_PUFF.block().get(), "Spore Puff");
+		add(DreamlandBlocks.SPONGE_PUFF.block().get(), "Sponge Puff");
 		add(DreamlandBlocks.SPORE_NODE.block().get(), "Spore Node");
 		translateWoodSet(DreamlandWoodSets.MOLD_WOOD, "Mold Wood");
 		

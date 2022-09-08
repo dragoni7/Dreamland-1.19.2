@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "tag": "forge:shears"
+              }
+            }
+          ],
+          "name": "dreamland:sponge_puff"
+        }
+      ],
+      "name": "sponge_puff",
+      "rolls": 1.0
+    }
+  ]
+}

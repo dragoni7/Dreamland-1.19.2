@@ -69,7 +69,7 @@ public class DreamlandBlockStates extends BlockStateProvider{
 		simpleBlocks.add(DreamlandBlocks.JEWELED_DEEPSLATE.block().get());
 		simpleBlocks.add(DreamlandBlocks.POROUS_STONE.block().get());
 		simpleBlocks.add(DreamlandBlocks.OVERGROWN_POROUS_STONE.block().get());
-		simpleBlocks.add(DreamlandBlocks.MOLDED_STONE.block().get());
+		simpleBlocks.add(DreamlandBlocks.PURE_STONE.block().get());
 		simpleBlocks.add(DreamlandBlocks.PETRIFIED_VEGETATION.block().get());
 		simpleBlocks.add(DreamlandBlocks.TOXIC_DIRT.block().get());
 		simpleBlocks.add(DreamlandBlocks.TOXIC_VEGETATION.block().get());

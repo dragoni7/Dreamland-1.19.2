@@ -25,7 +25,9 @@ public class AddBiomeTags extends BiomeTagsProvider {
 		tag(Tags.Biomes.IS_HOT_OVERWORLD).add(BiomeKeys.TAR_DELTAS);
 		tag(Tags.Biomes.IS_SPOOKY).add(BiomeKeys.HIVE);
 		tag(Tags.Biomes.IS_UNDERGROUND).add(BiomeKeys.HIVE).add(BiomeKeys.MIDAS_CAVES);
-		tag(Tags.Biomes.IS_DENSE_OVERWORLD).add(BiomeKeys.JEWELED_FOREST);
+		tag(Tags.Biomes.IS_DENSE_OVERWORLD).add(BiomeKeys.JEWELED_FOREST).add(BiomeKeys.TOXIC_JUNGLE);
+		tag(Tags.Biomes.IS_MUSHROOM).add(BiomeKeys.TOXIC_JUNGLE);
+		tag(Tags.Biomes.IS_MAGICAL).add(BiomeKeys.TOXIC_JUNGLE).add(BiomeKeys.MIDAS_CAVES);
 	}
 
 }

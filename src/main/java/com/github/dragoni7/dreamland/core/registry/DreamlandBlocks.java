@@ -236,7 +236,7 @@ public class DreamlandBlocks {
 	public static final BlockItemSet BLACK_MOLD_CARPET = new BlockItemSet("black_mold_carpet", () -> new CarpetBlock(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.COLOR_BLACK).strength(0.2F).sound(SoundType.MOSS_CARPET)));
 	public static final BlockItemSet POROUS_STONE = new BlockItemSet("porous_stone", () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE).sound(SoundType.CALCITE).requiresCorrectToolForDrops().strength(1.2F, 5.2F)));
 	public static final BlockItemSet OVERGROWN_POROUS_STONE = new BlockItemSet("overgrown_porous_stone", () -> new Block(BlockBehaviour.Properties.copy(POROUS_STONE.block().get())));
-	public static final BlockItemSet MOLDED_STONE = new BlockItemSet("molded_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).color(MaterialColor.COLOR_GREEN).sound(SoundType.TUFF)));
+	public static final BlockItemSet PURE_STONE = new BlockItemSet("pure_stone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).color(MaterialColor.TERRACOTTA_WHITE).sound(SoundType.TUFF)));
 	public static final BlockItemSet PETRIFIED_VEGETATION = new BlockItemSet("petrified_vegetation", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).color(MaterialColor.COLOR_LIGHT_GREEN)));
 	public static final BlockItemSet SPORE_PUFF = new BlockItemSet("spore_puff", () -> new MoldVegetationBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
 	public static final BlockItemSet SPONGE_PUFF = new BlockItemSet("sponge_puff", () -> new MoldVegetationBlock(BlockBehaviour.Properties.copy(SPORE_PUFF.block().get()).sound(SoundType.NETHER_SPROUTS)));

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "dreamland:block/molded_stone"
+    "all": "dreamland:block/pure_stone"
   }
 }

@@ -1,4 +1,4 @@
-// 1.19.2	2022-09-05T14:09:29.8401038	Block States: dreamland
+// 1.19.2	2022-09-07T17:31:07.0220902	Block States: dreamland
 8473d58ec782c50e08c3ce0b5406c08d1d9512d1 assets/dreamland/blockstates/chiseled_kunzite.json
 fe4f69f1364f70b2eaf85d525211beddb890fd8e assets/dreamland/blockstates/cobbled_kunzite_slab.json
 ffad07cd259457df0cefc4f7772176cb17ad625a assets/dreamland/blockstates/cobbled_kunzite_stairs.json
@@ -32,7 +32,6 @@ a03aa0687cd70c1e84e858c36c754664dbcf8384 assets/dreamland/blockstates/kunzite_po
 247d2734dc557ae244b763e2e75e9ae0cf1e6edb assets/dreamland/blockstates/kunzite_redstone_ore.json
 48712575b32cb01c337fdd15b8f7a9a024ad5b0d assets/dreamland/blockstates/kunzite_tile.json
 5eceb09aba217e5d4de4a1588415762f477a331c assets/dreamland/blockstates/mineral_dirt.json
-0a2765e8c63a64d6a18d8d7113174bacd0dbe00f assets/dreamland/blockstates/molded_stone.json
 ac988873a658a3adc28eac6c04323a096bda637d assets/dreamland/blockstates/mold_wood_button.json
 6bc80139de06dc76a41bf2d34ad2650428dfa966 assets/dreamland/blockstates/mold_wood_door.json
 0c0c9819907a547ffb94baf0b9f6896c1df94345 assets/dreamland/blockstates/mold_wood_fence.json
@@ -74,6 +73,7 @@ c7d2199c8057167da783c5bf92450d05502d9bbd assets/dreamland/blockstates/precious_o
 5f3242f8f43fe07740e70e5dae1198999aa81c8e assets/dreamland/blockstates/precious_opal_stairs.json
 8ca3f27a426b36fe4e37d8374e5dcce946ff4fc2 assets/dreamland/blockstates/precious_opal_tile.json
 3d48e53c2380cd52ee31bd0f73d6151fc11ed22b assets/dreamland/blockstates/precious_opal_wall.json
+2073d14301de11c4b1dc4533f4b2a0df1bfe57ac assets/dreamland/blockstates/pure_stone.json
 e66129c9324c2ec2e49ca656e5400046eb209a04 assets/dreamland/blockstates/tar_bark_button.json
 fc4ae78a9e345bd1845cd20ba4a03d3a53182d93 assets/dreamland/blockstates/tar_bark_door.json
 337f460be02e69e465c821b59e7b0082b2610227 assets/dreamland/blockstates/tar_bark_fence.json
@@ -139,7 +139,6 @@ cf4af06cd4db9a695cfd4fc2ab1e6a9b5b1801dd assets/dreamland/models/block/kunzite_i
 bd3774125637a412e8faab25df61eec885e94df6 assets/dreamland/models/block/kunzite_redstone_ore.json
 e010d45349748db0e6689364063d45e878e29df3 assets/dreamland/models/block/kunzite_tile.json
 d18fa0b26629f372b662ecb4ee8cd5957a4cd93e assets/dreamland/models/block/mineral_dirt.json
-7decb9d5e19c550165e2ec8fec50c37884a08760 assets/dreamland/models/block/molded_stone.json
 ce1d77d378c731e97196d8aacfc39229cc948891 assets/dreamland/models/block/mold_wood_button.json
 9f943897310c295d2d7e82a6b43fdb5d47e61c0a assets/dreamland/models/block/mold_wood_button_pressed.json
 9d1bf782a2dce1e7832f741fe9466fdd5c679514 assets/dreamland/models/block/mold_wood_fence_gate.json
@@ -219,6 +218,7 @@ c818b66f7e9d88a8d829b63468044fb065f4ab3b assets/dreamland/models/block/precious_
 f32b3d7ff93d9750ee07a6f102aa1458dbd6e563 assets/dreamland/models/block/precious_opal_wall_post.json
 c1f6004145acd3776035ca5f4acc00fa05fc47dc assets/dreamland/models/block/precious_opal_wall_side.json
 028a79e3d5ef59a6d6055ebbb3e06b7ff7020296 assets/dreamland/models/block/precious_opal_wall_side_tall.json
+8605baf13296211499af161fa32e6bb684d86a05 assets/dreamland/models/block/pure_stone.json
 d902ba485851fa0614c4537ffbe1dbf23f6814ce assets/dreamland/models/block/tar_bark_button.json
 df442d99a8c28529b7b75448f042aa2d74ba3d65 assets/dreamland/models/block/tar_bark_button_pressed.json
 96a9db4b112f69bbfe910b03f334953404fc7104 assets/dreamland/models/block/tar_bark_fence_gate.json

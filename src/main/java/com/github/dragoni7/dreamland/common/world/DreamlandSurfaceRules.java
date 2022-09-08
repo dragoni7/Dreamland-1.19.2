@@ -33,7 +33,7 @@ public class DreamlandSurfaceRules
 
     private static final SurfaceRules.RuleSource TOXIC_JUNGLE = SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeKeys.TOXIC_JUNGLE), SurfaceRules.sequence( 
     		SurfaceRules.ifTrue(SurfaceRules.verticalGradient("dreamland:bedrock_floor", VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(5)), SurfaceRules.state(Blocks.BEDROCK.defaultBlockState())),
-    		SurfaceRules.ifTrue(SurfaceRules.verticalGradient("dreamland:molded_stone", VerticalAnchor.absolute(0), VerticalAnchor.absolute(8)), SurfaceRules.state(DreamlandBlocks.MOLDED_STONE.block().get().defaultBlockState())),
+    		SurfaceRules.ifTrue(SurfaceRules.verticalGradient("dreamland:molded_stone", VerticalAnchor.absolute(0), VerticalAnchor.absolute(8)), SurfaceRules.state(DreamlandBlocks.PURE_STONE.block().get().defaultBlockState())),
     		SurfaceRules.ifTrue(SurfaceRules.steep(), SurfaceRules.state(DreamlandBlocks.PETRIFIED_VEGETATION.block().get().defaultBlockState())),
     		WHITE_MOLD_PATCHES,
     		BLACK_MOLD_PATCHES,

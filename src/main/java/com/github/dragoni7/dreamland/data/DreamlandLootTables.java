@@ -107,7 +107,18 @@ public class DreamlandLootTables extends BaseLootTableProvider {
 		basicBlockTable(DreamlandBlocks.POROUS_STONE.block().get(), "porous_stone");
 		basicBlockTable(DreamlandBlocks.OVERGROWN_POROUS_STONE.block().get(), "overgrown_porous_stone");
 		basicBlockTable(DreamlandBlocks.PETRIFIED_VEGETATION.block().get(), "strand_stone");
-		basicBlockTable(DreamlandBlocks.MOLDED_STONE.block().get(), "toxic_stone");
+		basicBlockTable(DreamlandBlocks.PURE_STONE.block().get(), "toxic_stone");
+		basicBlockTable(DreamlandBlocks.BLACK_MOLD.block().get(), "black_mold");
+		basicBlockTable(DreamlandBlocks.BLACK_MOLD_CARPET.block().get(), "black_mold");
+		basicBlockTable(DreamlandBlocks.TOXIC_VEGETATION.block().get(), "toxic_vegetation");
+		basicBlockTable(DreamlandBlocks.DECAYED_VEGETATION.block().get(), "decayed_vegetation");
+		basicBlockTable(DreamlandBlocks.GLOWING_MOLD_WOOD.block().get(), "glowing_mold_wood");
+		basicBlockTable(DreamlandBlocks.SPORE_NODE.block().get(), "spore_node");
+		shearableVegetationTable(DreamlandBlocks.SPORE_PUFF.block().get(), "spore_puff");
+		shearableVegetationTable(DreamlandBlocks.LARGE_SPORE_PUFF.block().get(), "large_spore_puff");
+		shearableVegetationTable(DreamlandBlocks.SPONGE_PUFF.block().get(), "sponge_puff");
+		shearableVegetationTable(DreamlandBlocks.SHELF_VEGETATION.block().get(), "shelf_vegetation");
+		shearableVegetationTable(DreamlandBlocks.GLOW_FRONDS.block().get(), "glow_fronds");
 		
 		createWoodSetTable(DreamlandWoodSets.TAR_BARK);
 		createWoodSetTable(DreamlandWoodSets.PLUM_BIRCH);

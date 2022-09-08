@@ -43,7 +43,7 @@ public class AddBlockTags extends BlockTagsProvider {
 		tag(Tags.Blocks.STONE)
 		.add(DreamlandBlocks.POROUS_STONE.block().get())
 		.add(DreamlandBlocks.OVERGROWN_POROUS_STONE.block().get())
-		.add(DreamlandBlocks.MOLDED_STONE.block().get())
+		.add(DreamlandBlocks.PURE_STONE.block().get())
 		.add(DreamlandBlocks.KUNZITE_STONE.block().get());
 		
 		tag(Tags.Blocks.COBBLESTONE)
@@ -95,7 +95,7 @@ public class AddBlockTags extends BlockTagsProvider {
 		tag(BlockTags.MINEABLE_WITH_PICKAXE)
 		.add(DreamlandBlocks.POROUS_STONE.block().get())
 		.add(DreamlandBlocks.OVERGROWN_POROUS_STONE.block().get())
-		.add(DreamlandBlocks.MOLDED_STONE.block().get())
+		.add(DreamlandBlocks.PURE_STONE.block().get())
 		.add(DreamlandBlocks.KUNZITE_STONE.block().get())
 		.add(DreamlandBlocks.COBBLED_KUNZITE_STONE.block().get())
 		.add(DreamlandBlocks.KUNZITE_BRICKS.block().get())
@@ -183,7 +183,7 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.MIDASHROOM.block().get());
 		
 		tag(BlockTags.NEEDS_IRON_TOOL)
-		.add(DreamlandBlocks.MOLDED_STONE.block().get())
+		.add(DreamlandBlocks.PURE_STONE.block().get())
 		.add(DreamlandBlocks.KUNZITE_POINT.block().get())
 		.add(DreamlandBlocks.KUNZITE_POINT_BLOCK.block().get())
 		.add(DreamlandBlocks.KUNZITE_BARS.block().get())
@@ -216,7 +216,7 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.TAR_MUD.block().get());
 		
 		tag(BlockTags.DEEPSLATE_ORE_REPLACEABLES)
-		.add(DreamlandBlocks.MOLDED_STONE.block().get());
+		.add(DreamlandBlocks.PURE_STONE.block().get());
 		
 		tag(BlockTags.FEATURES_CANNOT_REPLACE)
 		.add(DreamlandBlocks.HIVE_MEMBRANE.block().get())

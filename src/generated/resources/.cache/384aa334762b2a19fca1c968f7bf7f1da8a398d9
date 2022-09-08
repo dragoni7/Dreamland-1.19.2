@@ -1,4 +1,4 @@
-// 1.19.2	2022-09-05T18:02:21.7346922	Item Models: dreamland
+// 1.19.2	2022-09-07T17:31:06.9970844	Item Models: dreamland
 02a6524eeaab96334111ffc9f8953b1693e4f0ef assets/dreamland/models/item/ancient_egg.json
 4fb267762954b517ed71652604e2dcced065fba9 assets/dreamland/models/item/black_mold.json
 1ad253bb878c44ee03afc1c5198c29e0035a59a6 assets/dreamland/models/item/bowl_of_jelly.json
@@ -58,7 +58,6 @@ ae9d351ccebeca51a6c198c7999d291d287827eb assets/dreamland/models/item/larva_symb
 6b7395a4906936dfbbf452b3ceb221090011663f assets/dreamland/models/item/medium_gold_cluster.json
 27f95580e51bc2b8b6a37451355c1e604781443a assets/dreamland/models/item/midashroom.json
 e837462748a5ec6bdc6942586b898b60d30ab368 assets/dreamland/models/item/mineral_dirt.json
-0feb79c6cc436844103ad22b475dd357344bd602 assets/dreamland/models/item/molded_stone.json
 edf59283ffb24f770610fb9bb3f83528b1f8fc47 assets/dreamland/models/item/mold_wood_button.json
 e809a879b53b553e5f83e16972caa67436788af4 assets/dreamland/models/item/mold_wood_door.json
 272938a6568593cd9f393ca326ac9bc4b3a6cfdd assets/dreamland/models/item/mold_wood_fence.json
@@ -113,6 +112,7 @@ ead96d0ce11b9b3ad4f9076aae8d6e1f42af5c72 assets/dreamland/models/item/precious_o
 1d789f6edd3b80982888ad4bc0163de1532e0e94 assets/dreamland/models/item/precious_opal_stairs.json
 f778ea5668522f2e2ba0fa68103a321b03323312 assets/dreamland/models/item/precious_opal_tile.json
 d6ab2e5680802ffd662f0967cd9a608d16731c06 assets/dreamland/models/item/precious_opal_wall.json
+6576ecbe35d73ca6802a70b67e7f83110f3eccbf assets/dreamland/models/item/pure_stone.json
 d593a8e3fdf646d487ee5e479a8fde26803f09f5 assets/dreamland/models/item/shelf_vegetation.json
 08c6ef4b0cfad306e194389db5f7d523e3119171 assets/dreamland/models/item/small_gold_cluster.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dreamland/models/item/spawn_egg_bumble_beast.json

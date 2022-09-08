@@ -8,7 +8,7 @@
       "dreamland:porous_stone",
       "dreamland:overgrown_porous_stone",
       "dreamland:petrified_vegetation",
-      "dreamland:molded_stone"
+      "dreamland:pure_stone"
     ],
     "can_place_on_ceiling": true,
     "can_place_on_floor": true,
