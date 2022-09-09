@@ -1,7 +1,8 @@
-// 1.19.2	2022-09-07T17:31:06.9970844	Item Models: dreamland
+// 1.19.2	2022-09-08T22:33:58.6329595	Item Models: dreamland
 02a6524eeaab96334111ffc9f8953b1693e4f0ef assets/dreamland/models/item/ancient_egg.json
 4fb267762954b517ed71652604e2dcced065fba9 assets/dreamland/models/item/black_mold.json
 1ad253bb878c44ee03afc1c5198c29e0035a59a6 assets/dreamland/models/item/bowl_of_jelly.json
+e92cee445e583a12ea577a47d070ffd6de361a3d assets/dreamland/models/item/breather_helmet.json
 d517b231b93921fa2f763fe4b475da716d1e9cc1 assets/dreamland/models/item/budding_gold.json
 13716639ba80aa0d10cd278ab1635402f8a113f1 assets/dreamland/models/item/candied_ooze.json
 753673f49cec07146d029af5bb036103cbac5ce5 assets/dreamland/models/item/cave_slime.json
@@ -10,6 +11,7 @@ b159e073c0114b80e47a7d79aa637edee2981ba0 assets/dreamland/models/item/cobbled_ku
 e639f1c1ee444cffb00b67fb17e5849256fb92ec assets/dreamland/models/item/cobbled_kunzite_stairs.json
 b1c09a5d1de82e30851c72465c3191decf53b515 assets/dreamland/models/item/cobbled_kunzite_stone.json
 47a35405efc0e681d7317f785588bca3d8385b49 assets/dreamland/models/item/cobbled_kunzite_wall.json
+35ccd31dd92bb2ebd2810fcff7946e779cd79705 assets/dreamland/models/item/crystalized_purity.json
 b19f517cec49eb567b2e7322fd9485d3b8148606 assets/dreamland/models/item/decayed_vegetation.json
 56420fa87a93432750378efbe5a24cb9e4b9b105 assets/dreamland/models/item/dried_tar.json
 3fad389243aca266028082b869ff5f638d22feeb assets/dreamland/models/item/drought_soil.json
@@ -72,6 +74,9 @@ be2bc6123c105e14d77e1f76649f689b034bf4d3 assets/dreamland/models/item/mold_wood_
 152eb9d5665a4a1ef2ba04f019fae39870936d33 assets/dreamland/models/item/mold_wood_stripped_wood.json
 1a231bbf62c90aebda62bd7061acb19d9d4edf60 assets/dreamland/models/item/mold_wood_trapdoor.json
 15fd6efc2ae454ff3b70b60cc43f78258bfb6871 assets/dreamland/models/item/mold_wood_wood.json
+77677eebcecca623bdcf771c011e2e326725c69f assets/dreamland/models/item/necrathene_breather_helmet.json
+036f38f865bfdb7ee69af7c811fadf79e728a36c assets/dreamland/models/item/necrathene_ingot.json
+b8c02f27bd07a0e84e08e7d3fb073ed233f042a8 assets/dreamland/models/item/necrathene_ore.json
 493db635b4a6024f30e9a75d78e9250ea9b50f1d assets/dreamland/models/item/ooze_ball.json
 f9b0e774652506fe14ebc8866644d5c3e1ea6b60 assets/dreamland/models/item/ooze_pie.json
 185ae6adcc32c3211207327686db62f091603aa5 assets/dreamland/models/item/opal.json
@@ -113,6 +118,8 @@ ead96d0ce11b9b3ad4f9076aae8d6e1f42af5c72 assets/dreamland/models/item/precious_o
 f778ea5668522f2e2ba0fa68103a321b03323312 assets/dreamland/models/item/precious_opal_tile.json
 d6ab2e5680802ffd662f0967cd9a608d16731c06 assets/dreamland/models/item/precious_opal_wall.json
 6576ecbe35d73ca6802a70b67e7f83110f3eccbf assets/dreamland/models/item/pure_stone.json
+02cb918f4500a7dbc3a321797ca8289552804eb8 assets/dreamland/models/item/purity_ore.json
+1b77460ed161f1d0e1378787cc4d4f09c8359aec assets/dreamland/models/item/raw_necrathene.json
 d593a8e3fdf646d487ee5e479a8fde26803f09f5 assets/dreamland/models/item/shelf_vegetation.json
 08c6ef4b0cfad306e194389db5f7d523e3119171 assets/dreamland/models/item/small_gold_cluster.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dreamland/models/item/spawn_egg_bumble_beast.json

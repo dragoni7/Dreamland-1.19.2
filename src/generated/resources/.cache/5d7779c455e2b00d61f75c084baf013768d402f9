@@ -1,4 +1,4 @@
-// 1.19.2	2022-09-07T17:31:07.0220902	Block States: dreamland
+// 1.19.2	2022-09-08T17:17:05.7261475	Block States: dreamland
 8473d58ec782c50e08c3ce0b5406c08d1d9512d1 assets/dreamland/blockstates/chiseled_kunzite.json
 fe4f69f1364f70b2eaf85d525211beddb890fd8e assets/dreamland/blockstates/cobbled_kunzite_slab.json
 ffad07cd259457df0cefc4f7772176cb17ad625a assets/dreamland/blockstates/cobbled_kunzite_stairs.json
@@ -45,6 +45,7 @@ d87d84190037de678e65676bedc1914dc2bbb0fe assets/dreamland/blockstates/mold_wood_
 5dff73c1f734f534873e0c8013d6d6ec4274d467 assets/dreamland/blockstates/mold_wood_stripped_wood.json
 26c2bca9ad4502710fbbaf112a44efc0be2cf1bf assets/dreamland/blockstates/mold_wood_trapdoor.json
 9766bc2e1395f8811b1851da0b8819a635c9a1d1 assets/dreamland/blockstates/mold_wood_wood.json
+1e872911e448f27fae175457ca49727cecb21f0c assets/dreamland/blockstates/necrathene_ore.json
 ce831d031ae351a9ef6e9622c16eeef9f87c8d6d assets/dreamland/blockstates/opal_block.json
 9230f9209fe6614aa21545c739b6980fa97f7ae8 assets/dreamland/blockstates/opal_slab.json
 434167fb6a66e2b7edef6784c8a4312c552e3901 assets/dreamland/blockstates/opal_stairs.json
@@ -74,6 +75,7 @@ c7d2199c8057167da783c5bf92450d05502d9bbd assets/dreamland/blockstates/precious_o
 8ca3f27a426b36fe4e37d8374e5dcce946ff4fc2 assets/dreamland/blockstates/precious_opal_tile.json
 3d48e53c2380cd52ee31bd0f73d6151fc11ed22b assets/dreamland/blockstates/precious_opal_wall.json
 2073d14301de11c4b1dc4533f4b2a0df1bfe57ac assets/dreamland/blockstates/pure_stone.json
+f8bb1019c656f54d0040b74a0674e625daadafa3 assets/dreamland/blockstates/purity_ore.json
 e66129c9324c2ec2e49ca656e5400046eb209a04 assets/dreamland/blockstates/tar_bark_button.json
 fc4ae78a9e345bd1845cd20ba4a03d3a53182d93 assets/dreamland/blockstates/tar_bark_door.json
 337f460be02e69e465c821b59e7b0082b2610227 assets/dreamland/blockstates/tar_bark_fence.json
@@ -166,6 +168,7 @@ fc05f35fb1234bdc97f48cb3f5a874df3f18a694 assets/dreamland/models/block/mold_wood
 05c656731a1a01e2071a085a7d70a96cd27bd4c4 assets/dreamland/models/block/mold_wood_trapdoor_top.json
 00a4e8217191ddd166afa15815332465bd60b6cc assets/dreamland/models/block/mold_wood_wood.json
 178b0692506e5aa4c07fa788b5f9a2f50a6ccd62 assets/dreamland/models/block/mold_wood_wood_horizontal.json
+85b52d12faf100b88465e40ffcdd019d8bdded5a assets/dreamland/models/block/necrathene_ore.json
 b7052dd711d53469b767622bdcbc20f368c3b33f assets/dreamland/models/block/opal_block.json
 680dda73658ccac293f8890eb71f46f63765710a assets/dreamland/models/block/opal_slab.json
 8a375cc74351d8c84e9dd29385f5d186cbc38b38 assets/dreamland/models/block/opal_slab_top.json
@@ -219,6 +222,7 @@ f32b3d7ff93d9750ee07a6f102aa1458dbd6e563 assets/dreamland/models/block/precious_
 c1f6004145acd3776035ca5f4acc00fa05fc47dc assets/dreamland/models/block/precious_opal_wall_side.json
 028a79e3d5ef59a6d6055ebbb3e06b7ff7020296 assets/dreamland/models/block/precious_opal_wall_side_tall.json
 8605baf13296211499af161fa32e6bb684d86a05 assets/dreamland/models/block/pure_stone.json
+6b95f66a9bf641522caa7a66cd8a34d89e296ab1 assets/dreamland/models/block/purity_ore.json
 d902ba485851fa0614c4537ffbe1dbf23f6814ce assets/dreamland/models/block/tar_bark_button.json
 df442d99a8c28529b7b75448f042aa2d74ba3d65 assets/dreamland/models/block/tar_bark_button_pressed.json
 96a9db4b112f69bbfe910b03f334953404fc7104 assets/dreamland/models/block/tar_bark_fence_gate.json

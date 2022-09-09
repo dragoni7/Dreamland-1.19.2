@@ -75,6 +75,8 @@ public class DreamlandBlockStates extends BlockStateProvider{
 		simpleBlocks.add(DreamlandBlocks.TOXIC_VEGETATION.block().get());
 		simpleBlocks.add(DreamlandBlocks.DECAYED_VEGETATION.block().get());
 		simpleBlocks.add(DreamlandBlocks.GLOWING_MOLD_WOOD.block().get());
+		simpleBlocks.add(DreamlandBlocks.NECRATHENE_ORE.block().get());
+		simpleBlocks.add(DreamlandBlocks.PURITY_ORE.block().get());
 
 		for(Block element : simpleBlocks) {
 			simpleBlock(element);

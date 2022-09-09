@@ -1,0 +1,27 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.breather.idle": {
+			"loop": true,
+			"animation_length": 2.08,
+			"bones": {
+				"filter": {
+					"scale": {
+						"0.0": {
+							"vector": [1, 1, 1]
+						},
+						"1.04": {
+							"vector": [1.04, 1.04, 1.04],
+							"easing": "easeInOutQuad"
+						},
+						"2.08": {
+							"vector": [1, 1, 1],
+							"easing": "easeInOutQuad"
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

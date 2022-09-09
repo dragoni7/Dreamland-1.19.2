@@ -286,6 +286,14 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.TOXIC_GRASS.block().get())
 		.add(DreamlandBlocks.BLACK_MOLD.block().get());
 		
+		tag(DreamlandBlockTags.NECRATHENE_REPLACEABLE)
+		.add(DreamlandBlocks.POROUS_STONE.block().get())
+		.add(DreamlandBlocks.OVERGROWN_POROUS_STONE.block().get())
+		.add(DreamlandBlocks.PETRIFIED_VEGETATION.block().get());
+		
+		tag(DreamlandBlockTags.PURITY_REPLACEABLE)
+		.add(DreamlandBlocks.PURE_STONE.block().get());
+		
 		tag(DreamlandBlockTags.MOLD_SPREADABLES)
 		.addTag(BlockTags.DIRT)
 		.addTag(BlockTags.LOGS)

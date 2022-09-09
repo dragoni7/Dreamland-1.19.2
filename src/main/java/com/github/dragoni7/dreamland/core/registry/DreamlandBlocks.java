@@ -249,6 +249,9 @@ public class DreamlandBlocks {
 	public static final BlockItemSet GLOW_FRONDS = new BlockItemSet("glow_fronds", () -> new MoldVegetationBlock(BlockBehaviour.Properties.copy(SPORE_PUFF.block().get()).lightLevel((light) -> {return 8;}).hasPostProcess(DreamlandBlocks::always).emissiveRendering(DreamlandBlocks::always)))));
 	public static final BlockItemSet LARGE_SPORE_PUFF = new BlockItemSet("large_spore_puff", () -> new LargeSporePuffBlock(BlockBehaviour.Properties.copy(SPORE_PUFF.block().get()).noOcclusion()));
 	public static final BlockItemSet SPORE_NODE = new BlockItemSet("spore_node", () -> new SporeNodeBlock(BlockBehaviour.Properties.of(Material.WEB, MaterialColor.COLOR_LIGHT_BLUE).sound(SoundType.WOOL).strength(1.5F, 1.0F).noOcclusion().randomTicks()));
+	public static final BlockItemSet PURIFIED_DUST = new BlockItemSet("purified_dust", () -> new CarpetBlock(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_YELLOW).sound(SoundType.GRAVEL).strength(0.2F)));
+	public static final BlockItemSet NECRATHENE_ORE = new BlockItemSet("necrathene_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_DIAMOND_ORE).sound(SoundType.TUFF).color(MaterialColor.STONE)));
+	public static final BlockItemSet PURITY_ORE = new BlockItemSet("purity_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_DIAMOND_ORE)));
 	
 	private static BlockItemSet createSaplingBlock(String name, Feature<NoneFeatureConfiguration> tree) {
 		return new BlockItemSet(name, () -> new DreamlandSaplingBlock(tree, BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));

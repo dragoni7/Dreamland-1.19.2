@@ -109,6 +109,10 @@ public class AddItemTags extends ItemTagsProvider {
 			.add(DreamlandBlocks.HIVE_REDSTONE.item().get())
 			.add(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.item().get());
 		
+		tag(DreamlandItemTags.PREVENTS_DECAY)
+		.add(DreamlandItems.BREATHER_HELMET.get())
+		.add(DreamlandItems.NECRATHENE_BREATHER_HELMET.get());
+		
 		addCopperOreItemTags(DreamlandBlocks.KUNZITE_COPPER_ORE.item().get());
 		addIronOreItemTags(DreamlandBlocks.KUNZITE_IRON_ORE.item().get());
 		addEmeraldOreItemTags(DreamlandBlocks.KUNZITE_EMERALD_ORE.item().get());

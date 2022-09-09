@@ -1,4 +1,4 @@
-// 1.19.2	2022-09-07T17:31:07.0280913	Dreamland LootTables
+// 1.19.2	2022-09-07T20:17:18.0964037	Dreamland LootTables
 6c2b2fa6b4ac82542117b91cc43915498ee92586 data/dreamland/loot_tables/blocks/black_mold.json
 d7818800fca2a9b523d039b3a7eee95b64c492f1 data/dreamland/loot_tables/blocks/black_mold_carpet.json
 5edeb9bd12b12facb7de034bac7cf2c1e16f9f3e data/dreamland/loot_tables/blocks/bumble_block.json
@@ -106,6 +106,7 @@ a18fe125672ffb1499818d17cd758f24f1eaf916 data/dreamland/loot_tables/blocks/preci
 7eb088a0d61f530fd44100914f821f5e7672a2e0 data/dreamland/loot_tables/blocks/precious_opal_tile.json
 1a0bfe3cd48043650d72022df3ee770172b6549a data/dreamland/loot_tables/blocks/precious_opal_wall.json
 b409b28aef793e5b64730cc629390c37023661a9 data/dreamland/loot_tables/blocks/pure_stone.json
+7b65d074ade6c2016725c269b2b46c31f8755060 data/dreamland/loot_tables/blocks/purified_dust.json
 cc325a3b3566fe400f705f808a2752606d7992f5 data/dreamland/loot_tables/blocks/shelf_vegetation.json
 713309d9d2eeafc59339bf212d823475bbc2c286 data/dreamland/loot_tables/blocks/small_golden_cap.json
 a4a4649ee75c0188d115d7f39c04445cc7588ae1 data/dreamland/loot_tables/blocks/small_gold_cluster.json
@@ -134,6 +135,8 @@ c349cef2a60d737648ec814ab975f1aac1380e9c data/dreamland/loot_tables/blocks/tar_b
 d260f8f0c03fac673ea9b4b32cad7d0492c5fe44 data/dreamland/loot_tables/blocks/tar_mud_brick_stairs.json
 c80b02880eb641d0fe313afb07bd5c2a22b72b27 data/dreamland/loot_tables/blocks/tar_mud_brick_wall.json
 972cca88f3ded45d9c3b6b035725c495d97707be data/dreamland/loot_tables/blocks/tar_sprouts.json
+8334f327b1fa87b1f74da0f46830830c46408c00 data/dreamland/loot_tables/blocks/toxic_dirt.json
+b95d4483bcd4c998c2d813b43630a8c7ff452183 data/dreamland/loot_tables/blocks/toxic_grass.json
 04a66d7ef9d5fb8af4687291ccd82d88ec554391 data/dreamland/loot_tables/blocks/toxic_vegetation.json
 54ddcab72b137e45d39c1f96a87460aafa4220d8 data/dreamland/loot_tables/blocks/white_mold.json
 c3fd02f7ff1aa5106c5b487e2402e8e63fc0a6cc data/dreamland/loot_tables/blocks/white_mold_carpet.json

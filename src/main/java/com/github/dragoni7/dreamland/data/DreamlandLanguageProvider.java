@@ -135,6 +135,11 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandBlocks.SPORE_PUFF.block().get(), "Spore Puff");
 		add(DreamlandBlocks.SPONGE_PUFF.block().get(), "Sponge Puff");
 		add(DreamlandBlocks.SPORE_NODE.block().get(), "Spore Node");
+		add(DreamlandBlocks.PURIFIED_DUST.block().get(), "Purified Dust");
+		add(DreamlandBlocks.NECRATHENE_ORE.block().get(), "Necrathene Ore");
+		add(DreamlandBlocks.PURITY_ORE.block().get(), "Purity Ore");
+		add(DreamlandItems.NECRATHENE_INGOT.get(), "Necrathene Ingot");
+		add(DreamlandItems.RAW_NECRATHENE.get(), "Raw Necrathene");
 		translateWoodSet(DreamlandWoodSets.MOLD_WOOD, "Mold Wood");
 		
 		// Items

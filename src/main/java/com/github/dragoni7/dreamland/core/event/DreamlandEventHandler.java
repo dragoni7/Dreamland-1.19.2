@@ -13,6 +13,7 @@ import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
 import com.github.dragoni7.dreamland.core.registry.DreamlandItems;
+import com.github.dragoni7.dreamland.data.DreamlandItemTags;
 import com.github.dragoni7.dreamland.network.Networking;
 import com.github.dragoni7.dreamland.network.PacketApplyTarredPlayer;
 
@@ -25,6 +26,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.AABB;
@@ -132,10 +134,13 @@ public class DreamlandEventHandler {
 	public static void toxicJunglePreventHeal(LivingHealEvent event) {
 		LivingEntity entity = event.getEntity();
 		if (entity instanceof Player) {
-			BlockPos pos = entity.blockPosition();
-			if (entity.getLevel().getBiome(pos).is(BiomeKeys.TOXIC_JUNGLE) && pos.getY() > 0) {
-				entity.addEffect((new MobEffectInstance(DreamlandEffects.DECAY.get(), 40)));
-				event.setCanceled(true);
+			ItemStack helmet = entity.getItemBySlot(EquipmentSlot.HEAD).copy();
+			if (!helmet.is(DreamlandItemTags.PREVENTS_DECAY)) {
+				BlockPos pos = entity.blockPosition();
+				if (entity.getLevel().getBiome(pos).is(BiomeKeys.TOXIC_JUNGLE) && pos.getY() > 0) {
+					entity.addEffect((new MobEffectInstance(DreamlandEffects.DECAY.get(), 100)));
+					event.setCanceled(true);
+				}
 			}
 		}
 	}

@@ -114,6 +114,9 @@ public class DreamlandLootTables extends BaseLootTableProvider {
 		basicBlockTable(DreamlandBlocks.DECAYED_VEGETATION.block().get(), "decayed_vegetation");
 		basicBlockTable(DreamlandBlocks.GLOWING_MOLD_WOOD.block().get(), "glowing_mold_wood");
 		basicBlockTable(DreamlandBlocks.SPORE_NODE.block().get(), "spore_node");
+		grassBlockTable(DreamlandBlocks.TOXIC_GRASS.block().get(), DreamlandBlocks.TOXIC_DIRT.item().get(), "toxic_grass");
+		basicBlockTable(DreamlandBlocks.TOXIC_DIRT.block().get(), "toxic_dirt");
+		basicBlockTable(DreamlandBlocks.PURIFIED_DUST.block().get(), "purified_dust");
 		shearableVegetationTable(DreamlandBlocks.SPORE_PUFF.block().get(), "spore_puff");
 		shearableVegetationTable(DreamlandBlocks.LARGE_SPORE_PUFF.block().get(), "large_spore_puff");
 		shearableVegetationTable(DreamlandBlocks.SPONGE_PUFF.block().get(), "sponge_puff");

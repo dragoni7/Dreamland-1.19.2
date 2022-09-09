@@ -13,6 +13,7 @@ public class DreamlandItemTags {
 	public static final TagKey<Item> PRECIOUS_OPAL = TagCreator.forgeItemTag("gems/precious_opal");
 	public static final TagKey<Item> STORAGE_BLOCKS_OPAL = TagCreator.forgeItemTag("storage_blocks/opal");
 	public static final TagKey<Item> STORAGE_BLOCKS_PRECIOUS_OPAL = TagCreator.forgeItemTag("storage_blocks/precious_opal");
+	public static final TagKey<Item> PREVENTS_DECAY = TagCreator.dreamlandItemTag("prevents_decay");
 	
 	public static final TagKey<Item> MIDASHROOM_CONSUMABLES = TagCreator.dreamlandItemTag("midashroom_consumable");
 }

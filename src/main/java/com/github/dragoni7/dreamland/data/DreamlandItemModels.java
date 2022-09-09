@@ -102,12 +102,19 @@ public class DreamlandItemModels extends ItemModelProvider {
 		blockItemModel(DreamlandBlocks.DECAYED_VEGETATION.item(), "block/decayed_vegetation");
 		blockItemModel(DreamlandBlocks.GLOWING_MOLD_WOOD.item(), "block/glowing_mold_wood");
 		blockItemModel(DreamlandBlocks.SPORE_NODE.item(), "block/spore_node_down");
+		blockItemModel(DreamlandBlocks.NECRATHENE_ORE.item(), "block/necrathene_ore");
+		blockItemModel(DreamlandBlocks.PURITY_ORE.item(), "block/purity_ore");
 		singleTextureItemModel(DreamlandBlocks.SPORE_PUFF.item(), "block/spore_puff");
 		singleTextureItemModel(DreamlandBlocks.LARGE_SPORE_PUFF.item(), "item/large_spore_puff");
 		singleTextureItemModel(DreamlandBlocks.SPONGE_PUFF.item(), "block/sponge_puff");
 		singleTextureItemModel(DreamlandBlocks.SHELF_VEGETATION.item(), "item/shelf_vegetation");
 		singleTextureItemModel(DreamlandBlocks.LARGE_GOLD_CLUSTER.item(), "item/large_spore_puff");
 		singleTextureItemModel(DreamlandBlocks.GLOW_FRONDS.item(), "block/glow_fronds");
+		singleTextureItemModel(DreamlandItems.RAW_NECRATHENE, "item/raw_necrathene");
+		singleTextureItemModel(DreamlandItems.NECRATHENE_INGOT, "item/necrathene_ingot");
+		singleTextureItemModel(DreamlandItems.CRYSTALIZED_PURITY, "item/crystalized_purity");
+		singleTextureItemModel(DreamlandItems.BREATHER_HELMET, "item/breather_helmet");
+		singleTextureItemModel(DreamlandItems.NECRATHENE_BREATHER_HELMET, "item/necrathene_breather_helmet");
 		
 		singleTextureItemModel(DreamlandBlocks.GOLD_FRONDS.item(), "block/gold_fronds");
 		singleTextureItemModel(DreamlandBlocks.KUNZITE_POINT.item(), "block/kunzite_point_end");

@@ -1,10 +1,12 @@
-// 1.19.2	2022-09-07T17:31:07.01709	Dreamland Block Tags
+// 1.19.2	2022-09-08T17:53:42.7975754	Dreamland Block Tags
 8f1de98b3239009a155cb9246d22c3c197c86c85 data/dreamland/tags/blocks/fossilized_egg_replaceable.json
 9168b95796707296915d8fd7e0eb6a8ed53ec2af data/dreamland/tags/blocks/hive_ores_replaceable.json
 71bad7c22aa32e3e318743aa633d3cfc5568cff7 data/dreamland/tags/blocks/kunzite_ores_replaceable.json
 671cc18b31f9a8845655f0bb90efb34e094a4067 data/dreamland/tags/blocks/mold_spreadables.json
 1aead4ee5d4efc69e5d99090cf1e76a8405098d2 data/dreamland/tags/blocks/mold_wood_logs.json
+1504a29793eb0742245f0810e39f432221ce01b5 data/dreamland/tags/blocks/necrathene_replaceable.json
 37de7720c2909e0b72df14405ff130b54775d875 data/dreamland/tags/blocks/plum_birch_logs.json
+9257c2274b2cce2592aa09f9302c55b316fc2215 data/dreamland/tags/blocks/purity_replaceable.json
 0a1006000c66cd8a50db30be6604d4d11566ff00 data/dreamland/tags/blocks/tar_bark_logs.json
 0fdb02f17b3275eeec51fbf01e78476a2bf0ebf0 data/forge/tags/blocks/cobblestone.json
 38db8eb4631fd21d308ff814c18d9683a889a2ab data/forge/tags/blocks/ores.json

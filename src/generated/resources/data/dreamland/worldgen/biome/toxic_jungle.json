@@ -31,7 +31,8 @@
       "dreamland:porous_spires",
       "dreamland:porous_sphere",
       "dreamland:porous_hill",
-      "dreamland:mold_wood_roots"
+      "dreamland:mold_wood_roots",
+      "dreamland:porous_stone_underground"
     ],
     [
       "minecraft:lake_lava_underground",
@@ -75,11 +76,14 @@
       "minecraft:disk_sand",
       "minecraft:disk_clay",
       "minecraft:disk_gravel",
+      "dreamland:necrathene_ore",
+      "dreamland:purity_ore",
       "dreamland:toxic_vegetation",
       "dreamland:decayed_vegetation"
     ],
     [
-      "dreamland:mold_carpet_underground"
+      "dreamland:mold_carpet_underground",
+      "dreamland:toxic_jungle_delta"
     ],
     [
       "minecraft:spring_water",
@@ -87,6 +91,7 @@
     ],
     [
       "minecraft:glow_lichen",
+      "dreamland:purified_dust_layer",
       "dreamland:placed_mold_puff_tree",
       "dreamland:toxic_jungle_vegetations",
       "dreamland:toxic_jungle_glow_lichen",
@@ -122,13 +127,7 @@
         "type": "minecraft:spider",
         "maxCount": 4,
         "minCount": 4,
-        "weight": 100
-      },
-      {
-        "type": "minecraft:skeleton",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 100
+        "weight": 110
       },
       {
         "type": "minecraft:creeper",

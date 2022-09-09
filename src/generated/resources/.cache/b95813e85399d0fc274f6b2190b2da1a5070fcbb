@@ -1,9 +1,10 @@
-// 1.19.2	2022-08-28T11:18:28.5197861	Dreamland Item Tags
+// 1.19.2	2022-09-08T23:45:52.6145132	Dreamland Item Tags
 c0a505fa839af937b16b68705a9233d0c8784f8a data/dreamland/tags/items/hive_ores.json
 38d2d5acfab1313f0a86d37b40ca30c2f7d2cb5d data/dreamland/tags/items/kunzite_ores.json
 69603670b75a57967ff4700b775b1ce739aa5835 data/dreamland/tags/items/midashroom_consumable.json
 c9caae889d88a3c831b292ea5f8c3190839383d9 data/dreamland/tags/items/mold_wood_logs.json
 4eca4ad1e699f194d9ed0673410da0486da163b5 data/dreamland/tags/items/plum_birch_logs.json
+e52b933a2a61188350a8b00019641caad4081703 data/dreamland/tags/items/prevents_decay.json
 307086431dc21982e06a542fde8df6004d8ef340 data/dreamland/tags/items/tar_bark_logs.json
 67a0de5165390b7f40cc0d99f752cb2a0277246f data/forge/tags/items/gems.json
 deda1b280200a25cbeebddcab815559daec04391 data/forge/tags/items/gems/opal.json

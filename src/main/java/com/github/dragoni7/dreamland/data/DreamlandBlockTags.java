@@ -14,4 +14,6 @@ public class DreamlandBlockTags {
 	public static final TagKey<Block> STORAGE_BLOCKS_PRECIOUS_OPAL = TagCreator.forgeBlockTag("storage_blocks/precious_opal");
 	public static final TagKey<Block> TOXIC_JUNGLE_GROUND_BLOCKS = TagCreator.forgeBlockTag("toxic_jungle_ground_blocks");
 	public static final TagKey<Block> MOLD_SPREADABLES = TagCreator.dreamlandBlockTag("mold_spreadables");
+	public static final TagKey<Block> NECRATHENE_REPLACEABLE = TagCreator.dreamlandBlockTag("necrathene_replaceable");
+	public static final TagKey<Block> PURITY_REPLACEABLE = TagCreator.dreamlandBlockTag("purity_replaceable");
 }

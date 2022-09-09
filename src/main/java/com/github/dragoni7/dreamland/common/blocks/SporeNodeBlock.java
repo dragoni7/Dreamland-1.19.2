@@ -3,11 +3,14 @@ package com.github.dragoni7.dreamland.common.blocks;
 import java.util.List;
 import java.util.Map;
 
+import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
+import com.github.dragoni7.dreamland.core.registry.DreamlandItems;
 import com.github.dragoni7.dreamland.core.registry.DreamlandParticles;
 import com.github.dragoni7.dreamland.core.registry.DreamlandWoodSets;
 import com.github.dragoni7.dreamland.data.DreamlandBlockTags;
+import com.github.dragoni7.dreamland.data.DreamlandItemTags;
 import com.github.dragoni7.dreamland.network.Networking;
 import com.github.dragoni7.dreamland.network.PacketUpateSporeNode;
 import com.github.dragoni7.dreamland.util.RollBoolean;
@@ -22,7 +25,9 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -133,7 +138,7 @@ public class SporeNodeBlock extends MultifaceBlock {
 			else {
 				return;
 			}
-			level.playLocalSound(pos.getX(), pos.getY(), pos.getZ(), SoundEvents.LAVA_POP, SoundSource.BLOCKS, 0.5F, 0.05F, false);
+			level.playLocalSound(pos.getX(), pos.getY(), pos.getZ(), SoundEvents.LAVA_POP, SoundSource.BLOCKS, 0.5F, 0.025F, false);
 			Networking.sendToServer(new PacketUpateSporeNode(pos));
 		}
 	}
@@ -144,7 +149,10 @@ public class SporeNodeBlock extends MultifaceBlock {
 			List<LivingEntity> list = level.getEntitiesOfClass(LivingEntity.class, (new AABB(pos)).inflate(1.0D, 1.0D, 1.0D));
 			if (!list.isEmpty()) {
 		         for(LivingEntity entity : list) {
-		        	 entity.addEffect((new MobEffectInstance(DreamlandEffects.DECAY.get(), 200)));
+		        	 ItemStack helmet = entity.getItemBySlot(EquipmentSlot.HEAD).copy();
+		        	 if (!helmet.is(DreamlandItemTags.PREVENTS_DECAY)) {
+		        		 entity.addEffect((new MobEffectInstance(DreamlandEffects.DECAY.get(), 200)));
+		 			}
 		         }
 		      }
 			

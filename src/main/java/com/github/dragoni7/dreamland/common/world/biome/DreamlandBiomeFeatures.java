@@ -99,9 +99,14 @@ public class DreamlandBiomeFeatures {
 		builder.addFeature(GenerationStep.Decoration.RAW_GENERATION, DreamlandFeaturePlacements.POROUS_SPHERE);
 		builder.addFeature(GenerationStep.Decoration.RAW_GENERATION, DreamlandFeaturePlacements.POROUS_HILL);
 		builder.addFeature(GenerationStep.Decoration.RAW_GENERATION, DreamlandFeaturePlacements.MOLD_WOOD_ROOTS);
+		builder.addFeature(GenerationStep.Decoration.RAW_GENERATION, DreamlandFeaturePlacements.POROUS_STONE_UNDERGROUND);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.NECRATHENE_ORE);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.PURITY_ORE);
 		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.TOXIC_VEGETATION);
 		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.DECAYED_VEGETATION);
 		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, DreamlandFeaturePlacements.MOLD_CARPET_UNDERGROUND);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, DreamlandFeaturePlacements.TOXIC_JUNGLE_DELTA);
+		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.PURIFIED_DUST_LAYER);
 		builder.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, DreamlandFeaturePlacements.MOLD_GROWTH);
 		builder.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, DreamlandFeaturePlacements.MOLD_WOOD_STUMP);
 		builder.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, DreamlandFeaturePlacements.MOLD_WOOD_TREE);

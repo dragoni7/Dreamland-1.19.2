@@ -70,8 +70,8 @@ public class LarvaSymbioteArmorItem extends GeoArmorItem implements IAnimatable 
 	}
 	
 	@Override
-	   public SoundEvent getEquipSound() {
-	      return DreamlandSoundEvents.LARVA_HIT.get();
-	   }
+	public SoundEvent getEquipSound() {
+	   return DreamlandSoundEvents.LARVA_HIT.get();
+	}
 
 }

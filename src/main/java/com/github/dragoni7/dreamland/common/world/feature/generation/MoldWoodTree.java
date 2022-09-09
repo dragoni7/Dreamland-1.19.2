@@ -38,7 +38,7 @@ public class MoldWoodTree extends Feature<NoneFeatureConfiguration> {
 		int radius = 6;
 		int yHeight = rand.nextIntBetweenInclusive(26, 46);
 		int foliageHeight = 6;
-		int foliageRadius = 17;
+		int foliageRadius = 16;
 		WeightedStateProvider trunkBlockProvider = new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(DreamlandWoodSets.MOLD_WOOD.wood().block().get().defaultBlockState(), 75).add(DreamlandBlocks.GLOWING_MOLD_WOOD.block().get().defaultBlockState(), 25));
 		WeightedStateProvider foliageBlockProvider = new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(DreamlandBlocks.BLACK_MOLD.block().get().defaultBlockState(), 50).add(DreamlandBlocks.WHITE_MOLD.block().get().defaultBlockState(), 50));
 		BlockState foliageBlock = foliageBlockProvider.getState(rand, origin);
