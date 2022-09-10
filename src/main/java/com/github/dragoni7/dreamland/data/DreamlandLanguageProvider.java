@@ -140,6 +140,12 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandBlocks.PURITY_ORE.block().get(), "Purity Ore");
 		add(DreamlandItems.NECRATHENE_INGOT.get(), "Necrathene Ingot");
 		add(DreamlandItems.RAW_NECRATHENE.get(), "Raw Necrathene");
+		add(DreamlandItems.BREATHER_HELMET.get(), "Leather Breather");
+		add(DreamlandItems.NECRATHENE_BREATHER_HELMET.get(), "Necrathene Breather");
+		add(DreamlandItems.NECRATHENE_BOOTS.get(), "Necrathene Boots");
+		add(DreamlandItems.NECRATHENE_CHESTPLATE.get(), "Necrathene Chestplate");
+		add(DreamlandItems.NECRATHENE_LEGGINGS.get(), "Necrathene Leggings");
+		add(DreamlandItems.CRYSTALIZED_PURITY.get(), "Crystalized Purity");
 		translateWoodSet(DreamlandWoodSets.MOLD_WOOD, "Mold Wood");
 		
 		// Items

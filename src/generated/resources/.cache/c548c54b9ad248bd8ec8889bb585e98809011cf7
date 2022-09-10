@@ -1,4 +1,4 @@
-// 1.19.2	2022-09-07T20:17:18.0964037	Dreamland LootTables
+// 1.19.2	2022-09-09T15:40:17.0171721	Dreamland LootTables
 6c2b2fa6b4ac82542117b91cc43915498ee92586 data/dreamland/loot_tables/blocks/black_mold.json
 d7818800fca2a9b523d039b3a7eee95b64c492f1 data/dreamland/loot_tables/blocks/black_mold_carpet.json
 5edeb9bd12b12facb7de034bac7cf2c1e16f9f3e data/dreamland/loot_tables/blocks/bumble_block.json
@@ -68,6 +68,7 @@ a3a6c03dde2cebfba501a72300a5678e36c63560 data/dreamland/loot_tables/blocks/mold_
 b8e536cb40095f2582510019c3f3908cf3151989 data/dreamland/loot_tables/blocks/mold_wood_stripped_wood.json
 55feee33605618a95a828e3014bbf75f95b10d3e data/dreamland/loot_tables/blocks/mold_wood_trapdoor.json
 ec6d9c11c4227899b9cabf322be273c4c98ff6a6 data/dreamland/loot_tables/blocks/mold_wood_wood.json
+fdfcb82b9d71d914ab09348d70818fb03496312d data/dreamland/loot_tables/blocks/necrathene_ore.json
 6cfefe5bd6797bcaaf252eb14ddb268f9e3c5742 data/dreamland/loot_tables/blocks/ooze_block.json
 edeb3db520fb5671be936ed4b07fb7cce5cc8c65 data/dreamland/loot_tables/blocks/opaline_marigold.json
 abb6871ed797abcb2fbaae155ac0238a6ca3b0fb data/dreamland/loot_tables/blocks/opal_block.json
@@ -107,6 +108,7 @@ a18fe125672ffb1499818d17cd758f24f1eaf916 data/dreamland/loot_tables/blocks/preci
 1a0bfe3cd48043650d72022df3ee770172b6549a data/dreamland/loot_tables/blocks/precious_opal_wall.json
 b409b28aef793e5b64730cc629390c37023661a9 data/dreamland/loot_tables/blocks/pure_stone.json
 7b65d074ade6c2016725c269b2b46c31f8755060 data/dreamland/loot_tables/blocks/purified_dust.json
+499c3e9a9fd271f43f687c1e76513bce8261bb78 data/dreamland/loot_tables/blocks/purity_ore.json
 cc325a3b3566fe400f705f808a2752606d7992f5 data/dreamland/loot_tables/blocks/shelf_vegetation.json
 713309d9d2eeafc59339bf212d823475bbc2c286 data/dreamland/loot_tables/blocks/small_golden_cap.json
 a4a4649ee75c0188d115d7f39c04445cc7588ae1 data/dreamland/loot_tables/blocks/small_gold_cluster.json

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "dreamland:block/opal_tile",
-    "side": "dreamland:block/opal_tile",
-    "top": "dreamland:block/opal_tile"
-  }
-}

@@ -14,6 +14,7 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.data.recipes.UpgradeRecipeBuilder;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.Tags;
 import net.minecraft.world.item.Item;
@@ -43,14 +44,14 @@ public class DreamlandRecipes extends RecipeProvider{
 		  .pattern("ddd")
 		  .define('d', Tags.Items.COBBLESTONE_DEEPSLATE)
 		  .define('g', Tags.Items.INGOTS_GOLD)
-		  .define('#', DreamlandItems.PRECIOUS_OPAL.get())
+		  .define('#', DreamlandItemTags.PRECIOUS_OPAL)
 		  .group("dreamland").unlockedBy("precious_opal", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandItems.PRECIOUS_OPAL.get())).save(consumer);
 		  
 		  ShapedRecipeBuilder.shaped(DreamlandBlocks.OPAL_BLOCK.block().get())
 		  .pattern("###")
 		  .pattern("###")
 		  .pattern("###")
-		  .define('#', DreamlandItems.OPAL.get())
+		  .define('#', DreamlandItemTags.OPAL)
 		  .group("dreamland").unlockedBy("opal", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandItems.OPAL.get())).save(consumer);
 		  
 		  ShapelessRecipeBuilder.shapeless(DreamlandItems.OPAL.get(), 9)
@@ -61,7 +62,7 @@ public class DreamlandRecipes extends RecipeProvider{
 		  .pattern("###")
 		  .pattern("###")
 		  .pattern("###")
-		  .define('#', DreamlandItems.PRECIOUS_OPAL.get())
+		  .define('#', DreamlandItemTags.PRECIOUS_OPAL)
 		  .group("dreamland").unlockedBy("precious_opal", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandItems.PRECIOUS_OPAL.get())).save(consumer);
 		  
 		  ShapelessRecipeBuilder.shapeless(DreamlandItems.PRECIOUS_OPAL.get(), 9)
@@ -107,20 +108,20 @@ public class DreamlandRecipes extends RecipeProvider{
 		  ShapedRecipeBuilder.shaped(DreamlandBlocks.OPAL_TILE.block().get())
 		  .pattern("## ")
 		  .pattern("## ")
-		  .define('#', DreamlandItems.OPAL.get())
+		  .define('#', DreamlandItemTags.OPAL)
 		  .group("dreamland").unlockedBy("opal", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandItems.OPAL.get())).save(consumer);
 		  
 		  ShapedRecipeBuilder.shaped(DreamlandBlocks.PRECIOUS_OPAL_TILE.block().get())
 		  .pattern("## ")
 		  .pattern("## ")
-		  .define('#', DreamlandItems.PRECIOUS_OPAL.get())
+		  .define('#', DreamlandItemTags.PRECIOUS_OPAL)
 		  .group("dreamland").unlockedBy("precious_opal", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandItems.PRECIOUS_OPAL.get())).save(consumer);
 		  
 		  ShapedRecipeBuilder.shaped(DreamlandBlocks.PRECIOUS_OPAL_LAMP.block().get())
 		  .pattern("g#g")
 		  .pattern("#g#")
 		  .pattern("g#g")
-		  .define('#', DreamlandItems.PRECIOUS_OPAL.get())
+		  .define('#', DreamlandItemTags.PRECIOUS_OPAL)
 		  .define('g', Items.GLOWSTONE_DUST)
 		  .group("dreamland").unlockedBy("precious_opal", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandItems.PRECIOUS_OPAL.get())).save(consumer);
 		  
@@ -150,6 +151,75 @@ public class DreamlandRecipes extends RecipeProvider{
 		  .define('#', DreamlandBlocks.KUNZITE_POINT.item().get())
 		  .group("dreamland").unlockedBy("kunzite_point", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandBlocks.KUNZITE_POINT.item().get())).save(consumer);
 		  
+		  ShapedRecipeBuilder.shaped(DreamlandItems.BREATHER_HELMET.get(), 1)
+		  .pattern(" H ")
+		  .pattern("#L#")
+		  .define('#', DreamlandItems.CRYSTALIZED_PURITY.get())
+		  .define('H', Items.LEATHER_HELMET)
+		  .define('L', Tags.Items.LEATHER)
+		  .group("dreamland").unlockedBy("crystalized_purity", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandItems.CRYSTALIZED_PURITY.get())).save(consumer);
+		  
+		  ShapedRecipeBuilder.shaped(DreamlandItems.NECRATHENE_BOOTS.get(), 1)
+		  .pattern("# #")
+		  .pattern("# #")
+		  .define('#', DreamlandItems.NECRATHENE_INGOT.get())
+		  .group("dreamland").unlockedBy("necrathene_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandItems.NECRATHENE_INGOT.get())).save(consumer);
+		  
+		  ShapedRecipeBuilder.shaped(DreamlandItems.NECRATHENE_CHESTPLATE.get(), 1)
+		  .pattern("# #")
+		  .pattern("###")
+		  .pattern("###")
+		  .define('#', DreamlandItems.NECRATHENE_INGOT.get())
+		  .group("dreamland").unlockedBy("necrathene_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandItems.NECRATHENE_INGOT.get())).save(consumer);
+		  
+		  ShapedRecipeBuilder.shaped(DreamlandItems.NECRATHENE_LEGGINGS.get(), 1)
+		  .pattern("###")
+		  .pattern("# #")
+		  .pattern("# #")
+		  .define('#', DreamlandItems.NECRATHENE_INGOT.get())
+		  .group("dreamland").unlockedBy("necrathene_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandItems.NECRATHENE_INGOT.get())).save(consumer);
+		  
+		  UpgradeRecipeBuilder.smithing(Ingredient.of(DreamlandItems.BREATHER_HELMET.get()), Ingredient.of(DreamlandItems.NECRATHENE_INGOT.get()), DreamlandItems.NECRATHENE_BREATHER_HELMET.get()).unlocks("has_necrathene_ingot", has(DreamlandItems.NECRATHENE_INGOT.get())).save(consumer, "breather_helmet_smithing");
+		  
+		  ShapedRecipeBuilder.shaped(Items.POTATO, 1)
+		  .pattern(" # ")
+		  .pattern("#P#")
+		  .pattern(" # ")
+		  .define('#', DreamlandBlocks.PURIFIED_DUST.item().get())
+		  .define('P', Items.POISONOUS_POTATO)
+		  .group("dreamland").unlockedBy("purified_dust", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandBlocks.PURIFIED_DUST.item().get())).save(consumer);
+		  
+		  ShapedRecipeBuilder.shaped(Items.BEEF, 1)
+		  .pattern(" # ")
+		  .pattern("#R#")
+		  .pattern(" # ")
+		  .define('#', DreamlandBlocks.PURIFIED_DUST.item().get())
+		  .define('R', Items.ROTTEN_FLESH)
+		  .group("dreamland").unlockedBy("purified_dust", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandBlocks.PURIFIED_DUST.item().get())).save(consumer);
+		  
+		  ShapedRecipeBuilder.shaped(Items.COD, 1)
+		  .pattern(" # ")
+		  .pattern("#P#")
+		  .pattern(" # ")
+		  .define('#', DreamlandBlocks.PURIFIED_DUST.item().get())
+		  .define('P', Items.POISONOUS_POTATO)
+		  .group("dreamland").unlockedBy("purified_dust", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandBlocks.PURIFIED_DUST.item().get())).save(consumer);
+		  
+		  ShapedRecipeBuilder.shaped(Items.DIRT, 1)
+		  .pattern(" # ")
+		  .pattern("#S#")
+		  .pattern(" # ")
+		  .define('#', DreamlandBlocks.PURIFIED_DUST.item().get())
+		  .define('S', Items.SCULK)
+		  .group("dreamland").unlockedBy("purified_dust", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandBlocks.PURIFIED_DUST.item().get())).save(consumer);
+		  
+		  ShapedRecipeBuilder.shaped(Items.SLIME_BALL, 1)
+		  .pattern(" # ")
+		  .pattern("#O#")
+		  .pattern(" # ")
+		  .define('#', DreamlandBlocks.PURIFIED_DUST.item().get())
+		  .define('O', DreamlandItems.OOZE_BALL.get())
+		  .group("dreamland").unlockedBy("purified_dust", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandBlocks.PURIFIED_DUST.item().get())).save(consumer);
 		  
 		  slabBuilder(DreamlandBlocks.OPAL_SLAB.item().get(),
 				  Ingredient.of(DreamlandBlocks.OPAL_TILE.item().get())).group("dreamland").unlockedBy("opal_tile", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandBlocks.OPAL_TILE.item().get())).save(consumer);
@@ -212,6 +282,7 @@ public class DreamlandRecipes extends RecipeProvider{
 		  
 		  createWoodSetRecipes(consumer, DreamlandWoodSets.PLUM_BIRCH);
 		  createWoodSetRecipes(consumer, DreamlandWoodSets.TAR_BARK);
+		  createWoodSetRecipes(consumer, DreamlandWoodSets.MOLD_WOOD);
 		  
 		  createOreSmeltingRecipe(consumer, DreamlandBlocks.HIVE_COPPER.item().get(), Items.COPPER_INGOT, 0.7F, 200, "hive_copper_to_ingot");
 		  createOreSmeltingRecipe(consumer, DreamlandBlocks.HIVE_IRON.item().get(), Items.IRON_INGOT, 0.7F, 200, "hive_iron_to_ingot");
@@ -226,6 +297,11 @@ public class DreamlandRecipes extends RecipeProvider{
 		  createOreSmeltingRecipe(consumer, DreamlandBlocks.KUNZITE_LAPIS_ORE.item().get(), Items.LAPIS_LAZULI, 0.2F, 200, "kunzite_lapis_to_gem");
 		  createOreSmeltingRecipe(consumer, DreamlandBlocks.KUNZITE_EMERALD_ORE.item().get(), Items.EMERALD, 1.0F, 200, "kunzite_emerald_to_gem");
 		  createOreSmeltingRecipe(consumer, DreamlandBlocks.KUNZITE_DIAMOND_ORE.item().get(), Items.DIAMOND, 1.0F, 200, "kunzite_diamond_to_gem");
+		  
+		  createOreSmeltingRecipe(consumer, DreamlandBlocks.NECRATHENE_ORE.item().get(), DreamlandItems.NECRATHENE_INGOT.get(), 1.0F, 200, "necrathene_ore_to_ingot");
+		  createOreSmeltingRecipe(consumer, DreamlandItems.RAW_NECRATHENE.get(), DreamlandItems.NECRATHENE_INGOT.get(), 1.0F, 200, "raw_necrathene_to_ingot");
+		  createOreSmeltingRecipe(consumer, DreamlandBlocks.PURITY_ORE.item().get(), DreamlandItems.CRYSTALIZED_PURITY.get(), 0.7F, 200, "purity_ore_to_crystalize_purity");
+		  
 	}
 	
 	private void createWoodSetRecipes(Consumer<FinishedRecipe> consumer, WoodSet set) {
@@ -281,7 +357,7 @@ public class DreamlandRecipes extends RecipeProvider{
 	}
 	
 	private void createOreSmeltingRecipe(Consumer<FinishedRecipe> consumer, Item input, Item output, float xp, int time, String name) {
-		  SimpleCookingRecipeBuilder.smelting(Ingredient.of(input), 
+		  SimpleCookingRecipeBuilder.smelting(Ingredient.of(input),
 				  output, xp, time) 
 		  .unlockedBy("has_ore", has(input))
 		  .save(consumer, name);

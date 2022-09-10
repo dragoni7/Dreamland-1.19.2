@@ -4,9 +4,10 @@ import java.util.function.Supplier;
 
 import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.common.items.BreatherHelmetArmorItem;
+import com.github.dragoni7.dreamland.common.items.CrystalizedPurityItem;
 import com.github.dragoni7.dreamland.common.items.HiveJellyItem;
 import com.github.dragoni7.dreamland.common.items.LarvaSymbioteArmorItem;
-import com.github.dragoni7.dreamland.common.items.NecratheneBreatherArmorItem;
+import com.github.dragoni7.dreamland.common.items.NecratheneArmorItem;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EntityType;
@@ -44,12 +45,15 @@ public class DreamlandItems {
 	
 	public static final RegistryObject<Item> RAW_NECRATHENE = registerBasicItem("raw_necrathene");
 	public static final RegistryObject<Item> NECRATHENE_INGOT = registerBasicItem("necrathene_ingot");
-	public static final RegistryObject<Item> CRYSTALIZED_PURITY = registerBasicItem("crystalized_purity");
+	public static final RegistryObject<Item> CRYSTALIZED_PURITY = ITEMS.register("crystalized_purity", () -> new CrystalizedPurityItem(new Item.Properties().tab(Dreamland.DreamlandTab)));
 	
 	//Armor
 	public static final RegistryObject<Item> LARVA_HELMET = ITEMS.register("larva_symbiote", () -> new LarvaSymbioteArmorItem(DreamlandArmorMaterials.LARVA, EquipmentSlot.HEAD, new Item.Properties().rarity(Rarity.RARE).tab(Dreamland.DreamlandTab)));
 	public static final RegistryObject<Item> BREATHER_HELMET = ITEMS.register("breather_helmet", () -> new BreatherHelmetArmorItem(ArmorMaterials.LEATHER, EquipmentSlot.HEAD, new Item.Properties().tab(Dreamland.DreamlandTab)));
-	public static final RegistryObject<Item> NECRATHENE_BREATHER_HELMET = ITEMS.register("necrathene_breather_helmet", () -> new NecratheneBreatherArmorItem(DreamlandArmorMaterials.NECRATHENE, EquipmentSlot.HEAD, new Item.Properties().tab(Dreamland.DreamlandTab)));
+	public static final RegistryObject<Item> NECRATHENE_BREATHER_HELMET = ITEMS.register("necrathene_breather_helmet", () -> new NecratheneArmorItem(DreamlandArmorMaterials.NECRATHENE, EquipmentSlot.HEAD, new Item.Properties().tab(Dreamland.DreamlandTab)));
+	public static final RegistryObject<Item> NECRATHENE_CHESTPLATE = ITEMS.register("necrathene_chestplate", () -> new NecratheneArmorItem(DreamlandArmorMaterials.NECRATHENE, EquipmentSlot.CHEST, new Item.Properties().tab(Dreamland.DreamlandTab)));
+	public static final RegistryObject<Item> NECRATHENE_LEGGINGS = ITEMS.register("necrathene_leggings", () -> new NecratheneArmorItem(DreamlandArmorMaterials.NECRATHENE, EquipmentSlot.LEGS, new Item.Properties().tab(Dreamland.DreamlandTab)));
+	public static final RegistryObject<Item> NECRATHENE_BOOTS = ITEMS.register("necrathene_boots", () -> new NecratheneArmorItem(DreamlandArmorMaterials.NECRATHENE, EquipmentSlot.FEET, new Item.Properties().tab(Dreamland.DreamlandTab)));
 	
 	//Spawn Eggs
 	public static final RegistryObject<Item> SPAWN_EGG_LARVA = registerSpawnEgg("spawn_egg_larva", () -> DreamlandEntities.LARVA.get(), 0Xa9f8fc, 0X2c2870);

@@ -1,0 +1,16 @@
+{
+    "name": "Breather Helmet",
+    "icon": "dreamland:breather_helmet",
+    "category": "dreamland:items",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "The breather helmet, crafted out of leather and crystalized purity, is able to protect the wearing from the harmful air of the toxic jungle, enabling healing in the biome once more."
+        },
+
+        {
+            "type": "patchouli:spotlight",
+            "item": "dreamland:breather_helmet"
+        }
+    ]
+}

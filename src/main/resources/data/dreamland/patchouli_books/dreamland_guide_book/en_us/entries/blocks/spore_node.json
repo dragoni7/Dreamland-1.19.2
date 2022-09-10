@@ -1,0 +1,16 @@
+{
+    "name": "Spore Node",
+    "icon": "dreamland:spore_node",
+    "category": "dreamland:blocks",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "These large growths of mold periodically spurt toxic spores into the care. Standing near one will surely not be healthy"
+        },
+
+        {
+            "type": "patchouli:spotlight",
+            "item": "dreamland:spore_node"
+        }
+    ]
+}

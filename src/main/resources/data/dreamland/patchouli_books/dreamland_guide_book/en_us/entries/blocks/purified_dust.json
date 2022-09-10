@@ -1,0 +1,16 @@
+{
+    "name": "Purified Dust",
+    "icon": "dreamland:purified_dust",
+    "category": "dreamland:blocks",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "This dust can be found in carpets deep underground the toxic jungle. This dust is capable of transmuting certain poisonus or dangerous items into more useable form. Some believe it to be the wood dust of dead trees from the jungle"
+        },
+
+        {
+            "type": "patchouli:spotlight",
+            "item": "dreamland:purified_dust"
+        }
+    ]
+}

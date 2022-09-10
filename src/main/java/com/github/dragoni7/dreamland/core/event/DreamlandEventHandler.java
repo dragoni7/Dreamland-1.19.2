@@ -48,6 +48,7 @@ public class DreamlandEventHandler {
 		forgeBus.addListener(DreamlandEventHandler::entityHitLarvaSymbiote);
 		forgeBus.addListener(DreamlandEventHandler::onLarvaAttacked);
 		forgeBus.addListener(DreamlandEventHandler::toxicJunglePreventHeal);
+		forgeBus.addListener(DreamlandEventHandler::necratheneArmorDamageReduction);
 	}
 		
 	public static void addAttributes(EntityAttributeCreationEvent event) {
@@ -125,6 +126,21 @@ public class DreamlandEventHandler {
 					{
 						larva.setPos(target.position());
 						level.addFreshEntity(larva);
+					}
+				}
+			}
+		}
+	}
+	
+	public static void necratheneArmorDamageReduction(LivingHurtEvent event) {
+		LivingEntity entity = event.getEntity();
+		if (entity.getItemBySlot(EquipmentSlot.HEAD).is(DreamlandItems.NECRATHENE_BREATHER_HELMET.get()) && entity.getItemBySlot(EquipmentSlot.CHEST).is(DreamlandItems.NECRATHENE_CHESTPLATE.get()) && entity.getItemBySlot(EquipmentSlot.LEGS).is(DreamlandItems.NECRATHENE_LEGGINGS.get()) && entity.getItemBySlot(EquipmentSlot.FEET).is(DreamlandItems.NECRATHENE_BOOTS.get())) {
+			if (entity.getHealth() <= event.getAmount()) {
+				if (entity instanceof Player) {
+					int foodLevel = ((Player) entity).getFoodData().getFoodLevel();
+					if (foodLevel > 0) {
+						((Player)entity).causeFoodExhaustion(20.0F);
+						event.setCanceled(true);
 					}
 				}
 			}

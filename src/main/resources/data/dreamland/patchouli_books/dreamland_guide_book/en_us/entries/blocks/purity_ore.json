@@ -1,0 +1,16 @@
+{
+    "name": "Purity Ore",
+    "icon": "dreamland:purity_ore",
+    "category": "dreamland:blocks",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "Ore found deep underground the toxic jungle. The crystals growing within are said to be able to cleanse certain blocks such as mold or sculk"
+        },
+
+        {
+            "type": "patchouli:spotlight",
+            "item": "dreamland:crystalized_purity"
+        }
+    ]
+}

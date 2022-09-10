@@ -113,6 +113,53 @@ public class AddItemTags extends ItemTagsProvider {
 		.add(DreamlandItems.BREATHER_HELMET.get())
 		.add(DreamlandItems.NECRATHENE_BREATHER_HELMET.get());
 		
+		tag(Tags.Items.ARMORS_BOOTS)
+		.add(DreamlandItems.NECRATHENE_BOOTS.get());
+		tag(Tags.Items.ARMORS_LEGGINGS)
+		.add(DreamlandItems.NECRATHENE_LEGGINGS.get());
+		tag(Tags.Items.ARMORS_CHESTPLATES)
+		.add(DreamlandItems.NECRATHENE_CHESTPLATE.get());
+		tag(Tags.Items.ARMORS_HELMETS)
+		.add(DreamlandItems.BREATHER_HELMET.get())
+		.add(DreamlandItems.NECRATHENE_BREATHER_HELMET.get())
+		.add(DreamlandItems.LARVA_HELMET.get());
+		
+		tag(Tags.Items.ARMORS)
+		.add(DreamlandItems.BREATHER_HELMET.get())
+		.add(DreamlandItems.LARVA_HELMET.get())
+		.add(DreamlandItems.NECRATHENE_BREATHER_HELMET.get())
+		.add(DreamlandItems.NECRATHENE_BOOTS.get())
+		.add(DreamlandItems.NECRATHENE_CHESTPLATE.get())
+		.add(DreamlandItems.NECRATHENE_CHESTPLATE.get());
+		
+		tag(DreamlandItemTags.RAW_MATERIAL_NECRATHENE)
+		.add(DreamlandItems.RAW_NECRATHENE.get());
+		
+		tag(Tags.Items.RAW_MATERIALS)
+		.add(DreamlandItems.RAW_NECRATHENE.get());
+		
+		tag(DreamlandItemTags.CRYSTALIZED_PURITY)
+		.add(DreamlandItems.CRYSTALIZED_PURITY.get());
+		
+		tag(DreamlandItemTags.INGOTS_NECRATHENE)
+		.add(DreamlandItems.NECRATHENE_INGOT.get());
+		
+		tag(Tags.Items.INGOTS)
+		.add(DreamlandItems.NECRATHENE_INGOT.get());
+		
+		tag(DreamlandItemTags.NECRATHENE_ORE)
+		.add(DreamlandBlocks.NECRATHENE_ORE.item().get());
+		
+		tag(DreamlandItemTags.PURITY_ORE)
+		.add(DreamlandBlocks.PURITY_ORE.item().get());
+		
+		tag(Tags.Items.ORES)
+		.add(DreamlandBlocks.NECRATHENE_ORE.item().get())
+		.add(DreamlandBlocks.PURITY_ORE.item().get());
+		
+		tag(DreamlandWoodSets.MOLD_WOOD.getlogItemTag())
+		.add(DreamlandBlocks.GLOWING_MOLD_WOOD.item().get());
+		
 		addCopperOreItemTags(DreamlandBlocks.KUNZITE_COPPER_ORE.item().get());
 		addIronOreItemTags(DreamlandBlocks.KUNZITE_IRON_ORE.item().get());
 		addEmeraldOreItemTags(DreamlandBlocks.KUNZITE_EMERALD_ORE.item().get());

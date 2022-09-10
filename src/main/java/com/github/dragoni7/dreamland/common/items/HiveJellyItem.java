@@ -14,8 +14,8 @@ import net.minecraft.world.level.Level;
 
 public class HiveJellyItem extends Item {
 
-	public HiveJellyItem(Properties p_41383_) {
-		super(p_41383_);
+	public HiveJellyItem(Properties properties) {
+		super(properties);
 	}
 	
 	@Override

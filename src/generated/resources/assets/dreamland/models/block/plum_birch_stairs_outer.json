@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "dreamland:block/plum_birch_planks",
-    "side": "dreamland:block/plum_birch_planks",
-    "top": "dreamland:block/plum_birch_planks"
-  }
-}

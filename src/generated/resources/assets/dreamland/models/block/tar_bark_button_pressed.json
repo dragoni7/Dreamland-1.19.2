@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/button_pressed",
-  "textures": {
-    "texture": "dreamland:block/tar_bark_planks"
-  }
-}

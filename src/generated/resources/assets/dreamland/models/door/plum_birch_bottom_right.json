@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/door_bottom_right",
-  "render_type": "minecraft:cutout_mipped",
-  "textures": {
-    "bottom": "dreamland:block/plum_birch_door_bottom",
-    "top": "dreamland:block/plum_birch_door_top"
-  }
-}

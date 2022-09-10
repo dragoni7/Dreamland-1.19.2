@@ -115,6 +115,9 @@ public class DreamlandItemModels extends ItemModelProvider {
 		singleTextureItemModel(DreamlandItems.CRYSTALIZED_PURITY, "item/crystalized_purity");
 		singleTextureItemModel(DreamlandItems.BREATHER_HELMET, "item/breather_helmet");
 		singleTextureItemModel(DreamlandItems.NECRATHENE_BREATHER_HELMET, "item/necrathene_breather_helmet");
+		singleTextureItemModel(DreamlandItems.NECRATHENE_BOOTS, "item/necrathene_boots");
+		singleTextureItemModel(DreamlandItems.NECRATHENE_CHESTPLATE, "item/necrathene_chestplate");
+		singleTextureItemModel(DreamlandItems.NECRATHENE_LEGGINGS, "item/necrathene_leggings");
 		
 		singleTextureItemModel(DreamlandBlocks.GOLD_FRONDS.item(), "block/gold_fronds");
 		singleTextureItemModel(DreamlandBlocks.KUNZITE_POINT.item(), "block/kunzite_point_end");

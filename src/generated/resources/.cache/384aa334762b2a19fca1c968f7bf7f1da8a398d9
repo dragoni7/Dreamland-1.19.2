@@ -1,4 +1,4 @@
-// 1.19.2	2022-09-08T22:33:58.6329595	Item Models: dreamland
+// 1.19.2	2022-09-09T15:03:58.1449498	Item Models: dreamland
 02a6524eeaab96334111ffc9f8953b1693e4f0ef assets/dreamland/models/item/ancient_egg.json
 4fb267762954b517ed71652604e2dcced065fba9 assets/dreamland/models/item/black_mold.json
 1ad253bb878c44ee03afc1c5198c29e0035a59a6 assets/dreamland/models/item/bowl_of_jelly.json
@@ -74,8 +74,11 @@ be2bc6123c105e14d77e1f76649f689b034bf4d3 assets/dreamland/models/item/mold_wood_
 152eb9d5665a4a1ef2ba04f019fae39870936d33 assets/dreamland/models/item/mold_wood_stripped_wood.json
 1a231bbf62c90aebda62bd7061acb19d9d4edf60 assets/dreamland/models/item/mold_wood_trapdoor.json
 15fd6efc2ae454ff3b70b60cc43f78258bfb6871 assets/dreamland/models/item/mold_wood_wood.json
+f1eac0d43c14375cb04fc0ab76930c5bd08385f5 assets/dreamland/models/item/necrathene_boots.json
 77677eebcecca623bdcf771c011e2e326725c69f assets/dreamland/models/item/necrathene_breather_helmet.json
+ed9a30cedd35c0dd3ffa76299d6a171a00990582 assets/dreamland/models/item/necrathene_chestplate.json
 036f38f865bfdb7ee69af7c811fadf79e728a36c assets/dreamland/models/item/necrathene_ingot.json
+8016165b751aadd86a2887e9dbb6cad3715a9689 assets/dreamland/models/item/necrathene_leggings.json
 b8c02f27bd07a0e84e08e7d3fb073ed233f042a8 assets/dreamland/models/item/necrathene_ore.json
 493db635b4a6024f30e9a75d78e9250ea9b50f1d assets/dreamland/models/item/ooze_ball.json
 f9b0e774652506fe14ebc8866644d5c3e1ea6b60 assets/dreamland/models/item/ooze_pie.json

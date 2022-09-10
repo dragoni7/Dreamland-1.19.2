@@ -1,0 +1,16 @@
+{
+    "name": "Necrathene Ore ",
+    "icon": "dreamland:necrathene_ore",
+    "category": "dreamland:blocks",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "A rare ore found in porous stone or petrified vegitation. Has high reslience"
+        },
+
+        {
+            "type": "patchouli:spotlight",
+            "item": "dreamland:raw_necrathene"
+        }
+    ]
+}

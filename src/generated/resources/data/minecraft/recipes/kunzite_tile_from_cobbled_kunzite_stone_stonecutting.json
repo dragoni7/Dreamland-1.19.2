@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "dreamland:cobbled_kunzite_stone"
-  },
-  "result": "dreamland:kunzite_tile"
-}

@@ -8,7 +8,7 @@ import com.github.dragoni7.dreamland.client.particles.WhitePollenParticle;
 import com.github.dragoni7.dreamland.client.render.*;
 import com.github.dragoni7.dreamland.common.items.BreatherHelmetArmorItem;
 import com.github.dragoni7.dreamland.common.items.LarvaSymbioteArmorItem;
-import com.github.dragoni7.dreamland.common.items.NecratheneBreatherArmorItem;
+import com.github.dragoni7.dreamland.common.items.NecratheneArmorItem;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEntities;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
@@ -62,7 +62,7 @@ public class DreamlandClientEventHandler {
 	private static void registerArmorRenders(final EntityRenderersEvent.AddLayers event) {
 		GeoArmorRenderer.registerArmorRenderer(LarvaSymbioteArmorItem.class, new LarvaSymbioteRenderer());
 		GeoArmorRenderer.registerArmorRenderer(BreatherHelmetArmorItem.class, new BreatherHelmetRenderer());
-		GeoArmorRenderer.registerArmorRenderer(NecratheneBreatherArmorItem.class, new NecratheneBreatherRenderer());
+		GeoArmorRenderer.registerArmorRenderer(NecratheneArmorItem.class, new NecratheneArmorRenderer());
 	}
 	
 	private static void registerBlockColors(final RegisterColorHandlersEvent.Block event) {

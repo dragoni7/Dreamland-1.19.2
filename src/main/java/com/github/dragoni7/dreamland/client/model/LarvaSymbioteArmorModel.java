@@ -20,7 +20,7 @@ public class LarvaSymbioteArmorModel extends AnimatedGeoModel<LarvaSymbioteArmor
 
 	@Override
 	public ResourceLocation getTextureResource(LarvaSymbioteArmorItem object) {
-		return DreamlandLoc.createLoc("textures/item/larva_symbiote.png");
+		return DreamlandLoc.createLoc("textures/model/armor/larva_symbiote.png");
 	}
 
 }

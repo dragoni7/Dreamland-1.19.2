@@ -9,6 +9,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
@@ -96,6 +97,8 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.POROUS_STONE.block().get())
 		.add(DreamlandBlocks.OVERGROWN_POROUS_STONE.block().get())
 		.add(DreamlandBlocks.PURE_STONE.block().get())
+		.add(DreamlandBlocks.NECRATHENE_ORE.block().get())
+		.add(DreamlandBlocks.PURITY_ORE.block().get())
 		.add(DreamlandBlocks.KUNZITE_STONE.block().get())
 		.add(DreamlandBlocks.COBBLED_KUNZITE_STONE.block().get())
 		.add(DreamlandBlocks.KUNZITE_BRICKS.block().get())
@@ -184,6 +187,7 @@ public class AddBlockTags extends BlockTagsProvider {
 		
 		tag(BlockTags.NEEDS_IRON_TOOL)
 		.add(DreamlandBlocks.PURE_STONE.block().get())
+		.add(DreamlandBlocks.PURITY_ORE.block().get())
 		.add(DreamlandBlocks.KUNZITE_POINT.block().get())
 		.add(DreamlandBlocks.KUNZITE_POINT_BLOCK.block().get())
 		.add(DreamlandBlocks.KUNZITE_BARS.block().get())
@@ -196,6 +200,7 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.FOSSILIZED_EGG.block().get());
 		
 		tag(BlockTags.NEEDS_DIAMOND_TOOL)
+		.add(DreamlandBlocks.NECRATHENE_ORE.block().get())
 		.add(DreamlandBlocks.HIVE_WEAVER.block().get())
 		.add(DreamlandBlocks.PRECIOUS_OPAL_BLOCK.block().get());
 		
@@ -299,6 +304,26 @@ public class AddBlockTags extends BlockTagsProvider {
 		.addTag(BlockTags.LOGS)
 		.addTag(BlockTags.CROPS)
 		.addTag(BlockTags.LEAVES);
+		
+		tag(Tags.Blocks.ORES)
+		.add(DreamlandBlocks.PURITY_ORE.block().get())
+		.add(DreamlandBlocks.NECRATHENE_ORE.block().get());
+		
+		tag(DreamlandBlockTags.ORES_NECRATHENE)
+		.add(DreamlandBlocks.NECRATHENE_ORE.block().get());
+		
+		tag(DreamlandBlockTags.ORES_PURITY)
+		.add(DreamlandBlocks.PURITY_ORE.block().get());
+		
+		tag(DreamlandWoodSets.MOLD_WOOD.getlogBlockTag())
+		.add(DreamlandBlocks.GLOWING_MOLD_WOOD.block().get());
+		
+		tag(DreamlandBlockTags.PURIFIABLE_BLOCKS)
+		.add(DreamlandBlocks.BLACK_MOLD.block().get())
+		.add(DreamlandBlocks.WHITE_MOLD.block().get())
+		.add(DreamlandBlocks.SPORE_NODE.block().get())
+		.add(Blocks.SCULK)
+		.add(Blocks.SCULK_VEIN);
 		
 		addWoodSetTags(DreamlandWoodSets.PLUM_BIRCH);
 		addWoodSetTags(DreamlandWoodSets.TAR_BARK);

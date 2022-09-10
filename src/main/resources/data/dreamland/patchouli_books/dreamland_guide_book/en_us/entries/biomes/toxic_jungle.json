@@ -1,0 +1,17 @@
+{
+    "name": "Toxic Jungle",
+    "icon": "dreamland:white_mold",
+    "category": "dreamland:biomes",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "$(bold)Biome Name:$() $(3)Toxic Jungle$() $(br)$(bold)Danger Level$(): $(4)high$() $(br)$(bold)Description$():$(br)The toxic jungle is mysterious mold infested biome located where jungles typically are found. This mold seems to naturally spread at a slow rate, therefore care must be taken when extracting mold samples from the biome. Due to the density of mold spores in the air, healing is crippled while in the biome. The toxic environment seems to have allowed unique minerals to develope in the ground. Some claim to have found breathable air deep underneath the jungle..."
+        },
+
+        {
+            "type": "patchouli:image",
+            "images": ["dreamland:textures/gui/entries/toxic_jungle_biome.png"],
+            "border": true
+        }
+    ]
+}

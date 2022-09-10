@@ -38,14 +38,14 @@ Enhances your Overworld exploration experience with the addition of a few fantas
 [[dependencies.terrablender]]
     modId = "terrablender"
     mandatory = true
-    versionRange = "[2.0.0.125,)"
+    versionRange = "[2.0.0.127,)"
     ordering = "AFTER"
     side = "BOTH"
 
 [[dependencies.geckolib]]
     modId = "geckolib3"
     mandatory = true
-    versionRange = "[3.1.16,)"
+    versionRange = "[3.1.19,)"
     ordering = "BEFORE"
     side = "BOTH"
 

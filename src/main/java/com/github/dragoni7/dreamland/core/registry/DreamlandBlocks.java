@@ -230,9 +230,9 @@ public class DreamlandBlocks {
 	
 	// --------------Toxic Jungle Blocks--------------
 	
-	public static final BlockItemSet WHITE_MOLD = new BlockItemSet("white_mold", () -> new MoldBlock(BlockBehaviour.Properties.of(Material.DIRT, MaterialColor.COLOR_LIGHT_BLUE).sound(SoundType.MOSS).strength(0.1F).noOcclusion().isViewBlocking(DreamlandBlocks::always).randomTicks()));
+	public static final BlockItemSet WHITE_MOLD = new BlockItemSet("white_mold", () -> new MoldBlock(BlockBehaviour.Properties.of(Material.DIRT, MaterialColor.COLOR_LIGHT_BLUE).sound(SoundType.MOSS).strength(1.0F).noOcclusion().isViewBlocking(DreamlandBlocks::always).randomTicks()));
 	public static final BlockItemSet WHITE_MOLD_CARPET = new BlockItemSet("white_mold_carpet", () -> new CarpetBlock(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.COLOR_LIGHT_BLUE).strength(0.1F).sound(SoundType.MOSS_CARPET)));
-	public static final BlockItemSet BLACK_MOLD = new BlockItemSet("black_mold", () -> new MoldBlock(BlockBehaviour.Properties.of(Material.DIRT, MaterialColor.COLOR_BLACK).sound(SoundType.MOSS).strength(0.3F).noOcclusion().isViewBlocking(DreamlandBlocks::always).randomTicks()));
+	public static final BlockItemSet BLACK_MOLD = new BlockItemSet("black_mold", () -> new MoldBlock(BlockBehaviour.Properties.of(Material.DIRT, MaterialColor.COLOR_BLACK).sound(SoundType.MOSS).strength(1.1F).noOcclusion().isViewBlocking(DreamlandBlocks::always).randomTicks()));
 	public static final BlockItemSet BLACK_MOLD_CARPET = new BlockItemSet("black_mold_carpet", () -> new CarpetBlock(BlockBehaviour.Properties.of(Material.PLANT, MaterialColor.COLOR_BLACK).strength(0.2F).sound(SoundType.MOSS_CARPET)));
 	public static final BlockItemSet POROUS_STONE = new BlockItemSet("porous_stone", () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE).sound(SoundType.CALCITE).requiresCorrectToolForDrops().strength(1.2F, 5.2F)));
 	public static final BlockItemSet OVERGROWN_POROUS_STONE = new BlockItemSet("overgrown_porous_stone", () -> new Block(BlockBehaviour.Properties.copy(POROUS_STONE.block().get())));

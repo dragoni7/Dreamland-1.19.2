@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "ingredient": {
+    "item": "dreamland:purity_ore"
+  },
+  "result": "dreamland:crystalized_purity"
+}

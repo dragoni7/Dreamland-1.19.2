@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "dreamland",
+  "ingredients": [
+    {
+      "item": "dreamland:mold_wood_planks"
+    }
+  ],
+  "result": {
+    "item": "dreamland:mold_wood_button"
+  }
+}

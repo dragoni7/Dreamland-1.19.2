@@ -3,7 +3,7 @@
   "group": "dreamland",
   "key": {
     "#": {
-      "item": "dreamland:precious_opal"
+      "tag": "forge:gems/precious_opal"
     }
   },
   "pattern": [

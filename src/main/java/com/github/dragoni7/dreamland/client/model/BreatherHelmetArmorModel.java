@@ -21,7 +21,7 @@ public class BreatherHelmetArmorModel extends AnimatedGeoModel<BreatherHelmetArm
 
 	@Override
 	public ResourceLocation getTextureResource(BreatherHelmetArmorItem object) {
-		return DreamlandLoc.createLoc("textures/item/breather.png");
+		return DreamlandLoc.createLoc("textures/model/armor/breather.png");
 	}
 
 }

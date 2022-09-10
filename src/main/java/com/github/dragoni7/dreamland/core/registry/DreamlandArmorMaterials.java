@@ -15,7 +15,7 @@ public enum DreamlandArmorMaterials implements ArmorMaterial {
 	      return Ingredient.of(DreamlandItems.HIVE_JELLY_ITEM.get());
 	   }),
 	
-	NECRATHENE("necrathene", 39, new int[]{4, 6, 8, 3}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 4.0F, 0.0F, () -> {
+	NECRATHENE("necrathene", 39, new int[]{4, 6, 8, 3}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 2.0F, 0.0F, () -> {
 	      return Ingredient.of(DreamlandItems.NECRATHENE_INGOT.get());
 	   });
 	

@@ -1,0 +1,16 @@
+{
+    "name": "Necrathene Armor",
+    "icon": "dreamland:necrathene_breather_helmet",
+    "category": "dreamland:items",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "The necrathene armor set is made out of the necrathene in the toxic jungle. Gathering the resource may be difficult but the payoff is an armor set that consumes hunger to prevent lethal damage. The helmet also functions the same as the breather helmet. The entire set must be worn to use the effects"
+        },
+
+        {
+            "type": "patchouli:spotlight",
+            "item": "dreamland:necrathene_breather_helmet"
+        }
+    ]
+}

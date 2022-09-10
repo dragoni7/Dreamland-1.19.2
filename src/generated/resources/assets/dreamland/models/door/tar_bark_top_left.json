@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/door_top_left",
-  "render_type": "minecraft:cutout_mipped",
-  "textures": {
-    "bottom": "dreamland:block/tar_bark_door_bottom",
-    "top": "dreamland:block/tar_bark_door_top"
-  }
-}

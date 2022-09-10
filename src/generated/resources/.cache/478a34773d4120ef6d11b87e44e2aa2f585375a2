@@ -1,21 +1,24 @@
-// 1.19.2	2022-09-08T17:53:42.7975754	Dreamland Block Tags
+// 1.19.2	2022-09-09T16:12:42.5285492	Dreamland Block Tags
 8f1de98b3239009a155cb9246d22c3c197c86c85 data/dreamland/tags/blocks/fossilized_egg_replaceable.json
 9168b95796707296915d8fd7e0eb6a8ed53ec2af data/dreamland/tags/blocks/hive_ores_replaceable.json
 71bad7c22aa32e3e318743aa633d3cfc5568cff7 data/dreamland/tags/blocks/kunzite_ores_replaceable.json
 671cc18b31f9a8845655f0bb90efb34e094a4067 data/dreamland/tags/blocks/mold_spreadables.json
-1aead4ee5d4efc69e5d99090cf1e76a8405098d2 data/dreamland/tags/blocks/mold_wood_logs.json
+181064cf67fcc2379a22b7a5840408365287b6d2 data/dreamland/tags/blocks/mold_wood_logs.json
 1504a29793eb0742245f0810e39f432221ce01b5 data/dreamland/tags/blocks/necrathene_replaceable.json
 37de7720c2909e0b72df14405ff130b54775d875 data/dreamland/tags/blocks/plum_birch_logs.json
+59cf1a4146231401a0eb86adec6dd2ef32a72af2 data/dreamland/tags/blocks/purifiable_blocks.json
 9257c2274b2cce2592aa09f9302c55b316fc2215 data/dreamland/tags/blocks/purity_replaceable.json
 0a1006000c66cd8a50db30be6604d4d11566ff00 data/dreamland/tags/blocks/tar_bark_logs.json
 0fdb02f17b3275eeec51fbf01e78476a2bf0ebf0 data/forge/tags/blocks/cobblestone.json
-38db8eb4631fd21d308ff814c18d9683a889a2ab data/forge/tags/blocks/ores.json
+f3f654d52dd505d63d16bdc5ec70f42da2eb8336 data/forge/tags/blocks/ores.json
 50eea08ab78b3d30f883daed4bfac60c1f8e9332 data/forge/tags/blocks/ores/copper.json
 f695859b28bc9cd943135acf7af7d435f87a1c97 data/forge/tags/blocks/ores/diamond.json
 801ae1c86e82c756539f20c5754c1f3371ffe767 data/forge/tags/blocks/ores/emerald.json
 3e9eee36315921fecf8023a5c40ab117600d88ec data/forge/tags/blocks/ores/gold.json
 771f3b8606b2c32d4bf7d77d3e8d4b3bdfa491bf data/forge/tags/blocks/ores/iron.json
 e7db9559c55962253c1949dcbbd8fcf36dec22d4 data/forge/tags/blocks/ores/lapis.json
+e0a2716e7f499cf6982aa74dfd58c83f9b4fedbd data/forge/tags/blocks/ores/necrathene.json
+955ad8533cf6b6b1efb6df19c705f3199b7cc012 data/forge/tags/blocks/ores/purity.json
 dfc4cb7983ac37ae8bdc211fa65ffb72994c94d7 data/forge/tags/blocks/ores/redstone.json
 0220d6b5164a83e264bea6f8d37b9e7206af2bb0 data/forge/tags/blocks/stone.json
 bafa07bd98a726d6e4e1d1cb03f21c5b11a64397 data/forge/tags/blocks/storage_blocks.json
@@ -47,11 +50,11 @@ e7db9559c55962253c1949dcbbd8fcf36dec22d4 data/minecraft/tags/blocks/lapis_ores.j
 fa055d147fa86637ff6937ec295cb02bab52dd3e data/minecraft/tags/blocks/logs.json
 fa055d147fa86637ff6937ec295cb02bab52dd3e data/minecraft/tags/blocks/logs_that_burn.json
 e29ba4f9084d634cc1952a29d5896c9c12d4bff6 data/minecraft/tags/blocks/mineable/axe.json
-0d6137fba8020bd3c432756c4ca7403f13a65ef9 data/minecraft/tags/blocks/mineable/pickaxe.json
+6a3df4f7d73849c5095e4193b1024f9b1d7735a5 data/minecraft/tags/blocks/mineable/pickaxe.json
 edd349a5bb303e4e1634a09907dd123d1ffc8531 data/minecraft/tags/blocks/mineable/shovel.json
 59faf5fd0c508d40887f49f553956c40919694b8 data/minecraft/tags/blocks/mushroom_grow_block.json
-3719297f8c168fbb0b5b3e02d37590cf7a3702a5 data/minecraft/tags/blocks/needs_diamond_tool.json
-30c1bb0a87588e32b4a1847af1b67eddb9b8abc1 data/minecraft/tags/blocks/needs_iron_tool.json
+34e80d8507e80498e7e43f4fa76c8ccd2a400417 data/minecraft/tags/blocks/needs_diamond_tool.json
+907292d6aaf5df3434727b0dba6e309f2276c96d data/minecraft/tags/blocks/needs_iron_tool.json
 e8543d5ac94469b9f3d833c1813d13ca9cab3ce1 data/minecraft/tags/blocks/needs_stone_tool.json
 fa055d147fa86637ff6937ec295cb02bab52dd3e data/minecraft/tags/blocks/overworld_natural_logs.json
 e7d4261d8b754463c885856fe2523c94070b5d97 data/minecraft/tags/blocks/planks.json

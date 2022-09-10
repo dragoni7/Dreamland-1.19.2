@@ -1,0 +1,16 @@
+{
+    "name": "Mold",
+    "icon": "dreamland:white_mold",
+    "category": "dreamland:blocks",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "Commonly found in the toxic jungle. Care must be taken to keep mold contained as it can slowly spread to other blocks like dirt and crops"
+        },
+
+        {
+            "type": "patchouli:spotlight",
+            "item": "dreamland:black_mold"
+        }
+    ]
+}

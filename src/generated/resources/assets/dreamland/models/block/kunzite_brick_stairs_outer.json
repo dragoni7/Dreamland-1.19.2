@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "dreamland:block/kunzite_bricks",
-    "side": "dreamland:block/kunzite_bricks",
-    "top": "dreamland:block/kunzite_bricks"
-  }
-}
