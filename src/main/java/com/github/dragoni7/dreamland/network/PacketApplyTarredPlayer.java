@@ -5,11 +5,8 @@ import java.util.function.Supplier;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
 
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraftforge.network.NetworkEvent;
 
 public class PacketApplyTarredPlayer {

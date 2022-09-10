@@ -1,7 +1,6 @@
 package com.github.dragoni7.dreamland.client.model;
 
 import com.github.dragoni7.dreamland.common.items.BreatherHelmetArmorItem;
-import com.github.dragoni7.dreamland.common.items.LarvaSymbioteArmorItem;
 import com.github.dragoni7.dreamland.util.DreamlandLoc;
 
 import net.minecraft.resources.ResourceLocation;

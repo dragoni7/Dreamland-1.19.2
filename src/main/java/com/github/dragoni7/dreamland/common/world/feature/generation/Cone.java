@@ -8,7 +8,6 @@ import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
@@ -25,7 +24,6 @@ public class Cone extends Feature<ConeConfig> {
 		RandomSource rand = context.random();
 		FeatureBuilder builder = new FeatureBuilder();
 		BlockPos origin = context.origin();
-		Boolean status = false;
 		FastNoiseLite noise = createNoise(worldgenlevel.getSeed(), context.config().noiseFrequency().sample(rand));
 		int height = context.config().height().sample(rand);
 		int baseRadius = context.config().radius().sample(rand);

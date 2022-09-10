@@ -3,8 +3,6 @@ package com.github.dragoni7.dreamland.network;
 import java.util.function.Supplier;
 
 import com.github.dragoni7.dreamland.common.blocks.SporeNodeBlock;
-import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerLevel;

@@ -18,7 +18,6 @@ import com.github.dragoni7.dreamland.network.Networking;
 import com.github.dragoni7.dreamland.network.PacketApplyTarredPlayer;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;

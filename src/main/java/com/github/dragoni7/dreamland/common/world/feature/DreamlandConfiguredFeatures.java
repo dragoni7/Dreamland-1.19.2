@@ -2,8 +2,6 @@ package com.github.dragoni7.dreamland.common.world.feature;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Supplier;
-
 import com.github.dragoni7.dreamland.common.blocks.KunzitePointBlock;
 import com.github.dragoni7.dreamland.common.world.feature.configs.ConeConfig;
 import com.github.dragoni7.dreamland.common.world.feature.configs.EllipsoidConfig;

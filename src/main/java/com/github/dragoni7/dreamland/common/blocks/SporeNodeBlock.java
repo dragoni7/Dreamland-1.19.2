@@ -3,10 +3,8 @@ package com.github.dragoni7.dreamland.common.blocks;
 import java.util.List;
 import java.util.Map;
 
-import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
-import com.github.dragoni7.dreamland.core.registry.DreamlandItems;
 import com.github.dragoni7.dreamland.core.registry.DreamlandParticles;
 import com.github.dragoni7.dreamland.core.registry.DreamlandWoodSets;
 import com.github.dragoni7.dreamland.data.DreamlandBlockTags;

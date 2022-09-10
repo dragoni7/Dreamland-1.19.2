@@ -1,7 +1,6 @@
 package com.github.dragoni7.dreamland.common.effects;
 
 import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
-import com.github.dragoni7.dreamland.core.registry.DreamlandItems;
 import com.github.dragoni7.dreamland.data.DreamlandItemTags;
 import com.github.dragoni7.dreamland.util.RollBoolean;
 

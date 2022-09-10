@@ -1,9 +1,7 @@
 package com.github.dragoni7.dreamland.common.world.feature.generation;
 
-import com.github.dragoni7.dreamland.common.blocks.HiveBlock;
 import com.github.dragoni7.dreamland.common.world.feature.configs.GrowthLayerConfig;
 import com.github.dragoni7.dreamland.common.world.feature.util.FeatureBuilder;
-import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.util.RollBoolean;
 import com.mojang.serialization.Codec;
 
