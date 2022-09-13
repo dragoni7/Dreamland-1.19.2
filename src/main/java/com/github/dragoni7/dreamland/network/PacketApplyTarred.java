@@ -10,15 +10,15 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraftforge.network.NetworkEvent;
 
-public class PacketApplyTarredPlayer {
+public class PacketApplyTarred {
 
 	private int entity;
 	
-	public PacketApplyTarredPlayer(FriendlyByteBuf buf) {
+	public PacketApplyTarred(FriendlyByteBuf buf) {
 		entity = buf.readInt();
 	}
 	
-	public PacketApplyTarredPlayer(int entity) {
+	public PacketApplyTarred(int entity) {
 		this.entity = entity;
 	}
 	

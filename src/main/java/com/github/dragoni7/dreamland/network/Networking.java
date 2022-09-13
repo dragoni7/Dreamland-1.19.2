@@ -19,10 +19,10 @@ public class Networking {
 	public static void registerMessages() {
 		INSTANCE = NetworkRegistry.newSimpleChannel(DreamlandLoc.createLoc("dreamland"), () -> "1.0", s -> true, s -> true);
 		
-		INSTANCE.messageBuilder(PacketApplyTarredPlayer.class, nextID())
-		.encoder(PacketApplyTarredPlayer::toBytes)
-		.decoder(PacketApplyTarredPlayer::new)
-		.consumer(PacketApplyTarredPlayer::handle)
+		INSTANCE.messageBuilder(PacketApplyTarred.class, nextID())
+		.encoder(PacketApplyTarred::toBytes)
+		.decoder(PacketApplyTarred::new)
+		.consumer(PacketApplyTarred::handle)
 		.add();
 		
 		INSTANCE.messageBuilder(PacketUpateSporeNode.class, nextID())

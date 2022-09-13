@@ -16,7 +16,7 @@ import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
 import com.github.dragoni7.dreamland.core.registry.DreamlandItems;
 import com.github.dragoni7.dreamland.data.DreamlandItemTags;
 import com.github.dragoni7.dreamland.network.Networking;
-import com.github.dragoni7.dreamland.network.PacketApplyTarredPlayer;
+import com.github.dragoni7.dreamland.network.PacketApplyTarred;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffect;
@@ -73,7 +73,7 @@ public class DreamlandEventHandler {
 				if (entity instanceof Player) {
 					return;
 				} else if (entity.isAlive() && entity.getLevel().isClientSide()) {
-					Networking.sendToServer(new PacketApplyTarredPlayer(entity.getId()));
+					Networking.sendToServer(new PacketApplyTarred(entity.getId()));
 				}
 			}
 		}
@@ -85,7 +85,7 @@ public class DreamlandEventHandler {
 			Vec3 motion = player.getDeltaMovement();
 			if (motion.x != 0 || motion.z != 0) {
 				if (event.side.isClient()) {
-					Networking.sendToServer(new PacketApplyTarredPlayer(player.getId()));
+					Networking.sendToServer(new PacketApplyTarred(player.getId()));
 				}
 			}
 		}
