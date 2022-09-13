@@ -133,7 +133,7 @@ public class DreamlandLootTables extends BaseLootTableProvider {
 	private void createWoodSetTable(WoodSet set) {
 		String name = set.getSetName();
 		basicBlockTable(set.button().block().get(), name + "_button");
-		basicBlockTable(set.door().block().get(), name + "_door");
+		//basicBlockTable(set.door().block().get(), name + "_door");
 		basicBlockTable(set.fence().block().get(), name + "_fence");
 		basicBlockTable(set.fenceGate().block().get(), name + "_fence_gate");
 		basicBlockTable(set.ladder().block().get(), name + "_ladder");
