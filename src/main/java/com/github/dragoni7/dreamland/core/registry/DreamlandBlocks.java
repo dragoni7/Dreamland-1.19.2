@@ -245,8 +245,10 @@ public class DreamlandBlocks {
 	public static final BlockItemSet TOXIC_VEGETATION = new BlockItemSet("toxic_vegetation", () -> new Block(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN).strength(0.2F).sound(SoundType.AZALEA_LEAVES)));
 	public static final BlockItemSet DECAYED_VEGETATION = new BlockItemSet("decayed_vegetation", () -> new Block(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN).strength(1.5F, 1.0F).sound(SoundType.HARD_CROP)));
 	public static final BlockItemSet SHELF_VEGETATION = new BlockItemSet("shelf_vegetation", () -> new ShelfVegetationBlock(BlockBehaviour.Properties.copy(Blocks.GLOW_LICHEN)));
-	public static final BlockItemSet GLOWING_MOLD_WOOD = new BlockItemSet("glowing_mold_wood", () -> new EmissiveRotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_LIGHT_GREEN).sound(SoundType.WOOD).strength(2.0F, 3.0F).lightLevel(EmissiveRotatedPillarBlock.emission(8)))))));
-	public static final BlockItemSet GLOW_FRONDS = new BlockItemSet("glow_fronds", () -> new MoldVegetationBlock(BlockBehaviour.Properties.copy(SPORE_PUFF.block().get()).lightLevel((light) -> {return 8;}).hasPostProcess(DreamlandBlocks::always).emissiveRendering(DreamlandBlocks::always)))));
+	public static final BlockItemSet GLOWING_MOLD_WOOD = new BlockItemSet("glowing_mold_wood", () -> new EmissiveRotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_LIGHT_GREEN).sound(SoundType.WOOD).strength(2.0F, 3.0F)
+			.lightLevel(EmissiveRotatedPillarBlock.emission(8))));
+	public static final BlockItemSet GLOW_FRONDS = new BlockItemSet("glow_fronds", () -> new MoldVegetationBlock(BlockBehaviour.Properties.copy(SPORE_PUFF.block().get()).lightLevel((light) -> {return 8;})
+			.hasPostProcess(DreamlandBlocks::always).emissiveRendering(DreamlandBlocks::always)));
 	public static final BlockItemSet LARGE_SPORE_PUFF = new BlockItemSet("large_spore_puff", () -> new LargeSporePuffBlock(BlockBehaviour.Properties.copy(SPORE_PUFF.block().get()).noOcclusion()));
 	public static final BlockItemSet SPORE_NODE = new BlockItemSet("spore_node", () -> new SporeNodeBlock(BlockBehaviour.Properties.of(Material.WEB, MaterialColor.COLOR_LIGHT_BLUE).sound(SoundType.WOOL).strength(1.5F, 1.0F).noOcclusion().randomTicks()));
 	public static final BlockItemSet PURIFIED_DUST = new BlockItemSet("purified_dust", () -> new CarpetBlock(BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_YELLOW).sound(SoundType.GRAVEL).strength(0.2F)));

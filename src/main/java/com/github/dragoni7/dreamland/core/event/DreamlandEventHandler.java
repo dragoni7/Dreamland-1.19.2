@@ -4,6 +4,7 @@ package com.github.dragoni7.dreamland.core.event;
 import java.util.List;
 
 import com.github.dragoni7.dreamland.Config;
+import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.common.entities.mobs.BumbleBeastEntity;
 import com.github.dragoni7.dreamland.common.entities.mobs.LarvaEntity;
 import com.github.dragoni7.dreamland.common.entities.mobs.OozeEntity;
@@ -30,6 +31,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.event.TickEvent.PlayerTickEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingTickEvent;
@@ -43,6 +45,7 @@ public class DreamlandEventHandler {
 		
 		modBus.addListener(DreamlandEventHandler::addAttributes);
 		forgeBus.addListener(DreamlandEventHandler::updateTarredEffect);
+		forgeBus.addListener(DreamlandEventHandler::updateTarredEffectPlayer);
 		forgeBus.addListener(DreamlandEventHandler::setLarvaTarget);
 		forgeBus.addListener(DreamlandEventHandler::entityHitLarvaSymbiote);
 		forgeBus.addListener(DreamlandEventHandler::onLarvaAttacked);
@@ -66,13 +69,23 @@ public class DreamlandEventHandler {
 		LivingEntity entity = event.getEntity();
 		if (entity.isInFluidType(DreamlandFluids.TAR_FLUID_TYPE.get())) {
 			Vec3 motion = entity.getDeltaMovement();
-			MobEffect tarred = DreamlandEffects.TARRED.get();
-			
 			if (motion.x != 0 || motion.z != 0) {
 				if (entity instanceof Player) {
+					return;
+				} else if (entity.isAlive() && entity.getLevel().isClientSide()) {
 					Networking.sendToServer(new PacketApplyTarredPlayer(entity.getId()));
-				} else if (entity.isAlive()) {
-					entity.addEffect(new MobEffectInstance(tarred, 600));
+				}
+			}
+		}
+	}
+	
+	public static void updateTarredEffectPlayer(PlayerTickEvent event) {
+		Player player = event.player;
+		if (player.isInFluidType(DreamlandFluids.TAR_FLUID_TYPE.get())) {
+			Vec3 motion = player.getDeltaMovement();
+			if (motion.x != 0 || motion.z != 0) {
+				if (event.side.isClient()) {
+					Networking.sendToServer(new PacketApplyTarredPlayer(player.getId()));
 				}
 			}
 		}
