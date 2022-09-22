@@ -1,4 +1,4 @@
-// 1.19.2	2022-09-09T15:40:17.0171721	Dreamland LootTables
+// 1.19.2	2022-09-22T12:16:05.5451804	Dreamland LootTables
 6c2b2fa6b4ac82542117b91cc43915498ee92586 data/dreamland/loot_tables/blocks/black_mold.json
 d7818800fca2a9b523d039b3a7eee95b64c492f1 data/dreamland/loot_tables/blocks/black_mold_carpet.json
 5edeb9bd12b12facb7de034bac7cf2c1e16f9f3e data/dreamland/loot_tables/blocks/bumble_block.json
@@ -55,7 +55,6 @@ b999956efe989d6b5c9d42eb7552c167cb1aa319 data/dreamland/loot_tables/blocks/mediu
 722cd097be2e0db4fd104c6f0038ec1f265200fc data/dreamland/loot_tables/blocks/midashroom.json
 20ccb332a1b2d57ae7af050cd988e7769aefb18d data/dreamland/loot_tables/blocks/mineral_dirt.json
 266d147f8b12c822f338567c7b2f453179c5b4e6 data/dreamland/loot_tables/blocks/mold_wood_button.json
-f568f755097b9f0fa91626faec7ba54ebcb64bc0 data/dreamland/loot_tables/blocks/mold_wood_door.json
 926c2b832ce2df7c1a4dffdbc919b7fa195a4701 data/dreamland/loot_tables/blocks/mold_wood_fence.json
 7132989b79531ebd485a769b1df2ddb379fb7f36 data/dreamland/loot_tables/blocks/mold_wood_fence_gate.json
 973f39d059d485c163283b0f5b109ce33178a8de data/dreamland/loot_tables/blocks/mold_wood_ladder.json
@@ -83,7 +82,6 @@ aea63d5ec61ce3c3101f66983a68a88edabdb8b5 data/dreamland/loot_tables/blocks/opal_
 180a6330895c312847ccfa621897424f4583ea59 data/dreamland/loot_tables/blocks/petrified_vegetation.json
 641786533e11f68a938d8e5ec2c9d181f320a694 data/dreamland/loot_tables/blocks/pink_crab_grass.json
 55be664781515e8e215a44967f5388ec06f1f357 data/dreamland/loot_tables/blocks/plum_birch_button.json
-652b3c0aeeaa254bb478e8a809ef68284c665585 data/dreamland/loot_tables/blocks/plum_birch_door.json
 d771f026870a37c18d63b9539bc00465f5b46214 data/dreamland/loot_tables/blocks/plum_birch_fence.json
 ed80c9a5a8e26f599f221a9647819bb2cb5a27a5 data/dreamland/loot_tables/blocks/plum_birch_fence_gate.json
 a1126e1b14e28c0212717a89cd4ebb34a50f748b data/dreamland/loot_tables/blocks/plum_birch_ladder.json
@@ -116,7 +114,6 @@ b2f05d246f47e3905a5a49d357bc59e4ef4823e7 data/dreamland/loot_tables/blocks/spong
 d9d58c3f22a28c31fd9c963a3da0749e3965e0c8 data/dreamland/loot_tables/blocks/spore_node.json
 9d4cf26f19522f6ff1fe310baa480bee9bec24e2 data/dreamland/loot_tables/blocks/spore_puff.json
 ed1e17c70a8d1f33ef1b41c3345fde4f04d5dfe0 data/dreamland/loot_tables/blocks/tar_bark_button.json
-5cf53a2127ede1c41eee786680b2a3ed7fde8049 data/dreamland/loot_tables/blocks/tar_bark_door.json
 893ecfe1c1b07446abcd53414ffb45a012f92fb1 data/dreamland/loot_tables/blocks/tar_bark_fence.json
 932de4327a6cdaa57291db522327a760e11325f4 data/dreamland/loot_tables/blocks/tar_bark_fence_gate.json
 5da2be8fc094f7d6ed6621a9e68c2103e3320dc1 data/dreamland/loot_tables/blocks/tar_bark_ladder.json

@@ -161,6 +161,9 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandItems.OPAL.get(), "Opal");
 		add(DreamlandItems.PRECIOUS_OPAL.get(), "Precious Opal");
 		
+		add(DreamlandItems.GOLDEN_FLOUR.get(), "Golden Flour");
+		add(DreamlandItems.GOLDEN_ROLL.get(), "Golden Roll");
+		
 		add(DreamlandItems.SPAWN_EGG_LARVA.get(), "Larva Spawn Egg");
 		add(DreamlandItems.SPAWN_EGG_OOZE.get(), "Ooze Spawn Egg");
 		add(DreamlandItems.SPAWN_EGG_BUMBLE_BEAST.get(), "Bumble Beast Spawn Egg");
@@ -188,6 +191,7 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		// JEED
 		add("effect.dreamland.tarred.description", "Slows, and severly reduces jump height. Extends burn time");
 		add("effect.dreamland.antagonized.description", "Nearby larva become angry at the entity that is antagonized, and attack");
+		add("effect.dreamland.decay.description", "Drains hunger with a random chance to inflict a small amount of damage");
 		
 	}
 	

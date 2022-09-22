@@ -151,6 +151,23 @@ public class DreamlandRecipes extends RecipeProvider{
 		  .define('#', DreamlandBlocks.KUNZITE_POINT.item().get())
 		  .group("dreamland").unlockedBy("kunzite_point", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandBlocks.KUNZITE_POINT.item().get())).save(consumer);
 		  
+		  ShapedRecipeBuilder.shaped(DreamlandItems.GOLDEN_FLOUR.get(), 2)
+		  .pattern("#W")
+		  .pattern("W#")
+		  .define('#', DreamlandBlocks.GOLD_FRONDS.item().get())
+		  .define('W', Tags.Items.CROPS_WHEAT)
+		  .group("dreamland").unlockedBy("gold_fronds", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandBlocks.GOLD_FRONDS.item().get())).save(consumer);
+		  
+		  ShapedRecipeBuilder.shaped(DreamlandItems.GOLDEN_ROLL.get(), 1)
+		  .pattern("SMS")
+		  .pattern("FEF")
+		  .define('S', Items.SUGAR)
+		  .define('M', Items.MILK_BUCKET)
+		  .define('F', DreamlandItems.GOLDEN_FLOUR.get())
+		  .define('E', Tags.Items.EGGS)
+		  .group("dreamland").unlockedBy("golden_flour", InventoryChangeTrigger.TriggerInstance.hasItems(DreamlandItems.GOLDEN_FLOUR.get())).save(consumer);
+		  
+		  
 		  ShapedRecipeBuilder.shaped(DreamlandItems.BREATHER_HELMET.get(), 1)
 		  .pattern(" H ")
 		  .pattern("#L#")

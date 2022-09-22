@@ -49,7 +49,7 @@ public class DreamlandItemModels extends ItemModelProvider {
 		blockItemModel(DreamlandBlocks.HIVE_BLOCK.item(),"block/hive_block1");
 		//blockItemModel(DreamlandBlocks.CLAY_SOIL.item(),"block/clay_soil");
 		//blockItemModel(DreamlandBlocks.DUSK_ICE.item(),"block/dusk_ice");
-		blockItemModel(DreamlandBlocks.HIVE_JELLY_CLUSTER.item(), "block/hive_jelly_cluster");
+		blockItemModel(DreamlandBlocks.HIVE_JELLY_CLUSTER.item(), "block/jelly_cluster_item");
 		blockItemModel(DreamlandBlocks.HIVE_MEMBRANE.item(), "block/hive_membrane_connected");
 		blockItemModel(DreamlandBlocks.HIVE_WEAVER.item(), "block/hive_weaver");
 		blockItemModel(DreamlandBlocks.HIVE_IRON.item(), "block/hive_iron");
@@ -127,6 +127,8 @@ public class DreamlandItemModels extends ItemModelProvider {
 		singleTextureItemModel(DreamlandBlocks.MEDIUM_GOLD_CLUSTER.item(), "block/medium_gold_cluster");
 		singleTextureItemModel(DreamlandBlocks.LARGE_GOLD_CLUSTER.item(), "block/large_gold_cluster");
 		singleTextureItemModel(DreamlandBlocks.KUNZITE_BARS.item(), "block/kunzite_bars");
+		singleTextureItemModel(DreamlandItems.GOLDEN_FLOUR, "item/golden_flour");
+		singleTextureItemModel(DreamlandItems.GOLDEN_ROLL, "item/golden_roll");
 		
 		singleTextureItemModel(DreamlandItems.HIVE_JELLY_ITEM, "item/hive_jelly");
 		singleTextureItemModel(DreamlandItems.JELLY_BOWL_ITEM, "item/bowl_of_jelly");

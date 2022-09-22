@@ -10,6 +10,7 @@ import com.github.dragoni7.dreamland.common.items.LarvaSymbioteArmorItem;
 import com.github.dragoni7.dreamland.common.items.NecratheneArmorItem;
 
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
@@ -42,6 +43,9 @@ public class DreamlandItems {
 	
 	public static final RegistryObject<Item> OPAL = registerBasicItem("opal");
 	public static final RegistryObject<Item> PRECIOUS_OPAL = registerBasicItem("precious_opal");
+	
+	public static final RegistryObject<Item> GOLDEN_FLOUR = registerBasicItem("golden_flour");
+	public static final RegistryObject<Item> GOLDEN_ROLL = registerFoodItem("golden_roll", new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 100, 0), 1.0F).build());
 	
 	public static final RegistryObject<Item> RAW_NECRATHENE = registerBasicItem("raw_necrathene");
 	public static final RegistryObject<Item> NECRATHENE_INGOT = registerBasicItem("necrathene_ingot");

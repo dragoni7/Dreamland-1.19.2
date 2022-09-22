@@ -76,11 +76,7 @@ public class DataGenerators {
 			generator.addProvider(true, new DreamlandBlockStates(generator, Dreamland.MODID, fileHelper));
 			generator.addProvider(true, new DreamlandItemModels(generator, Dreamland.MODID, fileHelper));
 			generator.addProvider(true, new DreamlandLanguageProvider(generator,"en_us"));
-			
-		}
-		
-		
-        
+		}  
 	}
 
 	// Author: Commoble
