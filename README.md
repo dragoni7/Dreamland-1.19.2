@@ -10,4 +10,5 @@ When creating a new issue please ensure that the problem is caused by this mod s
 
 ## Links
 Download: https://www.curseforge.com/minecraft/mc-mods/dreamland-biomes
+
 Join the discord! https://discord.gg/DMrwFpgucF  
