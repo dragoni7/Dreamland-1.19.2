@@ -66,8 +66,7 @@ public class DreamlandClientEventHandler {
 	}
 	
 	private static void registerBlockColors(final RegisterColorHandlersEvent.Block event) {
-		final BlockColors blockColors = event.getBlockColors();
-		blockColors.register((state, world, pos, tintIndex) -> BiomeColors.getAverageGrassColor(world, pos), DreamlandBlocks.TOXIC_GRASS.block().get());
+		event.register((state, world, pos, tintIndex) -> BiomeColors.getAverageGrassColor(world, pos), DreamlandBlocks.TOXIC_GRASS.block().get());
 	}
 	
 	private static void registerParticles(RegisterParticleProvidersEvent event) {
