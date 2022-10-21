@@ -301,7 +301,6 @@ public class AddBlockTags extends BlockTagsProvider {
 		
 		tag(DreamlandBlockTags.MOLD_SPREADABLES)
 		.addTag(BlockTags.DIRT)
-		.addTag(BlockTags.LOGS)
 		.addTag(BlockTags.CROPS)
 		.addTag(BlockTags.LEAVES);
 		

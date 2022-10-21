@@ -1,5 +1,6 @@
 package com.github.dragoni7.dreamland.common.blocks;
 
+import com.github.dragoni7.dreamland.Config;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandWoodSets;
 import com.github.dragoni7.dreamland.data.DreamlandBlockTags;
@@ -25,17 +26,19 @@ public class MoldBlock extends Block {
 	}
 	
 	public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-		if (RollBoolean.roll(400, random)) {
-			for (int x = 0; x <= 1; x++) {
-				for (int y = -1; y <= 1; y++) {
-					for (int z = 0; z <= 1; z++) {
-						BlockPos targetPos = pos.offset(x, y, z);
-						BlockState target = level.getBlockState(targetPos);
-						if (target.is(DreamlandBlockTags.MOLD_SPREADABLES) && !target.is(DreamlandBlockTags.TOXIC_JUNGLE_GROUND_BLOCKS) && !target.is(DreamlandWoodSets.MOLD_WOOD.log().block().get()) && !target.is(DreamlandWoodSets.MOLD_WOOD.wood().block().get())) {
-							level.destroyBlock(targetPos, false);
-							level.setBlock(targetPos, state, 3);
-							if (RollBoolean.roll(14, random) && level.getBlockState(targetPos.above()).isAir()) {
-								level.setBlock(targetPos.above(), DreamlandBlocks.SPORE_NODE.block().get().defaultBlockState().setValue(SporeNodeBlock.getFaceProperty(Direction.UP), Boolean.valueOf(false)).setValue(SporeNodeBlock.getFaceProperty(Direction.DOWN), Boolean.valueOf(true)).setValue(SporeNodeBlock.getFaceProperty(Direction.NORTH), Boolean.valueOf(false)).setValue(SporeNodeBlock.getFaceProperty(Direction.SOUTH), Boolean.valueOf(false)).setValue(SporeNodeBlock.getFaceProperty(Direction.EAST), Boolean.valueOf(false)).setValue(SporeNodeBlock.getFaceProperty(Direction.WEST), Boolean.valueOf(false)), 3);
+		if (Config.MOLD_SPREAD.get()) {
+			if (RollBoolean.roll(400, random)) {
+				for (int x = 0; x <= 1; x++) {
+					for (int y = -1; y <= 1; y++) {
+						for (int z = 0; z <= 1; z++) {
+							BlockPos targetPos = pos.offset(x, y, z);
+							BlockState target = level.getBlockState(targetPos);
+							if (target.is(DreamlandBlockTags.MOLD_SPREADABLES) && !target.is(DreamlandBlockTags.TOXIC_JUNGLE_GROUND_BLOCKS) && !target.is(DreamlandWoodSets.MOLD_WOOD.log().block().get()) && !target.is(DreamlandWoodSets.MOLD_WOOD.wood().block().get())) {
+								level.destroyBlock(targetPos, false);
+								level.setBlock(targetPos, state, 3);
+								if (RollBoolean.roll(14, random) && level.getBlockState(targetPos.above()).isAir()) {
+									level.setBlock(targetPos.above(), DreamlandBlocks.SPORE_NODE.block().get().defaultBlockState().setValue(SporeNodeBlock.getFaceProperty(Direction.UP), Boolean.valueOf(false)).setValue(SporeNodeBlock.getFaceProperty(Direction.DOWN), Boolean.valueOf(true)).setValue(SporeNodeBlock.getFaceProperty(Direction.NORTH), Boolean.valueOf(false)).setValue(SporeNodeBlock.getFaceProperty(Direction.SOUTH), Boolean.valueOf(false)).setValue(SporeNodeBlock.getFaceProperty(Direction.EAST), Boolean.valueOf(false)).setValue(SporeNodeBlock.getFaceProperty(Direction.WEST), Boolean.valueOf(false)), 3);
+								}
 							}
 						}
 					}

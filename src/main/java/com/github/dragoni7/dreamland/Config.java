@@ -31,6 +31,9 @@ public class Config {
 	
 	public static ForgeConfigSpec.IntValue MIDASHROOM_GOLD_CONVERSION_CHANCE;
 	
+	public static ForgeConfigSpec.BooleanValue SPORE_NODE_SPREAD;
+	public static ForgeConfigSpec.BooleanValue MOLD_SPREAD;
+	
 	public static ForgeConfigSpec SERVER_CONFIG;
 	public static ForgeConfigSpec COMMON_CONFIG;
 	
@@ -71,6 +74,12 @@ public class Config {
 		COMMON_BUILDER.pop();
 		COMMON_BUILDER.push("Midashroom gold conversion");
 		MIDASHROOM_GOLD_CONVERSION_CHANCE = COMMON_BUILDER.comment("Chance that the midashroom will convert a bonemealable block to a gold block when fertilizing. Default = 1/24").defineInRange("gold conversion chance", 24, 0, Integer.MAX_VALUE);
+		COMMON_BUILDER.pop();
+		COMMON_BUILDER.push("Midashroom gold conversion");
+		SPORE_NODE_SPREAD = COMMON_BUILDER.comment("Should spore nodes spread mold by replacing blocks in the mold_spreadables tag?").define("spore node spreads mold", true);
+		COMMON_BUILDER.pop();
+		COMMON_BUILDER.push("Mold block spreading");
+		SPORE_NODE_SPREAD = COMMON_BUILDER.comment("Should mold blocks spread to blocks in the mold_spreadables tag?").define("mold block spreads", true);
 		
 		COMMON_CONFIG = COMMON_BUILDER.build();
 		SERVER_CONFIG = SERVER_BUILDER.build();
