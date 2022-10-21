@@ -160,6 +160,7 @@ public class SporeNodeBlock extends MultifaceBlock {
 						if (RollBoolean.roll(6, random)) {
 							BlockPos currentPos = pos.offset(x, -1, z);
 							BlockState target = level.getBlockState(currentPos);
+							// TODO: add wood to mold wood conversion mechanic
 							if (target.is(DreamlandBlockTags.MOLD_SPREADABLES) && !target.is(DreamlandBlockTags.TOXIC_JUNGLE_GROUND_BLOCKS) && !target.is(DreamlandWoodSets.MOLD_WOOD.log().block().get()) && !target.is(DreamlandWoodSets.MOLD_WOOD.wood().block().get())) {
 								level.destroyBlock(currentPos, false);
 								level.setBlock(currentPos, DreamlandBlocks.WHITE_MOLD.block().get().defaultBlockState(), 3);
