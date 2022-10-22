@@ -79,7 +79,8 @@ public class Config {
 		SPORE_NODE_SPREAD = COMMON_BUILDER.comment("Should spore nodes spread mold by replacing blocks in the mold_spreadables tag?").define("spore node spreads mold", true);
 		COMMON_BUILDER.pop();
 		COMMON_BUILDER.push("Mold block spreading");
-		SPORE_NODE_SPREAD = COMMON_BUILDER.comment("Should mold blocks spread to blocks in the mold_spreadables tag?").define("mold block spreads", true);
+		MOLD_SPREAD = COMMON_BUILDER.comment("Should mold blocks spread to blocks in the mold_spreadables tag?").define("mold block spreads", true);
+		COMMON_BUILDER.pop();
 		
 		COMMON_CONFIG = COMMON_BUILDER.build();
 		SERVER_CONFIG = SERVER_BUILDER.build();
