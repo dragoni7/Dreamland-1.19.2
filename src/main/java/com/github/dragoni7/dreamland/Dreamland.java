@@ -46,11 +46,11 @@ public class Dreamland
 	
     public Dreamland() {
     	
+    	ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, Config.SERVER_CONFIG);
+    	ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.COMMON_CONFIG);
+    	
         IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
         IEventBus forgeBus = MinecraftForge.EVENT_BUS;
-        
-        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, Config.SERVER_CONFIG);
-    	ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.COMMON_CONFIG);
         
         GeckoLib.initialize();
         
@@ -72,8 +72,8 @@ public class Dreamland
         modBus.addListener(this::commonSetup);
         
         if(FMLEnvironment.dist == Dist.CLIENT) {
-    		DreamlandClientEventHandler.init(modBus);
-    	}
+        	DreamlandClientEventHandler.init(modBus);
+        }
         
     }
     
@@ -89,13 +89,10 @@ public class Dreamland
     	});
     }
     
-    
     public static final CreativeModeTab DreamlandTab = (new CreativeModeTab("dreamland")  {
-    		@Override
-    		public ItemStack makeIcon() {
-    			return new ItemStack(DreamlandItems.LARVA_HELMET.get());
-    		}
-    	});
-
-   
+		@Override
+		public ItemStack makeIcon() {
+			return new ItemStack(DreamlandItems.LARVA_HELMET.get());
+		}
+	});
 }

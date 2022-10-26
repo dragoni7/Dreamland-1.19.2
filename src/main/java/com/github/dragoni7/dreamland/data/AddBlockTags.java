@@ -23,6 +23,10 @@ public class AddBlockTags extends BlockTagsProvider {
 	@Override
 	protected void addTags() {
 		
+		// Remove Enderman tags
+		tag(BlockTags.ENDERMAN_HOLDABLE).remove(DreamlandBlocks.TOXIC_GRASS.block().get());
+		tag(Tags.Blocks.ENDERMAN_PLACE_ON_BLACKLIST).add(DreamlandBlocks.TOXIC_GRASS.block().get());
+		
 		tag(BlockTags.DIRT)
 		.add(DreamlandBlocks.GOLDEN_MOSS_BLOCK.block().get())
 		.add(DreamlandBlocks.DROUGHT_SOIL.block().get())

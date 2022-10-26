@@ -26,7 +26,7 @@ public class MoldBlock extends Block {
 	}
 	
 	public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-		if (Config.MOLD_SPREAD.get()) {
+		if (Config.MOLD_SPREAD.get() == true) {
 			if (RollBoolean.roll(400, random)) {
 				for (int x = 0; x <= 1; x++) {
 					for (int y = -1; y <= 1; y++) {
