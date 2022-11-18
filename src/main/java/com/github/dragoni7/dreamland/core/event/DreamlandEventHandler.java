@@ -4,7 +4,6 @@ package com.github.dragoni7.dreamland.core.event;
 import java.util.List;
 
 import com.github.dragoni7.dreamland.Config;
-import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.common.entities.mobs.BumbleBeastEntity;
 import com.github.dragoni7.dreamland.common.entities.mobs.LarvaEntity;
 import com.github.dragoni7.dreamland.common.entities.mobs.OozeEntity;
@@ -19,7 +18,6 @@ import com.github.dragoni7.dreamland.network.Networking;
 import com.github.dragoni7.dreamland.network.PacketApplyTarred;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;

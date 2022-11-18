@@ -3,6 +3,7 @@ package com.github.dragoni7.dreamland.common.blocks;
 import javax.annotation.Nullable;
 
 import com.github.dragoni7.dreamland.Config;
+import com.github.dragoni7.dreamland.common.world.biome.BiomeKeys;
 import com.github.dragoni7.dreamland.core.registry.DreamlandEffects;
 
 import net.minecraft.core.BlockPos;
@@ -26,12 +27,9 @@ public class LarvaAngerableBlock extends Block {
 	      
 	      MobEffect antagonized = DreamlandEffects.ANTAGONIZED.get();
 	      
-	      if (!biomeCheck()) {
+	      // Only apply effect in Hive biome
+	      if (level.getBiome(pos).is(BiomeKeys.HIVE)) {
 	    	  player.addEffect(new MobEffectInstance(antagonized, Config.ANTAGONIZED_DURATION.get()));
 	      }
 	   }
-	
-	public boolean biomeCheck() {
-		return false;
-	}
 }

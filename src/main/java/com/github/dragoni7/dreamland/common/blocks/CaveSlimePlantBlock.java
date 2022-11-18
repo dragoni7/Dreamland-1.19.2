@@ -26,8 +26,6 @@ public class CaveSlimePlantBlock extends GrowingPlantBodyBlock implements CaveVi
 	}
 	
 	public static ToIntFunction<BlockState> emission(int lightLevel) {
-	      return (light) -> {
-	         return lightLevel;
-	   };
+		return (light) -> { return lightLevel; };
 	}
 }

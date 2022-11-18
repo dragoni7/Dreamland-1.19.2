@@ -72,11 +72,6 @@ public class HiveWeaverBlock extends LarvaAngerableBlock {
 		
 	   }
 	
-	@Override
-	public boolean biomeCheck() {
-		return true;
-	}
-	
 	private void buildMembrane(BlockState state, Level level, BlockPos pos) {
 		int radius = getLevel(state) + 1;
 		Direction direction = state.getValue(HorizontalDirectionalBlock.FACING);

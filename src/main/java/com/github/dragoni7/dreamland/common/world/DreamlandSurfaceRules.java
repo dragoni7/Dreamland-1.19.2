@@ -14,9 +14,12 @@ public class DreamlandSurfaceRules
 	private static final SurfaceRules.ConditionSource AT_OR_ABOVE_WATER = SurfaceRules.waterBlockCheck(-1, 0);
 	
 	private static final SurfaceRules.RuleSource RAW_GOLD_BANDS = SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.CAVE_CHEESE, -0.0025, 0.0125), SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.CAVE_CHEESE, -0.0025, 0.0025), SurfaceRules.state(Blocks.RAW_GOLD_BLOCK.defaultBlockState())), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.CAVE_CHEESE, 0.0025, 0.0125), SurfaceRules.state(DreamlandBlocks.GOLD_BEARING_QUARTZITE.block().get().defaultBlockState())))));
-	private static final SurfaceRules.RuleSource OPULENT_DEPTHS_SURFACE = SurfaceRules.sequence(SurfaceRules.state(DreamlandBlocks.KUNZITE_STONE.block().get().defaultBlockState()));
-	private static final SurfaceRules.RuleSource OPULENT_DEPTHS = SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeKeys.MIDAS_CAVES), SurfaceRules.sequence(RAW_GOLD_BANDS, OPULENT_DEPTHS_SURFACE));
-	
+	private static final SurfaceRules.RuleSource MIDAS_CAVES = SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeKeys.MIDAS_CAVES), SurfaceRules.sequence( 
+    		SurfaceRules.ifTrue(SurfaceRules.verticalGradient("dreamland:bedrock_floor", VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(5)), SurfaceRules.state(Blocks.BEDROCK.defaultBlockState())),
+    		SurfaceRules.ifTrue(SurfaceRules.verticalGradient("dreamland:kunzite_stone", VerticalAnchor.absolute(0), VerticalAnchor.absolute(8)), SurfaceRules.state(DreamlandBlocks.KUNZITE_STONE.block().get().defaultBlockState())),
+    		RAW_GOLD_BANDS
+    		));
+
 	private static final SurfaceRules.RuleSource HIVE_SURFACE = SurfaceRules.sequence(SurfaceRules.state(DreamlandBlocks.HIVE_BLOCK.block().get().defaultBlockState()));
 	private static final SurfaceRules.RuleSource HIVE = SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeKeys.HIVE), HIVE_SURFACE);
     
@@ -33,7 +36,7 @@ public class DreamlandSurfaceRules
 
     private static final SurfaceRules.RuleSource TOXIC_JUNGLE = SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeKeys.TOXIC_JUNGLE), SurfaceRules.sequence( 
     		SurfaceRules.ifTrue(SurfaceRules.verticalGradient("dreamland:bedrock_floor", VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(5)), SurfaceRules.state(Blocks.BEDROCK.defaultBlockState())),
-    		SurfaceRules.ifTrue(SurfaceRules.verticalGradient("dreamland:molded_stone", VerticalAnchor.absolute(0), VerticalAnchor.absolute(8)), SurfaceRules.state(DreamlandBlocks.PURE_STONE.block().get().defaultBlockState())),
+    		SurfaceRules.ifTrue(SurfaceRules.verticalGradient("dreamland:pure_stone", VerticalAnchor.absolute(0), VerticalAnchor.absolute(8)), SurfaceRules.state(DreamlandBlocks.PURE_STONE.block().get().defaultBlockState())),
     		SurfaceRules.ifTrue(SurfaceRules.steep(), SurfaceRules.state(DreamlandBlocks.PETRIFIED_VEGETATION.block().get().defaultBlockState())),
     		WHITE_MOLD_PATCHES,
     		BLACK_MOLD_PATCHES,
@@ -42,7 +45,7 @@ public class DreamlandSurfaceRules
     		SurfaceRules.state(DreamlandBlocks.PETRIFIED_VEGETATION.block().get().defaultBlockState())
     		));
     
-    private static final SurfaceRules.RuleSource OVERWORLD_UNDERGROUND = SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.abovePreliminarySurface()), SurfaceRules.sequence(HIVE, OPULENT_DEPTHS));
+    private static final SurfaceRules.RuleSource OVERWORLD_UNDERGROUND = SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.abovePreliminarySurface()), SurfaceRules.sequence(HIVE, MIDAS_CAVES));
     private static final SurfaceRules.RuleSource OVERWORLD = SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.sequence(TAR_DELTAS, JEWELED_FOREST));
     
     public static final SurfaceRules.RuleSource OVERWORLD_SURFACE_RULES = SurfaceRules.sequence(OVERWORLD, OVERWORLD_UNDERGROUND, TOXIC_JUNGLE);

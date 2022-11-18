@@ -34,5 +34,4 @@ public class LarvaEyesFeatureRenderer extends GeoLayerRenderer<LarvaEntity> {
 		larvaEyesEntityRenderer.render(getEntityModel().getModel(getEntityModel().getModelResource(larvaEntity)),
 				larvaEntity, partialTicks, RenderType.eyes(txt), matrixStackIn, bufferIn, bufferIn.getBuffer(RenderType.eyes(txt)), 15728640, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
 	}
-
 }

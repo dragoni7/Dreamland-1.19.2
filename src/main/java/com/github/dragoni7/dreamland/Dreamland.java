@@ -41,11 +41,9 @@ import net.minecraftforge.api.distmarker.Dist;
 public class Dreamland
 {
 	public static final String MODID = "dreamland";
-	
 	public static final Logger LOGGER = LogManager.getLogger();
 	
     public Dreamland() {
-    	
     	ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, Config.SERVER_CONFIG);
     	ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.COMMON_CONFIG);
     	
@@ -74,7 +72,6 @@ public class Dreamland
         if(FMLEnvironment.dist == Dist.CLIENT) {
         	DreamlandClientEventHandler.init(modBus);
         }
-        
     }
     
     private void commonSetup(FMLCommonSetupEvent event) {

@@ -60,14 +60,16 @@ import net.minecraft.world.phys.Vec3;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType.EDefaultLoopTypes;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class BumbleBeastEntity extends Animal implements IAnimatable, NeutralMob {
 	
-	private AnimationFactory factory = new AnimationFactory(this);
+	private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 	private UUID persistentAngerTarget;
 	private static final Item EXCHANGE_ITEM = Items.HONEY_BLOCK;
 	private static final EntityDataAccessor<Boolean> HAS_HONEY = SynchedEntityData.defineId(BumbleBeastEntity.class, EntityDataSerializers.BOOLEAN);
@@ -79,11 +81,11 @@ public class BumbleBeastEntity extends Animal implements IAnimatable, NeutralMob
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		
 		if(event.isMoving()) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.bumble_beast.walk", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.bumble_beast.walk", EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
 		
-		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.bumble_beast.idle", true));
+		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.bumble_beast.idle", EDefaultLoopTypes.LOOP));
 		
 		return PlayState.CONTINUE;
 	}
@@ -114,21 +116,22 @@ public class BumbleBeastEntity extends Animal implements IAnimatable, NeutralMob
 				.add(Attributes.ATTACK_DAMAGE, 5.0D)
 				.add(Attributes.JUMP_STRENGTH, 3.0D)
 				.add(Attributes.FOLLOW_RANGE, 48.0D)
-				.add(Attributes.KNOCKBACK_RESISTANCE, 2.0D)
+				.add(Attributes.KNOCKBACK_RESISTANCE, 4.0D)
 				.add(Attributes.ARMOR, 3.0D);
 	}
 	
 	@Override
 	protected void registerGoals() {
-		this.goalSelector.addGoal(0, new BumbleBeastEntity.BumbleBeastAttackGoal(this, 1.3D, true));
+		this.goalSelector.addGoal(0, new BumbleBeastEntity.BumbleBeastAttackGoal(this));
 		this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, 8.0F));
 		this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 1.0F));
 		this.goalSelector.addGoal(4, new FloatGoal(this));
 		this.goalSelector.addGoal(5, new LeapAtTargetGoal(this, 0.4F));
-		this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)).setAlertOthers());
-	    this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, false, this::isAngryAt));
-		this.targetSelector.addGoal(3, new ResetUniversalAngerTargetGoal<>(this, true));
+		
+		this.targetSelector.addGoal(1, (new BumbleBeastEntity.BumbleBeastHurtByOtherGoal(this)));
+		this.targetSelector.addGoal(2, (new BumbleBeastEntity.BumbleBeastBecomeAngryTargetGoal(this)));
+		this.targetSelector.addGoal(4, new ResetUniversalAngerTargetGoal<>(this, true));
 	}
 	
 	public void addAdditionalSaveData(CompoundTag tag) {
@@ -139,6 +142,12 @@ public class BumbleBeastEntity extends Animal implements IAnimatable, NeutralMob
 	public void readAdditionalSaveData(CompoundTag tag) {
 		this.readPersistentAngerSaveData(this.level, tag);
 		this.setHasHoney(tag.getBoolean("HasHoney"));
+	}
+	
+	protected void customServerAiStep() {
+		if (!this.level.isClientSide) {
+	         this.updatePersistentAnger((ServerLevel)this.level, false);
+	      }
 	}
 	
 	public boolean requiresUpdateEveryTick() {
@@ -200,7 +209,12 @@ public class BumbleBeastEntity extends Animal implements IAnimatable, NeutralMob
 	
 	@Override
 	protected float getStandingEyeHeight(Pose pose, EntityDimensions entityDimensions) {
-	      return 1.25F;
+	    return 1.25F;
+	}
+	
+	@Override
+	public boolean isInvulnerableTo(DamageSource source) {
+		return source.isProjectile() || super.isInvulnerableTo(source);
 	}
 	
 	@Override
@@ -221,6 +235,12 @@ public class BumbleBeastEntity extends Animal implements IAnimatable, NeutralMob
 		         if (honeyAmount == 0) {
 		        	 this.setHasHoney(false);
 		         }
+		         
+		         // Chance to target player when taking honey
+		         if (RollBoolean.roll(6, random)) {
+		        	 this.setTarget(player);
+		         }
+		         
 		         return InteractionResult.sidedSuccess(this.level.isClientSide);
 		      } else {
 		         return super.mobInteract(player, hand);
@@ -284,12 +304,57 @@ public class BumbleBeastEntity extends Animal implements IAnimatable, NeutralMob
 	
 	class BumbleBeastAttackGoal extends MeleeAttackGoal {
 
-		public BumbleBeastAttackGoal(BumbleBeastEntity entity, double speedMult, boolean mustSee) {
-			super(entity, speedMult, mustSee);
+		public BumbleBeastAttackGoal(BumbleBeastEntity entity) {
+			super(entity, 1.4, true);
 		}
 		
+		public boolean canUse() {
+	        return super.canUse() && !this.mob.isVehicle() && BumbleBeastEntity.this.isAngry();
+	     }
+		
+		public boolean canContinueToUse() {
+	        return super.canContinueToUse() && !this.mob.isVehicle() && BumbleBeastEntity.this.isAngry();
+	     }
+		
 		protected double getAttackReachSqr(LivingEntity entity) {
-	         return (double)(10.0F + entity.getBbWidth());
+	        return (double)(11.0F + entity.getBbWidth());
 	    } 
+	}
+	
+	class BumbleBeastHurtByOtherGoal extends HurtByTargetGoal {
+		 
+		BumbleBeastHurtByOtherGoal(BumbleBeastEntity entity) {
+	         super(entity);
+	      }
+		 
+		 public boolean canContinueToUse() {
+	         return BumbleBeastEntity.this.isAngry() && super.canContinueToUse();
+	      }
+	   }
+	
+	static class BumbleBeastBecomeAngryTargetGoal extends NearestAttackableTargetGoal<LivingEntity> {
+
+		BumbleBeastBecomeAngryTargetGoal(BumbleBeastEntity entity) {
+			super(entity, LivingEntity.class, 10, false, false, entity::isAngryAt);
+		}
+		
+		public boolean canUse() {
+			return this.canTarget() && super.canUse();
+		}
+		
+		public boolean canContinueToUse() {
+			boolean flag = this.canTarget();
+			if (flag && this.mob.getTarget() != null) {
+	            return super.canContinueToUse();
+	         } else {
+	            this.targetMob = null;
+	            return false;
+	         }	
+		}
+		
+		private boolean canTarget() {
+			BumbleBeastEntity entity = (BumbleBeastEntity)this.mob;
+			return entity.isAngry();
+		}
 	}
 }

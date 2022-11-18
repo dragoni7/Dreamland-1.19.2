@@ -10,7 +10,8 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class AncientEggBlock extends Block implements EntityBlock {
-
+	
+	// WIP
 	public AncientEggBlock(Properties properties) {
 		super(properties);
 	}

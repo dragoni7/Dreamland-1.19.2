@@ -11,8 +11,6 @@ public class EmissiveHiveBlock extends LarvaAngerableBlock {
 	}
 	
 	public static ToIntFunction<BlockState> emission(int lightLevel) {
-	      return (light) -> {
-	         return lightLevel;
-	      };
+		return (light) -> { return lightLevel; };
 	}
 }

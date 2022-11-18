@@ -30,7 +30,6 @@ public class OpalClusterBlock extends Block {
 	}
 	
 	public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource rand) {
-		
 		if (counter % 60 == 0) {
 			level.addParticle(ParticleTypes.ELECTRIC_SPARK, pos.getX() + rand.nextDouble(), pos.getY() + 0.75D, pos.getZ() + rand.nextDouble(), 0.0D, 0.0D, 0.0D);
 		}

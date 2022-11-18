@@ -21,11 +21,11 @@ import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
-import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.world.level.GrassColor;
 
 public class DreamlandClientEventHandler {
 
@@ -42,7 +42,6 @@ public class DreamlandClientEventHandler {
 	private static void setupClient(final FMLClientSetupEvent event) {
 		event.enqueueWork(()-> {
 			
-			ItemBlockRenderTypes.setRenderLayer(DreamlandFluids.TAR_BLOCK.get(), RenderType.solid());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandFluids.TAR_FLUID.get(), RenderType.solid());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandFluids.TAR_FLOWING.get(), RenderType.solid());
 			
@@ -60,13 +59,13 @@ public class DreamlandClientEventHandler {
 	}
 	
 	private static void registerArmorRenders(final EntityRenderersEvent.AddLayers event) {
-		GeoArmorRenderer.registerArmorRenderer(LarvaSymbioteArmorItem.class, new LarvaSymbioteRenderer());
-		GeoArmorRenderer.registerArmorRenderer(BreatherHelmetArmorItem.class, new BreatherHelmetRenderer());
-		GeoArmorRenderer.registerArmorRenderer(NecratheneArmorItem.class, new NecratheneArmorRenderer());
+		GeoArmorRenderer.registerArmorRenderer(LarvaSymbioteArmorItem.class, () -> new LarvaSymbioteRenderer());
+		GeoArmorRenderer.registerArmorRenderer(BreatherHelmetArmorItem.class, () -> new BreatherHelmetRenderer());
+		GeoArmorRenderer.registerArmorRenderer(NecratheneArmorItem.class, () -> new NecratheneArmorRenderer());
 	}
 	
 	private static void registerBlockColors(final RegisterColorHandlersEvent.Block event) {
-		event.register((state, world, pos, tintIndex) -> BiomeColors.getAverageGrassColor(world, pos), DreamlandBlocks.TOXIC_GRASS.block().get());
+		event.register((state, world, pos, tintIndex) -> world != null && pos != null ? BiomeColors.getAverageGrassColor(world, pos) : GrassColor.get(0.5D, 1.0D), DreamlandBlocks.TOXIC_GRASS.block().get());
 	}
 	
 	private static void registerParticles(RegisterParticleProvidersEvent event) {

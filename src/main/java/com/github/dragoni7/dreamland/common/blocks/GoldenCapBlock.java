@@ -22,8 +22,8 @@ public class GoldenCapBlock extends BushBlock {
 	    return PushReaction.DESTROY;
 	}
 	
-	public VoxelShape getShape(BlockState p_54889_, BlockGetter p_54890_, BlockPos p_54891_, CollisionContext p_54892_) {
-	      return SHAPE;
+	public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
+		return SHAPE;
 	}
 
 }

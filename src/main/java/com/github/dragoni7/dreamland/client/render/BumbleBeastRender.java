@@ -15,6 +15,7 @@ public class BumbleBeastRender extends GeoEntityRenderer<BumbleBeastEntity> {
 
 	public BumbleBeastRender(Context renderManager) {
 		super(renderManager, new BumbleBeastModel());
+		this.addLayer(new BumbleBeastEyeFeatureRenderer(this, new BumbleBeastEyeEntityRenderer(renderManager, new BumbleBeastModel())));
 	}
 	
 	@Override

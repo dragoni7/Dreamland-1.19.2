@@ -50,14 +50,16 @@ import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType.EDefaultLoopTypes;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 	
-	private AnimationFactory factory = new AnimationFactory(this);
+	private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 	private UUID persistentAngerTarget;
 	private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(LarvaEntity.class, EntityDataSerializers.BYTE);
 	private static final EntityDataAccessor<Integer> DATA_REMAINING_ANGER_TIME = SynchedEntityData.defineId(LarvaEntity.class, EntityDataSerializers.INT);
@@ -66,22 +68,22 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 		
 		if (this.dead || this.getHealth() < 0.01 || this.isDeadOrDying()) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.larva.death", false));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.larva.death", EDefaultLoopTypes.PLAY_ONCE));
 			return PlayState.CONTINUE;
 		}
 		
 		if (this.tickCount < 20) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.larva.spawn", false));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.larva.spawn", EDefaultLoopTypes.PLAY_ONCE));
 			return PlayState.CONTINUE;
 		}
 		
 		if(event.isMoving() && this.tickCount > 20) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.larva.walk", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.larva.walk", EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
 		
 		if (this.tickCount > 20) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.larva.idle", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.larva.idle", EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
 		
@@ -165,7 +167,7 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 		}
 		
 		return false;
-	   }
+	}
 	
 	public boolean checkSpawnRules(LevelAccessor level, MobSpawnType spawnReason) {
 		RandomSource rand = getRandom();
@@ -204,7 +206,7 @@ public class LarvaEntity extends Monster implements IAnimatable, NeutralMob {
 	
 	@Override
 	public boolean isInvulnerableTo(DamageSource source) {
-		return source == DamageSource.IN_WALL || source == DamageSource.FALLING_BLOCK ||super.isInvulnerableTo(source);
+		return source == DamageSource.IN_WALL || source == DamageSource.FALLING_BLOCK || super.isInvulnerableTo(source);
 	}
 	
 	public boolean causeFallDamage(float p_148750_, float p_148751_, DamageSource p_148752_) {

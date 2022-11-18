@@ -17,15 +17,17 @@ import net.minecraft.world.item.ItemStack;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType.EDefaultLoopTypes;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.item.GeoArmorItem;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class NecratheneArmorItem extends GeoArmorItem implements IAnimatable {
 	
-	private AnimationFactory factory = new AnimationFactory(this);
+	private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
 	public NecratheneArmorItem(ArmorMaterial materialIn, EquipmentSlot slot, Properties builder) {
 		super(materialIn, slot, builder.tab(Dreamland.DreamlandTab));
@@ -37,7 +39,7 @@ public class NecratheneArmorItem extends GeoArmorItem implements IAnimatable {
 		List<ItemStack> stackData = event.getExtraDataOfType(ItemStack.class);
 		LivingEntity livingEntity = event.getExtraDataOfType(LivingEntity.class).get(0);
 		
-		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.breather.idle", true));
+		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.breather.idle", EDefaultLoopTypes.LOOP));
 		
 		if (livingEntity instanceof ArmorStand) {
 			return PlayState.CONTINUE;

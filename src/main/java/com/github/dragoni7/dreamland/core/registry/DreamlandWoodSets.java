@@ -11,6 +11,6 @@ public class DreamlandWoodSets {
 	public static final WoodSet MOLD_WOOD = new WoodSet("mold_wood", MaterialColor.COLOR_CYAN);
 	
 	public static void init() {
-		Dreamland.LOGGER.always().log("Registering Dreamland Wood Sets...");
+		Dreamland.LOGGER.always().log("Registered Dreamland Wood Sets");
 	}
 }

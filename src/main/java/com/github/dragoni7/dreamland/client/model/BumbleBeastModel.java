@@ -37,7 +37,7 @@ public class BumbleBeastModel extends AnimatedGeoModel<BumbleBeastEntity> {
 		IBone head = this.getAnimationProcessor().getBone("head");
 
 		EntityModelData extraData = (EntityModelData) customPredicate.getExtraDataOfType(EntityModelData.class).get(0);
-		head.setRotationY((extraData.netHeadYaw) * ((float) Math.PI / 340F));
+		head.setRotationY((extraData.netHeadYaw) * ((float) Math.PI / 300F));
 	}
 
 }
