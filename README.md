@@ -7,6 +7,8 @@ The mod provides config files for changing values for several features. Data fil
 
 ## Issues
 When creating a new issue please ensure that the problem is caused by this mod specificly.
+Include the version for the mod, dependencies, and forge.
+Including a crash log or log significantly helps with tracking down issues.
 
 ## Links
 Download: https://www.curseforge.com/minecraft/mc-mods/dreamland-biomes
