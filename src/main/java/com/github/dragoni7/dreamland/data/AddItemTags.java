@@ -32,8 +32,6 @@ public class AddItemTags extends ItemTagsProvider {
 		.add(Items.GOLD_BLOCK).add(Items.GOLD_ORE).add(Items.GOLD_INGOT).add(Items.GOLDEN_APPLE).add(Items.GOLDEN_AXE).add(Items.GOLDEN_BOOTS).add(Items.GOLDEN_CARROT).add(Items.GOLDEN_CHESTPLATE).add(Items.GOLDEN_HELMET).add(Items.GOLDEN_HOE).add(Items.GOLDEN_HORSE_ARMOR).add(Items.GOLDEN_LEGGINGS).add(Items.GOLDEN_PICKAXE).add(Items.GOLDEN_SHOVEL).add(Items.GOLDEN_SWORD).add(Items.DEEPSLATE_GOLD_ORE).add(Items.NETHER_GOLD_ORE).add(Items.RAW_GOLD).add(Items.RAW_GOLD_BLOCK);
 		
 		tag(ItemTags.DIRT)
-		//.add(DreamlandBlocks.CLAY_SOIL.item().get())
-		//.add(DreamlandBlocks.CLAY_SOIL_GRASS.item().get())
 		.add(DreamlandBlocks.DROUGHT_SOIL.item().get())
 		.add(DreamlandBlocks.MINERAL_DIRT.item().get())
 		.add(DreamlandBlocks.FLOWERING_GRASS.item().get());

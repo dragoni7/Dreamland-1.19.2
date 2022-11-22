@@ -93,6 +93,7 @@ public class MoldWoodRoots extends Feature<NoneFeatureConfiguration> {
 			}
 		}
 		
+		// Only build the feature if its on solid ground.
 		if (!worldgenlevel.getBlockState(pos.below()).is(Blocks.AIR) && !worldgenlevel.getBlockState(pos.below()).is(Blocks.WATER)) {
 			builder.build(worldgenlevel);
 			return true;

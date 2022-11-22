@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:simple_block",
+  "config": {
+    "to_place": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "dreamland:golden_cap"
+          },
+          "weight": 95
+        },
+        {
+          "data": {
+            "Name": "dreamland:midashroom",
+            "Properties": {
+              "conditional": "false"
+            }
+          },
+          "weight": 5
+        }
+      ]
+    }
+  }
+}

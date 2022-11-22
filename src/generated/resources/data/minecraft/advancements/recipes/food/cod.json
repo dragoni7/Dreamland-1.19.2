@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:cod"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "purified_dust": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dreamland:purified_dust"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "purified_dust",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:cod"
+    ]
+  }
+}

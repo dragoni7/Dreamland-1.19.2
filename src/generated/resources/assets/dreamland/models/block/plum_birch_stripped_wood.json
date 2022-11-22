@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "dreamland:block/stripped_plum_birch_log",
+    "side": "dreamland:block/stripped_plum_birch_log"
+  }
+}

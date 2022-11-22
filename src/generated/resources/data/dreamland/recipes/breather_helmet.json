@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "dreamland",
+  "key": {
+    "#": {
+      "item": "dreamland:crystalized_purity"
+    },
+    "H": {
+      "item": "minecraft:leather_helmet"
+    },
+    "L": {
+      "tag": "forge:leather"
+    }
+  },
+  "pattern": [
+    " H ",
+    "#L#"
+  ],
+  "result": {
+    "item": "dreamland:breather_helmet"
+  }
+}

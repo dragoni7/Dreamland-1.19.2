@@ -1,0 +1,43 @@
+{
+  "type": "dreamland:noise_cone",
+  "config": {
+    "block1": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "dreamland:white_mold"
+      }
+    },
+    "block2": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "dreamland:overgrown_porous_stone"
+          },
+          "weight": 25
+        },
+        {
+          "data": {
+            "Name": "dreamland:porous_stone"
+          },
+          "weight": 75
+        }
+      ]
+    },
+    "height": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 10,
+        "min_inclusive": 7
+      }
+    },
+    "noiseFrequency": 0.1,
+    "radius": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 8,
+        "min_inclusive": 5
+      }
+    }
+  }
+}

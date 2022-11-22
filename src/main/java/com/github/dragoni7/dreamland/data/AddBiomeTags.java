@@ -27,7 +27,11 @@ public class AddBiomeTags extends BiomeTagsProvider {
 		tag(Tags.Biomes.IS_UNDERGROUND).add(BiomeKeys.HIVE).add(BiomeKeys.MIDAS_CAVES);
 		tag(Tags.Biomes.IS_DENSE_OVERWORLD).add(BiomeKeys.JEWELED_FOREST).add(BiomeKeys.TOXIC_JUNGLE);
 		tag(Tags.Biomes.IS_MUSHROOM).add(BiomeKeys.TOXIC_JUNGLE);
-		tag(Tags.Biomes.IS_MAGICAL).add(BiomeKeys.TOXIC_JUNGLE).add(BiomeKeys.MIDAS_CAVES);
+		tag(Tags.Biomes.IS_MAGICAL).add(BiomeKeys.TOXIC_JUNGLE).add(BiomeKeys.MIDAS_CAVES).add(BiomeKeys.DAWNIC_SNOWFIELD);
+		tag(Tags.Biomes.IS_COLD_OVERWORLD).add(BiomeKeys.DAWNIC_SNOWFIELD);
+		tag(Tags.Biomes.IS_SNOWY).add(BiomeKeys.DAWNIC_SNOWFIELD);
+		tag(BiomeTags.SPAWNS_COLD_VARIANT_FROGS).add(BiomeKeys.DAWNIC_SNOWFIELD);
+		tag(BiomeTags.HAS_VILLAGE_SNOWY).add(BiomeKeys.DAWNIC_SNOWFIELD);
 		
 		tag(BiomeTags.HAS_VILLAGE_DESERT).add(BiomeKeys.TAR_DELTAS);
 		tag(BiomeTags.HAS_WOODLAND_MANSION).add(BiomeKeys.JEWELED_FOREST);

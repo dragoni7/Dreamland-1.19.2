@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "dreamland",
+  "key": {
+    "E": {
+      "tag": "forge:eggs"
+    },
+    "F": {
+      "item": "dreamland:golden_flour"
+    },
+    "M": {
+      "item": "minecraft:milk_bucket"
+    },
+    "S": {
+      "item": "minecraft:sugar"
+    }
+  },
+  "pattern": [
+    "SMS",
+    "FEF"
+  ],
+  "result": {
+    "item": "dreamland:golden_roll"
+  }
+}

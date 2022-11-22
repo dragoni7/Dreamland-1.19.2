@@ -1,0 +1,22 @@
+{
+  "type": "dreamland:mold_growth",
+  "config": {
+    "to_place": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "dreamland:black_mold"
+          },
+          "weight": 50
+        },
+        {
+          "data": {
+            "Name": "dreamland:white_mold"
+          },
+          "weight": 50
+        }
+      ]
+    }
+  }
+}

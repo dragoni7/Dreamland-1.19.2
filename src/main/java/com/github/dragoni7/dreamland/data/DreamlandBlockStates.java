@@ -33,50 +33,57 @@ public class DreamlandBlockStates extends BlockStateProvider{
 	@Override
 	protected void registerStatesAndModels() {
 		
-		ArrayList<Block> simpleBlocks = new ArrayList<Block>();
-		//simpleBlocks.add(DreamlandBlocks.CLAY_SOIL.block().get());
-		simpleBlocks.add(DreamlandBlocks.KUNZITE_STONE.block().get());
-		simpleBlocks.add(DreamlandBlocks.COBBLED_KUNZITE_STONE.block().get());
-		simpleBlocks.add(DreamlandBlocks.KUNZITE_BRICKS.block().get());
-		simpleBlocks.add(DreamlandBlocks.KUNZITE_TILE.block().get());
-		simpleBlocks.add(DreamlandBlocks.CHISELED_KUNZITE.block().get());
-		simpleBlocks.add(DreamlandBlocks.KUNZITE_COPPER_ORE.block().get());
-		simpleBlocks.add(DreamlandBlocks.KUNZITE_IRON_ORE.block().get());
-		simpleBlocks.add(DreamlandBlocks.KUNZITE_REDSTONE_ORE.block().get());
-		simpleBlocks.add(DreamlandBlocks.KUNZITE_LAPIS_ORE.block().get());
-		simpleBlocks.add(DreamlandBlocks.KUNZITE_EMERALD_ORE.block().get());
-		simpleBlocks.add(DreamlandBlocks.KUNZITE_DIAMOND_ORE.block().get());
-		simpleBlocks.add(DreamlandBlocks.GOLD_BEARING_QUARTZITE.block().get());
-		//simpleBlocks.add(DreamlandBlocks.DUSK_ICE.block().get());
-		simpleBlocks.add(DreamlandBlocks.HIVE_IRON.block().get());
-		simpleBlocks.add(DreamlandBlocks.HIVE_COPPER.block().get());
-		simpleBlocks.add(DreamlandBlocks.HIVE_REDSTONE.block().get());
-		simpleBlocks.add(DreamlandBlocks.HIVE_GOLD.block().get());
-		simpleBlocks.add(DreamlandBlocks.HIVE_LAPIS.block().get());
-		simpleBlocks.add(DreamlandBlocks.HIVE_DIAMOND.block().get());
-		simpleBlocks.add(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.block().get());
-		simpleBlocks.add(DreamlandBlocks.DRIED_TAR.block().get());
-		simpleBlocks.add(DreamlandBlocks.TAR_MUD.block().get());
-		simpleBlocks.add(DreamlandBlocks.PACKED_TAR_MUD.block().get());
-		simpleBlocks.add(DreamlandBlocks.TAR_MUD_BRICKS.block().get());
-		simpleBlocks.add(DreamlandBlocks.DROUGHT_SOIL.block().get());
-		simpleBlocks.add(DreamlandBlocks.MINERAL_DIRT.block().get());
-		simpleBlocks.add(DreamlandBlocks.OPAL_BLOCK.block().get());
-		simpleBlocks.add(DreamlandBlocks.PRECIOUS_OPAL_BLOCK.block().get());
-		simpleBlocks.add(DreamlandBlocks.OPAL_TILE.block().get());
-		simpleBlocks.add(DreamlandBlocks.PRECIOUS_OPAL_TILE.block().get());
-		simpleBlocks.add(DreamlandBlocks.PRECIOUS_OPAL_LAMP.block().get());
-		simpleBlocks.add(DreamlandBlocks.JEWELED_DEEPSLATE.block().get());
-		simpleBlocks.add(DreamlandBlocks.POROUS_STONE.block().get());
-		simpleBlocks.add(DreamlandBlocks.OVERGROWN_POROUS_STONE.block().get());
-		simpleBlocks.add(DreamlandBlocks.PURE_STONE.block().get());
-		simpleBlocks.add(DreamlandBlocks.PETRIFIED_VEGETATION.block().get());
-		simpleBlocks.add(DreamlandBlocks.TOXIC_DIRT.block().get());
-		simpleBlocks.add(DreamlandBlocks.TOXIC_VEGETATION.block().get());
-		simpleBlocks.add(DreamlandBlocks.DECAYED_VEGETATION.block().get());
-		simpleBlocks.add(DreamlandBlocks.GLOWING_MOLD_WOOD.block().get());
-		simpleBlocks.add(DreamlandBlocks.NECRATHENE_ORE.block().get());
-		simpleBlocks.add(DreamlandBlocks.PURITY_ORE.block().get());
+		ArrayList<Block> simpleBlocks = new ArrayList<Block>() {
+			private static final long serialVersionUID = -13823954668890035L;
+			{
+				add(DreamlandBlocks.DAWN_ICE.block().get());
+				add(DreamlandBlocks.FROST.block().get());
+				add(DreamlandBlocks.FROSTSTONE.block().get());
+				add(DreamlandBlocks.PERMAFROST.block().get());
+				add(DreamlandBlocks.KUNZITE_STONE.block().get());
+				add(DreamlandBlocks.COBBLED_KUNZITE_STONE.block().get());
+				add(DreamlandBlocks.KUNZITE_BRICKS.block().get());
+				add(DreamlandBlocks.KUNZITE_TILE.block().get());
+				add(DreamlandBlocks.CHISELED_KUNZITE.block().get());
+				add(DreamlandBlocks.KUNZITE_COPPER_ORE.block().get());
+				add(DreamlandBlocks.KUNZITE_IRON_ORE.block().get());
+				add(DreamlandBlocks.KUNZITE_REDSTONE_ORE.block().get());
+				add(DreamlandBlocks.KUNZITE_LAPIS_ORE.block().get());
+				add(DreamlandBlocks.KUNZITE_EMERALD_ORE.block().get());
+				add(DreamlandBlocks.KUNZITE_DIAMOND_ORE.block().get());
+				add(DreamlandBlocks.GOLD_BEARING_QUARTZITE.block().get());
+				add(DreamlandBlocks.HIVE_IRON.block().get());
+				add(DreamlandBlocks.HIVE_COPPER.block().get());
+				add(DreamlandBlocks.HIVE_REDSTONE.block().get());
+				add(DreamlandBlocks.HIVE_GOLD.block().get());
+				add(DreamlandBlocks.HIVE_LAPIS.block().get());
+				add(DreamlandBlocks.HIVE_DIAMOND.block().get());
+				add(DreamlandBlocks.HIVE_BLOCK_WITH_JELLY.block().get());
+				add(DreamlandBlocks.DRIED_TAR.block().get());
+				add(DreamlandBlocks.TAR_MUD.block().get());
+				add(DreamlandBlocks.PACKED_TAR_MUD.block().get());
+				add(DreamlandBlocks.TAR_MUD_BRICKS.block().get());
+				add(DreamlandBlocks.DROUGHT_SOIL.block().get());
+				add(DreamlandBlocks.MINERAL_DIRT.block().get());
+				add(DreamlandBlocks.OPAL_BLOCK.block().get());
+				add(DreamlandBlocks.PRECIOUS_OPAL_BLOCK.block().get());
+				add(DreamlandBlocks.OPAL_TILE.block().get());
+				add(DreamlandBlocks.PRECIOUS_OPAL_TILE.block().get());
+				add(DreamlandBlocks.PRECIOUS_OPAL_LAMP.block().get());
+				add(DreamlandBlocks.JEWELED_DEEPSLATE.block().get());
+				add(DreamlandBlocks.POROUS_STONE.block().get());
+				add(DreamlandBlocks.OVERGROWN_POROUS_STONE.block().get());
+				add(DreamlandBlocks.PURE_STONE.block().get());
+				add(DreamlandBlocks.PETRIFIED_VEGETATION.block().get());
+				add(DreamlandBlocks.TOXIC_DIRT.block().get());
+				add(DreamlandBlocks.TOXIC_VEGETATION.block().get());
+				add(DreamlandBlocks.DECAYED_VEGETATION.block().get());
+				add(DreamlandBlocks.GLOWING_MOLD_WOOD.block().get());
+				add(DreamlandBlocks.NECRATHENE_ORE.block().get());
+				add(DreamlandBlocks.PURITY_ORE.block().get());
+			}
+		};
+		
 
 		for(Block element : simpleBlocks) {
 			simpleBlock(element);

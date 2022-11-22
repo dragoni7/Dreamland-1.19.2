@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dreamland:mold_wood_fence"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "mold_wood_fence": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dreamland:mold_wood_planks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "mold_wood_fence",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dreamland:mold_wood_fence"
+    ]
+  }
+}

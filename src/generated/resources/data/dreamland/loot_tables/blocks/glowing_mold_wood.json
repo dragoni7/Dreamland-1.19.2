@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "dreamland:glowing_mold_wood"
+        }
+      ],
+      "name": "glowing_mold_wood",
+      "rolls": 1.0
+    }
+  ]
+}

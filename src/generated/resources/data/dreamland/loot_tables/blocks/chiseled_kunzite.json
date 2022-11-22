@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "dreamland:chiseled_kunzite"
+        }
+      ],
+      "name": "chiseled_kunzite",
+      "rolls": 1.0
+    }
+  ]
+}

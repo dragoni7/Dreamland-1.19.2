@@ -1,0 +1,32 @@
+{
+  "type": "dreamland:noise_cone",
+  "config": {
+    "block1": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:calcite"
+      }
+    },
+    "block2": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:amethyst_block"
+      }
+    },
+    "height": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 25,
+        "min_inclusive": 24
+      }
+    },
+    "noiseFrequency": 0.1,
+    "radius": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 6,
+        "min_inclusive": 5
+      }
+    }
+  }
+}

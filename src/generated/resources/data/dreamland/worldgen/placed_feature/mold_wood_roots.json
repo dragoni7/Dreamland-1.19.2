@@ -1,0 +1,34 @@
+{
+  "feature": "dreamland:mold_wood_roots",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": 5
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "WORLD_SURFACE_WG"
+    },
+    {
+      "type": "minecraft:environment_scan",
+      "direction_of_search": "down",
+      "max_steps": 12,
+      "target_condition": {
+        "type": "minecraft:matching_blocks",
+        "blocks": [
+          "dreamland:white_mold",
+          "dreamland:black_mold",
+          "dreamland:porous_stone",
+          "dreamland:toxic_grass",
+          "dreamland:toxic_dirt"
+        ]
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

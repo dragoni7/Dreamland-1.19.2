@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "dreamland:block/cobbled_kunzite_slab"
+    },
+    "type=double": {
+      "model": "dreamland:block/cobbled_kunzite_stone"
+    },
+    "type=top": {
+      "model": "dreamland:block/cobbled_kunzite_slab_top"
+    }
+  }
+}

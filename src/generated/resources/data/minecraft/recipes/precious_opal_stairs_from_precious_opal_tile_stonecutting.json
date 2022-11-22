@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "dreamland:precious_opal_tile"
+  },
+  "result": "dreamland:precious_opal_stairs"
+}

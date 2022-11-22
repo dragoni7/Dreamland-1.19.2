@@ -23,6 +23,11 @@ public class DreamlandItemModels extends ItemModelProvider {
 	@Override
 	protected void registerModels() {
 		
+		blockItemModel(DreamlandBlocks.DAWN_ICE.item(),"block/dawn_ice");
+		blockItemModel(DreamlandBlocks.FROST.item(), "block/frost");
+		blockItemModel(DreamlandBlocks.FROSTSTONE.item(), "block/froststone");
+		blockItemModel(DreamlandBlocks.PERMAFROST.item(), "block/permafrost");
+		
 		blockItemModel(DreamlandBlocks.KUNZITE_STONE.item(), "block/kunzite");
 		blockItemModel(DreamlandBlocks.COBBLED_KUNZITE_STONE.item(), "block/cobbled_kunzite_stone");
 		blockItemModel(DreamlandBlocks.KUNZITE_TILE.item(), "block/kunzite_tile");
@@ -47,8 +52,6 @@ public class DreamlandItemModels extends ItemModelProvider {
 		blockItemModel(DreamlandBlocks.GOLDEN_MOSS_CARPET.item(), "block/golden_moss_carpet");
 		
 		blockItemModel(DreamlandBlocks.HIVE_BLOCK.item(),"block/hive_block1");
-		//blockItemModel(DreamlandBlocks.CLAY_SOIL.item(),"block/clay_soil");
-		//blockItemModel(DreamlandBlocks.DUSK_ICE.item(),"block/dusk_ice");
 		blockItemModel(DreamlandBlocks.HIVE_JELLY_CLUSTER.item(), "block/jelly_cluster_item");
 		blockItemModel(DreamlandBlocks.HIVE_MEMBRANE.item(), "block/hive_membrane_connected");
 		blockItemModel(DreamlandBlocks.HIVE_WEAVER.item(), "block/hive_weaver");

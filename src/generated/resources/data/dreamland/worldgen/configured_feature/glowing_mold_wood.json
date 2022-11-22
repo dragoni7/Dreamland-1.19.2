@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:ore",
+  "config": {
+    "discard_chance_on_air_exposure": 0.0,
+    "size": 24,
+    "targets": [
+      {
+        "state": {
+          "Name": "dreamland:glowing_mold_wood",
+          "Properties": {
+            "axis": "y"
+          }
+        },
+        "target": {
+          "block": "dreamland:mold_wood_wood",
+          "predicate_type": "minecraft:block_match"
+        }
+      }
+    ]
+  }
+}

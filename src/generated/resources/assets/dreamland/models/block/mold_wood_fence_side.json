@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_side",
+  "textures": {
+    "texture": "dreamland:block/mold_wood_planks"
+  }
+}

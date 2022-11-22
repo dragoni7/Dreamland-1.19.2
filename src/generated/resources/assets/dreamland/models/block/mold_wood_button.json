@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "dreamland:block/mold_wood_planks"
+  }
+}

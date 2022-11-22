@@ -23,6 +23,11 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add("itemGroup." + Dreamland.MODID, "Dreamland");
 		
 		// Block
+		add(DreamlandBlocks.DAWN_ICE.block().get(), "Dawnic Ice");
+		add(DreamlandBlocks.FROST.block().get(), "Frost");
+		add(DreamlandBlocks.FROSTSTONE.block().get(), "Froststone");
+		add(DreamlandBlocks.PERMAFROST.block().get(), "Permafrost");
+		
 		add(DreamlandBlocks.KUNZITE_STONE.block().get(), "Kunzite Stone");
 		add(DreamlandBlocks.COBBLED_KUNZITE_STONE.block().get(), "Cobbled Kunzite Stone");
 		add(DreamlandBlocks.KUNZITE_TILE.block().get(), "Kunzite Tile");
@@ -182,6 +187,7 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandEffects.TARRED.get(), "Tarred");
 		
 		// Biomes
+		add("biome.dreamland.dawnic_snowfield", "Dawnic Snowfield");
 		add("biome.dreamland.midas_caves", "Midas Caves");
 		add("biome.dreamland.hive", "Hive");
 		add("biome.dreamland.jeweled_forest", "Jeweled Forest");

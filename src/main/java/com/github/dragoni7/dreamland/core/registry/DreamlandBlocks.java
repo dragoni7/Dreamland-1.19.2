@@ -37,17 +37,18 @@ public class DreamlandBlocks {
 	
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Dreamland.MODID);
 	
-		/*public static final BlockItemSet DUSK_ICE = new BlockItemSet("dusk_ice", 
-				() -> new DuskIceBlock(BlockBehaviour.Properties
-						.of(Material.ICE)
-						.strength(0.5F)
-						.sound(SoundType.GLASS)
+	// --------------Dawnic Snowfield Blocks--------------
+	
+		public static final BlockItemSet DAWN_ICE = new BlockItemSet("dawn_ice", () -> new DawnIceBlock(BlockBehaviour.Properties
+						.copy(Blocks.ICE)
+						.strength(0.8F)
 						.randomTicks()
-						.noOcclusion()
-						.friction(0.98F)
 						.hasPostProcess(DreamlandBlocks::always)
-						.emissiveRendering(DreamlandBlocks::always)
-						)); */
+						.emissiveRendering(DreamlandBlocks::always))); 
+		
+		public static final BlockItemSet FROST = new BlockItemSet("frost", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT)));
+		public static final BlockItemSet FROSTSTONE = new BlockItemSet("froststone", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+		public static final BlockItemSet PERMAFROST = new BlockItemSet("permafrost", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)));
 	
 	// --------------Midas Caves Blocks--------------
 	

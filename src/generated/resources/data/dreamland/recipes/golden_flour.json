@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "dreamland",
+  "key": {
+    "#": {
+      "item": "dreamland:gold_fronds"
+    },
+    "W": {
+      "tag": "forge:crops/wheat"
+    }
+  },
+  "pattern": [
+    "#W",
+    "W#"
+  ],
+  "result": {
+    "count": 2,
+    "item": "dreamland:golden_flour"
+  }
+}

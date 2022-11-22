@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
+import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
 import com.github.dragoni7.dreamland.data.DreamlandBlockTags;
 import com.github.dragoni7.dreamland.util.DreamlandLoc;
 import com.google.common.collect.ImmutableList;
@@ -22,6 +23,8 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.configurations.DeltaFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.heightproviders.UniformHeight;
 import net.minecraft.world.level.levelgen.heightproviders.VeryBiasedToBottomHeight;
@@ -128,6 +131,8 @@ public class DreamlandFeaturePlacements {
 	public static final Holder<PlacedFeature> NECRATHENE_ORE = registerPlacedFeature("necrathene_ore", DreamlandConfiguredFeatures.NECRATHENE_ORE, commonOrePlacement(10, HeightRangePlacement.triangle(VerticalAnchor.absolute(20), VerticalAnchor.absolute(112))));
 	public static final Holder<PlacedFeature> PURITY_ORE = registerPlacedFeature("purity_ore", DreamlandConfiguredFeatures.PURITY_ORE, commonOrePlacement(16, HeightRangePlacement.triangle(VerticalAnchor.bottom(), VerticalAnchor.absolute(0))));
 	public static final Holder<PlacedFeature> POROUS_STONE_UNDERGROUND = registerPlacedFeature("porous_stone_underground", DreamlandConfiguredFeatures.POROUS_STONE_UNDERGROUND, commonOrePlacement(16, HeightRangePlacement.triangle(VerticalAnchor.absolute(0), VerticalAnchor.absolute(112))));
+	
+	public static final Holder<PlacedFeature> PLACED_ICE_DELTA = registerPlacedFeature("ice_delta", DreamlandConfiguredFeatures.ICE_DELTA, CountPlacement.of(UniformInt.of(0, 46)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
 	
 	private static ImmutableList.Builder<PlacementModifier> treePlacementSurfaceBase(PlacementModifier modifier) {
 	       return ImmutableList.<PlacementModifier>builder().add(modifier).add(InSquarePlacement.spread()).add(VegetationPlacements.TREE_THRESHOLD).add(PlacementUtils.HEIGHTMAP_WORLD_SURFACE).add(BiomeFilter.biome());

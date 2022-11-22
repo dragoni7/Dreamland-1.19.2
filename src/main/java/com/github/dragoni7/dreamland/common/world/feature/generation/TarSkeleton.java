@@ -1,6 +1,11 @@
 package com.github.dragoni7.dreamland.common.world.feature.generation;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import com.github.dragoni7.dreamland.common.world.feature.util.FeatureBuilder;
+import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
+import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
 import com.github.dragoni7.dreamland.util.RollBoolean;
 import com.mojang.serialization.Codec;
 
@@ -28,7 +33,10 @@ public class TarSkeleton extends Feature<NoneFeatureConfiguration> {
 		WorldGenLevel worldgenlevel = context.level();
 		BlockPos blockpos = context.origin();
 		RandomSource random = context.random();
-		FeatureBuilder tarSkeletonBuilder = new FeatureBuilder();
+		
+		FeatureBuilder tarSkeletonBuilder = new FeatureBuilder(new ArrayList<BlockState>(
+				// Only replace tar mud and tar fluid.
+				Arrays.asList(DreamlandBlocks.TAR_MUD.block().get().defaultBlockState(), DreamlandFluids.TAR_BLOCK.get().defaultBlockState())));
 		
 		if (RollBoolean.roll(1, random)) {
 			if (!createSpineNorth(worldgenlevel, tarSkeletonBuilder, blockpos, random)) {
@@ -55,11 +63,11 @@ public class TarSkeleton extends Feature<NoneFeatureConfiguration> {
 		
 		for (int i = 0; i < 3; i++) {
 			for (int xChange = 0; xChange < 3; xChange++) {
-				status = builder.addInput(worldgenlevel, BONE.setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), pos, true);
+				status = builder.addInput(worldgenlevel, BONE.setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z), pos, false);
 				pos = pos.north();
 			}
 			pos = pos.above();
-			status = builder.addInput(worldgenlevel, BONE, pos.south(), true);
+			status = builder.addInput(worldgenlevel, BONE, pos.south(), false);
 		}
 		
 		if (status) {
@@ -79,11 +87,11 @@ public class TarSkeleton extends Feature<NoneFeatureConfiguration> {
 		
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 3; j++) {
-				status = builder.addInput(worldgenlevel, BONE.setValue(RotatedPillarBlock.AXIS, Direction.Axis.X), pos, true);
+				status = builder.addInput(worldgenlevel, BONE.setValue(RotatedPillarBlock.AXIS, Direction.Axis.X), pos, false);
 				pos = pos.south();
 			}
 			pos = pos.above();
-			status = builder.addInput(worldgenlevel, BONE, pos.north(), true);
+			status = builder.addInput(worldgenlevel, BONE, pos.north(), false);
 		}
 		
 		if (status) {
@@ -103,13 +111,13 @@ public class TarSkeleton extends Feature<NoneFeatureConfiguration> {
 				if (j == 3) {
 					
 					for (int k = 1; k <= length; k++) {
-						status = builder.addInput(worldgenlevel, BONE, pos.offset(j, -k, 0), true);
-						status = builder.addInput(worldgenlevel, BONE, pos.offset(-j, -k, 0), true);
+						status = builder.addInput(worldgenlevel, BONE, pos.offset(j, -k, 0), false);
+						status = builder.addInput(worldgenlevel, BONE, pos.offset(-j, -k, 0), false);
 					}
 				}
 				else {
-					status = builder.addInput(worldgenlevel, BONE, pos.offset(j, 0, 0), true);
-					status = builder.addInput(worldgenlevel, BONE, pos.offset(-j, 0, 0), true);
+					status = builder.addInput(worldgenlevel, BONE, pos.offset(j, 0, 0), false);
+					status = builder.addInput(worldgenlevel, BONE, pos.offset(-j, 0, 0), false);
 				}
 			}
 			
@@ -130,13 +138,13 @@ public class TarSkeleton extends Feature<NoneFeatureConfiguration> {
 				if (j == 3) {
 					
 					for (int k = 1; k <= length; k++) {
-						status = builder.addInput(worldgenlevel, BONE, pos.offset(j, -k, 0), true);
-						status = builder.addInput(worldgenlevel, BONE, pos.offset(-j, -k, 0), true);
+						status = builder.addInput(worldgenlevel, BONE, pos.offset(j, -k, 0), false);
+						status = builder.addInput(worldgenlevel, BONE, pos.offset(-j, -k, 0), false);
 					}
 				}
 				else {
-					status = builder.addInput(worldgenlevel, BONE, pos.offset(j, 0, 0), true);
-					status = builder.addInput(worldgenlevel, BONE, pos.offset(-j, 0, 0), true);
+					status = builder.addInput(worldgenlevel, BONE, pos.offset(j, 0, 0), false);
+					status = builder.addInput(worldgenlevel, BONE, pos.offset(-j, 0, 0), false);
 				}
 			}
 			

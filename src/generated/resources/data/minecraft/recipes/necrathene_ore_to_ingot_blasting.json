@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "ingredient": {
+    "item": "dreamland:necrathene_ore"
+  },
+  "result": "dreamland:necrathene_ingot"
+}

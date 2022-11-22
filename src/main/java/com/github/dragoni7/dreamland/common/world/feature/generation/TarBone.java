@@ -1,6 +1,11 @@
 package com.github.dragoni7.dreamland.common.world.feature.generation;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import com.github.dragoni7.dreamland.common.world.feature.util.FeatureBuilder;
+import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
+import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
 import com.mojang.serialization.Codec;
 
 import net.minecraft.core.BlockPos;
@@ -28,20 +33,24 @@ public class TarBone extends Feature<NoneFeatureConfiguration> {
 		BlockPos blockpos = context.origin();
 		RandomSource random = context.random();
 		boolean status = false;
-		FeatureBuilder tarBoneBuilder = new FeatureBuilder();
+		
+		FeatureBuilder tarBoneBuilder = new FeatureBuilder(new ArrayList<BlockState>(
+				// Only replace tar mud and tar fluid.
+				Arrays.asList(DreamlandBlocks.TAR_MUD.block().get().defaultBlockState(), DreamlandFluids.TAR_BLOCK.get().defaultBlockState())));
 		
 		if (random.nextBoolean()) {
 			blockpos = blockpos.below();
 		}
 		
-		tarBoneBuilder.addInput(worldgenlevel, BONE, blockpos, true);
+		tarBoneBuilder.addInput(worldgenlevel, BONE, blockpos, false);
 		blockpos = blockpos.above();
-		status = tarBoneBuilder.addInput(worldgenlevel, BONE, blockpos, true);
+		status = tarBoneBuilder.addInput(worldgenlevel, BONE, blockpos, false);
 		
 		if (random.nextBoolean()) {
 			blockpos = blockpos.above();
-			status = tarBoneBuilder.addInput(worldgenlevel, BONE, blockpos, true);
+			status = tarBoneBuilder.addInput(worldgenlevel, BONE, blockpos, false);
 		}
+		
 		BlockState rotated = BONE;
 		switch (random.nextInt(3)) {
 		case 0: {
@@ -64,11 +73,15 @@ public class TarBone extends Feature<NoneFeatureConfiguration> {
 			rotated = rotated.setValue(RotatedPillarBlock.AXIS, Direction.Axis.X);
 			break;
 		}
-		default: return status;
+			default: return status;
 		}
 		
-		status = tarBoneBuilder.addInput(worldgenlevel, rotated, blockpos, true);
-		tarBoneBuilder.build(worldgenlevel);
+		status = tarBoneBuilder.addInput(worldgenlevel, rotated, blockpos, false);
+		
+		if (status) {
+			tarBoneBuilder.build(worldgenlevel);
+		}
+		
 		return status;
 	}
 

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "dreamland:block/mold_wood_planks",
+    "side": "dreamland:block/mold_wood_planks",
+    "top": "dreamland:block/mold_wood_planks"
+  }
+}

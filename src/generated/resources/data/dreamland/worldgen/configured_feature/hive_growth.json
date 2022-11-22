@@ -1,0 +1,22 @@
+{
+  "type": "dreamland:hive_growth_layer",
+  "config": {
+    "growthBlock": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "dreamland:hive_growth"
+      }
+    },
+    "height": 2,
+    "radius": 4,
+    "underBlock": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "dreamland:hive_block",
+        "Properties": {
+          "conditional": "false"
+        }
+      }
+    }
+  }
+}

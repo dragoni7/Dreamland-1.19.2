@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:multiface_growth",
+  "config": {
+    "block": "dreamland:spore_node",
+    "can_be_placed_on": [
+      "dreamland:mold_wood_log",
+      "dreamland:mold_wood_wood",
+      "dreamland:porous_stone",
+      "dreamland:overgrown_porous_stone",
+      "dreamland:petrified_vegetation",
+      "dreamland:toxic_dirt",
+      "dreamland:white_mold",
+      "dreamland:black_mold"
+    ],
+    "can_place_on_ceiling": true,
+    "can_place_on_floor": true,
+    "can_place_on_wall": true,
+    "chance_of_spreading": 0.9,
+    "search_range": 24
+  }
+}

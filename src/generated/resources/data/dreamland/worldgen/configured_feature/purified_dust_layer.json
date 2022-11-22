@@ -1,0 +1,19 @@
+{
+  "type": "dreamland:hive_growth_layer",
+  "config": {
+    "growthBlock": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "dreamland:purified_dust"
+      }
+    },
+    "height": 3,
+    "radius": 4,
+    "underBlock": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "dreamland:pure_stone"
+      }
+    }
+  }
+}

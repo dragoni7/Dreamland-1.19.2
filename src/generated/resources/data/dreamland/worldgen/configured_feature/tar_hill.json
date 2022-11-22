@@ -1,0 +1,43 @@
+{
+  "type": "dreamland:noise_hill",
+  "config": {
+    "block": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "dreamland:dried_tar"
+      }
+    },
+    "lakeFrequency": 1,
+    "liquid": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "dreamland:tar",
+        "Properties": {
+          "level": "0"
+        }
+      }
+    },
+    "noiseFrequency": 0.1,
+    "xRadius": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 10,
+        "min_inclusive": 7
+      }
+    },
+    "yHeight": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 24,
+        "min_inclusive": 7
+      }
+    },
+    "zRadius": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 10,
+        "min_inclusive": 7
+      }
+    }
+  }
+}

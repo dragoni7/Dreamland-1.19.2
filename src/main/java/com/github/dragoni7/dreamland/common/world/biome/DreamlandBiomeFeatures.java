@@ -7,20 +7,16 @@ import net.minecraft.data.worldgen.placement.OrePlacements;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
 public class DreamlandBiomeFeatures {
-
-	public static void addHiveOres(BiomeGenerationSettings.Builder builder) {
-		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.PLACED_FILLED_HIVE_BLOCK);
-		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.HIVE_IRON_UPPER);
-		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.HIVE_IRON_MIDDLE);
-		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.HIVE_COPPER);
-		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.HIVE_COPPER_LARGE);
-		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.HIVE_REDSTONE);
-		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.HIVE_REDSTONE_LOWER);
-		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.HIVE_ORE_GOLD);
-		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.HIVE_ORE_GOLD_LOWER);
-		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.HIVE_LAPIS);
-		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.HIVE_DIAMOND);
-		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.HIVE_DIAMOND_LARGE);
+	
+	public static void dawnicSnowfieldBiomeFeatures(BiomeGenerationSettings.Builder builder) {
+		BiomeDefaultFeatures.addDefaultCarversAndLakes(builder);
+        BiomeDefaultFeatures.addDefaultCrystalFormations(builder);
+        BiomeDefaultFeatures.addDefaultMonsterRoom(builder);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(builder);
+        BiomeDefaultFeatures.addDefaultSprings(builder);
+        BiomeDefaultFeatures.addSurfaceFreezing(builder);
+        
+        builder.addFeature(GenerationStep.Decoration.LAKES, DreamlandFeaturePlacements.PLACED_ICE_DELTA);
 	}
 	
 	public static void midascavesBiomeFeatures(BiomeGenerationSettings.Builder builder) {
@@ -51,6 +47,21 @@ public class DreamlandBiomeFeatures {
 		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.KUNZITE_POINTS_EAST);
 		builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, DreamlandFeaturePlacements.KUNZITE_POINTS_WEST);
 		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, DreamlandFeaturePlacements.GOLD_GEODE);
+	}
+
+	public static void addHiveOres(BiomeGenerationSettings.Builder builder) {
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.PLACED_FILLED_HIVE_BLOCK);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.HIVE_IRON_UPPER);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.HIVE_IRON_MIDDLE);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.HIVE_COPPER);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.HIVE_COPPER_LARGE);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.HIVE_REDSTONE);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.HIVE_REDSTONE_LOWER);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.HIVE_ORE_GOLD);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.HIVE_ORE_GOLD_LOWER);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.HIVE_LAPIS);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.HIVE_DIAMOND);
+		builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, DreamlandFeaturePlacements.HIVE_DIAMOND_LARGE);
 	}
 	
 	public static void hiveBiomeFeatures(BiomeGenerationSettings.Builder builder) {

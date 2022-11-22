@@ -1,0 +1,156 @@
+{
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ]
+  },
+  "downfall": 0.9,
+  "effects": {
+    "fog_color": 5880459,
+    "grass_color": 2464688,
+    "mood_sound": {
+      "block_search_extent": 8,
+      "offset": 2.0,
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000
+    },
+    "particle": {
+      "options": {
+        "type": "minecraft:falling_spore_blossom"
+      },
+      "probability": 0.00128
+    },
+    "sky_color": 9541304,
+    "water_color": 6280390,
+    "water_fog_color": 6280390
+  },
+  "features": [
+    [
+      "dreamland:porous_spires",
+      "dreamland:porous_sphere",
+      "dreamland:porous_hill",
+      "dreamland:mold_wood_roots",
+      "dreamland:porous_stone_underground"
+    ],
+    [
+      "minecraft:lake_lava_underground",
+      "minecraft:lake_lava_surface"
+    ],
+    [
+      "minecraft:amethyst_geode"
+    ],
+    [
+      "minecraft:monster_room",
+      "minecraft:monster_room_deep"
+    ],
+    [],
+    [],
+    [
+      "minecraft:ore_dirt",
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite_upper",
+      "minecraft:ore_granite_lower",
+      "minecraft:ore_diorite_upper",
+      "minecraft:ore_diorite_lower",
+      "minecraft:ore_andesite_upper",
+      "minecraft:ore_andesite_lower",
+      "minecraft:ore_tuff",
+      "minecraft:ore_coal_upper",
+      "minecraft:ore_coal_lower",
+      "minecraft:ore_iron_upper",
+      "minecraft:ore_iron_middle",
+      "minecraft:ore_iron_small",
+      "minecraft:ore_gold",
+      "minecraft:ore_gold_lower",
+      "minecraft:ore_redstone",
+      "minecraft:ore_redstone_lower",
+      "minecraft:ore_diamond",
+      "minecraft:ore_diamond_large",
+      "minecraft:ore_diamond_buried",
+      "minecraft:ore_lapis",
+      "minecraft:ore_lapis_buried",
+      "minecraft:ore_copper",
+      "minecraft:underwater_magma",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel",
+      "dreamland:necrathene_ore",
+      "dreamland:purity_ore",
+      "dreamland:toxic_vegetation",
+      "dreamland:decayed_vegetation"
+    ],
+    [
+      "dreamland:mold_carpet_underground",
+      "dreamland:toxic_jungle_delta"
+    ],
+    [
+      "minecraft:spring_water",
+      "minecraft:spring_lava"
+    ],
+    [
+      "minecraft:glow_lichen",
+      "dreamland:purified_dust_layer",
+      "dreamland:placed_mold_puff_tree",
+      "dreamland:toxic_jungle_vegetations",
+      "dreamland:toxic_jungle_glow_lichen",
+      "dreamland:shelf_vegetation",
+      "dreamland:glowing_mold_wood",
+      "dreamland:spore_node"
+    ],
+    [
+      "minecraft:freeze_top_layer",
+      "dreamland:mold_growth",
+      "dreamland:mold_wood_stump",
+      "dreamland:mold_wood_tree",
+      "dreamland:mold_carpet_dirt",
+      "dreamland:mold_carpet_stone"
+    ]
+  ],
+  "precipitation": "rain",
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [
+      {
+        "type": "minecraft:bat",
+        "maxCount": 8,
+        "minCount": 8,
+        "weight": 10
+      }
+    ],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [
+      {
+        "type": "minecraft:spider",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 110
+      },
+      {
+        "type": "minecraft:creeper",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 110
+      },
+      {
+        "type": "minecraft:slime",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 100
+      },
+      {
+        "type": "minecraft:enderman",
+        "maxCount": 4,
+        "minCount": 1,
+        "weight": 10
+      }
+    ],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 0.95
+}

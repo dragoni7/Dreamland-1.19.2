@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "dreamland:necrathene_ingot"
+  },
+  "base": {
+    "item": "dreamland:breather_helmet"
+  },
+  "result": {
+    "item": "dreamland:necrathene_breather_helmet"
+  }
+}

@@ -5,6 +5,7 @@ bin
 .metadata
 .classpath
 .project
+.checkstyle
 
 # idea
 out
@@ -20,6 +21,7 @@ build
 # other
 eclipse
 run
+src/generated/resources/.cache/*
 
 # Files from Forge MDK
 forge*changelog.txt

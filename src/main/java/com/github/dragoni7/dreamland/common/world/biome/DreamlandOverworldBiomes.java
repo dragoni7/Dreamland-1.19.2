@@ -40,7 +40,27 @@ public class DreamlandOverworldBiomes {
         BiomeDefaultFeatures.addDefaultSoftDisks(builder);
     }
     
-    public static Biome midascaves() {
+    public static Biome dawnicSnowfield() {
+    	MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
+        DreamlandBiomeFeatures.dawnicSnowfieldBiomeFeatures(biomeBuilder);
+        spawnBuilder.creatureGenerationProbability(0.07F);
+        BiomeDefaultFeatures.snowySpawns(spawnBuilder);
+        
+        return biome(Biome.Precipitation.SNOW, 0.0F, 0.5F, new BiomeSpecialEffects.Builder()
+        		.grassColorOverride(9358330)
+				.foliageColorOverride(12444415)
+        		.waterColor(4159204)
+        		.waterFogColor(329011)
+        		.fogColor(12638463)
+        		.skyColor(16760824)
+        		.ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+        		.backgroundMusic(NORMAL_MUSIC)
+        		.build(),
+        		 spawnBuilder, biomeBuilder);
+    }
+    
+    public static Biome midasCaves() {
     	MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
         BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
         DreamlandBiomeFeatures.midascavesBiomeFeatures(biomeBuilder);
@@ -87,7 +107,7 @@ public class DreamlandOverworldBiomes {
         		 spawnBuilder, biomeBuilder);
     }
     
-    public static Biome tardeltas() {
+    public static Biome tarDeltas() {
     	MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
     	BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
     	globalOverworldGeneration(biomeBuilder);
@@ -110,7 +130,7 @@ public class DreamlandOverworldBiomes {
 				spawnBuilder, biomeBuilder);
     }
     
-    public static Biome jeweledforest() {
+    public static Biome jeweledForest() {
     	MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
     	BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
     	globalOverworldGeneration(biomeBuilder);
@@ -143,7 +163,7 @@ public class DreamlandOverworldBiomes {
     			spawnBuilder, biomeBuilder);
     }
     
-    public static Biome toxicjungle() {
+    public static Biome toxicJungle() {
     	MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
     	BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
     	globalOverworldGeneration(biomeBuilder);

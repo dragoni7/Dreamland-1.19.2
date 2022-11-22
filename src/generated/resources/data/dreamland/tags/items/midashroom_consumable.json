@@ -1,0 +1,27 @@
+{
+  "values": [
+    "dreamland:gold_bearing_quartzite",
+    "dreamland:gold_cluster",
+    "dreamland:budding_gold",
+    "dreamland:hive_gold",
+    "minecraft:gold_block",
+    "minecraft:gold_ore",
+    "minecraft:gold_ingot",
+    "minecraft:golden_apple",
+    "minecraft:golden_axe",
+    "minecraft:golden_boots",
+    "minecraft:golden_carrot",
+    "minecraft:golden_chestplate",
+    "minecraft:golden_helmet",
+    "minecraft:golden_hoe",
+    "minecraft:golden_horse_armor",
+    "minecraft:golden_leggings",
+    "minecraft:golden_pickaxe",
+    "minecraft:golden_shovel",
+    "minecraft:golden_sword",
+    "minecraft:deepslate_gold_ore",
+    "minecraft:nether_gold_ore",
+    "minecraft:raw_gold",
+    "minecraft:raw_gold_block"
+  ]
+}

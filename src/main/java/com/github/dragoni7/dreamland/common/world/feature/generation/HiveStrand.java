@@ -34,13 +34,13 @@ public class HiveStrand extends Feature<NoneFeatureConfiguration> {
 		boolean fill = RollBoolean.roll(9, random);
 		
 		switch(random.nextInt(6)) {
-		case 0: return growXZPos(worldgenlevel, strandBuilder, blockpos, fill, random);
-		case 1: return growXZNeg(worldgenlevel, strandBuilder, blockpos, fill, random);
-		case 2: return growXPos(worldgenlevel, strandBuilder, blockpos, fill, random);
-		case 3: return growXNeg(worldgenlevel, strandBuilder, blockpos, fill, random);
-		case 4: return growZPos(worldgenlevel, strandBuilder, blockpos, fill, random);
-		case 6: return growZNeg(worldgenlevel, strandBuilder, blockpos, fill, random);
-		default: return false;
+			case 0: return growXZPos(worldgenlevel, strandBuilder, blockpos, fill, random);
+			case 1: return growXZNeg(worldgenlevel, strandBuilder, blockpos, fill, random);
+			case 2: return growXPos(worldgenlevel, strandBuilder, blockpos, fill, random);
+			case 3: return growXNeg(worldgenlevel, strandBuilder, blockpos, fill, random);
+			case 4: return growZPos(worldgenlevel, strandBuilder, blockpos, fill, random);
+			case 6: return growZNeg(worldgenlevel, strandBuilder, blockpos, fill, random);
+			default: return false;
 		}
 		
 	}
@@ -65,7 +65,6 @@ public class HiveStrand extends Feature<NoneFeatureConfiguration> {
 		
 		if(fill) {
 			if (j == 1 || j == 2) {
-				
 				builder.addInput(worldgenlevel, core.setValue(HorizontalDirectionalBlock.FACING, direction).setValue(HiveWeaverBlock.LEVEL, Integer.valueOf(6)), blockpos.offset(i,j,k), true);
 			}
 			

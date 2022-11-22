@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "dreamland:decayed_vegetation"
+        }
+      ],
+      "name": "decayed_vegetation",
+      "rolls": 1.0
+    }
+  ]
+}

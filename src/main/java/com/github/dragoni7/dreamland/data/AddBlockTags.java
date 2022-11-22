@@ -54,8 +54,8 @@ public class AddBlockTags extends BlockTagsProvider {
 		.add(DreamlandBlocks.TAR_BARK_LEAVES.block().get())
 		.add(DreamlandBlocks.PLUM_BIRCH_LEAVES.block().get());
 		
-		/*tag(BlockTags.ICE)
-		.add(DreamlandBlocks.DUSK_ICE.block().get());*/
+		tag(BlockTags.ICE)
+		.add(DreamlandBlocks.DAWN_ICE.block().get());
 		
 		tag(BlockTags.REPLACEABLE_PLANTS)
 		.add(DreamlandBlocks.GOLD_FRONDS.block().get())
