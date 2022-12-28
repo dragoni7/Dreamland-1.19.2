@@ -174,6 +174,8 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandItems.SPAWN_EGG_BUMBLE_BEAST.get(), "Bumble Beast Spawn Egg");
 		add(DreamlandItems.SPAWN_EGG_OPAL_SHELL.get(), "Spawn Egg Opal Shell");
 		
+		add(DreamlandItems.FROST_WATER_BUCKET.get(), "Bucket of Frost Water");
+		
 		// Entities
 		add(DreamlandEntities.BUMBLE_BEAST.get(), "Bumble Beast");
 		add(DreamlandEntities.LARVA.get(), "Larva");
@@ -187,7 +189,7 @@ public class DreamlandLanguageProvider extends LanguageProvider {
 		add(DreamlandEffects.TARRED.get(), "Tarred");
 		
 		// Biomes
-		add("biome.dreamland.dawnic_snowfield", "Dawnic Snowfield");
+		add("biome.dreamland.dawnic_frostfield", "Dawnic Frostfield");
 		add("biome.dreamland.midas_caves", "Midas Caves");
 		add("biome.dreamland.hive", "Hive");
 		add("biome.dreamland.jeweled_forest", "Jeweled Forest");

@@ -3,6 +3,7 @@ package com.github.dragoni7.dreamland.core.registry;
 import java.util.function.Consumer;
 
 import com.github.dragoni7.dreamland.Dreamland;
+import com.github.dragoni7.dreamland.common.blocks.FrostWaterLiquidBlock;
 import com.github.dragoni7.dreamland.common.blocks.TarLiquidBlock;
 import com.github.dragoni7.dreamland.util.DreamlandLoc;
 
@@ -32,6 +33,10 @@ public class DreamlandFluids {
 	
 	private static ForgeFlowingFluid.Properties tarFluidProperties() {
 		return new ForgeFlowingFluid.Properties(TAR_FLUID_TYPE, TAR_FLUID, TAR_FLOWING).block(TAR_BLOCK).bucket(DreamlandItems.TAR_BUCKET);
+	}
+	
+	private static ForgeFlowingFluid.Properties frostWaterProperties() {
+		return new ForgeFlowingFluid.Properties(FROST_WATER_TYPE, FROST_WATER_FLUID, FROST_WATER_FLOWING).block(FROST_WATER_BLOCK).bucket(DreamlandItems.FROST_WATER_BUCKET);
 	}
 	
 	public static final RegistryObject<FluidType> TAR_FLUID_TYPE = FLUID_TYPES.register("tar_fluid",
@@ -81,13 +86,54 @@ public class DreamlandFluids {
 				}
 			});
 	
+	public static final RegistryObject<FluidType> FROST_WATER_TYPE = FLUID_TYPES.register("frost_water_fluid",
+			() -> new FluidType(FluidType.Properties.create().supportsBoating(true).canPushEntity(true).canExtinguish(true).canHydrate(false).canDrown(true).canSwim(true)
+                    .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY).sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL).sound(SoundActions.FLUID_VAPORIZE, SoundEvents.BUCKET_EMPTY).pathType(BlockPathTypes.LAVA))
+			{
+				
+				@Override
+				public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
+					consumer.accept(new IClientFluidTypeExtensions() { 
+						private static final ResourceLocation STILL = DreamlandLoc.createLoc("block/frost_water_still"),
+						FLOW = DreamlandLoc.createLoc("block/frost_water_flow"),
+						OVERLAY = DreamlandLoc.createLoc("block/frost_water");
+						
+						@Override
+						public ResourceLocation getStillTexture() {
+							return STILL;
+						}
+						
+						@Override
+                        public ResourceLocation getFlowingTexture()
+                        {
+                            return FLOW;
+                        }
+
+                        @Override
+                        public ResourceLocation getOverlayTexture()
+                        {
+                            return OVERLAY;
+                        }
+					});
+				}
+			});
+	
 	public static final RegistryObject<FlowingFluid> TAR_FLUID = FLUIDS.register("tar_fluid", 
 			() -> new ForgeFlowingFluid.Source(tarFluidProperties()));
 	
 	public static final RegistryObject<Fluid> TAR_FLOWING = FLUIDS.register("tar_flowing", 
 			() -> new ForgeFlowingFluid.Flowing(tarFluidProperties()));
 	
-	public static final RegistryObject<LiquidBlock> TAR_BLOCK = DreamlandBlocks.BLOCKS.register("tar",
+	public static final RegistryObject<LiquidBlock> TAR_BLOCK = Dreamland.BLOCKS.register("tar",
 			() -> new TarLiquidBlock(() -> TAR_FLUID.get(), BlockBehaviour.Properties.of(Material.LAVA).noCollission().strength(100F).noLootTable()));
+	
+	public static final RegistryObject<FlowingFluid> FROST_WATER_FLUID = FLUIDS.register("frost_water", 
+			() -> new ForgeFlowingFluid.Source(frostWaterProperties()));
+	
+	public static final RegistryObject<Fluid> FROST_WATER_FLOWING = FLUIDS.register("frost_water_flowing", 
+			() -> new ForgeFlowingFluid.Flowing(frostWaterProperties()));
+	
+	public static final RegistryObject<LiquidBlock> FROST_WATER_BLOCK = Dreamland.BLOCKS.register("frost_water",
+			() -> new FrostWaterLiquidBlock(() -> FROST_WATER_FLUID.get(), BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100F).noLootTable()));
 	
 }

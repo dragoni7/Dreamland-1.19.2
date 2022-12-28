@@ -44,20 +44,22 @@ public class DreamlandSurfaceRules
     		SurfaceRules.state(DreamlandBlocks.PETRIFIED_VEGETATION.block().get().defaultBlockState())
     		));
     
-    private static final SurfaceRules.RuleSource DAWNIC_SNOWFIELD_SURFACE = SurfaceRules.sequence(SurfaceRules.ifTrue(AT_OR_ABOVE_WATER, SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.state(Blocks.SNOW_BLOCK.defaultBlockState()))), SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.state(DreamlandBlocks.FROST.block().get().defaultBlockState())));
-    private static final SurfaceRules.RuleSource DAWNIC_SNOWFIELD_CAVES = SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.abovePreliminarySurface()), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, false, 3, CaveSurface.FLOOR), SurfaceRules.state(DreamlandBlocks.FROST.block().get().defaultBlockState())));
+    private static final SurfaceRules.RuleSource DAWNIC_FROSTFIELD_SURFACE = SurfaceRules.sequence(SurfaceRules.ifTrue(AT_OR_ABOVE_WATER, SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.state(Blocks.SNOW_BLOCK.defaultBlockState()))), SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.state(DreamlandBlocks.FROST.block().get().defaultBlockState())));
+    private static final SurfaceRules.RuleSource DAWNIC_FROSTFIELD_CAVES = SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.abovePreliminarySurface()), SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(0, false, 3, CaveSurface.FLOOR), SurfaceRules.state(DreamlandBlocks.FROST.block().get().defaultBlockState())));
+    private static final SurfaceRules.RuleSource ICE_BANDS = SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.CAVE_CHEESE, -0.025, 0.0125), SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.CAVE_CHEESE, -0.025, 0.0), SurfaceRules.state(Blocks.BLUE_ICE.defaultBlockState())), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.CAVE_CHEESE, 0.0, 0.0125), SurfaceRules.state(DreamlandBlocks.DAWN_ICE.block().get().defaultBlockState())))));
     
-    private static final SurfaceRules.RuleSource DAWNIC_SNOWFIELD = SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeKeys.DAWNIC_SNOWFIELD), SurfaceRules.sequence( 
+    private static final SurfaceRules.RuleSource DAWNIC_FROSTFIELD = SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeKeys.DAWNIC_FROSTFIELD), SurfaceRules.sequence( 
     		SurfaceRules.ifTrue(SurfaceRules.verticalGradient("dreamland:bedrock_floor", VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(5)), SurfaceRules.state(Blocks.BEDROCK.defaultBlockState())),
     		SurfaceRules.ifTrue(SurfaceRules.verticalGradient("dreamland:permafrost", VerticalAnchor.absolute(0), VerticalAnchor.absolute(8)), SurfaceRules.state(DreamlandBlocks.PERMAFROST.block().get().defaultBlockState())),
     		SurfaceRules.ifTrue(SurfaceRules.steep(), SurfaceRules.state(DreamlandBlocks.FROSTSTONE.block().get().defaultBlockState())),
-    		DAWNIC_SNOWFIELD_CAVES,
-    		DAWNIC_SNOWFIELD_SURFACE,
+    		ICE_BANDS,
+    		DAWNIC_FROSTFIELD_CAVES,
+    		DAWNIC_FROSTFIELD_SURFACE,
     		SurfaceRules.state(DreamlandBlocks.FROSTSTONE.block().get().defaultBlockState())
     		));
     
     private static final SurfaceRules.RuleSource OVERWORLD_UNDERGROUND = SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.abovePreliminarySurface()), SurfaceRules.sequence(HIVE, MIDAS_CAVES));
     private static final SurfaceRules.RuleSource OVERWORLD = SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.sequence(TAR_DELTAS, JEWELED_FOREST));
     
-    public static final SurfaceRules.RuleSource OVERWORLD_SURFACE_RULES = SurfaceRules.sequence(OVERWORLD, OVERWORLD_UNDERGROUND, TOXIC_JUNGLE, DAWNIC_SNOWFIELD);
+    public static final SurfaceRules.RuleSource OVERWORLD_SURFACE_RULES = SurfaceRules.sequence(OVERWORLD, OVERWORLD_UNDERGROUND, TOXIC_JUNGLE, DAWNIC_FROSTFIELD);
 }

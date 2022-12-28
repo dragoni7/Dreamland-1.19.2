@@ -13,12 +13,12 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class BlockItemSet {
 	
-	private RegistryObject<Block> block;
-	private RegistryObject<Item> item;
+	private final RegistryObject<Block> block;
+	private final RegistryObject<Item> item;
 	
 	public BlockItemSet(String name, Supplier<? extends Block> block) {
-		this.block = DreamlandBlocks.BLOCKS.register(name, block);
-		item = DreamlandItems.ITEMS.register(name, () -> new BlockItem(this.block.get(), new Item.Properties().tab(Dreamland.DreamlandTab)));
+		this.block = Dreamland.BLOCKS.register(name, block);
+		item = Dreamland.ITEMS.register(name, () -> new BlockItem(this.block.get(), new Item.Properties().tab(Dreamland.DreamlandTab)));
 	}
 
 	public RegistryObject<Block> block() {

@@ -200,7 +200,7 @@ public class DreamlandConfiguredFeatures {
 	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> PURITY_ORE = registerConfiguredFeature("purity_ore", Feature.ORE, new OreConfiguration(PURITY_REPLACEABLE, DreamlandBlocks.PURITY_ORE.block().get().defaultBlockState(), 5));
 	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> POROUS_STONE_UNDERGROUND = registerConfiguredFeature("porous_stone_underground", Feature.ORE, new OreConfiguration(PETRIFIED_VEGETATION, DreamlandBlocks.POROUS_STONE.block().get().defaultBlockState(), 32));
 	
-	public static final Holder<ConfiguredFeature<DeltaFeatureConfiguration, ?>> ICE_DELTA = registerConfiguredFeature("ice_delta", Feature.DELTA_FEATURE, new DeltaFeatureConfiguration(DreamlandFluids.TAR_BLOCK.get().defaultBlockState(), DreamlandBlocks.DAWN_ICE.block().get().defaultBlockState(), UniformInt.of(3, 4), UniformInt.of(2, 8)));
+	public static final Holder<ConfiguredFeature<DeltaFeatureConfiguration, ?>> ICE_DELTA = registerConfiguredFeature("ice_delta", Feature.DELTA_FEATURE, new DeltaFeatureConfiguration(DreamlandFluids.FROST_WATER_BLOCK.get().defaultBlockState(), DreamlandBlocks.DAWN_ICE.block().get().defaultBlockState(), UniformInt.of(3, 7), UniformInt.of(1, 4)));
 	
 	private static <FC extends FeatureConfiguration, F extends Feature<FC>> Holder<ConfiguredFeature<FC, ?>> registerConfiguredFeature(String name, F feature, FC config) {
 		createKey(name);

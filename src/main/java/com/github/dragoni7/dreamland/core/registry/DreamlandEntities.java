@@ -19,7 +19,6 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class DreamlandEntities {
 	public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Dreamland.MODID);
-	public static final DeferredRegister<BlockEntityType<?>> TILES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, Dreamland.MODID);
 	
 	// MOBS
 	public static final RegistryObject<EntityType<BumbleBeastEntity>> BUMBLE_BEAST = ENTITY_TYPES.register("bumble_beast",

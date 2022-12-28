@@ -1,12 +1,12 @@
 {
-    "criteria": {
-      "tick": {
-        "trigger": "minecraft:tick"
-      }
-    },
-    "rewards": {
-      "loot": [
-        "dreamland:grant_book_on_first_join"
-      ]
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
     }
+  },
+  "rewards": {
+    "loot": [
+      "dreamland:grant_book_on_first_join"
+    ]
   }
+}

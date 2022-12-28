@@ -16,7 +16,7 @@ public class BiomeKeys {
 	public static final ResourceKey<Biome> TAR_DELTAS = registerBiome("tar_deltas");
 	public static final ResourceKey<Biome> JEWELED_FOREST = registerBiome("jeweled_forest");
 	public static final ResourceKey<Biome> TOXIC_JUNGLE = registerBiome("toxic_jungle");
-	public static final ResourceKey<Biome> DAWNIC_SNOWFIELD = registerBiome("dawnic_snowfield");
+	public static final ResourceKey<Biome> DAWNIC_FROSTFIELD = registerBiome("dawnic_frostfield");
 	
 	public static ArrayList<ResourceKey<Biome>> getAllKeys() {
 		return KEYS;

@@ -6,7 +6,7 @@
       "count": {
         "type": "minecraft:uniform",
         "value": {
-          "max_inclusive": 46,
+          "max_inclusive": 96,
           "min_inclusive": 0
         }
       }
@@ -15,8 +15,25 @@
       "type": "minecraft:in_square"
     },
     {
-      "type": "minecraft:heightmap",
-      "heightmap": "WORLD_SURFACE_WG"
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "max_inclusive": {
+          "absolute": 50
+        },
+        "min_inclusive": {
+          "above_bottom": 0
+        }
+      }
+    },
+    {
+      "type": "minecraft:environment_scan",
+      "direction_of_search": "down",
+      "max_steps": 12,
+      "target_condition": {
+        "type": "minecraft:matching_blocks",
+        "blocks": "dreamland:frost"
+      }
     },
     {
       "type": "minecraft:biome"

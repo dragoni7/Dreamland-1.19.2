@@ -40,10 +40,10 @@ public class DreamlandOverworldBiomes {
         BiomeDefaultFeatures.addDefaultSoftDisks(builder);
     }
     
-    public static Biome dawnicSnowfield() {
+    public static Biome dawnicFrostfield() {
     	MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
         BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
-        DreamlandBiomeFeatures.dawnicSnowfieldBiomeFeatures(biomeBuilder);
+        DreamlandBiomeFeatures.dawnicFrostfieldBiomeFeatures(biomeBuilder);
         spawnBuilder.creatureGenerationProbability(0.07F);
         BiomeDefaultFeatures.snowySpawns(spawnBuilder);
         

@@ -21,7 +21,7 @@ public class DreamlandBiomes {
 			helper.register(BiomeKeys.TAR_DELTAS.location().getPath(), DreamlandOverworldBiomes.tarDeltas());
 			helper.register(BiomeKeys.JEWELED_FOREST.location().getPath(), DreamlandOverworldBiomes.jeweledForest());
 			helper.register(BiomeKeys.TOXIC_JUNGLE.location().getPath(), DreamlandOverworldBiomes.toxicJungle());
-			helper.register(BiomeKeys.DAWNIC_SNOWFIELD.location().getPath(), DreamlandOverworldBiomes.dawnicSnowfield());
+			helper.register(BiomeKeys.DAWNIC_FROSTFIELD.location().getPath(), DreamlandOverworldBiomes.dawnicFrostfield());
 		});
 	}
 

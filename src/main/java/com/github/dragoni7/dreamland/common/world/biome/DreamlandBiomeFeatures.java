@@ -8,7 +8,7 @@ import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
 public class DreamlandBiomeFeatures {
 	
-	public static void dawnicSnowfieldBiomeFeatures(BiomeGenerationSettings.Builder builder) {
+	public static void dawnicFrostfieldBiomeFeatures(BiomeGenerationSettings.Builder builder) {
 		BiomeDefaultFeatures.addDefaultCarversAndLakes(builder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(builder);
         BiomeDefaultFeatures.addDefaultMonsterRoom(builder);

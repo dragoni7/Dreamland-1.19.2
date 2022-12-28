@@ -36,7 +36,6 @@ public class DreamlandBlockStates extends BlockStateProvider{
 		ArrayList<Block> simpleBlocks = new ArrayList<Block>() {
 			private static final long serialVersionUID = -13823954668890035L;
 			{
-				add(DreamlandBlocks.DAWN_ICE.block().get());
 				add(DreamlandBlocks.FROST.block().get());
 				add(DreamlandBlocks.FROSTSTONE.block().get());
 				add(DreamlandBlocks.PERMAFROST.block().get());

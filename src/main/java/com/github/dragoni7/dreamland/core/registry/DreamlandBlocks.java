@@ -1,5 +1,7 @@
 package com.github.dragoni7.dreamland.core.registry;
 
+import java.util.function.Supplier;
+
 import com.github.dragoni7.dreamland.Dreamland;
 import com.github.dragoni7.dreamland.common.blocks.*;
 import com.github.dragoni7.dreamland.util.BlockItemSet;
@@ -35,8 +37,10 @@ import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConf
 
 public class DreamlandBlocks {
 	
-	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Dreamland.MODID);
 	
+	public static void init() {
+		
+	}
 	// --------------Dawnic Snowfield Blocks--------------
 	
 		public static final BlockItemSet DAWN_ICE = new BlockItemSet("dawn_ice", () -> new DawnIceBlock(BlockBehaviour.Properties
@@ -105,7 +109,7 @@ public class DreamlandBlocks {
 					.lightLevel(CaveSlimePlantBlock.emission(5))
 					));
 	
-	public static final RegistryObject<Block> CAVE_SLIME_PLANT = BLOCKS.register("cave_slime_plant", 
+	public static final RegistryObject<Block> CAVE_SLIME_PLANT = Dreamland.BLOCKS.register("cave_slime_plant", 
 			() -> new CaveSlimePlantBlock(BlockBehaviour.Properties
 					.of(Material.PLANT, MaterialColor.COLOR_CYAN)
 					.sound(SoundType.HONEY_BLOCK)
@@ -168,7 +172,7 @@ public class DreamlandBlocks {
 	
 	public static final BlockItemSet HIVE_GROWTH = new BlockItemSet("hive_growth", () -> new HiveGrowthBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_RED).noOcclusion().sound(SoundType.NETHER_SPROUTS).instabreak()));
 	
-	public static final RegistryObject<Block> JELLY_SPLOTCH = BLOCKS.register("jelly_splotch",
+	public static final RegistryObject<Block> JELLY_SPLOTCH = Dreamland.BLOCKS.register("jelly_splotch",
 			() -> new JellySplotchBlock(BlockBehaviour.Properties
 					.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_CYAN)
 					.strength(0.2F)
@@ -195,7 +199,7 @@ public class DreamlandBlocks {
 	public static final BlockItemSet TAR_MUD_BRICK_STAIRS = new BlockItemSet("tar_mud_brick_stairs", () -> new StairBlock(DreamlandBlocks.TAR_MUD_BRICKS.block().get().defaultBlockState(), BlockBehaviour.Properties.copy(DreamlandBlocks.TAR_MUD_BRICKS.block().get())));
 	public static final BlockItemSet TAR_MUD_BRICK_SLAB = new BlockItemSet("tar_mud_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_PURPLE).requiresCorrectToolForDrops().strength(1.5F, 3.0F).sound(SoundType.MUD_BRICKS)));	
 	public static final BlockItemSet TAR_MUD_BRICK_WALL = new BlockItemSet("tar_mud_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(DreamlandBlocks.TAR_MUD_BRICKS.block().get())));	
-	public static final BlockItemSet DROUGHT_SOIL = createDirtBlock("drought_soil");	
+	public static final BlockItemSet DROUGHT_SOIL = createDirtTypeBlock("drought_soil");	
 	public static final BlockItemSet TAR_BARK_SAPLING = createSaplingBlock("tar_bark_sapling", DreamlandFeatures.TAR_BARK_TREE_FEATURE);	
 	public static final BlockItemSet TAR_SPROUTS = new BlockItemSet("tar_sprouts", () -> new TarSproutsBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));	
 	public static final BlockItemSet FOSSILIZED_EGG = new BlockItemSet("fossilized_egg", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(DreamlandBlocks.TAR_MUD.block().get()).strength(3.0F, 3.0F).sound(SoundType.STONE)));
@@ -207,7 +211,7 @@ public class DreamlandBlocks {
 	
 	public static final BlockItemSet BUMBLE_BLOCK = new BlockItemSet("bumble_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.YELLOW_WOOL).sound(DreamlandSoundTypes.BUMBLE_BLOCK).noOcclusion()));
 	public static final BlockItemSet PLUM_BIRCH_LEAVES = createLeavesBlock("plum_birch_leaves", MaterialColor.COLOR_BLUE);	
-	public static final BlockItemSet MINERAL_DIRT = createDirtBlock("mineral_dirt");	
+	public static final BlockItemSet MINERAL_DIRT = createDirtTypeBlock("mineral_dirt");	
 	public static final BlockItemSet FLOWERING_GRASS = new BlockItemSet("flowering_grass", () -> new FloweringUndergrowthBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK).color(MaterialColor.COLOR_PINK)));	
 	public static final BlockItemSet OPALINE_MARIGOLD = new BlockItemSet("opaline_marigold", () -> new FlowerBlock(MobEffects.LUCK, 5, BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.GRASS)));	
 	public static final BlockItemSet PINK_CRAB_GRASS = new BlockItemSet("pink_crab_grass", () -> new GroundPlantBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));	
@@ -241,7 +245,7 @@ public class DreamlandBlocks {
 	public static final BlockItemSet PETRIFIED_VEGETATION = new BlockItemSet("petrified_vegetation", () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).color(MaterialColor.COLOR_LIGHT_GREEN)));
 	public static final BlockItemSet SPORE_PUFF = new BlockItemSet("spore_puff", () -> new MoldVegetationBlock(BlockBehaviour.Properties.copy(Blocks.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)));
 	public static final BlockItemSet SPONGE_PUFF = new BlockItemSet("sponge_puff", () -> new MoldVegetationBlock(BlockBehaviour.Properties.copy(SPORE_PUFF.block().get()).sound(SoundType.NETHER_SPROUTS)));
-	public static final BlockItemSet TOXIC_DIRT = createDirtBlock("toxic_dirt");
+	public static final BlockItemSet TOXIC_DIRT = createDirtTypeBlock("toxic_dirt");
 	public static final BlockItemSet TOXIC_GRASS = new BlockItemSet("toxic_grass", () -> new ToxicGrassBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
 	public static final BlockItemSet TOXIC_VEGETATION = new BlockItemSet("toxic_vegetation", () -> new Block(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN).strength(0.2F).sound(SoundType.AZALEA_LEAVES)));
 	public static final BlockItemSet DECAYED_VEGETATION = new BlockItemSet("decayed_vegetation", () -> new Block(BlockBehaviour.Properties.of(Material.LEAVES, MaterialColor.COLOR_GREEN).strength(1.5F, 1.0F).sound(SoundType.HARD_CROP)));
@@ -264,7 +268,7 @@ public class DreamlandBlocks {
 		return new BlockItemSet(name, () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES, color).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isViewBlocking((state, world, pos) -> false).isSuffocating((state, world, pos) -> false)));
 	}
 	
-	private static BlockItemSet createDirtBlock(String name) {
+	private static BlockItemSet createDirtTypeBlock(String name) {
 		return new BlockItemSet(name, () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT)));
 	}
 	
@@ -279,10 +283,10 @@ public class DreamlandBlocks {
 	}
 	
 	private static boolean always(BlockState state, BlockGetter getter, BlockPos pos) {
-	    return true;
-	 }
+		return true;
+	}
 	
-	private static Boolean always(BlockState sate, BlockGetter getter, BlockPos pos, EntityType<?> type) {
-	    return (boolean)true;
-	 }
+	private static boolean always(BlockState sate, BlockGetter getter, BlockPos pos, EntityType<?> type) {
+	    return true;
+	}
 }

@@ -28,14 +28,16 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class DreamlandItems {
 	
-	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Dreamland.MODID);
+	public static void init() {
+		
+	}
 	
 	//Items
 	public static final RegistryObject<Item> HIVE_JELLY_ITEM = registerHiveJelly("hive_jelly", new FoodProperties.Builder().nutrition(1).saturationMod(0.2F).build());
-	public static final RegistryObject<Item> JELLY_BOWL_ITEM = ITEMS.register("bowl_of_jelly",
+	public static final RegistryObject<Item> JELLY_BOWL_ITEM = Dreamland.ITEMS.register("bowl_of_jelly",
 			() -> new BowlFoodItem((new Item.Properties()).stacksTo(1).tab(Dreamland.DreamlandTab).food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).build())));
 	
-	public static final RegistryObject<Item> TAR_BUCKET = ITEMS.register("tar_bucket", 
+	public static final RegistryObject<Item> TAR_BUCKET = Dreamland.ITEMS.register("tar_bucket", 
 			() -> new BucketItem(DreamlandFluids.TAR_FLUID, new Item.Properties().craftRemainder(Items.BUCKET).tab(Dreamland.DreamlandTab).stacksTo(1)));
 	public static final RegistryObject<Item> OOZE_BALL = registerBasicItem("ooze_ball");
 	public static final RegistryObject<Item> CANDIED_OOZE = registerFoodItem("candied_ooze", new FoodProperties.Builder().nutrition(2).saturationMod(0.1F).effect(() -> new MobEffectInstance(DreamlandEffects.TARRED.get(), 40), 1.0F).build());
@@ -49,15 +51,18 @@ public class DreamlandItems {
 	
 	public static final RegistryObject<Item> RAW_NECRATHENE = registerBasicItem("raw_necrathene");
 	public static final RegistryObject<Item> NECRATHENE_INGOT = registerBasicItem("necrathene_ingot");
-	public static final RegistryObject<Item> CRYSTALIZED_PURITY = ITEMS.register("crystalized_purity", () -> new CrystalizedPurityItem(new Item.Properties().tab(Dreamland.DreamlandTab)));
+	public static final RegistryObject<Item> CRYSTALIZED_PURITY = Dreamland.ITEMS.register("crystalized_purity", () -> new CrystalizedPurityItem(new Item.Properties().tab(Dreamland.DreamlandTab)));
+	
+	public static final RegistryObject<Item> FROST_WATER_BUCKET = Dreamland.ITEMS.register("frost_water_bucket", 
+			() -> new BucketItem(DreamlandFluids.FROST_WATER_FLUID, new Item.Properties().craftRemainder(Items.BUCKET).tab(Dreamland.DreamlandTab).stacksTo(1)));
 	
 	//Armor
-	public static final RegistryObject<Item> LARVA_HELMET = ITEMS.register("larva_symbiote", () -> new LarvaSymbioteArmorItem(DreamlandArmorMaterials.LARVA, EquipmentSlot.HEAD, new Item.Properties().rarity(Rarity.RARE).tab(Dreamland.DreamlandTab)));
-	public static final RegistryObject<Item> BREATHER_HELMET = ITEMS.register("breather_helmet", () -> new BreatherHelmetArmorItem(ArmorMaterials.LEATHER, EquipmentSlot.HEAD, new Item.Properties().tab(Dreamland.DreamlandTab)));
-	public static final RegistryObject<Item> NECRATHENE_BREATHER_HELMET = ITEMS.register("necrathene_breather_helmet", () -> new NecratheneArmorItem(DreamlandArmorMaterials.NECRATHENE, EquipmentSlot.HEAD, new Item.Properties().tab(Dreamland.DreamlandTab)));
-	public static final RegistryObject<Item> NECRATHENE_CHESTPLATE = ITEMS.register("necrathene_chestplate", () -> new NecratheneArmorItem(DreamlandArmorMaterials.NECRATHENE, EquipmentSlot.CHEST, new Item.Properties().tab(Dreamland.DreamlandTab)));
-	public static final RegistryObject<Item> NECRATHENE_LEGGINGS = ITEMS.register("necrathene_leggings", () -> new NecratheneArmorItem(DreamlandArmorMaterials.NECRATHENE, EquipmentSlot.LEGS, new Item.Properties().tab(Dreamland.DreamlandTab)));
-	public static final RegistryObject<Item> NECRATHENE_BOOTS = ITEMS.register("necrathene_boots", () -> new NecratheneArmorItem(DreamlandArmorMaterials.NECRATHENE, EquipmentSlot.FEET, new Item.Properties().tab(Dreamland.DreamlandTab)));
+	public static final RegistryObject<Item> LARVA_HELMET = Dreamland.ITEMS.register("larva_symbiote", () -> new LarvaSymbioteArmorItem(DreamlandArmorMaterials.LARVA, EquipmentSlot.HEAD, new Item.Properties().rarity(Rarity.RARE).tab(Dreamland.DreamlandTab)));
+	public static final RegistryObject<Item> BREATHER_HELMET = Dreamland.ITEMS.register("breather_helmet", () -> new BreatherHelmetArmorItem(ArmorMaterials.LEATHER, EquipmentSlot.HEAD, new Item.Properties().tab(Dreamland.DreamlandTab)));
+	public static final RegistryObject<Item> NECRATHENE_BREATHER_HELMET = Dreamland.ITEMS.register("necrathene_breather_helmet", () -> new NecratheneArmorItem(DreamlandArmorMaterials.NECRATHENE, EquipmentSlot.HEAD, new Item.Properties().tab(Dreamland.DreamlandTab)));
+	public static final RegistryObject<Item> NECRATHENE_CHESTPLATE = Dreamland.ITEMS.register("necrathene_chestplate", () -> new NecratheneArmorItem(DreamlandArmorMaterials.NECRATHENE, EquipmentSlot.CHEST, new Item.Properties().tab(Dreamland.DreamlandTab)));
+	public static final RegistryObject<Item> NECRATHENE_LEGGINGS = Dreamland.ITEMS.register("necrathene_leggings", () -> new NecratheneArmorItem(DreamlandArmorMaterials.NECRATHENE, EquipmentSlot.LEGS, new Item.Properties().tab(Dreamland.DreamlandTab)));
+	public static final RegistryObject<Item> NECRATHENE_BOOTS = Dreamland.ITEMS.register("necrathene_boots", () -> new NecratheneArmorItem(DreamlandArmorMaterials.NECRATHENE, EquipmentSlot.FEET, new Item.Properties().tab(Dreamland.DreamlandTab)));
 	
 	//Spawn Eggs
 	public static final RegistryObject<Item> SPAWN_EGG_LARVA = registerSpawnEgg("spawn_egg_larva", () -> DreamlandEntities.LARVA.get(), 0Xa9f8fc, 0X2c2870);
@@ -66,18 +71,18 @@ public class DreamlandItems {
 	public static final RegistryObject<Item> SPAWN_EGG_BUMBLE_BEAST = registerSpawnEgg("spawn_egg_bumble_beast", () -> DreamlandEntities.BUMBLE_BEAST.get(), 0Xc7b922, 0X292609);
 	
 	private static RegistryObject<Item> registerSpawnEgg(String name, Supplier<? extends EntityType<? extends Mob>> type, int backgroundColor, int highlightColor) {
-		return ITEMS.register(name, () -> new ForgeSpawnEggItem(type, backgroundColor, highlightColor, new Item.Properties().tab(Dreamland.DreamlandTab)));
+		return Dreamland.ITEMS.register(name, () -> new ForgeSpawnEggItem(type, backgroundColor, highlightColor, new Item.Properties().tab(Dreamland.DreamlandTab)));
 	}
 	
 	private static RegistryObject<Item> registerBasicItem(String name) {
-		return ITEMS.register(name, () -> new Item(new Item.Properties().tab(Dreamland.DreamlandTab)));
+		return Dreamland.ITEMS.register(name, () -> new Item(new Item.Properties().tab(Dreamland.DreamlandTab)));
 	}
 	
 	private static RegistryObject<Item> registerFoodItem(String name, FoodProperties foodProperties) {
-		return ITEMS.register(name, () -> new Item(new Item.Properties().tab(Dreamland.DreamlandTab).food(foodProperties)));
+		return Dreamland.ITEMS.register(name, () -> new Item(new Item.Properties().tab(Dreamland.DreamlandTab).food(foodProperties)));
 	}
 	
 	private static RegistryObject<Item> registerHiveJelly(String name, FoodProperties foodProperty) {
-		return ITEMS.register(name, () -> new HiveJellyItem(new Item.Properties().tab(Dreamland.DreamlandTab).food(foodProperty).stacksTo(16)));
+		return Dreamland.ITEMS.register(name, () -> new HiveJellyItem(new Item.Properties().tab(Dreamland.DreamlandTab).food(foodProperty).stacksTo(16)));
 	}
 }

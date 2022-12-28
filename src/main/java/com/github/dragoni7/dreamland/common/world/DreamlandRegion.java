@@ -32,8 +32,8 @@ public class DreamlandRegion extends Region
     		builder.replaceBiome(Biomes.JUNGLE, BiomeKeys.TOXIC_JUNGLE);
     		builder.replaceBiome(Biomes.BAMBOO_JUNGLE, BiomeKeys.TOXIC_JUNGLE);
     		builder.replaceBiome(Biomes.SPARSE_JUNGLE, BiomeKeys.TOXIC_JUNGLE);
-    		builder.replaceBiome(Biomes.SNOWY_TAIGA, BiomeKeys.DAWNIC_SNOWFIELD);
-    		builder.replaceBiome(Biomes.SNOWY_PLAINS, BiomeKeys.DAWNIC_SNOWFIELD);
+    		builder.replaceBiome(Biomes.SNOWY_TAIGA, BiomeKeys.DAWNIC_FROSTFIELD);
+    		builder.replaceBiome(Biomes.SNOWY_PLAINS, BiomeKeys.DAWNIC_FROSTFIELD);
     	});
     }
 }

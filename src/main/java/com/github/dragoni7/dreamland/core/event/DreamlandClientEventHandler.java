@@ -41,10 +41,10 @@ public class DreamlandClientEventHandler {
 	
 	private static void setupClient(final FMLClientSetupEvent event) {
 		event.enqueueWork(()-> {
-			
 			ItemBlockRenderTypes.setRenderLayer(DreamlandFluids.TAR_FLUID.get(), RenderType.solid());
 			ItemBlockRenderTypes.setRenderLayer(DreamlandFluids.TAR_FLOWING.get(), RenderType.solid());
-			
+			ItemBlockRenderTypes.setRenderLayer(DreamlandFluids.FROST_WATER_FLUID.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(DreamlandFluids.FROST_WATER_FLOWING.get(), RenderType.translucent());
 		});
 	}
 	
