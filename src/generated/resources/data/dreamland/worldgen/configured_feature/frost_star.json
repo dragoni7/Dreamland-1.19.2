@@ -1,0 +1,25 @@
+{
+  "type": "dreamland:frost_star",
+  "config": {
+    "block": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "dreamland:dawn_ice"
+      }
+    },
+    "height": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 16,
+        "min_inclusive": 5
+      }
+    },
+    "radius": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 8,
+        "min_inclusive": 4
+      }
+    }
+  }
+}

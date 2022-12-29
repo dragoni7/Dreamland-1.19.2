@@ -17,6 +17,7 @@ public class DreamlandBiomeFeatures {
         BiomeDefaultFeatures.addSurfaceFreezing(builder);
         
         builder.addFeature(GenerationStep.Decoration.LAKES, DreamlandFeaturePlacements.PLACED_ICE_DELTA);
+        builder.addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, DreamlandFeaturePlacements.PLACED_FROST_STAR);
 	}
 	
 	public static void midascavesBiomeFeatures(BiomeGenerationSettings.Builder builder) {

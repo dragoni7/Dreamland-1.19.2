@@ -131,6 +131,7 @@ public class DreamlandFeaturePlacements {
 	public static final Holder<PlacedFeature> POROUS_STONE_UNDERGROUND = registerPlacedFeature("porous_stone_underground", DreamlandConfiguredFeatures.POROUS_STONE_UNDERGROUND, commonOrePlacement(16, HeightRangePlacement.triangle(VerticalAnchor.absolute(0), VerticalAnchor.absolute(112))));
 	
 	public static final Holder<PlacedFeature> PLACED_ICE_DELTA = registerPlacedFeature("ice_delta", DreamlandConfiguredFeatures.ICE_DELTA, CountPlacement.of(UniformInt.of(40, 96)), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(50)), EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.matchesBlocks(DreamlandBlocks.FROST.block().get()), 12), BiomeFilter.biome());
+	public static final Holder<PlacedFeature> PLACED_FROST_STAR = registerPlacedFeature("frost_star", DreamlandConfiguredFeatures.FROST_STAR, CountPlacement.of(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
 	
 	private static ImmutableList.Builder<PlacementModifier> treePlacementSurfaceBase(PlacementModifier modifier) {
 	       return ImmutableList.<PlacementModifier>builder().add(modifier).add(InSquarePlacement.spread()).add(VegetationPlacements.TREE_THRESHOLD).add(PlacementUtils.HEIGHTMAP_WORLD_SURFACE).add(BiomeFilter.biome());

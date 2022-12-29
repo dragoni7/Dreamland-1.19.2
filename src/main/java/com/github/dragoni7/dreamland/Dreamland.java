@@ -64,7 +64,6 @@ public class Dreamland
         forgeBus.register(this);
         
         // register mod content.
-        
         DreamlandWoodSets.init();
         DreamlandBlocks.init();
         DreamlandItems.init();

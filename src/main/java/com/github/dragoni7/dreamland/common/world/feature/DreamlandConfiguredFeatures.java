@@ -8,7 +8,9 @@ import com.github.dragoni7.dreamland.common.world.feature.configs.EllipsoidConfi
 import com.github.dragoni7.dreamland.common.world.feature.configs.GrowthLayerConfig;
 import com.github.dragoni7.dreamland.common.world.feature.configs.HillConfig;
 import com.github.dragoni7.dreamland.common.world.feature.configs.SphereConfig;
+import com.github.dragoni7.dreamland.common.world.feature.configs.StarConfig;
 import com.github.dragoni7.dreamland.common.world.feature.generation.SurfaceLake;
+import com.github.dragoni7.dreamland.common.world.feature.generation.FrostStar;
 import com.github.dragoni7.dreamland.core.registry.DreamlandBlocks;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFeatures;
 import com.github.dragoni7.dreamland.core.registry.DreamlandFluids;
@@ -201,6 +203,7 @@ public class DreamlandConfiguredFeatures {
 	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> POROUS_STONE_UNDERGROUND = registerConfiguredFeature("porous_stone_underground", Feature.ORE, new OreConfiguration(PETRIFIED_VEGETATION, DreamlandBlocks.POROUS_STONE.block().get().defaultBlockState(), 32));
 	
 	public static final Holder<ConfiguredFeature<DeltaFeatureConfiguration, ?>> ICE_DELTA = registerConfiguredFeature("ice_delta", Feature.DELTA_FEATURE, new DeltaFeatureConfiguration(DreamlandFluids.FROST_WATER_BLOCK.get().defaultBlockState(), DreamlandBlocks.DAWN_ICE.block().get().defaultBlockState(), UniformInt.of(3, 7), UniformInt.of(1, 4)));
+	public static final Holder<ConfiguredFeature<StarConfig, ?>> FROST_STAR = registerConfiguredFeature("frost_star", DreamlandFeatures.FROST_STAR, new StarConfig(BlockStateProvider.simple(DreamlandBlocks.DAWN_ICE.block().get().defaultBlockState()), UniformInt.of(4, 8), UniformInt.of(5, 16)));
 	
 	private static <FC extends FeatureConfiguration, F extends Feature<FC>> Holder<ConfiguredFeature<FC, ?>> registerConfiguredFeature(String name, F feature, FC config) {
 		createKey(name);

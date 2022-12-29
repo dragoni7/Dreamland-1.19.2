@@ -8,6 +8,10 @@ public class FeatureMath {
 		return Mth.square((double)x/(xRadius)) + Mth.square((double)y/(yRadius)) + Mth.square((double)z/(zRadius));
 	}
 	
+	public static double distance2D(double x, double z, double xRadius, double zRadius) {
+		return Mth.square((double)x/(xRadius)) + Mth.square((double)z/(zRadius));
+	}
+	
 	public static float coneSlantHeight(int radius, int height) {
 		return Mth.sqrt(Mth.square(radius) + Mth.square(height));
 	}
